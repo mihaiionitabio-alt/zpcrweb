@@ -1,3 +1,10 @@
+# MISSY public offline branch
+
+This fork branch adds [MISSY: standalone HTML, source and usage](./missy/README.md).
+Credit for ZPCR/PCRD format research and adapted parsing goes to **R. Byers and the [zpcrweb contributors](https://github.com/RByers/zpcrweb)**. This MISSY branch is separately maintained; it is not an upstream release. The original zpcrweb application and documentation are retained below.
+
+---
+
 # zpcrweb 
 
 zpcrweb (pronounced Zed-PCR web 🇨🇦) is a set of tools for reading and analyzed **[Bio-Rad CFX](https://www.bio-rad.com/en-ca/product/cfx96-system?ID=OK1G048UU)** qPCR `.zpcr` files. It contains an isomorphic TypeScript library plus a cyberpunk-dark web app built on top of it.

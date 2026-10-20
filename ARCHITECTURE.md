@@ -890,3 +890,7 @@ Runtime dependencies are added only when the alternative is re-implementing a we
 security-sensitive primitive (compression). Everything else — binary parsing, XML scanning,
 hex formatting — is hand-written and tested. New runtime dependencies should clear the same
 bar.
+
+## MISSY offline addition in this fork
+
+`missy/` contains a separately maintained, self-contained HTML application and its corresponding modular sources. It is not imported into the zpcrweb core or web application and does not change their build or runtime. `missy/source/build.py` embeds the baseline and adapters locally. Encrypted PCRD imports use a user-supplied password held only in page memory; no CFX-derived decryption material is shipped. See [MISSY documentation](./missy/README.md).
