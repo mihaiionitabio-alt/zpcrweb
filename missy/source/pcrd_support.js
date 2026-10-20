@@ -133,3 +133,27 @@ const pcrdKeylessPanel=MG_VIEWS.panel.build,pcrdKeylessGraphs=MG_VIEWS.graphs.bu
 function pcrdLockedSummary(){return [mgIt({kind:'summary',sev:'watch',code:'PCRD',title:'Encrypted PCRD: source inventory only',value:String(RUNS.length),unit:'sources',state:'REVIEW — experimental payload cannot be read without a key. No numerical QC graphs or vendor verdict inferred.',rows:RUNS.map(r=>[r.file,'Source SHA-256 '+r.meta.sourceSHA256]),actions:[{key:'3',label:'Open file integrity',cmd:'tab integrity'}]})];}
 MG_VIEWS.panel.build=function(){return RUNS.length&&RUNS.every(r=>r.pcrdLocked)?pcrdLockedSummary():pcrdKeylessPanel();};MG_VIEWS.graphs.build=function(){return RUNS.length&&RUNS.every(r=>r.pcrdLocked)?pcrdLockedSummary():pcrdKeylessGraphs();};
 
+
+// Make raw imports distinguishable from stored vendor-result tables.
+function pcrdImportFeedback(){
+ for(const el of document.querySelectorAll('.pcrd-import-feedback'))el.remove();
+ const decoded=pcrdRuns(),locked=RUNS.filter(r=>r.pcrdLocked);if(!decoded.length&&!locked.length)return;
+ for(const id of ['tab-load','tab-results','tab-panel','tab-review']){
+  const parent=document.getElementById(id);if(!parent)continue;
+  const box=document.createElement('div');box.className='pcrd-import-feedback';box.style.cssText='margin:16px 0;padding:16px;border:1px solid #4087cf;border-radius:8px;overflow-wrap:anywhere';
+  const title=document.createElement('strong');title.textContent=decoded.length?'PCRD measurements decoded / PCRD 测量数据已解码':'PCRD locked: no measurements decoded / PCRD 已锁定：尚未解码测量数据';box.append(title);
+  const p=document.createElement('p');p.textContent=decoded.length?`${decoded.length} PCRD files; ${decoded.reduce((n,r)=>n+r.pcrd.reads.length,0)} stored acquisition reads; ${pcrdItems().length} figures. “0 stored results” means no imported vendor Cq/Tm result table; raw readings and independent calculations are separate. / “0 个存储结果”不表示没有原始测量数据。`:'These are source inventories only. Return to Load files and read again with the correct password, or import a CFX RDML export. / 当前仅有文件清单。请返回加载页，使用正确密码重新读取，或导入 CFX 导出的 RDML。';box.append(p);
+  if(locked.length&&decoded.length){const warning=document.createElement('p');warning.textContent=locked.length+' additional encrypted files remain unavailable.';box.append(warning);}
+  function button(label,fn){const b=document.createElement('button');b.type='button';b.textContent=label;b.style.margin='4px 8px 4px 0';b.onclick=fn;box.append(b);}
+  if(decoded.length){button('Open PCRD graphs / 打开 PCRD 图表',()=>{pcrdSync();unifiedBrowse(pcrdItems()[0]?.id);});if(typeof piItems==='function'&&piItems().length){button('Independent Cq/Tm graphs / 独立计算图表',()=>unifiedBrowse(piItems()[0].id));button('Download independent values (CSV) / 下载独立计算值',()=>download('PCRD_independent_Cq_Tm.csv',pcrdCSV(decoded.flatMap(r=>piResults(r).rows)),'text/csv'));}}
+  if(decoded.length&&id==='tab-results'){
+   const wrap=document.createElement('div');wrap.style.cssText='max-height:420px;overflow:auto;margin-top:12px';
+   const table=document.createElement('table');table.style.cssText='width:100%;table-layout:auto';
+   const head=document.createElement('tr');for(const text of ['Source file / 文件','Instrument SN','Acquisition reads / 采集读数','Independent Cq calls / 独立 Cq']){const th=document.createElement('th');th.textContent=text;head.append(th);}table.append(head);
+   for(const r of decoded){const tr=document.createElement('tr');for(const text of [r.file,r.meta.SerialNumber||'Unavailable',r.pcrd.reads.length,typeof piResults==='function'?piResults(r).rows.filter(x=>Number.isFinite(x.Cq_independent)).length:'Unavailable']){const td=document.createElement('td');td.textContent=String(text);td.style.overflowWrap='anywhere';tr.append(td);}table.append(tr);}wrap.append(table);box.append(wrap);
+   if(typeof piResults==='function'){const details=document.createElement('details');details.open=true;const summary=document.createElement('summary');summary.textContent='Independent calculated records / 独立计算记录';details.append(summary);const scroll=document.createElement('div');scroll.style.cssText='max-height:360px;overflow:auto';const t=document.createElement('table');const h=document.createElement('tr');for(const text of ['File','Well','Sample','Raw channel','Cq (independent)','Tm °C (independent)']){const th=document.createElement('th');th.textContent=text;h.append(th);}t.append(h);for(const row of decoded.flatMap(r=>piResults(r).rows).filter(x=>Number.isFinite(x.Cq_independent)||Number.isFinite(x.Tm_independent_C))){const tr=document.createElement('tr');for(const text of [row.source_file,row.well,row.sample,row.channel,Number.isFinite(row.Cq_independent)?row.Cq_independent.toFixed(3):'Unavailable',Number.isFinite(row.Tm_independent_C)?row.Tm_independent_C.toFixed(3):'Unavailable']){const td=document.createElement('td');td.textContent=String(text??'');td.style.overflowWrap='anywhere';tr.append(td);}t.append(tr);}scroll.append(t);details.append(scroll);box.append(details);}
+  }
+  parent.prepend(box);
+ }
+}
+const pcrdFeedbackRead=readStaged;readStaged=async function(...args){try{return await pcrdFeedbackRead(...args);}finally{pcrdImportFeedback();}};

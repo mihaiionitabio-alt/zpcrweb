@@ -36,3 +36,7 @@ Research Use Only. Independently calculated Cq/Tm and exploratory diagnostics do
 ## Validation scope
 
 The public decoder reproduced numerical expectations for 27 PCRD payloads re-encrypted with a synthetic test password. Mixed-format checks covered 61 files / 75 views, Console/Command/Assisted modes, two-row desktop Console controls and report generation. This does not establish equivalence to vendor calculations or support for every PCRD variant.
+
+## PCRD import visibility fix (20 October 2026)
+
+Results now distinguish encrypted inventories from decoded measurements, show per-file serials and acquisition counts, and list independent calculated records. Direct buttons open raw and independent graphs. Normal file-input/password/button tests with the three original sample PCRDs confirmed 93 acquisition reads, 37 raw figures and 16 independent Cq records (7 Luna, 9 RVP, 0 gradient). Cancelling the prompts produces explicit locked status with no measurement graph buttons. No test password or installation material is distributed.
