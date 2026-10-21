@@ -21,3 +21,5 @@ Report workflow update: 21 October 2026. Reversible previews, evidence-based ava
 
 
 2026.10.21.overview1: Overview + comparisons preset (Command: overview) adds all-run coverage, cohort/role statistics and multi-run Cq comparisons. Targets, serials, decoded protocols, channels and stored/independent bases stay separate. Missing identity isolates sources. All public PDFs use MISSY branding; long titles and table cells wrap with repeated table headers.
+
+2026.10.21.overview2: PCRD overall statistics distinguish stored targets from dyes; acquisition groups remain separate and unnamed targets do not pool across sources. Independent raw calculations remain unchanged.

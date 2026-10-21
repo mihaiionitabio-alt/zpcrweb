@@ -135,3 +135,5 @@ reader check, and re-run the comparison tests.
 
 
 2026.10.21.overview1: Overview + comparisons preset (Command: overview) adds all-run coverage, cohort/role statistics and multi-run Cq comparisons. Targets, serials, decoded protocols, channels and stored/independent bases stay separate. Missing identity isolates sources. All public PDFs use MISSY branding; long titles and table cells wrap with repeated table headers.
+
+2026.10.21.overview2: Separate-format validation (10 IXO, 2 EDS, 24 individual RDML, 7 ZPCR, 27 PCRD). PCRD overview cohorts use stored gene/target names, dye/channel, protocol and acquisition group; unnamed PCRD targets remain source-specific. Tests cover both UI report routes, all eligible comparison previews, independent statistics and PDF bounds.

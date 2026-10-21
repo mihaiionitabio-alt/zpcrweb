@@ -2,6 +2,7 @@
 __pycache__/
 *.pyc
 tests/*.png
+tests/separate_batches/
 tests/*.pdf
 tests/*_RESULTS.json
 tests/MODULAR_PDF_CHECKS.json

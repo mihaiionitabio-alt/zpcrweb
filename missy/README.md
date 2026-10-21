@@ -73,3 +73,10 @@ In Assisted mode, choose **All loaded runs** under **Runs for standard figures**
 Command mode supports `run all`; generated Bio-Rad scripts include it. Selection CSV persists scope/run. Reports/archives include a full source manifest with complete filenames and SHA-256 hashes. Analytical figures respect selected wells; raw exports and hardware scopes are unchanged.
 
 Tests cover exact preview return via Close graph/Return, source-aware visibility, all-run IXO/EDS/RDML figure binding and actual mixed-format PDF downloads. The representative five-format all-run PDF has 21 portrait pages; full source identities and every page/footer boundary were checked.
+
+## Separate-format validation: 2026.10.21.overview2
+
+- Tested separate batches: 10 IXO, 2 EDS, 24 individual RDML, 7 ZPCR and 27 PCRD files.
+- All eligible overview comparisons previewed through Console, Command and Assisted routes; both report downloads checked.
+- PCRD overall statistics use stored gene/target names, dye/channel, protocol and acquisition group. Unnamed targets stay source-specific. Independent Cq/Tm algorithms and raw arrays are unchanged.
+- Report statistics independently checked; 99 pages visually reviewed. Command/Assisted PDF images, layout and text match apart from the build timestamp.
