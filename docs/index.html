@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Offline reader for Roche LightCycler 480 .ixo and Applied Biosystems QuantStudio 3/5 .eds files: traceable stored values, container integrity checks, open qPCR exports, graphs, quality review, forensic log and JSON-LD metadata.">
 <meta name="application-name" content="qPCR raw values, quality-control and forensic export tool">
-<meta name="software-version" content="2026.10.21.modular1">
+<meta name="software-version" content="2026.10.21.hooks1">
 
 <!--
   MACHINE-READABLE LANDING-PAGE METADATA
@@ -1313,6 +1313,63 @@ zip handover_2026_09</textarea>
 })(void 0,void 0,void 0);
 </script>
 <script>
+/* Explicit, ordered extension points. Core dispatchers keep their identity. */
+const MISSY_HOOKS=(()=>{
+ const points=new Map(),ids=new Set();let sealed=false;
+ function define(name){if(!points.has(name)){if(sealed)throw Error('Hooks are sealed');points.set(name,[]);}}
+ function use(name,id,order,factory){
+  if(sealed)throw Error('Hooks are sealed');
+  if(!points.has(name))throw Error('Unknown hook: '+name);
+  if(typeof id!=='string'||!id||ids.has(id)||!Number.isInteger(order)||typeof factory!=='function')throw Error('Invalid/duplicate hook: '+id);
+  ids.add(id);points.get(name).push(Object.freeze({id,order,factory}));points.get(name).sort((a,b)=>a.order-b.order);
+ }
+ function invoke(name,context,args,base){
+  const entries=points.get(name);if(!entries)throw Error('Unknown hook: '+name);
+  let call=base;for(const entry of entries){const next=call;let called=false;call=entry.factory(function(...a){if(called)throw Error('Hook called next twice: '+entry.id);called=true;return next.apply(context,a);});if(typeof call!=='function')throw Error('Hook must return a function: '+entry.id);}
+  return call.apply(context,args);
+ }
+ function slot(name,base){define(name);return function(...args){return invoke(name,this,args,base);};}
+ function inspect(){return [...points].map(([name,entries])=>({name,extensions:entries.map(({id,order})=>({id,order}))}));}
+ return Object.freeze({define,use,invoke,slot,inspect,seal(){sealed=true;}});
+})();
+
+MISSY_HOOKS.define("metaRows");
+MISSY_HOOKS.define("ccPlatform");
+MISSY_HOOKS.define("ccProtocolKey");
+MISSY_HOOKS.define("ccDynamic");
+MISSY_HOOKS.define("ccStatic");
+MISSY_HOOKS.define("renderPanel");
+MISSY_HOOKS.define("zpcrPaint");
+MISSY_HOOKS.define("selChartItems");
+MISSY_HOOKS.define("selOptionRule");
+MISSY_HOOKS.define("selDataItems");
+MISSY_HOOKS.define("selSelected");
+MISSY_HOOKS.define("mgOpen");
+MISSY_HOOKS.define("cmdExec");
+MISSY_HOOKS.define("astRender");
+MISSY_HOOKS.define("ccRowsFromRuns");
+MISSY_HOOKS.define("ccAllRows");
+MISSY_HOOKS.define("zpcrInventoryRows");
+MISSY_HOOKS.define("zpcrReportScript");
+MISSY_HOOKS.define("MG_VIEWS.zpcrcharts.build");
+MISSY_HOOKS.define("selBuildReport");
+MISSY_HOOKS.define("selImageItems");
+MISSY_HOOKS.define("mgPanelItems");
+MISSY_HOOKS.define("mgRender");
+MISSY_HOOKS.define("mgGo");
+MISSY_HOOKS.define("MG_VIEWS.panel.build");
+MISSY_HOOKS.define("showTab");
+MISSY_HOOKS.define("exportCatalogue");
+MISSY_HOOKS.define("renderIntegrity");
+MISSY_HOOKS.define("genericScript.onclick");
+MISSY_HOOKS.define("zpcrSetEndpointN");
+MISSY_HOOKS.define("MG_VIEWS.graphs.build");
+MISSY_HOOKS.define("pcrdItems");
+
+MISSY_HOOKS.define('report.style');
+MISSY_HOOKS.define('report.paragraph');
+
+MISSY_HOOKS.define('zcModeItems');
 /*
  * Application design notes
  * ------------------------
@@ -6740,7 +6797,7 @@ function ccTemperatureLogSpan(run){
   if(times.length<2||times.some((t,i)=>i>0&&t<times[i-1]))return NaN;
   const span=times[times.length-1]-times[0];return span>0?span:NaN;
 }
-function ccStatic(run){
+function ccStaticBase(run){
   const m={},meta=run.meta||{};
   const set=(k,v)=>{if(v!==undefined&&v!==null&&!(typeof v==="number"&&!Number.isFinite(v)))m[k]=v;};
   const variant=(k,obj)=>{const o={};for(const [a,b] of Object.entries(obj))if(Number.isFinite(b))o[a]=b;if(Object.keys(o).length)m[k]=o;};
@@ -6815,8 +6872,10 @@ function ccStatic(run){
   }
   return m;
 }
+function ccStatic(...args){return MISSY_HOOKS.invoke("ccStatic",this,args,ccStaticBase);}
+
 /* ---- the SOP-dependent part (method and operator), recomputed whenever the profile changes ---- */
-function ccDynamic(run,ev,counts){
+function ccDynamicBase(run,ev,counts){
   const m={},rows=(ev&&ev.rows)||[];
   const pos=rows.filter(r=>r.ctrl&&r.ctrl.expect==="positive"&&r.ctrl.purpose!=="reference check"),amp={},pcq={},bat={};
   /* one series per target and control material; the extract (extraction date and aliquot/dilution qualifiers) is kept
@@ -6866,6 +6925,8 @@ function ccDynamic(run,ev,counts){
   m.findings={count:counts.findings.get(runName(run))||0};
   return m;
 }
+function ccDynamic(...args){return MISSY_HOOKS.invoke("ccDynamic",this,args,ccDynamicBase);}
+
 /* ---- extraction at load time (called from readStaged, while the file bytes are still in memory) ---- */
 async function ccExtractOnLoad(run,source){
   const cc={};
@@ -6890,10 +6951,12 @@ async function ccExtractOnLoad(run,source){
 
 /* protocol fingerprint: setpoints, holds and programmed ramp of every segment.
    Thermal charts compare like with like when filtered on it. */
-function ccProtocolKey(run){
+function ccProtocolKeyBase(run){
   const segs=((run.protocol||{}).programs||[]).flatMap(p=>(p.segments||[]).map(s=>`${+s.target}/${+s.hold||0}s${s.slope?"@"+(+s.slope):""}`));
   return segs.join(" ")||"(protocol not decoded)";
 }
+function ccProtocolKey(...args){return MISSY_HOOKS.invoke("ccProtocolKey",this,args,ccProtocolKeyBase);}
+
 
 /* ============================================================
    C2. Control charts — catalogue and statistics
@@ -7302,11 +7365,13 @@ const CC_COL={ok:"#16a34a",warn:"#d97706",bad:"#dc2626",none:"#94a3b8",pt:"#2563
 const CC_SEG_PALETTE=["#2563eb","#7c3aed","#0891b2","#16a34a","#db2777","#4b5563","#65a30d","#0e7490"];
 const CC_LIMIT_FLAG=/beyond 3σ|beyond limit|specification|^1-3s$|off the trend|CUSUM|EWMA|above [puc] limit|mean beyond|spread \(S\)|99\.8/;
 function ccSignal(p){const f=(p&&p.flags)||[];if(!f.length)return "";return f.some(x=>CC_LIMIT_FLAG.test(x))?"limit":"rule";}
-function ccPlatform(run){return run.platform==="QuantStudio"?"QS":"LC";}
+function ccPlatformBase(run){return run.platform==="QuantStudio"?"QS":"LC";}
+function ccPlatform(...args){return MISSY_HOOKS.invoke("ccPlatform",this,args,ccPlatformBase);}
+
 function ccInstrumentKey(run){const m=run.meta||{};return `${ccPlatform(run)} · ${m.InstrumentID||m.SerialNumber||m.InstrumentName||"unknown instrument"}`;}
 function ccOperator(run){const m=run.meta||{};return String(m.Technician||m.CreatedByName||"").trim()||"(not recorded)";}
 /* one history row per loaded run: static part cached on the run, dynamic part follows the SOP */
-function ccRowsFromRuns(){
+function ccRowsFromRunsBase(){
   const h=sopHash();
   if(CC_STATE.cache&&CC_STATE.cache.runs===RUNS&&CC_STATE.cache.hash===h)return CC_STATE.cache.rows;
   const evs=new Map(sopEvaluateAll().map(e=>[e.run,e])),counts=forensicCounts();
@@ -7321,10 +7386,14 @@ function ccRowsFromRuns(){
   });
   CC_STATE.cache={runs:RUNS,hash:h,rows};return rows;
 }
-function ccAllRows(){
+function ccRowsFromRuns(...args){return MISSY_HOOKS.invoke("ccRowsFromRuns",this,args,ccRowsFromRunsBase);}
+
+function ccAllRowsBase(){
   const loaded=ccRowsFromRuns(),keys=new Set(loaded.map(r=>r.key));
   return CC_STATE.imported.filter(r=>!keys.has(r.key)).concat(loaded);
 }
+function ccAllRows(...args){return MISSY_HOOKS.invoke("ccAllRows",this,args,ccAllRowsBase);}
+
 function ccInstruments(){const by=byKey(ccAllRows(),r=>r.instrument);return [...by].sort((a,b)=>b[1].length-a[1].length).map(([k,v])=>({key:k,n:v.length,platform:v[0].platform}));}
 function ccRowsFor(inst){
   const all=ccAllRows().filter(r=>r.instrument===inst).sort((a,b)=>(a.date||0)-(b.date||0));
@@ -7529,7 +7598,7 @@ function ccSChartSvg(res){
     hlines:[{y:res.sbar,label:"S̄",colour:"#16a34a",dash:"1 0"}]});
 }
 /* ---------- the panel ---------- */
-function renderPanel(){
+function renderPanelBase(){
   const box=$("#cc-tiles");if(!box)return;
   const insts=ccInstruments();
   setSelectItems($("#cc-inst"),insts.map(i=>({value:i.key,label:`${i.key} (${i.n} run${i.n>1?"s":""})`})),CC_STATE.instrument);
@@ -7570,6 +7639,8 @@ function renderPanel(){
   if(CC_STATE.open)renderCcDetail();
   localizeDOM($("#tab-panel"));
 }
+function renderPanel(...args){return MISSY_HOOKS.invoke("renderPanel",this,args,renderPanelBase);}
+
 function renderCcDetail(){
   const card=$("#cc-detail"),def=CC_BY_ID[CC_STATE.open];if(!card||!def){if(card)card.hidden=true;return;}
   const rows=ccRowsFor(CC_STATE.instrument);if(!rows.length){card.hidden=true;return;}
@@ -8056,7 +8127,7 @@ function mgStatusPaint(){
   const dot=$("#mg-statusbar .mg-sb-dot");if(dot)dot.style.background=d.faults?"#ff5252":d.phase==="ready"?"#37d67a":"#ffb020";
 }
 
-function mgRender(){
+function mgRenderBase(){
   if(!MG.open)return;
   const it=mgItem(),root=document.getElementById("mg");
   const d=appStatusSnapshot();
@@ -8135,6 +8206,8 @@ function mgRender(){
   document.getElementById("mg-body").scrollTop=0;
   mgApplyChartView();mgStatusPaint();
 }
+function mgRender(...args){return MISSY_HOOKS.invoke("mgRender",this,args,mgRenderBase);}
+
 
 /* ---------- option sheets: one question, large targets, number-addressable ---------- */
 function mgSheet(kind){
@@ -8245,12 +8318,14 @@ function mgCommand(text,source){
   mgRender();
   return true;
 }
-function mgGo(step){
+function mgGoBase(step){
   if(!MG.queue.length)return;MG.zoom=1;MG.panX=0;MG.panY=0;
   MG.at=(MG.at+step+MG.queue.length)%MG.queue.length;
   const nx=MG.queue[MG.at];
   MG.chart=!!(nx&&(nx.chartId||(MG.scope==="graphs"&&nx.graphId)));
 }
+function mgGo(...args){return MISSY_HOOKS.invoke("mgGo",this,args,mgGoBase);}
+
 function mgGoChart(step){
   MG.zoom=1;MG.panX=0;MG.panY=0;
   const chartIndexes=MG.queue.map((x,i)=>x&&x.chartId?i:-1).filter(i=>i>=0);
@@ -8509,7 +8584,7 @@ function mgViewResults(){
 }
 
 /* ---------- 4 · Control panel: the state of every control chart, no drawing ---------- */
-function mgPanelItems(includeAll){
+function mgPanelItemsBase(includeAll){
   const items=[];
   const insts=mgSafe(()=>ccInstruments(),[]);
   if(!insts.length)return items;
@@ -8547,6 +8622,8 @@ function mgPanelItems(includeAll){
   items.sort((a,b)=>(rank[a.sev]-rank[b.sev])||a.code.localeCompare(b.code));
   return items;
 }
+function mgPanelItems(...args){return MISSY_HOOKS.invoke('mgPanelItems',this,args,mgPanelItemsBase);}
+
 function mgViewPanel(){
   const insts=mgSafe(()=>ccInstruments(),[]);
   if(!insts.length)return [mgIt({kind:"chart",sev:"none",pict:MG_PICT.chart,kindWord:"control panel",code:"CC",
@@ -8694,8 +8771,8 @@ const MG_VIEWS={
   load:{label:"Load files",build:mgViewLoad},
   sop:{label:"SOP",build:mgViewSop},
   results:{label:"Results",build:mgViewResults},
-  panel:{label:"Control panel",build:mgViewPanel},
-  graphs:{label:"Graphs",build:mgViewGraphs},
+  panel:{label:"Control panel",build:MISSY_HOOKS.slot("MG_VIEWS.panel.build",mgViewPanel)},
+  graphs:{label:"Graphs",build:MISSY_HOOKS.slot("MG_VIEWS.graphs.build",mgViewGraphs)},
   review:{label:"Quality & forensic review",build:mgViewReview},
   export:{label:"Open formats",build:mgViewExport},
   integrity:{label:"File integrity",build:mgViewIntegrity}
@@ -8735,11 +8812,13 @@ function mgRefresh(){
 
 /* Button-only console: no speech recognizer, command line, or external command adapter. */
 /* ---------- open, close, keys ---------- */
-function mgOpen(){
+function mgOpenBase(){
   MG.open=true;MG.filter="";mgRefresh();MG.at=0;MG.chart=false;
   document.getElementById("mg").classList.add("on");
   mgRender();
 }
+function mgOpen(...args){return MISSY_HOOKS.invoke('mgOpen',this,args,mgOpenBase);}
+
 function mgClose(){
   MG.pending=null;MG.open=false;document.getElementById("mg").classList.remove("on");
 }
@@ -9081,7 +9160,7 @@ function tmRows(){
     }));
   }));
 }
-function metaRows(){
+function metaRowsBase(){
   /* Every field is read defensively. This table is drawn on load, before any
      check has run, so a run that decoded only partly must still be describable -
      crashing here would hide the very problem the user needs to see. */
@@ -9105,6 +9184,8 @@ function metaRows(){
     acquisition_error:r.acqError||""
   }));
 }
+function metaRows(...args){return MISSY_HOOKS.invoke("metaRows",this,args,metaRowsBase);}
+
 
 /* ============================================================
    C. Open formats
@@ -9470,7 +9551,7 @@ function renderMachineMetadata(){
   const node=$("#machine-metadata");
   if(node)node.textContent=machineMetadataJSON();
 }
-function exportCatalogue(){
+function exportCatalogueBase(){
   const items=exportCatalogueCore();
   items.push({title:"Applied sample selection (CSV)",note:"Included and excluded samples per experiment; raw-file and hardware data are unchanged.",ready:()=>RUNS.length>0,run:()=>{ssBuildRows();download("sample_selection.csv",csvOf(ssManifest()),"text/csv");}});
   items.splice(1,0,{
@@ -9508,6 +9589,8 @@ function exportCatalogue(){
   if(bundle){items.splice(items.indexOf(bundle),1);items.push(bundle);}
   return items.map(it=>Object.assign({},it,{run:()=>withExportNames(it.run)}));
 }
+function exportCatalogue(...args){return MISSY_HOOKS.invoke("exportCatalogue",this,args,exportCatalogueBase);}
+
 /* One browser download for a multi-file export prevents silent download throttling.
    Keep one-file exports unchanged and retain duplicate names with numbered suffixes. */
 function downloadExportFiles(kind,files){
@@ -10473,7 +10556,7 @@ function integrityMismatches(){
   });
   return out;
 }
-function renderIntegrity(){
+function renderIntegrityBase(){
   const box=$("#integrity-summary"),list=$("#integrity-list");if(!box||!list)return;
   const rows=integrityMismatches();
   box.innerHTML=RUNS.length
@@ -10496,6 +10579,8 @@ function renderIntegrity(){
     download(baseName()+"_file_integrity.csv","file,check,expected,observed,meaning\n"+rows.map(r=>[r.file,r.type,r.expected,r.actual,r.detail].map(csvq).join(",")).join("\n")+"\n","text/csv");
   };
 }
+function renderIntegrity(...args){return MISSY_HOOKS.invoke("renderIntegrity",this,args,renderIntegrityBase);}
+
 
 const ISSUE_CATEGORY_ORDER=["Controls / contamination","Amplification / curve shape","SOP / result interpretation","Timing / traceability","File / structure","Other"];
 function issueCategoryOf(e){
@@ -11159,9 +11244,49 @@ function wireQualityReview(){
   $("#instrument-run").onchange=renderReviewInstrument;$("#dl-instrument").onclick=instrumentZip;
 }
 
+/* Model contract v2: validate evidence before committing any run to UI state.
+   Missing vendor measurements and sentinel numbers remain unchanged. */
+function validatePublicRun(run,source){
+ validateRunBoundary(run,source.name);
+ const fail=m=>{throw Error(source.name+': run model: '+m);},object=v=>v!==null&&typeof v==='object'&&!Array.isArray(v)&&!ArrayBuffer.isView(v);
+ if(Array.isArray(run))fail('run must be an object');
+ for(const field of ['meta','plate','allCurves','format','integrity','protocol'])if(run[field]!=null&&!object(run[field]))fail(field+' must be an object');
+ for(const field of ['wells','tmWells','genoResults','rqResults','otherResults'])if(run[field]!=null){const a=run[field];if(!Array.isArray(a)||a.length>APP_LIMITS.maxWellsPerRun||a.some(x=>!object(x)))fail(field+' must contain bounded result objects');}
+ const rows=run.rows,cols=run.cols;
+ if(rows!=null&&(!Number.isInteger(rows)||rows<0||rows>100))fail('invalid plate rows');
+ if(cols!=null&&(!Number.isInteger(cols)||cols<0||cols>100))fail('invalid plate columns');
+ if(!!rows!==!!cols)fail('incomplete plate geometry');
+ const size=rows*cols;
+ for(const field of ['wells','tmWells','genoResults','rqResults','otherResults'])for(const result of run[field]||[])for(const field of ['pos','position'])if(result[field]!=null&&(!Number.isInteger(result[field])||result[field]<0||(size&&result[field]>=size)))fail('result position out of range');
+ if(size>APP_LIMITS.maxWellsPerRun)fail('plate exceeds position limit');
+ if(size&&run.plate)for(const pos of Object.keys(run.plate))if(!/^\d+$/.test(pos)||+pos>=size||!object(run.plate[pos]))fail('invalid plate position '+pos);
+ if(run.meta?.sourceSHA256!=null&&!/^[a-f\d]{64}$/i.test(run.meta.sourceSHA256))fail('invalid source SHA-256');
+ if(run.meta?.sourceBytes!=null&&run.meta.sourceBytes!==source.bytes.length)fail('source byte count disagrees');
+ if(run.pcrd&&run.zpcr)fail('conflicting raw payload types');
+ if(run.pcrdLocked){if(run.pcrd||run.zpcr||run.wells.length||run.tmWells?.length||Object.keys(run.allCurves||{}).length||size)fail('encrypted inventory contains decoded measurements');}
+ const raw=run.pcrd||run.zpcr;
+ if(raw){
+  if(!object(raw)||!Array.isArray(raw.reads)||!raw.reads.length||raw.reads.length>100000)fail('invalid raw read collection');
+  const g=raw.grid;if(!object(g)||g.sampleRows!==rows||g.cols!==cols||!Number.isInteger(g.referenceRows)||g.referenceRows<0||g.referenceRows>10)fail('sample/reference geometry disagrees');
+  const first=raw.reads[0];
+  for(const [i,r]of raw.reads.entries()){
+   if(!object(r)||r.rows!==rows+g.referenceRows||r.cols!==cols||!Number.isInteger(r.channels)||r.channels<1||r.channels>32||r.channels!==first.channels)fail('read '+i+' geometry disagrees');
+   const width=run.pcrd?r.tupleWidth:4;
+   if(!Number.isInteger(width)||width<1||width>4)fail('read tuple width');
+   const numeric=a=>(Array.isArray(a)||ArrayBuffer.isView(a))&&typeof a.length==='number';
+   if(!numeric(r.wellData)||r.wellData.length!==r.rows*r.cols*r.channels*4)fail('read '+i+' payload length disagrees');
+   if(r.darkData!=null&&(!numeric(r.darkData)||r.darkData.length!==r.channels*4))fail('read '+i+' dark payload length disagrees');
+   if(run.pcrd&&(!numeric(r.originalData)||r.originalData.length!==r.rows*r.cols*r.channels*width||!numeric(r.originalDark)||r.originalDark.length!==r.channels*width))fail('read '+i+' original tuple length disagrees');
+   if(Array.from(r.wellData).some(n=>typeof n!=='number')||(r.darkData&&Array.from(r.darkData).some(n=>typeof n!=='number')))fail('non-numeric raw payload');
+   if(!Number.isInteger(r.step)||!Number.isInteger(r.cycle))fail('read '+i+' acquisition identity invalid');
+  }
+  if(raw.layout!=null&&(!Array.isArray(raw.layout)||raw.layout.some(x=>!object(x)||!Number.isInteger(x.position)||x.position<0||x.position>=size)))fail('invalid sample layout');
+ }
+ return run;
+}
 /* Versioned reader boundary. A decoder returns evidence, never changes UI/state. */
 const MISSY_READERS=[];
-const MISSY_MODEL_VERSION=1;
+const MISSY_MODEL_VERSION=2;
 function registerReader(reader){
  if(!reader.id||!reader.version||typeof reader.decode!=='function'||MISSY_READERS.some(r=>r.id===reader.id))throw Error('Invalid/duplicate reader registration');
  MISSY_READERS.push(Object.freeze(reader));
@@ -11194,7 +11319,9 @@ async function stageReaderFile(file,bytes,archive=null,path=null){
 async function decodeReaderSource(source){
  const reader=readerById(source.kind),out=await reader.decode(source),runs=Array.isArray(out)?out:[out];
  if(!runs.length)throw Error('Reader produced no run records');
- for(const run of runs){validateRunBoundary(run,source.name);run.reader={id:reader.id,version:reader.version,modelVersion:MISSY_MODEL_VERSION};run.capabilities={storedResults:run.wells.length>0,rawAcquisitions:!!(run.zpcr||run.pcrd),independentAnalysis:!!run.pcrd,encryptedInventory:!!run.pcrdLocked};}
+ for(const run of runs)validatePublicRun(run,source);
+ const claimed=runs.filter(r=>r.meta?.sourceSHA256);if(claimed.length){const actual=await sourceSha256(source.bytes);if(claimed.some(r=>r.meta.sourceSHA256.toLowerCase()!==actual))throw Error(source.name+': source SHA-256 disagrees with decoded evidence');}
+ for(const run of runs){run.reader={id:reader.id,version:reader.version,modelVersion:MISSY_MODEL_VERSION};run.capabilities={storedResults:run.wells.length>0||(run.tmWells||[]).length>0,rawAcquisitions:!!(run.zpcr||run.pcrd)||Object.keys(run.allCurves||{}).length>0,independentAnalysis:!!run.pcrd,encryptedInventory:!!run.pcrdLocked};}
  return runs;
 }
 /* ============================================================
@@ -11401,13 +11528,15 @@ function refreshAll(){
   renderMachineMetadata();
   localizeDOM(document);
 }
-function showTab(name){
+function showTabBase(name){
   APP_STATE.activeTab=name;
   $$("nav button").forEach(b=>b.classList.toggle("on",b.dataset.tab===name));
   $$("main section").forEach(s=>s.classList.toggle("on",s.id==="tab-"+name));
   renderTab(name);
   window.scrollTo({top:0,behavior:"smooth"});
 }
+function showTab(...args){return MISSY_HOOKS.invoke("showTab",this,args,showTabBase);}
+
 function boot(){
   ssBind();
   setPhase("booting","page boot");
@@ -12099,23 +12228,28 @@ function missyMarkWithSvg(svgText,corner="top-right"){
 }
 function pdfDoc(){
   const pages=[];let cur=null;
+  const style=MISSY_HOOKS.invoke("report.style",null,[],()=>({}));
   const d={
     images:[],
     page(){
       cur={ops:[],uses:[]};pages.push(cur);d.y=PDF_PAGE.h-PDF_PAGE.margin;
+      if(style.header)style.header(d,rawText);
       return cur;
     },
     get width(){return PDF_PAGE.w-2*PDF_PAGE.margin;},
     y:0,
     room(h){if(!cur)d.page();if(d.y-h<PDF_PAGE.margin+24){d.page();return false;}return true;},
     text(s,size,bold,dx,colour){
-      if(!cur)d.page();
-      const c=colour||[0,0,0];
-      cur.ops.push(`BT ${c[0]} ${c[1]} ${c[2]} rg /${bold?"F2":"F1"} ${size} Tf 1 0 0 1 ${(PDF_PAGE.margin+(dx||0)).toFixed(2)} ${(d.y-size).toFixed(2)} Tm (${pdfStr(s)}) Tj ET`);
-      d.y-=size*1.32;
+      const c=colour||(style.colour?style.colour(bold):[0,0,0]);
+      if(style.wrapTitle&& !dx&&((bold&&size>=14)||/^\d+\.\s/.test(String(s)))){
+        for(const line of pdfWrap(String(s),d.width,size,bold)){d.room(size*1.4);rawText(line,size,bold,dx,c);}return;
+      }
+      rawText(s,size,bold,dx,c);
     },
     para(s,size,bold){
-      pdfWrap(s,d.width,size,bold).forEach(l=>{d.room(size*1.4);d.text(l,size,bold);});
+      const mapped=MISSY_HOOKS.invoke('report.paragraph',null,[s],v=>v);
+      const lines=style.paragraphLines?style.paragraphLines(mapped):[mapped];
+      for(const line of lines)pdfWrap(line,d.width,size,bold).forEach(l=>{d.room(size*1.4);d.text(l,size,bold);});
     },
     gap(h){d.y-=h;},
     rule(){if(!cur)d.page();cur.ops.push(`0.75 0.75 0.78 RG 0.6 w ${PDF_PAGE.margin} ${d.y.toFixed(2)} m ${(PDF_PAGE.w-PDF_PAGE.margin).toFixed(2)} ${d.y.toFixed(2)} l S`);d.y-=6;},
@@ -12173,6 +12307,11 @@ function pdfDoc(){
       return out;
     }
   };
+  function rawText(s,size,bold,dx,colour){
+    if(!cur)d.page();const c=colour||[0,0,0];
+    cur.ops.push(`BT ${c[0]} ${c[1]} ${c[2]} rg /${bold?"F2":"F1"} ${size} Tf 1 0 0 1 ${(PDF_PAGE.margin+(dx||0)).toFixed(2)} ${(d.y-size).toFixed(2)} Tm (${pdfStr(s)}) Tj ET`);
+    d.y-=size*1.32;
+  }
   d.page();
   return d;
 }
@@ -12214,7 +12353,7 @@ function selGraphContext(g){
   return {g,ri,run:RUNS[ri],target:allTargets?"":String(o.target||"").trim(),
     metric:o.metric||"outcome",signal:o.signal||"stored",log:o.log==="yes",colourby:o.colourby||"outcome",level:o.level||"end",control:o.control||"0"};
 }
-function selImageItems(){
+function selImageItemsBase(){
   return (typeof GRAPHS==="undefined"?[]:GRAPHS).map(g=>({
     id:"img:"+g.id,kind:"image",group:g.group||"Figures",title:g.title||g.id,
     note:g.note||"",scope:g.scope||"all",
@@ -12222,7 +12361,9 @@ function selImageItems(){
     figure:()=>{const c=selGraphContext(g);const res=g.render(c);return {svg:res.svg,rows:res.rows||[]};}
   }));
 }
-function selDataItems(){
+function selImageItems(...args){return MISSY_HOOKS.invoke("selImageItems",this,args,selImageItemsBase);}
+
+function selDataItemsBase(){
   const csv=rows=>toCSV(uniq(rows.flatMap(Object.keys)).map(k=>({key:k,label:k})),rows);
   const item=(id,title,note,ready,rows,file)=>({id:"data:"+id,kind:"data",group:"Tables",title,note,
     ready,rows,file:file||(id+".csv"),text:()=>csv(rows())});
@@ -12284,6 +12425,8 @@ function selDataItems(){
   L.push({id:"rec:instrument_records",kind:"data",group:"Instrument records",title:"Instrument records",note:"Metadata, protocol, channels, subsets, analyses and statistics.",ready:()=>RUNS.length>0,rows:recordRows,file:"instrument_records.csv",text:()=>csv(recordRows())});
   return L;
 }
+function selDataItems(...args){return MISSY_HOOKS.invoke("selDataItems",this,args,selDataItemsBase);}
+
 const SEL_OPTION_RULES=Object.freeze({
   "img:curves":{target:"text",signal:["stored","drn"],log:["yes","no"]},
   "img:plate":{metric:["outcome","status","cq","end_fluorescence","background","amplitude"],target:"text"},
@@ -12294,7 +12437,7 @@ const SEL_OPTION_RULES=Object.freeze({
   "data:*":{run:"run",rows:"integer",pseudo:["yes","no"]},
   "rec:*":{run:"run",rows:"integer",pseudo:["yes","no"]}
 });
-function selChartItems(){
+function selChartItemsBase(){
   return (typeof CC_CHARTS==="undefined"?[]:CC_CHARTS).map(def=>({
     id:"cc:"+def.id,kind:"image",group:"Control charts · "+def.group,title:def.title||def.id,
     note:def.reading||def.idea||"Control chart",ready:()=>ccInstruments().length>0,
@@ -12309,6 +12452,8 @@ function selChartItems(){
     }
   }));
 }
+function selChartItems(...args){return MISSY_HOOKS.invoke("selChartItems",this,args,selChartItemsBase);}
+
 function selCatalogue(){return selImageItems().concat(selDataItems(),selChartItems());}
 function selItem(id){return selCatalogue().find(x=>x.id===id)||null;}
 function selMatch(pattern){
@@ -12322,10 +12467,12 @@ function selMatch(pattern){
   const re=new RegExp("^"+p.replace(/[.+^${}()|[\]\\]/g,"\\$&").replace(/\*/g,".*").replace(/\?/g,".")+"$","i");
   return selCatalogue().filter(x=>re.test(x.id)||re.test(x.id.replace(/^[a-z]+:/,""))).map(x=>x.id);
 }
-function selSelected(){
+function selSelectedBase(){
   const ids=SEL_STATE.ids;
   return selCatalogue().filter(x=>ids.has(x.id));
 }
+function selSelected(...args){return MISSY_HOOKS.invoke("selSelected",this,args,selSelectedBase);}
+
 /* One line may name several patterns: "select img:plate data:cq_values" is two. */
 function selMatchAll(patterns){
   const out=[];
@@ -12490,7 +12637,7 @@ function selTableBlock(doc,rows,note){
                  :`${rows.length} row${rows.length===1?"":"s"}.`,8,false);
   if(note)doc.para(note,8,false);
 }
-async function selBuildReport(){
+async function selBuildReportBase(){
   const chosen=selSelected();
   if(!chosen.length)throw new Error("nothing is selected");
   const doc=pdfDoc();
@@ -12509,16 +12656,16 @@ async function selBuildReport(){
   meta.forEach(([k,v])=>{
     const values=Array.isArray(v)?(v.length?v.map(String):["none"]):[String(v==null?"none":v)];
     const lines=values.flatMap(x=>pdfWrap(x,valueW,size,false));
-    doc.room(line*lines.length+4);
+    doc.room(line+4);
     doc.text(k,size,true);doc.y+=line;
-    lines.forEach(x=>doc.text(x,size,false,labelW));
+    lines.forEach(x=>{if(!doc.room(line)){doc.text(k+" (continued)",size,true);doc.y+=line;}doc.text(x,size,false,labelW);});
   });
   doc.gap(10);doc.rule();doc.gap(4);
   doc.para("Values in this report are the values the instrument software stored. The page recomputes nothing. "
     +"This is not a validated laboratory report and does not replace the laboratory's own record.",9,false);
   doc.gap(8);
   doc.text("Contents",12,true);
-  chosen.forEach((x,i)=>{doc.room(12);doc.text((i+1)+".  "+x.title+"   ["+x.id+"]",9.5,false);});
+  chosen.forEach((x,i)=>doc.para((i+1)+".  "+x.title+"   ["+x.id+"]",9.5,false));
 
   for(const x of chosen){
     doc.page();
@@ -12551,6 +12698,8 @@ async function selBuildReport(){
   SEL_STATE.lastReport={bytes:bytes.length,items:chosen.length,at:new Date().toISOString()};
   return bytes;
 }
+function selBuildReport(...args){return MISSY_HOOKS.invoke("selBuildReport",this,args,selBuildReportBase);}
+
 async function selDownloadReport(name){
   const bytes=await selWithExportNames(selBuildReport);
   download(safeName(name||((sopLabName()||baseName())+"_report"))+".pdf",bytes,"application/pdf");
@@ -12606,10 +12755,12 @@ function cmdTable(rows){
 function cmdStatusLine(){
   return `files ${RUNS.length} · results ${RUNS.reduce((a,r)=>a+((r.wells||[]).length),0)} · selected ${SEL_STATE.ids.size} · profile ${SOP.name} v${SOP.version}`;
 }
-function selOptionRule(id,key){
+function selOptionRuleBase(id,key){
   const exact=SEL_OPTION_RULES[id];
   return (exact&&exact[key])||(id.startsWith("cc:")&&SEL_OPTION_RULES["cc:*"][key])||(id.startsWith("data:")&&SEL_OPTION_RULES["data:*"][key])||(id.startsWith("rec:")&&SEL_OPTION_RULES["rec:*"][key])||(id.startsWith("img:")&&(SEL_OPTION_RULES[id]||SEL_OPTION_RULES["img:*"])[key]);
 }
+function selOptionRule(...args){return MISSY_HOOKS.invoke("selOptionRule",this,args,selOptionRuleBase);}
+
 function selValidateOption(id,key,value){
   const rule=selOptionRule(id,key);if(!rule)throw new Error(`${id} does not accept option ${key}`);
   if(rule==="number"&&!Number.isFinite(Number(value)))throw new Error(`${key} must be numeric`);
@@ -12628,7 +12779,7 @@ function selParseCommand(arg){
   return {ids,opts};
 }
 function selApplyOptions(ids,opts){ids.forEach(id=>{SEL_STATE.options[id]=Object.assign({},SEL_STATE.options[id]||{},opts);});}
-async function cmdExec(raw){
+async function cmdExecBase(raw){
   const line=String(raw||"").trim();
   if(!line||line.startsWith("#"))return;
   const sp=line.indexOf(" "),cmd=(sp<0?line:line.slice(0,sp)).toLowerCase(),arg=sp<0?"":line.slice(sp+1).trim();
@@ -12697,6 +12848,8 @@ async function cmdExec(raw){
     default:cmdPrint("unknown command: "+cmd+"   (help lists them)","warn");
   }
 }
+function cmdExec(...args){return MISSY_HOOKS.invoke("cmdExec",this,args,cmdExecBase);}
+
 async function cmdRunLine(raw){
   if(CMD.busy)return;
   CMD.busy=true;
@@ -12762,7 +12915,7 @@ function cmdInit(){
    file and hand it to the page. */
 const AST={open:false};
 function astEl(id){return document.getElementById(id);}
-function astRender(){
+function astRenderBase(){
   const box=astEl("ast-list");if(!box)return;
   const cat=selCatalogue(),groups=uniq(cat.map(x=>x.group));
   box.innerHTML=groups.map(g=>{
@@ -12795,6 +12948,8 @@ function astRender(){
   astEl("ast-title").value=SEL_STATE.title;
   astCount();
 }
+function astRender(...args){return MISSY_HOOKS.invoke("astRender",this,args,astRenderBase);}
+
 function astCount(){
   const el=astEl("ast-count");if(!el)return;
   const s=selSelected();
@@ -14912,7 +15067,7 @@ function zpcrRawCSV(run,kind){return zpcrRows(run,kind).map(row=>row.map(v=>'"'+
 const zpcrPanel=document.querySelector('#tab-zpcr')||document.createElement('section');zpcrPanel.id='tab-zpcr';zpcrPanel.className='card';zpcrPanel.hidden=true;
 document.querySelector('main').append(zpcrPanel);
 const zpcrNav=document.querySelector('nav button[data-tab=zpcr]')||document.createElement('button');zpcrNav.dataset.tab='zpcr';zpcrNav.textContent='9 · ZPCR raw / hardware';zpcrNav.hidden=true;zpcrNav.onclick=()=>showTab('zpcr');document.querySelector('nav').append(zpcrNav);
-function zpcrPaint(){
+function zpcrPaintBase(){
  const runs=RUNS.filter(r=>r.zpcr);zpcrPanel.hidden=!runs.length;zpcrNav.hidden=!runs.length;if(!runs.length){zpcrPanel.replaceChildren();return;}
  zpcrPanel.innerHTML='<h2>Bio-Rad ZPCR · raw acquisitions and hardware diagnostics</h2><p class="notice warn">REVIEW — raw import only. No stored Cq/Tm or sample calls are established. Optical channels are not dye identities. Sample names and roles are not decoded. Reference positions are separate from the 96 physical wells. Diagnostics have no acceptance limits.</p>';
  const pick=document.createElement('select');pick.id='zpcr-run';pick.setAttribute('aria-label','ZPCR run');runs.forEach((r,i)=>pick.add(new Option(r.file,String(i))));zpcrPanel.append(pick);
@@ -14948,17 +15103,19 @@ function zpcrPaint(){
  }
  pick.onchange=fill;fill();if(RUNS.every(r=>r.zpcr))showTab("zpcr");
 }
+function zpcrPaint(...args){return MISSY_HOOKS.invoke("zpcrPaint",this,args,zpcrPaintBase);}
 
-const zpcrMetaRows=metaRows;metaRows=function(){const rows=zpcrMetaRows();rows.forEach((row,i)=>{const r=RUNS[i];if(r?.zpcr){row.curves_decoded=[...new Set(r.zpcr.reads.map(a=>a.step))].length*96*r.zpcr.reads[0].channels;row.quantification_results='Not computed (raw only)';row.cycles=r.zpcr.reads.length;}});return rows;};
+
+MISSY_HOOKS.use("metaRows","core/biorad/legacy_view_adapter.js:1",1, next => function(){const rows=next();rows.forEach((row,i)=>{const r=RUNS[i];if(r?.zpcr){row.curves_decoded=[...new Set(r.zpcr.reads.map(a=>a.step))].length*96*r.zpcr.reads[0].channels;row.quantification_results='Not computed (raw only)';row.cycles=r.zpcr.reads.length;}});return rows;});
 
 const zpcrStyle=document.createElement('style');zpcrStyle.textContent='#tab-zpcr button{border:1px solid #bdcce0;border-radius:5px;background:#eef3fa;color:#16314c;padding:8px 12px;margin:4px;cursor:pointer}#tab-zpcr select{max-width:100%;padding:7px;border:1px solid #bdcce0;border-radius:5px}#tab-zpcr svg{display:block}#tab-zpcr[hidden]{display:none!important}';document.head.append(zpcrStyle);
 
 /* Feed raw ZPCR hardware metrics through MISSY's existing chart/history engine. */
-const zpcrCCPlatform=ccPlatform;ccPlatform=function(run){return run.zpcr?'CFX':zpcrCCPlatform(run);};
-const zpcrCCProtocol=ccProtocolKey;ccProtocolKey=function(run){return run.zpcr?(run.zpcr.protocolText?'ZPCR protocol SHA-256 '+run.meta.ZPCRProtocolSHA256:'Unknown protocol; source '+run.meta.sourceSHA256):zpcrCCProtocol(run);};
-const zpcrCCDynamic=ccDynamic;ccDynamic=function(run,...args){return run.zpcr?{}:zpcrCCDynamic(run,...args);};
-const zpcrCCStatic=ccStatic;ccStatic=function(run){
- if(!run.zpcr)return zpcrCCStatic(run);
+MISSY_HOOKS.use("ccPlatform","core/biorad/zpcr_control_charts.js:2",2, next => function(run){return run.zpcr?'CFX':next(run);});
+MISSY_HOOKS.use("ccProtocolKey","core/biorad/zpcr_control_charts.js:3",3, next => function(run){return run.zpcr?(run.zpcr.protocolText?'ZPCR protocol SHA-256 '+run.meta.ZPCRProtocolSHA256:'Unknown protocol; source '+run.meta.sourceSHA256):next(run);});
+MISSY_HOOKS.use("ccDynamic","core/biorad/zpcr_control_charts.js:4",4, next => function(run,...args){return run.zpcr?{}:next(run,...args);});
+MISSY_HOOKS.use("ccStatic","core/biorad/zpcr_control_charts.js:5",5, next => function(run){
+ if(!run.zpcr)return next(run);
  const z=run.zpcr,m={};
  const set=(key,variant,value)=>{if(Number.isFinite(value))(m[key]||(m[key]={}))[variant]=value;};
  for(const step of [...new Set(z.reads.map(r=>r.step))]){
@@ -14978,7 +15135,7 @@ const zpcrCCStatic=ccStatic;ccStatic=function(run){
   }
  }
  return m;
-};
+});
 const zpcrChartDefs=[
  ['z_block','Z-H1','hardware','Block temperature at plate reads — mean','°C'],
  ['z_block_sd','Z-H2','hardware','Block temperature at plate reads — within-run SD','°C'],
@@ -14996,9 +15153,9 @@ const zpcrChartDefs=[
  ['z_interval_sd','Z-S2','software','Plate-read interval — SD','s']
 ];
 for(const [id,code,group,title,unit]of zpcrChartDefs){const def={id,code,group,title,unit,inst:['CFX'],type:'i',variants:true,better:'target',status:'B',source:'ZPCR .Plateread / RunInfo.xml; selected acquisition step and raw channel',idea:'One point per run and acquisition-step/channel variant. Raw hardware data only; no Cq, dye correction or sample-result dependence. Temperature samples are taken at plate reads, not continuously. LED values are configuration settings, not measured current in mA. Ambient scalar interpretation is unresolved; integer-encoded values may be quantised.',reading:'Compare the same instrument, protocol, acquisition step, channel and firmware. Different protocol/firmware cohorts withhold statistical limits. Mean/SD during a melt ramp describe the sweep, not temperature accuracy. Read timing has one-second timestamp resolution. Reference deviations have no assigned cause. Statistical control limits are data-derived, not Bio-Rad acceptance limits; no vendor specifications are supplied.'};CC_CHARTS.push(def);CC_BY_ID[id]=def;}
-const zpcrRenderPanel=renderPanel;renderPanel=function(){zpcrRenderPanel();if(CC_STATE.instrument.startsWith('CFX · ')){const box=document.querySelector('#cc-summary');if(box)box.insertAdjacentHTML('afterbegin','<div class="notice warn">Bio-Rad ZPCR hardware control charts: select a matching protocol and acquisition-step/channel variant. No vendor acceptance limits are assigned. Sparse/mixed protocol or firmware history stays collecting a baseline. These charts do not establish Cq, Tm, analytical calls or instrument qualification.</div>');}};
+MISSY_HOOKS.use("renderPanel","core/biorad/zpcr_control_charts.js:6",6, next => function(){next();if(CC_STATE.instrument.startsWith('CFX · ')){const box=document.querySelector('#cc-summary');if(box)box.insertAdjacentHTML('afterbegin','<div class="notice warn">Bio-Rad ZPCR hardware control charts: select a matching protocol and acquisition-step/channel variant. No vendor acceptance limits are assigned. Sparse/mixed protocol or firmware history stays collecting a baseline. These charts do not establish Cq, Tm, analytical calls or instrument qualification.</div>');}});
 const zpcrCCLink=document.createElement('button');zpcrCCLink.textContent='Open ZPCR control charts · Control panel';zpcrCCLink.className='act';zpcrCCLink.onclick=()=>{const r=RUNS.find(r=>r.zpcr);if(!r)return;CC_STATE.instrument=ccInstrumentKey(r);CC_STATE.protocol='';CC_STATE.open='z_block';CC_STATE.variant='';CC_STATE.cache=null;markDirty('panel');showTab('panel');};
-const zpcrBasePaint=zpcrPaint;zpcrPaint=function(){zpcrBasePaint();if(RUNS.some(r=>r.zpcr))zpcrPanel.prepend(zpcrCCLink);};
+MISSY_HOOKS.use("zpcrPaint","core/biorad/zpcr_control_charts.js:7",7, next => function(){next();if(RUNS.some(r=>r.zpcr))zpcrPanel.prepend(zpcrCCLink);});
 
 /* ZPCR charts in the common Console/Command/Assisted/report catalogue. */
 function zpcrChartContext(id){
@@ -15010,31 +15167,35 @@ function zpcrChartContext(id){
  const variants=ccVariants(def,rows),variant=decode(o.variant)||variants[0];if(!variant||!variants.includes(variant))throw Error('No data for this acquisition-step/channel variant');
  return {def,o,key,protocol,rows,variant};
 }
-const zpcrSelCharts=selChartItems;selChartItems=function(){return zpcrSelCharts().map(item=>{if(!item.id.startsWith('cc:z_'))return item;
+MISSY_HOOKS.use('selChartItems','modes/selChartItems',6,next=>function(){return next().map(item=>{if(!item.id.startsWith('cc:z_'))return item;
  return {...item,group:'ZPCR control charts · '+CC_BY_ID[item.id.slice(3)].group,note:CC_BY_ID[item.id.slice(3)].reading+' Instrument, protocol and variant can be selected in Assisted mode or with percent-encoded command options.',ready:()=>{try{return zpcrChartContext(item.id).rows.length>0;}catch(e){return false;}},figure:()=>{
  const {def,o,key,rows,variant}=zpcrChartContext(item.id),old=(SOP.controlCharts||{})[def.id],cfg={...o};delete cfg.instrument;delete cfg.protocol;delete cfg.variant;
  try{SOP.controlCharts=SOP.controlCharts||{};SOP.controlCharts[def.id]={...(old||{}),...cfg};const res=ccCompute(def,rows,variant);return {svg:ccChartSvg(res,`${def.code} ${def.title} · ${key} · ${variant}`),rows:ccChartRows(def,res,variant)};}
  finally{if(old===undefined)delete SOP.controlCharts[def.id];else SOP.controlCharts[def.id]=old;}
- }};});};
-const zpcrOption=selOptionRule;selOptionRule=function(id,key){return id.startsWith('cc:z_')&&['instrument','protocol','variant'].includes(key)?'text':zpcrOption(id,key);};
-function zpcrInventoryRows(){return ccAllRows().filter(r=>r.platform==='CFX').map(r=>({file:r.file,instrument:r.instrument,date:Number.isFinite(r.date)?new Date(r.date).toISOString():'Unknown',source_sha256:r.key,protocol:r.protocol,firmware:r.firmware,status:'Raw hardware monitoring; not vendor QC certification'}));}
-const zpcrDataItems=selDataItems;selDataItems=function(){const rows=zpcrInventoryRows;return zpcrDataItems().concat({id:'data:zpcr_sources',kind:'data',group:'ZPCR provenance',title:'ZPCR source files and hardware-method provenance',note:'Sources: '+rows().map(r=>r.file+' SHA-256 '+r.source_sha256).join('; ')+' Sources represented in the loaded/imported CFX history. Statistics, drift and chart limits are derived by MISSY from raw hardware fields; no vendor acceptance specifications, dye correction, Cq or Tm are supplied.',ready:()=>rows().length>0,rows,file:'zpcr_sources.csv',text:()=>csvOf(rows())});};
-const zpcrSelected=selSelected;selSelected=function(){const chosen=zpcrSelected();if(chosen.some(x=>x.id.startsWith('cc:z_'))&&!chosen.some(x=>x.id==='data:zpcr_sources'))chosen.push(selItem('data:zpcr_sources'));return chosen;};
+ }};});});
+MISSY_HOOKS.use('selOptionRule','modes/selOptionRule',7,next=>function(id,key){return id.startsWith('cc:z_')&&['instrument','protocol','variant'].includes(key)?'text':next(id,key);});
+function zpcrInventoryRowsBase(){return ccAllRows().filter(r=>r.platform==='CFX').map(r=>({file:r.file,instrument:r.instrument,date:Number.isFinite(r.date)?new Date(r.date).toISOString():'Unknown',source_sha256:r.key,protocol:r.protocol,firmware:r.firmware,status:'Raw hardware monitoring; not vendor QC certification'}));}
+function zpcrInventoryRows(...args){return MISSY_HOOKS.invoke('zpcrInventoryRows',this,args,zpcrInventoryRowsBase);}
+MISSY_HOOKS.use('selDataItems','modes/selDataItems',8,next=>function(){const rows=zpcrInventoryRows;return next().concat({id:'data:zpcr_sources',kind:'data',group:'ZPCR provenance',title:'ZPCR source files and hardware-method provenance',note:'Sources: '+rows().map(r=>r.file+' SHA-256 '+r.source_sha256).join('; ')+' Sources represented in the loaded/imported CFX history. Statistics, drift and chart limits are derived by MISSY from raw hardware fields; no vendor acceptance specifications, dye correction, Cq or Tm are supplied.',ready:()=>rows().length>0,rows,file:'zpcr_sources.csv',text:()=>csvOf(rows())});});
+MISSY_HOOKS.use('selSelected','modes/selSelected',9,next=>function(){const chosen=next();if(chosen.some(x=>x.id.startsWith('cc:z_'))&&!chosen.some(x=>x.id==='data:zpcr_sources'))chosen.push(selItem('data:zpcr_sources'));return chosen;});
 function zpcrChooseInstrument(){const insts=ccInstruments().filter(i=>i.platform==='CFX');if(!insts.length)return false;if(!insts.some(i=>i.key===CC_STATE.instrument)){CC_STATE.instrument=insts[0].key;CC_STATE.protocol='';}return true;}
-MG_VIEWS.zpcrcharts={label:'ZPCR control charts',build:()=>zpcrChooseInstrument()?mgPanelItems(true):[]};
+MG_VIEWS.zpcrcharts={label:'ZPCR control charts',build:MISSY_HOOKS.slot('MG_VIEWS.zpcrcharts.build',()=>zpcrChooseInstrument()?mgPanelItems(true):[])};
 const zpcrConsoleButton=document.getElementById('zpcr-console-nav')||document.createElement('button');zpcrConsoleButton.id='zpcr-console-nav';zpcrConsoleButton.textContent='ZPCR charts';zpcrConsoleButton.type='button';zpcrConsoleButton.onclick=()=>{if(!zpcrChooseInstrument())return;MG.scope='zpcrcharts';MG.filter='';mgRefresh();MG.at=0;MG.chart=false;mgRender();};document.getElementById('mg-nav').append(zpcrConsoleButton);
-const zpcrMGOpen=mgOpen;mgOpen=function(){zpcrMGOpen();if(RUNS.length&&RUNS.every(r=>r.zpcr)){MG.scope='zpcrcharts';mgRefresh();MG.at=0;mgRender();}};
-function zpcrReportScript(){const items=selChartItems().filter(x=>x.id.startsWith('cc:z_')&&x.ready()),lines=['# ZPCR hardware monitoring report','lab '+(sopLabName()||'Laboratory name'),'analyst '+(sopAnalystName()||'Analyst name'),'title ZPCR hardware monitoring','clear'];for(const x of items){const c=zpcrChartContext(x.id);lines.push('select '+x.id+' instrument='+encodeURIComponent(c.key)+' variant='+encodeURIComponent(c.variant)+' type=i x=date');}lines.push('select data:zpcr_sources','# Review the selection, then run: pdf ZPCR_hardware_report','selection');return lines.join('\n');}
-const zpcrCmd=cmdExec;cmdExec=async function(raw){if(/^zpcr\s+script$/i.test(String(raw).trim())){cmdScriptToggle(true);cmdEl('cmd-script').value=zpcrReportScript();cmdPrint('ZPCR script loaded. Edit instrument/variant options and laboratory fields before running.','ok');return;}if(/^zpcr\s+console$/i.test(String(raw).trim())){if(!zpcrChooseInstrument())throw Error('Load ZPCR files first');cmdClose();mgOpen();MG.scope='zpcrcharts';mgRefresh();mgRender();return;}return zpcrCmd(raw);};
+MISSY_HOOKS.use('mgOpen','modes/mgOpen',10,next=>function(){next();if(RUNS.length&&RUNS.every(r=>r.zpcr)){MG.scope='zpcrcharts';mgRefresh();MG.at=0;mgRender();}});
+function zpcrReportScriptBase(){const items=selChartItems().filter(x=>x.id.startsWith('cc:z_')&&x.ready()),lines=['# ZPCR hardware monitoring report','lab '+(sopLabName()||'Laboratory name'),'analyst '+(sopAnalystName()||'Analyst name'),'title ZPCR hardware monitoring','clear'];for(const x of items){const c=zpcrChartContext(x.id);lines.push('select '+x.id+' instrument='+encodeURIComponent(c.key)+' variant='+encodeURIComponent(c.variant)+' type=i x=date');}lines.push('select data:zpcr_sources','# Review the selection, then run: pdf ZPCR_hardware_report','selection');return lines.join('\n');}
+function zpcrReportScript(...args){return MISSY_HOOKS.invoke('zpcrReportScript',this,args,zpcrReportScriptBase);}
+MISSY_HOOKS.use('cmdExec','modes/cmdExec',11,next=>async function(raw){if(/^zpcr\s+script$/i.test(String(raw).trim())){cmdScriptToggle(true);cmdEl('cmd-script').value=zpcrReportScript();cmdPrint('ZPCR script loaded. Edit instrument/variant options and laboratory fields before running.','ok');return;}if(/^zpcr\s+console$/i.test(String(raw).trim())){if(!zpcrChooseInstrument())throw Error('Load ZPCR files first');cmdClose();mgOpen();MG.scope='zpcrcharts';mgRefresh();mgRender();return;}return next(raw);});
 CMD_HELP.push(['zpcr script','load the ZPCR report script, including current instrument and variants'],['zpcr console','browse all ZPCR hardware control charts'],['select cc:z_*','include ZPCR charts; instrument/protocol/variant options use percent encoding for spaces']);
 for(const [label,action]of [['ZPCR report script',()=>cmdExec('zpcr script')],['Browse ZPCR charts',()=>cmdExec('zpcr console')]]){const id=label.startsWith('ZPCR report')?'zpcr-command-script':'zpcr-command-console';const b=document.getElementById(id)||document.createElement('button');b.id=id;b.type='button';b.textContent=label;b.onclick=action;cmdEl('cmd-script-toggle').parentElement.append(b);}
-const zpcrAst=astRender;astRender=function(){zpcrAst();for(const label of astEl('ast-list').querySelectorAll('label.ast-item')){const id=label.querySelector('input')?.dataset.id;if(!id?.startsWith('cc:z_'))continue;const controls=document.createElement('div');controls.style.cssText='grid-column:1/-1;display:flex;gap:5px;flex-wrap:wrap';const o=SEL_STATE.options[id]||(SEL_STATE.options[id]={});
+MISSY_HOOKS.use('astRender','modes/astRender',12,next=>function(){next();for(const label of astEl('ast-list').querySelectorAll('label.ast-item')){const id=label.querySelector('input')?.dataset.id;if(!id?.startsWith('cc:z_'))continue;const controls=document.createElement('div');controls.style.cssText='grid-column:1/-1;display:flex;gap:5px;flex-wrap:wrap';const o=SEL_STATE.options[id]||(SEL_STATE.options[id]={});
  const add=(key,title,options)=>{const l=document.createElement('label');l.textContent=title+' ';const s=document.createElement('select');s.setAttribute('aria-label',id+' '+key);options.forEach(([v,t])=>s.add(new Option(t,v)));let current=o[key];try{current=decodeURIComponent(current||'');}catch(e){}if(options.some(([v])=>v===current))s.value=current;s.onclick=e=>e.stopPropagation();s.onchange=e=>{e.stopPropagation();o[key]=encodeURIComponent(s.value);if(key==='instrument'||key==='protocol'){delete o.variant;astRender();}};l.append(s);controls.append(l);return s;};
  const insts=ccInstruments().filter(i=>i.platform==='CFX');if(!insts.length)continue;const inst=add('instrument','Instrument',insts.map(i=>[i.key,i.key]));o.instrument=encodeURIComponent(inst.value);const rows=ccAllRows().filter(r=>r.instrument===inst.value),protos=[...new Set(rows.map(r=>r.protocol))];const proto=add('protocol','Protocol',[['','All protocols (limits withheld if mixed)'],...protos.map(x=>[x,x])]);o.protocol=encodeURIComponent(proto.value);const subset=rows.filter(r=>!proto.value||r.protocol===proto.value),vs=ccVariants(CC_BY_ID[id.slice(3)],subset);const variant=add('variant','Step / channel',vs.map(v=>[v,v]));if(variant.value)o.variant=encodeURIComponent(variant.value);add('type','Chart type',[['i','Individuals'],['ewma','EWMA'],['cusum','CUSUM'],['trend','Trend']]);add('x','X axis',[['order','Run order'],['date','Date']]);label.append(controls);
- }};
+ }});
 
-const zpcrPdfDoc=pdfDoc;pdfDoc=function(){const doc=zpcrPdfDoc();if(SEL_STATE.ids&&[...SEL_STATE.ids].some(id=>id.startsWith('cc:z_'))){const para=doc.para;doc.para=function(text,...args){if(String(text).includes('The page recomputes nothing.'))text='ZPCR hardware fields are decoded from source files. Summaries, drift and statistical chart limits are derived by MISSY. No vendor acceptance limits, Cq, Tm or analytical calls are established. Research Use Only; this report does not replace vendor QC certification or laboratory validation.';return para.call(doc,text,...args);};}return doc;};
 
+
+
+MISSY_HOOKS.use('report.paragraph','zpcr/source-explanation',10,next=>function(text){if(SEL_STATE.ids&&[...SEL_STATE.ids].some(id=>id.startsWith('cc:z_'))&&String(text).includes('The page recomputes nothing.'))text='ZPCR hardware fields are decoded from source files. Summaries, drift and statistical chart limits are derived by MISSY. No vendor acceptance limits, Cq, Tm or analytical calls are established. Research Use Only; this report does not replace vendor QC certification or laboratory validation.';return next(text);});
 
 /* Eligibility and duplicate handling apply to every shared chart consumer. */
 function zpcrContributions(){
@@ -15045,19 +15206,19 @@ function zpcrContributions(){
  }
  return result;
 }
-const zpcrGateRows=ccRowsFromRuns;ccRowsFromRuns=function(...args){const rows=zpcrGateRows(...args),map=zpcrContributions();return rows.flatMap(row=>{if(row.platform!=='CFX')return [row];const run=RUNS.find(r=>r.zpcr&&r.meta.sourceSHA256===row.key),g=map.get(run);if(!g?.eligible)return [];return [{...row,key:g.acquisitionSHA256,sourceSHA256:run.meta.sourceSHA256,acquisitionSHA256:g.acquisitionSHA256,zpcrGateVersion:1,completionSupported:true,sourceAliases:g.sourceAliases}];});};
-const zpcrGateAll=ccAllRows;ccAllRows=function(){const rows=zpcrGateAll(),seen=new Set();return rows.filter(row=>{if(row.platform!=='CFX')return true;if(!row.loaded&&rows.some(r=>r.loaded&&r.platform==='CFX'&&r.acquisitionSHA256===row.acquisitionSHA256))return false;if(row.zpcrGateVersion!==1||!row.completionSupported||!/^[a-f0-9]{64}$/.test(row.acquisitionSHA256||'')||seen.has(row.acquisitionSHA256))return false;seen.add(row.acquisitionSHA256);return true;});};
-const zpcrDarkStatic=ccStatic;ccStatic=function(run){const m=zpcrDarkStatic(run);if(!run.zpcr)return m;for(const step of new Set(run.zpcr.reads.map(r=>r.step))){const reads=run.zpcr.reads.filter(r=>r.step===step);for(let c=0;c<reads[0].channels;c++){const tuples=reads.map(r=>r.darkData?Array.from(r.darkData.slice(c*4,c*4+4)):null);if(tuples.some(t=>!t||t.length!==4||t.some(v=>!Number.isFinite(v))||t[1]<0||t[2]>t[0]||t[0]>t[3]))continue;const variant='Step '+step+' · Raw channel '+(c+1)+' · '+reads.length+' reads';(m.z_dark_sdmax||(m.z_dark_sdmax={}))[variant]=Math.max(...tuples.map(t=>t[1]));(m.z_dark_spanmax||(m.z_dark_spanmax={}))[variant]=Math.max(...tuples.map(t=>t[3]-t[2]));}}return m;};
+MISSY_HOOKS.use("ccRowsFromRuns","core/biorad/zpcr_gates_dark.js:15",15, next => function(...args){const rows=next(...args),map=zpcrContributions();return rows.flatMap(row=>{if(row.platform!=='CFX')return [row];const run=RUNS.find(r=>r.zpcr&&r.meta.sourceSHA256===row.key),g=map.get(run);if(!g?.eligible)return [];return [{...row,key:g.acquisitionSHA256,sourceSHA256:run.meta.sourceSHA256,acquisitionSHA256:g.acquisitionSHA256,zpcrGateVersion:1,completionSupported:true,sourceAliases:g.sourceAliases}];});});
+MISSY_HOOKS.use("ccAllRows","core/biorad/zpcr_gates_dark.js:16",16, next => function(){const rows=next(),seen=new Set();return rows.filter(row=>{if(row.platform!=='CFX')return true;if(!row.loaded&&rows.some(r=>r.loaded&&r.platform==='CFX'&&r.acquisitionSHA256===row.acquisitionSHA256))return false;if(row.zpcrGateVersion!==1||!row.completionSupported||!/^[a-f0-9]{64}$/.test(row.acquisitionSHA256||'')||seen.has(row.acquisitionSHA256))return false;seen.add(row.acquisitionSHA256);return true;});});
+MISSY_HOOKS.use("ccStatic","core/biorad/zpcr_gates_dark.js:17",17, next => function(run){const m=next(run);if(!run.zpcr)return m;for(const step of new Set(run.zpcr.reads.map(r=>r.step))){const reads=run.zpcr.reads.filter(r=>r.step===step);for(let c=0;c<reads[0].channels;c++){const tuples=reads.map(r=>r.darkData?Array.from(r.darkData.slice(c*4,c*4+4)):null);if(tuples.some(t=>!t||t.length!==4||t.some(v=>!Number.isFinite(v))||t[1]<0||t[2]>t[0]||t[0]>t[3]))continue;const variant='Step '+step+' · Raw channel '+(c+1)+' · '+reads.length+' reads';(m.z_dark_sdmax||(m.z_dark_sdmax={}))[variant]=Math.max(...tuples.map(t=>t[1]));(m.z_dark_spanmax||(m.z_dark_spanmax={}))[variant]=Math.max(...tuples.map(t=>t[3]-t[2]));}}return m;});
 for(const [id,code,title]of [['z_dark_sdmax','Z-H15','Dark-reading SD — maximum within acquisition step'],['z_dark_spanmax','Z-H16','Dark-reading min–max spread — maximum within acquisition step']]){
  const def={id,code,title,group:'hardware',inst:['CFX'],type:'i',variants:true,unit:'raw counts',better:'target',status:'B',source:'DARKDATA stored mean/SD/min/max; finite and range-checked',idea:'Maximum stored dark SD or max-minus-min over the selected step, not the SD across run means.',reading:'Compare the same instrument, protocol, firmware, acquisition step, channel and number of reads. Maximum values depend on exposure/read count; variants keep unequal counts separate. A spike is descriptive evidence, not a hardware fault diagnosis. All-zero stored data is not proof of channel inactivity. Only supported completed acquisition sets contribute; byte-identical acquisition copies count once. No vendor acceptance limits are supplied.'};CC_CHARTS.push(def);CC_BY_ID[id]=def;
 }
-const zpcrGateInventory=zpcrInventoryRows;zpcrInventoryRows=function(){const map=zpcrContributions(),rows=RUNS.filter(r=>r.zpcr).map(r=>{const e=r.zpcr.evidence,g=map.get(r);return {file:r.file,instrument:ccInstrumentKey(r),source_sha256:r.meta.sourceSHA256,acquisition_sha256:e?.acquisitionSHA256||'',declared_file:e?.declaredDataFile||'',identifier:e?.identifier||'',completion:g?.completionSupported?'Supported by evidence':'REVIEW',baseline_contribution:g?.eligible?'Included once':'Excluded',duplicate_of_source:g?.duplicateOf||'',status:g?.status||'REVIEW',reasons:(e?.reasons||[]).join('; '),expected_reads:e?.expected?.total??'Unknown',observed_reads:r.zpcr.reads.length};});for(const row of CC_STATE.imported.filter(r=>r.platform==='CFX'))rows.push({file:row.file,instrument:row.instrument,source_sha256:row.sourceSHA256||row.key,acquisition_sha256:row.acquisitionSHA256||'',status:row.zpcrGateVersion===1&&row.completionSupported?'Imported verified-history record; raw bytes not rechecked':'REVIEW: unverified legacy history excluded'});return rows;};
-const zpcrGatePaint=zpcrPaint;zpcrPaint=function(){zpcrGatePaint();const map=zpcrContributions(),runs=RUNS.filter(r=>r.zpcr);if(!runs.length)return;const box=document.createElement('div');box.className='notice warn';box.id='zpcr-eligibility';const summary=document.createElement('p');summary.textContent=runs.length+' ZPCR source archives retained; '+[...map.values()].filter(g=>g.eligible).length+' independent completed acquisition sets eligible for baselines. Completion support is not a vendor QC verdict.';box.append(summary);for(const r of runs){const p=document.createElement('p');p.textContent=r.file+' — '+map.get(r).status+(r.zpcr.evidence.reasons.length?' · '+r.zpcr.evidence.reasons.join('; '):'');box.append(p);}zpcrPanel.prepend(box);};
-const zpcrDarkSources=selDataItems;selDataItems=function(){return zpcrDarkSources().map(item=>item.id==='data:zpcr_sources'?{...item,ready:()=>RUNS.some(r=>r.zpcr)||CC_STATE.imported.some(r=>r.platform==='CFX'),note:'Every source is retained below; duplicate acquisition bytes contribute only once. Unsupported completion/identity evidence and legacy unverified history are excluded from completed-run baselines. This is not vendor QC certification. Full source and acquisition hashes: '+zpcrInventoryRows().map(r=>r.file+' source SHA-256 '+r.source_sha256+' acquisition SHA-256 '+r.acquisition_sha256+' '+r.status).join('; ')}:item);};
+MISSY_HOOKS.use("zpcrInventoryRows","core/biorad/zpcr_gates_dark.js:18",18, next => function(){const map=zpcrContributions(),rows=RUNS.filter(r=>r.zpcr).map(r=>{const e=r.zpcr.evidence,g=map.get(r);return {file:r.file,instrument:ccInstrumentKey(r),source_sha256:r.meta.sourceSHA256,acquisition_sha256:e?.acquisitionSHA256||'',declared_file:e?.declaredDataFile||'',identifier:e?.identifier||'',completion:g?.completionSupported?'Supported by evidence':'REVIEW',baseline_contribution:g?.eligible?'Included once':'Excluded',duplicate_of_source:g?.duplicateOf||'',status:g?.status||'REVIEW',reasons:(e?.reasons||[]).join('; '),expected_reads:e?.expected?.total??'Unknown',observed_reads:r.zpcr.reads.length};});for(const row of CC_STATE.imported.filter(r=>r.platform==='CFX'))rows.push({file:row.file,instrument:row.instrument,source_sha256:row.sourceSHA256||row.key,acquisition_sha256:row.acquisitionSHA256||'',status:row.zpcrGateVersion===1&&row.completionSupported?'Imported verified-history record; raw bytes not rechecked':'REVIEW: unverified legacy history excluded'});return rows;});
+MISSY_HOOKS.use("zpcrPaint","core/biorad/zpcr_gates_dark.js:19",19, next => function(){next();const map=zpcrContributions(),runs=RUNS.filter(r=>r.zpcr);if(!runs.length)return;const box=document.createElement('div');box.className='notice warn';box.id='zpcr-eligibility';const summary=document.createElement('p');summary.textContent=runs.length+' ZPCR source archives retained; '+[...map.values()].filter(g=>g.eligible).length+' independent completed acquisition sets eligible for baselines. Completion support is not a vendor QC verdict.';box.append(summary);for(const r of runs){const p=document.createElement('p');p.textContent=r.file+' — '+map.get(r).status+(r.zpcr.evidence.reasons.length?' · '+r.zpcr.evidence.reasons.join('; '):'');box.append(p);}zpcrPanel.prepend(box);});
+MISSY_HOOKS.use("selDataItems","core/biorad/zpcr_gates_dark.js:20",20, next => function(){return next().map(item=>item.id==='data:zpcr_sources'?{...item,ready:()=>RUNS.some(r=>r.zpcr)||CC_STATE.imported.some(r=>r.platform==='CFX'),note:'Every source is retained below; duplicate acquisition bytes contribute only once. Unsupported completion/identity evidence and legacy unverified history are excluded from completed-run baselines. This is not vendor QC certification. Full source and acquisition hashes: '+zpcrInventoryRows().map(r=>r.file+' source SHA-256 '+r.source_sha256+' acquisition SHA-256 '+r.acquisition_sha256+' '+r.status).join('; ')}:item);});
 
-MG_VIEWS.zpcrcharts.build=function(){if(zpcrChooseInstrument())return mgPanelItems(true);return [mgIt({kind:'summary',sev:'watch',code:'REVIEW',title:'No eligible ZPCR acquisition history',value:'0',unit:'baseline contributions',state:'Raw files remain available. Completion/identity evidence must be supported before finished-run hardware charts can use them. See ZPCR raw / hardware and the source inventory.',rows:zpcrInventoryRows().map(r=>[r.file,r.status])})];};
+MISSY_HOOKS.use('MG_VIEWS.zpcrcharts.build','zpcr_gates_dark.js/MG_VIEWS.zpcrcharts.build',22,next=>function(){if(zpcrChooseInstrument())return mgPanelItems(true);return [mgIt({kind:'summary',sev:'watch',code:'REVIEW',title:'No eligible ZPCR acquisition history',value:'0',unit:'baseline contributions',state:'Raw files remain available. Completion/identity evidence must be supported before finished-run hardware charts can use them. See ZPCR raw / hardware and the source inventory.',rows:zpcrInventoryRows().map(r=>[r.file,r.status])})];});
 
-const zpcrGatePanel=renderPanel;renderPanel=function(){zpcrGatePanel();const runs=RUNS.filter(r=>r.zpcr);if(runs.length){const map=zpcrContributions(),n=[...map.values()].filter(g=>g.eligible).length;document.querySelector('#cc-summary')?.insertAdjacentHTML('afterbegin','<div class="notice warn">ZPCR baseline safeguards: '+runs.length+' source archives retained, '+n+' independent completed acquisition contributions. Duplicates count once; unsupported completion/identity evidence is excluded. Review individual decisions in ZPCR raw / hardware and the report source inventory.</div>');}};
+MISSY_HOOKS.use("renderPanel","core/biorad/zpcr_gates_dark.js:21",21, next => function(){next();const runs=RUNS.filter(r=>r.zpcr);if(runs.length){const map=zpcrContributions(),n=[...map.values()].filter(g=>g.eligible).length;document.querySelector('#cc-summary')?.insertAdjacentHTML('afterbegin','<div class="notice warn">ZPCR baseline safeguards: '+runs.length+' source archives retained, '+n+' independent completed acquisition contributions. Duplicates count once; unsupported completion/identity evidence is excluded. Review individual decisions in ZPCR raw / hardware and the report source inventory.</div>');}});
 /* Descriptive raw diagnostics. No vendor analytical results or inferred log events. */
 function zpcrGuideMetrics(run){
  const out={},put=(id,v,n)=>{if(Number.isFinite(n))(out[id]||(out[id]={}))[v]=n;},z=run.zpcr;
@@ -15086,7 +15247,7 @@ function zpcrGuideMetrics(run){
  }
  return out;
 }
-const zpcrGuideStatic=ccStatic;ccStatic=function(run){const m=zpcrGuideStatic(run);if(run.zpcr)Object.assign(m,zpcrGuideMetrics(run));return m;};
+MISSY_HOOKS.use("ccStatic","core/biorad/zpcr_guide_charts.js:22",22, next => function(run){const m=next(run);if(run.zpcr)Object.assign(m,zpcrGuideMetrics(run));return m;});
 for(const [id,code,title,unit,group]of [
  ['z_early_slope','Z-R1','Raw early-cycle linear slope','raw units/cycle','hardware'],
  ['z_early_residual','Z-R2','Raw early-cycle linear-fit residual RMS','raw units','hardware'],
@@ -15095,54 +15256,57 @@ for(const [id,code,title,unit,group]of [
  ['z_gapmax','Z-R5','Ordered block-temperature absolute increment — maximum','°C/read','software']
 ]){const def={id,code,title,unit,group,inst:['CFX'],type:'i',variants:true,better:'target',status:'B',source:'Stored raw well means and BLOCKTEMP, in source acquisition order',idea:'Descriptive raw diagnostics; select an explicit well/channel/cycle-window variant for early-cycle fits.',reading:'Early-cycle windows are cycles 2–6 or 2–10, with every cycle required exactly once in order. Residual RMS uses denominator n, not a noise estimator. A rising early curve may be amplification, not background drift. Temperature increments preserve source order; steady holds and cooling legitimately produce non-increasing transitions. These are acquisition sampling diagnostics, not measured ramp accuracy, Tm, contamination calls or hardware acceptance tests. Compare only matching protocol, firmware, step and variant. Statistical limits are descriptive and are not vendor specifications. Sample exclusions do not alter raw hardware diagnostics.'};CC_CHARTS.push(def);CC_BY_ID[id]=def;}
 // No parsed log/calibration semantics have independent validation yet. Inventory is evidence, not interpretation.
-const zpcrGuideInventory=zpcrInventoryRows;zpcrInventoryRows=function(){return zpcrGuideInventory().map(row=>({...row,log_insight:'Unavailable: log event semantics not independently verified',calibration_insight:'Unavailable: calibration binary interpretation not independently verified'}));};
-/* Manual explanations and raw endpoint summaries; isolated to ZPCR. */
-let ZPCR_ENDPOINT_N=7;
-const ZPCR_MANUAL_NOTES=[
- 'Raw acquisition data; no vendor Cq/Tm calls.',
- 'Plate names, roles and targets need verified layout provenance.',
- 'Maestro applies a matching plate file during ZPCR conversion.',
- 'Maestro RDML exports include selected baseline processing.',
- 'Read steps stay separate; raw channels are not dye identities.',
- 'Cycles 2–6 / 2–10 are descriptive windows, not Maestro baselines.',
- 'Endpoint: last N reads in source order; no smoothing or correction.',
- '65,000 RFU is a threshold-setting bound, not detector saturation.',
- 'Recovered exports may duplicate an acquisition; copies count once.',
- 'Log/calibration interpretation unavailable without verified decoding.',
- 'Research Use Only; not validated; does not replace vendor QC.'
-];
-function zpcrEndpointMetrics(run,n){
- const m={},z=run.zpcr;if(!Number.isInteger(n)||n<1||n>999)throw Error('Endpoint N must be an integer from 1 to 999');
- for(const step of new Set(z.reads.map(r=>r.step))){const all=z.reads.filter(r=>r.step===step);if(all.length<n)continue;const reads=all.slice(-n);
- for(let c=0;c<all[0].channels;c++)for(let p=0;p<96;p++){
- const ys=reads.map(r=>ZPCR.zpcrWellMean(r,c,Math.floor(p/12),p%12));if(!ys.every(Number.isFinite))continue;
- const q=ZPCR.zpcrStats(ys),v='Step '+step+' · Raw channel '+(c+1)+' · '+String.fromCharCode(65+Math.floor(p/12))+(p%12+1)+' · last '+n+' reads';
- (m.z_endpoint_mean||(m.z_endpoint_mean={}))[v]=q.mean;(m.z_endpoint_span||(m.z_endpoint_span={}))[v]=Math.max(...ys)-Math.min(...ys);
- }}return m;
-}
-const zpcrEndpointStatic=ccStatic;ccStatic=function(run){const m=zpcrEndpointStatic(run);if(run.zpcr)Object.assign(m,zpcrEndpointMetrics(run,ZPCR_ENDPOINT_N));return m;};
-for(const [id,code,title]of [['z_endpoint_mean','Z-R6','Raw endpoint — last-N-read mean'],['z_endpoint_span','Z-R7','Raw endpoint — last-N-read range']]){
- const d={id,code,title,group:'hardware',inst:['CFX'],type:'i',variants:true,unit:'raw units',better:'target',status:'B',source:'Raw well means; ordered final N reads per step',idea:'• Select N, step, raw channel and physical well.\n• Entire window required; no missing-value substitution.',reading:'• Last N reads within one acquisition step.\n• Range = maximum minus minimum; temporal spread, not replicate SD.\n• Ramp steps may vary legitimately.\n• No Maestro endpoint equivalence or vendor limits.\n• Matching protocol, firmware and N required.'};CC_CHARTS.push(d);CC_BY_ID[id]=d;
-}
-function zpcrSetEndpointN(n){n=Number(n);if(!Number.isInteger(n)||n<1||n>999)throw Error('Endpoint N must be an integer from 1 to 999');ZPCR_ENDPOINT_N=n;for(const r of RUNS.filter(r=>r.zpcr))delete r.ccStatic;for(const id of ['cc:z_endpoint_mean','cc:z_endpoint_span']){const o=SEL_STATE.options[id];if(o?.variant){const v=decodeURIComponent(o.variant).replace(/last \d+ reads$/,'last '+n+' reads');o.variant=encodeURIComponent(v);}}if(['z_endpoint_mean','z_endpoint_span'].includes(CC_STATE.open))CC_STATE.variant=String(CC_STATE.variant||'').replace(/last \d+ reads$/,'last '+n+' reads');document.querySelectorAll('input[aria-label="ZPCR endpoint N"]').forEach(e=>e.value=n);CC_STATE.cache=null;markDirty('panel');if(MG.open){mgRefresh();mgRender();}}
-function zpcrEndpointControls(){const box=document.createElement('div');box.className='notice';const label=document.createElement('label');label.textContent='Raw endpoint · last N reads ';const input=document.createElement('input');input.type='number';input.min='1';input.max='999';input.value=ZPCR_ENDPOINT_N;input.setAttribute('aria-label','ZPCR endpoint N');input.style.width='90px';label.append(input);const b=document.createElement('button');b.textContent='Apply endpoint window';b.onclick=()=>{try{zpcrSetEndpointN(input.value);if(typeof astRender==='function'&&document.getElementById('ast-list')?.offsetParent)astRender();if(typeof mgRefresh==='function')mgRefresh();}catch(e){input.setCustomValidity(e.message);input.reportValidity();}};input.oninput=()=>input.setCustomValidity('');box.append(label,b);return box;}
-const zpcrManualPaint=zpcrPaint;zpcrPaint=function(){zpcrManualPaint();if(!RUNS.some(r=>r.zpcr))return;const notes=document.createElement('details');notes.innerHTML='<summary>Raw data · manual notes</summary><ul>'+ZPCR_MANUAL_NOTES.map(t=>'<li>'+esc(t)+'</li>').join('')+'</ul>';zpcrPanel.prepend(notes,zpcrEndpointControls());};
-const zpcrManualAst=astRender;astRender=function(){zpcrManualAst();if(RUNS.some(r=>r.zpcr))astEl('ast-list').prepend(zpcrEndpointControls());};
-const zpcrEndpointMG=mgOpen;mgOpen=function(){zpcrEndpointMG();const nav=document.getElementById('mg-nav');nav.querySelector('#zpcr-console-endpoint')?.remove();if(RUNS.some(r=>r.zpcr)){const c=zpcrEndpointControls();c.id='zpcr-console-endpoint';nav.append(c);}};
-const zpcrManualCmd=cmdExec;cmdExec=async function(raw){const match=String(raw).trim().match(/^zpcr endpoint (\d+)$/i);if(match){zpcrSetEndpointN(match[1]);cmdPrint('• Endpoint window: last '+ZPCR_ENDPOINT_N+' reads.','ok');return;}if(/^zpcr notes$/i.test(String(raw).trim())){ZPCR_MANUAL_NOTES.forEach(t=>cmdPrint('• '+t));return;}return zpcrManualCmd(raw);};
-CMD_HELP.push(['zpcr endpoint N','set raw endpoint window: 1–999 reads'],['zpcr notes','show short manual explanations']);
-const zpcrEndpointScript=zpcrReportScript;zpcrReportScript=function(){return '# Raw endpoint window\nzpcr endpoint '+ZPCR_ENDPOINT_N+'\n'+zpcrEndpointScript();};
-const zpcrManualItems=selChartItems;selChartItems=function(){return zpcrManualItems().map(x=>x.id.startsWith('cc:z_')?{...x,note:'• '+ZPCR_MANUAL_NOTES.slice(0,8).join('\n• ')+'\n• '+CC_BY_ID[x.id.slice(3)].code+' · '+CC_BY_ID[x.id.slice(3)].title+'\n• Matching protocol / firmware / window required.\n• Descriptive values; no vendor acceptance limits.'}:x);};
-const zpcrManualData=selDataItems;selDataItems=function(){return zpcrManualData().map(x=>x.id==='data:zpcr_sources'?{...x,note:'• '+ZPCR_MANUAL_NOTES.join('\n• ')+'\n'+zpcrInventoryRows().map(r=>'• File: '+r.file+'\n• Source SHA-256: '+r.source_sha256+'\n• Acquisition SHA-256: '+r.acquisition_sha256+'\n• '+r.status).join('\n')}:x);};
-const zpcrManualMG=MG_VIEWS.zpcrcharts.build;MG_VIEWS.zpcrcharts.build=function(){const items=zpcrManualMG();return items.map(x=>x.kind==='chart'?{...x,state:'• '+ZPCR_MANUAL_NOTES.slice(0,7).join('\n• ')}:x);};
-// Shared writer, ZPCR reports only: MISSY ink/teal, compact branded page header, white paper.
-let zpcrReportLogo=null;
-const zpcrManualReport=selBuildReport;selBuildReport=async function(){zpcrReportLogo=await svgToJpeg(missySvg(true),3);return zpcrManualReport();};
-const zpcrStyledPdf=pdfDoc;pdfDoc=function(){const d=zpcrStyledPdf();if(!RUNS.some(r=>r.zpcr||r.pcrd||r.cfxRDML))return d;
- const text=d.text,page=d.page;const brand=()=>{if(zpcrReportLogo){const j=zpcrReportLogo;d.image(j.bytes,120,40,j.w,j.h);}else text.call(d,'MISSY  |  RUO  |  NOT VALIDATED',10,true,0,[.06,.18,.30]);d.rule();d.gap(5);};
- brand();d.page=function(){const p=page.call(d);brand();return p;};
- d.text=function(s,size,bold,dx,color){const c=color||(bold?[.06,.18,.30]:[.15,.19,.24]);if(!dx&&((bold&&size>=14)||/^\d+\.\s/.test(String(s)))){for(const line of pdfWrap(String(s),d.width,size,bold)){d.room(size*1.4);text.call(d,line,size,bold,dx,c);}return;}return text.call(d,s,size,bold,dx,c);};
- const para=d.para;d.para=function(s,size,bold){if(String(s).includes('ZPCR hardware fields are decoded')||String(s).includes('The page recomputes nothing.'))s='• Research Use Only.\n• Not validated for clinical or instrument qualification decisions.\n• Does not replace vendor QC certification or laboratory validation.';for(const line of String(s).split('\n'))para.call(d,line.replace(/^• /,'- '),size,bold);};return d;};
+MISSY_HOOKS.use("zpcrInventoryRows","core/biorad/zpcr_guide_charts.js:23",23, next => function(){return next().map(row=>({...row,log_insight:'Unavailable: log event semantics not independently verified',calibration_insight:'Unavailable: calibration binary interpretation not independently verified'}));});
+/* Manual explanations and raw endpoint summaries; isolated to ZPCR. */
+let ZPCR_ENDPOINT_N=7;
+const ZPCR_MANUAL_NOTES=[
+ 'Raw acquisition data; no vendor Cq/Tm calls.',
+ 'Plate names, roles and targets need verified layout provenance.',
+ 'Maestro applies a matching plate file during ZPCR conversion.',
+ 'Maestro RDML exports include selected baseline processing.',
+ 'Read steps stay separate; raw channels are not dye identities.',
+ 'Cycles 2–6 / 2–10 are descriptive windows, not Maestro baselines.',
+ 'Endpoint: last N reads in source order; no smoothing or correction.',
+ '65,000 RFU is a threshold-setting bound, not detector saturation.',
+ 'Recovered exports may duplicate an acquisition; copies count once.',
+ 'Log/calibration interpretation unavailable without verified decoding.',
+ 'Research Use Only; not validated; does not replace vendor QC.'
+];
+function zpcrEndpointMetrics(run,n){
+ const m={},z=run.zpcr;if(!Number.isInteger(n)||n<1||n>999)throw Error('Endpoint N must be an integer from 1 to 999');
+ for(const step of new Set(z.reads.map(r=>r.step))){const all=z.reads.filter(r=>r.step===step);if(all.length<n)continue;const reads=all.slice(-n);
+ for(let c=0;c<all[0].channels;c++)for(let p=0;p<96;p++){
+ const ys=reads.map(r=>ZPCR.zpcrWellMean(r,c,Math.floor(p/12),p%12));if(!ys.every(Number.isFinite))continue;
+ const q=ZPCR.zpcrStats(ys),v='Step '+step+' · Raw channel '+(c+1)+' · '+String.fromCharCode(65+Math.floor(p/12))+(p%12+1)+' · last '+n+' reads';
+ (m.z_endpoint_mean||(m.z_endpoint_mean={}))[v]=q.mean;(m.z_endpoint_span||(m.z_endpoint_span={}))[v]=Math.max(...ys)-Math.min(...ys);
+ }}return m;
+}
+MISSY_HOOKS.use("ccStatic","core/biorad/zpcr_manual_endpoint.js:24",24, next => function(run){const m=next(run);if(run.zpcr)Object.assign(m,zpcrEndpointMetrics(run,ZPCR_ENDPOINT_N));return m;});
+for(const [id,code,title]of [['z_endpoint_mean','Z-R6','Raw endpoint — last-N-read mean'],['z_endpoint_span','Z-R7','Raw endpoint — last-N-read range']]){
+ const d={id,code,title,group:'hardware',inst:['CFX'],type:'i',variants:true,unit:'raw units',better:'target',status:'B',source:'Raw well means; ordered final N reads per step',idea:'• Select N, step, raw channel and physical well.\n• Entire window required; no missing-value substitution.',reading:'• Last N reads within one acquisition step.\n• Range = maximum minus minimum; temporal spread, not replicate SD.\n• Ramp steps may vary legitimately.\n• No Maestro endpoint equivalence or vendor limits.\n• Matching protocol, firmware and N required.'};CC_CHARTS.push(d);CC_BY_ID[id]=d;
+}
+function zpcrSetEndpointNBase(n){n=Number(n);if(!Number.isInteger(n)||n<1||n>999)throw Error('Endpoint N must be an integer from 1 to 999');ZPCR_ENDPOINT_N=n;for(const r of RUNS.filter(r=>r.zpcr))delete r.ccStatic;for(const id of ['cc:z_endpoint_mean','cc:z_endpoint_span']){const o=SEL_STATE.options[id];if(o?.variant){const v=decodeURIComponent(o.variant).replace(/last \d+ reads$/,'last '+n+' reads');o.variant=encodeURIComponent(v);}}if(['z_endpoint_mean','z_endpoint_span'].includes(CC_STATE.open))CC_STATE.variant=String(CC_STATE.variant||'').replace(/last \d+ reads$/,'last '+n+' reads');document.querySelectorAll('input[aria-label="ZPCR endpoint N"]').forEach(e=>e.value=n);CC_STATE.cache=null;markDirty('panel');if(MG.open){mgRefresh();mgRender();}}
+function zpcrSetEndpointN(...args){return MISSY_HOOKS.invoke("zpcrSetEndpointN",this,args,zpcrSetEndpointNBase);}
+
+function zpcrEndpointControls(){const box=document.createElement('div');box.className='notice';const label=document.createElement('label');label.textContent='Raw endpoint · last N reads ';const input=document.createElement('input');input.type='number';input.min='1';input.max='999';input.value=ZPCR_ENDPOINT_N;input.setAttribute('aria-label','ZPCR endpoint N');input.style.width='90px';label.append(input);const b=document.createElement('button');b.textContent='Apply endpoint window';b.onclick=()=>{try{zpcrSetEndpointN(input.value);if(typeof astRender==='function'&&document.getElementById('ast-list')?.offsetParent)astRender();if(typeof mgRefresh==='function')mgRefresh();}catch(e){input.setCustomValidity(e.message);input.reportValidity();}};input.oninput=()=>input.setCustomValidity('');box.append(label,b);return box;}
+MISSY_HOOKS.use("zpcrPaint","core/biorad/zpcr_manual_endpoint.js:25",25, next => function(){next();if(!RUNS.some(r=>r.zpcr))return;const notes=document.createElement('details');notes.innerHTML='<summary>Raw data · manual notes</summary><ul>'+ZPCR_MANUAL_NOTES.map(t=>'<li>'+esc(t)+'</li>').join('')+'</ul>';zpcrPanel.prepend(notes,zpcrEndpointControls());});
+MISSY_HOOKS.use("astRender","core/biorad/zpcr_manual_endpoint.js:26",26, next => function(){next();if(RUNS.some(r=>r.zpcr))astEl('ast-list').prepend(zpcrEndpointControls());});
+MISSY_HOOKS.use("mgOpen","core/biorad/zpcr_manual_endpoint.js:27",27, next => function(){next();const nav=document.getElementById('mg-nav');nav.querySelector('#zpcr-console-endpoint')?.remove();if(RUNS.some(r=>r.zpcr)){const c=zpcrEndpointControls();c.id='zpcr-console-endpoint';nav.append(c);}});
+MISSY_HOOKS.use("cmdExec","core/biorad/zpcr_manual_endpoint.js:28",28, next => async function(raw){const match=String(raw).trim().match(/^zpcr endpoint (\d+)$/i);if(match){zpcrSetEndpointN(match[1]);cmdPrint('• Endpoint window: last '+ZPCR_ENDPOINT_N+' reads.','ok');return;}if(/^zpcr notes$/i.test(String(raw).trim())){ZPCR_MANUAL_NOTES.forEach(t=>cmdPrint('• '+t));return;}return next(raw);});
+CMD_HELP.push(['zpcr endpoint N','set raw endpoint window: 1–999 reads'],['zpcr notes','show short manual explanations']);
+MISSY_HOOKS.use("zpcrReportScript","core/biorad/zpcr_manual_endpoint.js:29",29, next => function(){return '# Raw endpoint window\nzpcr endpoint '+ZPCR_ENDPOINT_N+'\n'+next();});
+MISSY_HOOKS.use("selChartItems","core/biorad/zpcr_manual_endpoint.js:30",30, next => function(){return next().map(x=>x.id.startsWith('cc:z_')?{...x,note:'• '+ZPCR_MANUAL_NOTES.slice(0,8).join('\n• ')+'\n• '+CC_BY_ID[x.id.slice(3)].code+' · '+CC_BY_ID[x.id.slice(3)].title+'\n• Matching protocol / firmware / window required.\n• Descriptive values; no vendor acceptance limits.'}:x);});
+MISSY_HOOKS.use("selDataItems","core/biorad/zpcr_manual_endpoint.js:31",31, next => function(){return next().map(x=>x.id==='data:zpcr_sources'?{...x,note:'• '+ZPCR_MANUAL_NOTES.join('\n• ')+'\n'+zpcrInventoryRows().map(r=>'• File: '+r.file+'\n• Source SHA-256: '+r.source_sha256+'\n• Acquisition SHA-256: '+r.acquisition_sha256+'\n• '+r.status).join('\n')}:x);});
+MISSY_HOOKS.use("MG_VIEWS.zpcrcharts.build","core/biorad/zpcr_manual_endpoint.js:32",32, next => function(){const items=next();return items.map(x=>x.kind==='chart'?{...x,state:'• '+ZPCR_MANUAL_NOTES.slice(0,7).join('\n• ')}:x);});
+// Shared writer, ZPCR reports only: MISSY ink/teal, compact branded page header, white paper.
+let zpcrReportLogo=null;
+MISSY_HOOKS.use("selBuildReport","core/biorad/zpcr_manual_endpoint.js:33",33, next => async function(){zpcrReportLogo=await svgToJpeg(missySvg(true),3);return next();});
+MISSY_HOOKS.use('report.style','missy/print-style',20,next=>function(){
+ const style=next();if(!RUNS.some(r=>r.zpcr||r.pcrd||r.cfxRDML))return style;
+ return {...style,wrapTitle:true,colour:bold=>bold?[.06,.18,.30]:[.15,.19,.24],
+ header(d,text){if(zpcrReportLogo){const j=zpcrReportLogo;d.image(j.bytes,120,40,j.w,j.h);}else text('MISSY  |  RUO  |  NOT VALIDATED',10,true,0,[.06,.18,.30]);d.rule();d.gap(5);},
+ paragraphLines(s){if(String(s).includes('ZPCR hardware fields are decoded')||String(s).includes('The page recomputes nothing.'))s='• Research Use Only.\n• Not validated for clinical or instrument qualification decisions.\n• Does not replace vendor QC certification or laboratory validation.';return String(s).split('\n').map(line=>line.replace(/^• /,'- '));}};
+});
 /* Raw comparisons only: no one-point between-run control charts. */
 const ZC_COLORS=['#2166ac','#d6604d','#238b45','#8e44ad','#b8860b','#008b8b'];
 function zcGroups(){const gates=zpcrContributions(),groups=new Map();for(const r of RUNS.filter(r=>r.zpcr&&gates.get(r)?.eligible)){const k=JSON.stringify([ccInstrumentKey(r),ccProtocolKey(r)]);if(!groups.has(k))groups.set(k,{instrument:ccInstrumentKey(r),protocol:ccProtocolKey(r),runs:[]});groups.get(k).runs.push(r);}for(const g of groups.values())g.runs.sort((a,b)=>a.zpcr.reads[0].epochMs-b.zpcr.reads[0].epochMs);return [...groups.values()];}
@@ -15170,28 +15334,30 @@ function zcFigure(g,step,family){const rr=g.runs.map(run=>({run,reads:run.zpcr.r
 }
 function zcReportItems(selected){const zp=selected.filter(x=>/^cc:z_/.test(x.id));if(!zp.length)return selected;const ids=new Set(zp.map(x=>x.id.slice(3))),all=ids.size===23,result=selected.filter(x=>!/^cc:z_/.test(x.id)),families=[['optical','Raw optical channel comparisons',['z_dark','z_dark_drift','z_reference','z_ref_drift','z_led']],['hardware','Hardware / sampling comparisons',['z_block','z_block_sd','z_sample','z_lid','z_shuttle','z_ambient','z_dark_sdmax','z_dark_spanmax','z_interval','z_interval_sd','z_factory','z_spacing','z_nonincrease','z_gapmax']],['endpoint','Endpoint / early-window comparisons',['z_endpoint_mean','z_endpoint_span','z_early_slope','z_early_residual']]];let n=0;
  for(const g of zcGroups())for(const step of new Set(g.runs.flatMap(r=>r.zpcr.reads.map(t=>t.step))))for(const [family,title,metrics]of families){if(!all&&!metrics.some(id=>ids.has(id)))continue;const hasWindows=g.runs.some(r=>{const a=r.zpcr.reads.filter(t=>t.step===step);return a.length>=ZPCR_ENDPOINT_N||[[2,6],[2,10]].some(([lo,hi])=>{const w=a.filter(t=>t.cycle>=lo&&t.cycle<=hi);return w.length===hi-lo+1&&w.every((t,i)=>t.cycle===lo+i);});});if(family==='endpoint'&&!hasWindows)continue;const note=['• Protocol SHA-256: '+g.protocol.replace('ZPCR protocol SHA-256 ',''),'• Step '+step+' · All six stored raw channels · Per-well diagnostics: A1.','• Raw comparisons; no control limits / single-point control charts.','• Endpoint N='+ZPCR_ENDPOINT_N+'; insufficient windows withheld.',...g.runs.filter(r=>r.zpcr.reads.some(t=>t.step===step)).map((r,i)=>'• R'+(i+1)+': '+r.file)];if(!hasWindows)note.push('• Endpoint / early summaries unavailable: complete windows absent.');if(family==='hardware')note.push('• Temperature colors: block / sample field / lid / shuttle / ambient.');result.push({id:'zpcr:compare:'+n++,kind:'image',title:title+' | '+g.instrument+' | step '+step,note:note.join('\n'),ready:()=>true,figure:()=>zcFigure(g,step,family)});}return result;}
-let ZPCR_REPORT_EXPAND=false;const zpcrScopeSelected=selSelected;selSelected=function(){const s=zpcrScopeSelected();return ZPCR_REPORT_EXPAND?zcReportItems(s):s;};
-const zpcrScopeBuild=selBuildReport;selBuildReport=async function(){const previous=ZPCR_REPORT_EXPAND;ZPCR_REPORT_EXPAND=true;try{return await zpcrScopeBuild();}finally{ZPCR_REPORT_EXPAND=previous;}};
-const zpcrScopeAst=astRender;astRender=function(){zpcrScopeAst();if(RUNS.some(r=>r.zpcr)){const p=document.createElement('p');p.className='notice';p.textContent='• PDF: comparative raw channels per SN / protocol / step. • Endpoint N=7 by default. • A1 for per-well panels. • No single-point control charts.';astEl('ast-list').prepend(p);}};
+let ZPCR_REPORT_EXPAND=false;MISSY_HOOKS.use("selSelected","core/biorad/zpcr_compact_report.js:34",34, next => function(){const s=next();return ZPCR_REPORT_EXPAND?zcReportItems(s):s;});
+MISSY_HOOKS.use("selBuildReport","core/biorad/zpcr_compact_report.js:35",35, next => async function(){const previous=ZPCR_REPORT_EXPAND;ZPCR_REPORT_EXPAND=true;try{return await next();}finally{ZPCR_REPORT_EXPAND=previous;}});
+MISSY_HOOKS.use("astRender","core/biorad/zpcr_compact_report.js:36",36, next => function(){next();if(RUNS.some(r=>r.zpcr)){const p=document.createElement('p');p.className='notice';p.textContent='• PDF: comparative raw channels per SN / protocol / step. • Endpoint N=7 by default. • A1 for per-well panels. • No single-point control charts.';astEl('ast-list').prepend(p);}});
 CMD_HELP.push(['ZPCR PDF scope','compact raw-channel comparisons per SN/protocol/step; no single-point control charts']);
 /* One raw comparison catalogue for Console, Command, Assisted and PDF. */
-function zcModeItems(){return zcReportItems(CC_CHARTS.filter(d=>d.id.startsWith('z_')).map(d=>({id:'cc:'+d.id}))).map((item,i)=>{const hash=(item.note.match(/Protocol SHA-256: ([a-f0-9]+)/)||[])[1]||'unknown';return {...item,id:'img:zc_'+i,kind:'image',group:'ZPCR comparative channels',title:item.title+' | P '+hash.slice(0,12),file:'zpcr_comparison_'+i+'.svg',note:item.note+'\n• Channels combined; protocols separate. • Endpoint N='+ZPCR_ENDPOINT_N+'.',ready:()=>true};});}
+function zcModeItemsBase(){return zcReportItems(CC_CHARTS.filter(d=>d.id.startsWith('z_')).map(d=>({id:'cc:'+d.id}))).map((item,i)=>{const hash=(item.note.match(/Protocol SHA-256: ([a-f0-9]+)/)||[])[1]||'unknown';return {...item,id:'img:zc_'+i,kind:'image',group:'ZPCR comparative channels',title:item.title+' | P '+hash.slice(0,12),file:'zpcr_comparison_'+i+'.svg',note:item.note+'\n• Channels combined; protocols separate. • Endpoint N='+ZPCR_ENDPOINT_N+'.',ready:()=>true};});}
+function zcModeItems(...args){return MISSY_HOOKS.invoke('zcModeItems',this,args,zcModeItemsBase);}
+
 function zcSyncGraphs(){const items=zcModeItems();for(let i=GRAPHS.length-1;i>=0;i--)if(GRAPHS[i].id.startsWith('zc_compare_'))GRAPHS.splice(i,1);for(const item of items)GRAPHS.push({id:'zc_compare_'+item.id.slice(7),title:item.title,group:item.group,scope:'all',opts:[],note:item.note,render:()=>item.figure()});return items;}
-const zcModeCharts=selChartItems;selChartItems=function(){return zcModeCharts().filter(x=>!x.id.startsWith('cc:z_'));};
-const zcModeImages=selImageItems;selImageItems=function(){return zcModeImages().filter(x=>!x.id.startsWith('img:zc_compare_')).concat(zcModeItems());};
-const zcModeSelected=selSelected;selSelected=function(){const items=zcModeSelected();if(items.some(x=>x.id.startsWith('img:zc_'))&&!items.some(x=>x.id==='data:zpcr_sources'))items.push(selItem('data:zpcr_sources'));return items;};
-MG_VIEWS.zpcrcharts.label='ZPCR comparative channels';MG_VIEWS.zpcrcharts.build=function(){const items=zcSyncGraphs();if(!items.length)return [mgIt({kind:'summary',sev:'watch',title:'No verified ZPCR acquisitions',state:'• Raw files remain available. • Completion / identity evidence required for comparisons.'})];return items.map((item,i)=>mgIt({kind:'graph',sev:'none',pict:MG_PICT.graph,kindWord:'raw comparison',code:'ZC'+(i+1),title:item.title,graphId:'zc_compare_'+item.id.slice(7),runIndex:0,limits:'Separate SN / protocol / step · endpoint N='+ZPCR_ENDPOINT_N,state:item.note,evidence:'• Raw channels compared. • No control limits or single-point control charts.',rows:[],actions:[{key:'3',label:'Open comparative graphs',cmd:'chart'}]}));};
-const zcModePanelItems=mgPanelItems;mgPanelItems=function(...args){return zcModePanelItems(...args).filter(x=>!String(x.chartId||'').startsWith('z_'));};
-const zcModePaint=zpcrPaint;zpcrPaint=function(){zcModePaint();zcSyncGraphs();};
-const zcModeRender=mgRender;mgRender=function(){zcModeRender();if(String(mgItem()?.graphId||'').startsWith('zc_compare_'))document.querySelector('#mg-actions [data-cmd="next run"]')?.remove();};
-const zcModeGo=mgGo;mgGo=function(step){zcModeGo(step);if(String(mgItem()?.graphId||'').startsWith('zc_compare_'))MG.chart=true;};
-const zcModePanelBuild=MG_VIEWS.panel.build;MG_VIEWS.panel.build=function(){const all=ccInstruments(),chosen=all.find(i=>i.key===CC_STATE.instrument)||all[0];return chosen?.platform==='CFX'?MG_VIEWS.zpcrcharts.build():zcModePanelBuild();};
+MISSY_HOOKS.use("selChartItems","core/biorad/zpcr_comparative_modes.js:37",37, next => function(){return next().filter(x=>!x.id.startsWith('cc:z_'));});
+MISSY_HOOKS.use("selImageItems","core/biorad/zpcr_comparative_modes.js:38",38, next => function(){return next().filter(x=>!x.id.startsWith('img:zc_compare_')).concat(zcModeItems());});
+MISSY_HOOKS.use("selSelected","core/biorad/zpcr_comparative_modes.js:39",39, next => function(){const items=next();if(items.some(x=>x.id.startsWith('img:zc_'))&&!items.some(x=>x.id==='data:zpcr_sources'))items.push(selItem('data:zpcr_sources'));return items;});
+MG_VIEWS.zpcrcharts.label='ZPCR comparative channels';MISSY_HOOKS.use('MG_VIEWS.zpcrcharts.build','zpcr_comparative_modes.js/MG_VIEWS.zpcrcharts.build',47,next=>function(){const items=zcSyncGraphs();if(!items.length)return [mgIt({kind:'summary',sev:'watch',title:'No verified ZPCR acquisitions',state:'• Raw files remain available. • Completion / identity evidence required for comparisons.'})];return items.map((item,i)=>mgIt({kind:'graph',sev:'none',pict:MG_PICT.graph,kindWord:'raw comparison',code:'ZC'+(i+1),title:item.title,graphId:'zc_compare_'+item.id.slice(7),runIndex:0,limits:'Separate SN / protocol / step · endpoint N='+ZPCR_ENDPOINT_N,state:item.note,evidence:'• Raw channels compared. • No control limits or single-point control charts.',rows:[],actions:[{key:'3',label:'Open comparative graphs',cmd:'chart'}]}));});
+MISSY_HOOKS.use("mgPanelItems","core/biorad/zpcr_comparative_modes.js:40",40, next => function(...args){return next(...args).filter(x=>!String(x.chartId||'').startsWith('z_'));});
+MISSY_HOOKS.use("zpcrPaint","core/biorad/zpcr_comparative_modes.js:41",41, next => function(){next();zcSyncGraphs();});
+MISSY_HOOKS.use("mgRender","core/biorad/zpcr_comparative_modes.js:42",42, next => function(){next();if(String(mgItem()?.graphId||'').startsWith('zc_compare_'))document.querySelector('#mg-actions [data-cmd="next run"]')?.remove();});
+MISSY_HOOKS.use("mgGo","core/biorad/zpcr_comparative_modes.js:43",43, next => function(step){next(step);if(String(mgItem()?.graphId||'').startsWith('zc_compare_'))MG.chart=true;});
+MISSY_HOOKS.use("MG_VIEWS.panel.build","core/biorad/zpcr_comparative_modes.js:44",44, next => function(){const all=ccInstruments(),chosen=all.find(i=>i.key===CC_STATE.instrument)||all[0];return chosen?.platform==='CFX'?MG_VIEWS.zpcrcharts.build():next();});
 function zcBrowse(id){zcSyncGraphs();cmdClose();astClose();mgOpen();MG.scope='zpcrcharts';mgRefresh();const n=id?MG.queue.findIndex(x=>x.graphId==='zc_compare_'+id.slice(7)):0;MG.at=Math.max(0,n);MG.chart=true;MG.zoom=1;MG.panX=0;MG.panY=0;mgRender();}
-zpcrReportScript=function(){return ['# Comparative channels: SN / protocol / step stay separate','zpcr endpoint '+ZPCR_ENDPOINT_N,'lab '+(sopLabName()||'Laboratory name'),'analyst '+(sopAnalystName()||'Analyst name'),'title MISSY ZPCR comparative channels','clear',...zcModeItems().map(x=>'select '+x.id),'select data:zpcr_sources','# Preview: zpcr compare','selection'].join('\n');};
-const zcModeCmd=cmdExec;cmdExec=async function(raw){if(/^zpcr\s+(compare|console)$/i.test(String(raw).trim())){zcBrowse();return;}return zcModeCmd(raw);};
+MISSY_HOOKS.use('zpcrReportScript','zpcr_comparative_modes.js/zpcrReportScript',47,next=>function(){return ['# Comparative channels: SN / protocol / step stay separate','zpcr endpoint '+ZPCR_ENDPOINT_N,'lab '+(sopLabName()||'Laboratory name'),'analyst '+(sopAnalystName()||'Analyst name'),'title MISSY ZPCR comparative channels','clear',...zcModeItems().map(x=>'select '+x.id),'select data:zpcr_sources','# Preview: zpcr compare','selection'].join('\n');});
+MISSY_HOOKS.use("cmdExec","core/biorad/zpcr_comparative_modes.js:45",45, next => async function(raw){if(/^zpcr\s+(compare|console)$/i.test(String(raw).trim())){zcBrowse();return;}return next(raw);});
 CMD_HELP.push(['zpcr compare','open comparative channels; zoom / pan / Light / Dark'],['zpcr script','select comparative channel graphs for reports']);
 for(const h of CMD_HELP){if(h[0]==='zpcr console')h[1]='browse comparative channels; protocols stay separate';if(h[0]==='select cc:z_*'){h[0]='select img:zc_<number>';h[1]='select a comparative graph using the generated script';}}
-const zcModeAst=astRender;astRender=function(){zcModeAst();for(const label of astEl('ast-list').querySelectorAll('label.ast-item')){const id=label.querySelector('input')?.dataset.id;if(!id?.startsWith('img:zc_'))continue;const button=document.createElement('button');button.type='button';button.textContent='Preview comparative graph';button.onclick=e=>{e.preventDefault();e.stopPropagation();zcBrowse(id);};label.append(button);}};
+MISSY_HOOKS.use("astRender","core/biorad/zpcr_comparative_modes.js:46",46, next => function(){next();for(const label of astEl('ast-list').querySelectorAll('label.ast-item')){const id=label.querySelector('input')?.dataset.id;if(!id?.startsWith('img:zc_'))continue;const button=document.createElement('button');button.type='button';button.textContent='Preview comparative graph';button.onclick=e=>{e.preventDefault();e.stopPropagation();zcBrowse(id);};label.append(button);}});
 const zcModeCommandButton=document.createElement('button');zcModeCommandButton.type='button';zcModeCommandButton.textContent='Browse comparative channels';zcModeCommandButton.onclick=()=>zcBrowse();cmdEl('cmd-script-toggle').parentElement.append(zcModeCommandButton);
 zcSyncGraphs();
 zpcrCCLink.textContent='Open ZPCR comparative channels';zpcrCCLink.onclick=()=>zcBrowse();zpcrConsoleButton.textContent='ZPCR comparisons';
@@ -15213,10 +15379,10 @@ function zsSingleFigure(panel,acq){const E=esc,temp=panel.title==='Temperature f
  for(const s of ss){const color=ZC_COLORS[s.channel],valid=s.points.filter(v=>Number.isFinite(v[0])&&Number.isFinite(v[1]));if(panel.bars){const bw=W/6/Math.max(1,panel.runs)*.65;for(const v of valid){const bx=X(v[0])+(s.run-(panel.runs-1)/2)*bw,zero=Y(0),py=Y(v[1]);svg+=`<rect x="${bx-bw/2}" y="${Math.min(zero,py)}" width="${bw}" height="${Math.max(1,Math.abs(zero-py))}" fill="${color}" opacity="${s.run%2?.45:.9}"><title>R${s.run+1}, ${E(labels[s.channel])}: ${v[1]}</title></rect>`;}}else{let path='',open=false;for(const v of s.points){if(!Number.isFinite(v[0])||!Number.isFinite(v[1])){open=false;continue;}path+=(open?'L':'M')+X(v[0])+' '+Y(v[1])+' ';open=true;}svg+=`<path d="${path}" fill="none" stroke="${color}" stroke-width="3" stroke-dasharray="${s.run%2?'9 5':''}"/>`;for(const v of valid)svg+=`<circle cx="${X(v[0])}" cy="${Y(v[1])}" r="2.5" fill="${color}"><title>R${s.run+1}, ${E(runOnly?'run series':labels[s.channel])}, read/position ${v[0]}: ${v[1]}</title></circle>`;}}
  return {svg:svg+'</g></svg>',rows:[],panels:[panel]};
 }
-zcModeItems=function(){const key=ZPCR_ENDPOINT_N+'|'+RUNS.filter(r=>r.zpcr).map(r=>r.meta.sourceSHA256+':'+r.zpcr.evidence?.completionSupported).join('|');if(key===ZS_CACHE.key)return ZS_CACHE.items;const items=[];let gi=0;for(const g of zcGroups())for(const step of new Set(g.runs.flatMap(r=>r.zpcr.reads.map(t=>t.step)))){const acq=zsAcquisition(g,step),hash=g.protocol.replace('ZPCR protocol SHA-256 ','');for(const family of ['optical','hardware','endpoint']){const base=zcFigure(g,step,family);base.panels.forEach((panel,pi)=>{const id='img:zc_s_'+gi+'_'+family+'_'+pi,reportKey=gi+'_'+family;items.push({id,kind:'image',group:'ZPCR · '+panel.title.replace(/ · A1.*/,''),title:panel.title+' | '+g.instrument+' | group '+step+' | P '+hash.slice(0,12),file:'zpcr_'+reportKey+'_'+pi+'.svg',acquisitionLabel:acq.label,measurementKey:family+'_'+pi,contextKey:String(gi),reportKey,reportPanel:panel,reportAcquisition:acq,ready:()=>true,note:['• '+acq.label,'• Acquisition group '+step+' is a stored file ID, not a cycle number.','• Labels describe observed block temperatures, not a verified protocol phase.','• Protocol SHA-256: '+hash,'• Per-well diagnostics: A1. • No control limits.',...acq.runs.map((r,i)=>'• R'+(i+1)+': '+r.file)].join('\n'),figure:()=>zsSingleFigure(panel,acq)});});}gi++;}ZS_CACHE={key,items};return items;};
+MISSY_HOOKS.use('zcModeItems','zpcr_single_measurement.js/zcModeItems',48,next=>function(){const key=ZPCR_ENDPOINT_N+'|'+RUNS.filter(r=>r.zpcr).map(r=>r.meta.sourceSHA256+':'+r.zpcr.evidence?.completionSupported).join('|');if(key===ZS_CACHE.key)return ZS_CACHE.items;const items=[];let gi=0;for(const g of zcGroups())for(const step of new Set(g.runs.flatMap(r=>r.zpcr.reads.map(t=>t.step)))){const acq=zsAcquisition(g,step),hash=g.protocol.replace('ZPCR protocol SHA-256 ','');for(const family of ['optical','hardware','endpoint']){const base=zcFigure(g,step,family);base.panels.forEach((panel,pi)=>{const id='img:zc_s_'+gi+'_'+family+'_'+pi,reportKey=gi+'_'+family;items.push({id,kind:'image',group:'ZPCR · '+panel.title.replace(/ · A1.*/,''),title:panel.title+' | '+g.instrument+' | group '+step+' | P '+hash.slice(0,12),file:'zpcr_'+reportKey+'_'+pi+'.svg',acquisitionLabel:acq.label,measurementKey:family+'_'+pi,contextKey:String(gi),reportKey,reportPanel:panel,reportAcquisition:acq,ready:()=>true,note:['• '+acq.label,'• Acquisition group '+step+' is a stored file ID, not a cycle number.','• Labels describe observed block temperatures, not a verified protocol phase.','• Protocol SHA-256: '+hash,'• Per-well diagnostics: A1. • No control limits.',...acq.runs.map((r,i)=>'• R'+(i+1)+': '+r.file)].join('\n'),figure:()=>zsSingleFigure(panel,acq)});});}gi++;}ZS_CACHE={key,items};return items;});
 function zsCompactFamily(items){const first=items[0],acq=first.reportAcquisition,panels=items.map(x=>x.reportPanel);let svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 '+(85+Math.ceil(panels.length/2)*265)+'"><rect width="1100" height="100%" fill="white"/><g font-family="Arial,sans-serif" fill="#17344e">';for(let c=0;c<6;c++)svg+=`<rect x="${12+c*122}" y="8" width="16" height="16" fill="${ZC_COLORS[c]}"/><text x="${34+c*122}" y="22" font-size="16">Ch ${c+1}</text>`;svg+='<text x="12" y="45" font-size="14">Optical-channel colors above · R1 solid / opaque · R2 dashed / translucent</text>';panels.forEach((p,i)=>{const x=i%2*550,y=65+Math.floor(i/2)*265,temp=p.title==='Temperature fields at reads';svg+=zcPlot(temp?{...p,unit:''}:p,x,y);if(temp)ZS_FIELDS.forEach((s,k)=>svg+=`<text x="${x+12+k*99}" y="${y+43}" fill="${ZC_COLORS[k]}" font-size="13">${s}</text>`);});svg+='</g></svg>';return {id:'img:zc_pdf_'+first.reportKey,kind:'image',title:'Raw comparisons | '+acq.instrument+' | group '+acq.step,note:first.note+'\n• Endpoint N='+ZPCR_ENDPOINT_N+'.',figure:()=>({svg,rows:[]})};}
-const zsSelected=selSelected;selSelected=function(){const items=zsSelected();if(!ZPCR_REPORT_EXPAND)return items;const result=items.filter(x=>!x.reportKey),groups=new Map();for(const x of items.filter(x=>x.reportKey)){if(!groups.has(x.reportKey))groups.set(x.reportKey,[]);groups.get(x.reportKey).push(x);}for(const group of groups.values()){if(group.length===1){result.push(group[0]);continue;}if(group.every(x=>!x.reportPanel.series.some(s=>s.points.some(p=>Number.isFinite(p[1])))))continue;result.push(zsCompactFamily(group));}return result;};
-const zsRender=mgRender;mgRender=function(){zsRender();const active=String(mgItem()?.graphId||'').startsWith('zc_compare_');document.getElementById('mg').classList.toggle('zc-single-mode',active);const existing=document.getElementById('zc-single-picker');if(existing)existing.hidden=!active;if(!active)return;const items=zcModeItems(),current=items.find(x=>'zc_compare_'+x.id.slice(7)===mgItem().graphId);if(!current)return;const cap=document.getElementById('mg-gcap');if(cap)cap.textContent=current.reportAcquisition.instrument+' | Protocol '+current.reportAcquisition.protocol.slice(-64,-52)+' | Acquisition group '+current.reportAcquisition.step;document.getElementById('mg-count').textContent=current.acquisitionLabel;let bar=document.getElementById('zc-single-picker');if(!bar){bar=document.createElement('div');bar.id='zc-single-picker';document.getElementById('mg-nav').append(bar);}bar.hidden=false;const endpoint=document.getElementById('zpcr-console-endpoint');if(endpoint){if(endpoint.nextElementSibling!==bar)bar.parentNode.insertBefore(endpoint,bar);const label=endpoint.querySelector('label');if(label?.firstChild?.nodeType===3)label.firstChild.textContent='Endpoint N ';endpoint.querySelector('button').textContent='Apply N';endpoint.style.flexWrap='nowrap';endpoint.style.maxWidth='230px';}bar.replaceChildren();const add=(label,values,currentValue,fn)=>{const l=document.createElement('label');l.textContent=label+' ';const s=document.createElement('select');s.setAttribute('aria-label',label);values.forEach(([v,t])=>s.add(new Option(t,v)));s.value=currentValue;s.onchange=()=>fn(s.value);l.append(s);bar.append(l);};const go=item=>{const i=MG.queue.findIndex(x=>x.graphId==='zc_compare_'+item.id.slice(7));if(i>=0){MG.at=i;MG.zoom=1;MG.panX=0;MG.panY=0;mgRender();}};add('Measurement',items.filter(x=>x.contextKey===current.contextKey).map(x=>[x.measurementKey,x.reportPanel.title]),current.measurementKey,v=>go(items.find(x=>x.contextKey===current.contextKey&&x.measurementKey===v)));add('Acquisition group',[...new Map(items.map(x=>[x.contextKey,x])).values()].map(x=>[x.contextKey,x.reportAcquisition.instrument+' · group '+x.reportAcquisition.step+' · P '+x.reportAcquisition.protocol.slice(-64,-52)+' · '+x.acquisitionLabel]),current.contextKey,v=>go(items.find(x=>x.contextKey===v&&x.measurementKey===current.measurementKey)||items.find(x=>x.contextKey===v)));};
+MISSY_HOOKS.use("selSelected","core/biorad/zpcr_single_measurement.js:47",47, next => function(){const items=next();if(!ZPCR_REPORT_EXPAND)return items;const result=items.filter(x=>!x.reportKey),groups=new Map();for(const x of items.filter(x=>x.reportKey)){if(!groups.has(x.reportKey))groups.set(x.reportKey,[]);groups.get(x.reportKey).push(x);}for(const group of groups.values()){if(group.length===1){result.push(group[0]);continue;}if(group.every(x=>!x.reportPanel.series.some(s=>s.points.some(p=>Number.isFinite(p[1])))))continue;result.push(zsCompactFamily(group));}return result;});
+MISSY_HOOKS.use("mgRender","core/biorad/zpcr_single_measurement.js:48",48, next => function(){next();const active=String(mgItem()?.graphId||'').startsWith('zc_compare_');document.getElementById('mg').classList.toggle('zc-single-mode',active);const existing=document.getElementById('zc-single-picker');if(existing)existing.hidden=!active;if(!active)return;const items=zcModeItems(),current=items.find(x=>'zc_compare_'+x.id.slice(7)===mgItem().graphId);if(!current)return;const cap=document.getElementById('mg-gcap');if(cap)cap.textContent=current.reportAcquisition.instrument+' | Protocol '+current.reportAcquisition.protocol.slice(-64,-52)+' | Acquisition group '+current.reportAcquisition.step;document.getElementById('mg-count').textContent=current.acquisitionLabel;let bar=document.getElementById('zc-single-picker');if(!bar){bar=document.createElement('div');bar.id='zc-single-picker';document.getElementById('mg-nav').append(bar);}bar.hidden=false;const endpoint=document.getElementById('zpcr-console-endpoint');if(endpoint){if(endpoint.nextElementSibling!==bar)bar.parentNode.insertBefore(endpoint,bar);const label=endpoint.querySelector('label');if(label?.firstChild?.nodeType===3)label.firstChild.textContent='Endpoint N ';endpoint.querySelector('button').textContent='Apply N';endpoint.style.flexWrap='nowrap';endpoint.style.maxWidth='230px';}bar.replaceChildren();const add=(label,values,currentValue,fn)=>{const l=document.createElement('label');l.textContent=label+' ';const s=document.createElement('select');s.setAttribute('aria-label',label);values.forEach(([v,t])=>s.add(new Option(t,v)));s.value=currentValue;s.onchange=()=>fn(s.value);l.append(s);bar.append(l);};const go=item=>{const i=MG.queue.findIndex(x=>x.graphId==='zc_compare_'+item.id.slice(7));if(i>=0){MG.at=i;MG.zoom=1;MG.panX=0;MG.panY=0;mgRender();}};add('Measurement',items.filter(x=>x.contextKey===current.contextKey).map(x=>[x.measurementKey,x.reportPanel.title]),current.measurementKey,v=>go(items.find(x=>x.contextKey===current.contextKey&&x.measurementKey===v)));add('Acquisition group',[...new Map(items.map(x=>[x.contextKey,x])).values()].map(x=>[x.contextKey,x.reportAcquisition.instrument+' · group '+x.reportAcquisition.step+' · P '+x.reportAcquisition.protocol.slice(-64,-52)+' · '+x.acquisitionLabel]),current.contextKey,v=>go(items.find(x=>x.contextKey===v&&x.measurementKey===current.measurementKey)||items.find(x=>x.contextKey===v)));});
 const zsCss=document.createElement('style');zsCss.textContent='#mg.zc-single-mode #mg-nav{flex-wrap:wrap;overflow-x:visible;align-items:center;background:#0b111b;color:#cfe0f5}#mg.zc-single-mode #mg-nav button{padding:6px 8px;font-size:12px}#mg-nav #zc-single-picker{display:grid;grid-template-columns:minmax(240px,1fr) minmax(350px,2fr);gap:10px;flex:0 0 100%;padding:6px}#zc-single-picker[hidden]{display:none!important}#zc-single-picker label{display:flex;align-items:center;gap:7px;font-size:13px;color:#cfe0f5;min-width:0}#zc-single-picker select{flex:1;min-width:0;width:100%;padding:7px}#mg.theme-dark #zc-single-picker select{background:#111c2a;color:#dbe5f5;border:1px solid #334155}@media(max-width:700px){#mg-nav #zc-single-picker{grid-template-columns:1fr}}';document.head.append(zsCss);
 zcSyncGraphs();
 /* Shared graph viewport for Console, Command and Assisted previews. */
@@ -15224,7 +15390,7 @@ let GRAPH_CHROME_HIDDEN=false;
 const graphToggle=document.createElement('button');graphToggle.id='mg-chrome-toggle';graphToggle.type='button';graphToggle.hidden=true;document.getElementById('mg').append(graphToggle);
 function graphChromePaint(){const root=document.getElementById('mg'),active=MG.open&&root.classList.contains('charting');root.classList.toggle('mg-focus',active&&GRAPH_CHROME_HIDDEN);graphToggle.hidden=!active;graphToggle.textContent=GRAPH_CHROME_HIDDEN?'Show header / controls':'Hide header / controls';graphToggle.title=graphToggle.textContent+' (H)';graphToggle.setAttribute('aria-expanded',String(!GRAPH_CHROME_HIDDEN));graphToggle.setAttribute('aria-controls','mg-top mg-actions');}
 graphToggle.onclick=()=>{GRAPH_CHROME_HIDDEN=!GRAPH_CHROME_HIDDEN;graphChromePaint();};
-const graphViewportRender=mgRender;mgRender=function(){graphViewportRender();graphChromePaint();if(!document.getElementById('mg').classList.contains('charting'))return;const labels={'previous':'‹ Prev','next':'Next ›','chart previous':'‹ Prev','chart next':'Next ›','chart close':'Close graph','zoom out':'−','zoom in':'+','zoom reset':'Reset '+Math.round((MG.zoom||1)*100)+'%','pan left':'←','pan right':'→','pan up':'↑','pan down':'↓','theme light':'Light','theme dark':'Dark','exit':'Return'};for(const b of document.querySelectorAll('#mg-actions button[data-cmd]')){const cmd=b.dataset.cmd,label=b.querySelector('.l');if(!b.dataset.graphOriginalLabel)b.dataset.graphOriginalLabel=label?.textContent||b.textContent;b.setAttribute('aria-label',b.dataset.graphOriginalLabel);b.title=b.dataset.graphOriginalLabel;if(labels[cmd]&&label)label.textContent=labels[cmd];}};
+MISSY_HOOKS.use("mgRender","core/biorad/graph_viewport.js:49",49, next => function(){next();graphChromePaint();if(!document.getElementById('mg').classList.contains('charting'))return;const labels={'previous':'‹ Prev','next':'Next ›','chart previous':'‹ Prev','chart next':'Next ›','chart close':'Close graph','zoom out':'−','zoom in':'+','zoom reset':'Reset '+Math.round((MG.zoom||1)*100)+'%','pan left':'←','pan right':'→','pan up':'↑','pan down':'↓','theme light':'Light','theme dark':'Dark','exit':'Return'};for(const b of document.querySelectorAll('#mg-actions button[data-cmd]')){const cmd=b.dataset.cmd,label=b.querySelector('.l');if(!b.dataset.graphOriginalLabel)b.dataset.graphOriginalLabel=label?.textContent||b.textContent;b.setAttribute('aria-label',b.dataset.graphOriginalLabel);b.title=b.dataset.graphOriginalLabel;if(labels[cmd]&&label)label.textContent=labels[cmd];}});
 document.addEventListener('keydown',e=>{if(!MG.open||!document.getElementById('mg').classList.contains('charting')||e.ctrlKey||e.altKey||e.metaKey||e.target.closest?.('input,textarea,select,[contenteditable="true"]'))return;if(e.key.toLowerCase()==='h'){e.preventDefault();GRAPH_CHROME_HIDDEN=!GRAPH_CHROME_HIDDEN;graphChromePaint();}});
 const graphViewportStyle=document.createElement('style');graphViewportStyle.textContent=`
 #mg.charting{height:100dvh;min-height:0}
@@ -15250,26 +15416,26 @@ const graphViewportStyle=document.createElement('style');graphViewportStyle.text
 @media(max-width:900px){#mg.charting #mg-top{padding:42px 8px 5px}#mg.charting #mg-nav{grid-template-columns:1fr}#mg.charting #zpcr-console-endpoint{grid-column:1;grid-row:2}#mg.charting #zc-single-picker{grid-template-columns:1fr}#mg-chrome-toggle{font-size:12px;padding:6px 8px}}
 `;
 document.head.append(graphViewportStyle);
-const graphViewportPaint=zpcrPaint;zpcrPaint=function(){graphViewportPaint();zpcrNav.textContent='9 · ZPCR data / exports';};
+MISSY_HOOKS.use("zpcrPaint","core/biorad/graph_viewport.js:50",50, next => function(){next();zpcrNav.textContent='9 · ZPCR data / exports';});
 zpcrNav.textContent='9 · ZPCR data / exports';
 /* Format-neutral shell. Data availability changes content, never navigation or control styling. */
 zcModeStyle.remove();zsCss.remove();zpcrStyle.remove();zpcrNav.remove();zpcrPanel.remove();zpcrConsoleButton.remove();
 for(const id of ['zpcr-command-script','zpcr-command-console'])document.getElementById(id)?.remove();zcModeCommandButton.remove();
 function unifiedRemoveOldControls(){document.getElementById('zpcr-console-endpoint')?.remove();document.getElementById('zc-single-picker')?.remove();document.getElementById('mg').classList.remove('zc-single-mode');}
-const unifiedShowTab=showTab;showTab=function(name){if(name==='zpcr')return;return unifiedShowTab(name);};
-zpcrPaint=function(){zpcrNav.remove();zpcrPanel.remove();zcSyncGraphs();markDirty('export','integrity','graphs');};
-const unifiedExports=exportCatalogue;exportCatalogue=function(){const items=unifiedExports();for(const r of RUNS.filter(r=>r.zpcr)){for(const [kind,label]of [['raw','Raw sample and reference readings'],['hardware','Per-read hardware']])items.push({title:label+' (CSV) · '+r.file,note:'Original decoded raw data; source SHA-256 '+r.meta.sourceSHA256,ready:()=>true,run:()=>download(r.file+'.'+kind+'.csv',zpcrRawCSV(r,kind),'text/csv')});items.push({title:'Source metadata and inventory (JSON) · '+r.file,note:'Source hash, completion/duplicate evidence, stored protocol and archive members.',ready:()=>true,run:()=>download(r.file+'.inventory.json',JSON.stringify({sourceSHA256:r.meta.sourceSHA256,meta:r.meta,eligibility:r.zpcr.evidence,contribution:zpcrContributions().get(r),archive:r.zpcr.archive,runInfo:r.zpcr.runInfo,protocol:r.zpcr.protocolText,issues:r.zpcr.issues},null,2),'application/json')});}return items;};
-const unifiedIntegrity=renderIntegrity;renderIntegrity=function(){unifiedIntegrity();document.getElementById('source-provenance')?.remove();if(!RUNS.length)return;const section=document.createElement('div');section.id='source-provenance';const h=document.createElement('h3');h.textContent='Source provenance';section.append(h);const gates=zpcrContributions();for(const r of RUNS){const box=document.createElement('details');box.className='integrity-record';const summary=document.createElement('summary');summary.textContent=r.file;box.append(summary);const dl=document.createElement('dl');dl.className='integrity-fields';const values=[['Source SHA-256',r.meta.sourceSHA256||'Not recorded'],['Protocol',ccProtocolKey(r)||'Not recorded']];if(r.zpcr){const g=gates.get(r);values.push(['Acquisition SHA-256',r.zpcr.evidence?.acquisitionSHA256||'Not recorded'],['Completion / duplicate evidence',g?.status||'REVIEW'],['Log / calibration interpretation','Unavailable without verified decoding']);}for(const [key,value]of values){const div=document.createElement('div'),dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=key;dd.textContent=String(value);dd.style.overflowWrap='anywhere';div.append(dt,dd);dl.append(div);}box.append(dl);if(r.zpcr){const pre=document.createElement('pre');pre.style.cssText='white-space:pre-wrap;overflow-wrap:anywhere;max-height:320px;overflow:auto';pre.textContent='Stored protocol\n'+r.zpcr.protocolText+'\n\nArchive members\n'+r.zpcr.archive.names.join('\n');box.append(pre);}section.append(box);}document.getElementById('tab-integrity').append(section);};
+MISSY_HOOKS.use("showTab","core/biorad/unified_shell.js:51",51, next => function(name){if(name==='zpcr')return;return next(name);});
+MISSY_HOOKS.use("zpcrPaint","core/biorad/unified_shell.js:52",52, next => function(){zpcrNav.remove();zpcrPanel.remove();zcSyncGraphs();markDirty('export','integrity','graphs');});
+MISSY_HOOKS.use("exportCatalogue","core/biorad/unified_shell.js:53",53, next => function(){const items=next();for(const r of RUNS.filter(r=>r.zpcr)){for(const [kind,label]of [['raw','Raw sample and reference readings'],['hardware','Per-read hardware']])items.push({title:label+' (CSV) · '+r.file,note:'Original decoded raw data; source SHA-256 '+r.meta.sourceSHA256,ready:()=>true,run:()=>download(r.file+'.'+kind+'.csv',zpcrRawCSV(r,kind),'text/csv')});items.push({title:'Source metadata and inventory (JSON) · '+r.file,note:'Source hash, completion/duplicate evidence, stored protocol and archive members.',ready:()=>true,run:()=>download(r.file+'.inventory.json',JSON.stringify({sourceSHA256:r.meta.sourceSHA256,meta:r.meta,eligibility:r.zpcr.evidence,contribution:zpcrContributions().get(r),archive:r.zpcr.archive,runInfo:r.zpcr.runInfo,protocol:r.zpcr.protocolText,issues:r.zpcr.issues},null,2),'application/json')});}return items;});
+MISSY_HOOKS.use("renderIntegrity","core/biorad/unified_shell.js:54",54, next => function(){next();document.getElementById('source-provenance')?.remove();if(!RUNS.length)return;const section=document.createElement('div');section.id='source-provenance';const h=document.createElement('h3');h.textContent='Source provenance';section.append(h);const gates=zpcrContributions();for(const r of RUNS){const box=document.createElement('details');box.className='integrity-record';const summary=document.createElement('summary');summary.textContent=r.file;box.append(summary);const dl=document.createElement('dl');dl.className='integrity-fields';const values=[['Source SHA-256',r.meta.sourceSHA256||'Not recorded'],['Protocol',ccProtocolKey(r)||'Not recorded']];if(r.zpcr){const g=gates.get(r);values.push(['Acquisition SHA-256',r.zpcr.evidence?.acquisitionSHA256||'Not recorded'],['Completion / duplicate evidence',g?.status||'REVIEW'],['Log / calibration interpretation','Unavailable without verified decoding']);}for(const [key,value]of values){const div=document.createElement('div'),dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=key;dd.textContent=String(value);dd.style.overflowWrap='anywhere';div.append(dt,dd);dl.append(div);}box.append(dl);if(r.zpcr){const pre=document.createElement('pre');pre.style.cssText='white-space:pre-wrap;overflow-wrap:anywhere;max-height:320px;overflow:auto';pre.textContent='Stored protocol\n'+r.zpcr.protocolText+'\n\nArchive members\n'+r.zpcr.archive.names.join('\n');box.append(pre);}section.append(box);}document.getElementById('tab-integrity').append(section);});
 function unifiedBrowse(id){cmdClose();astClose();mgOpen();const nativeCC=id?.startsWith('cc:');MG.scope=nativeCC?'panel':'graphs';mgRefresh();const graph=id?.startsWith('img:zc_')?'zc_compare_'+id.slice(7):id?.startsWith('img:')?id.slice(4):null;let at=nativeCC?MG.queue.findIndex(x=>x.chartId===id.slice(3)):graph?MG.queue.findIndex(x=>x.graphId===graph):MG.queue.findIndex(x=>x.graphId||x.chartId);if(at<0)at=0;MG.at=at;MG.chart=!!(MG.queue[at]?.graphId||MG.queue[at]?.chartId);MG.zoom=1;MG.panX=0;MG.panY=0;mgRender();}
-const unifiedRender=mgRender;mgRender=function(){unifiedRender();unifiedRemoveOldControls();const root=document.getElementById('mg');root.classList.add('unified-console');let bar=document.getElementById('console-selectors');if(!bar){bar=document.createElement('div');bar.id='console-selectors';bar.innerHTML='<label>Measurement <select aria-label="Measurement"></select></label><label>Acquisition group <select aria-label="Acquisition group"></select></label><label>Endpoint N <input aria-label="Endpoint N" type="number" min="1" max="999"><button type="button">Apply N</button></label>';document.getElementById('mg-top').append(bar);}const measurement=bar.querySelector('select[aria-label="Measurement"]'),context=bar.querySelector('select[aria-label="Acquisition group"]'),input=bar.querySelector('input'),apply=bar.querySelector('button'),current=mgItem(),isZ=String(current?.graphId||'').startsWith('zc_compare_'),zi=isZ?zcModeItems().find(x=>'zc_compare_'+x.id.slice(7)===current.graphId):null;measurement.replaceChildren();context.replaceChildren();
+MISSY_HOOKS.use("mgRender","core/biorad/unified_shell.js:55",55, next => function(){next();unifiedRemoveOldControls();const root=document.getElementById('mg');root.classList.add('unified-console');let bar=document.getElementById('console-selectors');if(!bar){bar=document.createElement('div');bar.id='console-selectors';bar.innerHTML='<label>Measurement <select aria-label="Measurement"></select></label><label>Acquisition group <select aria-label="Acquisition group"></select></label><label>Endpoint N <input aria-label="Endpoint N" type="number" min="1" max="999"><button type="button">Apply N</button></label>';document.getElementById('mg-top').append(bar);}const measurement=bar.querySelector('select[aria-label="Measurement"]'),context=bar.querySelector('select[aria-label="Acquisition group"]'),input=bar.querySelector('input'),apply=bar.querySelector('button'),current=mgItem(),isZ=String(current?.graphId||'').startsWith('zc_compare_'),zi=isZ?zcModeItems().find(x=>'zc_compare_'+x.id.slice(7)===current.graphId):null;measurement.replaceChildren();context.replaceChildren();
  const go=at=>{MG.at=at;MG.chart=true;MG.zoom=1;MG.panX=0;MG.panY=0;mgRender();};
  if(zi){const items=zcModeItems();items.filter(x=>x.contextKey===zi.contextKey).forEach(x=>measurement.add(new Option(x.reportPanel.title,x.measurementKey)));measurement.value=zi.measurementKey;measurement.onchange=()=>{const target=items.find(x=>x.contextKey===zi.contextKey&&x.measurementKey===measurement.value);go(MG.queue.findIndex(x=>x.graphId==='zc_compare_'+target.id.slice(7)));};for(const x of [...new Map(items.map(x=>[x.contextKey,x])).values()])context.add(new Option(x.reportAcquisition.instrument+' · group '+x.reportAcquisition.step+' · '+x.acquisitionLabel,x.contextKey));context.value=zi.contextKey;context.onchange=()=>{const target=items.find(x=>x.contextKey===context.value&&x.measurementKey===zi.measurementKey);go(MG.queue.findIndex(x=>x.graphId==='zc_compare_'+target.id.slice(7)));};context.disabled=false;}
  else{MG.queue.forEach((x,i)=>{if(x.chartId||x.graphId)measurement.add(new Option(x.title,String(i)));});if(!measurement.options.length)measurement.add(new Option('Open a graph to select a measurement',''));measurement.value=[...measurement.options].some(o=>o.value===String(MG.at))?String(MG.at):measurement.options[0].value;measurement.onchange=()=>go(+measurement.value);context.add(new Option((current?.graphId||current?.chartId)?current.instrument||current.limits||'Selected run / acquisition':'Open a graph to inspect its run / acquisition',''));context.disabled=true;context.onchange=null;}
- measurement.disabled=measurement.options.length<2;input.disabled=!isZ;apply.disabled=!isZ;input.value=isZ?ZPCR_ENDPOINT_N:'';input.placeholder='—';input.title='Last-N raw endpoint window; enabled where supported';apply.onclick=()=>{try{zpcrSetEndpointN(input.value);input.setCustomValidity('');}catch(e){input.setCustomValidity(e.message);input.reportValidity();}};for(const b of document.querySelectorAll('#mg-actions .mg-act')){b.querySelector('.k')?.setAttribute('aria-hidden','true');} };
-const unifiedOpen=mgOpen;mgOpen=function(){unifiedOpen();unifiedRemoveOldControls();if(MG.scope==='zpcrcharts'){MG.scope='panel';mgRefresh();}mgRender();};
-const genericScript=document.createElement('button');genericScript.type='button';genericScript.textContent='Report script';genericScript.onclick=()=>{cmdScriptToggle(true);cmdEl('cmd-script').value=RUNS.some(r=>r.zpcr)?zpcrReportScript():cmdEl('cmd-script').defaultValue;};cmdEl('cmd-script-toggle').parentElement.append(genericScript);
+ measurement.disabled=measurement.options.length<2;input.disabled=!isZ;apply.disabled=!isZ;input.value=isZ?ZPCR_ENDPOINT_N:'';input.placeholder='—';input.title='Last-N raw endpoint window; enabled where supported';apply.onclick=()=>{try{zpcrSetEndpointN(input.value);input.setCustomValidity('');}catch(e){input.setCustomValidity(e.message);input.reportValidity();}};for(const b of document.querySelectorAll('#mg-actions .mg-act')){b.querySelector('.k')?.setAttribute('aria-hidden','true');} });
+MISSY_HOOKS.use("mgOpen","core/biorad/unified_shell.js:56",56, next => function(){next();unifiedRemoveOldControls();if(MG.scope==='zpcrcharts'){MG.scope='panel';mgRefresh();}mgRender();});
+const genericScript=document.createElement('button');genericScript.type='button';genericScript.textContent='Report script';genericScript.onclick=MISSY_HOOKS.slot("genericScript.onclick",()=>{cmdScriptToggle(true);cmdEl('cmd-script').value=RUNS.some(r=>r.zpcr)?zpcrReportScript():cmdEl('cmd-script').defaultValue;});cmdEl('cmd-script-toggle').parentElement.append(genericScript);
 const genericBrowse=document.createElement('button');genericBrowse.type='button';genericBrowse.textContent='Browse graphs';genericBrowse.onclick=()=>unifiedBrowse();cmdEl('cmd-script-toggle').parentElement.append(genericBrowse);
-const unifiedAst=astRender;astRender=function(){unifiedAst();const list=astEl('ast-list');list.querySelectorAll('input[aria-label="ZPCR endpoint N"]').forEach(x=>x.closest('.notice')?.remove());list.querySelectorAll(':scope>p.notice').forEach(x=>{if(x.textContent.includes('• PDF:'))x.remove();});const catalogue=selCatalogue();for(const label of list.querySelectorAll('label.ast-item')){const id=label.querySelector('input')?.dataset.id,item=catalogue.find(x=>x.id===id);label.querySelectorAll('button').forEach(b=>b.remove());if(item?.kind==='image'&&item.ready()){const b=document.createElement('button');b.type='button';b.textContent='Preview graph';b.onclick=e=>{e.preventDefault();e.stopPropagation();unifiedBrowse(id);};label.append(b);}}let control=document.getElementById('assisted-endpoint');if(!control){control=document.createElement('label');control.id='assisted-endpoint';control.innerHTML='Endpoint N <input type="number" min="1" max="999" aria-label="Assisted endpoint N"><button type="button">Apply N</button>';astEl('ast-form').append(control);}const input=control.querySelector('input'),button=control.querySelector('button'),supported=RUNS.some(r=>r.zpcr);input.disabled=!supported;button.disabled=!supported;input.value=supported?ZPCR_ENDPOINT_N:'';input.placeholder='—';input.oninput=()=>input.setCustomValidity('');button.onclick=()=>{try{zpcrSetEndpointN(input.value);input.setCustomValidity('');astRender();}catch(e){input.setCustomValidity(e.message);input.reportValidity();}};};
+MISSY_HOOKS.use("astRender","core/biorad/unified_shell.js:58",58, next => function(){next();const list=astEl('ast-list');list.querySelectorAll('input[aria-label="ZPCR endpoint N"]').forEach(x=>x.closest('.notice')?.remove());list.querySelectorAll(':scope>p.notice').forEach(x=>{if(x.textContent.includes('• PDF:'))x.remove();});const catalogue=selCatalogue();for(const label of list.querySelectorAll('label.ast-item')){const id=label.querySelector('input')?.dataset.id,item=catalogue.find(x=>x.id===id);label.querySelectorAll('button').forEach(b=>b.remove());if(item?.kind==='image'&&item.ready()){const b=document.createElement('button');b.type='button';b.textContent='Preview graph';b.onclick=e=>{e.preventDefault();e.stopPropagation();unifiedBrowse(id);};label.append(b);}}let control=document.getElementById('assisted-endpoint');if(!control){control=document.createElement('label');control.id='assisted-endpoint';control.innerHTML='Endpoint N <input type="number" min="1" max="999" aria-label="Assisted endpoint N"><button type="button">Apply N</button>';astEl('ast-form').append(control);}const input=control.querySelector('input'),button=control.querySelector('button'),supported=RUNS.some(r=>r.zpcr);input.disabled=!supported;button.disabled=!supported;input.value=supported?ZPCR_ENDPOINT_N:'';input.placeholder='—';input.oninput=()=>input.setCustomValidity('');button.onclick=()=>{try{zpcrSetEndpointN(input.value);input.setCustomValidity('');astRender();}catch(e){input.setCustomValidity(e.message);input.reportValidity();}};});
 const unifiedStyle=document.createElement('style');unifiedStyle.textContent=`
 #tab-zpcr,#mg #zpcr-console-endpoint,#mg #zc-single-picker{display:none!important}
 #mg.unified-console #mg-top{padding:6px 195px 6px 10px;gap:5px;background:#080c14}
@@ -15296,7 +15462,7 @@ const unifiedStyle=document.createElement('style');unifiedStyle.textContent=`
 unifiedRemoveOldControls();
 /* Preserve the original MISSY Console design. ZPCR contributes data, not a theme. */
 graphViewportStyle.remove();unifiedStyle.remove();
-const referenceConsoleRender=mgRender;mgRender=function(){referenceConsoleRender();for(const b of document.querySelectorAll('#mg-actions .mg-act')){const label=b.querySelector('.l');if(label&&b.dataset.graphOriginalLabel)label.textContent=b.dataset.graphOriginalLabel;b.querySelector('.k')?.removeAttribute('aria-hidden');}const actions=document.getElementById('mg-actions');actions.style.setProperty('--mg-action-columns',String(Math.ceil(actions.querySelectorAll('.mg-act').length/2)||1));};
+MISSY_HOOKS.use("mgRender","core/biorad/reference_console_style.js:59",59, next => function(){next();for(const b of document.querySelectorAll('#mg-actions .mg-act')){const label=b.querySelector('.l');if(label&&b.dataset.graphOriginalLabel)label.textContent=b.dataset.graphOriginalLabel;b.querySelector('.k')?.removeAttribute('aria-hidden');}const actions=document.getElementById('mg-actions');actions.style.setProperty('--mg-action-columns',String(Math.ceil(actions.querySelectorAll('.mg-act').length/2)||1));});
 const referenceConsoleStyle=document.createElement('style');referenceConsoleStyle.textContent=`
 #mg.charting #mg-actions{display:grid;grid-template-columns:repeat(var(--mg-action-columns,8),minmax(0,1fr));grid-template-rows:repeat(2,minmax(88px,auto));grid-auto-flow:row;gap:16px;align-items:stretch;flex:0 0 auto}
 #mg.charting #mg-actions .mg-act{min-width:0;width:100%;height:100%;box-sizing:border-box}
@@ -15418,42 +15584,44 @@ function pcrdPlateFigure(run,step,channel){const p=run.pcrd,grid=p.grid,vals=pcr
  const cw=Math.min(930/grid.cols,490/grid.sampleRows),x0=65,y0=135;for(let col=0;col<grid.cols;col++)svg+=`<text x="${x0+(col+.5)*cw}" y="120" text-anchor="middle" font-size="13">${col+1}</text>`;for(let row=0;row<grid.sampleRows;row++){svg+=`<text x="48" y="${y0+(row+.6)*cw}" text-anchor="middle" font-size="14">${String.fromCharCode(65+row)}</text>`;for(let col=0;col<grid.cols;col++){const pos=row*grid.cols+col,v=vals[pos],f=Number.isFinite(v)?hi===lo?.5:(v-lo)/(hi-lo):NaN,color=Number.isFinite(f)?`hsl(${215-f*175} 68% ${86-f*38}%)`:'#e8edf2',well=String.fromCharCode(65+row)+(col+1),meta=p.layout.filter(x=>x.position===pos&&x.loaded).map(x=>[x.sample,x.target,x.role,x.dye].filter(Boolean).join(' / ')).join('; ');svg+=`<rect x="${x0+col*cw}" y="${y0+row*cw}" width="${cw-1}" height="${cw-1}" rx="2" fill="${color}" stroke="#d4deeb"><title>${E(well)}: ${Number.isFinite(v)?v:'unavailable'} · ${E(meta)}</title></rect>`;if(grid.cols<=12)svg+=`<text x="${x0+(col+.5)*cw}" y="${y0+(row+.58)*cw}" text-anchor="middle" font-size="10">${Number.isFinite(v)?+v.toPrecision(4):'—'}</text>`;}}
  svg+=`<text x="30" y="665" font-size="16">Scale: ${Number.isFinite(lo)?+lo.toPrecision(6):'—'} to ${Number.isFinite(hi)?+hi.toPrecision(6):'—'} stored units · N=${ZPCR_ENDPOINT_N}</text><text x="30" y="692" font-size="14">All physical wells shown; stored names, roles and values are in the PCRD endpoint/layout CSV.</text>`;return {svg:svg+'</g></svg>',rows:[]};}
 let PCRD_ITEMS_CACHE={key:'',items:[]};
-function pcrdItems(){const key=pcrdRuns().map(r=>r.meta.sourceSHA256).join('|')+'|'+ZPCR_ENDPOINT_N;if(PCRD_ITEMS_CACHE.key===key)return PCRD_ITEMS_CACHE.items;const items=[];let gi=0;for(const g of pcrdGroups())for(const step of new Set(g.runs.flatMap(r=>r.pcrd.reads.map(x=>x.step)))){const note=[PCRD_SOURCE_NOTICE,'Protocol SHA-256: '+g.protocol,'Acquisition group '+step+'; protocols and geometry kept separate. Endpoint N='+ZPCR_ENDPOINT_N,...g.runs.map((r,i)=>'R'+(i+1)+': '+r.file+'; '+(r.pcrd.completionSupported?'Normal completion supported by log and acquisition counts':'REVIEW: '+r.pcrd.issues.join('; ')))].join('\n');for(const metric of ['a1','plate','dark','darkSD','darkRange','temperature','led','reference','interval','spatialCV']){const panel=pcrdPanel(g,step,metric);if(!panel.series.some(s=>s.points.some(x=>Number.isFinite(x[1]))))continue;items.push({id:'img:pcrd_'+gi+'_'+metric,kind:'image',group:'PCRD · '+panel.title,title:panel.title+' | '+g.instrument+' | P '+g.protocol.slice(0,10)+' | group '+step,scope:'all',opts:[],note,ready:()=>true,figure:()=>pcrdLineFigure(panel,g,step),pcrdGroup:String(gi),pcrdMetric:metric,pcrdPanel:panel});}
+function pcrdItemsBase(){const key=pcrdRuns().map(r=>r.meta.sourceSHA256).join('|')+'|'+ZPCR_ENDPOINT_N;if(PCRD_ITEMS_CACHE.key===key)return PCRD_ITEMS_CACHE.items;const items=[];let gi=0;for(const g of pcrdGroups())for(const step of new Set(g.runs.flatMap(r=>r.pcrd.reads.map(x=>x.step)))){const note=[PCRD_SOURCE_NOTICE,'Protocol SHA-256: '+g.protocol,'Acquisition group '+step+'; protocols and geometry kept separate. Endpoint N='+ZPCR_ENDPOINT_N,...g.runs.map((r,i)=>'R'+(i+1)+': '+r.file+'; '+(r.pcrd.completionSupported?'Normal completion supported by log and acquisition counts':'REVIEW: '+r.pcrd.issues.join('; ')))].join('\n');for(const metric of ['a1','plate','dark','darkSD','darkRange','temperature','led','reference','interval','spatialCV']){const panel=pcrdPanel(g,step,metric);if(!panel.series.some(s=>s.points.some(x=>Number.isFinite(x[1]))))continue;items.push({id:'img:pcrd_'+gi+'_'+metric,kind:'image',group:'PCRD · '+panel.title,title:panel.title+' | '+g.instrument+' | P '+g.protocol.slice(0,10)+' | group '+step,scope:'all',opts:[],note,ready:()=>true,figure:()=>pcrdLineFigure(panel,g,step),pcrdGroup:String(gi),pcrdMetric:metric,pcrdPanel:panel});}
  for(const run of g.runs){for(let c=0;c<run.pcrd.grid.channels;c++){if(!pcrdEndpoint(run,step,c))continue;items.push({id:'img:pcrd_'+gi+'_plate_'+RUNS.indexOf(run)+'_'+c,kind:'image',group:'PCRD · Endpoint plates',title:'Endpoint plate · Ch '+(c+1)+' | '+run.meta.InstrumentID+' | '+run.pcrd.grid.sampleCount+' wells | group '+step,scope:'all',opts:[],note:note+'\nPlate source: '+run.file,ready:()=>true,figure:()=>pcrdPlateFigure(run,step,c),pcrdGroup:String(gi),pcrdMetric:'heatmap'});}}gi++;}PCRD_ITEMS_CACHE={key,items};return items;}
+function pcrdItems(...args){return MISSY_HOOKS.invoke("pcrdItems",this,args,pcrdItemsBase);}
+
 function pcrdSync(){for(let i=GRAPHS.length-1;i>=0;i--)if(GRAPHS[i].id.startsWith('pcrd_'))GRAPHS.splice(i,1);for(const x of pcrdItems())GRAPHS.push({id:x.id.slice(4),title:x.title,group:x.group,scope:'all',opts:[],note:x.note,render:x.figure});}
-const pcrdImages=selImageItems;selImageItems=function(){return pcrdImages().filter(x=>!x.id.startsWith('img:pcrd_')).concat(pcrdItems());};
+MISSY_HOOKS.use("selImageItems","core/biorad/pcrd_views.js:60",60, next => function(){return next().filter(x=>!x.id.startsWith('img:pcrd_')).concat(pcrdItems());});
 function pcrdSourceRows(){return RUNS.filter(r=>r.pcrd||r.pcrdLocked).map(r=>({file:r.file,instrument_sn:r.pcrd?r.meta.InstrumentID:'Unavailable: encrypted',physical_wells:r.pcrd?r.pcrd.grid.sampleCount:'Unavailable: encrypted',stored_channels:r.pcrd?r.pcrd.grid.channels:'Unavailable: encrypted',reads:r.pcrd?r.pcrd.reads.length:'Unavailable: encrypted',tuple_width:r.pcrd?r.pcrd.tupleWidth:'Unavailable: encrypted',status:r.pcrd?(r.pcrd.completionSupported?'Completion supported; QC acceptance REVIEW':r.pcrd.issues.join('; ')):'REVIEW: encrypted payload; source inventory only',source_sha256:r.meta.sourceSHA256,acquisition_sha256:r.pcrd?.acquisitionSHA256||'Unavailable: encrypted',protocol_sha256:r.pcrd?.protocolSHA256||'Unavailable: encrypted'}));}
 function pcrdEndpointRows(){const out=[];for(const r of pcrdRuns()){const p=r.pcrd;for(const step of new Set(p.reads.map(x=>x.step)))for(let c=0;c<p.grid.channels;c++){const a=pcrdEndpoint(r,step,c);if(!a)continue;for(let pos=0;pos<a.length;pos++){const ss=p.layout.filter(x=>x.position===pos&&x.loaded);out.push({file:r.file,source_sha256:r.meta.sourceSHA256,instrument_sn:r.meta.InstrumentID,protocol_sha256:p.protocolSHA256,acquisition_group:step,channel:c+1,well:String.fromCharCode(65+Math.floor(pos/p.grid.cols))+String(pos%p.grid.cols+1).padStart(2,'0'),sample:ss.map(x=>x.sample).filter(Boolean).join('; '),target:ss.map(x=>x.target).filter(Boolean).join('; '),role:ss.map(x=>x.role).filter(Boolean).join('; '),endpoint_n:ZPCR_ENDPOINT_N,stored_endpoint:a[pos]});}}}return out;}
 function pcrdCSV(rows){return toCSV(uniq(rows.flatMap(Object.keys)).map(k=>({key:k,label:k})),rows);}
-const pcrdData=selDataItems;selDataItems=function(){return pcrdData().concat([{id:'data:pcrd_sources',kind:'data',group:'PCRD · Provenance',title:'PCRD source files and verification',ready:()=>RUNS.some(r=>r.pcrd||r.pcrdLocked),note:(pcrdRuns().length?PCRD_SOURCE_NOTICE:'Encrypted PCRD source inventory only. Instrument identity, plate geometry, raw data and QC verdict are unavailable. Source SHA-256 fingerprints the uploaded bytes; it does not certify vendor authenticity. Payload CRC is unverified. Research Use Only.')+'\n'+pcrdSourceRows().map(r=>r.file+'\nSource SHA-256: '+r.source_sha256+'\nAcquisition SHA-256: '+r.acquisition_sha256+'\nProtocol SHA-256: '+r.protocol_sha256).join('\n'),rows:()=>pcrdSourceRows().map(r=>({file:r.file,SN:r.instrument_sn,wells:r.physical_wells,reads:r.reads,status:r.status})),text:()=>pcrdCSV(pcrdSourceRows()),file:'pcrd_sources.csv'},{id:'data:pcrd_endpoints',kind:'data',group:'PCRD · Tables',title:'PCRD endpoint values and stored sample layout',ready:()=>!!pcrdRuns().length,note:'Last '+ZPCR_ENDPOINT_N+' stored reads per acquisition group; includes all physical wells, no vendor endpoint equivalence.',rows:pcrdEndpointRows,text:()=>pcrdCSV(pcrdEndpointRows()),file:'pcrd_endpoints.csv'}]);};
-const pcrdSelected=selSelected;selSelected=function(){const a=pcrdSelected();if(a.some(x=>x.id.startsWith('img:pcrd_'))&&!a.some(x=>x.id==='data:pcrd_sources'))a.push(selItem('data:pcrd_sources'));return a;};
+MISSY_HOOKS.use("selDataItems","core/biorad/pcrd_views.js:61",61, next => function(){return next().concat([{id:'data:pcrd_sources',kind:'data',group:'PCRD · Provenance',title:'PCRD source files and verification',ready:()=>RUNS.some(r=>r.pcrd||r.pcrdLocked),note:(pcrdRuns().length?PCRD_SOURCE_NOTICE:'Encrypted PCRD source inventory only. Instrument identity, plate geometry, raw data and QC verdict are unavailable. Source SHA-256 fingerprints the uploaded bytes; it does not certify vendor authenticity. Payload CRC is unverified. Research Use Only.')+'\n'+pcrdSourceRows().map(r=>r.file+'\nSource SHA-256: '+r.source_sha256+'\nAcquisition SHA-256: '+r.acquisition_sha256+'\nProtocol SHA-256: '+r.protocol_sha256).join('\n'),rows:()=>pcrdSourceRows().map(r=>({file:r.file,SN:r.instrument_sn,wells:r.physical_wells,reads:r.reads,status:r.status})),text:()=>pcrdCSV(pcrdSourceRows()),file:'pcrd_sources.csv'},{id:'data:pcrd_endpoints',kind:'data',group:'PCRD · Tables',title:'PCRD endpoint values and stored sample layout',ready:()=>!!pcrdRuns().length,note:'Last '+ZPCR_ENDPOINT_N+' stored reads per acquisition group; includes all physical wells, no vendor endpoint equivalence.',rows:pcrdEndpointRows,text:()=>pcrdCSV(pcrdEndpointRows()),file:'pcrd_endpoints.csv'}]);});
+MISSY_HOOKS.use("selSelected","core/biorad/pcrd_views.js:62",62, next => function(){const a=next();if(a.some(x=>x.id.startsWith('img:pcrd_'))&&!a.some(x=>x.id==='data:pcrd_sources'))a.push(selItem('data:pcrd_sources'));return a;});
 function pcrdRawRows(r){const p=r.pcrd,out=[];for(const read of p.reads)for(let c=0;c<p.grid.channels;c++)for(let row=0;row<read.rows;row++)for(let col=0;col<read.cols;col++){const v=k=>Number.isFinite(pcrdCell(read,c,row,col,k))?pcrdCell(read,c,row,col,k):'';out.push({file:r.file,source_sha256:r.meta.sourceSHA256,read:read.scanIndex,acquisition_group:read.step,cycle:read.cycle,channel:c+1,position_type:row<p.grid.sampleRows?'sample':'reference',row:row+1,column:col+1,mean:v(0),sd:v(1),min:v(2),max:v(3)});}return out;}
-const pcrdExports=exportCatalogue;exportCatalogue=function(){const a=pcrdExports();for(const r of pcrdRuns()){a.push({id:'pcrd_raw_'+r.meta.sourceSHA256,group:'PCRD stored acquisitions',title:'PCRD stored sample/reference readings · '+r.file,desc:'Original stored values; absent SD/min/max are empty. Full source SHA-256 retained.',ready:()=>true,ext:'csv',run:()=>download(r.file+'.stored.csv',pcrdCSV(pcrdRawRows(r)),'text/csv')},{id:'pcrd_meta_'+r.meta.sourceSHA256,group:'PCRD provenance',title:'PCRD metadata and layout · '+r.file,desc:'Stored layout, run information, logs and analysis settings. No inferred Cq or acceptance verdict.',ready:()=>true,ext:'json',run:()=>download(r.file+'.metadata.json',JSON.stringify({source:r.meta,container:r.pcrd.container,grid:r.pcrd.grid,tupleWidth:r.pcrd.tupleWidth,protocol:r.pcrd.protocolText,layout:r.pcrd.layout,logs:r.pcrd.logs,analysisSettings:r.pcrd.analysisSettings,issues:r.pcrd.issues},null,2),'application/json')});}return a;};
-const pcrdEndpointSet=zpcrSetEndpointN;zpcrSetEndpointN=function(n){pcrdEndpointSet(n);PCRD_ITEMS_CACHE.key='';pcrdSync();if(MG.open){mgRefresh();mgRender();}};
-const pcrdConsoleRender=mgRender;mgRender=function(){pcrdConsoleRender();const item=mgItem(),id=item?.graphId;if(!id?.startsWith('pcrd_'))return;const input=document.querySelector('#console-selectors input'),button=document.querySelector('#console-selectors button'),context=document.querySelector('#console-selectors select[aria-label="Acquisition group"]');if(input&&button){input.disabled=button.disabled=false;input.value=ZPCR_ENDPOINT_N;button.onclick=()=>{try{zpcrSetEndpointN(input.value);}catch(e){input.setCustomValidity(e.message);input.reportValidity();}};}const current=pcrdItems().find(x=>x.id==='img:'+id);if(context&&current){context.replaceChildren();for(const x of pcrdItems().filter(x=>x.pcrdMetric===current.pcrdMetric)){const o=new Option(x.title,x.id);context.add(o);}context.disabled=false;context.value=current.id;context.onchange=()=>unifiedBrowse(context.value);}};
-const pcrdAst=astRender;astRender=function(){pcrdAst();if(pcrdRuns().length){const input=document.querySelector('#assisted-endpoint input'),button=document.querySelector('#assisted-endpoint button');if(input&&button){input.disabled=button.disabled=false;input.value=ZPCR_ENDPOINT_N;button.onclick=()=>{try{zpcrSetEndpointN(input.value);astRender();}catch(e){input.setCustomValidity(e.message);input.reportValidity();}};}}};
+MISSY_HOOKS.use("exportCatalogue","core/biorad/pcrd_views.js:63",63, next => function(){const a=next();for(const r of pcrdRuns()){a.push({id:'pcrd_raw_'+r.meta.sourceSHA256,group:'PCRD stored acquisitions',title:'PCRD stored sample/reference readings · '+r.file,desc:'Original stored values; absent SD/min/max are empty. Full source SHA-256 retained.',ready:()=>true,ext:'csv',run:()=>download(r.file+'.stored.csv',pcrdCSV(pcrdRawRows(r)),'text/csv')},{id:'pcrd_meta_'+r.meta.sourceSHA256,group:'PCRD provenance',title:'PCRD metadata and layout · '+r.file,desc:'Stored layout, run information, logs and analysis settings. No inferred Cq or acceptance verdict.',ready:()=>true,ext:'json',run:()=>download(r.file+'.metadata.json',JSON.stringify({source:r.meta,container:r.pcrd.container,grid:r.pcrd.grid,tupleWidth:r.pcrd.tupleWidth,protocol:r.pcrd.protocolText,layout:r.pcrd.layout,logs:r.pcrd.logs,analysisSettings:r.pcrd.analysisSettings,issues:r.pcrd.issues},null,2),'application/json')});}return a;});
+MISSY_HOOKS.use("zpcrSetEndpointN","core/biorad/pcrd_views.js:64",64, next => function(n){next(n);PCRD_ITEMS_CACHE.key='';pcrdSync();if(MG.open){mgRefresh();mgRender();}});
+MISSY_HOOKS.use("mgRender","core/biorad/pcrd_views.js:65",65, next => function(){next();const item=mgItem(),id=item?.graphId;if(!id?.startsWith('pcrd_'))return;const input=document.querySelector('#console-selectors input'),button=document.querySelector('#console-selectors button'),context=document.querySelector('#console-selectors select[aria-label="Acquisition group"]');if(input&&button){input.disabled=button.disabled=false;input.value=ZPCR_ENDPOINT_N;button.onclick=()=>{try{zpcrSetEndpointN(input.value);}catch(e){input.setCustomValidity(e.message);input.reportValidity();}};}const current=pcrdItems().find(x=>x.id==='img:'+id);if(context&&current){context.replaceChildren();for(const x of pcrdItems().filter(x=>x.pcrdMetric===current.pcrdMetric)){const o=new Option(x.title,x.id);context.add(o);}context.disabled=false;context.value=current.id;context.onchange=()=>unifiedBrowse(context.value);}});
+MISSY_HOOKS.use("astRender","core/biorad/pcrd_views.js:66",66, next => function(){next();if(pcrdRuns().length){const input=document.querySelector('#assisted-endpoint input'),button=document.querySelector('#assisted-endpoint button');if(input&&button){input.disabled=button.disabled=false;input.value=ZPCR_ENDPOINT_N;button.onclick=()=>{try{zpcrSetEndpointN(input.value);astRender();}catch(e){input.setCustomValidity(e.message);input.reportValidity();}};}}});
 function pcrdReportScript(){return ['# PCRD stored-data report; no vendor result inference','zpcr endpoint '+ZPCR_ENDPOINT_N,'lab '+(sopLabName()||'Laboratory name'),'analyst '+(sopAnalystName()||'Analyst name'),'title MISSY PCRD acquisition QC','clear',...pcrdItems().map(x=>'select '+x.id),'select data:pcrd_sources','selection'].join('\n');}
-const pcrdCommand=cmdExec;cmdExec=async function(raw){const s=String(raw).trim();if(/^pcrd\s+script$/i.test(s)){cmdScriptToggle(true);cmdEl('cmd-script').value=pcrdReportScript();return;}if(/^pcrd\s+(compare|graphs)$/i.test(s)){pcrdSync();unifiedBrowse(pcrdItems()[0]?.id);return;}return pcrdCommand(raw);};CMD_HELP.push(['pcrd script','select stored PCRD graphs and source provenance'],['pcrd graphs','open PCRD figures in the shared viewer']);
-genericScript.onclick=()=>{cmdScriptToggle(true);cmdEl('cmd-script').value=RUNS.some(r=>r.pcrd||r.pcrdLocked)?pcrdReportScript():RUNS.some(r=>r.zpcr)?zpcrReportScript():cmdEl('cmd-script').defaultValue;};
-const pcrdIntegrity=renderIntegrity;renderIntegrity=function(){pcrdIntegrity();for(const r of pcrdRuns()){const list=document.getElementById('source-provenance');const details=[...(list?.querySelectorAll('details')||[])].find(x=>x.querySelector('summary')?.textContent===r.file);if(details){const pre=document.createElement('pre');pre.style.cssText='white-space:pre-wrap;overflow-wrap:anywhere;font:inherit';pre.textContent=JSON.stringify({container:r.pcrd.container,geometry:r.pcrd.grid,tupleWidth:r.pcrd.tupleWidth,protocolSHA256:r.pcrd.protocolSHA256,acquisitionSHA256:r.pcrd.acquisitionSHA256,completion:r.pcrd.completionSupported?'Log and counts supported':'REVIEW',issues:r.pcrd.issues,calibrationRecords:r.pcrd.calibrationRecords,acceptance:'REVIEW: no verified vendor limits'},null,2);details.append(pre);}}};
+MISSY_HOOKS.use("cmdExec","core/biorad/pcrd_views.js:67",67, next => async function(raw){const s=String(raw).trim();if(/^pcrd\s+script$/i.test(s)){cmdScriptToggle(true);cmdEl('cmd-script').value=pcrdReportScript();return;}if(/^pcrd\s+(compare|graphs)$/i.test(s)){pcrdSync();unifiedBrowse(pcrdItems()[0]?.id);return;}return next(raw);});CMD_HELP.push(['pcrd script','select stored PCRD graphs and source provenance'],['pcrd graphs','open PCRD figures in the shared viewer']);
+genericScript.onclick=MISSY_HOOKS.slot("genericScript.onclick",()=>{cmdScriptToggle(true);cmdEl('cmd-script').value=RUNS.some(r=>r.pcrd||r.pcrdLocked)?pcrdReportScript():RUNS.some(r=>r.zpcr)?zpcrReportScript():cmdEl('cmd-script').defaultValue;});
+MISSY_HOOKS.use("renderIntegrity","core/biorad/pcrd_views.js:69",69, next => function(){next();for(const r of pcrdRuns()){const list=document.getElementById('source-provenance');const details=[...(list?.querySelectorAll('details')||[])].find(x=>x.querySelector('summary')?.textContent===r.file);if(details){const pre=document.createElement('pre');pre.style.cssText='white-space:pre-wrap;overflow-wrap:anywhere;font:inherit';pre.textContent=JSON.stringify({container:r.pcrd.container,geometry:r.pcrd.grid,tupleWidth:r.pcrd.tupleWidth,protocolSHA256:r.pcrd.protocolSHA256,acquisitionSHA256:r.pcrd.acquisitionSHA256,completion:r.pcrd.completionSupported?'Log and counts supported':'REVIEW',issues:r.pcrd.issues,calibrationRecords:r.pcrd.calibrationRecords,acceptance:'REVIEW: no verified vendor limits'},null,2);details.append(pre);}}});
 
-const pcrdCCProtocol=ccProtocolKey;ccProtocolKey=function(r){return r.pcrd?'PCRD protocol SHA-256 '+r.pcrd.protocolSHA256:pcrdCCProtocol(r);};
-const pcrdCCPlatform=ccPlatform;ccPlatform=function(r){return r.pcrd?'CFX PCRD':pcrdCCPlatform(r);};
-const pcrdCCStatic=ccStatic;ccStatic=function(r,...a){return r.pcrd?{}:pcrdCCStatic(r,...a);};
-const pcrdCCDynamic=ccDynamic;ccDynamic=function(r,...a){return r.pcrd?{}:pcrdCCDynamic(r,...a);};
-const pcrdPanelBuild=MG_VIEWS.panel.build;MG_VIEWS.panel.build=function(){const chosen=ccInstruments().find(x=>x.key===CC_STATE.instrument);if(pcrdRuns().length&&(RUNS.every(r=>r.pcrd)||chosen?.platform==='CFX PCRD'))return pcrdItems().map((x,i)=>mgIt({kind:'graph',sev:'none',code:'PCRD '+(i+1),title:x.title,graphId:x.id.slice(4),runIndex:0,state:x.note,limits:'Stored acquisition QC; no vendor limits',rows:[],actions:[{key:'3',label:'Open graph',cmd:'chart'}]}));return pcrdPanelBuild();};
+MISSY_HOOKS.use("ccProtocolKey","core/biorad/pcrd_views.js:70",70, next => function(r){return r.pcrd?'PCRD protocol SHA-256 '+r.pcrd.protocolSHA256:next(r);});
+MISSY_HOOKS.use("ccPlatform","core/biorad/pcrd_views.js:71",71, next => function(r){return r.pcrd?'CFX PCRD':next(r);});
+MISSY_HOOKS.use("ccStatic","core/biorad/pcrd_views.js:72",72, next => function(r,...a){return r.pcrd?{}:next(r,...a);});
+MISSY_HOOKS.use("ccDynamic","core/biorad/pcrd_views.js:73",73, next => function(r,...a){return r.pcrd?{}:next(r,...a);});
+MISSY_HOOKS.use("MG_VIEWS.panel.build","core/biorad/pcrd_views.js:74",74, next => function(){const chosen=ccInstruments().find(x=>x.key===CC_STATE.instrument);if(pcrdRuns().length&&(RUNS.every(r=>r.pcrd)||chosen?.platform==='CFX PCRD'))return pcrdItems().map((x,i)=>mgIt({kind:'graph',sev:'none',code:'PCRD '+(i+1),title:x.title,graphId:x.id.slice(4),runIndex:0,state:x.note,limits:'Stored acquisition QC; no vendor limits',rows:[],actions:[{key:'3',label:'Open graph',cmd:'chart'}]}));return next();});
 function pcrdCompact(items){const first=items[0];return {id:'img:pcrd_report_'+first.pcrdGroup+'_'+first.id,kind:'image',title:'PCRD acquisition QC · '+first.title.split(' | ').slice(1).join(' | '),note:first.note,ready:()=>true,figure:()=>{let svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 780"><rect width="1100" height="780" fill="white"/>';items.forEach((x,i)=>{svg+=x.figure().svg.replace(/^<svg\b[^>]*>/,head=>head.replace(/\s(?:x|y|width|height)="[^"]*"/g,'')).replace('<svg ',`<svg x="${(i%2)*550}" y="${Math.floor(i/2)*390}" width="545" height="385" `);});return {svg:svg+'</svg>',rows:[]};}};}
-const pcrdReportSelected=selSelected;selSelected=function(){const selected=pcrdReportSelected();if(!ZPCR_REPORT_EXPAND)return selected;const rest=selected.filter(x=>!x.id.startsWith('img:pcrd_')||x.id.startsWith('img:pcrd_calc_')),groups=new Map();for(const x of selected.filter(x=>x.id.startsWith('img:pcrd_')&&!x.id.startsWith('img:pcrd_calc_'))){if(!groups.has(x.pcrdGroup))groups.set(x.pcrdGroup,[]);groups.get(x.pcrdGroup).push(x);}for(const a of groups.values())for(let i=0;i<a.length;i+=4){const chunk=a.slice(i,i+4);rest.push(chunk.length===1?chunk[0]:pcrdCompact(chunk));}return rest;};
+MISSY_HOOKS.use("selSelected","core/biorad/pcrd_views.js:75",75, next => function(){const selected=next();if(!ZPCR_REPORT_EXPAND)return selected;const rest=selected.filter(x=>!x.id.startsWith('img:pcrd_')||x.id.startsWith('img:pcrd_calc_')),groups=new Map();for(const x of selected.filter(x=>x.id.startsWith('img:pcrd_')&&!x.id.startsWith('img:pcrd_calc_'))){if(!groups.has(x.pcrdGroup))groups.set(x.pcrdGroup,[]);groups.get(x.pcrdGroup).push(x);}for(const a of groups.values())for(let i=0;i<a.length;i+=4){const chunk=a.slice(i,i+4);rest.push(chunk.length===1?chunk[0]:pcrdCompact(chunk));}return rest;});
 
 function pcrdKeylessNotice(){document.getElementById('pcrd-keyless-notice')?.remove();const runs=RUNS.filter(r=>r.pcrdLocked);if(!runs.length)return;const box=document.createElement('div');box.id='pcrd-keyless-notice';box.className='notice warn';const h=document.createElement('strong');h.textContent=runs.length+' PCRD source files: encrypted experimental payload — REVIEW';box.append(h);const p=document.createElement('p');p.textContent='Source filenames, SHA-256 checksums and ZIP directory metadata are readable without a key. Instrument serials, run dates, wells, channels, raw readings and QC results are encrypted and remain unavailable. No qualification verdict or graph is inferred. For numerical graphs, open the file in CFX software and export RDML; MISSY already reads RDML offline.';box.append(p);const b=document.createElement('button');b.type='button';b.textContent='Download PCRD source manifest';b.onclick=()=>download('PCRD_source_manifest.csv',pcrdCSV(pcrdSourceRows()),'text/csv');box.append(b);document.getElementById('readmsg').after(box);}
-const pcrdKeylessExports=exportCatalogue;exportCatalogue=function(){return pcrdKeylessExports().concat(RUNS.filter(r=>r.pcrdLocked).map(r=>({title:'PCRD container inventory · '+r.file,note:'No decrypted data. Source SHA-256 and readable directory metadata only.',ready:()=>true,run:()=>download(r.file+'.container.json',JSON.stringify({file:r.file,sourceSHA256:r.meta.sourceSHA256,sourceBytes:r.meta.sourceBytes,container:r.pcrdContainer,status:r.meta.Notes},null,2),'application/json')})));};
-const pcrdKeylessImages=selImageItems;selImageItems=function(){const a=pcrdKeylessImages();return RUNS.length&&RUNS.every(r=>r.pcrd||r.pcrdLocked)?a.map(x=>x.id.startsWith('img:pcrd_')?x:{...x,ready:()=>false}):a;};
-const pcrdKeylessIntegrity=renderIntegrity;renderIntegrity=function(){pcrdKeylessIntegrity();for(const r of RUNS.filter(r=>r.pcrdLocked)){const box=[...document.querySelectorAll('#source-provenance details')].find(x=>x.querySelector('summary')?.textContent===r.file);if(box){const pre=document.createElement('pre');pre.style.cssText='white-space:pre-wrap;overflow-wrap:anywhere;font:inherit';pre.textContent=JSON.stringify({status:r.meta.Notes,container:r.pcrdContainer},null,2);box.append(pre);}}};
-const pcrdKeylessStatic=ccStatic;ccStatic=function(r,...a){return r.pcrdLocked?{}:pcrdKeylessStatic(r,...a);};
-const pcrdKeylessDynamic=ccDynamic;ccDynamic=function(r,...a){return r.pcrdLocked?{}:pcrdKeylessDynamic(r,...a);};
-const pcrdKeylessPanel=MG_VIEWS.panel.build,pcrdKeylessGraphs=MG_VIEWS.graphs.build;
+MISSY_HOOKS.use("exportCatalogue","core/biorad/pcrd_views.js:76",76, next => function(){return next().concat(RUNS.filter(r=>r.pcrdLocked).map(r=>({title:'PCRD container inventory · '+r.file,note:'No decrypted data. Source SHA-256 and readable directory metadata only.',ready:()=>true,run:()=>download(r.file+'.container.json',JSON.stringify({file:r.file,sourceSHA256:r.meta.sourceSHA256,sourceBytes:r.meta.sourceBytes,container:r.pcrdContainer,status:r.meta.Notes},null,2),'application/json')})));});
+MISSY_HOOKS.use("selImageItems","core/biorad/pcrd_views.js:77",77, next => function(){const a=next();return RUNS.length&&RUNS.every(r=>r.pcrd||r.pcrdLocked)?a.map(x=>x.id.startsWith('img:pcrd_')?x:{...x,ready:()=>false}):a;});
+MISSY_HOOKS.use("renderIntegrity","core/biorad/pcrd_views.js:78",78, next => function(){next();for(const r of RUNS.filter(r=>r.pcrdLocked)){const box=[...document.querySelectorAll('#source-provenance details')].find(x=>x.querySelector('summary')?.textContent===r.file);if(box){const pre=document.createElement('pre');pre.style.cssText='white-space:pre-wrap;overflow-wrap:anywhere;font:inherit';pre.textContent=JSON.stringify({status:r.meta.Notes,container:r.pcrdContainer},null,2);box.append(pre);}}});
+MISSY_HOOKS.use("ccStatic","core/biorad/pcrd_views.js:79",79, next => function(r,...a){return r.pcrdLocked?{}:next(r,...a);});
+MISSY_HOOKS.use("ccDynamic","core/biorad/pcrd_views.js:80",80, next => function(r,...a){return r.pcrdLocked?{}:next(r,...a);});
+
 function pcrdLockedSummary(){return [mgIt({kind:'summary',sev:'watch',code:'PCRD',title:'Encrypted PCRD: source inventory only',value:String(RUNS.length),unit:'sources',state:'REVIEW — experimental payload cannot be read without a key. No numerical QC graphs or vendor verdict inferred.',rows:RUNS.map(r=>[r.file,'Source SHA-256 '+r.meta.sourceSHA256]),actions:[{key:'3',label:'Open file integrity',cmd:'tab integrity'}]})];}
-MG_VIEWS.panel.build=function(){return RUNS.length&&RUNS.every(r=>r.pcrdLocked)?pcrdLockedSummary():pcrdKeylessPanel();};MG_VIEWS.graphs.build=function(){return RUNS.length&&RUNS.every(r=>r.pcrdLocked)?pcrdLockedSummary():pcrdKeylessGraphs();};
+MISSY_HOOKS.use("MG_VIEWS.panel.build","core/biorad/pcrd_views.js:81",81, next => function(){return RUNS.length&&RUNS.every(r=>r.pcrdLocked)?pcrdLockedSummary():next();});MISSY_HOOKS.use("MG_VIEWS.graphs.build","core/biorad/pcrd_views.js:82",82, next => function(){return RUNS.length&&RUNS.every(r=>r.pcrdLocked)?pcrdLockedSummary():next();});
 
 
 // Make raw imports distinguishable from stored vendor-result tables.
@@ -15505,18 +15673,18 @@ function cfxFigure(r,metric){if(metric==='plate'){const f=GRAPHS.find(x=>x.id===
 }
 let CFX_ITEMS=[];
 function cfxSync(){for(let i=GRAPHS.length-1;i>=0;i--)if(GRAPHS[i].id.startsWith('cfxrdml_'))GRAPHS.splice(i,1);CFX_ITEMS=[];for(const [i,r]of cfxRuns().entries())for(const metric of ['amp','cq','plate','melt','endpoint']){const valid=metric==='amp'?r.wells.some(w=>w.rdml.amplification.length>1):metric==='melt'?r.wells.some(w=>w.rdml.melt.length>1):(metric==='cq'||metric==='plate')?r.wells.some(w=>Number.isFinite(w.Cp)):r.wells.some(w=>w.rdml.amplification.length>=ZPCR_ENDPOINT_N);if(!valid)continue;const title=({amp:'Processed amplification',cq:'Vendor Cq by well',plate:'Vendor Cq plate heat map',melt:'Exported melt signal',endpoint:'Processed endpoint N='+ZPCR_ENDPOINT_N})[metric]+' | '+cfxContext(r),item={id:'img:cfxrdml_'+i+'_'+metric,kind:'image',group:'CFX RDML · '+metric,title,note:cfxNote(r),ready:()=>true,figure:()=>cfxFigure(r,metric),cfxRun:r,cfxMetric:metric};CFX_ITEMS.push(item);GRAPHS.push({id:item.id.slice(4),title,group:item.group,scope:'all',opts:[],note:item.note,render:item.figure});}}
-const cfxImages=selImageItems;selImageItems=function(){return cfxImages().filter(x=>!x.id.startsWith('img:cfxrdml_')).concat(CFX_ITEMS);};
-const cfxData=selDataItems;selDataItems=function(){return cfxData().concat([{id:'data:cfxrdml_sources',kind:'data',group:'CFX RDML · Provenance',title:'CFX RDML source files, original PCRD checksums and processing',ready:()=>cfxRuns().length>0,note:'Research Use Only. Independent visualization of a current vendor-software export; does not replace the original vendor qualification report or establish instrument conformity. Original PCRD files unchanged. Quantitation and melt curves exported; derived gene-expression views omitted.\n'+cfxSourceRows().map(r=>r.rdml_file+'\nRDML SHA-256: '+r.rdml_sha256+'\nPCRD: '+r.source_pcrd+'\nPCRD SHA-256: '+r.pcrd_sha256).join('\n'),rows:()=>cfxSourceRows().map(r=>({file:r.rdml_file,SN:r.instrument_sn,date:r.run_date,status:r.status})),text:()=>pcrdCSV(cfxSourceRows()),file:'CFX_RDML_sources.csv'}]);};
-const cfxSelected=selSelected;selSelected=function(){const a=cfxSelected();if(a.some(x=>x.id.startsWith('img:cfxrdml_'))&&!a.some(x=>x.id==='data:cfxrdml_sources'))a.push(selItem('data:cfxrdml_sources'));return a;};
+MISSY_HOOKS.use("selImageItems","core/biorad/cfx_rdml_views.js:83",83, next => function(){return next().filter(x=>!x.id.startsWith('img:cfxrdml_')).concat(CFX_ITEMS);});
+MISSY_HOOKS.use("selDataItems","core/biorad/cfx_rdml_views.js:84",84, next => function(){return next().concat([{id:'data:cfxrdml_sources',kind:'data',group:'CFX RDML · Provenance',title:'CFX RDML source files, original PCRD checksums and processing',ready:()=>cfxRuns().length>0,note:'Research Use Only. Independent visualization of a current vendor-software export; does not replace the original vendor qualification report or establish instrument conformity. Original PCRD files unchanged. Quantitation and melt curves exported; derived gene-expression views omitted.\n'+cfxSourceRows().map(r=>r.rdml_file+'\nRDML SHA-256: '+r.rdml_sha256+'\nPCRD: '+r.source_pcrd+'\nPCRD SHA-256: '+r.pcrd_sha256).join('\n'),rows:()=>cfxSourceRows().map(r=>({file:r.rdml_file,SN:r.instrument_sn,date:r.run_date,status:r.status})),text:()=>pcrdCSV(cfxSourceRows()),file:'CFX_RDML_sources.csv'}]);});
+MISSY_HOOKS.use("selSelected","core/biorad/cfx_rdml_views.js:85",85, next => function(){const a=next();if(a.some(x=>x.id.startsWith('img:cfxrdml_'))&&!a.some(x=>x.id==='data:cfxrdml_sources'))a.push(selItem('data:cfxrdml_sources'));return a;});
 function cfxReportScript(){return '# CFX vendor RDML: processed curves, no inferred hardware or acceptance limits\ncfx endpoint '+ZPCR_ENDPOINT_N+'\n'+CFX_ITEMS.map(x=>'select '+x.id).join('\n')+'\nselect data:cfxrdml_sources';}
-const cfxScriptHandler=genericScript.onclick;genericScript.onclick=()=>{if(cfxRuns().length){cmdScriptToggle(true);cmdEl('cmd-script').value=cfxReportScript();}else cfxScriptHandler();};
-const cfxCommand=cmdExec;cmdExec=async function(raw){const s=String(raw).trim(),endpoint=s.match(/^cfx\s+endpoint\s+(\d+)$/i);if(endpoint){zpcrSetEndpointN(endpoint[1]);return;}if(/^cfx\s+graphs$/i.test(s)){unifiedBrowse(CFX_ITEMS[0]?.id);return;}if(/^cfx\s+script$/i.test(s)){cmdScriptToggle(true);cmdEl('cmd-script').value=cfxReportScript();return;}return cfxCommand(raw);};CMD_HELP.push(['cfx endpoint N','Last N exported processed amplification reads (1-999)'],['cfx graphs','Open vendor CFX RDML figures in the shared viewer'],['cfx script','Select CFX processed QC figures and source provenance']);
-const cfxEndpoint=zpcrSetEndpointN;zpcrSetEndpointN=function(n){cfxEndpoint(n);cfxSync();if(MG.open){mgRefresh();mgRender();}};
-const cfxRender=mgRender;mgRender=function(){cfxRender();const current=CFX_ITEMS.find(x=>x.id==='img:'+mgItem()?.graphId);if(!current)return;const bar=document.getElementById('console-selectors'),context=bar.querySelector('select[aria-label="Acquisition group"]'),input=bar.querySelector('input'),apply=bar.querySelector('button');context.replaceChildren(new Option(cfxContext(current.cfxRun),''));input.disabled=apply.disabled=false;input.value=ZPCR_ENDPOINT_N;input.title='Last N exported, processed amplification reads; not raw detector counts';};
-const cfxAst=astRender;astRender=function(){cfxAst();if(cfxRuns().length){const e=document.getElementById('assisted-endpoint');e.querySelector('input').disabled=e.querySelector('button').disabled=false;e.querySelector('input').value=ZPCR_ENDPOINT_N;}};
-const cfxPlatform=ccPlatform;ccPlatform=function(r){return r.cfxRDML?'CFX RDML':cfxPlatform(r);};const cfxProtocolKey=ccProtocolKey;ccProtocolKey=function(r){return r.cfxRDML?r.cfxRDML.protocolSHA256+' '+r.rows+'x'+r.cols:cfxProtocolKey(r);};
-const cfxPanel=MG_VIEWS.panel.build;MG_VIEWS.panel.build=function(){const chosen=ccInstruments().find(x=>x.key===CC_STATE.instrument);return cfxRuns().length&&(RUNS.every(r=>r.cfxRDML)||chosen?.platform==='CFX RDML')?CFX_ITEMS.map((x,i)=>mgIt({kind:'graph',sev:'none',code:'CFX '+(i+1),title:x.title,graphId:x.id.slice(4),state:x.note,rows:[],actions:[{key:'3',label:'Open graph',cmd:'chart'}]})):cfxPanel();};
-const cfxExports=exportCatalogue;exportCatalogue=function(){return cfxExports().concat(cfxRuns().length?[{title:'CFX RDML / original PCRD provenance',note:'Full filenames and SHA-256 checksums; source linkage is local manifest evidence, not vendor authentication.',ready:()=>true,run:()=>download('CFX_RDML_provenance.json',JSON.stringify(cfxSourceRows(),null,2),'application/json')}]:[]);};
+MISSY_HOOKS.use("genericScript.onclick","core/biorad/cfx_rdml_views.js:86",86, next => ()=>{if(cfxRuns().length){cmdScriptToggle(true);cmdEl('cmd-script').value=cfxReportScript();}else next();});
+MISSY_HOOKS.use("cmdExec","core/biorad/cfx_rdml_views.js:87",87, next => async function(raw){const s=String(raw).trim(),endpoint=s.match(/^cfx\s+endpoint\s+(\d+)$/i);if(endpoint){zpcrSetEndpointN(endpoint[1]);return;}if(/^cfx\s+graphs$/i.test(s)){unifiedBrowse(CFX_ITEMS[0]?.id);return;}if(/^cfx\s+script$/i.test(s)){cmdScriptToggle(true);cmdEl('cmd-script').value=cfxReportScript();return;}return next(raw);});CMD_HELP.push(['cfx endpoint N','Last N exported processed amplification reads (1-999)'],['cfx graphs','Open vendor CFX RDML figures in the shared viewer'],['cfx script','Select CFX processed QC figures and source provenance']);
+MISSY_HOOKS.use("zpcrSetEndpointN","core/biorad/cfx_rdml_views.js:88",88, next => function(n){next(n);cfxSync();if(MG.open){mgRefresh();mgRender();}});
+MISSY_HOOKS.use("mgRender","core/biorad/cfx_rdml_views.js:89",89, next => function(){next();const current=CFX_ITEMS.find(x=>x.id==='img:'+mgItem()?.graphId);if(!current)return;const bar=document.getElementById('console-selectors'),context=bar.querySelector('select[aria-label="Acquisition group"]'),input=bar.querySelector('input'),apply=bar.querySelector('button');context.replaceChildren(new Option(cfxContext(current.cfxRun),''));input.disabled=apply.disabled=false;input.value=ZPCR_ENDPOINT_N;input.title='Last N exported, processed amplification reads; not raw detector counts';});
+MISSY_HOOKS.use("astRender","core/biorad/cfx_rdml_views.js:90",90, next => function(){next();if(cfxRuns().length){const e=document.getElementById('assisted-endpoint');e.querySelector('input').disabled=e.querySelector('button').disabled=false;e.querySelector('input').value=ZPCR_ENDPOINT_N;}});
+MISSY_HOOKS.use("ccPlatform","core/biorad/cfx_rdml_views.js:91",91, next => function(r){return r.cfxRDML?'CFX RDML':next(r);});MISSY_HOOKS.use("ccProtocolKey","core/biorad/cfx_rdml_views.js:92",92, next => function(r){return r.cfxRDML?r.cfxRDML.protocolSHA256+' '+r.rows+'x'+r.cols:next(r);});
+MISSY_HOOKS.use("MG_VIEWS.panel.build","core/biorad/cfx_rdml_views.js:93",93, next => function(){const chosen=ccInstruments().find(x=>x.key===CC_STATE.instrument);return cfxRuns().length&&(RUNS.every(r=>r.cfxRDML)||chosen?.platform==='CFX RDML')?CFX_ITEMS.map((x,i)=>mgIt({kind:'graph',sev:'none',code:'CFX '+(i+1),title:x.title,graphId:x.id.slice(4),state:x.note,rows:[],actions:[{key:'3',label:'Open graph',cmd:'chart'}]})):next();});
+MISSY_HOOKS.use("exportCatalogue","core/biorad/cfx_rdml_views.js:94",94, next => function(){return next().concat(cfxRuns().length?[{title:'CFX RDML / original PCRD provenance',note:'Full filenames and SHA-256 checksums; source linkage is local manifest evidence, not vendor authentication.',ready:()=>true,run:()=>download('CFX_RDML_provenance.json',JSON.stringify(cfxSourceRows(),null,2),'application/json')}]:[]);});
 /* MISSY independent raw-channel analysis v1.0. Never writes vendor results or raw data.
  * Temperature-ramp recognition and SG5 approach informed by zpcrweb (GPL-3.0).
  * This is an explicit exploratory method, not a reconstruction of CFX algorithms. */
@@ -15551,15 +15719,15 @@ const PI_COMPARE={runs:null,count:-1,rows:[]};function piComparisons(){if(PI_COM
 function piSummary(){const comparisons=piComparisons();return pcrdRuns().flatMap(run=>piResults(run).groups.filter(g=>g.isAmp||g.isMelt).map(g=>{const records=g.records,metric=g.isAmp?'Cq':'Tm',vals=records.map(r=>g.isAmp?r.cq.value:r.tm.value).filter(Number.isFinite),c=comparisons.filter(r=>r._group===g&&r.metric===metric),pairs=c.filter(r=>Number.isFinite(r.delta)),d=pairs.map(r=>r.delta);return {file:run.file,SN:run.meta.InstrumentID,group:g.step,channel:g.channel+1,dye:g.dye,metric,loaded_wells:records.length,independent_calls:vals.length,missing_independent:records.length-vals.length,paired_calls:pairs.length,independent_only:c.filter(r=>Number.isFinite(r.independent)&&r.reference===null).length,reference_only:c.filter(r=>r.independent===null&&Number.isFinite(r.reference)).length,median_delta:d.length?piMedian(d):'',mean_delta:d.length?d.reduce((s,v)=>s+v,0)/d.length:'',max_abs_delta:d.length?Math.max(...d.map(Math.abs)):'',reference:c.length?c[0].reference_basis:'No verified matched RDML reference'};}));}
 function piPlot(g,metric,compare){const label=metric==='Cq'?'Cq (independently calculated)':'Tm (independently calculated, °C)',rows=compare?piComparisons().filter(r=>r._group===g&&r.metric===metric&&Number.isFinite(r.delta)):g.records.map(r=>({position:r.layout.position,well:r.layout.well,value:metric==='Cq'?r.cq.value:r.tm.value})).filter(r=>Number.isFinite(r.value));const points=rows.map(r=>[r.position+1,compare?r.delta:r.value,r.well]),ys=points.map(p=>p[1]),extent=ys.length?[compare?Math.min(0,...ys):Math.min(...ys),compare?Math.max(0,...ys):Math.max(...ys)]:[0,1],pad=(extent[1]-extent[0])*.1||1;return {svg:points.length?svgPlot({width:1000,height:530,title:compare?'Independent '+metric+' minus '+(metric==='Tm'?'RDML-curve-derived reference':'CFX RDML Cq'):label,x:[1,g.run.rows*g.run.cols],y:[extent[0]-pad,extent[1]+pad],xlab:'Physical well index (row-major)',ylab:compare?'Difference ('+(metric==='Cq'?'cycles':'°C')+')':label,series:[{data:points,colour:compare?'#9333ea':'#2563eb',r:3}],hlines:compare?[{y:0,label:'Zero difference; no acceptance band'}]:[],right:25}):svgMessage('No valid independent calls / verified comparison pairs in this acquisition.'),rows:[]};}
 const PI_ITEMS={runs:null,count:-1,items:[]};function piItems(){if(PI_ITEMS.runs===RUNS&&PI_ITEMS.count===RUNS.length)return PI_ITEMS.items;const comp=piComparisons(),items=[];for(const [ri,run]of pcrdRuns().entries())for(const g of piResults(run).groups)for(const metric of ['Cq','Tm']){if(metric==='Cq'&&!g.isAmp||metric==='Tm'&&!g.isMelt)continue;for(const compare of [false,true]){if(compare&&!comp.some(r=>r._group===g&&r.metric===metric))continue;const title=(compare?'Independent '+metric+' comparison':metric+' independently calculated')+' | '+run.meta.InstrumentID+' | '+g.dye+' | group '+g.step+' | '+run.file,id='img:pcrd_calc_'+ri+'_'+g.step+'_'+g.channel+'_'+metric+(compare?'_compare':'');items.push({id,kind:'image',group:'PCRD · Independent '+metric+(compare?' comparisons':''),title,note:[PCRDI_METHOD,'Source: '+run.file,'Source SHA-256: '+run.meta.sourceSHA256,'Protocol SHA-256: '+run.pcrd.protocolSHA256,'Source quality: '+(run.pcrd.issues.join('; ')||'Completion/log/count checks supported; no vendor verdict'),'Dye '+g.dye+' uses stored channelPosition '+g.channel+'; temperature axis '+g.axis.source,metric==='Cq'?'Baseline cycles 3-10; channel threshold '+(Number.isFinite(g.threshold)?g.threshold.toPrecision(7):'Unavailable'):PCRDI_NOTES[6],compare?(metric==='Tm'?'Reference: independently derived from CFX processed melt curve when vendor meltTemp is absent; not vendor-reported Tm.':'Reference: vendor-exported CFX RDML Cq. Delta = independent minus reference.'):PCRDI_NOTES[0],PCRDI_NOTES[1],'No acceptance limits; see Independent calculation methods and comparison summary.'].join('\n'),ready:()=>true,figure:()=>piPlot(g,metric,compare),pcrdGroup:'calc_'+ri+'_'+g.step+'_'+g.channel,pcrdMetric:'independent_'+metric+(compare?'_compare':''),independentGroup:g,independentComparison:compare});}}PI_ITEMS.runs=RUNS;PI_ITEMS.count=RUNS.length;PI_ITEMS.items=items;return items;}
-const piRawItems=pcrdItems;pcrdItems=function(){return piRawItems().concat(piItems());};
-const piData=selDataItems;selDataItems=function(){return piData().concat([{id:'data:pcrd_independent_methods',kind:'data',group:'PCRD · Independent calculations',title:'Independent Cq/Tm methods and CFX reference comparison summary',ready:()=>pcrdRuns().length>0,note:PCRDI_METHOD+'\n'+PCRDI_NOTES.map(s=>'• '+s).join('\n')+'\nSource keys (full filenames):\n'+pcrdRuns().map((r,i)=>'P'+String(i+1).padStart(2,'0')+' = '+r.file).join('\n'),rows:()=>piSummary().map(r=>({source:'P'+String(pcrdRuns().findIndex(x=>x.file===r.file)+1).padStart(2,'0'),'Group / Ch / metric':r.group+' / '+r.channel+' / '+r.metric,'Calls / NA':r.independent_calls+' / '+r.missing_independent,Pairs:r.paired_calls,'Only I / R':r.independent_only+' / '+r.reference_only,'Median d':r.median_delta,'Max abs d':r.max_abs_delta,Reference:r.reference==='Vendor-exported CFX Cq'?'CFX Cq':r.reference.startsWith('Independently derived')?'Curve Tm':r.reference.startsWith('Vendor-reported')?'Vendor Tm':'Unmatched'})),text:()=>pcrdCSV(piSummary()),file:'PCRD_independent_summary.csv'}]);};
-const piSelected=selSelected;selSelected=function(){const a=piSelected();if([...SEL_STATE.ids].some(id=>id.startsWith('img:pcrd_calc_'))&&!a.some(x=>x.id==='data:pcrd_independent_methods'))a.push(selItem('data:pcrd_independent_methods'));if([...SEL_STATE.ids].some(id=>id.startsWith('img:pcrd_calc_')&&id.endsWith('_compare'))&&!a.some(x=>x.id==='data:cfxrdml_sources'))a.push(selItem('data:cfxrdml_sources'));return a;};
-const piExports=exportCatalogue;exportCatalogue=function(){return piExports().concat(pcrdRuns().length?[{title:'Independently calculated PCRD Cq/Tm (CSV)',note:PCRDI_NOTES[0],ready:()=>true,run:()=>download('PCRD_independent_Cq_Tm.csv',pcrdCSV(pcrdRuns().flatMap(r=>piResults(r).rows)),'text/csv')},{title:'Independent PCRD versus CFX RDML comparison (CSV)',note:'Source-linked pairs and missing calls; Tm reference basis explicitly labelled.',ready:()=>true,run:()=>download('PCRD_CFX_comparison.csv',pcrdCSV(piComparisons().map(({_group,...r})=>r)),'text/csv')}]:[]);};
-const piCommand=cmdExec;cmdExec=async function(raw){if(/^pcrd\s+(calculations|compare)$/i.test(String(raw).trim())){pcrdSync();unifiedBrowse(piItems()[0]?.id);return;}return piCommand(raw);};CMD_HELP.push(['pcrd calculations','Open independently calculated Cq/Tm and source-linked CFX comparisons']);
-const piScriptButton=genericScript.onclick;genericScript.onclick=()=>{if(pcrdRuns().length){cmdScriptToggle(true);cmdEl('cmd-script').value=pcrdReportScript();}else piScriptButton();};
+MISSY_HOOKS.use("pcrdItems","core/analysis/pcrd_independent.js:95",95, next => function(){return next().concat(piItems());});
+MISSY_HOOKS.use("selDataItems","core/analysis/pcrd_independent.js:96",96, next => function(){return next().concat([{id:'data:pcrd_independent_methods',kind:'data',group:'PCRD · Independent calculations',title:'Independent Cq/Tm methods and CFX reference comparison summary',ready:()=>pcrdRuns().length>0,note:PCRDI_METHOD+'\n'+PCRDI_NOTES.map(s=>'• '+s).join('\n')+'\nSource keys (full filenames):\n'+pcrdRuns().map((r,i)=>'P'+String(i+1).padStart(2,'0')+' = '+r.file).join('\n'),rows:()=>piSummary().map(r=>({source:'P'+String(pcrdRuns().findIndex(x=>x.file===r.file)+1).padStart(2,'0'),'Group / Ch / metric':r.group+' / '+r.channel+' / '+r.metric,'Calls / NA':r.independent_calls+' / '+r.missing_independent,Pairs:r.paired_calls,'Only I / R':r.independent_only+' / '+r.reference_only,'Median d':r.median_delta,'Max abs d':r.max_abs_delta,Reference:r.reference==='Vendor-exported CFX Cq'?'CFX Cq':r.reference.startsWith('Independently derived')?'Curve Tm':r.reference.startsWith('Vendor-reported')?'Vendor Tm':'Unmatched'})),text:()=>pcrdCSV(piSummary()),file:'PCRD_independent_summary.csv'}]);});
+MISSY_HOOKS.use("selSelected","core/analysis/pcrd_independent.js:97",97, next => function(){const a=next();if([...SEL_STATE.ids].some(id=>id.startsWith('img:pcrd_calc_'))&&!a.some(x=>x.id==='data:pcrd_independent_methods'))a.push(selItem('data:pcrd_independent_methods'));if([...SEL_STATE.ids].some(id=>id.startsWith('img:pcrd_calc_')&&id.endsWith('_compare'))&&!a.some(x=>x.id==='data:cfxrdml_sources'))a.push(selItem('data:cfxrdml_sources'));return a;});
+MISSY_HOOKS.use("exportCatalogue","core/analysis/pcrd_independent.js:98",98, next => function(){return next().concat(pcrdRuns().length?[{title:'Independently calculated PCRD Cq/Tm (CSV)',note:PCRDI_NOTES[0],ready:()=>true,run:()=>download('PCRD_independent_Cq_Tm.csv',pcrdCSV(pcrdRuns().flatMap(r=>piResults(r).rows)),'text/csv')},{title:'Independent PCRD versus CFX RDML comparison (CSV)',note:'Source-linked pairs and missing calls; Tm reference basis explicitly labelled.',ready:()=>true,run:()=>download('PCRD_CFX_comparison.csv',pcrdCSV(piComparisons().map(({_group,...r})=>r)),'text/csv')}]:[]);});
+MISSY_HOOKS.use("cmdExec","core/analysis/pcrd_independent.js:99",99, next => async function(raw){if(/^pcrd\s+(calculations|compare)$/i.test(String(raw).trim())){pcrdSync();unifiedBrowse(piItems()[0]?.id);return;}return next(raw);});CMD_HELP.push(['pcrd calculations','Open independently calculated Cq/Tm and source-linked CFX comparisons']);
+MISSY_HOOKS.use("genericScript.onclick","core/analysis/pcrd_independent.js:100",100, next => ()=>{if(pcrdRuns().length){cmdScriptToggle(true);cmdEl('cmd-script').value=pcrdReportScript();}else next();});
 
 /* Shared text fit; retain full context in the caption and control tooltips. */
-const piTextRender=mgRender;mgRender=function(){piTextRender();for(const b of document.querySelectorAll('#mg-actions .mg-act')){const label=b.querySelector('.l');if(b.dataset.cmd==='next run'&&label){b.title=b.dataset.graphOriginalLabel||label.textContent;label.textContent='Next run';}}for(const s of document.querySelectorAll('#console-selectors select'))s.title=s.selectedOptions[0]?.textContent||'';};
+MISSY_HOOKS.use("mgRender","core/analysis/pcrd_independent.js:101",101, next => function(){next();for(const b of document.querySelectorAll('#mg-actions .mg-act')){const label=b.querySelector('.l');if(b.dataset.cmd==='next run'&&label){b.title=b.dataset.graphOriginalLabel||label.textContent;label.textContent='Next run';}}for(const s of document.querySelectorAll('#console-selectors select'))s.title=s.selectedOptions[0]?.textContent||'';});
 /* Explicit core lifecycle integration; readers do not refresh/replace the UI. */
 async function bioradAfterRead(token){
  for(const r of pcrdRuns())piResults(r);
@@ -15582,6 +15750,8 @@ registerReader({id:'rdml',version:'2026-10-21',extensions:['.rdml'],probe:s=>s.z
 registerReader({id:'zpcr',version:'2026-10-21',extensions:['.zpcr'],probe:s=>s.zipNames?.some(n=>/^RunInfo\.xml$/i.test(n))&&s.zipNames.some(n=>/\.plateread$/i.test(n)),decode:decodeZpcr});
 registerReader({id:'pcrd',version:'2026-10-21',extensions:['.pcrd','.pcrd.xml'],probe:s=>!s.zipNames&&/<experimentalData2\b/.test(new TextDecoder().decode(s.bytes.subarray(0,2048))),decode:decodePcrd});
 document.addEventListener('DOMContentLoaded',()=>{document.getElementById('file').accept=readerAccept();});
+
+MISSY_HOOKS.seal();
 </script>
 
 <details id="missy-public-license" style="margin:16px 16px 100px;padding:12px;border:1px solid #40546c;border-radius:8px"><summary>GPL-3.0 · Attribution and source / 许可与源代码</summary><pre style="white-space:pre-wrap;overflow-wrap:anywhere">MISSY public build — modified 20 October 2026.

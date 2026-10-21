@@ -14,6 +14,7 @@ for i,page in enumerate(d):
    for span in line['spans']:
     x0,y0,x1,y1=span['bbox']
     if x0<-.5 or y0<-.5 or x1>page.rect.width+.5 or y1>page.rect.height+.5:bad.append([i+1,span['text'],span['bbox']])
+    if not span['text'].startswith('Page ') and y1>page.rect.height-42:bad.append([i+1,'content enters footer: '+span['text'],span['bbox']])
  pix=page.get_pixmap(matrix=fitz.Matrix(.5,.5),alpha=False);thumbs.append(Image.frombytes('RGB',(pix.width,pix.height),pix.samples));page.get_pixmap(matrix=fitz.Matrix(1.2,1.2),alpha=False).save(p/f'page_{i+1:02}.png')
 assert not bad,bad
 flat=''.join('\n'.join(text).split())

@@ -9,3 +9,5 @@ registerReader({id:'rdml',version:'2026-10-21',extensions:['.rdml'],probe:s=>s.z
 registerReader({id:'zpcr',version:'2026-10-21',extensions:['.zpcr'],probe:s=>s.zipNames?.some(n=>/^RunInfo\.xml$/i.test(n))&&s.zipNames.some(n=>/\.plateread$/i.test(n)),decode:decodeZpcr});
 registerReader({id:'pcrd',version:'2026-10-21',extensions:['.pcrd','.pcrd.xml'],probe:s=>!s.zipNames&&/<experimentalData2\b/.test(new TextDecoder().decode(s.bytes.subarray(0,2048))),decode:decodePcrd});
 document.addEventListener('DOMContentLoaded',()=>{document.getElementById('file').accept=readerAccept();});
+
+MISSY_HOOKS.seal();

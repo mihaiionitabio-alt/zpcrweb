@@ -894,3 +894,7 @@ bar.
 ## MISSY offline addition in this fork
 
 `missy/` contains a separately maintained, self-contained HTML application and its corresponding modular sources. It is not imported into the zpcrweb core or web application and does not change their build or runtime. `missy/source/build/build.py public` builds the frozen Zenodo baseline plus versioned reader registration and shared presentation adapters. The source architecture document describes the reader/core boundary and regression evidence. Encrypted PCRD imports use a user-supplied password held only in page memory; no CFX-derived decryption material is shipped. See [MISSY documentation](./missy/README.md).
+
+## MISSY fork addition
+
+The standalone offline MISSY build is documented in [missy/source/ARCHITECTURE.md](./missy/source/ARCHITECTURE.md). Its readers use model v2 validation and its UI/reports use explicit sealed hooks. This does not change the upstream TypeScript application.

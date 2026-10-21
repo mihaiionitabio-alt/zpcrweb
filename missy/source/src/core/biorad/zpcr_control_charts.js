@@ -1,10 +1,10 @@
 
 /* Feed raw ZPCR hardware metrics through MISSY's existing chart/history engine. */
-const zpcrCCPlatform=ccPlatform;ccPlatform=function(run){return run.zpcr?'CFX':zpcrCCPlatform(run);};
-const zpcrCCProtocol=ccProtocolKey;ccProtocolKey=function(run){return run.zpcr?(run.zpcr.protocolText?'ZPCR protocol SHA-256 '+run.meta.ZPCRProtocolSHA256:'Unknown protocol; source '+run.meta.sourceSHA256):zpcrCCProtocol(run);};
-const zpcrCCDynamic=ccDynamic;ccDynamic=function(run,...args){return run.zpcr?{}:zpcrCCDynamic(run,...args);};
-const zpcrCCStatic=ccStatic;ccStatic=function(run){
- if(!run.zpcr)return zpcrCCStatic(run);
+MISSY_HOOKS.use("ccPlatform","core/biorad/zpcr_control_charts.js:2",2, next => function(run){return run.zpcr?'CFX':next(run);});
+MISSY_HOOKS.use("ccProtocolKey","core/biorad/zpcr_control_charts.js:3",3, next => function(run){return run.zpcr?(run.zpcr.protocolText?'ZPCR protocol SHA-256 '+run.meta.ZPCRProtocolSHA256:'Unknown protocol; source '+run.meta.sourceSHA256):next(run);});
+MISSY_HOOKS.use("ccDynamic","core/biorad/zpcr_control_charts.js:4",4, next => function(run,...args){return run.zpcr?{}:next(run,...args);});
+MISSY_HOOKS.use("ccStatic","core/biorad/zpcr_control_charts.js:5",5, next => function(run){
+ if(!run.zpcr)return next(run);
  const z=run.zpcr,m={};
  const set=(key,variant,value)=>{if(Number.isFinite(value))(m[key]||(m[key]={}))[variant]=value;};
  for(const step of [...new Set(z.reads.map(r=>r.step))]){
@@ -24,7 +24,7 @@ const zpcrCCStatic=ccStatic;ccStatic=function(run){
   }
  }
  return m;
-};
+});
 const zpcrChartDefs=[
  ['z_block','Z-H1','hardware','Block temperature at plate reads — mean','°C'],
  ['z_block_sd','Z-H2','hardware','Block temperature at plate reads — within-run SD','°C'],
@@ -42,6 +42,6 @@ const zpcrChartDefs=[
  ['z_interval_sd','Z-S2','software','Plate-read interval — SD','s']
 ];
 for(const [id,code,group,title,unit]of zpcrChartDefs){const def={id,code,group,title,unit,inst:['CFX'],type:'i',variants:true,better:'target',status:'B',source:'ZPCR .Plateread / RunInfo.xml; selected acquisition step and raw channel',idea:'One point per run and acquisition-step/channel variant. Raw hardware data only; no Cq, dye correction or sample-result dependence. Temperature samples are taken at plate reads, not continuously. LED values are configuration settings, not measured current in mA. Ambient scalar interpretation is unresolved; integer-encoded values may be quantised.',reading:'Compare the same instrument, protocol, acquisition step, channel and firmware. Different protocol/firmware cohorts withhold statistical limits. Mean/SD during a melt ramp describe the sweep, not temperature accuracy. Read timing has one-second timestamp resolution. Reference deviations have no assigned cause. Statistical control limits are data-derived, not Bio-Rad acceptance limits; no vendor specifications are supplied.'};CC_CHARTS.push(def);CC_BY_ID[id]=def;}
-const zpcrRenderPanel=renderPanel;renderPanel=function(){zpcrRenderPanel();if(CC_STATE.instrument.startsWith('CFX · ')){const box=document.querySelector('#cc-summary');if(box)box.insertAdjacentHTML('afterbegin','<div class="notice warn">Bio-Rad ZPCR hardware control charts: select a matching protocol and acquisition-step/channel variant. No vendor acceptance limits are assigned. Sparse/mixed protocol or firmware history stays collecting a baseline. These charts do not establish Cq, Tm, analytical calls or instrument qualification.</div>');}};
+MISSY_HOOKS.use("renderPanel","core/biorad/zpcr_control_charts.js:6",6, next => function(){next();if(CC_STATE.instrument.startsWith('CFX · ')){const box=document.querySelector('#cc-summary');if(box)box.insertAdjacentHTML('afterbegin','<div class="notice warn">Bio-Rad ZPCR hardware control charts: select a matching protocol and acquisition-step/channel variant. No vendor acceptance limits are assigned. Sparse/mixed protocol or firmware history stays collecting a baseline. These charts do not establish Cq, Tm, analytical calls or instrument qualification.</div>');}});
 const zpcrCCLink=document.createElement('button');zpcrCCLink.textContent='Open ZPCR control charts · Control panel';zpcrCCLink.className='act';zpcrCCLink.onclick=()=>{const r=RUNS.find(r=>r.zpcr);if(!r)return;CC_STATE.instrument=ccInstrumentKey(r);CC_STATE.protocol='';CC_STATE.open='z_block';CC_STATE.variant='';CC_STATE.cache=null;markDirty('panel');showTab('panel');};
-const zpcrBasePaint=zpcrPaint;zpcrPaint=function(){zpcrBasePaint();if(RUNS.some(r=>r.zpcr))zpcrPanel.prepend(zpcrCCLink);};
+MISSY_HOOKS.use("zpcrPaint","core/biorad/zpcr_control_charts.js:7",7, next => function(){next();if(RUNS.some(r=>r.zpcr))zpcrPanel.prepend(zpcrCCLink);});

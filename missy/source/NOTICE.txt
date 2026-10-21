@@ -15,3 +15,4 @@ Supported PCRD ZIP compression: stored / Deflate. Other methods remain unsupport
 
 Modular port: 21 October 2026. Baseline: Zenodo record 23437639.
 The public variant registers readers explicitly; Bio-Rad presentation adapters are kept in core/biorad.
+Hook/model update: 21 October 2026. Explicit UI/report hooks, model v2 validation, paginated long report metadata.

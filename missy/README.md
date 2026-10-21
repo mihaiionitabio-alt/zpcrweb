@@ -21,7 +21,15 @@ Open `dist/Missy-public.html`. Python 3 is sufficient; no packages, internet or 
 
 Encrypted PCRD imports ask for a locally supplied password; no CFX-derived decryption state, vendor password or DLL is distributed. Passwords remain in page memory until forgotten or the page closes. Cancel keeps source inventory only; wrong passwords import no measurements. The prompt explains authorised access and RDML exports from licensed CFX software.
 
-The shared eight-tab MISSY design, large two-row desktop Console controls, Command and Assisted modes and report workflows remain. Protocols and serials remain separate, channels are compared, and the endpoint default is N=7. Results distinguish raw acquisitions from stored vendor result tables and independently calculated Cq/Tm. Core presentation adapters retain documented compatibility composition points; the binary readers do not replace the UI.
+The shared eight-tab MISSY design, large two-row desktop Console controls, Command and Assisted modes and report workflows remain. Protocols and serials remain separate, channels are compared, and the endpoint default is N=7. Results distinguish raw acquisitions from stored vendor result tables and independently calculated Cq/Tm. UI and report extensions use named, ordered hooks rather than replacing global functions or PDF methods. The run-model v2 boundary validates source evidence, result collections, positions and raw dimensions before commitment. The binary readers do not replace the UI.
+
+## Hooks/model update: 2026.10.21.hooks1
+
+- 105 registrations across 35 explicit hooks; registry sealed after startup.
+- Frozen baseline manifests remain byte-identical.
+- Malformed models, duplicate hooks, context/order, double-next and async cleanup tested.
+- Command/Assisted PDF downloads tested through the actual interface.
+- Long run lists paginate above the footer; contents wrap.
 
 ## Validation before deployment
 

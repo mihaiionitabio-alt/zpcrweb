@@ -26,7 +26,7 @@ function zpcrGuideMetrics(run){
  }
  return out;
 }
-const zpcrGuideStatic=ccStatic;ccStatic=function(run){const m=zpcrGuideStatic(run);if(run.zpcr)Object.assign(m,zpcrGuideMetrics(run));return m;};
+MISSY_HOOKS.use("ccStatic","core/biorad/zpcr_guide_charts.js:22",22, next => function(run){const m=next(run);if(run.zpcr)Object.assign(m,zpcrGuideMetrics(run));return m;});
 for(const [id,code,title,unit,group]of [
  ['z_early_slope','Z-R1','Raw early-cycle linear slope','raw units/cycle','hardware'],
  ['z_early_residual','Z-R2','Raw early-cycle linear-fit residual RMS','raw units','hardware'],
@@ -35,4 +35,4 @@ for(const [id,code,title,unit,group]of [
  ['z_gapmax','Z-R5','Ordered block-temperature absolute increment — maximum','°C/read','software']
 ]){const def={id,code,title,unit,group,inst:['CFX'],type:'i',variants:true,better:'target',status:'B',source:'Stored raw well means and BLOCKTEMP, in source acquisition order',idea:'Descriptive raw diagnostics; select an explicit well/channel/cycle-window variant for early-cycle fits.',reading:'Early-cycle windows are cycles 2–6 or 2–10, with every cycle required exactly once in order. Residual RMS uses denominator n, not a noise estimator. A rising early curve may be amplification, not background drift. Temperature increments preserve source order; steady holds and cooling legitimately produce non-increasing transitions. These are acquisition sampling diagnostics, not measured ramp accuracy, Tm, contamination calls or hardware acceptance tests. Compare only matching protocol, firmware, step and variant. Statistical limits are descriptive and are not vendor specifications. Sample exclusions do not alter raw hardware diagnostics.'};CC_CHARTS.push(def);CC_BY_ID[id]=def;}
 // No parsed log/calibration semantics have independent validation yet. Inventory is evidence, not interpretation.
-const zpcrGuideInventory=zpcrInventoryRows;zpcrInventoryRows=function(){return zpcrGuideInventory().map(row=>({...row,log_insight:'Unavailable: log event semantics not independently verified',calibration_insight:'Unavailable: calibration binary interpretation not independently verified'}));};
+MISSY_HOOKS.use("zpcrInventoryRows","core/biorad/zpcr_guide_charts.js:23",23, next => function(){return next().map(row=>({...row,log_insight:'Unavailable: log event semantics not independently verified',calibration_insight:'Unavailable: calibration binary interpretation not independently verified'}));});

@@ -4,6 +4,8 @@
 
 The `.cjs` scripts need Node, Playwright and Chrome. `MISSY_PLAYWRIGHT_MODULE` and `MISSY_CHROME` can override the local defaults. These development dependencies are not required to use or build the offline HTML.
 
+- `hooks_and_models.cjs`: dependency-free hook ordering/context/sealing/double-next/async-cleanup checks, malformed-model rejection and atomic multi-run validation.
+- `report_modes.cjs`: actual password prompt with three original PCRDs, decoded records/Console navigation and real Command/Assisted PDF downloads; `MISSY_TEST_URL` can point to Pages.
 - `legacy_regression.cjs`: original versus public results/derived tables, RDML exports and visible tabs for IXO, EDS, EDT and three RDML processing states.
 - `integration_all_formats.cjs`: 27 original PCRDs against `fixtures/PCRD_EXPECTATIONS.json`, mixed 61-file input, all modes, desktop layout, graph controls and a mixed report.
 - `zpcr_golden.cjs`: seven original ZPCRs against the pre-port working public HTML, including raw/hardware export bytes, graph SVGs and eligibility decisions.

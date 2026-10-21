@@ -12,7 +12,7 @@ Zenodo record 23437639 `index.html` is the source of the split. `build/all.manif
 
 `variants/public/intake.js` stages direct files or supported members of bounded archives, preserves source bytes and provenance, performs CRC checks, binds native CFX RDML manifest evidence by SHA-256, and dispatches decoding. It checks the import generation before committing asynchronously decoded runs. A decoder failure does not cause a different format to reinterpret the same source.
 
-Run objects carry reader ID/version, model version and availability capabilities. Stored vendor results remain separate from raw acquisition arrays and independently calculated outputs. Native CFX RDML normalisation is a reader adapter; it does not replace the generic RDML parser.
+Run objects carry reader ID/version, model version 2 and availability capabilities. `core/run_model.js` checks all result collections, plate geometry/positions, source byte counts and hash syntax, sample/reference boundaries, raw read tuple lengths and numeric types. The registry verifies claimed source hashes against the input bytes and validates every run from a source before annotating or committing any of them. Missing measurements, NaN sentinels and EDT templates remain supported; encrypted inventory cannot contain decoded measurements. Stored vendor results remain separate from raw acquisition arrays and independently calculated outputs. Native CFX RDML normalisation is a reader adapter; it does not replace the generic RDML parser.
 
 ## Password and integrity
 
@@ -22,7 +22,11 @@ Run objects carry reader ID/version, model version and availability capabilities
 
 ## UI, chart and report compatibility
 
-Shared numerical, SOP and export functions use the baseline code. Bio-Rad-specific presentation adapters remain in `core/biorad/`; see its README for the remaining compatibility wrappers. Pure readers neither create tabs nor replace global UI functions. `lifecycle.js` integrates completed imports explicitly. PDF styling extensions are scoped to reports containing Bio-Rad records; legacy-only reports retain the baseline writer.
+Shared numerical, SOP and export functions use the baseline code. Bio-Rad-specific presentation adapters remain in `core/biorad/`; see its README for the named integration hooks. Pure readers neither create tabs nor replace global UI functions. `lifecycle.js` integrates completed imports explicitly. PDF styling extensions are scoped to reports containing Bio-Rad records; legacy-only reports retain the baseline writer.
+
+`core/hooks.js` defines named extension points with unique registration IDs and explicit integer ordering. Higher-order registrations surround lower-order ones; `next` preserves the dispatcher context and can be called at most once. Replacements register a provider that intentionally does not call `next`. Unknown/duplicate registrations fail; the registry is sealed after startup. Core dispatcher identities stay stable. Public-only core seam copies live in `variants/public/hooks/`, leaving both frozen baseline manifests byte-identical.
+
+Catalogue, Console, Command and Assisted integrations register through these hooks rather than capturing and replacing global functions. Reports use direct `report.style` and `report.paragraph` seams; PDF text/page/paragraph methods are not reassigned. Report construction hooks use explicit `try/finally` for scoped selection flags. `genericScript.onclick` is bound once to a dispatcher. Ordinary DOM event handlers remain ordinary event handlers. `MISSY_HOOKS.inspect()` exposes names, IDs and ordering for diagnostics.
 
 The legal panel embeds GPL/attribution text. Downloadable HTML source is captured before experiment import; the HTML does not embed a second copy of itself. The preferred source distribution includes all modules, manifests, build script, notices and tests. Browser password state and imported experiment data are not part of that source snapshot.
 

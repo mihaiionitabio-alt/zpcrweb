@@ -6,7 +6,11 @@ The baseline is [Zenodo 23437639](https://zenodo.org/records/23437639). ZPCR/PCR
 
 The byte-identical **Missy-all** and **Missy-LC** variants below are frozen baselines, not the latest all-format public release. They remain available for regression comparisons. PRO customer XML and LCRD are not enabled.
 
-[ARCHITECTURE.md](ARCHITECTURE.md) explains the reader registry and remaining presentation compatibility adapters. The port preserves existing numerical behaviour rather than claiming a complete rewrite of the old UI.
+[ARCHITECTURE.md](ARCHITECTURE.md) explains the reader registry, explicit UI/report hooks and model v2 boundary checks. The public variant preserves numerical behaviour and the original design; frozen baseline builds remain byte-identical.
+
+## Hook/model update (2026.10.21.hooks1)
+
+Global function replacement has been replaced by named, ordered hooks. The PDF writer exposes style and paragraph hooks directly. Reader validation checks result collections, positions, raw dimensions, source evidence and encrypted inventory before committing. See `tests/hooks_and_models.cjs` for malformed-model, hook ordering, context, duplicate, sealing and async cleanup tests.
 
 ## Public variant validation
 

@@ -1,7 +1,7 @@
 const zpcrPanel=document.querySelector('#tab-zpcr')||document.createElement('section');zpcrPanel.id='tab-zpcr';zpcrPanel.className='card';zpcrPanel.hidden=true;
 document.querySelector('main').append(zpcrPanel);
 const zpcrNav=document.querySelector('nav button[data-tab=zpcr]')||document.createElement('button');zpcrNav.dataset.tab='zpcr';zpcrNav.textContent='9 · ZPCR raw / hardware';zpcrNav.hidden=true;zpcrNav.onclick=()=>showTab('zpcr');document.querySelector('nav').append(zpcrNav);
-function zpcrPaint(){
+function zpcrPaintBase(){
  const runs=RUNS.filter(r=>r.zpcr);zpcrPanel.hidden=!runs.length;zpcrNav.hidden=!runs.length;if(!runs.length){zpcrPanel.replaceChildren();return;}
  zpcrPanel.innerHTML='<h2>Bio-Rad ZPCR · raw acquisitions and hardware diagnostics</h2><p class="notice warn">REVIEW — raw import only. No stored Cq/Tm or sample calls are established. Optical channels are not dye identities. Sample names and roles are not decoded. Reference positions are separate from the 96 physical wells. Diagnostics have no acceptance limits.</p>';
  const pick=document.createElement('select');pick.id='zpcr-run';pick.setAttribute('aria-label','ZPCR run');runs.forEach((r,i)=>pick.add(new Option(r.file,String(i))));zpcrPanel.append(pick);
@@ -37,7 +37,9 @@ function zpcrPaint(){
  }
  pick.onchange=fill;fill();if(RUNS.every(r=>r.zpcr))showTab("zpcr");
 }
+function zpcrPaint(...args){return MISSY_HOOKS.invoke("zpcrPaint",this,args,zpcrPaintBase);}
 
-const zpcrMetaRows=metaRows;metaRows=function(){const rows=zpcrMetaRows();rows.forEach((row,i)=>{const r=RUNS[i];if(r?.zpcr){row.curves_decoded=[...new Set(r.zpcr.reads.map(a=>a.step))].length*96*r.zpcr.reads[0].channels;row.quantification_results='Not computed (raw only)';row.cycles=r.zpcr.reads.length;}});return rows;};
+
+MISSY_HOOKS.use("metaRows","core/biorad/legacy_view_adapter.js:1",1, next => function(){const rows=next();rows.forEach((row,i)=>{const r=RUNS[i];if(r?.zpcr){row.curves_decoded=[...new Set(r.zpcr.reads.map(a=>a.step))].length*96*r.zpcr.reads[0].channels;row.quantification_results='Not computed (raw only)';row.cycles=r.zpcr.reads.length;}});return rows;});
 
 const zpcrStyle=document.createElement('style');zpcrStyle.textContent='#tab-zpcr button{border:1px solid #bdcce0;border-radius:5px;background:#eef3fa;color:#16314c;padding:8px 12px;margin:4px;cursor:pointer}#tab-zpcr select{max-width:100%;padding:7px;border:1px solid #bdcce0;border-radius:5px}#tab-zpcr svg{display:block}#tab-zpcr[hidden]{display:none!important}';document.head.append(zpcrStyle);
