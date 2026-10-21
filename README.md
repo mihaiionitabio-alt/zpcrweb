@@ -1,4 +1,4 @@
-# MISSY public offline branch
+# MISSY public modular offline branch
 
 This fork branch adds [MISSY: standalone HTML, source and usage](./missy/README.md).
 Credit for ZPCR/PCRD format research and adapted parsing goes to **R. Byers and the [zpcrweb contributors](https://github.com/RByers/zpcrweb)**. This MISSY branch is separately maintained; it is not an upstream release. The original zpcrweb application and documentation are retained below.

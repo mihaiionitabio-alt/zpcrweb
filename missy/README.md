@@ -1,42 +1,41 @@
-# MISSY public offline edition
+# MISSY public modular edition — 21 October 2026
 
-MISSY provides QC exploration and report generation in one offline HTML file.
+[Open the live page](https://mihaiionitabio-alt.github.io/zpcrweb/), or download [the single offline HTML](./MISSY_PUBLIC_MODULAR_2026-10-21.html) and open it locally. The older `MISSY_PUBLIC_2026-10-20.html` path is retained as an identical compatibility copy.
 
-## Credit and provenance
+This edition starts from [Zenodo record 23437639](https://zenodo.org/records/23437639). The frozen full-baseline manifest reproduces its `index.html` MD5 `3bf60501a9eeb08166df9bb024fd8495` exactly. The new public manifest adds IXO, EDS/EDT, RDML, ZPCR and PCRD through versioned reader registration.
 
-The ZPCR/PCRD format research and adapted parsing build on **R. Byers and the zpcrweb contributors' work**: [RByers/zpcrweb](https://github.com/RByers/zpcrweb), including its [file-format documentation](https://github.com/RByers/zpcrweb/tree/main/docs).
+ZPCR/PCRD format research and adapted parsing credit: **R. Byers and the [zpcrweb contributors](https://github.com/RByers/zpcrweb)**. This is a separately maintained fork addition, not an upstream zpcrweb or Bio-Rad release.
 
-This is a separately maintained MISSY addition in a fork, not an upstream zpcrweb release or a Bio-Rad product. The original zpcrweb README and credits remain below the branch introduction.
+## Source and build
 
-## Use
-
-1. Download [MISSY_PUBLIC_2026-10-20.html](./MISSY_PUBLIC_2026-10-20.html) using GitHub's download/raw control.
-2. Open the saved file in a current Chrome or Edge browser. No server, installation or internet connection is required to run MISSY.
-3. Load IXO, EDS/EDT, RDML, ZPCR or supported PCRD files, then read/analyse them.
-
-Encrypted PCRD imports ask for a password supplied locally by the user. No Bio-Rad password, CFX-derived decryption state or vendor DLL is bundled. Passwords remain in page memory until forgotten or the page closes; they are not uploaded or included in exports. The prompt explains authorised password access and the alternative of exporting RDML from licensed CFX software. Supported PCRD compression is stored/Deflate; other variants may require RDML export.
-
-## Source and licence
-
-MISSY is distributed under [GNU GPL version 3](./source/LICENSE). Preserve the upstream attribution and dependency notices, including [Plotly's MIT licence](./source/Plotly-LICENSE.txt). See [NOTICE.txt](./source/NOTICE.txt) for modifications dated 20 October 2026.
-
-The editable modular sources, baseline HTML and build script are in [source/](./source/). Rebuild without network access or third-party Python packages:
+The [preferred modular source](./source/) includes [architecture](./source/ARCHITECTURE.md), all modules, manifests, build scripts, licence notices and test harnesses.
 
 ```sh
 cd missy/source
-python build.py
+python build/build.py public
 ```
 
-The output is `index.html`, equivalent to the distributed standalone HTML. No credentials or test measurements are required to build it.
+Open `dist/Missy-public.html`. Python 3 is sufficient; no packages, internet or secrets are required to build. Frozen all/LC variants remain for baseline comparisons. PRO XML/LCRD are not enabled.
 
-## Intended use
+## Passwords and design
 
-Research Use Only. Independently calculated Cq/Tm and exploratory diagnostics do not constitute vendor certification, reproduce the vendor analysis algorithm, or replace the manufacturer's QC report or verified acceptance procedure.
+Encrypted PCRD imports ask for a locally supplied password; no CFX-derived decryption state, vendor password or DLL is distributed. Passwords remain in page memory until forgotten or the page closes. Cancel keeps source inventory only; wrong passwords import no measurements. The prompt explains authorised access and RDML exports from licensed CFX software.
 
-## Validation scope
+The shared eight-tab MISSY design, large two-row desktop Console controls, Command and Assisted modes and report workflows remain. Protocols and serials remain separate, channels are compared, and the endpoint default is N=7. Results distinguish raw acquisitions from stored vendor result tables and independently calculated Cq/Tm. Core presentation adapters retain documented compatibility composition points; the binary readers do not replace the UI.
 
-The public decoder reproduced numerical expectations for 27 PCRD payloads re-encrypted with a synthetic test password. Mixed-format checks covered 61 files / 75 views, Console/Command/Assisted modes, two-row desktop Console controls and report generation. This does not establish equivalence to vendor calculations or support for every PCRD variant.
+## Validation before deployment
 
-## PCRD import visibility fix (20 October 2026)
+- 27 original PCRDs; 6,090,706 stored numeric values match independent expectations.
+- Seven ZPCRs; decoded payloads, raw/hardware CSVs, graph SVGs and eligibility match the previous working public release.
+- Legacy IXO, two EDSs, an EDT template and vendor/raw/reanalysed RDML match the frozen baseline's result/derived tables and RDML exports except build-version/export-time fields.
+- Mixed 61-file / 75-view load; all modes, desktop layouts at four widths, themes/focus/pan/zoom and report export.
+- Nested/mixed/renamed archives, CRC rejection and password cancel/wrong/retry/privacy checks.
+- Mixed PDF: 27 portrait pages, 41 images, page numbers, RUO, filenames and checksums; pages rendered and checked for overflow. Existing table summaries remain; full numerical CSVs are available.
 
-Results now distinguish encrypted inventories from decoded measurements, show per-file serials and acquisition counts, and list independent calculated records. Direct buttons open raw and independent graphs. Normal file-input/password/button tests with the three original sample PCRDs confirmed 93 acquisition reads, 37 raw figures and 16 independent Cq records (7 Luna, 9 RVP, 0 gradient). Cancelling the prompts produces explicit locked status with no measurement graph buttons. No test password or installation material is distributed.
+Real laboratory fixtures, passwords and generated experimental reports are not published with the source.
+
+## Licence and intended use
+
+[GNU GPL version 3](./source/LICENSE), with upstream attribution, [modification notices](./source/NOTICE.txt) and retained [Plotly MIT notices](./source/Plotly-LICENSE.txt).
+
+Research Use Only. Independent Cq/Tm calculations and exploratory diagnostics do not constitute vendor certification, reproduce vendor analysis algorithms, or replace manufacturer QC reports or validated laboratory procedures.

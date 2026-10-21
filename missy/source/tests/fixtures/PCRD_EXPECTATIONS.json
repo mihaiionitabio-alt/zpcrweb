@@ -1,0 +1,380 @@
+[
+  {
+    "sha256": "9df53d1a0cf6b8c8d77825742926966826c98dceb098998d6add1c23759d4331",
+    "xmlSHA256": "4ce1dd48cb3c58dfecda92d50b0de0a423645f0e0566b2e94a4d6130905f32c0",
+    "verified": true,
+    "name": "MiniOpticon 2-Target Allelic Discrimination.pcrd",
+    "reads": 40,
+    "numericSHA256": "6c1c4b1da97832ded0e9db4b823a67fee92b98720e5e3eb585fa7f3ae430774c",
+    "values": 3920,
+    "layoutCount": 96,
+    "geometry": [
+      8,
+      6
+    ]
+  },
+  {
+    "sha256": "ddc065e6a01980dc63ff9893da9f22654e7c12229ec937078ac573739011bbce",
+    "xmlSHA256": "ad23cb661d04dbb5f2d5cc742620258693a5ad313d81633490d304cf88b914bc",
+    "verified": true,
+    "name": "MiniOpticon FAM 25uL Uniformity.pcrd",
+    "reads": 40,
+    "numericSHA256": "3adb6ec326f7d96430dda3df90ddb3d5460bd869251464742c3215a1cb1bedfb",
+    "values": 3920,
+    "layoutCount": 48,
+    "geometry": [
+      8,
+      6
+    ]
+  },
+  {
+    "sha256": "d6b1cd42de8be85f5f552871e105c2b6b25ae3fbb99df9e55873fc11d7ffb614",
+    "xmlSHA256": "d58337b6a7b58553e19916ecdffd6fca33f18a35d326174c5e535ae986e847cb",
+    "verified": true,
+    "name": "MiniOpticon FAMHEX Linearity.pcrd",
+    "reads": 50,
+    "numericSHA256": "f39f8547ddc75030394b25aae2a7428f1660f3d6512a827438f9e7a41afe305f",
+    "values": 4900,
+    "layoutCount": 96,
+    "geometry": [
+      8,
+      6
+    ]
+  },
+  {
+    "sha256": "c1401127b01353c35fcc544f79bafd5fbc9186170febf964a5cb3ac8f23a7585",
+    "xmlSHA256": "74628e78cfa2487835aa7bd5e33b07df96e50e8a5a5b5fa9d1deaeb163bbd6c0",
+    "verified": true,
+    "name": "MiniOpticon SYBR 25uL Uniformity+Melt.pcrd",
+    "reads": 121,
+    "numericSHA256": "2b66daebbe0493ff5d2e374fdcce52a30f7d5e346ca80323bf1a7e8785743256",
+    "values": 11858,
+    "layoutCount": 48,
+    "geometry": [
+      8,
+      6
+    ]
+  },
+  {
+    "sha256": "60e0a5c2e0017ffc8d66744d0bc8f131b043301857fac2a636562307b63a00c9",
+    "xmlSHA256": "bbe77f5d29fb5a5cbe3c759127f67dc40cd911928a8e85d1d113ac2bbcd05ed2",
+    "verified": true,
+    "name": "CFX384_4-Target Linearity.pcrd",
+    "reads": 45,
+    "numericSHA256": "6c3baf18a8bf125a0eda44b71a175573e21c1c7353f6441e78f2d8ffc81c6214",
+    "values": 220860,
+    "layoutCount": 1536,
+    "geometry": [
+      16,
+      24
+    ]
+  },
+  {
+    "sha256": "069e3b8a9710db7eb52d7cbc1beb45b37cb109e716f46d140c83116bc2230b3a",
+    "xmlSHA256": "eed92479516641fae5d16a3380544f4f837332ab144b119608ec8e043b4d7fe9",
+    "verified": true,
+    "name": "CFX384_FAM Linearity.pcrd",
+    "reads": 40,
+    "numericSHA256": "11df244ba7ffc2e98114d6e41b381b826d9741b97faaef191b78eb46c3f23d32",
+    "values": 196320,
+    "layoutCount": 384,
+    "geometry": [
+      16,
+      24
+    ]
+  },
+  {
+    "sha256": "510abdc36ac45ba4f4efda4efea68e652964ed1c8d307c4164e77411a73a43d3",
+    "xmlSHA256": "092dadfd8118edbab3f6a9e729ce59ffe89c5c6f002513cc82eaf17531a6e37a",
+    "verified": true,
+    "name": "CFX384_FAM Uniformity 5ul.pcrd",
+    "reads": 40,
+    "numericSHA256": "f0b830159380cccb7dc936487da7afa4760c942b76b1b146c36161271a6d09e8",
+    "values": 196320,
+    "layoutCount": 384,
+    "geometry": [
+      16,
+      24
+    ]
+  },
+  {
+    "sha256": "3c58816c8cd203721a3ea823fee3ebc8091b0bd9131cf7906aa52096c41ecbb7",
+    "xmlSHA256": "57b13ded4d5f027a9663c748d0e3f3db5831847df5f43e68f5a72772a6e082d0",
+    "verified": true,
+    "name": "CFX384_Fast SYBR 10ul Uniformity+Melt.pcrd",
+    "reads": 121,
+    "numericSHA256": "92afa2e307e19f2e156e610931c2d87cda1521b19958e76c3b330afc45e675d5",
+    "values": 593868,
+    "layoutCount": 384,
+    "geometry": [
+      16,
+      24
+    ]
+  },
+  {
+    "sha256": "cac957c1629910a91a73bbf3793d8d7010b7d43e4448c88d9ed26d58c853ab62",
+    "xmlSHA256": "64fb83feea4b1ca955cd163d012491c24c3462b146337d3f47d3fdccdb6466e0",
+    "verified": true,
+    "name": "CFX384_Qualification Plate.pcrd",
+    "reads": 124,
+    "numericSHA256": "9b362c7cea78a77106079467dbc2b88fd11534973118c4bf0e0d19f19a7e9880",
+    "values": 608592,
+    "layoutCount": 384,
+    "geometry": [
+      16,
+      24
+    ]
+  },
+  {
+    "sha256": "2ac86c4d068312626d61763e941930582fda871d85a93a4370a84982644f9c49",
+    "xmlSHA256": "1ff9fa130a5baadb4233678b31b4c0ba34decbba6d0fabc6966694cb9c54bb9e",
+    "verified": true,
+    "name": "CFX384_SYBR_Gene Expression_1.pcrd",
+    "reads": 40,
+    "numericSHA256": "80fd2c9da3470132bf3ac3400ff5bafd11efb3fbb2e0d4c5677c39ae35c26ee5",
+    "values": 196320,
+    "layoutCount": 384,
+    "geometry": [
+      16,
+      24
+    ]
+  },
+  {
+    "sha256": "a66bbde254321e3658cc9925141b9eb01147c057450773f44c60018c3ca9dea6",
+    "xmlSHA256": "3927f13f7832e645fc0fc8de8f8c3f85db41cda6847cd610d57b42321d1bf732",
+    "verified": true,
+    "name": "CFX384_SYBR_Gene Expression_2.pcrd",
+    "reads": 40,
+    "numericSHA256": "58ddd138ff6fea6305a4b17ba74164b2fb8b5b953b7af827050da0263312e147",
+    "values": 196320,
+    "layoutCount": 384,
+    "geometry": [
+      16,
+      24
+    ]
+  },
+  {
+    "sha256": "ede8c02d931414a1e6ae1a8d8eaaf7d79191e1a16d138cdddf2a5b96ef82011b",
+    "xmlSHA256": "b8d504271364f0c2ae1552fece12cecb72ca2e4f3b016faf7c2bc146913dbf67",
+    "verified": true,
+    "name": "CFX96 SYBR 20uL Gene Expression+Melt.pcrd",
+    "reads": 121,
+    "numericSHA256": "8758cac99bb5ff772a134ef9f64eb663b0ea1a72d4368130a19431a2d6087de7",
+    "values": 316536,
+    "layoutCount": 96,
+    "geometry": [
+      8,
+      12
+    ]
+  },
+  {
+    "sha256": "440fe87372d52782f97a79c5c3a2b9cda96249bb87bcfe2ed035a1b6c32b07e4",
+    "xmlSHA256": "24d476f1f76a232e67102e7fd67d054d14d51dceeee7c418fb03330d92e56ecf",
+    "verified": true,
+    "name": "CFX96 SYBR Gradient File with Well Groups.pcrd",
+    "reads": 261,
+    "numericSHA256": "2812f0aede971e9c56b306e5eb6297379c710e21e707a3fd2709e672f7747238",
+    "values": 682776,
+    "layoutCount": 96,
+    "geometry": [
+      8,
+      12
+    ]
+  },
+  {
+    "sha256": "fa48ffb543f76708e8f194d11fb6ea88c7fd5dc852073ee2e8fb62dd12eb902c",
+    "xmlSHA256": "294ffc7602630c85e065d39e65bc6349b344c39687d84a7aa82d5138385c4a7d",
+    "verified": true,
+    "name": "CFX96_2-Target Allelic Discrimination.pcrd",
+    "reads": 50,
+    "numericSHA256": "d8ad3e13c364f7e938e6a7837ef085face8389334f47309d9683df68f78e39f1",
+    "values": 130800,
+    "layoutCount": 192,
+    "geometry": [
+      8,
+      12
+    ]
+  },
+  {
+    "sha256": "01e252425ba8969c5e17c038fdeb249721f790dee9e54354a4675ffd4a6e07be",
+    "xmlSHA256": "2a216c7efef35b21db680287ce1fd7f4af8d3efc662cf3b67615a591c921fef1",
+    "verified": true,
+    "name": "CFX96_5 Color End Point.pcrd",
+    "reads": 2,
+    "numericSHA256": "1eba211354b2567bf692b5ada0fb7155deef4c5282eb043d230fb8f601b5124b",
+    "values": 5232,
+    "layoutCount": 480,
+    "geometry": [
+      8,
+      12
+    ]
+  },
+  {
+    "sha256": "60db9185adce16b005a731606146aaf53bdd590650ba47736f6817a34ba4b17b",
+    "xmlSHA256": "555004569975ff6a5f2cbb1c998018812e6ede84c197f997505ee749c2b4bab9",
+    "verified": true,
+    "name": "CFX96_5-Target Linearity.pcrd",
+    "reads": 50,
+    "numericSHA256": "d1c440067b0f9f007effbb7056d2648b6a36000ee3b3925717dacf44de45c6d5",
+    "values": 130800,
+    "layoutCount": 480,
+    "geometry": [
+      8,
+      12
+    ]
+  },
+  {
+    "sha256": "4e4253abc8d57f2ac7c3b855cbb4353313ae595277f58f088219b0d3c2297b26",
+    "xmlSHA256": "3cf78dd25e3f0b73fe09bbb6472467616245474f1fd7fa3e81b3caed8f279763",
+    "verified": true,
+    "name": "CFX96_Qualification Plate.pcrd",
+    "reads": 124,
+    "numericSHA256": "48562e2acaf71bab401217991f218a266ddd67bd2fe2ef1592a09751be50a7b6",
+    "values": 324384,
+    "layoutCount": 96,
+    "geometry": [
+      8,
+      12
+    ]
+  },
+  {
+    "sha256": "79536cf0981f97109801018d7d7e757234f50116244d81c31b51d68c900e7312",
+    "xmlSHA256": "80872630bfa078081cf40cb48d553d8545f4f7df93512a4054164d9b7c27d8bc",
+    "verified": true,
+    "name": "CFX96_SYBR Green Linearity.pcrd",
+    "reads": 131,
+    "numericSHA256": "8da543909c1929f526c7d0a29ed95f56ecd23b1f0de2db6aafe8ebf79bb3df74",
+    "values": 342696,
+    "layoutCount": 96,
+    "geometry": [
+      8,
+      12
+    ]
+  },
+  {
+    "sha256": "22ec338905dca1ef3d722e8615d2c2adf7f7c2ded45323c321e176720123288e",
+    "xmlSHA256": "3e37c1c858b5b20a813d03acc70ede3529f474f6274cb7157e15b431728c2f63",
+    "verified": true,
+    "name": "PrimePCR_384 Well.pcrd",
+    "reads": 101,
+    "numericSHA256": "09912bb04aeedfeb341d45300f7ebad87f34e427b454152055efe47fbaa1b03e",
+    "values": 495708,
+    "layoutCount": 384,
+    "geometry": [
+      16,
+      24
+    ]
+  },
+  {
+    "sha256": "6c58a98b1e1d64d60dd317a667ed9932283d6364b8e855203f428c88aed588a4",
+    "xmlSHA256": "065fcdc936e52a475c18114c3742c2ecf052c4e9f6e17f824f134593c832ae20",
+    "verified": true,
+    "name": "PrimePCR_96 Well.pcrd",
+    "reads": 101,
+    "numericSHA256": "7f91cc2ea742d8e2bbc02b8de4212dfcc52da30ba8f88910e591f54024d8c757",
+    "values": 264216,
+    "layoutCount": 96,
+    "geometry": [
+      8,
+      12
+    ]
+  },
+  {
+    "sha256": "28df36598e6c5913fb480634c4d3fd1863beb3df5fab3a823d1688b11c7eb28c",
+    "xmlSHA256": "34a45252699240b852b3ea7840c8d0f81c4911103358030da8d4e0005a6d5f10",
+    "verified": true,
+    "name": "CFX384_SYBR_Gene Expression_1_Security Edition.pcrd",
+    "reads": 40,
+    "numericSHA256": "646934c19b2a929970dad029d7bb15062c22c629aa1174075cd55fce654b2504",
+    "values": 196320,
+    "layoutCount": 384,
+    "geometry": [
+      16,
+      24
+    ]
+  },
+  {
+    "sha256": "292ef509d27b03be581e3882d63c5d034e8eb37d0ece2f32eb6b7112be6107c4",
+    "xmlSHA256": "3324390943999ba2d2b71a2e0e1c153890b5b235d539ec2a9c703382db8a774f",
+    "verified": true,
+    "name": "CFX384_SYBR_Gene Expression_2_Security Edition.pcrd",
+    "reads": 40,
+    "numericSHA256": "25bdff19eb0a2d9ab44103c2bc7d6ee641943ecab7d58d76333170e9f5f8f0b0",
+    "values": 196320,
+    "layoutCount": 384,
+    "geometry": [
+      16,
+      24
+    ]
+  },
+  {
+    "sha256": "8c75925a31f4d8ab5aebcbbc7306b0009717ffe59c0c4ddaf31c2b5f1e34fba5",
+    "xmlSHA256": "ca448d8fb4dc05f2f470b4b84b739b7a3f69ef740b696fe3d35da32f4620611c",
+    "verified": true,
+    "name": "CFX96 Gene Study_Plate1.pcrd",
+    "reads": 101,
+    "numericSHA256": "eb893994c1bf4ca0dc6c23ee0b50235f8527212dc870329cd7e934bc6d85cad0",
+    "values": 264216,
+    "layoutCount": 96,
+    "geometry": [
+      8,
+      12
+    ]
+  },
+  {
+    "sha256": "0899dc7b62022cb646b50ad830464b0cb5af382f547fdf6a87fa14273ed7c450",
+    "xmlSHA256": "73f2a7cd0d7c79aa5588ff133e45e7dfd094de4d3b9fe735c73f6203e601479e",
+    "verified": true,
+    "name": "CFX96 Gene Study_Plate2.pcrd",
+    "reads": 101,
+    "numericSHA256": "98e88e208a2d823d332609c92660a2a86b3f3181bbb392509a77074f82ad82ea",
+    "values": 264216,
+    "layoutCount": 96,
+    "geometry": [
+      8,
+      12
+    ]
+  },
+  {
+    "sha256": "8e55a10b8bcc8d3f1712601b6c717013dbe7374725b3ac618b4599dc94f7b339",
+    "xmlSHA256": "58d4abf9682510585f20cc421fee24c5e9a54f813eb845c83a1050308bfe568a",
+    "verified": true,
+    "name": "20260720_Luna_noRT.pcrd",
+    "reads": 45,
+    "numericSHA256": "47949a7289eec042071c5238fd91bfc7b83e9e0c39c02a83f8b0e83859599949",
+    "values": 117720,
+    "layoutCount": 288,
+    "geometry": [
+      8,
+      12
+    ]
+  },
+  {
+    "sha256": "bf1947b287a034f24dfcd19504fed8e9ed18ba1720f87d41df228e6a82752704",
+    "xmlSHA256": "26065f08c9158268eea49377e2c74dd65d6e292dd81cff9f3d2c63db0347573c",
+    "verified": true,
+    "name": "20260726_S183-S185_RVP.pcrd",
+    "reads": 45,
+    "numericSHA256": "c59d59f7e1643d360bd9874b99e849ce13b4910adcc85d7636da3740966d72f5",
+    "values": 117720,
+    "layoutCount": 288,
+    "geometry": [
+      8,
+      12
+    ]
+  },
+  {
+    "sha256": "9c7d8161f066d1fccb192a3172cd68880e7a849b5c1adf885cb13b23ee0f07f2",
+    "xmlSHA256": "599d2b402613196a6cac7bcd41de35c871bfcaec8774ca7b529bd638dd9efca3",
+    "verified": true,
+    "name": "gradient-test-empty.pcrd",
+    "reads": 3,
+    "numericSHA256": "1344dad3858dd3fc3541566e7940ecd6e811f327919de483591f6f1c8c02d410",
+    "values": 7848,
+    "layoutCount": 480,
+    "geometry": [
+      8,
+      12
+    ]
+  }
+]

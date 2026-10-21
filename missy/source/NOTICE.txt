@@ -7,8 +7,11 @@ No Bio-Rad password, derived CFX decryption state or vendor DLL is distributed.
 Independent calculations do not reproduce or replace vendor QC certification.
 Existing Plotly copyright and MIT notices are retained in the HTML.
 The HTML contains complete readable application code and inline dependencies.
-Source package includes modular sources, baseline HTML and Python build script.
-Build: python build.py (Python 3; no packages or network required).
+Source package includes modular sources, frozen baseline manifests and Python build script.
+Build: python build/build.py public (Python 3; no packages or network required).
 Password: memory only, shared across imports until Forget PCRD password or reload.
 Cancel imports inventory only. Incorrect password imports no measurements.
 Supported PCRD ZIP compression: stored / Deflate. Other methods remain unsupported.
+
+Modular port: 21 October 2026. Baseline: Zenodo record 23437639.
+The public variant registers readers explicitly; Bio-Rad presentation adapters are kept in core/biorad.

@@ -1,1 +1,9 @@
-/index.html
+/dist/
+__pycache__/
+*.pyc
+tests/*.png
+tests/*.pdf
+tests/*_RESULTS.json
+tests/MODULAR_PDF_CHECKS.json
+secrets.json
+*.PRIVATE.txt

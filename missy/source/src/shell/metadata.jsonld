@@ -1,0 +1,84 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "pav": "http://purl.org/pav/",
+    "spdx": "http://spdx.org/rdf/terms#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@graph": [
+    {
+      "@id": "#application",
+      "@type": ["SoftwareApplication", "WebApplication", "prov:SoftwareAgent"],
+      "name": "qPCR raw values, quality-control and forensic export tool",
+      "alternateName": "qPCR 原始数据、质量控制与取证导出工具",
+      "description": "Offline, browser-based reader for completed Roche LightCycler 480 .ixo and Applied Biosystems QuantStudio 3/5 .eds experiments, with traceable stored values, container integrity checks, quality review, forensic logging, graphs and open-format exports.",
+      "dcterms:title": "LightCycler 480 raw values and quality-control tool",
+      "dcterms:description": "Read-only decoding and standards-mapped export of LightCycler 480 qPCR primary data.",
+      "applicationCategory": "ScientificApplication",
+      "applicationSubCategory": "qPCR data interoperability and quality control",
+      "operatingSystem": "Any operating system with a modern browser",
+      "browserRequirements": "JavaScript; File API; typed arrays; decompression support",
+      "softwareVersion": "2026.09.23.hardening2",
+      "dateModified": "2026-09-23",
+      "inLanguage": ["en", "zh"],
+      "isAccessibleForFree": true,
+      "featureList": [
+        "Read Roche LightCycler 480 .ixo files locally",
+        "Read Applied Biosystems QuantStudio 3/5 .eds files and .edt templates locally",
+        "Verify the .ixo trailing checksum, the .eds ZIP CRC-32 and the .eds Tamper MD5",
+        "Preserve stored Cq, calls, fluorescence and provenance",
+        "Export RDML 1.4, CSV, TSV, QuantStudio-layout text and analysis-ready curve tables",
+        "Draw amplification, multicomponent, raw filter, plate, Levey-Jennings and run-temperature graphs",
+        "Keep a forensic log of integrity, control, flag and traceability findings",
+        "Review plates, controls, omitted curves and instrument records",
+        "Publish in-page Schema.org JSON-LD metadata"
+      ],
+      "mainEntity": {"@id": "#catalog"},
+      "subjectOf": {"@id": "#metadata-profile"},
+      "rdfs:comment": "This node describes the offline application. Experiment-specific Dataset nodes are added after local files are read."
+    },
+    {
+      "@id": "#catalog",
+      "@type": ["DataCatalog", "dcat:Catalog"],
+      "name": "LightCycler 480 decoded experiment catalog",
+      "description": "An in-memory catalog of the experiments selected by the user in this browser session.",
+      "dcterms:title": "LightCycler 480 decoded experiment catalog",
+      "dcterms:description": "Local, transient catalog; it is empty until one or more .ixo or .eds files are read.",
+      "isPartOf": {"@id": "#application"},
+      "subjectOf": {"@id": "#metadata-profile"},
+      "rdfs:comment": "The catalog is populated locally and is never uploaded. Each child Dataset retains its source identifier, timestamps, checksums, measurement description and available distributions."
+    },
+    {
+      "@id": "#metadata-profile",
+      "@type": "DigitalDocument",
+      "name": "LightCycler 480 local dataset metadata profile",
+      "description": "A descriptive JSON-LD profile using Schema.org Dataset, DataCatalog and DataDownload with DCAT, PROV-O, PAV and SPDX terms.",
+      "citation": [
+        {"@id": "https://doi.org/10.1038/sdata.2016.18"},
+        {"@id": "https://doi.org/10.1038/s41597-020-0486-7"},
+        {"@id": "https://doi.org/10.5334/dsj-2020-043"},
+        {"@id": "https://schema.org/docs/data-and-datasets.html"}
+      ],
+      "rdfs:comment": "The profile is FAIR-aligned but does not claim FAIR certification, repository TRUSTworthiness or CARE compliance. License, consent, access authority and Indigenous governance must be supplied by the responsible data steward and are never inferred by this software."
+    },
+    {
+      "@id": "https://doi.org/10.1038/sdata.2016.18",
+      "@type": "ScholarlyArticle",
+      "name": "The FAIR Guiding Principles for scientific data management and stewardship"
+    },
+    {
+      "@id": "https://doi.org/10.1038/s41597-020-0486-7",
+      "@type": "ScholarlyArticle",
+      "name": "The TRUST Principles for digital repositories"
+    },
+    {
+      "@id": "https://doi.org/10.5334/dsj-2020-043",
+      "@type": "ScholarlyArticle",
+      "name": "The CARE Principles for Indigenous Data Governance"
+    }
+  ]
+}
