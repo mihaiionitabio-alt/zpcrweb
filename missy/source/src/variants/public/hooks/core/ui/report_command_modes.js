@@ -73,7 +73,7 @@ function pdfWrap(text,width,size,bold){
   words.forEach(w=>{
     const t=cur?cur+" "+w:w;
     if(pdfWidth(t,size,bold)<=width)cur=t;
-    else{if(cur)lines.push(cur);cur=pdfWidth(w,size,bold)<=width?w:pdfFit(w,width,size,bold);}
+    else{if(cur)lines.push(cur);cur="";for(const char of w){if(cur&&pdfWidth(cur+char,size,bold)>width){lines.push(cur);cur="";}cur+=char;}}
   });
   if(cur)lines.push(cur);
   return lines.length?lines:[""];
@@ -121,7 +121,7 @@ function pdfDoc(){
     room(h){if(!cur)d.page();if(d.y-h<PDF_PAGE.margin+24){d.page();return false;}return true;},
     text(s,size,bold,dx,colour){
       const c=colour||(style.colour?style.colour(bold):[0,0,0]);
-      if(style.wrapTitle&& !dx&&((bold&&size>=14)||/^\d+\.\s/.test(String(s)))){
+      if(!dx&&((bold&&size>=14)||/^\d+\.\s/.test(String(s)))){
         for(const line of pdfWrap(String(s),d.width,size,bold)){d.room(size*1.4);rawText(line,size,bold,dx,c);}return;
       }
       rawText(s,size,bold,dx,c);
@@ -473,10 +473,10 @@ const SEL_TABLE_ROWS=28;
 function selReportTitle(){
   return SEL_STATE.title||("Selected results" + (RUNS.length===1?" — "+runName(RUNS[0]):""));
 }
-function selTableBlock(doc,rows,note){
+function selTableBlock(doc,rows,note,options={}){
   if(!rows||!rows.length){doc.para("No rows.",9.5,false);return;}
-  const cols=uniq(rows.flatMap(Object.keys)).slice(0,8);
-  const shown=rows.slice(0,SEL_TABLE_ROWS);
+  const cols=options.columns||uniq(rows.flatMap(Object.keys)).slice(0,8);
+  const shown=options.full?rows:rows.slice(0,SEL_TABLE_ROWS);
   const size=8.5,gap=6;
   const wid=cols.map(c=>{
     let w=pdfWidth(c,size,true);
@@ -498,14 +498,17 @@ function selTableBlock(doc,rows,note){
     }
   }
   const line=(vals,bold)=>{
-    doc.room(size*1.5);
+    const cells=vals.map((v,i)=>pdfWrap(String(v),widths[i],size,bold));
+    const count=Math.max(1,...cells.map(c=>c.length)),leading=size*1.32;
+    const height=count*leading+4;
+    if(!doc.room(height)&&!bold){line(cols,true);doc.rule();}
+    const top=doc.y;
     let x=0;
-    vals.forEach((v,i)=>{
-      doc.text(pdfFit(v,widths[i],size,bold),size,bold,x);
-      doc.y+=size*1.32;                      /* stay on the line for the next column */
+    cells.forEach((lines,i)=>{
+      lines.forEach((value,j)=>{doc.y=top-j*leading;doc.text(value,size,bold,x);});
       x+=widths[i]+gap;
     });
-    doc.y-=size*1.5;
+    doc.y=top-height;
   };
   line(cols,true);
   doc.rule();
@@ -545,8 +548,7 @@ async function selBuildReportBase(){
     lines.forEach(x=>{if(!doc.room(line)){doc.text(k+" (continued)",size,true);doc.y+=line;}doc.text(x,size,false,labelW);});
   });
   doc.gap(10);doc.rule();doc.gap(4);
-  doc.para("Values in this report are the values the instrument software stored. The page recomputes nothing. "
-    +"This is not a validated laboratory report and does not replace the laboratory's own record.",9,false);
+  doc.para("Stored vendor results are kept unchanged. Statistics and diagnostic plots are independently derived by MISSY and are descriptive. Research Use Only. Not validated for clinical or instrument qualification decisions. This report does not replace the vendor QC report or validated laboratory procedures.",9,false);
   doc.gap(8);
   doc.text("Contents",12,true);
   chosen.forEach((x,i)=>doc.para((i+1)+".  "+x.title+"   ["+x.id+"]",9.5,false));
@@ -563,7 +565,8 @@ async function selBuildReportBase(){
       if(f){
         const jpg=await svgToJpeg(f.svg,2);
         if(jpg){
-          const w=doc.width,h=w*jpg.natH/jpg.natW;
+          let w=doc.width,h=w*jpg.natH/jpg.natW;
+          const maxH=PDF_PAGE.h-2*PDF_PAGE.margin-100;if(h>maxH){h=maxH;w=h*jpg.natW/jpg.natH;}
           doc.room(h+10);
           doc.image(jpg.bytes,w,h,jpg.w,jpg.h);
         }else doc.para("This figure could not be rasterised in this browser.",9.5,false);
@@ -575,7 +578,7 @@ async function selBuildReportBase(){
     }else{
       let rows=[];
       try{rows=x.rows()||[];}catch(e){doc.para("This table could not be built: "+(e&&e.message||e),9.5,false);}
-      selTableBlock(doc,rows);
+      selTableBlock(doc,rows,null,x.tableOptions||{});
     }
   }
   const bytes=doc.build();

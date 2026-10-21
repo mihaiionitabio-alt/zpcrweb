@@ -84,6 +84,7 @@ core/biorad/cfx_rdml_views.js
 core/analysis/pcrd_independent.js
 core/biorad/lifecycle.js
 core/ui/report_workflow.js
+core/analysis/loaded_overview.js
 readers/register_public.js
 shell/public_script_end.html
 shell/public_legal.html

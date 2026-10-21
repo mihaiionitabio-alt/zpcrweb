@@ -132,3 +132,6 @@ places in `core/` still know about specific vendors:
 
 Do 1 and 2 when the first real LC PRO export arrives, together with the
 reader check, and re-run the comparison tests.
+
+
+2026.10.21.overview1: Overview + comparisons preset (Command: overview) adds all-run coverage, cohort/role statistics and multi-run Cq comparisons. Targets, serials, decoded protocols, channels and stored/independent bases stay separate. Missing identity isolates sources. All public PDFs use MISSY branding; long titles and table cells wrap with repeated table headers.

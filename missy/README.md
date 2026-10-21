@@ -39,6 +39,14 @@ The shared eight-tab MISSY design, large two-row desktop Console controls, Comma
 - Command/Assisted PDF downloads tested through the actual interface.
 - Long run lists paginate above the footer; contents wrap.
 
+## Hooks/model update: 2026.10.21.overview1
+
+- 105 registrations across 35 explicit hooks; registry sealed after startup.
+- Frozen baseline manifests remain byte-identical.
+- Malformed models, duplicate hooks, context/order, double-next and async cleanup tested.
+- Command/Assisted PDF downloads tested through the actual interface.
+- Long run lists paginate above the footer; contents wrap.
+
 ## Validation before deployment
 
 - 27 original PCRDs; 6,090,706 stored numeric values match independent expectations.

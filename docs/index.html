@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Offline reader for Roche LightCycler 480 .ixo and Applied Biosystems QuantStudio 3/5 .eds files: traceable stored values, container integrity checks, open qPCR exports, graphs, quality review, forensic log and JSON-LD metadata.">
 <meta name="application-name" content="qPCR raw values, quality-control and forensic export tool">
-<meta name="software-version" content="2026.10.21.workflow1">
+<meta name="software-version" content="2026.10.21.overview1">
 
 <!--
   MACHINE-READABLE LANDING-PAGE METADATA
@@ -11528,6 +11528,7 @@ function acceptPasted(text,source){
    I. Wiring
    ============================================================ */
 function refreshAll(){
+  if(typeof overviewSync==="function")overviewSync();
   SOP_CACHE=null;invalidateAnalysisCaches();
   markDirty("load","export","review","sop","results","graphs","panel","integrity");
   renderTab(currentTab());
@@ -12200,7 +12201,7 @@ function pdfWrap(text,width,size,bold){
   words.forEach(w=>{
     const t=cur?cur+" "+w:w;
     if(pdfWidth(t,size,bold)<=width)cur=t;
-    else{if(cur)lines.push(cur);cur=pdfWidth(w,size,bold)<=width?w:pdfFit(w,width,size,bold);}
+    else{if(cur)lines.push(cur);cur="";for(const char of w){if(cur&&pdfWidth(cur+char,size,bold)>width){lines.push(cur);cur="";}cur+=char;}}
   });
   if(cur)lines.push(cur);
   return lines.length?lines:[""];
@@ -12248,7 +12249,7 @@ function pdfDoc(){
     room(h){if(!cur)d.page();if(d.y-h<PDF_PAGE.margin+24){d.page();return false;}return true;},
     text(s,size,bold,dx,colour){
       const c=colour||(style.colour?style.colour(bold):[0,0,0]);
-      if(style.wrapTitle&& !dx&&((bold&&size>=14)||/^\d+\.\s/.test(String(s)))){
+      if(!dx&&((bold&&size>=14)||/^\d+\.\s/.test(String(s)))){
         for(const line of pdfWrap(String(s),d.width,size,bold)){d.room(size*1.4);rawText(line,size,bold,dx,c);}return;
       }
       rawText(s,size,bold,dx,c);
@@ -12600,10 +12601,10 @@ const SEL_TABLE_ROWS=28;
 function selReportTitle(){
   return SEL_STATE.title||("Selected results" + (RUNS.length===1?" — "+runName(RUNS[0]):""));
 }
-function selTableBlock(doc,rows,note){
+function selTableBlock(doc,rows,note,options={}){
   if(!rows||!rows.length){doc.para("No rows.",9.5,false);return;}
-  const cols=uniq(rows.flatMap(Object.keys)).slice(0,8);
-  const shown=rows.slice(0,SEL_TABLE_ROWS);
+  const cols=options.columns||uniq(rows.flatMap(Object.keys)).slice(0,8);
+  const shown=options.full?rows:rows.slice(0,SEL_TABLE_ROWS);
   const size=8.5,gap=6;
   const wid=cols.map(c=>{
     let w=pdfWidth(c,size,true);
@@ -12625,14 +12626,17 @@ function selTableBlock(doc,rows,note){
     }
   }
   const line=(vals,bold)=>{
-    doc.room(size*1.5);
+    const cells=vals.map((v,i)=>pdfWrap(String(v),widths[i],size,bold));
+    const count=Math.max(1,...cells.map(c=>c.length)),leading=size*1.32;
+    const height=count*leading+4;
+    if(!doc.room(height)&&!bold){line(cols,true);doc.rule();}
+    const top=doc.y;
     let x=0;
-    vals.forEach((v,i)=>{
-      doc.text(pdfFit(v,widths[i],size,bold),size,bold,x);
-      doc.y+=size*1.32;                      /* stay on the line for the next column */
+    cells.forEach((lines,i)=>{
+      lines.forEach((value,j)=>{doc.y=top-j*leading;doc.text(value,size,bold,x);});
       x+=widths[i]+gap;
     });
-    doc.y-=size*1.5;
+    doc.y=top-height;
   };
   line(cols,true);
   doc.rule();
@@ -12672,8 +12676,7 @@ async function selBuildReportBase(){
     lines.forEach(x=>{if(!doc.room(line)){doc.text(k+" (continued)",size,true);doc.y+=line;}doc.text(x,size,false,labelW);});
   });
   doc.gap(10);doc.rule();doc.gap(4);
-  doc.para("Values in this report are the values the instrument software stored. The page recomputes nothing. "
-    +"This is not a validated laboratory report and does not replace the laboratory's own record.",9,false);
+  doc.para("Stored vendor results are kept unchanged. Statistics and diagnostic plots are independently derived by MISSY and are descriptive. Research Use Only. Not validated for clinical or instrument qualification decisions. This report does not replace the vendor QC report or validated laboratory procedures.",9,false);
   doc.gap(8);
   doc.text("Contents",12,true);
   chosen.forEach((x,i)=>doc.para((i+1)+".  "+x.title+"   ["+x.id+"]",9.5,false));
@@ -12690,7 +12693,8 @@ async function selBuildReportBase(){
       if(f){
         const jpg=await svgToJpeg(f.svg,2);
         if(jpg){
-          const w=doc.width,h=w*jpg.natH/jpg.natW;
+          let w=doc.width,h=w*jpg.natH/jpg.natW;
+          const maxH=PDF_PAGE.h-2*PDF_PAGE.margin-100;if(h>maxH){h=maxH;w=h*jpg.natW/jpg.natH;}
           doc.room(h+10);
           doc.image(jpg.bytes,w,h,jpg.w,jpg.h);
         }else doc.para("This figure could not be rasterised in this browser.",9.5,false);
@@ -12702,7 +12706,7 @@ async function selBuildReportBase(){
     }else{
       let rows=[];
       try{rows=x.rows()||[];}catch(e){doc.para("This table could not be built: "+(e&&e.message||e),9.5,false);}
-      selTableBlock(doc,rows);
+      selTableBlock(doc,rows,null,x.tableOptions||{});
     }
   }
   const bytes=doc.build();
@@ -15268,56 +15272,106 @@ for(const [id,code,title,unit,group]of [
 ]){const def={id,code,title,unit,group,inst:['CFX'],type:'i',variants:true,better:'target',status:'B',source:'Stored raw well means and BLOCKTEMP, in source acquisition order',idea:'Descriptive raw diagnostics; select an explicit well/channel/cycle-window variant for early-cycle fits.',reading:'Early-cycle windows are cycles 2–6 or 2–10, with every cycle required exactly once in order. Residual RMS uses denominator n, not a noise estimator. A rising early curve may be amplification, not background drift. Temperature increments preserve source order; steady holds and cooling legitimately produce non-increasing transitions. These are acquisition sampling diagnostics, not measured ramp accuracy, Tm, contamination calls or hardware acceptance tests. Compare only matching protocol, firmware, step and variant. Statistical limits are descriptive and are not vendor specifications. Sample exclusions do not alter raw hardware diagnostics.'};CC_CHARTS.push(def);CC_BY_ID[id]=def;}
 // No parsed log/calibration semantics have independent validation yet. Inventory is evidence, not interpretation.
 MISSY_HOOKS.use("zpcrInventoryRows","core/biorad/zpcr_guide_charts.js:23",23, next => function(){return next().map(row=>({...row,log_insight:'Unavailable: log event semantics not independently verified',calibration_insight:'Unavailable: calibration binary interpretation not independently verified'}));});
-/* Manual explanations and raw endpoint summaries; isolated to ZPCR. */
-let ZPCR_ENDPOINT_N=7;
-const ZPCR_MANUAL_NOTES=[
- 'Raw acquisition data; no vendor Cq/Tm calls.',
- 'Plate names, roles and targets need verified layout provenance.',
- 'Maestro applies a matching plate file during ZPCR conversion.',
- 'Maestro RDML exports include selected baseline processing.',
- 'Read steps stay separate; raw channels are not dye identities.',
- 'Cycles 2–6 / 2–10 are descriptive windows, not Maestro baselines.',
- 'Endpoint: last N reads in source order; no smoothing or correction.',
- '65,000 RFU is a threshold-setting bound, not detector saturation.',
- 'Recovered exports may duplicate an acquisition; copies count once.',
- 'Log/calibration interpretation unavailable without verified decoding.',
- 'Research Use Only; not validated; does not replace vendor QC.'
-];
-function zpcrEndpointMetrics(run,n){
- const m={},z=run.zpcr;if(!Number.isInteger(n)||n<1||n>999)throw Error('Endpoint N must be an integer from 1 to 999');
- for(const step of new Set(z.reads.map(r=>r.step))){const all=z.reads.filter(r=>r.step===step);if(all.length<n)continue;const reads=all.slice(-n);
- for(let c=0;c<all[0].channels;c++)for(let p=0;p<96;p++){
- const ys=reads.map(r=>ZPCR.zpcrWellMean(r,c,Math.floor(p/12),p%12));if(!ys.every(Number.isFinite))continue;
- const q=ZPCR.zpcrStats(ys),v='Step '+step+' · Raw channel '+(c+1)+' · '+String.fromCharCode(65+Math.floor(p/12))+(p%12+1)+' · last '+n+' reads';
- (m.z_endpoint_mean||(m.z_endpoint_mean={}))[v]=q.mean;(m.z_endpoint_span||(m.z_endpoint_span={}))[v]=Math.max(...ys)-Math.min(...ys);
- }}return m;
-}
-MISSY_HOOKS.use("ccStatic","core/biorad/zpcr_manual_endpoint.js:24",24, next => function(run){const m=next(run);if(run.zpcr)Object.assign(m,zpcrEndpointMetrics(run,ZPCR_ENDPOINT_N));return m;});
-for(const [id,code,title]of [['z_endpoint_mean','Z-R6','Raw endpoint — last-N-read mean'],['z_endpoint_span','Z-R7','Raw endpoint — last-N-read range']]){
- const d={id,code,title,group:'hardware',inst:['CFX'],type:'i',variants:true,unit:'raw units',better:'target',status:'B',source:'Raw well means; ordered final N reads per step',idea:'• Select N, step, raw channel and physical well.\n• Entire window required; no missing-value substitution.',reading:'• Last N reads within one acquisition step.\n• Range = maximum minus minimum; temporal spread, not replicate SD.\n• Ramp steps may vary legitimately.\n• No Maestro endpoint equivalence or vendor limits.\n• Matching protocol, firmware and N required.'};CC_CHARTS.push(d);CC_BY_ID[id]=d;
-}
-function zpcrSetEndpointNBase(n){n=Number(n);if(!Number.isInteger(n)||n<1||n>999)throw Error('Endpoint N must be an integer from 1 to 999');ZPCR_ENDPOINT_N=n;for(const r of RUNS.filter(r=>r.zpcr))delete r.ccStatic;for(const id of ['cc:z_endpoint_mean','cc:z_endpoint_span']){const o=SEL_STATE.options[id];if(o?.variant){const v=decodeURIComponent(o.variant).replace(/last \d+ reads$/,'last '+n+' reads');o.variant=encodeURIComponent(v);}}if(['z_endpoint_mean','z_endpoint_span'].includes(CC_STATE.open))CC_STATE.variant=String(CC_STATE.variant||'').replace(/last \d+ reads$/,'last '+n+' reads');document.querySelectorAll('input[aria-label="ZPCR endpoint N"]').forEach(e=>e.value=n);CC_STATE.cache=null;markDirty('panel');if(MG.open){mgRefresh();mgRender();}}
-function zpcrSetEndpointN(...args){return MISSY_HOOKS.invoke("zpcrSetEndpointN",this,args,zpcrSetEndpointNBase);}
-
-function zpcrEndpointControls(){const box=document.createElement('div');box.className='notice';const label=document.createElement('label');label.textContent='Raw endpoint · last N reads ';const input=document.createElement('input');input.type='number';input.min='1';input.max='999';input.value=ZPCR_ENDPOINT_N;input.setAttribute('aria-label','ZPCR endpoint N');input.style.width='90px';label.append(input);const b=document.createElement('button');b.textContent='Apply endpoint window';b.onclick=()=>{try{zpcrSetEndpointN(input.value);if(typeof astRender==='function'&&document.getElementById('ast-list')?.offsetParent)astRender();if(typeof mgRefresh==='function')mgRefresh();}catch(e){input.setCustomValidity(e.message);input.reportValidity();}};input.oninput=()=>input.setCustomValidity('');box.append(label,b);return box;}
-MISSY_HOOKS.use("zpcrPaint","core/biorad/zpcr_manual_endpoint.js:25",25, next => function(){next();if(!RUNS.some(r=>r.zpcr))return;const notes=document.createElement('details');notes.innerHTML='<summary>Raw data · manual notes</summary><ul>'+ZPCR_MANUAL_NOTES.map(t=>'<li>'+esc(t)+'</li>').join('')+'</ul>';zpcrPanel.prepend(notes,zpcrEndpointControls());});
-MISSY_HOOKS.use("astRender","core/biorad/zpcr_manual_endpoint.js:26",26, next => function(){next();if(RUNS.some(r=>r.zpcr))astEl('ast-list').prepend(zpcrEndpointControls());});
-MISSY_HOOKS.use("mgOpen","core/biorad/zpcr_manual_endpoint.js:27",27, next => function(){next();const nav=document.getElementById('mg-nav');nav.querySelector('#zpcr-console-endpoint')?.remove();if(RUNS.some(r=>r.zpcr)){const c=zpcrEndpointControls();c.id='zpcr-console-endpoint';nav.append(c);}});
-MISSY_HOOKS.use("cmdExec","core/biorad/zpcr_manual_endpoint.js:28",28, next => async function(raw){const match=String(raw).trim().match(/^zpcr endpoint (\d+)$/i);if(match){zpcrSetEndpointN(match[1]);cmdPrint('• Endpoint window: last '+ZPCR_ENDPOINT_N+' reads.','ok');return;}if(/^zpcr notes$/i.test(String(raw).trim())){ZPCR_MANUAL_NOTES.forEach(t=>cmdPrint('• '+t));return;}return next(raw);});
-CMD_HELP.push(['zpcr endpoint N','set raw endpoint window: 1–999 reads'],['zpcr notes','show short manual explanations']);
-MISSY_HOOKS.use("zpcrReportScript","core/biorad/zpcr_manual_endpoint.js:29",29, next => function(){return '# Raw endpoint window\nzpcr endpoint '+ZPCR_ENDPOINT_N+'\n'+next();});
-MISSY_HOOKS.use("selChartItems","core/biorad/zpcr_manual_endpoint.js:30",30, next => function(){return next().map(x=>x.id.startsWith('cc:z_')?{...x,note:'• '+ZPCR_MANUAL_NOTES.slice(0,8).join('\n• ')+'\n• '+CC_BY_ID[x.id.slice(3)].code+' · '+CC_BY_ID[x.id.slice(3)].title+'\n• Matching protocol / firmware / window required.\n• Descriptive values; no vendor acceptance limits.'}:x);});
-MISSY_HOOKS.use("selDataItems","core/biorad/zpcr_manual_endpoint.js:31",31, next => function(){return next().map(x=>x.id==='data:zpcr_sources'?{...x,note:'• '+ZPCR_MANUAL_NOTES.join('\n• ')+'\n'+zpcrInventoryRows().map(r=>'• File: '+r.file+'\n• Source SHA-256: '+r.source_sha256+'\n• Acquisition SHA-256: '+r.acquisition_sha256+'\n• '+r.status).join('\n')}:x);});
-MISSY_HOOKS.use("MG_VIEWS.zpcrcharts.build","core/biorad/zpcr_manual_endpoint.js:32",32, next => function(){const items=next();return items.map(x=>x.kind==='chart'?{...x,state:'• '+ZPCR_MANUAL_NOTES.slice(0,7).join('\n• ')}:x);});
-// Shared writer, ZPCR reports only: MISSY ink/teal, compact branded page header, white paper.
-let zpcrReportLogo=null;
-MISSY_HOOKS.use("selBuildReport","core/biorad/zpcr_manual_endpoint.js:33",33, next => async function(){zpcrReportLogo=await svgToJpeg(missySvg(true),3);return next();});
-MISSY_HOOKS.use('report.style','missy/print-style',20,next=>function(){
- const style=next();if(!RUNS.some(r=>r.zpcr||r.pcrd||r.cfxRDML))return style;
- return {...style,wrapTitle:true,colour:bold=>bold?[.06,.18,.30]:[.15,.19,.24],
- header(d,text){if(zpcrReportLogo){const j=zpcrReportLogo;d.image(j.bytes,120,40,j.w,j.h);}else text('MISSY  |  RUO  |  NOT VALIDATED',10,true,0,[.06,.18,.30]);d.rule();d.gap(5);},
- paragraphLines(s){if(String(s).includes('ZPCR hardware fields are decoded')||String(s).includes('The page recomputes nothing.'))s='• Research Use Only.\n• Not validated for clinical or instrument qualification decisions.\n• Does not replace vendor QC certification or laboratory validation.';return String(s).split('\n').map(line=>line.replace(/^• /,'- '));}};
-});
+/* Manual explanations and raw endpoint summaries; isolated to ZPCR. */
+
+let ZPCR_ENDPOINT_N=7;
+
+const ZPCR_MANUAL_NOTES=[
+
+ 'Raw acquisition data; no vendor Cq/Tm calls.',
+
+ 'Plate names, roles and targets need verified layout provenance.',
+
+ 'Maestro applies a matching plate file during ZPCR conversion.',
+
+ 'Maestro RDML exports include selected baseline processing.',
+
+ 'Read steps stay separate; raw channels are not dye identities.',
+
+ 'Cycles 2–6 / 2–10 are descriptive windows, not Maestro baselines.',
+
+ 'Endpoint: last N reads in source order; no smoothing or correction.',
+
+ '65,000 RFU is a threshold-setting bound, not detector saturation.',
+
+ 'Recovered exports may duplicate an acquisition; copies count once.',
+
+ 'Log/calibration interpretation unavailable without verified decoding.',
+
+ 'Research Use Only; not validated; does not replace vendor QC.'
+
+];
+
+function zpcrEndpointMetrics(run,n){
+
+ const m={},z=run.zpcr;if(!Number.isInteger(n)||n<1||n>999)throw Error('Endpoint N must be an integer from 1 to 999');
+
+ for(const step of new Set(z.reads.map(r=>r.step))){const all=z.reads.filter(r=>r.step===step);if(all.length<n)continue;const reads=all.slice(-n);
+
+ for(let c=0;c<all[0].channels;c++)for(let p=0;p<96;p++){
+
+ const ys=reads.map(r=>ZPCR.zpcrWellMean(r,c,Math.floor(p/12),p%12));if(!ys.every(Number.isFinite))continue;
+
+ const q=ZPCR.zpcrStats(ys),v='Step '+step+' · Raw channel '+(c+1)+' · '+String.fromCharCode(65+Math.floor(p/12))+(p%12+1)+' · last '+n+' reads';
+
+ (m.z_endpoint_mean||(m.z_endpoint_mean={}))[v]=q.mean;(m.z_endpoint_span||(m.z_endpoint_span={}))[v]=Math.max(...ys)-Math.min(...ys);
+
+ }}return m;
+
+}
+
+MISSY_HOOKS.use("ccStatic","core/biorad/zpcr_manual_endpoint.js:24",24, next => function(run){const m=next(run);if(run.zpcr)Object.assign(m,zpcrEndpointMetrics(run,ZPCR_ENDPOINT_N));return m;});
+
+for(const [id,code,title]of [['z_endpoint_mean','Z-R6','Raw endpoint — last-N-read mean'],['z_endpoint_span','Z-R7','Raw endpoint — last-N-read range']]){
+
+ const d={id,code,title,group:'hardware',inst:['CFX'],type:'i',variants:true,unit:'raw units',better:'target',status:'B',source:'Raw well means; ordered final N reads per step',idea:'• Select N, step, raw channel and physical well.\n• Entire window required; no missing-value substitution.',reading:'• Last N reads within one acquisition step.\n• Range = maximum minus minimum; temporal spread, not replicate SD.\n• Ramp steps may vary legitimately.\n• No Maestro endpoint equivalence or vendor limits.\n• Matching protocol, firmware and N required.'};CC_CHARTS.push(d);CC_BY_ID[id]=d;
+
+}
+
+function zpcrSetEndpointNBase(n){n=Number(n);if(!Number.isInteger(n)||n<1||n>999)throw Error('Endpoint N must be an integer from 1 to 999');ZPCR_ENDPOINT_N=n;for(const r of RUNS.filter(r=>r.zpcr))delete r.ccStatic;for(const id of ['cc:z_endpoint_mean','cc:z_endpoint_span']){const o=SEL_STATE.options[id];if(o?.variant){const v=decodeURIComponent(o.variant).replace(/last \d+ reads$/,'last '+n+' reads');o.variant=encodeURIComponent(v);}}if(['z_endpoint_mean','z_endpoint_span'].includes(CC_STATE.open))CC_STATE.variant=String(CC_STATE.variant||'').replace(/last \d+ reads$/,'last '+n+' reads');document.querySelectorAll('input[aria-label="ZPCR endpoint N"]').forEach(e=>e.value=n);CC_STATE.cache=null;markDirty('panel');if(MG.open){mgRefresh();mgRender();}}
+
+function zpcrSetEndpointN(...args){return MISSY_HOOKS.invoke("zpcrSetEndpointN",this,args,zpcrSetEndpointNBase);}
+
+
+
+function zpcrEndpointControls(){const box=document.createElement('div');box.className='notice';const label=document.createElement('label');label.textContent='Raw endpoint · last N reads ';const input=document.createElement('input');input.type='number';input.min='1';input.max='999';input.value=ZPCR_ENDPOINT_N;input.setAttribute('aria-label','ZPCR endpoint N');input.style.width='90px';label.append(input);const b=document.createElement('button');b.textContent='Apply endpoint window';b.onclick=()=>{try{zpcrSetEndpointN(input.value);if(typeof astRender==='function'&&document.getElementById('ast-list')?.offsetParent)astRender();if(typeof mgRefresh==='function')mgRefresh();}catch(e){input.setCustomValidity(e.message);input.reportValidity();}};input.oninput=()=>input.setCustomValidity('');box.append(label,b);return box;}
+
+MISSY_HOOKS.use("zpcrPaint","core/biorad/zpcr_manual_endpoint.js:25",25, next => function(){next();if(!RUNS.some(r=>r.zpcr))return;const notes=document.createElement('details');notes.innerHTML='<summary>Raw data · manual notes</summary><ul>'+ZPCR_MANUAL_NOTES.map(t=>'<li>'+esc(t)+'</li>').join('')+'</ul>';zpcrPanel.prepend(notes,zpcrEndpointControls());});
+
+MISSY_HOOKS.use("astRender","core/biorad/zpcr_manual_endpoint.js:26",26, next => function(){next();if(RUNS.some(r=>r.zpcr))astEl('ast-list').prepend(zpcrEndpointControls());});
+
+MISSY_HOOKS.use("mgOpen","core/biorad/zpcr_manual_endpoint.js:27",27, next => function(){next();const nav=document.getElementById('mg-nav');nav.querySelector('#zpcr-console-endpoint')?.remove();if(RUNS.some(r=>r.zpcr)){const c=zpcrEndpointControls();c.id='zpcr-console-endpoint';nav.append(c);}});
+
+MISSY_HOOKS.use("cmdExec","core/biorad/zpcr_manual_endpoint.js:28",28, next => async function(raw){const match=String(raw).trim().match(/^zpcr endpoint (\d+)$/i);if(match){zpcrSetEndpointN(match[1]);cmdPrint('• Endpoint window: last '+ZPCR_ENDPOINT_N+' reads.','ok');return;}if(/^zpcr notes$/i.test(String(raw).trim())){ZPCR_MANUAL_NOTES.forEach(t=>cmdPrint('• '+t));return;}return next(raw);});
+
+CMD_HELP.push(['zpcr endpoint N','set raw endpoint window: 1–999 reads'],['zpcr notes','show short manual explanations']);
+
+MISSY_HOOKS.use("zpcrReportScript","core/biorad/zpcr_manual_endpoint.js:29",29, next => function(){return '# Raw endpoint window\nzpcr endpoint '+ZPCR_ENDPOINT_N+'\n'+next();});
+
+MISSY_HOOKS.use("selChartItems","core/biorad/zpcr_manual_endpoint.js:30",30, next => function(){return next().map(x=>x.id.startsWith('cc:z_')?{...x,note:'• '+ZPCR_MANUAL_NOTES.slice(0,8).join('\n• ')+'\n• '+CC_BY_ID[x.id.slice(3)].code+' · '+CC_BY_ID[x.id.slice(3)].title+'\n• Matching protocol / firmware / window required.\n• Descriptive values; no vendor acceptance limits.'}:x);});
+
+MISSY_HOOKS.use("selDataItems","core/biorad/zpcr_manual_endpoint.js:31",31, next => function(){return next().map(x=>x.id==='data:zpcr_sources'?{...x,note:'• '+ZPCR_MANUAL_NOTES.join('\n• ')+'\n'+zpcrInventoryRows().map(r=>'• File: '+r.file+'\n• Source SHA-256: '+r.source_sha256+'\n• Acquisition SHA-256: '+r.acquisition_sha256+'\n• '+r.status).join('\n')}:x);});
+
+MISSY_HOOKS.use("MG_VIEWS.zpcrcharts.build","core/biorad/zpcr_manual_endpoint.js:32",32, next => function(){const items=next();return items.map(x=>x.kind==='chart'?{...x,state:'• '+ZPCR_MANUAL_NOTES.slice(0,7).join('\n• ')}:x);});
+
+// Shared writer, ZPCR reports only: MISSY ink/teal, compact branded page header, white paper.
+
+let zpcrReportLogo=null;
+
+MISSY_HOOKS.use("selBuildReport","core/biorad/zpcr_manual_endpoint.js:33",33, next => async function(){zpcrReportLogo=await svgToJpeg(missySvg(true),3);return next();});
+
+MISSY_HOOKS.use('report.style','missy/print-style',20,next=>function(){
+
+ const style=next();
+
+ return {...style,wrapTitle:true,colour:bold=>bold?[.06,.18,.30]:[.15,.19,.24],
+
+ header(d,text){if(zpcrReportLogo){const j=zpcrReportLogo;d.image(j.bytes,120,40,j.w,j.h);}else text('MISSY  |  RUO  |  NOT VALIDATED',10,true,0,[.06,.18,.30]);d.rule();d.gap(5);},
+
+ paragraphLines(s){if(String(s).includes('ZPCR hardware fields are decoded')||String(s).includes('The page recomputes nothing.'))s='• Research Use Only.\n• Not validated for clinical or instrument qualification decisions.\n• Does not replace vendor QC certification or laboratory validation.';return String(s).split('\n').map(line=>line.replace(/^• /,'- '));}};
+
+});
+
 /* Raw comparisons only: no one-point between-run control charts. */
 const ZC_COLORS=['#2166ac','#d6604d','#238b45','#8e44ad','#b8860b','#008b8b'];
 function zcGroups(){const gates=zpcrContributions(),groups=new Map();for(const r of RUNS.filter(r=>r.zpcr&&gates.get(r)?.eligible)){const k=JSON.stringify([ccInstrumentKey(r),ccProtocolKey(r)]);if(!groups.has(k))groups.set(k,{instrument:ccInstrumentKey(r),protocol:ccProtocolKey(r),runs:[]});groups.get(k).runs.push(r);}for(const g of groups.values())g.runs.sort((a,b)=>a.zpcr.reads[0].epochMs-b.zpcr.reads[0].epochMs);return [...groups.values()];}
@@ -15744,7 +15798,7 @@ async function bioradAfterRead(token){
  for(const r of pcrdRuns())piResults(r);
  for(const r of cfxRuns())if(!r.cfxRDML.protocolSHA256)r.cfxRDML.protocolSHA256=await sourceSha256(new TextEncoder().encode(r.cfxRDML.protocolXML));
  if(token!==APP_STATE.generation)return;
- pcrdSync();cfxSync();zcSyncGraphs();pcrdKeylessNotice();pcrdImportFeedback();
+ pcrdSync();cfxSync();zcSyncGraphs();overviewSync();pcrdKeylessNotice();pcrdImportFeedback();
  const msg=document.getElementById('readmsg');
  if(pcrdRuns().length){const rows=pcrdRuns().flatMap(r=>piResults(r).rows);msg.append(document.createTextNode(' PCRD: '+pcrdRuns().length+' decoded sources; '+pcrdRuns().reduce((n,r)=>n+r.pcrd.reads.length,0)+' stored acquisition reads; '+rows.filter(x=>Number.isFinite(x.Cq_independent)).length+' independently calculated Cq calls.'));}
  document.getElementById('g-graph')?.replaceChildren();
@@ -15835,6 +15889,69 @@ const reportWorkflowStyle=document.createElement('style');reportWorkflowStyle.te
 #ast-available-tools{display:flex;gap:8px;margin-bottom:16px}#ast-available-tools button{border:1px solid #cbd5e1;border-radius:6px;padding:7px 12px;background:#eef2f7;color:#102f4d;font:inherit;font-size:13px;cursor:pointer}
 `;document.head.append(reportWorkflowStyle);
 reportWorkflowStyle.textContent+='#assisted-endpoint[hidden]{display:none!important}';
+/* Descriptive across-run coverage: never pool incompatible measurement cohorts. */
+const OVERVIEW_CACHE={runs:null,revision:-1,generation:-1,value:null};
+function overviewProtocol(run){
+ if(run.cfxRDML?.protocolSHA256)return 'CFX RDML protocol SHA-256 '+run.cfxRDML.protocolSHA256;
+ const p=run.protocol||{};if((p.programs||[]).some(x=>(x.segments||[]).length))return sopCanonical({programs:p.programs,channels:p.channels,block:p.block,detectionFormatName:p.detectionFormatName});
+ return '(protocol not decoded)';
+}
+function overviewData(){
+ if(OVERVIEW_CACHE.runs===RUNS&&OVERVIEW_CACHE.revision===SAMPLE_SELECTION.revision&&OVERVIEW_CACHE.generation===APP_STATE.generation)return OVERVIEW_CACHE.value;
+ const groups=new Map(),runRows=[],points=[];
+ function add(run,ri,w,q,basis,target,channel,protocol){
+  if(!Number.isFinite(q)||q<=0)return;
+  const sn=run.meta.SerialNumber||run.meta.InstrumentID||'',knownProtocol=protocol&&!/not decoded|unknown protocol/i.test(protocol);
+  const identity=sn||'Unverified SN; source '+run.meta.sourceSHA256;
+  const fingerprint=knownProtocol?sha256Hex(new TextEncoder().encode(protocol)):'Unverified protocol; source '+run.meta.sourceSHA256;
+  const key=JSON.stringify([run.reader?.id||run.platform||'',identity,fingerprint,target||'Unassigned',String(channel??''),basis,w.analysis||w.analysisMode||'']);
+  if(!groups.has(key))groups.set(key,{key,instrument:identity,protocol:fingerprint,target:target||'Unassigned',channel:String(channel??''),basis,analysis:w.analysis||w.analysisMode||'',points:[]});
+  const row={run_index:ri+1,filename:run.file,source_sha256:run.meta.sourceSHA256,well:w.well||posToWell(w.pos,run.cols),sample:w.sample||'',role:w.role||w.instrRole||'Unknown',value:q,run};groups.get(key).points.push(row);points.push(row);
+ }
+ RUNS.forEach((run,ri)=>{
+  const selected=ssWells(run),stored=selected.filter(w=>Number.isFinite(sopCq(w))),protocol=overviewProtocol(run);
+  for(const w of stored)add(run,ri,w,sopCq(w),'Stored vendor Cq',w.target||w.analysis||'Unassigned',w.filterComb||w.channel,protocol);
+  let independent=0;
+  if(run.pcrd)for(const group of piResults(run).groups)for(const r of group.records){if(!ssPositionIncluded(run,r.layout.position)||!Number.isFinite(r.cq.value)||r.cq.value<=0)continue;independent++;add(run,ri,{pos:r.layout.position,well:r.layout.well,sample:r.layout.sample,role:r.layout.role},r.cq.value,'Independently calculated PCRD Cq',group.dye,group.channel,run.pcrd.protocolSHA256);}
+  runRows.push({run:'R'+(ri+1),filename:run.file,format:run.reader?.id||'',selected_results:selected.length,stored_Cq:stored.length,without_Cq:selected.length-stored.length,excluded_results:(run.wells||[]).length-selected.length,independent_Cq:independent,raw_reads:(run.zpcr||run.pcrd)?.reads.length||0});
+ });
+ const cohorts=[...groups.values()].map((g,i)=>({...g,id:'C'+(i+1)})),stats=[];
+ for(const g of cohorts)for(const [role,rows]of byKey(g.points,x=>x.role)){
+  const a=rows.map(r=>r.value).sort((a,b)=>a-b);stats.push({cohort:g.id,role,n:a.length,mean:mean(a),median:median(a),SD:a.length>1?sd(a):null,min:a[0],max:a.at(-1)});
+ }
+ const result={cohorts,stats,runRows,points};OVERVIEW_CACHE.runs=RUNS;OVERVIEW_CACHE.revision=SAMPLE_SELECTION.revision;OVERVIEW_CACHE.generation=APP_STATE.generation;OVERVIEW_CACHE.value=result;return result;
+}
+function overviewCohortNote(g){return g.id+': '+g.target+' | '+g.basis+' | SN '+g.instrument+' | channel '+g.channel+' | analysis '+(g.analysis||'not recorded')+'\nProtocol fingerprint: '+g.protocol;}
+function overviewPlot(g){
+ const roles=byKey(g.points,p=>p.role),colours=new Map(),series=[],rows=[],xticks=RUNS.map((r,i)=>({v:i+1,label:'R'+(i+1)}));
+ for(const [role,pts]of roles){const colour=catColour(colours,role);series.push({type:'points',r:3,colour,data:pts.map((p,i)=>[p.run_index+((i%13)-6)*.024,p.value,p.filename+' | '+p.well+' | '+p.sample+' | '+role])});
+  const medians=[...byKey(pts,p=>p.run_index)].map(([ri,a])=>[ri,median(a.map(p=>p.value)),role+' median; R'+ri]);series.push({type:'points',r:6,colour,data:medians});
+  for(const p of pts)rows.push({run:'R'+p.run_index,filename:p.filename,well:p.well,sample:p.sample,role:p.role,Cq:p.value,basis:g.basis});
+ }
+ return {svg:svgPlot({width:1000,height:560,title:g.id+' - '+g.target+' - '+g.basis,x:[.5,RUNS.length+.5],y:extent(g.points.map(p=>p.value)),xticks,xlab:'Loaded run; full filenames in the source manifest',ylab:'Cq (cycles)',series,legend:legendFromMap(colours)}),rows};
+}
+function overviewImages(){return overviewData().cohorts.filter(g=>new Set(g.points.map(p=>p.run_index)).size>=2).map(g=>({
+ id:'img:overview_'+g.id,kind:'image',group:'Overall summary and comparisons',scope:'all',title:'Across-run Cq comparison - '+g.id+' - '+g.target,
+ note:overviewCohortNote(g)+'\nAll selected valid Cq results in this cohort are plotted. Small dots: wells; large dots: per-run/role median. Horizontal jitter only separates overlapping dots. Roles remain separate. No control limits or vendor acceptance are inferred. Biological sample composition can differ; this is descriptive comparison, not proof of QC drift.\n'+[...new Set(g.points.map(p=>p.run_index))].map(i=>'R'+i+': '+RUNS[i-1].file).join('\n'),
+ ready:()=>g.points.length>0,figure:()=>overviewPlot(g)
+}));}
+function overviewSync(){for(let i=GRAPHS.length-1;i>=0;i--)if(GRAPHS[i].id.startsWith('overview_'))GRAPHS.splice(i,1);for(const x of overviewImages())GRAPHS.push({id:x.id.slice(4),title:x.title,group:x.group,scope:'all',opts:[],note:x.note,render:x.figure});}
+function overviewTables(){const d=overviewData(),allRows=d.runRows;
+ const items=[{id:'data:loaded_overview',kind:'data',group:'Overall summary and comparisons',title:'Overall coverage - all loaded runs',
+ note:'Descriptive counts across all loaded run records (analysis views may share a source). Analytical results respect sample selection. Stored and independently calculated Cq are counted separately. Raw-only files have no stored analytical calls. No grand Cq mean is calculated across different targets, protocols, channels, roles or instruments.\nTotals: '+allRows.length+' run records; '+new Set(RUNS.map(r=>r.meta.sourceSHA256)).size+' source files; '+allRows.reduce((n,r)=>n+r.selected_results,0)+' selected stored result records; '+allRows.reduce((n,r)=>n+r.stored_Cq,0)+' valid stored Cq; '+allRows.reduce((n,r)=>n+r.without_Cq,0)+' stored records without valid Cq; '+allRows.reduce((n,r)=>n+r.excluded_results,0)+' excluded records; '+allRows.reduce((n,r)=>n+r.independent_Cq,0)+' independently calculated Cq.\n'+allRows.map(r=>r.run+': '+r.filename).join('\n'),
+ ready:()=>RUNS.length>0,rows:()=>allRows.map(r=>({run:r.run,format:r.format,selected:r.selected_results,stored_Cq:r.stored_Cq,no_Cq:r.without_Cq,excluded:r.excluded_results,indep_Cq:r.independent_Cq,raw_reads:r.raw_reads})),file:'all_runs_coverage.csv',tableOptions:{full:true},text:()=>csvOf(allRows)},
+ {id:'data:cohort_statistics',kind:'data',group:'Overall summary and comparisons',title:'Overall Cq statistics - separated compatible cohorts',
+ note:'Per-result descriptive statistics, separated by source format, instrument identity, decoded protocol fingerprint, target, channel, result basis and role. Sample sizes can differ between runs. A shared label/fingerprint does not verify assay equivalence. SD requires at least two values. Missing instrument/protocol identity isolates the source instead of pooling it.\n'+d.cohorts.map(overviewCohortNote).join('\n'),
+ ready:()=>d.stats.length>0,rows:()=>d.stats,file:'cohort_statistics.csv',tableOptions:{full:true,columns:['cohort','role','n','mean','median','SD','min','max']},text:()=>csvOf(d.stats)}];return items;
+}
+MISSY_HOOKS.use('selImageItems','overview/comparison-catalogue',220,next=>function(){return next().filter(x=>!x.id.startsWith('img:overview_')).concat(overviewImages());});
+MISSY_HOOKS.use('selDataItems','overview/summary-catalogue',220,next=>function(){return next().concat(overviewTables());});
+MISSY_HOOKS.use('astRender','overview/preset',220,next=>function(){next();const tools=document.getElementById('ast-available-tools');if(!tools)return;const button=document.createElement('button');button.type='button';button.textContent=ui('Overview + comparisons');button.id='ast-overview-preset';button.title='Adds overall counts, separated Cq statistics and all available cross-run Cq comparisons; keeps current selections.';button.onclick=()=>{SEL_STATE.figureScope='all';SEL_STATE.ids.add('data:loaded_overview');if(overviewData().stats.length)SEL_STATE.ids.add('data:cohort_statistics');for(const x of overviewImages())SEL_STATE.ids.add(x.id);astRender();};tools.prepend(button);});
+MISSY_HOOKS.use('cmdExec','overview/command',220,next=>async function(raw){if(/^overview$/i.test(String(raw).trim())){SEL_STATE.figureScope='all';SEL_STATE.ids.add('data:loaded_overview');if(overviewData().stats.length)SEL_STATE.ids.add('data:cohort_statistics');for(const x of overviewImages())SEL_STATE.ids.add(x.id);cmdPrint('Overall summary and compatible cross-run comparisons added to report selection.','ok');return;}return next(raw);});
+CMD_HELP.push(['overview','add overall counts, separated cohort statistics and cross-run comparisons']);
+Object.assign(ZH_TERMS,{'Overview + comparisons':'总体统计与跨运行比较'});
+
+MISSY_HOOKS.use('selSelected','overview/summary-first',240,next=>function(){const items=next(),rank=x=>x.id==='data:loaded_overview'?0:x.id==='data:cohort_statistics'?1:x.id.startsWith('img:overview_')?2:3;return items.sort((a,b)=>rank(a)-rank(b));});
 /* Registration order does not override conflicting content signatures. */
 registerReader({id:'ixo',version:'zenodo-23437639',extensions:['.ixo'],probe:s=>!s.zipNames&&/<objectstream\b[^>]*signature=["\']IXOS["\']/i.test(new TextDecoder().decode(s.bytes.subarray(0,2048))),decode:async s=>{const source={...s,text:s.text||new TextDecoder().decode(s.bytes)},r=await decodeIxo(source,'auto');await ccExtractOnLoad(r,source);return r;}});
 registerReader({id:'eds',version:'zenodo-23437639',extensions:['.eds','.edt'],probe:s=>s.zipNames?.some(n=>/^apldbio\/sds\/experiment\.xml$/i.test(n)),decode:async s=>{const r=await decodeEds(s);await ccExtractOnLoad(r,s);return r;}});

@@ -18,3 +18,6 @@ The public variant registers readers explicitly; Bio-Rad presentation adapters a
 Hook/model update: 21 October 2026. Explicit UI/report hooks, model v2 validation, paginated long report metadata.
 
 Report workflow update: 21 October 2026. Reversible previews, evidence-based available items, explicit all-run report coverage, persisted CSV scope and full source manifest.
+
+
+2026.10.21.overview1: Overview + comparisons preset (Command: overview) adds all-run coverage, cohort/role statistics and multi-run Cq comparisons. Targets, serials, decoded protocols, channels and stored/independent bases stay separate. Missing identity isolates sources. All public PDFs use MISSY branding; long titles and table cells wrap with repeated table headers.
