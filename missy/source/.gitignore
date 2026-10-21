@@ -7,3 +7,4 @@ tests/*_RESULTS.json
 tests/MODULAR_PDF_CHECKS.json
 secrets.json
 *.PRIVATE.txt
+/index.html
