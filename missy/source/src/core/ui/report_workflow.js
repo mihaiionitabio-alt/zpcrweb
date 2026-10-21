@@ -83,3 +83,6 @@ const reportWorkflowStyle=document.createElement('style');reportWorkflowStyle.te
 #ast-available-tools{display:flex;gap:8px;margin-bottom:16px}#ast-available-tools button{border:1px solid #cbd5e1;border-radius:6px;padding:7px 12px;background:#eef2f7;color:#102f4d;font:inherit;font-size:13px;cursor:pointer}
 `;document.head.append(reportWorkflowStyle);
 reportWorkflowStyle.textContent+='#assisted-endpoint[hidden]{display:none!important}';
+
+/* Keep long identifiers inside the existing Assisted cards. */
+reportWorkflowStyle.textContent+=`#ast-list .ast-item{grid-template-columns:22px minmax(0,1fr);grid-template-rows:min-content min-content min-content;align-content:start;min-width:0}#ast-list .ast-item>span{min-width:0;max-width:100%;overflow-wrap:anywhere;white-space:normal}`;

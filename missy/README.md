@@ -80,3 +80,9 @@ Tests cover exact preview return via Close graph/Return, source-aware visibility
 - All eligible overview comparisons previewed through Console, Command and Assisted routes; both report downloads checked.
 - PCRD overall statistics use stored gene/target names, dye/channel, protocol and acquisition group. Unnamed targets stay source-specific. Independent Cq/Tm algorithms and raw arrays are unchanged.
 - Report statistics independently checked; 99 pages visually reviewed. Command/Assisted PDF images, layout and text match apart from the build timestamp.
+
+## Assisted text fit: 2026.10.21.overview3
+
+- Overview cards show concise cohort/count descriptions; full report notes and exports are unchanged.
+- Long filenames and identifiers wrap within the existing card grid.
+- Re-tested the five separate format batches, all eligible comparison previews, two-row Console controls, and both PDF export routes on the final build. Assisted text checked at 1500 and 1920 px; 99 report pages checked.

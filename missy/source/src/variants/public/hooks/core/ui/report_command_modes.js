@@ -814,7 +814,7 @@ function astRenderBase(){
         <input type="checkbox" data-id="${esc(x.id)}"${SEL_STATE.ids.has(x.id)?" checked":""}${x.ready()?"":" disabled"}>
         <span class="ast-title">${esc(x.title)}</span>
         <span class="ast-id">${esc(x.id)}</span>
-        <span class="ast-note">${esc(x.ready()?(x.note||""):"not available until a file is read")}</span>
+        <span class="ast-note">${esc(x.ready()?(x.uiNote??x.note??""):"not available until a file is read")}</span>
       </label>`).join("")}</div></section>`;
   }).join("");
   box.querySelectorAll("input[data-id]").forEach(cb=>cb.onchange=()=>{

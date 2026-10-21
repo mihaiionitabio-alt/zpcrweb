@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Offline reader for Roche LightCycler 480 .ixo and Applied Biosystems QuantStudio 3/5 .eds files: traceable stored values, container integrity checks, open qPCR exports, graphs, quality review, forensic log and JSON-LD metadata.">
 <meta name="application-name" content="qPCR raw values, quality-control and forensic export tool">
-<meta name="software-version" content="2026.10.21.overview2">
+<meta name="software-version" content="2026.10.21.overview3">
 
 <!--
   MACHINE-READABLE LANDING-PAGE METADATA
@@ -12942,7 +12942,7 @@ function astRenderBase(){
         <input type="checkbox" data-id="${esc(x.id)}"${SEL_STATE.ids.has(x.id)?" checked":""}${x.ready()?"":" disabled"}>
         <span class="ast-title">${esc(x.title)}</span>
         <span class="ast-id">${esc(x.id)}</span>
-        <span class="ast-note">${esc(x.ready()?(x.note||""):"not available until a file is read")}</span>
+        <span class="ast-note">${esc(x.ready()?(x.uiNote??x.note??""):"not available until a file is read")}</span>
       </label>`).join("")}</div></section>`;
   }).join("");
   box.querySelectorAll("input[data-id]").forEach(cb=>cb.onchange=()=>{
@@ -15889,6 +15889,9 @@ const reportWorkflowStyle=document.createElement('style');reportWorkflowStyle.te
 #ast-available-tools{display:flex;gap:8px;margin-bottom:16px}#ast-available-tools button{border:1px solid #cbd5e1;border-radius:6px;padding:7px 12px;background:#eef2f7;color:#102f4d;font:inherit;font-size:13px;cursor:pointer}
 `;document.head.append(reportWorkflowStyle);
 reportWorkflowStyle.textContent+='#assisted-endpoint[hidden]{display:none!important}';
+
+/* Keep long identifiers inside the existing Assisted cards. */
+reportWorkflowStyle.textContent+=`#ast-list .ast-item{grid-template-columns:22px minmax(0,1fr);grid-template-rows:min-content min-content min-content;align-content:start;min-width:0}#ast-list .ast-item>span{min-width:0;max-width:100%;overflow-wrap:anywhere;white-space:normal}`;
 /* Descriptive across-run coverage: never pool incompatible measurement cohorts. */
 const OVERVIEW_CACHE={runs:null,revision:-1,generation:-1,value:null};
 function overviewProtocol(run){
@@ -15931,16 +15934,16 @@ function overviewPlot(g){
  return {svg:svgPlot({width:1000,height:560,title:g.id+' - '+g.target+' - '+g.basis,x:[.5,RUNS.length+.5],y:extent(g.points.map(p=>p.value)),xticks,xlab:'Loaded run; full filenames in the source manifest',ylab:'Cq (cycles)',series,legend:legendFromMap(colours)}),rows};
 }
 function overviewImages(){return overviewData().cohorts.filter(g=>new Set(g.points.map(p=>p.run_index)).size>=2).map(g=>({
- id:'img:overview_'+g.id,kind:'image',group:'Overall summary and comparisons',scope:'all',title:'Across-run Cq comparison - '+g.id+' - '+g.target,
+ id:'img:overview_'+g.id,kind:'image',group:'Overall summary and comparisons',scope:'all',title:'Across-run Cq comparison - '+g.id+' - '+g.target,uiNote:g.target+' | SN '+g.instrument+' | '+g.channel+' | '+new Set(g.points.map(p=>p.run_index)).size+' runs; '+g.points.length+' valid selected Cq results. Protocol, acquisition and role separation is retained. Full cohort/source identities appear in the report.',
  note:overviewCohortNote(g)+'\nAll selected valid Cq results in this cohort are plotted. Small dots: wells; large dots: per-run/role median. Horizontal jitter only separates overlapping dots. Roles remain separate. No control limits or vendor acceptance are inferred. Biological sample composition can differ; this is descriptive comparison, not proof of QC drift.\n'+[...new Set(g.points.map(p=>p.run_index))].map(i=>'R'+i+': '+RUNS[i-1].file).join('\n'),
  ready:()=>g.points.length>0,figure:()=>overviewPlot(g)
 }));}
 function overviewSync(){for(let i=GRAPHS.length-1;i>=0;i--)if(GRAPHS[i].id.startsWith('overview_'))GRAPHS.splice(i,1);for(const x of overviewImages())GRAPHS.push({id:x.id.slice(4),title:x.title,group:x.group,scope:'all',opts:[],note:x.note,render:x.figure});}
 function overviewTables(){const d=overviewData(),allRows=d.runRows;
- const items=[{id:'data:loaded_overview',kind:'data',group:'Overall summary and comparisons',title:'Overall coverage - all loaded runs',
+ const items=[{id:'data:loaded_overview',kind:'data',group:'Overall summary and comparisons',title:'Overall coverage - all loaded runs',uiNote:allRows.length+' loaded analysis/run views. Counts respect sample selection; stored and independent Cq are separate. Complete filenames and coverage appear in the report.',
  note:'Descriptive counts across all loaded run records (analysis views may share a source). Analytical results respect sample selection. Stored and independently calculated Cq are counted separately. Raw-only files have no stored analytical calls. No grand Cq mean is calculated across different targets, protocols, channels, roles or instruments.\nTotals: '+allRows.length+' run records; '+new Set(RUNS.map(r=>r.meta.sourceSHA256)).size+' source files; '+allRows.reduce((n,r)=>n+r.selected_results,0)+' selected stored result records; '+allRows.reduce((n,r)=>n+r.stored_Cq,0)+' valid stored Cq; '+allRows.reduce((n,r)=>n+r.without_Cq,0)+' stored records without valid Cq; '+allRows.reduce((n,r)=>n+r.excluded_results,0)+' excluded records; '+allRows.reduce((n,r)=>n+r.independent_Cq,0)+' independently calculated Cq.\n'+allRows.map(r=>r.run+': '+r.filename).join('\n'),
  ready:()=>RUNS.length>0,rows:()=>allRows.map(r=>({run:r.run,format:r.format,selected:r.selected_results,stored_Cq:r.stored_Cq,no_Cq:r.without_Cq,excluded:r.excluded_results,indep_Cq:r.independent_Cq,raw_reads:r.raw_reads})),file:'all_runs_coverage.csv',tableOptions:{full:true},text:()=>csvOf(allRows)},
- {id:'data:cohort_statistics',kind:'data',group:'Overall summary and comparisons',title:'Overall Cq statistics - separated compatible cohorts',
+ {id:'data:cohort_statistics',kind:'data',group:'Overall summary and comparisons',title:'Overall Cq statistics - separated compatible cohorts',uiNote:d.stats.length+' statistics rows across '+d.cohorts.length+' separate cohorts. Targets, protocols, instrument identities, channels, acquisition groups and roles stay separate. Full cohort identities are included in the report.',
  note:'Per-result descriptive statistics, separated by source format, instrument identity, decoded protocol fingerprint, target, channel, result basis and role. Sample sizes can differ between runs. A shared label/fingerprint does not verify assay equivalence. SD requires at least two values. Missing instrument/protocol identity or an unnamed PCRD target isolates the source instead of pooling it. PCRD acquisition groups and stored targets remain separate; a dye is not a target identity.\n'+d.cohorts.map(overviewCohortNote).join('\n'),
  ready:()=>d.stats.length>0,rows:()=>d.stats,file:'cohort_statistics.csv',tableOptions:{full:true,columns:['cohort','role','n','mean','median','SD','min','max']},text:()=>csvOf(d.stats)}];return items;
 }
