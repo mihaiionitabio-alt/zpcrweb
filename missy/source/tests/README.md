@@ -19,3 +19,6 @@ Real experimental files, the old reference HTML and PCRD passwords are not bundl
 For password tests set `MISSY_PCRD_PASSWORD_FILE` to a private local text file. The test enters that value through the real browser password input. Do not commit the password file or enable logging/tracing that captures password values. The source package contains no vendor password or CFX-derived initial state.
 
 Golden digests validate these particular sample payloads and regressions. They do not demonstrate vendor-equivalent Cq/Tm algorithms, acceptance limits or instrument qualification.
+
+- `assisted_workflow.cjs`: five real formats, available-card filtering, exact return/scroll/field/selection restoration from Assisted and Command, all-run expansion, CSV scope and actual all-run PDF download. `MISSY_TEST_URL` can target the live release; the IXO-only secondary check uses the local build.
+- `inspect_workflow_report.py`: renders the all-run mixed report, checks portrait/pagination/footer bounds, and requires complete filenames and SHA-256 for all five inputs.

@@ -1,5 +1,5 @@
 {
-  "registrations": 105,
+  "registrations": 110,
   "targets": [
     "metaRows",
     "ccPlatform",
@@ -35,6 +35,8 @@
     "pcrdItems",
     "report.style",
     "report.paragraph",
-    "zcModeItems"
+    "zcModeItems",
+    "mgClose",
+    "mgCommand"
   ]
 }

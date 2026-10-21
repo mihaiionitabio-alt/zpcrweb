@@ -219,13 +219,12 @@ function svgToJpeg(svgText,scale){
    An item knows how to produce itself twice: as a figure for the report and
    as a file for the archive. Nothing is precomputed, so a selection made
    before a file is read is still valid after it. */
-const SEL_STATE={ids:new Set(),options:Object.create(null),run:0,title:"",output:"pdf",lastReport:null};
+const SEL_STATE={ids:new Set(),options:Object.create(null),run:0,figureScope:"selected",title:"",output:"pdf",lastReport:null};
 function selRunIndex(){
   const n=Number(SEL_STATE.run)||0;
   return RUNS.length?Math.min(Math.max(0,n),RUNS.length-1):0;
 }
-function selGraphContext(g){
-  const ri=selRunIndex();
+function selGraphContext(g,ri=selRunIndex()){
   const o=SEL_STATE.options["img:"+g.id]||{};
   /* target=all (any case) is the documented way to ask for every target; it must not be read as a target called "all" */
   const allTargets=/^all$/i.test(o.target||"");
@@ -237,8 +236,9 @@ function selImageItemsBase(){
   return (typeof GRAPHS==="undefined"?[]:GRAPHS).map(g=>({
     id:"img:"+g.id,kind:"image",group:g.group||"Figures",title:g.title||g.id,
     note:g.note||"",scope:g.scope||"all",
-    ready:()=>RUNS.length>0,
-    figure:()=>{const c=selGraphContext(g);const res=g.render(c);return {svg:res.svg,rows:res.rows||[]};}
+    reportGraph:g,
+    ready:()=>reportGraphRunIndexes(g).some(ri=>reportGraphAvailable(g,ri)),
+    figure:()=>reportGraphFigure(g,reportGraphRunIndexes(g).find(ri=>reportGraphAvailable(g,ri))??selRunIndex())
   }));
 }
 function selImageItems(...args){return MISSY_HOOKS.invoke("selImageItems",this,args,selImageItemsBase);}
@@ -349,7 +349,7 @@ function selMatch(pattern){
 }
 function selSelectedBase(){
   const ids=SEL_STATE.ids;
-  return selCatalogue().filter(x=>ids.has(x.id));
+  return selCatalogue().filter(x=>ids.has(x.id)&&reportItemVisible(x)).flatMap(reportExpandItem);
 }
 function selSelected(...args){return MISSY_HOOKS.invoke("selSelected",this,args,selSelectedBase);}
 
@@ -377,9 +377,9 @@ function sopAnalystName(){return String(sopLab().analyst||"").trim();}
 /* ---------- 4 . the CSV the assisted mode hands out and takes back ---------- */
 function selCsvTemplate(){
   const rows=selCatalogue().map(x=>({id:x.id,kind:x.kind,group:x.group,title:x.title,
-    available:x.ready()?"yes":"no",include:SEL_STATE.ids.has(x.id)?"yes":"no"}));
+    available:x.ready()?"yes":"no",include:SEL_STATE.ids.has(x.id)?"yes":"no",figure_scope:SEL_STATE.figureScope||"selected",figure_run:String(selRunIndex())}));
   return toCSV([{key:"id",label:"id"},{key:"kind",label:"kind"},{key:"group",label:"group"},
-    {key:"title",label:"title"},{key:"available",label:"available"},{key:"include",label:"include"}],rows);
+    {key:"title",label:"title"},{key:"available",label:"available"},{key:"include",label:"include"},{key:"figure_scope",label:"figure_scope"},{key:"figure_run",label:"figure_run"}],rows);
 }
 function selApplyCsv(text){
   const lines=String(text||"").split(/\r?\n/).filter(l=>l.trim().length);
@@ -392,6 +392,8 @@ function selApplyCsv(text){
   const head=split(lines[0]).map(h=>h.trim().toLowerCase());
   const iId=head.indexOf("id"),iInc=head.indexOf("include");
   if(iId<0||iInc<0)throw new Error('the file needs an "id" column and an "include" column');
+  const scopeIndex=head.indexOf("figure_scope"),runIndex=head.indexOf("figure_run");
+  if(scopeIndex>=0){const settings=lines.slice(1).map(split),scopes=new Set(settings.map(r=>r[scopeIndex]).filter(Boolean)),runs=new Set(settings.map(r=>r[runIndex]).filter(Boolean));if(scopes.size>1||runs.size>1)throw Error("Conflicting figure scope in selection CSV");const scope=[...scopes][0],ri=[...runs][0];if(scope&&!['all','selected'].includes(scope))throw Error("Invalid figure scope");if(ri!=null&&(!/^\d+$/.test(ri)||+ri>=RUNS.length))throw Error("Invalid figure run");if(scope)SEL_STATE.figureScope=scope;if(ri!=null)SEL_STATE.run=+ri;}
   const known=new Set(selCatalogue().map(x=>x.id));
   const unknown=[];let applied=0,rows=0;
   lines.slice(1).forEach(l=>{
@@ -530,6 +532,8 @@ async function selBuildReportBase(){
     ["Profile checksum","sha256:"+sopHash()],
     ["Built",new Date().toISOString().replace("T"," ").slice(0,19)+" UTC"],
     ["Runs loaded",RUNS.length?RUNS.map(runName):["none"]],
+    ["Figure coverage",SEL_STATE.figureScope==="all"?"All loaded runs; separate figures for each compatible run":"Standard figures: "+(RUNS[selRunIndex()]?.file||"none")],
+    ["Table coverage","All loaded data; analytical tables respect sample exclusions. Raw and hardware evidence retain their original scope."],
     ["Items selected",String(chosen.length)]
   ];
   const labelW=120,valueW=doc.width-labelW,size=10,line=size*1.32;
@@ -604,7 +608,7 @@ const CMD_HELP=[
   ["only <pattern>","clear the selection, then add the pattern"],
   ["clear","empty the selection"],
   ["selection","what is selected now"],
-  ["run <number>","which loaded run the run-level figures use"],
+  ["run <number|all>","standard figures from one run, or separate figures for every compatible loaded run; tables cover all loaded data"],
   ["runs","the loaded runs and their numbers"],
   ["lab <text>","the laboratory name for the report and the profile"],
   ["analyst <text>","who is doing the analysis"],
@@ -690,11 +694,11 @@ async function cmdExecBase(raw){
       cmdPrint(RUNS.length?"loaded runs:":"no file has been read yet");
       cmdTable(RUNS.map((r,i)=>[String(i),runName(r)+"  ("+((r.wells||[]).length)+" results)"]));break;
     case "run":{
-      if(String(arg).toLowerCase()==="all"){SEL_STATE.run=0;cmdPrint("table exports will include all loaded runs","ok");break;}
+      if(String(arg).toLowerCase()==="all"){SEL_STATE.figureScope="all";cmdPrint("standard figures: every compatible loaded run, separately; tables: all loaded data","ok");break;}
       const n=Number(arg);
       if(!RUNS.length){cmdPrint("no file has been read yet","warn");break;}
       if(!Number.isFinite(n)||n<0||n>=RUNS.length){cmdPrint(`run must be 0..${RUNS.length-1}`,"warn");break;}
-      SEL_STATE.run=n;cmdPrint("run-level figures will use "+runName(RUNS[n]),"ok");break;}
+      SEL_STATE.run=n;SEL_STATE.figureScope="selected";cmdPrint("standard figures: "+runName(RUNS[n])+"; tables still cover all loaded data","ok");break;}
     case "lab":sopLab().name=arg;sopProfileEdited(true);cmdPrint("laboratory: "+(arg||"(cleared)"),"ok");break;
     case "analyst":sopLab().analyst=arg;sopProfileEdited(true);cmdPrint("analysis by: "+(arg||"(cleared)"),"ok");break;
     case "title":SEL_STATE.title=arg;cmdPrint("report title: "+(arg||"(default)"),"ok");break;
@@ -797,7 +801,7 @@ const AST={open:false};
 function astEl(id){return document.getElementById(id);}
 function astRenderBase(){
   const box=astEl("ast-list");if(!box)return;
-  const cat=selCatalogue(),groups=uniq(cat.map(x=>x.group));
+  const cat=selCatalogue().filter(reportItemVisible),groups=uniq(cat.map(x=>x.group));
   box.innerHTML=groups.map(g=>{
     const items=cat.filter(x=>x.group===g);
     return `<section class="ast-group"><h3>${esc(g)} <span class="ast-count">${items.length}</span>
@@ -815,13 +819,13 @@ function astRenderBase(){
     astCount();
   });
   box.querySelectorAll(".ast-all").forEach(b=>b.onclick=()=>{
-    selCatalogue().filter(x=>x.group===b.dataset.group&&x.ready()).forEach(x=>SEL_STATE.ids.add(x.id));astRender();});
+    selCatalogue().filter(x=>x.group===b.dataset.group&&reportItemVisible(x)).forEach(x=>SEL_STATE.ids.add(x.id));astRender();});
   box.querySelectorAll(".ast-none").forEach(b=>b.onclick=()=>{
     selCatalogue().filter(x=>x.group===b.dataset.group).forEach(x=>SEL_STATE.ids.delete(x.id));astRender();});
   const runSel=astEl("ast-run");
   if(runSel){
-    runSel.innerHTML=RUNS.map((r,i)=>`<option value="${i}"${i===selRunIndex()?" selected":""}>${esc(runName(r))}</option>`).join("")
-      ||`<option value="0">no file read</option>`;
+    runSel.innerHTML='<option value="all">'+esc(ui('All loaded runs - separate figures per run'))+'</option>'+RUNS.map((r,i)=>`<option value="${i}">${esc(r.file||runName(r))}</option>`).join("");
+    runSel.value=SEL_STATE.figureScope==='all'?'all':String(selRunIndex());
   }
   astEl("ast-lab").value=sopLabName();
   astEl("ast-analyst").value=sopAnalystName();
@@ -876,7 +880,7 @@ function astInit(){
   const lab=astEl("ast-lab");if(lab)lab.onchange=()=>{sopLab().name=lab.value.trim();sopProfileEdited(true);};
   const an=astEl("ast-analyst");if(an)an.onchange=()=>{sopLab().analyst=an.value.trim();sopProfileEdited(true);};
   const ti=astEl("ast-title");if(ti)ti.onchange=()=>{SEL_STATE.title=ti.value.trim();};
-  const rs=astEl("ast-run");if(rs)rs.onchange=()=>{SEL_STATE.run=Number(rs.value)||0;};
+  const rs=astEl("ast-run");if(rs)rs.onchange=()=>{SEL_STATE.figureScope=rs.value==="all"?"all":"selected";if(rs.value!=="all")SEL_STATE.run=Number(rs.value)||0;astRender();};
   document.addEventListener("keydown",e=>{if(AST.open&&e.key==="Escape")astClose();});
 }
 function modesInit(){

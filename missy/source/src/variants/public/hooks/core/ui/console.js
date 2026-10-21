@@ -331,7 +331,7 @@ const MG_COMMANDS=[
      if(it)try{it.run();appNotice&&appNotice("console","Download requested: "+it.title);}catch(e){appError("console:export",e);}}},
   {re:/^exit$/, id:"exit", act:()=>mgClose()}
 ];
-function mgCommand(text,source){
+function mgCommandBase(text,source){
   const t=String(text||"").toLowerCase().trim();
   if(MG.sheet){                                   /* while a sheet is open, a number or its name picks */
     const t0=t;
@@ -389,3 +389,5 @@ function mgChooseFiles(){
 function mgLeaveTo(tab){mgClose();try{showTab(tab);}catch(e){}}
 /* The console is a mode, not a page. Its top row selects which part of the data set the
    console is working on; it never changes the mode. Leaving is one explicit action. */
+
+function mgCommand(...args){return MISSY_HOOKS.invoke("mgCommand",this,args,mgCommandBase);}

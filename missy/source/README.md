@@ -8,6 +8,14 @@ The byte-identical **Missy-all** and **Missy-LC** variants below are frozen base
 
 [ARCHITECTURE.md](ARCHITECTURE.md) explains the reader registry, explicit UI/report hooks and model v2 boundary checks. The public variant preserves numerical behaviour and the original design; frozen baseline builds remain byte-identical.
 
+## Report workflow update (2026.10.21.workflow1)
+
+- Preview graph returns to its Assisted or Command origin, retaining scroll, fields and selections. Close graph and Return both work; standalone Console keeps its normal behaviour.
+- Assisted hides unavailable items and empty groups. The run selector filters figure choices by actual data; endpoint controls are hidden without a supported format.
+- **Runs for standard figures** offers one run or **All loaded runs**. All repeats selected standard figures separately for every compatible run. Labelled acquisition comparisons retain their source groups; tables cover loaded data. Nothing pools incompatible protocols or serials.
+- `run all` provides the same coverage in Command mode. Generated Bio-Rad scripts include it. Selection CSV retains scope and run.
+- Reports and archives retain a full source manifest with filenames and SHA-256 hashes. Analytical selections still use selected wells; raw evidence and hardware scopes are unchanged.
+
 ## Hook/model update (2026.10.21.hooks1)
 
 Global function replacement has been replaced by named, ordered hooks. The PDF writer exposes style and paragraph hooks directly. Reader validation checks result collections, positions, raw dimensions, source evidence and encrypted inventory before committing. See `tests/hooks_and_models.cjs` for malformed-model, hook ordering, context, duplicate, sealing and async cleanup tests.
@@ -19,7 +27,7 @@ Global function replacement has been replaced by named, ordered hooks. The PDF w
 - Legacy comparisons: IXO, two EDS files, an EDT template, and vendor/raw/reanalysed RDML; result/derived tables and RDML exports match the baseline except build-version/export-time fields.
 - Mixed 61-file / 75-view load; all modes; two desktop Console rows at 1000/1280/1500/1920 px; no browser errors or unexpected network requests.
 - Archive/CRC failures, renamed containers, password cancellation, wrong-password rejection and retry; no password in source download or web storage.
-- Mixed PDF: 27 portrait pages, 41 rendered images, page numbers, RUO, all 27 PCRD filenames/checksums and no page-bound overflow or image fallbacks. Large tables are summarised by the existing writer; full numerical CSV remains available.
+- Mixed PDFs: portrait pages, page numbers, RUO, full source filenames/checksums and no page/footer overflow or image fallbacks. Large tables are summarised by the existing writer; full numerical CSV remains available.
 
 Tests under `tests/` need local experimental fixtures. Browser tests use Playwright and Chrome; configure their fixture paths for your machine. `MISSY_PCRD_PASSWORD_FILE` supplies a private local password for automated tests. Never add that file or its contents to source control. Runtime MISSY still asks users through its normal password dialog. `python tests/test_builder.py` requires only Python and source files.
 

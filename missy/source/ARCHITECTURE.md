@@ -33,3 +33,13 @@ The legal panel embeds GPL/attribution text. Downloadable HTML source is capture
 ## Validation
 
 Tests cover frozen baseline identity, stored/derived legacy outputs, all 27 original PCRD measurements against independent expectations, all seven ZPCR decoded payloads/exports/graphs against the previous working public release, mixed input, archive failures, password workflows, all modes, desktop layouts and PDF rendering. Real laboratory fixtures and passwords are local and not distributed with the source. Test reports state their scope; they do not establish vendor-equivalent algorithms or laboratory accreditation.
+
+## Report coverage and preview lifecycle
+
+`core/ui/report_workflow.js` supplies explicit hook registrations for preview close/return, available-item rendering and full-source provenance. `unifiedBrowse` captures the originating Assisted/Command DOM, scroll and focus before opening the shared Console viewer. Close/Return restores that DOM without rebuilding it. Intentional navigation to another page clears the return target; standalone Console has no return target.
+
+`SEL_STATE.figureScope` is `selected` or `all`. Standard catalogue items carry their graph definition. Availability renders against a concrete run and requires evidence rows; raw-only inputs do not advertise generic stored-result figures. Availability is cached by run/graph with generation, run count, sample-selection revision, SOP hash, options and endpoint window in the key. Native acquisition items keep their existing source group; unrelated items are hidden for a selected run. Empty groups are omitted.
+
+Selection expansion binds an explicit run index into each run-level figure closure, with a unique export ID and full source note. It never changes `SEL_STATE.run` while building a report and never merges protocols, serials or raw arrays. Across-run comparison graphs retain their original scope. Table coverage remains all loaded data and is stated beside the selector and on the report cover. Selection CSV records figure scope/run for repeatable export.
+
+A full source manifest accompanies selected report/archive material. It prints complete filenames and SHA-256 in wrapped notes, independently of abbreviated table cells. The frozen all/LC build variants do not include these public UI changes.

@@ -459,7 +459,7 @@ function mgOpenBase(){
 }
 function mgOpen(...args){return MISSY_HOOKS.invoke('mgOpen',this,args,mgOpenBase);}
 
-function mgClose(){
+function mgCloseBase(){
   MG.pending=null;MG.open=false;document.getElementById("mg").classList.remove("on");
 }
 function mgToggle(){MG.open?mgClose():mgOpen();}
@@ -677,3 +677,5 @@ function baseName(){
   return "cq_values";
 }
 
+
+function mgClose(...args){return MISSY_HOOKS.invoke("mgClose",this,args,mgCloseBase);}

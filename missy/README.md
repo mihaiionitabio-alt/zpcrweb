@@ -31,6 +31,14 @@ The shared eight-tab MISSY design, large two-row desktop Console controls, Comma
 - Command/Assisted PDF downloads tested through the actual interface.
 - Long run lists paginate above the footer; contents wrap.
 
+## Hooks/model update: 2026.10.21.workflow1
+
+- 105 registrations across 35 explicit hooks; registry sealed after startup.
+- Frozen baseline manifests remain byte-identical.
+- Malformed models, duplicate hooks, context/order, double-next and async cleanup tested.
+- Command/Assisted PDF downloads tested through the actual interface.
+- Long run lists paginate above the footer; contents wrap.
+
 ## Validation before deployment
 
 - 27 original PCRDs; 6,090,706 stored numeric values match independent expectations.
@@ -38,7 +46,7 @@ The shared eight-tab MISSY design, large two-row desktop Console controls, Comma
 - Legacy IXO, two EDSs, an EDT template and vendor/raw/reanalysed RDML match the frozen baseline's result/derived tables and RDML exports except build-version/export-time fields.
 - Mixed 61-file / 75-view load; all modes, desktop layouts at four widths, themes/focus/pan/zoom and report export.
 - Nested/mixed/renamed archives, CRC rejection and password cancel/wrong/retry/privacy checks.
-- Mixed PDF: 27 portrait pages, 41 images, page numbers, RUO, filenames and checksums; pages rendered and checked for overflow. Existing table summaries remain; full numerical CSVs are available.
+- Mixed PDFs: portrait pages, page numbers, RUO, filenames and checksums; pages rendered and checked for page/footer overflow. Existing table summaries remain; full numerical CSVs are available.
 
 Real laboratory fixtures, passwords and generated experimental reports are not published with the source.
 
@@ -47,3 +55,13 @@ Real laboratory fixtures, passwords and generated experimental reports are not p
 [GNU GPL version 3](./source/LICENSE), with upstream attribution, [modification notices](./source/NOTICE.txt) and retained [Plotly MIT notices](./source/Plotly-LICENSE.txt).
 
 Research Use Only. Independent Cq/Tm calculations and exploratory diagnostics do not constitute vendor certification, reproduce vendor analysis algorithms, or replace manufacturer QC reports or validated laboratory procedures.
+
+## Preview and report coverage: 2026.10.21.workflow1
+
+Preview graph returns to its Assisted/Command origin with scroll, fields and selections retained. Unavailable items and empty groups are hidden; preview buttons use the MISSY control style.
+
+In Assisted mode, choose **All loaded runs** under **Runs for standard figures**, select figures/tables (or **Select all available**) and press **Build**. Selected standard figures repeat separately for every compatible run. One selected run limits the standard figures and visible figure choices; tables cover all loaded data, as stated in the UI/report. Native acquisition comparisons retain their labelled source groups; incompatible protocols and serials are not pooled.
+
+Command mode supports `run all`; generated Bio-Rad scripts include it. Selection CSV persists scope/run. Reports/archives include a full source manifest with complete filenames and SHA-256 hashes. Analytical figures respect selected wells; raw exports and hardware scopes are unchanged.
+
+Tests cover exact preview return via Close graph/Return, source-aware visibility, all-run IXO/EDS/RDML figure binding and actual mixed-format PDF downloads. The representative five-format all-run PDF has 21 portrait pages; full source identities and every page/footer boundary were checked.

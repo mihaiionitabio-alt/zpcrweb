@@ -55,3 +55,6 @@ MISSY_HOOKS.define('report.style');
 MISSY_HOOKS.define('report.paragraph');
 
 MISSY_HOOKS.define('zcModeItems');
+
+MISSY_HOOKS.define("mgClose");
+MISSY_HOOKS.define("mgCommand");

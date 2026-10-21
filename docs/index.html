@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Offline reader for Roche LightCycler 480 .ixo and Applied Biosystems QuantStudio 3/5 .eds files: traceable stored values, container integrity checks, open qPCR exports, graphs, quality review, forensic log and JSON-LD metadata.">
 <meta name="application-name" content="qPCR raw values, quality-control and forensic export tool">
-<meta name="software-version" content="2026.10.21.hooks1">
+<meta name="software-version" content="2026.10.21.workflow1">
 
 <!--
   MACHINE-READABLE LANDING-PAGE METADATA
@@ -1370,6 +1370,9 @@ MISSY_HOOKS.define('report.style');
 MISSY_HOOKS.define('report.paragraph');
 
 MISSY_HOOKS.define('zcModeItems');
+
+MISSY_HOOKS.define("mgClose");
+MISSY_HOOKS.define("mgCommand");
 /*
  * Application design notes
  * ------------------------
@@ -8300,7 +8303,7 @@ const MG_COMMANDS=[
      if(it)try{it.run();appNotice&&appNotice("console","Download requested: "+it.title);}catch(e){appError("console:export",e);}}},
   {re:/^exit$/, id:"exit", act:()=>mgClose()}
 ];
-function mgCommand(text,source){
+function mgCommandBase(text,source){
   const t=String(text||"").toLowerCase().trim();
   if(MG.sheet){                                   /* while a sheet is open, a number or its name picks */
     const t0=t;
@@ -8358,6 +8361,8 @@ function mgChooseFiles(){
 function mgLeaveTo(tab){mgClose();try{showTab(tab);}catch(e){}}
 /* The console is a mode, not a page. Its top row selects which part of the data set the
    console is working on; it never changes the mode. Leaving is one explicit action. */
+
+function mgCommand(...args){return MISSY_HOOKS.invoke("mgCommand",this,args,mgCommandBase);}
 /* ============================================================
    The console as a data console, not only an alarm queue.
    ------------------------------------------------------------
@@ -8819,7 +8824,7 @@ function mgOpenBase(){
 }
 function mgOpen(...args){return MISSY_HOOKS.invoke('mgOpen',this,args,mgOpenBase);}
 
-function mgClose(){
+function mgCloseBase(){
   MG.pending=null;MG.open=false;document.getElementById("mg").classList.remove("on");
 }
 function mgToggle(){MG.open?mgClose():mgOpen();}
@@ -9037,6 +9042,8 @@ function baseName(){
   return "cq_values";
 }
 
+
+function mgClose(...args){return MISSY_HOOKS.invoke("mgClose",this,args,mgCloseBase);}
 /* ============================================================
    A2. Sample roles
    ------------------------------------------------------------
@@ -12339,13 +12346,12 @@ function svgToJpeg(svgText,scale){
    An item knows how to produce itself twice: as a figure for the report and
    as a file for the archive. Nothing is precomputed, so a selection made
    before a file is read is still valid after it. */
-const SEL_STATE={ids:new Set(),options:Object.create(null),run:0,title:"",output:"pdf",lastReport:null};
+const SEL_STATE={ids:new Set(),options:Object.create(null),run:0,figureScope:"selected",title:"",output:"pdf",lastReport:null};
 function selRunIndex(){
   const n=Number(SEL_STATE.run)||0;
   return RUNS.length?Math.min(Math.max(0,n),RUNS.length-1):0;
 }
-function selGraphContext(g){
-  const ri=selRunIndex();
+function selGraphContext(g,ri=selRunIndex()){
   const o=SEL_STATE.options["img:"+g.id]||{};
   /* target=all (any case) is the documented way to ask for every target; it must not be read as a target called "all" */
   const allTargets=/^all$/i.test(o.target||"");
@@ -12357,8 +12363,9 @@ function selImageItemsBase(){
   return (typeof GRAPHS==="undefined"?[]:GRAPHS).map(g=>({
     id:"img:"+g.id,kind:"image",group:g.group||"Figures",title:g.title||g.id,
     note:g.note||"",scope:g.scope||"all",
-    ready:()=>RUNS.length>0,
-    figure:()=>{const c=selGraphContext(g);const res=g.render(c);return {svg:res.svg,rows:res.rows||[]};}
+    reportGraph:g,
+    ready:()=>reportGraphRunIndexes(g).some(ri=>reportGraphAvailable(g,ri)),
+    figure:()=>reportGraphFigure(g,reportGraphRunIndexes(g).find(ri=>reportGraphAvailable(g,ri))??selRunIndex())
   }));
 }
 function selImageItems(...args){return MISSY_HOOKS.invoke("selImageItems",this,args,selImageItemsBase);}
@@ -12469,7 +12476,7 @@ function selMatch(pattern){
 }
 function selSelectedBase(){
   const ids=SEL_STATE.ids;
-  return selCatalogue().filter(x=>ids.has(x.id));
+  return selCatalogue().filter(x=>ids.has(x.id)&&reportItemVisible(x)).flatMap(reportExpandItem);
 }
 function selSelected(...args){return MISSY_HOOKS.invoke("selSelected",this,args,selSelectedBase);}
 
@@ -12497,9 +12504,9 @@ function sopAnalystName(){return String(sopLab().analyst||"").trim();}
 /* ---------- 4 . the CSV the assisted mode hands out and takes back ---------- */
 function selCsvTemplate(){
   const rows=selCatalogue().map(x=>({id:x.id,kind:x.kind,group:x.group,title:x.title,
-    available:x.ready()?"yes":"no",include:SEL_STATE.ids.has(x.id)?"yes":"no"}));
+    available:x.ready()?"yes":"no",include:SEL_STATE.ids.has(x.id)?"yes":"no",figure_scope:SEL_STATE.figureScope||"selected",figure_run:String(selRunIndex())}));
   return toCSV([{key:"id",label:"id"},{key:"kind",label:"kind"},{key:"group",label:"group"},
-    {key:"title",label:"title"},{key:"available",label:"available"},{key:"include",label:"include"}],rows);
+    {key:"title",label:"title"},{key:"available",label:"available"},{key:"include",label:"include"},{key:"figure_scope",label:"figure_scope"},{key:"figure_run",label:"figure_run"}],rows);
 }
 function selApplyCsv(text){
   const lines=String(text||"").split(/\r?\n/).filter(l=>l.trim().length);
@@ -12512,6 +12519,8 @@ function selApplyCsv(text){
   const head=split(lines[0]).map(h=>h.trim().toLowerCase());
   const iId=head.indexOf("id"),iInc=head.indexOf("include");
   if(iId<0||iInc<0)throw new Error('the file needs an "id" column and an "include" column');
+  const scopeIndex=head.indexOf("figure_scope"),runIndex=head.indexOf("figure_run");
+  if(scopeIndex>=0){const settings=lines.slice(1).map(split),scopes=new Set(settings.map(r=>r[scopeIndex]).filter(Boolean)),runs=new Set(settings.map(r=>r[runIndex]).filter(Boolean));if(scopes.size>1||runs.size>1)throw Error("Conflicting figure scope in selection CSV");const scope=[...scopes][0],ri=[...runs][0];if(scope&&!['all','selected'].includes(scope))throw Error("Invalid figure scope");if(ri!=null&&(!/^\d+$/.test(ri)||+ri>=RUNS.length))throw Error("Invalid figure run");if(scope)SEL_STATE.figureScope=scope;if(ri!=null)SEL_STATE.run=+ri;}
   const known=new Set(selCatalogue().map(x=>x.id));
   const unknown=[];let applied=0,rows=0;
   lines.slice(1).forEach(l=>{
@@ -12650,6 +12659,8 @@ async function selBuildReportBase(){
     ["Profile checksum","sha256:"+sopHash()],
     ["Built",new Date().toISOString().replace("T"," ").slice(0,19)+" UTC"],
     ["Runs loaded",RUNS.length?RUNS.map(runName):["none"]],
+    ["Figure coverage",SEL_STATE.figureScope==="all"?"All loaded runs; separate figures for each compatible run":"Standard figures: "+(RUNS[selRunIndex()]?.file||"none")],
+    ["Table coverage","All loaded data; analytical tables respect sample exclusions. Raw and hardware evidence retain their original scope."],
     ["Items selected",String(chosen.length)]
   ];
   const labelW=120,valueW=doc.width-labelW,size=10,line=size*1.32;
@@ -12724,7 +12735,7 @@ const CMD_HELP=[
   ["only <pattern>","clear the selection, then add the pattern"],
   ["clear","empty the selection"],
   ["selection","what is selected now"],
-  ["run <number>","which loaded run the run-level figures use"],
+  ["run <number|all>","standard figures from one run, or separate figures for every compatible loaded run; tables cover all loaded data"],
   ["runs","the loaded runs and their numbers"],
   ["lab <text>","the laboratory name for the report and the profile"],
   ["analyst <text>","who is doing the analysis"],
@@ -12810,11 +12821,11 @@ async function cmdExecBase(raw){
       cmdPrint(RUNS.length?"loaded runs:":"no file has been read yet");
       cmdTable(RUNS.map((r,i)=>[String(i),runName(r)+"  ("+((r.wells||[]).length)+" results)"]));break;
     case "run":{
-      if(String(arg).toLowerCase()==="all"){SEL_STATE.run=0;cmdPrint("table exports will include all loaded runs","ok");break;}
+      if(String(arg).toLowerCase()==="all"){SEL_STATE.figureScope="all";cmdPrint("standard figures: every compatible loaded run, separately; tables: all loaded data","ok");break;}
       const n=Number(arg);
       if(!RUNS.length){cmdPrint("no file has been read yet","warn");break;}
       if(!Number.isFinite(n)||n<0||n>=RUNS.length){cmdPrint(`run must be 0..${RUNS.length-1}`,"warn");break;}
-      SEL_STATE.run=n;cmdPrint("run-level figures will use "+runName(RUNS[n]),"ok");break;}
+      SEL_STATE.run=n;SEL_STATE.figureScope="selected";cmdPrint("standard figures: "+runName(RUNS[n])+"; tables still cover all loaded data","ok");break;}
     case "lab":sopLab().name=arg;sopProfileEdited(true);cmdPrint("laboratory: "+(arg||"(cleared)"),"ok");break;
     case "analyst":sopLab().analyst=arg;sopProfileEdited(true);cmdPrint("analysis by: "+(arg||"(cleared)"),"ok");break;
     case "title":SEL_STATE.title=arg;cmdPrint("report title: "+(arg||"(default)"),"ok");break;
@@ -12917,7 +12928,7 @@ const AST={open:false};
 function astEl(id){return document.getElementById(id);}
 function astRenderBase(){
   const box=astEl("ast-list");if(!box)return;
-  const cat=selCatalogue(),groups=uniq(cat.map(x=>x.group));
+  const cat=selCatalogue().filter(reportItemVisible),groups=uniq(cat.map(x=>x.group));
   box.innerHTML=groups.map(g=>{
     const items=cat.filter(x=>x.group===g);
     return `<section class="ast-group"><h3>${esc(g)} <span class="ast-count">${items.length}</span>
@@ -12935,13 +12946,13 @@ function astRenderBase(){
     astCount();
   });
   box.querySelectorAll(".ast-all").forEach(b=>b.onclick=()=>{
-    selCatalogue().filter(x=>x.group===b.dataset.group&&x.ready()).forEach(x=>SEL_STATE.ids.add(x.id));astRender();});
+    selCatalogue().filter(x=>x.group===b.dataset.group&&reportItemVisible(x)).forEach(x=>SEL_STATE.ids.add(x.id));astRender();});
   box.querySelectorAll(".ast-none").forEach(b=>b.onclick=()=>{
     selCatalogue().filter(x=>x.group===b.dataset.group).forEach(x=>SEL_STATE.ids.delete(x.id));astRender();});
   const runSel=astEl("ast-run");
   if(runSel){
-    runSel.innerHTML=RUNS.map((r,i)=>`<option value="${i}"${i===selRunIndex()?" selected":""}>${esc(runName(r))}</option>`).join("")
-      ||`<option value="0">no file read</option>`;
+    runSel.innerHTML='<option value="all">'+esc(ui('All loaded runs - separate figures per run'))+'</option>'+RUNS.map((r,i)=>`<option value="${i}">${esc(r.file||runName(r))}</option>`).join("");
+    runSel.value=SEL_STATE.figureScope==='all'?'all':String(selRunIndex());
   }
   astEl("ast-lab").value=sopLabName();
   astEl("ast-analyst").value=sopAnalystName();
@@ -12996,7 +13007,7 @@ function astInit(){
   const lab=astEl("ast-lab");if(lab)lab.onchange=()=>{sopLab().name=lab.value.trim();sopProfileEdited(true);};
   const an=astEl("ast-analyst");if(an)an.onchange=()=>{sopLab().analyst=an.value.trim();sopProfileEdited(true);};
   const ti=astEl("ast-title");if(ti)ti.onchange=()=>{SEL_STATE.title=ti.value.trim();};
-  const rs=astEl("ast-run");if(rs)rs.onchange=()=>{SEL_STATE.run=Number(rs.value)||0;};
+  const rs=astEl("ast-run");if(rs)rs.onchange=()=>{SEL_STATE.figureScope=rs.value==="all"?"all":"selected";if(rs.value!=="all")SEL_STATE.run=Number(rs.value)||0;astRender();};
   document.addEventListener("keydown",e=>{if(AST.open&&e.key==="Escape")astClose();});
 }
 function modesInit(){
@@ -15353,7 +15364,7 @@ MISSY_HOOKS.use("mgRender","core/biorad/zpcr_comparative_modes.js:42",42, next =
 MISSY_HOOKS.use("mgGo","core/biorad/zpcr_comparative_modes.js:43",43, next => function(step){next(step);if(String(mgItem()?.graphId||'').startsWith('zc_compare_'))MG.chart=true;});
 MISSY_HOOKS.use("MG_VIEWS.panel.build","core/biorad/zpcr_comparative_modes.js:44",44, next => function(){const all=ccInstruments(),chosen=all.find(i=>i.key===CC_STATE.instrument)||all[0];return chosen?.platform==='CFX'?MG_VIEWS.zpcrcharts.build():next();});
 function zcBrowse(id){zcSyncGraphs();cmdClose();astClose();mgOpen();MG.scope='zpcrcharts';mgRefresh();const n=id?MG.queue.findIndex(x=>x.graphId==='zc_compare_'+id.slice(7)):0;MG.at=Math.max(0,n);MG.chart=true;MG.zoom=1;MG.panX=0;MG.panY=0;mgRender();}
-MISSY_HOOKS.use('zpcrReportScript','zpcr_comparative_modes.js/zpcrReportScript',47,next=>function(){return ['# Comparative channels: SN / protocol / step stay separate','zpcr endpoint '+ZPCR_ENDPOINT_N,'lab '+(sopLabName()||'Laboratory name'),'analyst '+(sopAnalystName()||'Analyst name'),'title MISSY ZPCR comparative channels','clear',...zcModeItems().map(x=>'select '+x.id),'select data:zpcr_sources','# Preview: zpcr compare','selection'].join('\n');});
+MISSY_HOOKS.use('zpcrReportScript','zpcr_comparative_modes.js/zpcrReportScript',47,next=>function(){return ['# Comparative channels: SN / protocol / step stay separate','zpcr endpoint '+ZPCR_ENDPOINT_N,'lab '+(sopLabName()||'Laboratory name'),'analyst '+(sopAnalystName()||'Analyst name'),'title MISSY ZPCR comparative channels','clear','run all',...zcModeItems().map(x=>'select '+x.id),'select data:zpcr_sources','# Preview: zpcr compare','selection'].join('\n');});
 MISSY_HOOKS.use("cmdExec","core/biorad/zpcr_comparative_modes.js:45",45, next => async function(raw){if(/^zpcr\s+(compare|console)$/i.test(String(raw).trim())){zcBrowse();return;}return next(raw);});
 CMD_HELP.push(['zpcr compare','open comparative channels; zoom / pan / Light / Dark'],['zpcr script','select comparative channel graphs for reports']);
 for(const h of CMD_HELP){if(h[0]==='zpcr console')h[1]='browse comparative channels; protocols stay separate';if(h[0]==='select cc:z_*'){h[0]='select img:zc_<number>';h[1]='select a comparative graph using the generated script';}}
@@ -15426,7 +15437,7 @@ MISSY_HOOKS.use("showTab","core/biorad/unified_shell.js:51",51, next => function
 MISSY_HOOKS.use("zpcrPaint","core/biorad/unified_shell.js:52",52, next => function(){zpcrNav.remove();zpcrPanel.remove();zcSyncGraphs();markDirty('export','integrity','graphs');});
 MISSY_HOOKS.use("exportCatalogue","core/biorad/unified_shell.js:53",53, next => function(){const items=next();for(const r of RUNS.filter(r=>r.zpcr)){for(const [kind,label]of [['raw','Raw sample and reference readings'],['hardware','Per-read hardware']])items.push({title:label+' (CSV) · '+r.file,note:'Original decoded raw data; source SHA-256 '+r.meta.sourceSHA256,ready:()=>true,run:()=>download(r.file+'.'+kind+'.csv',zpcrRawCSV(r,kind),'text/csv')});items.push({title:'Source metadata and inventory (JSON) · '+r.file,note:'Source hash, completion/duplicate evidence, stored protocol and archive members.',ready:()=>true,run:()=>download(r.file+'.inventory.json',JSON.stringify({sourceSHA256:r.meta.sourceSHA256,meta:r.meta,eligibility:r.zpcr.evidence,contribution:zpcrContributions().get(r),archive:r.zpcr.archive,runInfo:r.zpcr.runInfo,protocol:r.zpcr.protocolText,issues:r.zpcr.issues},null,2),'application/json')});}return items;});
 MISSY_HOOKS.use("renderIntegrity","core/biorad/unified_shell.js:54",54, next => function(){next();document.getElementById('source-provenance')?.remove();if(!RUNS.length)return;const section=document.createElement('div');section.id='source-provenance';const h=document.createElement('h3');h.textContent='Source provenance';section.append(h);const gates=zpcrContributions();for(const r of RUNS){const box=document.createElement('details');box.className='integrity-record';const summary=document.createElement('summary');summary.textContent=r.file;box.append(summary);const dl=document.createElement('dl');dl.className='integrity-fields';const values=[['Source SHA-256',r.meta.sourceSHA256||'Not recorded'],['Protocol',ccProtocolKey(r)||'Not recorded']];if(r.zpcr){const g=gates.get(r);values.push(['Acquisition SHA-256',r.zpcr.evidence?.acquisitionSHA256||'Not recorded'],['Completion / duplicate evidence',g?.status||'REVIEW'],['Log / calibration interpretation','Unavailable without verified decoding']);}for(const [key,value]of values){const div=document.createElement('div'),dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=key;dd.textContent=String(value);dd.style.overflowWrap='anywhere';div.append(dt,dd);dl.append(div);}box.append(dl);if(r.zpcr){const pre=document.createElement('pre');pre.style.cssText='white-space:pre-wrap;overflow-wrap:anywhere;max-height:320px;overflow:auto';pre.textContent='Stored protocol\n'+r.zpcr.protocolText+'\n\nArchive members\n'+r.zpcr.archive.names.join('\n');box.append(pre);}section.append(box);}document.getElementById('tab-integrity').append(section);});
-function unifiedBrowse(id){cmdClose();astClose();mgOpen();const nativeCC=id?.startsWith('cc:');MG.scope=nativeCC?'panel':'graphs';mgRefresh();const graph=id?.startsWith('img:zc_')?'zc_compare_'+id.slice(7):id?.startsWith('img:')?id.slice(4):null;let at=nativeCC?MG.queue.findIndex(x=>x.chartId===id.slice(3)):graph?MG.queue.findIndex(x=>x.graphId===graph):MG.queue.findIndex(x=>x.graphId||x.chartId);if(at<0)at=0;MG.at=at;MG.chart=!!(MG.queue[at]?.graphId||MG.queue[at]?.chartId);MG.zoom=1;MG.panX=0;MG.panY=0;mgRender();}
+function unifiedBrowse(id){reportRememberPreview();const requested=GRAPHS.find(g=>"img:"+g.id===id);if(requested?.scope==="run"){const ri=reportGraphRunIndexes(requested).find(ri=>reportGraphAvailable(requested,ri));if(ri!=null)MG.run=ri;}cmdClose();astClose();mgOpen();const nativeCC=id?.startsWith('cc:');MG.scope=nativeCC?'panel':'graphs';mgRefresh();const graph=id?.startsWith('img:zc_')?'zc_compare_'+id.slice(7):id?.startsWith('img:')?id.slice(4):null;let at=nativeCC?MG.queue.findIndex(x=>x.chartId===id.slice(3)):graph?MG.queue.findIndex(x=>x.graphId===graph):MG.queue.findIndex(x=>x.graphId||x.chartId);if(at<0)at=0;MG.at=at;MG.chart=!!(MG.queue[at]?.graphId||MG.queue[at]?.chartId);MG.zoom=1;MG.panX=0;MG.panY=0;mgRender();}
 MISSY_HOOKS.use("mgRender","core/biorad/unified_shell.js:55",55, next => function(){next();unifiedRemoveOldControls();const root=document.getElementById('mg');root.classList.add('unified-console');let bar=document.getElementById('console-selectors');if(!bar){bar=document.createElement('div');bar.id='console-selectors';bar.innerHTML='<label>Measurement <select aria-label="Measurement"></select></label><label>Acquisition group <select aria-label="Acquisition group"></select></label><label>Endpoint N <input aria-label="Endpoint N" type="number" min="1" max="999"><button type="button">Apply N</button></label>';document.getElementById('mg-top').append(bar);}const measurement=bar.querySelector('select[aria-label="Measurement"]'),context=bar.querySelector('select[aria-label="Acquisition group"]'),input=bar.querySelector('input'),apply=bar.querySelector('button'),current=mgItem(),isZ=String(current?.graphId||'').startsWith('zc_compare_'),zi=isZ?zcModeItems().find(x=>'zc_compare_'+x.id.slice(7)===current.graphId):null;measurement.replaceChildren();context.replaceChildren();
  const go=at=>{MG.at=at;MG.chart=true;MG.zoom=1;MG.panX=0;MG.panY=0;mgRender();};
  if(zi){const items=zcModeItems();items.filter(x=>x.contextKey===zi.contextKey).forEach(x=>measurement.add(new Option(x.reportPanel.title,x.measurementKey)));measurement.value=zi.measurementKey;measurement.onchange=()=>{const target=items.find(x=>x.contextKey===zi.contextKey&&x.measurementKey===measurement.value);go(MG.queue.findIndex(x=>x.graphId==='zc_compare_'+target.id.slice(7)));};for(const x of [...new Map(items.map(x=>[x.contextKey,x])).values()])context.add(new Option(x.reportAcquisition.instrument+' · group '+x.reportAcquisition.step+' · '+x.acquisitionLabel,x.contextKey));context.value=zi.contextKey;context.onchange=()=>{const target=items.find(x=>x.contextKey===context.value&&x.measurementKey===zi.measurementKey);go(MG.queue.findIndex(x=>x.graphId==='zc_compare_'+target.id.slice(7)));};context.disabled=false;}
@@ -15600,7 +15611,7 @@ MISSY_HOOKS.use("exportCatalogue","core/biorad/pcrd_views.js:63",63, next => fun
 MISSY_HOOKS.use("zpcrSetEndpointN","core/biorad/pcrd_views.js:64",64, next => function(n){next(n);PCRD_ITEMS_CACHE.key='';pcrdSync();if(MG.open){mgRefresh();mgRender();}});
 MISSY_HOOKS.use("mgRender","core/biorad/pcrd_views.js:65",65, next => function(){next();const item=mgItem(),id=item?.graphId;if(!id?.startsWith('pcrd_'))return;const input=document.querySelector('#console-selectors input'),button=document.querySelector('#console-selectors button'),context=document.querySelector('#console-selectors select[aria-label="Acquisition group"]');if(input&&button){input.disabled=button.disabled=false;input.value=ZPCR_ENDPOINT_N;button.onclick=()=>{try{zpcrSetEndpointN(input.value);}catch(e){input.setCustomValidity(e.message);input.reportValidity();}};}const current=pcrdItems().find(x=>x.id==='img:'+id);if(context&&current){context.replaceChildren();for(const x of pcrdItems().filter(x=>x.pcrdMetric===current.pcrdMetric)){const o=new Option(x.title,x.id);context.add(o);}context.disabled=false;context.value=current.id;context.onchange=()=>unifiedBrowse(context.value);}});
 MISSY_HOOKS.use("astRender","core/biorad/pcrd_views.js:66",66, next => function(){next();if(pcrdRuns().length){const input=document.querySelector('#assisted-endpoint input'),button=document.querySelector('#assisted-endpoint button');if(input&&button){input.disabled=button.disabled=false;input.value=ZPCR_ENDPOINT_N;button.onclick=()=>{try{zpcrSetEndpointN(input.value);astRender();}catch(e){input.setCustomValidity(e.message);input.reportValidity();}};}}});
-function pcrdReportScript(){return ['# PCRD stored-data report; no vendor result inference','zpcr endpoint '+ZPCR_ENDPOINT_N,'lab '+(sopLabName()||'Laboratory name'),'analyst '+(sopAnalystName()||'Analyst name'),'title MISSY PCRD acquisition QC','clear',...pcrdItems().map(x=>'select '+x.id),'select data:pcrd_sources','selection'].join('\n');}
+function pcrdReportScript(){return ['# PCRD stored-data report; no vendor result inference','zpcr endpoint '+ZPCR_ENDPOINT_N,'lab '+(sopLabName()||'Laboratory name'),'analyst '+(sopAnalystName()||'Analyst name'),'title MISSY PCRD acquisition QC','clear','run all',...pcrdItems().map(x=>'select '+x.id),'select data:pcrd_sources','selection'].join('\n');}
 MISSY_HOOKS.use("cmdExec","core/biorad/pcrd_views.js:67",67, next => async function(raw){const s=String(raw).trim();if(/^pcrd\s+script$/i.test(s)){cmdScriptToggle(true);cmdEl('cmd-script').value=pcrdReportScript();return;}if(/^pcrd\s+(compare|graphs)$/i.test(s)){pcrdSync();unifiedBrowse(pcrdItems()[0]?.id);return;}return next(raw);});CMD_HELP.push(['pcrd script','select stored PCRD graphs and source provenance'],['pcrd graphs','open PCRD figures in the shared viewer']);
 genericScript.onclick=MISSY_HOOKS.slot("genericScript.onclick",()=>{cmdScriptToggle(true);cmdEl('cmd-script').value=RUNS.some(r=>r.pcrd||r.pcrdLocked)?pcrdReportScript():RUNS.some(r=>r.zpcr)?zpcrReportScript():cmdEl('cmd-script').defaultValue;});
 MISSY_HOOKS.use("renderIntegrity","core/biorad/pcrd_views.js:69",69, next => function(){next();for(const r of pcrdRuns()){const list=document.getElementById('source-provenance');const details=[...(list?.querySelectorAll('details')||[])].find(x=>x.querySelector('summary')?.textContent===r.file);if(details){const pre=document.createElement('pre');pre.style.cssText='white-space:pre-wrap;overflow-wrap:anywhere;font:inherit';pre.textContent=JSON.stringify({container:r.pcrd.container,geometry:r.pcrd.grid,tupleWidth:r.pcrd.tupleWidth,protocolSHA256:r.pcrd.protocolSHA256,acquisitionSHA256:r.pcrd.acquisitionSHA256,completion:r.pcrd.completionSupported?'Log and counts supported':'REVIEW',issues:r.pcrd.issues,calibrationRecords:r.pcrd.calibrationRecords,acceptance:'REVIEW: no verified vendor limits'},null,2);details.append(pre);}}});
@@ -15676,7 +15687,7 @@ function cfxSync(){for(let i=GRAPHS.length-1;i>=0;i--)if(GRAPHS[i].id.startsWith
 MISSY_HOOKS.use("selImageItems","core/biorad/cfx_rdml_views.js:83",83, next => function(){return next().filter(x=>!x.id.startsWith('img:cfxrdml_')).concat(CFX_ITEMS);});
 MISSY_HOOKS.use("selDataItems","core/biorad/cfx_rdml_views.js:84",84, next => function(){return next().concat([{id:'data:cfxrdml_sources',kind:'data',group:'CFX RDML · Provenance',title:'CFX RDML source files, original PCRD checksums and processing',ready:()=>cfxRuns().length>0,note:'Research Use Only. Independent visualization of a current vendor-software export; does not replace the original vendor qualification report or establish instrument conformity. Original PCRD files unchanged. Quantitation and melt curves exported; derived gene-expression views omitted.\n'+cfxSourceRows().map(r=>r.rdml_file+'\nRDML SHA-256: '+r.rdml_sha256+'\nPCRD: '+r.source_pcrd+'\nPCRD SHA-256: '+r.pcrd_sha256).join('\n'),rows:()=>cfxSourceRows().map(r=>({file:r.rdml_file,SN:r.instrument_sn,date:r.run_date,status:r.status})),text:()=>pcrdCSV(cfxSourceRows()),file:'CFX_RDML_sources.csv'}]);});
 MISSY_HOOKS.use("selSelected","core/biorad/cfx_rdml_views.js:85",85, next => function(){const a=next();if(a.some(x=>x.id.startsWith('img:cfxrdml_'))&&!a.some(x=>x.id==='data:cfxrdml_sources'))a.push(selItem('data:cfxrdml_sources'));return a;});
-function cfxReportScript(){return '# CFX vendor RDML: processed curves, no inferred hardware or acceptance limits\ncfx endpoint '+ZPCR_ENDPOINT_N+'\n'+CFX_ITEMS.map(x=>'select '+x.id).join('\n')+'\nselect data:cfxrdml_sources';}
+function cfxReportScript(){return '# CFX vendor RDML: processed curves, no inferred hardware or acceptance limits\nrun all\ncfx endpoint '+ZPCR_ENDPOINT_N+'\n'+CFX_ITEMS.map(x=>'select '+x.id).join('\n')+'\nselect data:cfxrdml_sources';}
 MISSY_HOOKS.use("genericScript.onclick","core/biorad/cfx_rdml_views.js:86",86, next => ()=>{if(cfxRuns().length){cmdScriptToggle(true);cmdEl('cmd-script').value=cfxReportScript();}else next();});
 MISSY_HOOKS.use("cmdExec","core/biorad/cfx_rdml_views.js:87",87, next => async function(raw){const s=String(raw).trim(),endpoint=s.match(/^cfx\s+endpoint\s+(\d+)$/i);if(endpoint){zpcrSetEndpointN(endpoint[1]);return;}if(/^cfx\s+graphs$/i.test(s)){unifiedBrowse(CFX_ITEMS[0]?.id);return;}if(/^cfx\s+script$/i.test(s)){cmdScriptToggle(true);cmdEl('cmd-script').value=cfxReportScript();return;}return next(raw);});CMD_HELP.push(['cfx endpoint N','Last N exported processed amplification reads (1-999)'],['cfx graphs','Open vendor CFX RDML figures in the shared viewer'],['cfx script','Select CFX processed QC figures and source provenance']);
 MISSY_HOOKS.use("zpcrSetEndpointN","core/biorad/cfx_rdml_views.js:88",88, next => function(n){next(n);cfxSync();if(MG.open){mgRefresh();mgRender();}});
@@ -15739,6 +15750,91 @@ async function bioradAfterRead(token){
  document.getElementById('g-graph')?.replaceChildren();
  for(const id of ['graphs','panel','results','export','integrity'])markDirty(id);
 }
+/* Explicit report coverage and reversible graph previews. No global replacements. */
+Object.assign(ZH_TERMS,{
+ 'Runs for standard figures':'标准图的运行范围',
+ 'All loaded runs - separate figures per run':'所有已加载运行 - 每个运行分别绘图',
+ 'Choose All loaded runs to repeat selected standard figures for every compatible run. Acquisition comparisons keep their labelled source groups. Tables cover all loaded data. Only available items are shown.':'选择所有已加载运行，为每个兼容运行分别生成所选标准图。采集比较图保留标注的来源分组。表格涵盖所有已加载数据，仅显示可用项目。',
+ 'Select all available':'选择所有可用项目','Clear selection':'清除选择',
+ 'No report items are available for this selection. Choose another run or load decoded data.':'当前选择没有可用报告项目。请选择其他运行或加载可解码的数据。',
+ 'All loaded source files and checksums':'所有已加载源文件及校验和'
+});
+let REPORT_PREVIEW_RETURN=null;
+const REPORT_GRAPH_AVAILABILITY=new WeakMap();
+function reportGraphRunIndexes(g){return g.scope==='run'&&SEL_STATE.figureScope==='all'?RUNS.map((_,i)=>i):[selRunIndex()];}
+function reportGraphFigure(g,ri){const f=g.render(selGraphContext(g,ri));return {svg:f.svg,rows:f.rows||[]};}
+function reportGraphAvailable(g,ri){
+ const run=RUNS[ri];if(!run||run.pcrdLocked||typeof g.render!=='function')return false;
+ if(g.scope==='run'&&(run.rawOnly||run.zpcr||run.pcrd))return false;
+ let cache=REPORT_GRAPH_AVAILABILITY.get(run);if(!cache){cache=new WeakMap();REPORT_GRAPH_AVAILABILITY.set(run,cache);}
+ const key=[APP_STATE.generation,RUNS.length,SAMPLE_SELECTION.revision,sopHash(),JSON.stringify(SEL_STATE.options['img:'+g.id]||{}),ZPCR_ENDPOINT_N].join('|'),old=cache.get(g);
+ if(old?.key===key)return old.available;
+ let available=false;try{const f=reportGraphFigure(g,ri);available=Array.isArray(f.rows)&&f.rows.length>0;}catch(e){/* Unavailable evidence is hidden; decoder/renderer errors still surface in their own views. */}
+ cache.set(g,{key,available});return available;
+}
+function reportItemVisible(item){
+ if(!item||!item.ready())return false;
+ if(item.reportGraph){if(!RUNS.some(r=>!r.rawOnly&&!r.pcrdLocked))return false;const run=RUNS[selRunIndex()];if(SEL_STATE.figureScope!=='all'&&(run?.rawOnly||run?.pcrdLocked))return false;return true;}
+ if(item.kind==='data'){try{return item.rows().length>0;}catch(e){return false;}}
+ if(item.reportAcquisition&&!item.reportPanel.series.some(s=>s.points.some(p=>Number.isFinite(p[1]))))return false;
+ if(item.independentGroup){const g=item.independentGroup,metric=item.pcrdMetric.includes('Tm')?'Tm':'Cq';const valid=item.independentComparison?piComparisons().some(r=>r._group===g&&r.metric===metric&&Number.isFinite(r.delta)):g.records.some(r=>Number.isFinite(metric==='Tm'?r.tm.value:r.cq.value));if(!valid)return false;}
+ if(SEL_STATE.figureScope!=='all'&&item.kind==='image'){
+  const run=RUNS[selRunIndex()];
+  if(item.reportAcquisition)return item.reportAcquisition.runs.includes(run)&&item.reportPanel.series.some(s=>s.points.some(p=>Number.isFinite(p[1])));
+  if(item.cfxRun)return item.cfxRun===run;
+  if(item.independentGroup)return item.independentGroup.run===run&&item.independentGroup.records.some(r=>Number.isFinite(item.pcrdMetric.includes('Tm')?r.tm.value:r.cq.value));
+  if(item.id.startsWith('img:pcrd_'))return !!run?.pcrd&&String(item.note).includes(run.file);
+ }
+ return true;
+}
+function reportExpandItem(item){
+ if(!item.reportGraph||item.reportGraph.scope!=='run')return [item];
+ const g=item.reportGraph;
+ return reportGraphRunIndexes(g).filter(ri=>reportGraphAvailable(g,ri)).map(ri=>({
+  ...item,id:item.id+'@run:'+ri,title:item.title+' | '+RUNS[ri].file,
+  note:(item.note||'')+'\nSource: '+RUNS[ri].file+'\nSource SHA-256: '+(RUNS[ri].meta.sourceSHA256||'Not recorded'),
+  figure:()=>reportGraphFigure(g,ri)
+ }));
+}
+function reportRememberPreview(){
+ if(REPORT_PREVIEW_RETURN||(!AST.open&&!CMD.open))return;
+ const mode=AST.open?'assisted':'command';
+ REPORT_PREVIEW_RETURN={mode,focus:document.activeElement,scroll:[...document.querySelectorAll(mode==='assisted'?'#ast-list,#ast-form':'#cmd-out,#cmd-script,#cmd-script-wrap')].map(el=>({el,top:el.scrollTop,left:el.scrollLeft}))};
+}
+function reportRestorePreview(){
+ const state=REPORT_PREVIEW_RETURN;if(!state)return;REPORT_PREVIEW_RETURN=null;
+ if(state.mode==='assisted'){AST.open=true;document.getElementById('astm').classList.add('on');}
+ else{CMD.open=true;document.getElementById('cmdm').classList.add('on');}
+ const restore=()=>{for(const x of state.scroll){x.el.scrollTop=x.top;x.el.scrollLeft=x.left;}if(state.focus?.isConnected)state.focus.focus({preventScroll:true});};restore();requestAnimationFrame(restore);
+}
+MISSY_HOOKS.use('mgClose','report/restore-preview',200,next=>function(...args){const out=next(...args);reportRestorePreview();return out;});
+MISSY_HOOKS.use('mgCommand','report/preview-exit',200,next=>function(text,...args){
+ const command=String(text||'').trim().toLowerCase();
+ if(REPORT_PREVIEW_RETURN&&/^(chart close|exit)$/.test(command)){mgClose();return true;}
+ if(/^open page |^(load|sop|results|review|panel)$/.test(command))REPORT_PREVIEW_RETURN=null;
+ return next(text,...args);
+});
+MISSY_HOOKS.use('astRender','report/coverage-controls',200,next=>function(){
+ next();const select=astEl('ast-run'),label=select.closest('label');label.firstChild.textContent=ui('Runs for standard figures');
+ let help=document.getElementById('ast-coverage-help');if(!help){help=document.createElement('p');help.id='ast-coverage-help';label.after(help);}
+ help.textContent=ui('Choose All loaded runs to repeat selected standard figures for every compatible run. Acquisition comparisons keep their labelled source groups. Tables cover all loaded data. Only available items are shown.');
+ let tools=document.getElementById('ast-available-tools');if(!tools){tools=document.createElement('div');tools.id='ast-available-tools';const all=document.createElement('button'),none=document.createElement('button');all.type=none.type='button';all.textContent=ui('Select all available');none.textContent=ui('Clear selection');all.onclick=()=>{for(const x of selCatalogue().filter(reportItemVisible))SEL_STATE.ids.add(x.id);astRender();};none.onclick=()=>{SEL_STATE.ids.clear();astRender();};tools.append(all,none);astEl('ast-list').prepend(tools);}
+ const manifestInput=astEl('ast-list').querySelector('input[data-id="data:source_manifest"]');if(manifestInput){const required=selSelected().some(item=>item.id!=='data:source_manifest');manifestInput.checked=required||SEL_STATE.ids.has('data:source_manifest');manifestInput.disabled=required;manifestInput.closest('label').title='Included automatically with selected report material to retain full source identities.';}
+ const empty=astEl('ast-list').querySelector('.ast-empty');empty?.remove();if(!astEl('ast-list').querySelector('.ast-group')){const p=document.createElement('p');p.className='ast-empty';p.textContent=ui('No report items are available for this selection. Choose another run or load decoded data.');astEl('ast-list').append(p);}
+ const endpoint=document.getElementById('assisted-endpoint');if(endpoint)endpoint.hidden=!RUNS.some(r=>r.zpcr||r.pcrd||r.cfxRDML);
+});
+MISSY_HOOKS.use('selDataItems','report/full-source-manifest',200,next=>function(){return next().concat({
+ id:'data:source_manifest',kind:'data',group:'Source provenance',title:'All loaded source files and checksums',
+ note:'Full source inventory for every loaded format.\n'+RUNS.map(r=>'File: '+r.file+'\nSHA-256: '+(r.meta.sourceSHA256||'Not recorded')).join('\n'),
+ ready:()=>RUNS.length>0,rows:()=>RUNS.map(r=>({filename:r.file,sha256:r.meta.sourceSHA256||'',bytes:r.meta.sourceBytes??'',format:r.reader?.id||''})),file:'source_manifest.csv',text(){return csvOf(this.rows());}
+});});
+MISSY_HOOKS.use('selSelected','report/retain-source-manifest',200,next=>function(){const chosen=next();if(chosen.length&&!chosen.some(x=>x.id==='data:source_manifest'))chosen.push(selItem('data:source_manifest'));return chosen;});
+const reportWorkflowStyle=document.createElement('style');reportWorkflowStyle.textContent=`
+#ast-coverage-help{font-size:12px;line-height:1.5;color:#526580;margin:-3px 0 14px}
+#ast-list .ast-item>button{grid-column:2/-1;justify-self:start;width:auto;min-width:110px;white-space:nowrap;border:1px solid #cbd5e1;border-radius:6px;padding:6px 12px;background:#eef2f7;color:#102f4d;font:inherit;font-size:13px;cursor:pointer;margin-top:6px}
+#ast-available-tools{display:flex;gap:8px;margin-bottom:16px}#ast-available-tools button{border:1px solid #cbd5e1;border-radius:6px;padding:7px 12px;background:#eef2f7;color:#102f4d;font:inherit;font-size:13px;cursor:pointer}
+`;document.head.append(reportWorkflowStyle);
+reportWorkflowStyle.textContent+='#assisted-endpoint[hidden]{display:none!important}';
 /* Registration order does not override conflicting content signatures. */
 registerReader({id:'ixo',version:'zenodo-23437639',extensions:['.ixo'],probe:s=>!s.zipNames&&/<objectstream\b[^>]*signature=["\']IXOS["\']/i.test(new TextDecoder().decode(s.bytes.subarray(0,2048))),decode:async s=>{const source={...s,text:s.text||new TextDecoder().decode(s.bytes)},r=await decodeIxo(source,'auto');await ccExtractOnLoad(r,source);return r;}});
 registerReader({id:'eds',version:'zenodo-23437639',extensions:['.eds','.edt'],probe:s=>s.zipNames?.some(n=>/^apldbio\/sds\/experiment\.xml$/i.test(n)),decode:async s=>{const r=await decodeEds(s);await ccExtractOnLoad(r,s);return r;}});
