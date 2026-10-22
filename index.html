@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Offline reader for Roche LightCycler 480 .ixo and Applied Biosystems QuantStudio 3/5 .eds files: traceable stored values, container integrity checks, open qPCR exports, graphs, quality review, forensic log and JSON-LD metadata.">
 <meta name="application-name" content="qPCR raw values, quality-control and forensic export tool">
-<meta name="software-version" content="2026.10.22.profile-review1">
+<meta name="software-version" content="2026.10.22.method-text1">
 
 <!--
   MACHINE-READABLE LANDING-PAGE METADATA
@@ -16863,7 +16863,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   for(const item of MARA_PROFILE_LIBRARY.filter(x=>x.role===role))group.append(new Option(item.profile.name,item.key));select.append(group);
  }
  const zip=document.createElement('button');zip.type='button';zip.className='ghost';zip.id='mara-download-profiles';zip.textContent='Download all MARA profiles (ZIP)';
- zip.onclick=()=>{const files=MARA_PROFILE_LIBRARY.map(x=>({name:x.key+'.json',data:JSON.stringify(x.profile,null,2)+'\n'}));files.push({name:'STANDARDS_INDEX.md',data:maraStandardsIndex()});files.push({name:'SHA256SUMS.txt',data:files.map(x=>sha256Hex(new TextEncoder().encode(x.data))+'  '+x.name).join('\n')+'\n'});download('MARA1012_review_profiles.zip',makeStoredZip(files),'application/zip');};
+ zip.onclick=()=>{const files=MARA_PROFILE_LIBRARY.map(x=>({name:x.key+'.json',data:JSON.stringify(x.profile,null,2)+'\n'}));files.push({name:'STANDARDS_INDEX.md',data:maraStandardsIndex()});files.push({name:'SHA256SUMS.txt',data:'# Exact-file SHA-256 (all bytes, formatting and final newline); NOT the embedded canonical profile sha256.\n'+files.map(x=>sha256Hex(new TextEncoder().encode(x.data))+'  '+x.name).join('\n')+'\n'});download('MARA1012_review_profiles.zip',makeStoredZip(files),'application/zip');};
  document.getElementById('sop-save').after(zip);
  const paint=()=>{for(const group of select.querySelectorAll('[data-mara-role]')){group.label=ui('MARA '+group.dataset.maraRole);for(const option of group.querySelectorAll('option')){option.setAttribute('data-i18n-skip','');option.textContent=ui(MARA_PROFILE_LIBRARY.find(x=>x.key===option.value).profile.name);}}};document.getElementById('language-select')?.addEventListener('change',paint);paint();
 });
@@ -17217,6 +17217,105 @@ MISSY_HOOKS.use('sopEvaluateRun','experiment.configuration.only',40,next=>functi
  const reason=ui('Configuration only; no independent experiment calculation engine selected');for(const row of result.rows){row.outcome='Not interpreted';row.label=ui('Not interpreted');row.report=reason;row.reason=reason;row.conc=NaN;}
  result.status='Not evaluated';result.criteria=[{criterion:reason,action:'review',status:'review',evidence:''}];result.rejected=[];result.reviewed=result.criteria;return result;
 });
+/* Explanatory views generated from the active profile; no scientific defaults
+ * or measurements are inserted into SC or the standards profiles. */
+function methodNarrative(p,lang='en'){
+ const t=(en,zh)=>lang==='zh'?zh:en, m=p.method||{},role=p.analyticalRole,
+ event=m.selected_event||t('Selected event','选定转化体'),ref=(m.reference_genes||[]).map(x=>x.target).join(', ')||t('Declared reference','声明的内参'),
+ perf=p.performance||{},sub=p.replicates?.subsamples||{},q=p.experiment_analysis?.quantification||{},mel=p.experiment_analysis?.melting||{};
+ const n={method:p.name,revision:p.version,scope:'',purpose:'',steps:[],principles:[],rules:[],references:(m.reference_genes||[]).map(x=>[x.target,x.taxon].filter(Boolean).join(' — ')),platforms:t('A validated platform and assay meeting this method; instrument name alone does not establish applicability.','满足本方法要求的已验证平台及检测体系；仅有仪器名称不能证明适用性。'),runRule:m.applies_when?.run_name_pattern||t('No additional run-name restriction declared; verify assay, crop and method applicability.','未另行声明运行名称限制；须核对检测体系、作物和方法的适用性。')};
+ const step=(title,en,zh,accept,acceptZh)=>n.steps.push({id:'P'+String(n.steps.length+1).padStart(2,'0'),title,instruction:t(en,zh),acceptance:t(accept,acceptZh)});
+ const rule=(when,whenZh,action,actionZh,outcome,outcomeZh)=>n.rules.push({id:'I'+String(n.rules.length+1).padStart(2,'0'),when:t(when,whenZh),action:t(action,actionZh),outcome:t(outcome,outcomeZh)});
+ const common=()=>{
+  step(t('Sample identity and subsample linkage','样品及平行子样关联'),'Keep the original sample identity, independent subsample identity and technical replicate mapping. Use the configured sample-name captures; do not infer independent subsamples from the number of wells.','保留原始样品、独立平行子样及技术重复的对应关系。使用配置的样品名称捕获规则；不得按孔数推断独立子样数量。','Each included reaction belongs to a declared sample, subsample and assay.','每个纳入的反应均对应已声明的样品、子样和检测体系。');
+ };
+ const controls=()=>step(t('Control acceptance','质控验收'),`For ${event}, positive controls must show typical event and ${ref} amplification with Ct ≤ 36. The negative matrix must show typical reference amplification at Ct ≤ 36 and no typical event amplification, or event Ct > 36. The blank must show no typical amplification for either assay, or Ct > 36. Perform at least three amplifications per required control.`,`${event} 阳性质控品的转化体及 ${ref} 内参均须有典型扩增曲线且 Ct ≤ 36。阴性质控品内参须典型扩增且 Ct ≤ 36，转化体无典型扩增或 Ct > 36。空白质控品两体系均无典型扩增或 Ct > 36。每种必需质控品至少扩增三次。`,'All required controls pass before sample interpretation; missing curve evidence is unresolved, not a negative result.','全部必需质控品合格后才可判定样品；缺失曲线证据属于待确认，不作为阴性。');
+ const report=()=>step(t('Reporting and traceability','报告及追溯'),'Retain stored Cq values, calls, fluorescence and omission flags. Report the calculated result, applied rule, reason, profile version and SHA-256. Review-only profiles issue provisional results, not a laboratory release decision.','保留保存的 Cq、判定、荧光及排除标记。报告计算结果、适用规则、原因、配置版本及 SHA-256。仅供审核的配置输出暂定结果，不构成实验室签发决定。','Every reported value is linked to its source reactions and active profile.','每项报告值均可追溯至来源反应和当前配置。');
+ if(role==='identification'){
+  n.scope=t(`${event} event-specific identification using ${ref}; method 1, section 5.`,`使用 ${ref} 内参鉴定 ${event} 转化体；第5章方法一。`);
+  n.purpose=t(`Detect the event–plant-genome junction of ${event}. A positive event result identifies this event; it is not a numerical GMO percentage.`,`检测 ${event} 转化体与植物基因组连接区。阳性结果用于该转化体鉴定，不代表转基因成分的数值百分含量。`);
+  common();step(t('Reaction arrangement','反应设置'),'Prepare three independent subsamples with one amplification per subsample for each required assay. Use the published primers, probe, reaction composition and amplification programme.','每个必需检测体系设置三个独立平行子样，每个子样扩增一次。使用标准规定的引物、探针、反应体系及扩增程序。','Three independently identified subsamples are present; technical replicates do not substitute for them.','有三个可独立识别的平行子样；技术重复不能替代平行子样。');controls();
+  step(t('Qualitative interpretation','定性判定'),`Evaluate typical amplification and Ct ≤ ${perf.ct_cutoff??36}. Establish validity using ${ref}, then apply the three-subsample majority rule when valid subsamples disagree. Retain invalid or missing evidence for repeat.`,`依据典型扩增及 Ct ≤ ${perf.ct_cutoff??36} 判定。先由 ${ref} 确认有效性；有效子样结果不一致时按三个子样多数结果判定。无效或缺失证据保留并要求复检。`,'No standard curve, slope, R² or efficiency gate is applied to qualitative method 1.','定性方法一不应用标准曲线、斜率、R² 或扩增效率验收门限。');
+  step(t('Conditional content comparison','有条件的含量比较'),'Only when a content comparison is requested and a valid quantitative control is assigned, calculate ΔCt = mean(Ct_event) − mean(Ct_reference) and ΔΔCt = mean(ΔCt_sample) − mean(ΔCt_control). Values < −0.4 mean higher content; > +0.4 mean lower content; |ΔΔCt| ≤ 0.4 requires full quantification.','仅在申请含量比较且已指定有效定量质控品时，计算 ΔCt = mean(Ct_event) − mean(Ct_reference)，ΔΔCt = mean(ΔCt_sample) − mean(ΔCt_control)。小于 −0.4 表示含量较高，大于 +0.4 表示较低，|ΔΔCt| ≤ 0.4 时须进行完整定量。','The comparison is distinct from event identification and does not supply a numerical percentage.','该比较与转化体鉴定区分，不输出数值百分含量。');
+  rule('Valid event amplification in a majority of valid subsamples','多数有效子样出现有效转化体扩增','Report the event detected','报告检出该转化体','Positive','阳性');
+  rule('No event amplification within the cut-off, with valid reference and controls','截止值内未见转化体扩增，且内参及质控有效','Report not detected within the validated method scope','在已验证方法范围内报告未检出','Negative','阴性');
+ }else if(role==='quantification'){
+  n.scope=t(`${event} event-specific quantification relative to ${ref}; method 2, section 6.`,`相对于 ${ref} 内参的 ${event} 转化体特异性定量；第6章方法二。`);
+  n.purpose=t('Determine the event/reference copy-number percentage and its expanded uncertainty, using this standard’s own calibration, acceptance and uncertainty parameters.','使用本标准各自规定的校准、验收及不确定度参数，测定转化体与内参拷贝数百分比及扩展不确定度。');
+  common();step(t('Replication and CRM assignment','重复及有证标准物质赋值'),'Prepare three independent subsamples, each with at least three amplifications, on the same plate in the same run. Assign actual event and reference copy quantities to matched CRM dilution levels; CRM identity alone is not a quantity.','同一板、同次运行中设置三个独立平行子样，每个至少扩增三次。为配对的有证标准物质稀释梯度赋予实际转化体及内参拷贝量；仅有标准物质名称不等于量值。','At least five calibration levels; required controls and calibration levels each have at least three amplifications.','至少五个校准梯度；必需质控品及每个校准梯度均至少扩增三次。');controls();
+  step(t('Calibration and copy calculation','校准及拷贝数计算'),'Fit Ct against log10(copy quantity) separately for event and reference. Require R² ≥ 0.98 and slope −3.6 to −3.1 for both curves. Invert each accepted curve to calculate reaction copy quantities.','分别拟合转化体和内参的 Ct 与 log10(拷贝量)。两曲线均要求 R² ≥ 0.98，斜率 −3.6 至 −3.1。对合格曲线反算各反应拷贝量。','No additional 90–110% efficiency rule is imposed. Units, assay pairing and quantitative range are explicit.','不另加 90–110% 效率规则。量值单位、体系配对及定量范围须明确。');
+  step(t('Control and sample acceptance','质控及样品验收'),'For a certified quantitative control require |bias| < 2 × u_bias. For a laboratory-prepared quantitative control require sR ≤ 25% and |biasR| ≤ 25%. Calculate each subsample c_k = mean(event copies) / mean(reference copies) × 100; use the range coefficient f = 1.693 at n = 3. Apply sample s′R ≤ 25% at or above LOQ.','有证定量质控品要求 |bias| < 2 × u_bias；实验室制备定量质控品要求 sR ≤ 25% 且 |biasR| ≤ 25%。各子样 c_k = mean(转化体拷贝数) / mean(内参拷贝数) × 100；n = 3 时使用极差系数 f = 1.693。达到或高于定量限时，样品要求 s′R ≤ 25%。','Use the appropriate control branch; do not average reaction ratios in place of the ratio of mean copies.','使用相应质控分支；不得用单反应比值的平均数替代平均拷贝数之比。');
+  const u=p.calculation?.uncertainty||{};
+  step(t('Uncertainty and reportable range','不确定度及可报告范围'),`This profile uses u₀ = ${u.u0}, uᵣ = ${u.ur}: u = √(u₀² + (uᵣ × mean)²), U = ${u.coverage_factor_k} × u. Report U to two significant figures and round the result to its last digit. LOD ${perf.lod_percent}% (${perf.lod_copies} copies); LOQ ${perf.loq_percent}% (${perf.loq_copies} copies). A validated laboratory total uncertainty model replaces the standard budget; it is not added as a second complete budget.`,`本配置使用 u₀ = ${u.u0}、uᵣ = ${u.ur}：u = √(u₀² + (uᵣ × mean)²)，U = ${u.coverage_factor_k} × u。U 保留两位有效数字，结果修约到其末位。检出限 ${perf.lod_percent}%（${perf.lod_copies} 拷贝），定量限 ${perf.loq_percent}%（${perf.loq_copies} 拷贝）。经验证的实验室总不确定度模型替代标准模型，不作为第二个完整预算叠加。`,'Below LOQ report detected but not quantified when detection is established; an unresolved exact-LOQ policy holds the result for review.','已确认检出但低于定量限时报告检出、不可定量；恰好等于定量限的规则未确认时保留待审。');
+  rule('Controls, curves, replication and sample precision pass; result is within the reportable range','质控、曲线、重复及样品精密度合格，结果在可报告范围内','Report mean percentage ± expanded uncertainty','报告平均百分含量 ± 扩展不确定度','Quantified, provisional until approval','已定量；批准前为暂定结果');
+  rule('Detection is established below the LOQ','确认检出但低于定量限','Report detected, not quantified','报告检出、不可定量','Below LOQ','低于定量限');
+ }else if(m.standard_number===16){
+  n.scope=t('Threshold-compliance screening of a validated event assay with its crop reference; not event discovery or numerical percentage quantification.','使用已验证的转化体体系及作物内参进行阈值符合性筛查；不用于未知转化体发现或数值百分含量定量。');
+  n.purpose=t('Compare a sample with a quantitative control representing the declared labelling threshold.','将样品与代表已声明标识阈值的定量质控品比较。');common();
+  step(t('Assay and quantitative control selection','体系及定量质控品选择'),'Declare the event, crop reference, labelling threshold, quantitative control percentage and uncertainty. Verify that the control uncertainty interval covers the declared threshold. Use three independent subsamples with three amplifications each and at least three amplifications per required control.','声明转化体、作物内参、标识阈值、定量质控品百分含量及不确定度。确认质控品不确定度区间覆盖声明阈值。设置三个独立平行子样，每个扩增三次，必需质控品各至少扩增三次。','Sample/reference pairing and the threshold control are explicit; no standard curve is required.','样品与内参配对及阈值质控品明确；不要求标准曲线。');controls();
+  step(t('ΔCt and ΔΔCt calculation','ΔCt 及 ΔΔCt 计算'),'Calculate ΔCt = mean(Ct_event) − mean(Ct_reference) and ΔΔCt = mean(ΔCt_sample) − mean(ΔCt_control), using the declared subsample and replicate structure.','按声明的子样及重复结构计算 ΔCt = mean(Ct_event) − mean(Ct_reference)，ΔΔCt = mean(ΔCt_sample) − mean(ΔCt_control)。','Control, curve evidence and full replication pass before comparison.','比较前质控、曲线证据及完整重复均合格。');
+  rule('ΔΔCt < −0.4','ΔΔCt < −0.4','Report content higher than the quantitative control','报告含量高于定量质控品','Higher','较高');rule('ΔΔCt > +0.4','ΔΔCt > +0.4','Report content lower than the quantitative control','报告含量低于定量质控品','Lower','较低');rule('|ΔΔCt| ≤ 0.4','|ΔΔCt| ≤ 0.4','Refer to full quantitative measurement','转入完整定量测定','Quantification required','需要定量');
+  n.principles.push(t('Do not convert ΔΔCt into an approximate GMO percentage or treat it as an event identification result.','不得将 ΔΔCt 换算为近似转基因百分含量，或作为转化体鉴定结果。'));
+ }else if(m.standard_number===17){
+  n.scope=t('Portable rapid PCR for the explicitly selected Annex A/B panel and validated matrix.','针对明确选定的附录 A/B 检测面板及已验证基质的便携式快速 PCR。');
+  n.purpose=t('Screen for candidate presence of selected taxon, element, trait or event targets at the stated 1% LOD.','在规定的 1% 检出限下，筛查所选物种、元件、性状或转化体靶标的可能存在。');common();
+  step(t('Panel, extraction and readout','面板、提取及读出'),'Select the actual tested assays, extraction workflow and fluorescence or lateral-flow readout. Use the standard’s applicable rapid programme and required controls. A catalogue entry is not evidence that an assay was performed.','选择实际检测体系、提取流程以及荧光或侧向层析读出方式。采用标准适用的快速程序及必需质控。目录中的体系名称不能证明已进行该项检测。','Panel, matrix, controls and readout evidence are recorded explicitly.','明确记录面板、基质、质控及读出证据。');
+  step(t('Signal interpretation','信号判定'),'Apply the configured fluorescence evidence and Ct ≤ 36 where that readout applies, or the declared lateral-flow evidence. Resolve missing signal evidence as inconclusive, not negative.','适用荧光读出时按配置的曲线证据及 Ct ≤ 36 判定，或依据已声明的侧向层析证据。信号证据缺失应判为待定，不判阴性。','Required controls pass and the readout is applicable to the selected assay.','必需质控合格且读出方式适用于所选体系。');
+  rule('Valid positive signal for a selected target','所选靶标出现有效阳性信号','Report candidate target presence and the tested panel','报告靶标可能存在及实际检测面板','Screen positive','筛查阳性');rule('No valid positive signal with passing controls','质控合格且未出现有效阳性信号','Report not detected only for the tested panel at 1% LOD','仅对实际检测面板在 1% 检出限下报告未检出','Screen negative','筛查阴性');
+  n.principles.push(t('A negative panel does not exclude untested events. Screening does not determine numerical content or replace confirmatory event identification.','面板阴性不能排除未检测转化体；筛查不测定数值含量，也不能替代转化体确认鉴定。'));
+ }else if(p.experiment_analysis){
+  const kind=mel.enabled?'melting':q.method==='relative-calibrator-normalized'?'relative':'absolute';
+  n.scope=t('An assay-specific LC480-style experiment configuration; no GMO screening rules are inherited.','检测体系专用的 LC480 类型实验配置；不继承转基因筛查规则。');
+  n.purpose=kind==='absolute'?t('Determine quantity from Cq and an explicitly assigned concentration standard curve.','由 Cq 及明确赋值的浓度标准曲线确定量值。'):kind==='relative'?t('Determine calibrator-normalized target/reference fold change.','确定经校准样品归一化的靶标与内参相对倍数变化。'):t('Assess stored melting peaks or independently calculated −dF/dT peaks against validated assay rules.','依据经验证的检测规则评价保存的熔解峰或独立计算的 −dF/dT 峰。');
+  common();
+  if(kind==='absolute'){
+   step(t('Standards and model','标准品及模型'),'Assign actual quantities and units to standards, declare the in-run or external curve and the selected fit model. Ensure the standard range covers the samples. External curves require a known-concentration standard in the new run and matching assay conditions.','为标准品赋予实际量值及单位，声明同次运行或外部曲线以及所选拟合模型。标准范围须覆盖样品。使用外部曲线时，新运行须含已知浓度标准品且检测条件匹配。','Curve model, units, range and applicable acceptance limits are validated; illustrative quantities are not measured results.','曲线模型、单位、范围及适用验收限经验证；示例量值不是实测结果。');
+   step(t('Quantity calculation','量值计算'),'For a linear model Ct = intercept + slope × log10(quantity), calculate quantity = 10^((Ct − intercept)/slope). A polynomial model requires its specified validated inversion; do not silently substitute a linear fit. Summarize quantities using mean and SD; exclude non-detections from numerical statistics rather than assigning zero.','线性模型 Ct = 截距 + 斜率 × log10(量值) 时，量值 = 10^((Ct − 截距)/斜率)。多项式须采用已指定并验证的反算方法，不得悄然替换为线性拟合。量值汇总报告均值及标准差；未检出不赋零参与数值统计。','No extrapolated concentration is released without an explicit policy.','无明确规则时不签发外推浓度。');
+  }else if(kind==='relative'){
+   step(t('Target, reference and calibrator pairing','靶标、内参及校准样品配对'),'Declare target and stable reference assays, biological sample pairing, calibrator samples and amplification-factor source. Include target and reference negatives; positive negatives invalidate the run.','声明靶标、稳定内参体系、生物学样品配对、校准样品及扩增因子来源。设置靶标和内参阴性质控；阴性质控出现阳性则运行无效。','No pairing or reference stability is inferred from similar names alone.','不得仅凭名称相似推断配对或内参稳定性。');
+   step(t('Normalized ratio calculation','归一化比值计算'),'For one reference calculate R = E_target^(Ct_target,cal − Ct_target,sample) / E_reference^(Ct_reference,cal − Ct_reference,sample). E is the per-cycle amplification factor (ideal 2). The approximate ΔΔCq method sets both factors to 2. Efficiency-corrected analysis uses validated relative standard curves or explicitly supported factors.','单内参时 R = E_target^(Ct_target,cal − Ct_target,sample) / E_reference^(Ct_reference,cal − Ct_reference,sample)。E 为每循环扩增因子，理想值为 2。近似 ΔΔCq 方法两因子均取 2；效率校正分析使用已验证的相对标准曲线或明确支持的因子。','Report fold change, not an absolute concentration or GMO percentage; absent reference or calibrator evidence prevents calculation.','报告相对倍数变化，不报告绝对浓度或转基因百分含量；缺少内参或校准样品证据时不得计算。');
+  }else{
+   step(t('Melting acquisitions and chemistry','熔解采集及化学体系'),'Use the actual temperature axis and an appropriate SYBR Green I, HybProbe or SimpleProbe assay. Hydrolysis probes are not suitable for post-PCR melting analysis. For automatic calling the manual requires the range to begin at least 7°C below and end at least 3°C above the expected Tm.','使用实际温度轴及适用的 SYBR Green I、HybProbe 或 SimpleProbe 体系。水解探针不适用于 PCR 后熔解分析。自动判峰时，手册要求温度范围起点至少低于预期 Tm 7°C，终点至少高于预期 Tm 3°C。','Acquisition type and range are verified; amplification cycles are not treated as temperatures.','核对采集类型及范围；不得将扩增循环数当作温度。');
+   step(t('Peak evaluation','峰评价'),'Distinguish stored vendor Tm from independent −dF/dT calculations. Evaluate configured Tm tolerance, number of peaks, peak metrics and shoulders. Assign product identity or genotype only against validated rules and controls.','区分厂商保存的 Tm 与独立 −dF/dT 计算。评价配置的 Tm 容差、峰数、峰参数及肩峰。仅按经验证的规则及质控指定产物或基因型。','An example Tm is never a universal assay cut-off; ambiguous peaks remain unresolved.','示例 Tm 不能作为通用体系阈值；不明确的峰保留待确认。');
+  }
+  rule('A configuration-only profile is selected','选择仅供配置的配置文件','Retain measurements without issuing an automatic calculated result','保留测量值，不输出自动计算结果','Not evaluated','未评价');
+  n.principles.push(t('This template currently describes the intended method only. Its independent automatic engine is not implemented. Blank limits and illustrative sample names require laboratory configuration.','该模板目前仅描述预期方法；独立自动计算引擎尚未实现。空白限值及示例样品名称须由实验室配置。'));
+ }
+ if(!n.purpose)return null;
+ if(role||m.standard_number){
+  rule('A required control fails, or required sample/reference evidence is missing','必需质控失败，或缺少必需样品与内参证据','Hold sample conclusions and repeat or investigate according to the profile','按配置暂停样品结论并复检或调查','Invalid run or repeat','运行无效或复检');
+  n.principles.push(t('Apply only to the declared event, crop, assay and method. Stored measurements are preserved. An untested assay or missing evidence is not a negative result.','仅适用于声明的转化体、作物、体系及方法。保留保存的测量值；未检测体系或缺失证据不等于阴性结果。'));
+ }
+ report();return n;
+}
+function methodNarrativeHTML(p,lang){
+ const n=methodNarrative(p,lang);if(!n)return '';const t=(a,b)=>lang==='zh'?b:a;
+ const list=xs=>'<ul>'+xs.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>';
+ return `<div class="method-narrative" style="line-height:1.6;overflow-wrap:anywhere"><p><b>${t('Scope','适用范围')}:</b> ${esc(n.scope)}</p><p><b>${t('Applicable platforms','适用平台')}:</b> ${esc(n.platforms)}</p><p><b>${t('Run-name rule','运行名称规则')}:</b> ${esc(n.runRule)}</p>${n.references.length?'<h4>'+t('Taxon-specific references','物种特异性内参')+'</h4>'+list(n.references):''}<p><b>${t('Purpose','目的')}:</b> ${esc(n.purpose)}</p><h4>${t('Procedure','操作程序')}</h4><ol>${n.steps.map(x=>`<li><b>${x.id} ${esc(x.title)}</b><br>${esc(x.instruction)}<br><b>${t('Acceptance','验收')}:</b> ${esc(x.acceptance)}</li>`).join('')}</ol><h4>${t('Interpretation principles','判定原则')}</h4>${list(n.principles)}<h4>${t('Decision rules','判定规则')}</h4><ul>${n.rules.map(x=>`<li><b>${x.id}</b> — ${esc(x.when)}; <b>${t('action','处理')}:</b> ${esc(x.action)}; <b>${t('outcome','结果')}:</b> ${esc(x.outcome)}</li>`).join('')}</ul><p><b>${t('Reporting','报告')}:</b> ${t('Rule ID, reason, stored call, calculation provenance and profile identity included.','包括规则编号、原因、保存的判定、计算来源及配置身份。')}</p></div>`;
+}
+MISSY_HOOKS.use('sopProcedureHTML','method.full.narrative',30,next=>function(){
+ if(!maraProfileActive()&&!SOP.experiment_analysis)return next();
+ const html=methodNarrativeHTML(SOP,UI_LANG);if(!html)return next();
+ const rows=maraProfileActive()?maraRuleRows():[{rule:ui('Method'),value:SOP.name}];
+ const gaps=maraProfileActive()?maraGaps():[UI_LANG==='zh'?'尚未实现自动计算引擎；须验证体系限值、质控及样品对应关系。':'Automatic engine is not implemented; validate assay limits, controls and sample mappings.'];
+ return `<details class="sop-sec" open data-i18n-skip><summary>${esc(ui('0 · Method, procedure and interpretation'))}</summary><p class="notice warn">${esc(ui('Review only — no release decision'))}</p><div class="kv mara-profile-grid">${rows.slice(0,4).map(r=>`<b>${esc(r.rule)}</b><span>${esc(ui(r.value))}</span>`).join('')}</div>${html}<h4>${esc(ui('Unresolved rules'))}</h4><ul>${gaps.map(x=>`<li>${esc(ui(x))}</li>`).join('')}</ul></details>`;
+});
+/* A complete file cannot contain its own exact hash. Fetch the deployed bytes
+ * on demand and label their identity separately from profile canonical hashes. */
+document.addEventListener('DOMContentLoaded',()=>{
+ const legal=document.getElementById('missy-public-license');if(!legal)return;
+ const box=document.createElement('p');box.id='release-file-checksum';box.style.cssText='overflow-wrap:anywhere;white-space:normal';box.setAttribute('data-i18n-skip','');legal.insertBefore(box,legal.children[1]);
+ let state='idle',digest='',version='',checked='';
+ const render=()=>{const zh=UI_LANG==='zh';box.textContent=state==='done'?(zh?'服务器 HTML 完整文件 SHA-256：':'Served HTML full-file SHA-256: ')+digest+' · '+version+' · '+checked+(zh?'。按需获取并计算；不是配置文件哈希，也不是独立的来源真实性证明。':' · Retrieved and calculated on demand; not a profile hash or independent proof of origin.'):state==='loading'?(zh?'正在获取发布文件并计算 SHA-256…':'Retrieving release bytes and calculating SHA-256…'):state==='error'?(zh?'无法验证服务器文件；未显示校验值。':'Could not verify the served file; no checksum displayed.'):location.protocol==='file:'?(zh?'本地 HTML：浏览器无法自动重新读取文件字节；请使用系统 SHA-256 工具校验实际文件。':'Local HTML: the browser cannot automatically reread file bytes; use a system SHA-256 tool on the actual file.'):(zh?'展开许可说明以计算服务器 HTML 完整文件 SHA-256。':'Expand the licence panel to calculate the served HTML full-file SHA-256.');};
+ legal.addEventListener('toggle',async()=>{if(!legal.open||state!=='idle'||!/^https?:$/.test(location.protocol))return;state='loading';render();try{
+  const url=new URL(location.href);url.hash='';url.searchParams.set('_checksum_check',Date.now());
+  const response=await fetch(url,{cache:'no-store'});if(!response.ok)throw Error('HTTP');const bytes=new Uint8Array(await response.arrayBuffer());
+  const text=new TextDecoder().decode(bytes);version=text.match(/<meta name="software-version" content="([^"]+)">/)?.[1]||'';
+  if(!version||version!==document.querySelector('meta[name=software-version]')?.content)throw Error('Release changed; reload first');
+  const hash=await crypto.subtle.digest('SHA-256',bytes);digest=Array.from(new Uint8Array(hash),x=>x.toString(16).padStart(2,'0')).join('');checked=new Date().toISOString();state='done';
+ }catch(e){state='error';}render();});
+ new MutationObserver(render).observe(document.body,{attributes:true,attributeFilter:['class']});render();
+});
 /* Registration order does not override conflicting content signatures. */
 registerReader({id:'ixo',version:'zenodo-23437639',extensions:['.ixo'],probe:s=>!s.zipNames&&/<objectstream\b[^>]*signature=["\']IXOS["\']/i.test(new TextDecoder().decode(s.bytes.subarray(0,2048))),decode:async s=>{const source={...s,text:s.text||new TextDecoder().decode(s.bytes)},r=await decodeIxo(source,'auto');await ccExtractOnLoad(r,source);return r;}});
 registerReader({id:'eds',version:'zenodo-23437639',extensions:['.eds','.edt'],probe:s=>s.zipNames?.some(n=>/^apldbio\/sds\/experiment\.xml$/i.test(n)),decode:async s=>{const r=await decodeEds(s);await ccExtractOnLoad(r,s);return r;}});
@@ -17233,7 +17332,7 @@ MISSY_HOOKS.seal();
 </script>
 <style>.missy-license-zh{display:none}body.lang-zh .missy-license-zh{display:block}body.lang-zh .missy-license-en{display:none}.missy-gpl-translation{line-height:1.6;overflow-wrap:anywhere;max-width:100%}.missy-gpl-translation h1{font-size:20px}.missy-gpl-translation h2{font-size:17px}</style>
 
-<details id="missy-public-license" style="margin:16px 16px 100px;padding:12px;border:1px solid #40546c;border-radius:8px"><summary>GPL-3.0 · Attribution and source / 许可与源代码</summary><pre class="missy-license-en" style="white-space:pre-wrap;overflow-wrap:anywhere">MISSY public build — modified 22 October 2026. Release: 2026.10.22.profile-review1.
+<details id="missy-public-license" style="margin:16px 16px 100px;padding:12px;border:1px solid #40546c;border-radius:8px"><summary>GPL-3.0 · Attribution and source / 许可与源代码</summary><pre class="missy-license-en" style="white-space:pre-wrap;overflow-wrap:anywhere">MISSY public build — modified 22 October 2026. Release: 2026.10.22.method-text1.
 Released under GNU GPL version 3. No warranty.
 ZPCR/PCRD format research and adapted parsing: R. Byers / zpcrweb contributors.
 Upstream: https://github.com/RByers/zpcrweb
@@ -17250,7 +17349,7 @@ Supported PCRD ZIP compression: stored / Deflate. Other methods remain unsupport
 Modular port: 21 October 2026. Baseline: Zenodo record 23437639.
 The single-file application retains the existing reader registrations and format support.
 </pre><div class="missy-license-zh" data-i18n-skip>
-<p>MISSY 公开版本，更新日期：2026 年 10 月 22 日。版本：2026.10.22.profile-review1。按 GNU 通用公共许可协议第三版（GPL-3.0）发布，不提供品质担保。</p>
+<p>MISSY 公开版本，更新日期：2026 年 10 月 22 日。版本：2026.10.22.method-text1。按 GNU 通用公共许可协议第三版（GPL-3.0）发布，不提供品质担保。</p>
 <p>ZPCR／PCRD 格式研究及改编解析：R. Byers 与 zpcrweb 贡献者。上游：<a href="https://github.com/RByers/zpcrweb">github.com/RByers/zpcrweb</a>。</p>
 <p>修改内容：MISSY 集成、质控图、独立计算 Cq／Tm，以及本地密码流程。未分发 Bio-Rad 密码、从 CFX 派生的解密状态或厂商 DLL。独立计算不能替代厂商质控认证。</p>
 <p>HTML 保留 Plotly 的版权与 MIT 许可声明，包含可读应用代码和内嵌依赖。本 index.html 文件同时包含应用程序及其可读源代码。</p>
