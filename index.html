@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Offline reader for Roche LightCycler 480 .ixo and Applied Biosystems QuantStudio 3/5 .eds files: traceable stored values, container integrity checks, open qPCR exports, graphs, quality review, forensic log and JSON-LD metadata.">
 <meta name="application-name" content="qPCR raw values, quality-control and forensic export tool">
-<meta name="software-version" content="2026.10.22.wide2">
+<meta name="software-version" content="2026.10.22.focus1">
 
 <!--
   MACHINE-READABLE LANDING-PAGE METADATA
@@ -16363,7 +16363,7 @@ function mascotDestinations(){return [
  ...(APP_STATE.phase==='ready'?selCatalogue():[]).filter(x=>x.kind==='image'&&reportItemVisible(x)).map(x=>({id:'graph:'+x.id,label:(x.id.startsWith('cc:')?(CC_BY_ID[x.id.slice(3)]?.code+' · '):'')+ui(x.title),group:x.id.startsWith('cc:')?ui('Control charts'):ui('Graphs')}))
 ];}
 function mascotGo(id){
- if(id.startsWith('graph:')){const target=id.slice(6),item=selCatalogue().find(x=>x.id===target);if(!item||!reportItemVisible(item)){MASCOT_OPEN_SETTINGS('Load the matching files to open this graph.');return;}unifiedBrowse(target);return;}
+ if(id.startsWith('graph:')){const target=id.slice(6),item=selCatalogue().find(x=>x.id===target);if(!item||!reportItemVisible(item)){MASCOT_OPEN_SETTINGS('Load the matching files to open this graph.');return;}GRAPH_CHROME_HIDDEN=true;unifiedBrowse(target);return;}
  mgClose();cmdClose();astClose();
  if(id==='section:license'){document.getElementById('missy-public-license').open=true;document.getElementById('missy-public-license').querySelector('summary').focus();}
  else if(id.startsWith('page:')){showTab(id.slice(5));window.scrollTo({top:0,behavior:'smooth'});}
