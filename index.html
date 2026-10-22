@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Offline reader for Roche LightCycler 480 .ixo and Applied Biosystems QuantStudio 3/5 .eds files: traceable stored values, container integrity checks, open qPCR exports, graphs, quality review, forensic log and JSON-LD metadata.">
 <meta name="application-name" content="qPCR raw values, quality-control and forensic export tool">
-<meta name="software-version" content="2026.10.22.summaryzh1">
+<meta name="software-version" content="2026.10.22.reviewr2">
 
 <!--
   MACHINE-READABLE LANDING-PAGE METADATA
@@ -8676,14 +8676,14 @@ function mgViewGraphs(){
     limits:`run ${ri+1} of ${RUNS.length} · ${uniq(GRAPHS.map(g=>g.group)).length} group(s)`,
     state:"Each graph below is drawn here with the limits of the active profile. Use Next run to change the experiment.",
     evidence:uniq(GRAPHS.map(g=>g.group)).join(" · "),
-    rows:GRAPHS.slice(0,14).map(g=>[g.group,g.title.slice(0,54)]),
+    rows:GRAPHS.slice(0,14).map(g=>[g.group,g.title]),
     actions:RUNS.length>1?[{key:"3",label:"Next run",cmd:"next run"},
                            {key:"4",label:"Open the graphs view on the page",cmd:"open page graphs"}]
                          :[{key:"3",label:"Open the graphs view on the page",cmd:"open page graphs"}]}));
   GRAPHS.forEach((g,i)=>out.push(mgIt({kind:"graph",sev:"none",pict:MG_PICT.graph,kindWord:g.group,
     code:"G"+(i+1),title:g.title,value:"",unit:"",
     limits:g.scope==="run"?runName(run):"all loaded runs",
-    state:g.note||"",evidence:`graph ${i+1} of ${GRAPHS.length} · drawn with ${SOP.name} v${SOP.version}`,
+    state:"",evidence:`graph ${i+1} of ${GRAPHS.length} · drawn with ${SOP.name} v${SOP.version}`,
     graphId:g.id,runIndex:ri,
     rows:[["Group",g.group],["Drawn from",g.scope==="run"?"one run":"every loaded run"],
           ["Run",runName(run)],["Options",(g.opts||[]).join(", ")||"none"],
@@ -8764,12 +8764,12 @@ function mgViewExport(){
     state:ready.length?"Select a format below and press Download. Sample names follow the pseudonymisation switch on the page."
       :"Nothing is loaded yet, so no download can be produced.",
     evidence:missing.length?("not available: "+missing.map(m=>m.title).slice(0,4).join(", ")):"",
-    rows:ready.slice(0,14).map(it=>[it.title,String(it.note||"").slice(0,64)]),
+    rows:ready.slice(0,14).map(it=>[it.title,ui("ready")]),
     actions:summaryActions})];
   ready.forEach((it,i)=>out.push(mgIt({kind:"export",sev:"ok",pict:MG_PICT.export,kindWord:"download",
-    code:"D"+(i+1),title:it.title,value:"",unit:"",limits:"ready",state:it.note||"",
+    code:"D"+(i+1),title:it.title,value:"",unit:"",limits:"ready",state:"",
     evidence:`download ${i+1} of ${ready.length}`,exportIndex:i,
-    rows:[["Format",it.title],["Contents",String(it.note||"").slice(0,90)],
+    rows:[["Format",it.title],
           ["Runs included",String(RUNS.length)],["Profile",`${SOP.name} v${SOP.version}`],
           ["Sample names","as set by the pseudonymisation switch"]],
     actions:[{key:"3",label:"Download this file",cmd:"export "+i}]})));
@@ -8999,7 +8999,7 @@ let RUNS=[];           /* decoded runs: .ixo and .eds share one model */
 let PASTED=null;       /* {rows:[{well,sample,cq}], source} from the CSV route */
 let INHIB=null;        /* last inhibition assignment + result */
 
-function tag(cls,text){return `<span class="tag ${cls}">${esc(ui(text))}</span>`;}
+function tag(cls,text){return `<span class="tag ${cls}">${esc(UI_LANG==="zh"&&/^(Review|review|REVIEW)$/.test(String(text))?ui("Review status"):ui(text))}</span>`;}
 function table(cols,rows,opts){
   const o=opts||{};
   const head=cols.map(c=>`<th class="${c.n?"n":""}">${esc(ui(c.label))}</th>`).join("");
@@ -15902,14 +15902,14 @@ reportWorkflowStyle.textContent+=`#ast-list .ast-item{grid-template-columns:22px
 /* Navigation uses concise labels; scientific report notes remain in the report catalogue. */
 document.querySelector('label[for=cmd-script]')?.remove();
 /* Descriptive across-run coverage: never pool incompatible measurement cohorts. */
-const OVERVIEW_CACHE={runs:null,revision:-1,generation:-1,value:null};
+const OVERVIEW_CACHE={runs:null,count:-1,revision:-1,generation:-1,value:null};
 function overviewProtocol(run){
  if(run.cfxRDML?.protocolSHA256)return 'CFX RDML protocol SHA-256 '+run.cfxRDML.protocolSHA256;
  const p=run.protocol||{};if((p.programs||[]).some(x=>(x.segments||[]).length))return sopCanonical({programs:p.programs,channels:p.channels,block:p.block,detectionFormatName:p.detectionFormatName});
  return '(protocol not decoded)';
 }
 function overviewData(){
- if(OVERVIEW_CACHE.runs===RUNS&&OVERVIEW_CACHE.revision===SAMPLE_SELECTION.revision&&OVERVIEW_CACHE.generation===APP_STATE.generation)return OVERVIEW_CACHE.value;
+ if(OVERVIEW_CACHE.runs===RUNS&&OVERVIEW_CACHE.count===RUNS.length&&OVERVIEW_CACHE.revision===SAMPLE_SELECTION.revision&&OVERVIEW_CACHE.generation===APP_STATE.generation)return OVERVIEW_CACHE.value;
  const groups=new Map(),runRows=[],points=[];
  function add(run,ri,w,q,basis,target,channel,protocol){
   if(!Number.isFinite(q)||q<=0)return;
@@ -15931,7 +15931,7 @@ function overviewData(){
  for(const g of cohorts)for(const [role,rows]of byKey(g.points,x=>x.role)){
   const a=rows.map(r=>r.value).sort((a,b)=>a-b);stats.push({cohort:g.id,role,n:a.length,mean:mean(a),median:median(a),SD:a.length>1?sd(a):null,min:a[0],max:a.at(-1)});
  }
- const result={cohorts,stats,runRows,points};OVERVIEW_CACHE.runs=RUNS;OVERVIEW_CACHE.revision=SAMPLE_SELECTION.revision;OVERVIEW_CACHE.generation=APP_STATE.generation;OVERVIEW_CACHE.value=result;return result;
+ const result={cohorts,stats,runRows,points};OVERVIEW_CACHE.runs=RUNS;OVERVIEW_CACHE.count=RUNS.length;OVERVIEW_CACHE.revision=SAMPLE_SELECTION.revision;OVERVIEW_CACHE.generation=APP_STATE.generation;OVERVIEW_CACHE.value=result;return result;
 }
 function overviewCohortNote(g){return g.id+': '+g.target+' | '+g.basis+' | SN '+g.instrument+' | channel '+g.channel+' | analysis '+(g.analysis||'not recorded')+'\nProtocol fingerprint: '+g.protocol;}
 function overviewPlot(g){
@@ -16279,14 +16279,122 @@ else if((m=s.match(/^(\d+) chart\(s\) show a pattern inside the limits\.$/)))out
 else if((m=s.match(/^(\d+) runs$/)))out=m[1]+' 次运行';
 return out===undefined?next(value):raw.replace(s,out);
 });
-/* Mascots are presentation-only; footer resize includes wrapping and expanded details. */
+Object.assign(ZH_TERMS,{
+'Every other target':'其他所有靶标','required per run':'每次运行所需数量','If this control fails the run is flagged for review.':'此质控失败时，运行标记为待审核。','If this control fails the run is rejected.':'此质控失败时，拒收运行。','Match':'匹配规则','Matched by':'匹配方式','negative':'阴性','positive':'阳性','reference':'参照','target':'靶标','Cq window':'Cq 窗口','Minimum per run':'每次运行最少数量','On failure':'失败时处理','Partial outcome':'部分阳性时的判定','SD outcome':'标准差超限时的判定','IC reference Cq':'内部质控参照 Cq','IC maximum shift':'内部质控最大偏移','IC shift outcome':'内部质控偏移时的判定','IC missing outcome':'内部质控缺失时的判定','maximum Cq SD':'最大 Cq 标准差','Late signal from':'晚期信号起点','Late outcome':'晚期信号判定','Controls missing':'缺少质控','Controls failing':'质控失败','Efficiency window':'扩增效率窗口','NTC gap':'无模板对照间隔','Edit delay (hours)':'编辑延迟（小时）','Zone spread limit':'温区温差限值','Instrument run state':'仪器运行状态','reject':'拒收','criterion on the data':'数据判定标准','Profile is a review scaffold':'规程仅作审核框架','every run met it':'所有运行均符合','applied to every loaded run':'应用于所有已加载运行','These decide whether a whole run is accepted, reviewed or rejected before any sample is reported.':'报告样本前，按规则判断整次运行通过、待审核或拒收。','Informational: laboratory approval and assay-specific sample interpretation are not configured.':'提示：尚未配置实验室批准与检测专属的样本判定。','SC sample identifier format':'SC 样本标识格式','Edited within the allowed window':'在允许时间窗内编辑','Quality and forensic review':'质量与取证审核','grouped problems':'问题分组','Problems grouped by category':'按类别汇总的问题','finding(s)':'项发现','finding':'发现','Recovery':'恢复','Analysis membership':'分析归属','Stored call':'保存判定','Timeline':'时间线','downloads':'下载','download':'下载','Formats this data set can produce':'当前数据可导出的格式','formats':'种格式','format':'种格式','every format is available':'所有格式均可用','Format':'格式','Runs included':'包含运行数','Sample names':'样本名称','as set by the pseudonymisation switch':'按假名化开关设置','File-integrity mismatches':'文件完整性不一致','mismatches':'项不一致','mismatch':'不一致','Each mismatch is listed below. Stored values are unchanged.':'下列为校验差异；保存值不变。','No verified ZPCR acquisitions':'无经验证的 ZPCR 采集','• Raw files remain available. • Completion / identity evidence required for comparisons.':'原始文件仍可用；比较需要完成状态与身份依据。','No run to draw':'无可绘制的运行','all loaded runs':'所有已加载运行','one run':'单次运行','every loaded run':'所有已加载运行','Group':'分组','Drawn from':'数据来源','Options':'选项','Graphs':'图表','graphs':'张图','Open the graphs view on the page':'打开页面图表','Download this file':'下载文件','Show every item':'显示所有项目','Show chart':'显示图表','Download':'下载','Sample comparison':'样本比较','Files staged, ready to read':'文件已暂存，可读取','The files passed intake. Read them to decode runs and build the views.':'文件已暂存。','Drop .ixo, .eds, .edt or .zip files on the load view to begin.':'尚未加载文件。','The graphs are drawn from one decoded run at a time. Load an experiment file first.':'请先加载实验文件。','Each graph below is drawn here with the limits of the active profile. Use Next run to change the experiment.':'按当前规程绘图。','Select a format below and press Download. Sample names follow the pseudonymisation switch on the page.':'样本名称按假名化开关设置。','Nothing is loaded yet, so no download can be produced.':'尚未加载数据。','The page can reconstruct the stored fluorescence curves for the amplification-related rows.':'扩增相关发现可查看保存的荧光曲线。','Control charts are built from the numbers the instrument writes into its own files. Read a run, or import a stored history.':'控制图使用仪器文件中的记录数据。'
+});
+MISSY_HOOKS.use('i18n.phrase','i18n/console-card-details',131,next=>function(value){const raw=String(value??''),s=raw.trim();let m,out;
+if((m=s.match(/^at least (\d+) replicate\(s\), (\d+) of them positive$/)))out='至少 '+m[1]+' 个重复孔，其中 '+m[2]+' 个阳性';
+else if((m=s.match(/^A signal later than the cut-off is called negative\. A late signal is reported as (.+)\.$/)))out='超过截止值的信号判为阴性；晚期信号标记为'+zhPhrase(m[1])+'。';
+else if((m=s.match(/^rule (\d+) of (\d+); the first matching rule wins$/)))out='第 '+m[1]+' / '+m[2]+' 条规则；采用首个匹配规则';
+else if((m=s.match(/^kind (\w+)( · late signal beyond Cq (.+?))?( · minimum quantity (.+))?$/)))out='类型：'+zhPhrase(m[1])+(m[3]?' · 晚期信号 Cq > '+m[3]:'')+(m[5]?' · 最低含量 '+m[5]:'');
+else if((m=s.match(/^expected (\w+) · matched by (.+)$/)))out='预期：'+zhPhrase(m[1])+' · 匹配字段：'+zhPhrase(m[2]);
+else if((m=s.match(/^matches (.+) on targets (.+)$/)))out='匹配 '+m[1]+'；靶标 '+m[2];
+else if((m=s.match(/^A spread above the limit is reported as (.+); a partly positive replicate set as (.+)\.$/)))out='离散度超限：'+zhPhrase(m[1])+'；部分重复孔阳性：'+zhPhrase(m[2])+'。';
+else if((m=s.match(/^internal control shift limit (.+) Cq$/)))out='内部质控偏移限值 '+m[1]+' Cq';
+else if((m=s.match(/^controls failing: (.+)$/)))out='质控失败时：'+zhPhrase(m[1]);
+else if((m=s.match(/^of (\d+) run\(s\) (met|read)$/)))out='／共 '+m[1]+' 次运行'+(m[2]==='met'?'符合':'已读取');
+else if((m=s.match(/^(\d+) for review$/)))out=m[1]+' 项待审核';
+else if((m=s.match(/^(\d+) rejected(, (\d+) for review)?$/)))out=m[1]+' 项拒收'+(m[3]?'，'+m[3]+' 项待审核':'');
+else if((m=s.match(/^Control result — (.+)$/)))out='质控结果－'+m[1];
+else if((m=s.match(/^(\d+) control result\(s\) accepted$/)))out=m[1]+' 项质控结果通过';
+else if((m=s.match(/^(pass|review|reject|n\/a) — (.+)$/)))out=({'pass':'通过','review':'待审核','reject':'拒收','n/a':'不适用'})[m[1]]+'－'+zhPhrase(m[2]);
+else if((m=s.match(/^last change (.+) — (.+) h after the run ended \(SOP ≤ (.+) h\)$/)))out='最后修改 '+m[1]+'－运行结束后 '+m[2]+' 小时（SOP ≤ '+m[3]+' 小时）';
+else if((m=s.match(/^Last recorded change (.+) h after the run ended$/)))out='最后记录的修改在运行结束后 '+m[1]+' 小时';
+else if((m=s.match(/^(\d+) sample name\(s\) match the SC_ identifier rule$/)))out=m[1]+' 个样本名称符合 SC_ 标识规则';
+else if((m=s.match(/^(\d+) run\(s\) · (\d+) rejected · (\d+) result\(s\) need action$/)))out=m[1]+' 次运行 · '+m[2]+' 次拒收 · '+m[3]+' 项结果需处理';
+else if((m=s.match(/^(\d+) result\(s\) need an action before the report can be signed\.$/)))out='报告签署前，'+m[1]+' 项结果需处理。';
+else if((m=s.match(/^(\d+) target\(s\) · (\d+) sample\(s\)$/)))out=m[1]+' 个靶标 · '+m[2]+' 个样本';
+else if((m=s.match(/^(\d+) result\(s\) · (\d+) with a Cq · (\d+) need action$/)))out=m[1]+' 项结果 · '+m[2]+' 项有 Cq · '+m[3]+' 项需处理';
+else if((m=s.match(/^Cq from (.+) to (.+) across (\d+) sample\(s\)\.$/)))out=m[3]+' 个样本的 Cq 范围 '+m[1]+'–'+m[2]+'。';
+else if((m=s.match(/^Graphs for (.+)$/)))out='运行图表：'+m[1];
+else if((m=s.match(/^run (\d+) of (\d+) · (\d+) group\(s\)$/)))out='第 '+m[1]+' / '+m[2]+' 次运行 · '+m[3]+' 个分组';
+else if((m=s.match(/^graph (\d+) of (\d+) · drawn with (.+)$/)))out='第 '+m[1]+' / '+m[2]+' 张图 · 规程 '+m[3];
+else if((m=s.match(/^download (\d+) of (\d+)$/)))out='第 '+m[1]+' / '+m[2]+' 项下载';
+else if((m=s.match(/^(\d+) format\(s\) need data this experiment does not hold$/)))out=m[1]+' 种格式所需数据在本实验中不可用';
+else if((m=s.match(/^not available: (.+)$/)))out='不可用：'+m[1].split(', ').map(zhPhrase).join('、');
+else if((m=s.match(/^(\d+) file\(s\) examined$/)))out='已检查 '+m[1]+' 个文件';
+else if((m=s.match(/^(expected|observed) (\$[A-Fa-f\d-]+)$/)))out=(m[1]==='expected'?'预期 ':'观察值 ')+m[2];
+else if((m=s.match(/^Object stream checksum: (.+)$/)))out='对象流校验和：'+m[1];
+else if((m=s.match(/^(\d+) error · (\d+) review( · (\d+) area\(s\))?( · expected: none)?$/)))out=m[1]+' 项错误 · '+m[2]+' 项待审核'+(m[4]?' · '+m[4]+' 个领域':'')+(m[5]?' · 预期无异常':'');
+else if((m=s.match(/^(\d+) finding\(s\) are for review; none is error level\.$/)))out=m[1]+' 项发现待审核；无错误级发现。';
+else if((m=s.match(/^(\d+) category\(ies\) · (\d+) experiment\(s\)$/)))out=m[1]+' 个类别 · '+m[2]+' 个实验';
+else if((m=s.match(/^(\d+) finding\(s\) · (\d+) error · (\d+) experiment\(s\)$/)))out=m[1]+' 项发现 · '+m[2]+' 项错误 · '+m[3]+' 个实验';
+return out===undefined?next(value):raw.replace(s,out);
+});
+Object.assign(ZH_TERMS,{'Lowest Cq':'最低 Cq','Highest Cq':'最高 Cq','Platform':'平台','Run start':'运行开始','Run end':'运行结束','Hours end to change':'运行结束至修改的小时数','Accepted under this profile.':'符合当前规程。','Charts':'图表','In control':'受控','control chart':'控制图','Chart':'图表','Variant':'通道／分组','Latest value':'最近值','Centre line':'中心线','Lower limit':'下限','Upper limit':'上限','Specification':'规格限','Runs in chart':'图中运行数','unknown date':'日期未知','negative matrix control':'基质阴性质控','extraction process blank':'提取过程空白','grinding/environment blank':'研磨／环境空白','fluorescence':'荧光','reference counts':'参照计数','% change in the run':'运行内变化百分比','°C from setpoint':'相对设定值的温差 °C','log10 hours':'log10 小时','findings':'项发现','events':'个事件','share of results':'结果比例','share of NTC wells':'无模板对照孔比例','share of settings':'设置比例','share of wells':'孔比例','share of intervals':'间隔比例','share of readings':'读数比例','Control extraction batches':'质控提取批次','Control extract age versus Cq':'质控提取后时间与 Cq','Control Cq versus cooling rate':'质控 Cq 与降温速率','Run history':'运行历史','Fluorescence':'荧光','Plate':'微孔板','Across runs':'跨运行','Overall summary and comparisons':'总体统计与比较','Analysis membership':'分析归属','Recovery':'恢复','QC':'质控','Stored call':'保存判定','Timeline':'时间线'});
+MISSY_HOOKS.use('i18n.phrase','i18n/console-unit-details',132,next=>function(value){const complete=next(value);if(complete!==String(value??''))return complete;const raw=String(value??''),s=raw.trim();let m,out;
+if((m=s.match(/^(.+) · (\d+) run\(s\) in this chart · last run (.+)$/)))out=m[1]+' · 图中 '+m[2]+' 次运行 · 最近运行 '+zhPhrase(m[3]);
+else if((m=s.match(/^([-\d.]+) (fluorescence|reference counts|% change in the run|°C from setpoint|log10 hours|findings|events|share of results|share of NTC wells|share of settings|share of wells|share of intervals|share of readings)$/)))out=m[1]+' '+zhPhrase(m[2]);
+else if((m=s.match(/^(\d+) result\(s\) · (\d+) with a Cq$/)))out=m[1]+' 项结果 · '+m[2]+' 项有 Cq';
+else if((m=s.match(/^(\d+) negative · (\d+) inconclusive · (\d+) repeat · (\d+) invalid$/)))out=m[1]+' 项阴性 · '+m[2]+' 项无法判定 · '+m[3]+' 项重新检测 · '+m[4]+' 项无效';
+else if((m=s.match(/^For review: (.+)$/)))out='待审核：'+m[1].split('; ').map(zhPhrase).join('；');
+else if((m=s.match(/^(.+): (\d+) replicate\(s\), SOP requires (\d+)$/)))out=m[1]+'：'+m[2]+' 个重复孔，SOP 要求 '+m[3]+' 个';
+else if((m=s.match(/^(.+): detected in (\d+)\/(\d+) replicates, SOP requires (\d+)$/)))out=m[1]+'：'+m[3]+' 个重复孔中 '+m[2]+' 个检出，SOP 要求 '+m[4]+' 个';
+else if(s.includes(' · ')){const parts=s.split(' · '),translated=parts.map(zhPhrase);if(translated.some((x,i)=>x!==parts[i]))out=translated.join(' · ');}
+else if(s.includes(', ')){const parts=s.split(', ');if(parts.every(x=>ROLES.includes(x)))out=parts.map(zhPhrase).join('、');}
+return out===undefined?complete:raw.replace(s,out);
+});
+MISSY_HOOKS.use('i18n.phrase','i18n/console-reason-details',133,next=>function(value){const complete=next(value);if(complete!==String(value??''))return complete;const raw=String(value??''),s=raw.trim();let m,out;
+if((m=s.match(/^Repeat analysis — replicate SD (.+) > (.+)$/)))out='重新检测－重复孔标准差 '+m[1]+' > '+m[2];
+else if(s.includes('; ')){const parts=s.split('; '),translated=parts.map(zhPhrase);if(translated.some((x,i)=>x!==parts[i]))out=translated.join('；');}
+return out===undefined?complete:raw.replace(s,out);
+});
+/* Source identities are literal even when a sample is named e.g. "Unknown". */
+MISSY_HOOKS.use('mgRender','i18n/console-source-identities',999,next=>function(){const result=next(),identities=new Set([SOP.name]);for(const run of RUNS){for(const value of [run.file,runName(run),run.meta?.sourceSHA256,run.meta?.InstrumentID,run.meta?.SerialNumber])if(value)identities.add(String(value));for(const w of run.wells||[]){for(const key of ['sample','target'])if(w[key])identities.add(String(w[key]));if(w.sample&&w.target)identities.add(w.sample+' · '+w.target);}}for(const el of document.querySelectorAll('#mg-title,#mg-evidence,#mg-limits,#mg-rows .r>b,#mg-rows .r>span'))el.toggleAttribute('data-i18n-skip',identities.has(el.textContent.trim()));return result;});
+
+Object.assign(ZH_TERMS,{'No Cq was stored for this target.':'此靶标无保存的 Cq。','Open File integrity on the page':'打开页面文件完整性','Open the formats view on the page':'打开页面开放格式','Open the results view on the page':'打开页面结果','Show details':'显示详情','Hide details':'隐藏详情','Open the load view on the page':'打开页面加载文件'});
+MISSY_HOOKS.use('i18n.phrase','i18n/console-download-button',134,next=>function(value){const s=String(value??'');const m=s.match(/^Download (.+)$/);return m?'下载 '+zhPhrase(m[1]):next(value);});
+
+Object.assign(ZH_TERMS,{'Open the SOP view on the page':'打开页面 SOP','Open the review view on the page':'打开页面审核','Draw the graph':'显示图表'});
+/* Full known phrases win over partial dynamic patterns. */
+MISSY_HOOKS.use('i18n.phrase','i18n/exact-phrase-priority',135,next=>function(value){const raw=String(value??''),s=raw.trim();return Object.prototype.hasOwnProperty.call(ZH_TERMS,s)?raw.replace(s,ZH_TERMS[s]):next(value);});
+/* Configurable local shortcuts; never stores experiment data or passwords. */
+const MISSY_ANIMALS=['🐀','🐂','🐅','🐇','🐉','🐍','🐎','🐐','🐒','🐓','🐕','🐖'];
+const MISSY_SHORTCUT_DEFAULTS=['page:load','page:sop','page:results','page:panel','page:graphs','page:review','page:export','page:integrity','mode:command','mode:assisted','mode:console','section:license'];
+const MISSY_SHORTCUT_KEY='missy_animal_shortcuts_v1';
+let MISSY_SHORTCUTS=MISSY_SHORTCUT_DEFAULTS.slice();
+let MASCOT_OPEN_SETTINGS=()=>{};
+try{const saved=JSON.parse(localStorage.getItem(MISSY_SHORTCUT_KEY));if(Array.isArray(saved)&&[10,12].includes(saved.length)&&saved.every(x=>typeof x==='string'&&/^(page|mode|graph|section):/.test(x)))MISSY_SHORTCUTS=saved.concat(MISSY_SHORTCUT_DEFAULTS.slice(saved.length));}catch{}
+function mascotDestinations(){return [
+ ...[['load','Load files'],['sop','SOP'],['results','Results'],['panel','Control panel'],['graphs','Graphs'],['review','Quality & forensic review'],['export','Open formats'],['integrity','File integrity']].map(([id,label])=>({id:'page:'+id,label:ui(label)})),
+ {id:'section:license',label:ui('GPL · Source')},
+ ...[['command','Command mode'],['assisted','Assisted mode'],['console','Console mode']].map(([id,label])=>({id:'mode:'+id,label:ui(label)})),
+ ...(APP_STATE.phase==='ready'?selCatalogue():[]).filter(x=>x.kind==='image'&&reportItemVisible(x)).map(x=>({id:'graph:'+x.id,label:ui(x.title)}))
+];}
+function mascotGo(id){
+ if(id.startsWith('graph:')){const target=id.slice(6),item=selCatalogue().find(x=>x.id===target);if(!item||!reportItemVisible(item)){MASCOT_OPEN_SETTINGS('Load the matching files to open this graph.');return;}unifiedBrowse(target);return;}
+ mgClose();cmdClose();astClose();
+ if(id==='section:license'){document.getElementById('missy-public-license').open=true;document.getElementById('missy-public-license').querySelector('summary').focus();}
+ else if(id.startsWith('page:')){showTab(id.slice(5));window.scrollTo({top:0,behavior:'smooth'});}
+ else if(id==='mode:command')cmdOpen();else if(id==='mode:assisted')astOpen();else if(id==='mode:console')mgOpen();
+}
+Object.assign(ZH_TERMS,{'Animal shortcuts':'动物快捷方式','Configure shortcuts':'配置快捷方式','Shortcut':'快捷方式','Destination':'目标','Save shortcuts':'保存快捷方式','Restore defaults':'恢复默认','Load the matching files to open this graph.':'请加载匹配文件以打开此图。','Unavailable graph':'当前不可用的图','GPL · Source':'GPL · 源代码'});
 document.addEventListener('DOMContentLoaded',()=>{
  const friends=document.querySelector('.cute-friends'),bar=document.getElementById('statusbar');if(!friends||!bar)return;
- friends.removeAttribute('aria-hidden');friends.setAttribute('aria-label','小伙伴');
- const style=document.createElement('style');style.textContent=`body.lang-zh .cute-friends{bottom:calc(var(--missy-footer-height,48px) + 14px);z-index:41;pointer-events:auto;display:flex;gap:4px}.cute-friends button{font-size:30px;line-height:1.2;padding:4px 6px;border:0;background:transparent;min-width:44px;min-height:44px;cursor:pointer;filter:drop-shadow(0 3px 5px #55304a29)}.cute-friends button:hover,.cute-friends button:focus-visible{background:#fff0f8;outline:2px solid #df5d9b;transform:translateY(-5px)}.cute-friends button.is-playing{animation:missy-friend-hop .65s ease-in-out}.cute-friends button:nth-child(2).is-playing{animation:missy-friend-wave .65s ease-in-out}body.lang-zh .cute-toast{bottom:calc(var(--missy-footer-height,48px) + 80px)}@keyframes missy-friend-hop{25%{transform:translateY(-24px) rotate(-12deg)}60%{transform:translateY(-10px) rotate(12deg)}}@keyframes missy-friend-wave{25%{transform:rotate(-22deg) scale(1.2)}70%{transform:rotate(22deg) scale(1.1)}}@media(prefers-reduced-motion:reduce){.cute-friends button.is-playing{animation:none}.cute-friends button:hover{transform:none}}@media print{.cute-friends,.cute-toast{display:none!important}}`;document.head.append(style);
- const messages=['休息一下，伸个懒腰吧！','审核数据时，记得查看质控和重复孔。','今天也要认真检查每一条曲线！'];
- friends.replaceChildren(...['🐰','🐼','🐣'].map((animal,i)=>{const b=document.createElement('button');b.type='button';b.textContent=animal;b.title=['和小兔打招呼','和熊猫打招呼','和小鸡打招呼'][i];b.setAttribute('aria-label',b.title);b.onclick=()=>{b.classList.remove('is-playing');void b.offsetWidth;b.classList.add('is-playing');showCuteToast(messages[i]);};b.onanimationend=()=>b.classList.remove('is-playing');return b;}));
- const update=()=>document.documentElement.style.setProperty('--missy-footer-height',Math.ceil(bar.getBoundingClientRect().height)+'px');new ResizeObserver(update).observe(bar);window.addEventListener('resize',update);update();
+ friends.removeAttribute('aria-hidden');friends.setAttribute('aria-label','Animal shortcuts');
+ const css=document.createElement('style');css.textContent=`
+ .cute-friends,body.lang-zh .cute-friends{display:flex;position:fixed;inset:auto 12px calc(var(--missy-footer-height,48px) + 12px) auto;max-width:calc(100vw - 110px);flex-wrap:wrap;justify-content:flex-end;gap:2px;z-index:41;pointer-events:auto}
+ .cute-friends button{font-size:27px;line-height:1.2;padding:3px;border:0;background:transparent;min-width:36px;min-height:38px;cursor:pointer;filter:drop-shadow(0 2px 4px #55304a29);border-radius:8px}
+ .cute-friends button:hover,.cute-friends button:focus-visible{background:#fff0f8;outline:2px solid #df5d9b;transform:translateY(-4px)}
+ .cute-friends button.is-playing{animation:missy-friend-hop .5s ease-in-out}.cute-friends #mascot-config{font-size:20px}
+ #mascot-settings{color:#102f4d;background:#f6f8fb;border:1px solid #8ba3bd;border-radius:12px;width:min(560px,calc(100vw - 32px));max-height:80vh;padding:18px;overflow:auto}
+ #mascot-settings::backdrop{background:#09122188}#mascot-settings header{display:flex;justify-content:space-between;align-items:center;gap:12px}#mascot-settings h2{margin:0;font-size:18px}
+ #mascot-settings label{display:grid;grid-template-columns:48px minmax(0,1fr);gap:8px;align-items:center;margin:8px 0}#mascot-settings select{width:100%;min-width:0;padding:7px}#mascot-settings footer{display:flex;gap:8px;justify-content:flex-end;margin-top:14px}#mascot-settings button{padding:7px 12px;border:1px solid #a7b8ca;border-radius:6px;background:white;color:#102f4d;cursor:pointer}
+ #missy-public-license{position:fixed!important;left:12px;bottom:calc(var(--missy-footer-height,48px) + 12px);z-index:42;margin:0!important;padding:7px 10px!important;background:var(--card,#fff);color:var(--text,#102f4d);max-width:calc(100vw - 24px)}
+ #missy-public-license:not([open]){width:auto}#missy-public-license[open]{width:min(820px,calc(100vw - 24px));max-height:72vh;overflow:auto;box-shadow:0 8px 36px #0004}#missy-public-license>summary{cursor:pointer;white-space:nowrap}#license-close{float:right;margin:0 0 8px 8px}
+ body:has(#mg.on) .cute-friends,body:has(#cmdm.on) .cute-friends,body:has(#astm.on) .cute-friends,body:has(#mg.on) #missy-public-license,body:has(#cmdm.on) #missy-public-license,body:has(#astm.on) #missy-public-license{display:none}
+ @media(max-width:850px){.console-page-name,.console-profile{max-width:100%;white-space:normal;overflow-wrap:anywhere}}
+ @media(max-width:650px){.cute-friends,body.lang-zh .cute-friends{width:195px}.cute-friends button{font-size:23px;min-width:32px;min-height:34px}}
+ @keyframes missy-friend-hop{40%{transform:translateY(-14px) rotate(-10deg)}75%{transform:rotate(10deg)}}@media(prefers-reduced-motion:reduce){.cute-friends button.is-playing{animation:none}.cute-friends button:hover{transform:none}}@media print{.cute-friends,#mascot-settings,#missy-public-license{display:none!important}}
+ `;document.head.append(css);
+ const dialog=document.createElement('dialog');dialog.id='mascot-settings';dialog.innerHTML='<header><h2>Animal shortcuts</h2><button type="button" id="mascot-close">Close</button></header><p id="mascot-message" role="status"></p><form id="mascot-form"></form><footer><button type="button" id="mascot-reset">Restore defaults</button><button type="button" id="mascot-save">Save shortcuts</button></footer>';document.body.append(dialog);
+ const choices=()=>{const list=mascotDestinations();dialog.querySelector('form').replaceChildren(...MISSY_ANIMALS.map((animal,i)=>{const label=document.createElement('label'),name=document.createElement('span'),select=document.createElement('select');name.textContent=animal;select.dataset.animal=String(i);select.setAttribute('aria-label',ui('Destination')+' '+(i+1));for(const x of list)select.add(new Option(x.label,x.id));if(!list.some(x=>x.id===MISSY_SHORTCUTS[i]))select.add(new Option(ui('Unavailable graph')+' · '+MISSY_SHORTCUTS[i],MISSY_SHORTCUTS[i]));select.value=MISSY_SHORTCUTS[i];label.append(name,select);return label;}));localizeDOM(dialog,true);};
+ const paint=()=>{const list=mascotDestinations();for(const [i,b] of [...friends.querySelectorAll('[data-animal]')].entries()){const label=list.find(x=>x.id===MISSY_SHORTCUTS[i])?.label||ui('Unavailable graph');b.title=label;b.setAttribute('aria-label',MISSY_ANIMALS[i]+' '+label);}};
+ friends.replaceChildren(...MISSY_ANIMALS.map((animal,i)=>{const b=document.createElement('button');b.type='button';b.textContent=animal;b.dataset.animal=String(i);b.setAttribute('data-i18n-skip','');b.onclick=()=>{b.classList.remove('is-playing');void b.offsetWidth;b.classList.add('is-playing');mascotGo(MISSY_SHORTCUTS[i]);};b.onanimationend=()=>b.classList.remove('is-playing');return b;}));
+ const config=document.createElement('button');config.type='button';config.id='mascot-config';config.textContent='⚙';config.title='Configure shortcuts';config.setAttribute('aria-label','Configure shortcuts');MASCOT_OPEN_SETTINGS=(message='')=>{choices();dialog.querySelector('#mascot-message').textContent=ui(message);if(!dialog.open)dialog.showModal();};config.onclick=()=>MASCOT_OPEN_SETTINGS();friends.append(config);
+ dialog.querySelector('#mascot-close').onclick=()=>dialog.close();dialog.querySelector('#mascot-reset').onclick=()=>{[...dialog.querySelectorAll('select')].forEach((s,i)=>s.value=MISSY_SHORTCUT_DEFAULTS[i]);};dialog.querySelector('#mascot-save').onclick=()=>{MISSY_SHORTCUTS=[...dialog.querySelectorAll('select')].map(s=>s.value);try{localStorage.setItem(MISSY_SHORTCUT_KEY,JSON.stringify(MISSY_SHORTCUTS));}catch{}paint();dialog.close();};dialog.addEventListener('close',paint);
+ const legal=document.getElementById('missy-public-license');if(legal){legal.querySelector('summary').textContent='GPL · Source';const close=document.createElement('button');close.id='license-close';close.type='button';close.textContent='Close';close.onclick=()=>{legal.open=false;legal.querySelector('summary').focus();};legal.querySelector('summary').after(close);document.addEventListener('keydown',e=>{if(e.key==='Escape')legal.open=false;});}
+ const update=()=>{document.documentElement.style.setProperty('--missy-footer-height',Math.ceil(bar.getBoundingClientRect().height)+'px');paint();};new ResizeObserver(update).observe(bar);window.addEventListener('resize',update);document.getElementById('language-select')?.addEventListener('change',()=>{paint();if(dialog.open)choices();});update();
 });
 /* Noto Sans SC, SIL OFL 1.1. Static regular BMP subset renamed MISSY PDF Sans.
  * Source: https://github.com/notofonts/noto-cjk/tree/main/Sans/Variable/TTF/Subset
@@ -16423,6 +16531,35 @@ return out===undefined?next(value):raw.replace(s,out);
 });
 
 Object.assign(ZH_TERMS,{'Cq independently calculated':'独立计算的 Cq','Tm independently calculated':'独立计算的 Tm','Independent Cq comparison':'独立 Cq 比较','Independent Tm comparison':'独立 Tm 比较','PCRD · Independent calculations':'PCRD · 独立计算','Group / Ch / metric':'采集组／通道／指标','Calls / NA':'有效值／缺失值','Pairs':'配对数','Only I / R':'仅独立值／仅参照值','Median d':'差值中位数','Max abs d':'最大绝对差值','Reference':'参照','Unmatched':'无匹配参照','Curve Tm':'曲线推导 Tm','Vendor Tm':'厂商 Tm','Normal completion supported by log and acquisition counts':'日志与采集数量支持正常完成'});
+/* Terminology review R2, checked against local GB GMO texts and Roche zh-CN sources.
+ * Display wording only; no changes to stored identities, roles, outcomes or calculations.
+ * Keep 熔解 (Simplified Roche); do not substitute Taiwan-manual 溶解.
+ */
+Object.assign(ZH_TERMS,{
+'Target':'靶标','Targets':'靶标','Analysis / target':'分析／靶标','Target / reference roles':'靶标／参照角色','Declared targets':'已声明靶标','Target names':'靶标名称',
+'Inconclusive':'无法判定','Uncertain':'不确定','Control charts':'控制图','Repeat':'复测','Repeat analysis':'复测','Resolved role':'识别出的角色','Stored call':'保存的判定','Well':'孔','Wells':'孔','Plate setup':'多孔板设置',
+'Uniformity calibration: edge-to-centre ratio':'均一性校准：边缘与中心之比','Xenon lamp intensity (reference channel)':'光源强度（参考通道）','Lamp reference channel (stability)':'光源参照通道（稳定性）','Lamp drift within a run':'运行内的光源强度漂移','Endogenous control':'内标准基因','Internal control':'内部对照','4 · Replicates and internal control':'4 · 重复孔与内部对照','LOD control':'检出限质控品','Download pseudonym mapping (CSV)':'下载假名映射表（CSV）','Tm Calling':'Tm Calling',
+'Learned name pattern':'已学习的名称模式','Included':'已包含','Each experiment separately':'每个实验单独处理','All loaded experiments':'所有已加载的实验','10% of names (fewer suggestions)':'名称的 10%（建议较少）','15% of names (balanced)':'名称的 15%（平衡）','25% of names (more suggestions)':'名称的 25%（建议较多）','All names':'全部名称','Unusual names only':'仅异常名称','Common names only':'仅常见名称','Controls / standards':'对照／标准品','Root names (descriptive pooling only)':'词根名称（仅用于描述性归并）','All rising curves':'所有上升曲线','Review only':'仅供复核','Review status':'待复核','Replicate groups to review':'需复核的重复孔组',
+'Sample, experiment, date or target':'样本、实验、日期或靶标','Microgravity console':'控制台','Page tabs':'页面标签页','command':'命令','Language and website downloads':'语言与网页下载',
+'Drop .ixo, .eds, .edt, .rdml, .zpcr, .pcrd or .zip here':'将 .ixo、.eds、.edt、.rdml、.zpcr、.pcrd 或 .zip 拖到这里',
+'Missy, RUO - A single-file offline HTML page for .ixo, .eds/.edt, .rdml, .zpcr and .pcrd experiment runs':'Missy（仅供研究使用）：支持 .ixo、.eds/.edt、.rdml、.zpcr 和 .pcrd 的单文件离线 HTML 页面',
+'Quantification cycle terminology':'定量循环术语'
+});
+function zhReviewedWording(text){return String(text).replaceAll('均匀性','均一性').replaceAll('待审核','待复核').replaceAll('重新检测','复测').replaceAll('重复检测','复测').replaceAll('质控图','控制图').replaceAll('假名对照表','假名映射表').replaceAll('熔解温度调用','熔解温度判定');}
+for(const key of Object.keys(ZH_TERMS)){let text=ZH_TERMS[key];if(typeof text!=='string')continue;text=zhReviewedWording(text);if(/target/i.test(key))text=text.replaceAll('目标','靶标');if(/internal.control|^IC\b/i.test(key))text=text.replaceAll('内控','内部对照').replaceAll('内部质控','内部对照');ZH_TERMS[key]=text;}
+MISSY_HOOKS.use('i18n.phrase','i18n/review-r2-wording',140,next=>function(value){const out=next(value);return out===String(value??'')?out:zhReviewedWording(out);});
+document.addEventListener('DOMContentLoaded',()=>{const legal=document.getElementById('missy-public-license');if(!legal)return;const box=document.createElement('details');box.id='missy-cq-glossary';box.innerHTML='<summary>Quantification cycle terminology</summary><p class="missy-license-en">Cq is MISSY’s common quantification-cycle label. Roche uses Cp (Crossing Point); the cited GB standards use Ct. Stored Cp/Ct and independently calculated Cq retain their stated source and method; the label does not make their algorithms equivalent.</p><p class="missy-license-zh">Cq 为 MISSY 使用的通用定量循环符号；罗氏软件记为 Cp 值（交叉点），所引 GB 标准记为 Ct 值。保存的 Cp／Ct 与独立计算的 Cq 保留各自来源和方法；统一符号不表示算法相同。内标准基因与外加内部对照分别保留，不根据名称推定其作用。</p>';legal.append(box);});
+/* The same RefValue field appears across LC480 generations; it is not a lamp-life assay. */
+CC_BY_ID.lamp_ref.idea='The reference-channel reading monitors excitation-source stability. The light-source technology and service criteria depend on the instrument generation; do not infer xenon-lamp life or absolute intensity from this field.';
+CC_BY_ID.lamp_ref.reading='Compare matching instrument, protocol and filter-pair histories. A change requires review of the optical path, reference sensor and instrument service records; it does not identify a component fault by itself.';
+Object.assign(ZH_TERMS,{
+'The reference-channel reading monitors excitation-source stability. The light-source technology and service criteria depend on the instrument generation; do not infer xenon-lamp life or absolute intensity from this field.':'参照通道读数用于观察激发光源的稳定性。光源技术和维护标准取决于仪器代际；不能据此推断氙灯寿命或绝对光强。',
+'Compare matching instrument, protocol and filter-pair histories. A change requires review of the optical path, reference sensor and instrument service records; it does not identify a component fault by itself.':'比较同一仪器、程序和滤光片组的历史记录。变化时需复核光路、参照传感器及维护记录；不能仅据此定位部件故障。',
+'The instrument measures the lamp through a reference channel. The first reading of each run tracks lamp ageing (manual: warning at 50 %, lifetime ≈ 500 h).':'参照通道反映光源读数。50% 警告与约 500 小时寿命仅是第一代 LC480 氙灯的手册规则，不适用于 LC480 II 固态光源，也不能从补偿后的参照读数推定剩余寿命。',
+'The fitted line predicts when 50 % of the starting value is reached — order the lamp before that. A point far below the line is a sudden lamp or light-guide fault.':'趋势线为描述性拟合，不能据此预测光源寿命或诊断部件故障。'
+});
+Object.assign(ZH_TERMS,{'Load experiment files to check their integrity.':'请加载实验文件以检查完整性。','Mismatches will appear here one under another when a file fails a stored checksum or archive-integrity comparison.':'校验和或文件容器完整性检查不一致时，将在此逐项列出。'});
+Object.assign(ZH_TERMS,{'Load two or more experiments to compare grouped problems.':'请加载至少两个实验以比较问题分组。','idle':'未开始'});
 /* Registration order does not override conflicting content signatures. */
 registerReader({id:'ixo',version:'zenodo-23437639',extensions:['.ixo'],probe:s=>!s.zipNames&&/<objectstream\b[^>]*signature=["\']IXOS["\']/i.test(new TextDecoder().decode(s.bytes.subarray(0,2048))),decode:async s=>{const source={...s,text:s.text||new TextDecoder().decode(s.bytes)},r=await decodeIxo(source,'auto');await ccExtractOnLoad(r,source);return r;}});
 registerReader({id:'eds',version:'zenodo-23437639',extensions:['.eds','.edt'],probe:s=>s.zipNames?.some(n=>/^apldbio\/sds\/experiment\.xml$/i.test(n)),decode:async s=>{const r=await decodeEds(s);await ccExtractOnLoad(r,s);return r;}});
