@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Offline reader for Roche LightCycler 480 .ixo and Applied Biosystems QuantStudio 3/5 .eds files: traceable stored values, container integrity checks, open qPCR exports, graphs, quality review, forensic log and JSON-LD metadata.">
 <meta name="application-name" content="qPCR raw values, quality-control and forensic export tool">
-<meta name="software-version" content="2026.10.22.mara4">
+<meta name="software-version" content="2026.10.22.profile-review1">
 
 <!--
   MACHINE-READABLE LANDING-PAGE METADATA
@@ -16806,7 +16806,18 @@ function maraStandardsIndex(){
  }
  lines.push('## Differences and unresolved inputs','','- GGK2: Sad1 reference; resolve the 50 ng reaction / 100 ng LOD–LOQ basis discrepancy.','- KJC017: 22/44-copy LOD/LOQ; other event standards use 20/40 copies.','- KJ1003: confirm the documented 19-bp junction sequence.','- Uncertainty constants, DNA inputs and CRM maxima are standard-specific.','- Exact-LOQ reporting requires a laboratory policy; default: hold for review.','- Uncertainty mode: standard (default) or validated laboratory total model. Laboratory coefficients replace the standard budget; no complete uncertainties are automatically added together. Laboratory scope, range, components and coverage factor must be confirmed. JRC MU guidance 3rd edition, sections 2.3–2.5, explains precision/bias combination within one budget.','- Sample-name regex must capture sample and subsample identities. Record explicit curve evidence, CRM copy assignments and quantitative-QC reaction pairing.','- Standards 18–20 concern bioinformatics/sequencing and are outside these qPCR profiles.','','## Source files','','Each JSON records source clauses and the PDF checksum. Sources: D:/IXO/CHINESE/gmo/.');
  for(const n of [...new Set(MARA_PROFILE_LIBRARY.map(x=>x.standard))].sort((a,b)=>a-b)){const p=MARA_PROFILE_LIBRARY.find(x=>x.standard===n).profile;lines.push('- '+p.name+': '+p.method.sources[0].pdf);}
- lines.push('','Supporting explanation: A standard-curve-free ΔΔCt method for rapid GMO compliance screening relative to labeling thresholds, doi:10.3389/fpls.2026.1918379, sections 2.2 and 3.3. Research examples do not replace normative MARA requirements.','');return lines.join('\n');
+ lines.push('','Supporting explanation: A standard-curve-free ΔΔCt method for rapid GMO compliance screening relative to labeling thresholds, doi:10.3389/fpls.2026.1918379, sections 2.2 and 3.3. Research examples do not replace normative MARA requirements.','',
+ '## Reproducing the embedded profile SHA-256','',
+ 'Hash the delivered JSON object directly, without applying defaults or normalisation. Remove only the top-level sha256 and locked properties. Recursively sort object keys using JavaScript Object.keys(value).sort(); preserve array order and all values. Serialize with JSON.stringify (no indentation, no trailing newline). Hash its UTF-8 bytes, without BOM, using SHA-256; output lowercase hexadecimal. This is the application sopCanonical/sopHash algorithm, not RFC 8785. The locked flag is deliberately excluded so that locking does not change the scientific profile identity. No nested fields are removed. SHA256SUMS.txt instead hashes the exact file bytes, including formatting and final newline.','',
+ 'Independent Node.js reproduction (save as verify-profile.cjs; run node verify-profile.cjs profile.json):','',
+ '```js',
+ "const fs = require('node:fs'), crypto = require('node:crypto');",
+ "const p = JSON.parse(fs.readFileSync(process.argv[2], 'utf8').replace(/^\\uFEFF/, ''));",
+ 'const expected = p.sha256; delete p.sha256; delete p.locked;',
+ "const sort = v => Array.isArray(v) ? v.map(sort) : v && typeof v === 'object' ? Object.keys(v).sort().reduce((o,k) => (o[k]=sort(v[k]),o),{}) : v;",
+ "const actual = crypto.createHash('sha256').update(JSON.stringify(sort(p)), 'utf8').digest('hex');",
+ "console.log(actual); if (actual !== expected) process.exitCode = 1;",
+ '```','');return lines.join('\n');
 }
 function maraRoleLabel(p=SOP){return ({screening:'Screening',identification:'Identification',quantification:'Quantification'})[p.analyticalRole]||'Screening';}
 for(const entry of MARA_PROFILE_LIBRARY){
@@ -17166,8 +17177,37 @@ MISSY_HOOKS.use('renderSopEditor','experiment.optional.settings',35,next=>functi
 function experimentSopTemplate(kind){
  const p=sopBase();p.name=kind==='absolute'?'Absolute quantification — configuration':kind==='relative'?'Relative quantification — configuration':'Melting analysis — configuration';p.version='1.0-configuration';p.reviewOnly=true;p.evaluationMode='configuration-only';
  p.notes='Configuration fields only. No independent relative/absolute/Tm algorithm is selected. Enter assay-specific limits; the LC480 manuals describe the intended method. Stored measurements are unchanged.';
+ p.blockedAutomaticInterpretations=['Configuration-only template: no independent calculation engine selected.','Example names and calibration quantities are illustrative configuration, not measured data.','Validate assay-specific controls, acceptance limits and sample mappings before interpreting results.'];
  p.targets=[];p.controls=[];p.experiment_analysis=JSON.parse(JSON.stringify(EXPERIMENT_SOP_DEFAULTS));
- p.experiment_analysis.quantification.enabled=kind!=='melting';p.experiment_analysis.quantification.method=kind==='relative'?'relative-calibrator-normalized':'absolute-standard-curve';p.experiment_analysis.melting.enabled=kind==='melting';return p;
+ p.experiment_analysis.quantification.enabled=kind!=='melting';p.experiment_analysis.quantification.method=kind==='relative'?'relative-calibrator-normalized':'absolute-standard-curve';p.experiment_analysis.melting.enabled=kind==='melting';
+ // Examples are assay-specific configuration, never imported measurements or
+ // inherited SC/GMO acceptance limits. They remain provisional until validated.
+ const prefix=kind==='absolute'?'ABS':kind==='relative'?'REL':'MELT';
+ p.assay=kind==='absolute'?'Example DNA concentration':kind==='relative'?'Example gene expression':'Example melting product';
+ p.samplePattern='^'+prefix+'_SAMPLE_[0-9]+(?:_R[0-9]+)?$';
+ p.sample_id={pattern:p.samplePattern,flags:'i',description:'Example sample identifier; replace with the laboratory naming rule.'};
+ p.replicates={min:1,positiveMin:1,partialOutcome:'Inconclusive',maxSd:'',sdOutcome:'Repeat'};
+ p.ic={referenceCq:'',maxShift:'',shiftOutcome:'Inconclusive',missingOutcome:'Invalid'};
+ Object.assign(p.run,{minR2:'',effMin:'',effMax:'',minLogs:'',ntcGap:'',maxZoneSpread:''});
+ p.experiment_analysis.examples={configuration_only:true,not_experimental_data:true,samples:[prefix+'_SAMPLE_001_R1',prefix+'_SAMPLE_002_R1']};
+ const q=p.experiment_analysis.quantification,m=p.experiment_analysis.melting;
+ q.sample_group_pattern='^('+prefix+'_SAMPLE_[0-9]+)(?:_R[0-9]+)?$';
+ p.controls=[{name:'No-template control',matchBy:'name',match:prefix+'_NTC',expect:'negative',cqLo:'',cqHi:'',targets:'*',minPerRun:1,onFail:'reject'}];
+ if(kind==='absolute'){
+  p.targets=[{match:'DNA_TARGET',kind:'auto',cqMax:'',cqLate:'',quantMin:'',lateOutcome:'Inconclusive'}];
+  q.target_pattern='DNA_TARGET';q.absolute.calibrator_pattern='ABS_STD_*';q.absolute.quantity_unit='copies/reaction';
+  p.experiment_analysis.examples.standards=[100000,10000,1000,100,10].map((quantity,i)=>({sample:'ABS_STD_'+(i+1),target:'DNA_TARGET',quantity,unit:'copies/reaction'}));
+ }else if(kind==='relative'){
+  p.targets=[{match:'GENE_TARGET',kind:'auto',cqMax:'',cqLate:'',quantMin:'',lateOutcome:'Inconclusive'},{match:'REF_GENE',kind:'reference',cqMax:'',cqLate:'',quantMin:'',lateOutcome:'Inconclusive'}];
+  q.target_pattern='GENE_TARGET';q.relative.reference_pattern='REF_GENE';q.relative.calibrator_sample_pattern='REL_CALIBRATOR';q.relative.baseline_group='REL_CALIBRATOR';
+  p.experiment_analysis.examples.calibrator={sample:'REL_CALIBRATOR',targets:['GENE_TARGET','REF_GENE']};
+ }else{
+  p.targets=[{match:'MELT_PRODUCT',kind:'auto',cqMax:'',cqLate:'',quantMin:'',lateOutcome:'Inconclusive'}];
+  m.chemistry='SYBR Green I';m.max_peaks='2';
+  m.peak_rules=[{target:'MELT_PRODUCT',tm_c:'',tolerance_c:'',peak_count:'',height_min:'',area_min:'',width_max:'',control_pattern:'MELT_POSITIVE',genotype:''}];
+  p.experiment_analysis.examples.positive_control={sample:'MELT_POSITIVE',target:'MELT_PRODUCT'};
+ }
+ return p;
 }
 for(const kind of ['absolute','relative','melting'])SOP_PRESETS['experiment_'+kind]=()=>experimentSopTemplate(kind);
 Object.assign(ZH_TERMS,{'Other experiment configurations':'其他实验配置','Absolute quantification — configuration':'绝对定量 — 配置','Relative quantification — configuration':'相对定量 — 配置','Melting analysis — configuration':'熔解分析 — 配置','Configuration only; no independent experiment calculation engine selected':'仅用于配置；尚未选择独立的实验计算引擎'});
@@ -17193,7 +17233,7 @@ MISSY_HOOKS.seal();
 </script>
 <style>.missy-license-zh{display:none}body.lang-zh .missy-license-zh{display:block}body.lang-zh .missy-license-en{display:none}.missy-gpl-translation{line-height:1.6;overflow-wrap:anywhere;max-width:100%}.missy-gpl-translation h1{font-size:20px}.missy-gpl-translation h2{font-size:17px}</style>
 
-<details id="missy-public-license" style="margin:16px 16px 100px;padding:12px;border:1px solid #40546c;border-radius:8px"><summary>GPL-3.0 · Attribution and source / 许可与源代码</summary><pre class="missy-license-en" style="white-space:pre-wrap;overflow-wrap:anywhere">MISSY public build — modified 20 October 2026.
+<details id="missy-public-license" style="margin:16px 16px 100px;padding:12px;border:1px solid #40546c;border-radius:8px"><summary>GPL-3.0 · Attribution and source / 许可与源代码</summary><pre class="missy-license-en" style="white-space:pre-wrap;overflow-wrap:anywhere">MISSY public build — modified 22 October 2026. Release: 2026.10.22.profile-review1.
 Released under GNU GPL version 3. No warranty.
 ZPCR/PCRD format research and adapted parsing: R. Byers / zpcrweb contributors.
 Upstream: https://github.com/RByers/zpcrweb
@@ -17210,7 +17250,7 @@ Supported PCRD ZIP compression: stored / Deflate. Other methods remain unsupport
 Modular port: 21 October 2026. Baseline: Zenodo record 23437639.
 The single-file application retains the existing reader registrations and format support.
 </pre><div class="missy-license-zh" data-i18n-skip>
-<p>MISSY 公开版本，按 GNU 通用公共许可协议第三版（GPL-3.0）发布，不提供品质担保。</p>
+<p>MISSY 公开版本，更新日期：2026 年 10 月 22 日。版本：2026.10.22.profile-review1。按 GNU 通用公共许可协议第三版（GPL-3.0）发布，不提供品质担保。</p>
 <p>ZPCR／PCRD 格式研究及改编解析：R. Byers 与 zpcrweb 贡献者。上游：<a href="https://github.com/RByers/zpcrweb">github.com/RByers/zpcrweb</a>。</p>
 <p>修改内容：MISSY 集成、质控图、独立计算 Cq／Tm，以及本地密码流程。未分发 Bio-Rad 密码、从 CFX 派生的解密状态或厂商 DLL。独立计算不能替代厂商质控认证。</p>
 <p>HTML 保留 Plotly 的版权与 MIT 许可声明，包含可读应用代码和内嵌依赖。本 index.html 文件同时包含应用程序及其可读源代码。</p>
