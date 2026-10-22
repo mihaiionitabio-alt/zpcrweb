@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Offline reader for Roche LightCycler 480 .ixo and Applied Biosystems QuantStudio 3/5 .eds files: traceable stored values, container integrity checks, open qPCR exports, graphs, quality review, forensic log and JSON-LD metadata.">
 <meta name="application-name" content="qPCR raw values, quality-control and forensic export tool">
-<meta name="software-version" content="2026.10.22.chartzh1">
+<meta name="software-version" content="2026.10.22.english1">
 
 <!--
   MACHINE-READABLE LANDING-PAGE METADATA
@@ -2425,7 +2425,8 @@ function showCuteToast(message){
   clearTimeout(CUTE_TIMER);CUTE_TIMER=setTimeout(()=>box.classList.remove("show"),1900);
 }
 function languageStorageKey(){return "qpcr_qc_language_"+location.pathname;}
-function rememberedLanguage(){try{return localStorage.getItem(languageStorageKey())||DEFAULT_LANG;}catch{return DEFAULT_LANG;}}
+/* Each page load starts in English; language selection applies to this session. */
+function rememberedLanguage(){return "en";}
 function setLanguage(lang,announce){
   UI_LANG=lang==="zh"?"zh":"en";document.documentElement.lang=UI_LANG==="zh"?"zh-CN":"en";
   document.body.classList.toggle("lang-zh",UI_LANG==="zh");
