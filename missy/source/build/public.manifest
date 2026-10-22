@@ -87,6 +87,8 @@ core/ui/report_workflow.js
 core/analysis/loaded_overview.js
 core/i18n/english_scientific_wording.js
 core/i18n/zh_manual_terminology.js
+core/i18n/zh_coverage.js
+core/ui/mascot_controls.js
 readers/register_public.js
 shell/public_script_end.html
 shell/public_legal.html

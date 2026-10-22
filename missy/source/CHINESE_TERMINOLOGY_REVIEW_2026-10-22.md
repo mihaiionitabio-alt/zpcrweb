@@ -45,3 +45,13 @@ These LC480 sources take priority for **legacy IXO** terminology. PRO sources su
 - English/Chinese switch is reversible. Numerical run models, summary statistics and CSV data are unchanged.
 - Exact translations plus anchored UI-context patterns use an explicit `i18n.phrase` hook; no global function replacement.
 - Legacy IXO/EDS/EDT/RDML regression checks, seven-file ZPCR golden checks, Chinese mode/layout checks and separate-format Chinese smoke tests are recorded alongside the source tests.
+
+
+## Coverage follow-up — 2026.10.22.zhcoverage2
+
+- Rechecked the GMO references in `D:/IXO/CHINESE/gmo`: Ministry of Agriculture and Rural Affairs announcement 1012-16-2026 (`P020260708599398824623.pdf`, PDF p. 5, definitions/principle) and 1012-17-2026 (`P020260708599399150770.pdf`, PDF p. 7, controls and result wording). References support distinctions among endogenous reference genes, species references, positive/negative/blank controls, detection and repeat testing. Their numerical criteria and experimental procedures are not installed as MISSY rules.
+- Rechecked the Roche LC480 and PRO sections listed above for Cp/Cq, colour compensation, quantification and control vocabulary. Stored method names, gene symbols and scientific species names remain unchanged.
+- Added exact UI translations and narrowly anchored templates for status counts, SOP explanations, target interpretations, baseline collection, forensic review and file integrity. The model and CSV exports remain language independent.
+- Removed three verbose implementation-oriented export descriptions (RDES, RDML/LinRegPCR and qpcR wide tables) from both languages. Export actions and file content are unchanged. Safety/review caveats remain visible.
+- The three Chinese-interface mascots now use accessible buttons with click/keyboard responses and reduced-motion support. A ResizeObserver tracks the actual footer height, including wrapped layouts, so the animals and toast sit above it. They are omitted from printing.
+- All eight main tabs, English/Chinese round trips, four footer widths, and Console/Command/Assisted separate-format checks are covered by `tests/zh_coverage.cjs`, `tests/zh_terminology.cjs` and `tests/zh_format_smoke.cjs`. Source field names, script syntax, licence text and original identifiers can intentionally remain in their original language; this is not a translation of raw file contents.

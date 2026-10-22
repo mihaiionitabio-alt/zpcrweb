@@ -90,3 +90,11 @@ Tests cover exact preview return via Close graph/Return, source-aware visibility
 ## Terminology review — 22 October 2026
 
 LC480-specific manuals guide legacy IXO terminology; PRO, Bio-Rad and Thermo Fisher references supplement it. See the [review and source sections](./source/CHINESE_TERMINOLOGY_REVIEW_2026-10-22.md). The documents are not redistributed. Chinese mode checks passed for separate IXO, EDS, RDML, ZPCR and PCRD batches. Scientific graph descriptions were clarified without changing calculations or acceptance limits. Source names, filenames, checksums and commands remain unchanged. This is a terminology review, not a claim that every explanatory paragraph has been translated.
+
+## Translation coverage and footer fix — 2026.10.22.zhcoverage2
+
+Expanded Chinese labels and result templates; removed three verbose export descriptions in both languages. The three mascots now stay above the measured footer and respond to clicks or keyboard activation. All eight main tabs and four viewport widths were checked.
+
+## Terminology review — 22 October 2026
+
+LC480-specific manuals guide legacy IXO terminology; PRO, Bio-Rad and Thermo Fisher references supplement it. See the [review and source sections](./source/CHINESE_TERMINOLOGY_REVIEW_2026-10-22.md). The documents are not redistributed. Chinese mode checks passed for separate IXO, EDS, RDML, ZPCR and PCRD batches. Scientific graph descriptions were clarified without changing calculations or acceptance limits. Source names, filenames, checksums and commands remain unchanged. This is a terminology review, not a claim that every explanatory paragraph has been translated.

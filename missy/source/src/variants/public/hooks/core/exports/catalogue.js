@@ -205,19 +205,19 @@ function exportCatalogueCore(){
   });
   items.push({
     title:"RDES table (TSV)",
-    note:"Stored Cq beside the full amplification curve, one row per cycle and one file per analysis. The long-format table for scripts that expect tidy data. Multiple files are downloaded together as one ZIP with a checksum manifest.",
+    note:"",
     ready:()=>RUNS.some(r=>r.wells.some(w=>w.curve)),
     run:()=>downloadExportFiles("rdes",RUNS.flatMap(r=>makeRDESTables(r).map(t=>({name:t.file,data:t.data,mime:"text/tab-separated-values"}))))
   });
   items.push({
     title:"RDML 1.4 — for LinRegPCR",
-    note:"Version 1.4 with every dye declared. rdmlpython refuses LinRegPCR below 1.4, and raises KeyError on a target whose dye was never declared; both were checked by running it. Multiple runs are downloaded together as one ZIP with a checksum manifest.",
+    note:"",
     ready:()=>RUNS.some(r=>r.wells.some(w=>w.curve)),
     run:()=>downloadExportFiles("rdml",RUNS.map(r=>({name:safeName(r.meta.name||r.file)+".rdml",data:makeRDML(r),mime:"application/zip"})))
   });
   items.push({
     title:"qpcR curve table (CSV, wide)",
-    note:"One file per analysis and one column per well, with the first column named Cycles exactly as pcrbatch() demands. Column names carry target and sample so replicate groups form with one sub(). Multiple files are downloaded together as one ZIP with a checksum manifest.",
+    note:"",
     ready:()=>RUNS.some(r=>r.wells.some(w=>w.curve)),
     run:()=>downloadExportFiles("qpcr",RUNS.flatMap(r=>makeQpcrWideTables(r).map(t=>({name:t.file,data:t.data,mime:"text/csv"}))))
   });
