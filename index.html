@@ -16574,6 +16574,7 @@ const MARA_PROFILE_LIBRARY=[{"key":"mara1012-01-ND207-identification","role":"id
  * substituted for a reviewed amplification curve. Unknown is not a negative result.
  */
 const MARA_ENGINE=(()=>{
+ const STANDARD_UNCERTAINTY=[[.0252,.0511],[.0157,.0651],[.0174,.0645],[.0408,.0723],[.0231,.0655],[.0094,.105],[.0017,.1147],[.0083,.0721],[.012,.0783],[.0225,.069],[.0066,.0742],[.0168,.0783],[.0082,.0594],[.0062,.0702],[.0115,.0601]];
  const N=x=>x===''||x===null||x===undefined?NaN:Number(x);
  const avg=a=>a.length?a.reduce((s,x)=>s+x,0)/a.length:NaN;
  const group=(a,key)=>{const m=new Map();for(const x of a){const k=key(x);if(!m.has(k))m.set(k,[]);m.get(k).push(x);}return m;};
@@ -16739,6 +16740,8 @@ const MARA_ENGINE=(()=>{
     const limit=Math.min(25,N(p.data_acceptance?.sample?.if_mean_at_or_above_LOQ?.maximum_rsd_percent)||25);
     if(st.rsd>limit+1e-10){d.outcome='Repeat';d.code='sample_precision';delete d.values.content_percent;continue;}
     const lab=u.mode==='laboratory',model=lab?u.laboratory||{}:u;
+    const standard=STANDARD_UNCERTAINTY[p.method.standard_number-1];
+    if(!lab&&(!standard||N(u.u0)!==standard[0]||N(u.ur)!==standard[1]||N(u.coverage_factor_k)!==2)){d.code='uncertainty_settings';delete d.values.content_percent;continue;}
     if(lab&&(!(model.validated===true&&model.components_complete===true)||model.measurand!=='copy-number ratio'||!Number.isFinite(N(model.range_min_percent))||!Number.isFinite(N(model.range_max_percent))||!(N(model.range_max_percent)>N(model.range_min_percent))||st.mean<N(model.range_min_percent)||st.mean>N(model.range_max_percent))){d.code='laboratory_uncertainty';delete d.values.content_percent;continue;}
     if(u.mode&&!['standard','laboratory'].includes(u.mode)){d.code='uncertainty_settings';delete d.values.content_percent;continue;}
     const un=uncertainty(st.mean,N(model.u0),N(model.ur),N(model.coverage_factor_k));
@@ -17072,6 +17075,7 @@ MISSY_HOOKS.use('renderSopEditor','mara.method.editor',15,next=>function(){
  const mode=section.querySelector('#sopf-calculation-uncertainty-mode');if(mode)for(const o of mode.options)o.textContent=o.value==='standard'?'Standard uncertainty model':'Laboratory uncertainty model';
  const refresh=()=>{SOP.profileSchemaVersion=Math.max(3,SOP.profileSchemaVersion||1);maraSyncControlNames();for(const el of box.querySelectorAll('#sop-controls input[data-k=name]'))el.value=SOP.controls[Number(el.dataset.i)]?.name||'';sopProfileEdited();document.getElementById('sop-json').value=sopJSON();const summary=box.querySelector('.mara-profile-grid')?.closest('details');if(summary)summary.outerHTML=sopProcedureHTML();localizeDOM(box);};
  for(const el of section.querySelectorAll('[data-sop-path]')){el.disabled=!!SOP.locked;el.onchange=()=>{sopSetPath(el.dataset.sopPath,el.type==='checkbox'?el.checked:el.type==='number'?(el.value===''?'':Number(el.value)):el.value);refresh();};}
+ for(const path of ['calculation.uncertainty.u0','calculation.uncertainty.ur','calculation.uncertainty.coverage_factor_k']){const el=section.querySelector(`[data-sop-path="${path}"]`);if(el)el.readOnly=true;}
  const panel=section.querySelector('#mara-panel-assays');if(panel){panel.disabled=!!SOP.locked;panel.onchange=()=>{SOP.method.selected_assays=[...panel.selectedOptions].map(x=>x.value);refresh();};}
  if(!SOP.interpretation)SOP.interpretation={rules:[]};
  sopTableEditor(section.querySelector('#mara-decision-rules'),SOP.interpretation.rules||[],[{key:'id',label:'Rule ID',w:85},{key:'when',label:'Condition',w:230},{key:'action',label:'Action',w:230},{key:'outcome',label:'Outcome',w:100}], 'Add decision rule',()=>({id:'',when:'',action:'',outcome:'Inconclusive'}));
