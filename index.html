@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Offline reader for Roche LightCycler 480 .ixo and Applied Biosystems QuantStudio 3/5 .eds files: traceable stored values, container integrity checks, open qPCR exports, graphs, quality review, forensic log and JSON-LD metadata.">
 <meta name="application-name" content="qPCR raw values, quality-control and forensic export tool">
-<meta name="software-version" content="2026.10.22.qs-reader1">
+<meta name="software-version" content="2026.10.22.profile-scope1">
 
 <!--
   MACHINE-READABLE LANDING-PAGE METADATA
@@ -16969,7 +16969,21 @@ function maraDecisionText(d){
  if(d.values.comparison_outcome)text+='; '+maraMessage(d.values.comparison_outcome)+(Number.isFinite(d.values.delta_delta_ct)?' · ΔCt = '+d.values.delta_ct.toFixed(4)+'; ΔCt (QC) = '+d.values.control_delta_ct.toFixed(4)+'; ΔΔCt = '+d.values.delta_delta_ct.toFixed(4):'');
  return text;
 }
+function maraApplicability(run,p=SOP){
+ const original=SS_EXPORT_CONTEXT.get(run)?.original||run;
+ const selected=p.method.standard_number===17?p.method.selected_assays||[]:[p.method.selected_event].filter(Boolean);
+ const specs=selected.map(name=>({name,spec:p.targets.find(t=>t.kind==='target'&&(t.match===name||sopMatcher(t.match)(name)))}));
+ const declared=new Set((original.wells||[]).map(w=>w.target||w.targetName).filter(Boolean));
+ for(const a of original.analyses||[])for(const key of ['target','targetName','shortName'])if(a[key])declared.add(a[key]);
+ for(const well of Object.values(original.plate||{}))for(const ch of Object.values(well.channels||{}))if(ch.targetName)declared.add(ch.targetName);
+ const matches=[...declared].some(target=>specs.some(x=>x.name===target||x.spec&&sopMatcher(x.spec.match)(target)));
+ const reason=!selected.length?ui('Select the event or screening panel before applying this profile'):!matches?ui('Selected profile target is not declared in this experiment'):'';
+ return {applicable:!reason,reason,expected:selected.join(', '),observed:[...declared].join(', ')};
+}
+Object.assign(ZH_TERMS,{'Select the event or screening panel before applying this profile':'应用此配置前请选择转化体或筛查组合','Selected profile target is not declared in this experiment':'本实验未声明所选配置的靶标','Select a profile matching the experiment':'请选择与实验匹配的配置','Profile selection required':'需要选择适用配置'});
 function maraEvaluateRun(run,ri){
+ const applicability=maraApplicability(run);
+ if(!applicability.applicable)return {run,ri,rows:[],criteria:[{criterion:ui('Method applicability'),action:'unresolved',status:'n/a',evidence:applicability.reason+'; '+applicability.expected}],rejected:[],reviewed:[],status:'Profile not applicable — '+applicability.reason,times:runTimes(run),icMedian:NaN,applicability};
  const input=maraInput(run),calc=MARA_ENGINE.evaluate(SOP,input.records,input.context),rows=[];
  const makeRow=(rs,sample,target,outcome,reason,values={},ctrl=null)=>{
   const exporting=!!SS_EXPORT_CONTEXT.get(run);if(exporting)sample=ctrl?exportName(sample):maraExportSample(sample,rs.map(r=>r.originalSource||r.source));
@@ -17003,7 +17017,8 @@ MISSY_HOOKS.use('sopSampleRows','mara.calculated.samples',20,next=>function(filt
  if(!maraProfileActive())return next(filterRun,forExport);
  const rs=sopInterpretationRows(filterRun,forExport).filter(r=>r.kind==='target'),groups=byKey(rs,r=>r.experiment+'||'+r.sample);
  const order=['Invalid run','Invalid','Repeat','Inconclusive','Positive','Negative','Not interpreted'];
- return [...groups.values()].map(a=>{const r=a[0],worst=a.slice().sort((x,y)=>order.indexOf(x.outcome)-order.indexOf(y.outcome))[0];return {experiment:r.experiment,run_status:r.run_status,sample:r.sample,summary:a.map(x=>x.target+': '+x.label).join('; '),sample_outcome:worst.outcome,action:a.filter(x=>/Invalid|Repeat|Inconclusive/.test(x.outcome)).map(x=>x.reason).join('; '),needs_action:a.some(x=>/Invalid|Repeat|Inconclusive/.test(x.outcome))?'yes':'',reference_outcomes:'',report:a.map(x=>x.target+': '+x.report).join('; '),...sopMeta()};});
+ const samples=[...groups.values()].map(a=>{const r=a[0],worst=a.slice().sort((x,y)=>order.indexOf(x.outcome)-order.indexOf(y.outcome))[0];return {experiment:r.experiment,run_status:r.run_status,sample:r.sample,summary:a.map(x=>x.target+': '+x.label).join('; '),sample_outcome:worst.outcome,action:a.filter(x=>/Invalid|Repeat|Inconclusive/.test(x.outcome)).map(x=>x.reason).join('; '),needs_action:a.some(x=>/Invalid|Repeat|Inconclusive/.test(x.outcome))?'yes':'',reference_outcomes:'',report:a.map(x=>x.target+': '+x.report).join('; '),...sopMeta()};});
+ const unmatched=sopEvaluateAll().filter(e=>(filterRun==null||filterRun===''||String(e.ri)===String(filterRun))&&e.applicability?.applicable===false).map(e=>({experiment:runName(e.run),run_status:e.status,sample:'',summary:ui('Profile selection required'),sample_outcome:'Not evaluated',action:ui('Select a profile matching the experiment'),needs_action:'',requires_profile_selection:'yes',reference_outcomes:'',report:e.applicability.reason+'; '+e.applicability.expected,...sopMeta()}));return [...samples,...unmatched];
 });
 Object.assign(ZH_TERMS,{'Automatic calculations are provisional until laboratory approval':'自动计算结果在实验室批准前仅供审核','Crop reference accepted':'作物内标准基因合格','Source checksum required':'需要源文件校验和'});
 MISSY_HOOKS.define('sopStdCurves');
@@ -17373,7 +17388,7 @@ MISSY_HOOKS.seal();
 </script>
 <style>.missy-license-zh{display:none}body.lang-zh .missy-license-zh{display:block}body.lang-zh .missy-license-en{display:none}.missy-gpl-translation{line-height:1.6;overflow-wrap:anywhere;max-width:100%}.missy-gpl-translation h1{font-size:20px}.missy-gpl-translation h2{font-size:17px}</style>
 
-<details id="missy-public-license" style="margin:16px 16px 100px;padding:12px;border:1px solid #40546c;border-radius:8px"><summary>GPL-3.0 · Attribution and source / 许可与源代码</summary><pre class="missy-license-en" style="white-space:pre-wrap;overflow-wrap:anywhere">MISSY public build — modified 22 October 2026. Release: 2026.10.22.qs-reader1.
+<details id="missy-public-license" style="margin:16px 16px 100px;padding:12px;border:1px solid #40546c;border-radius:8px"><summary>GPL-3.0 · Attribution and source / 许可与源代码</summary><pre class="missy-license-en" style="white-space:pre-wrap;overflow-wrap:anywhere">MISSY public build — modified 22 October 2026. Release: 2026.10.22.profile-scope1.
 Released under GNU GPL version 3. No warranty.
 ZPCR/PCRD format research and adapted parsing: R. Byers / zpcrweb contributors.
 Upstream: https://github.com/RByers/zpcrweb
@@ -17390,7 +17405,7 @@ Supported PCRD ZIP compression: stored / Deflate. Other methods remain unsupport
 Modular port: 21 October 2026. Baseline: Zenodo record 23437639.
 The single-file application retains the existing reader registrations and format support.
 </pre><div class="missy-license-zh" data-i18n-skip>
-<p>MISSY 公开版本，更新日期：2026 年 10 月 22 日。版本：2026.10.22.qs-reader1。按 GNU 通用公共许可协议第三版（GPL-3.0）发布，不提供品质担保。</p>
+<p>MISSY 公开版本，更新日期：2026 年 10 月 22 日。版本：2026.10.22.profile-scope1。按 GNU 通用公共许可协议第三版（GPL-3.0）发布，不提供品质担保。</p>
 <p>ZPCR／PCRD 格式研究及改编解析：R. Byers 与 zpcrweb 贡献者。上游：<a href="https://github.com/RByers/zpcrweb">github.com/RByers/zpcrweb</a>。</p>
 <p>修改内容：MISSY 集成、质控图、独立计算 Cq／Tm，以及本地密码流程。未分发 Bio-Rad 密码、从 CFX 派生的解密状态或厂商 DLL。独立计算不能替代厂商质控认证。</p>
 <p>HTML 保留 Plotly 的版权与 MIT 许可声明，包含可读应用代码和内嵌依赖。本 index.html 文件同时包含应用程序及其可读源代码。</p>
