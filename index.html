@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Offline reader for Roche LightCycler 480 .ixo and Applied Biosystems QuantStudio 3/5 .eds files: traceable stored values, container integrity checks, open qPCR exports, graphs, quality review, forensic log and JSON-LD metadata.">
 <meta name="application-name" content="qPCR raw values, quality-control and forensic export tool">
-<meta name="software-version" content="2026.10.22.mara2">
+<meta name="software-version" content="2026.10.22.mara3">
 
 <!--
   MACHINE-READABLE LANDING-PAGE METADATA
@@ -16640,7 +16640,7 @@ MISSY_HOOKS.use('sopProcedureHTML','mara.method.summary',10,next=>function(){
  return `<details class="sop-sec" open><summary>${esc(ui('0 · Method, procedure and interpretation'))}</summary><p class="notice warn">${esc(ui('Review only — no release decision'))}</p><div class="kv mara-profile-grid">${rows.map(r=>`<b>${esc(r.rule)}</b><span style="overflow-wrap:anywhere" data-i18n-skip>${esc(r.value)}</span>`).join('')}</div><h4>${esc(ui('Unresolved rules'))}</h4><ul>${maraGaps().map(x=>`<li>${esc(ui(x))}</li>`).join('')}</ul></details>`;
 });
 MISSY_HOOKS.use('sopEvaluateRun','mara.method.review.gate',10,next=>function(run,ri){
- const result=next(run,ri);if(typeof scDeltaActive==='function'&&scDeltaActive())return scDeltaReviewResult(result);if(!maraProfileActive())return result;
+ const result=next(run,ri);if(!maraProfileActive())return result;
  // Retain descriptive Cq/replicate values. Never turn generic well grouping
  // into a method-specific subsample, event or percent-content decision.
  for(const r of result.rows){r.outcome='Not interpreted';r.label=ui('Not interpreted');r.colour='#94a3b8';r.reason=ui('Stored results retained; automatic method calls blocked');r.rule='MARA1012 manual-review';r.report=r.reason;r.conc=NaN;}
@@ -16678,26 +16678,8 @@ Object.assign(ZH_TERMS,{
  'Lower ddCt boundary':'ΔΔCt 下边界','Upper ddCt boundary':'ΔΔCt 上边界','Inside-band action':'区间内处理',
  'quantification required':'需要定量','Decision rules':'判定规则','Rule ID':'规则编号','Condition':'条件','Action':'处理','Outcome':'结果',
  'Add decision rule':'添加判定规则','Selected screening panel':'所选筛查靶标组合',
- 'Invalid sample-name pattern':'样品名称匹配表达式无效','Invalid method numeric settings':'方法数值设置无效',
- 'Laboratory ΔCt screening':'实验室 ΔCt 筛查','Enable ΔCt review model':'启用 ΔCt 审核模型','Reference Cq minimum':'内标准基因 Cq 下限','Reference Cq maximum':'内标准基因 Cq 上限',
- 'Target non-detection boundary':'靶标未检出边界','Relative-quantity base':'相对量计算底数','LOD estimator':'检出限估计方法','unresolved':'待确认',
- 'matched control mean':'匹配质控品均值','laboratory fixed':'实验室固定值','LOD control matching':'检出限质控品匹配',
- 'Reference':'内标准基因','Control pattern':'质控品匹配表达式','LOD ΔCt':'检出限 ΔCt','Add LOD mapping':'添加检出限映射',
- 'Confirm per-run versus historical LOD control pooling':'确认采用当次运行或历史汇总的检出限质控品',
- 'Confirm LOD estimator, marker/reference pairing and amplification efficiency':'确认检出限估计方法、靶标与内标准基因配对及扩增效率',
- 'Confirm no-signal handling and the Ct 40 boundary':'确认无信号及 Ct 40 边界的处理',
- 'ΔCt model is a review draft; automatic calls are blocked':'ΔCt 模型为审核草案；阻止自动判定'
+ 'Invalid sample-name pattern':'样品名称匹配表达式无效','Invalid method numeric settings':'方法数值设置无效'
 });
-const SC_DELTA_SETTINGS=()=>({enabled:false,type:'delta_ct_lod',reference_cq_min:20,reference_cq_max:27,target_cq_boundary:40,non_detection_operator:'>=',detection_operator:'<=',relative_quantity_base:2,lod_estimator:'unresolved',control_scope:'matching-run-target-and-taxon',lod_limits:[{target:'35S',reference:'HMG',control_pattern:'',delta_ct:''},{target:'T-NOS',reference:'HMG',control_pattern:'',delta_ct:''},{target:'35S',reference:'LEC',control_pattern:'',delta_ct:''},{target:'T-NOS',reference:'LEC',control_pattern:'',delta_ct:''}]});
-function scDeltaProfile(){return SOP?.method?.id==='SOP-06-SC-screening';}
-function scDeltaActive(){return scDeltaProfile()&&SOP.screening?.type==='delta_ct_lod'&&SOP.screening?.enabled===true;}
-function scDeltaSettingsHTML(){const f=(label,path,type='text',options)=>sopField(label,path,type,options);
- return `<details class="sop-sec" id="mara-method-settings"><summary>${esc(ui('Laboratory ΔCt screening'))}</summary><div class="sop-grid">${f('Enable ΔCt review model','screening.enabled','check')}${f('Sample name format','sample_id.pattern')}${f('Pattern flags','sample_id.flags')}${f('Reference Cq minimum','screening.reference_cq_min','number')}${f('Reference Cq maximum','screening.reference_cq_max','number')}${f('Target non-detection boundary','screening.target_cq_boundary','number')}${f('Relative-quantity base','screening.relative_quantity_base','number')}${f('LOD estimator','screening.lod_estimator','select',['unresolved','matched control mean','laboratory fixed'])}</div><p>${esc(ui('ΔCt model is a review draft; automatic calls are blocked'))}</p><h4>${esc(ui('LOD control matching'))}</h4><div id="sc-delta-lod"></div></details>`;
-}
-function scDeltaReviewResult(result){const gaps=['Confirm per-run versus historical LOD control pooling','Confirm LOD estimator, marker/reference pairing and amplification efficiency','Confirm no-signal handling and the Ct 40 boundary'];
- for(const row of result.rows){row.outcome='Not interpreted';row.label=ui('Not interpreted');row.colour='#94a3b8';row.rule='SC delta_ct_lod review';row.reason=ui('ΔCt model is a review draft; automatic calls are blocked');row.report=row.reason;}
- result.criteria=gaps.map(x=>({criterion:ui('Unresolved rules'),action:'review',status:'review',evidence:ui(x)}));result.status=ui('Review only — no release decision');result.rejected=[];result.reviewed=result.criteria;return result;
-}
 function maraSettingsHTML(){
  const f=(label,path,type='text',options)=>sopField(label,path,type,options);
  let html=`<details class="sop-sec" id="mara-method-settings" open><summary>${esc(ui('9 · Method settings'))}</summary><div class="sop-grid">${f('Sample name format','sample_id.pattern')}${f('Pattern flags','sample_id.flags')}${f('Declared event','method.selected_event')}${f('Reference assay','method.reference_genes.0.target')}</div>`;
@@ -16720,15 +16702,11 @@ function maraNumericProblems(p=SOP){const failures=[];
  return [...new Set(failures)];
 }
 MISSY_HOOKS.use('renderSopEditor','mara.method.editor',15,next=>function(){
- next();if(!maraProfileActive()&&!scDeltaProfile())return;
+ next();if(!maraProfileActive())return;
  const box=document.getElementById('sop-editor'),json=document.getElementById('sop-json')?.closest('details');if(!box||!json)return;
- const isSC=scDeltaProfile(),holder=document.createElement('div');holder.innerHTML=isSC?scDeltaSettingsHTML():maraSettingsHTML();const section=holder.firstElementChild;json.before(section);
- const refresh=()=>{if(!isSC)SOP.profileSchemaVersion=Math.max(3,SOP.profileSchemaVersion||1);sopProfileEdited();document.getElementById('sop-json').value=sopJSON();const summary=box.querySelector('.mara-profile-grid')?.closest('details');if(summary)summary.outerHTML=sopProcedureHTML();localizeDOM(box);};
- for(const el of section.querySelectorAll('[data-sop-path]')){el.disabled=!!SOP.locked;if(isSC&&!SOP.screening&&el.dataset.sopPath.startsWith('screening.')){const value=SC_DELTA_SETTINGS()[el.dataset.sopPath.slice(10)];if(el.type==='checkbox')el.checked=!!value;else el.value=value??'';}el.onchange=()=>{if(isSC&&!SOP.screening){SOP.screening=SC_DELTA_SETTINGS();SOP.profileSchemaVersion=Math.max(3,SOP.profileSchemaVersion||1);}sopSetPath(el.dataset.sopPath,el.type==='checkbox'?el.checked:el.type==='number'?(el.value===''?'':Number(el.value)):el.value);refresh();};}
- if(isSC){let rows=SOP.screening?.lod_limits||SC_DELTA_SETTINGS().lod_limits;
-  sopTableEditor(section.querySelector('#sc-delta-lod'),rows,[{key:'target',label:'Target',w:120},{key:'reference',label:'Reference',w:100},{key:'control_pattern',label:'Control pattern',w:180},{key:'delta_ct',label:'LOD ΔCt',type:'number',w:80}],null,null);
-  section.querySelector('#sc-delta-lod').addEventListener('change',()=>{if(!SOP.screening){SOP.screening=SC_DELTA_SETTINGS();SOP.profileSchemaVersion=3;}SOP.screening.lod_limits=rows;refresh();});localizeDOM(section);return;
- }
+ const holder=document.createElement('div');holder.innerHTML=maraSettingsHTML();const section=holder.firstElementChild;json.before(section);
+ const refresh=()=>{SOP.profileSchemaVersion=Math.max(3,SOP.profileSchemaVersion||1);sopProfileEdited();document.getElementById('sop-json').value=sopJSON();const summary=box.querySelector('.mara-profile-grid')?.closest('details');if(summary)summary.outerHTML=sopProcedureHTML();localizeDOM(box);};
+ for(const el of section.querySelectorAll('[data-sop-path]')){el.disabled=!!SOP.locked;el.onchange=()=>{sopSetPath(el.dataset.sopPath,el.type==='checkbox'?el.checked:el.type==='number'?(el.value===''?'':Number(el.value)):el.value);refresh();};}
  const panel=section.querySelector('#mara-panel-assays');if(panel){panel.disabled=!!SOP.locked;panel.onchange=()=>{SOP.method.selected_assays=[...panel.selectedOptions].map(x=>x.value);refresh();};}
  if(!SOP.interpretation)SOP.interpretation={rules:[]};
  sopTableEditor(section.querySelector('#mara-decision-rules'),SOP.interpretation.rules||[],[{key:'id',label:'Rule ID',w:85},{key:'when',label:'Condition',w:230},{key:'action',label:'Action',w:230},{key:'outcome',label:'Outcome',w:100}], 'Add decision rule',()=>({id:'',when:'',action:'',outcome:'Inconclusive'}));
