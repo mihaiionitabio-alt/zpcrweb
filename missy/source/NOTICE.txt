@@ -23,3 +23,6 @@ Report workflow update: 21 October 2026. Reversible previews, evidence-based ava
 2026.10.21.overview1: Overview + comparisons preset (Command: overview) adds all-run coverage, cohort/role statistics and multi-run Cq comparisons. Targets, serials, decoded protocols, channels and stored/independent bases stay separate. Missing identity isolates sources. All public PDFs use MISSY branding; long titles and table cells wrap with repeated table headers.
 
 2026.10.21.overview2: PCRD overall statistics distinguish stored targets from dyes; acquisition groups remain separate and unnamed targets do not pool across sources. Independent raw calculations remain unchanged.
+
+2026.10.22.zhpdf3: Chinese report text uses an embedded Noto Sans SC static BMP subset (renamed MISSY PDF Sans) under SIL OFL 1.1; see NotoSansSC-LICENSE.txt and the embedded HTML font notice. Source: https://github.com/notofonts/noto-cjk.
+Chinese GPL translation: Ruan Kunliang, https://jxself.org/translations/gpl-3.zh.shtml, listed by GNU. Unofficial; original English GPL remains authoritative and verbatim. Redistribution of the translation is subject to https://www.gnu.org/licenses/translations.html.

@@ -47,7 +47,7 @@ function pdfStr(s){
 function pdfWidth(text,size,bold){
   /* Helvetica advance widths, 1000 units per em, for the printable range.
      Approximated by class: the report only needs column fitting, not kerning. */
-  const s=String(text==null?"":text);let w=0;
+  const s=String(text==null?"":text);if(typeof pdfUnicodeNeeded==="function"&&pdfUnicodeNeeded(s))return pdfUnicodeWidth(s,size);let w=0;
   for(const ch of s){
     const c=ch.codePointAt(0);
     let u=556;
@@ -119,7 +119,8 @@ function pdfDoc(){
     get width(){return PDF_PAGE.w-2*PDF_PAGE.margin;},
     y:0,
     room(h){if(!cur)d.page();if(d.y-h<PDF_PAGE.margin+24){d.page();return false;}return true;},
-    text(s,size,bold,dx,colour){
+    text(s,size,bold,dx,colour,literal=false){
+      s=literal?String(s??""):reportDisplay(s);
       const c=colour||(style.colour?style.colour(bold):[0,0,0]);
       if(!dx&&((bold&&size>=14)||/^\d+\.\s/.test(String(s)))){
         for(const line of pdfWrap(String(s),d.width,size,bold)){d.room(size*1.4);rawText(line,size,bold,dx,c);}return;
@@ -127,9 +128,9 @@ function pdfDoc(){
       rawText(s,size,bold,dx,c);
     },
     para(s,size,bold){
-      const mapped=MISSY_HOOKS.invoke('report.paragraph',null,[s],v=>v);
+      const mapped=reportDisplay(MISSY_HOOKS.invoke('report.paragraph',null,[s],v=>v));
       const lines=style.paragraphLines?style.paragraphLines(mapped):[mapped];
-      for(const line of lines)pdfWrap(line,d.width,size,bold).forEach(l=>{d.room(size*1.4);d.text(l,size,bold);});
+      for(const line of lines)pdfWrap(line,d.width,size,bold).forEach(l=>{d.room(size*1.4);d.text(l,size,bold,0,undefined,true);});
     },
     gap(h){d.y-=h;},
     rule(){if(!cur)d.page();cur.ops.push(`0.75 0.75 0.78 RG 0.6 w ${PDF_PAGE.margin} ${d.y.toFixed(2)} m ${(PDF_PAGE.w-PDF_PAGE.margin).toFixed(2)} ${d.y.toFixed(2)} l S`);d.y-=6;},
@@ -148,25 +149,26 @@ function pdfDoc(){
         const y=18;
         p.ops.push(`0.72 0.76 0.82 RG 0.6 w ${PDF_PAGE.margin} ${(y+10).toFixed(2)} m ${(PDF_PAGE.w-PDF_PAGE.margin).toFixed(2)} ${(y+10).toFixed(2)} l S`);
         
-        p.ops.push(`BT 0.06 0.18 0.30 rg /F1 7 Tf 1 0 0 1 ${(PDF_PAGE.w-PDF_PAGE.margin-74).toFixed(2)} ${y.toFixed(2)} Tm (${pdfStr("Page "+(i+1)+" of "+total)}) Tj ET`);
+        p.ops.push(`BT 0.06 0.18 0.30 rg /F1 7 Tf 1 0 0 1 ${(PDF_PAGE.w-PDF_PAGE.margin-74).toFixed(2)} ${y.toFixed(2)} Tm (${pdfStr(UI_LANG==="zh"?String(i+1)+" / "+total:"Page "+(i+1)+" of "+total)}) Tj ET`);
       });
       const enc=new TextEncoder(),chunks=[],offsets=[];let len=0;
       const put=x=>{const b=x instanceof Uint8Array?x:enc.encode(x);chunks.push(b);len+=b.length;};
       const objs=[];
       const nPages=pages.length;
       /* 1 catalog, 2 pages, 3 F1, 4 F2, then per image, then per page content + page */
-      const imgBase=5,pageBase=imgBase+d.images.length*1;
+      const fontExtra=pdfUnicodeObjects();const imgBase=5+fontExtra.length,pageBase=imgBase+d.images.length*1;
       objs.push(`<< /Type /Catalog /Pages 2 0 R >>`);
       objs.push(`<< /Type /Pages /Kids [${pages.map((p,i)=>`${pageBase+nPages+i} 0 R`).join(" ")}] /Count ${nPages} >>`);
       objs.push(`<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>`);
       objs.push(`<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>`);
+      objs.push(...fontExtra);
       d.images.forEach(im=>objs.push({dict:`<< /Type /XObject /Subtype /Image /Width ${im.w} /Height ${im.h} /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${im.jpeg.length} >>`,stream:im.jpeg}));
       pages.forEach(p=>{
         const body=enc.encode(p.ops.join("\n"));
         objs.push({dict:`<< /Length ${body.length} >>`,stream:body});
       });
       pages.forEach((p,i)=>{
-        const res=`<< /Font << /F1 3 0 R /F2 4 0 R >> ${p.uses.length?`/XObject << ${p.uses.map(u=>`/Im${u} ${imgBase+u-1} 0 R`).join(" ")} >>`:""} >>`;
+        const res=`<< /Font << /F1 3 0 R /F2 4 0 R /FU 5 0 R >> ${p.uses.length?`/XObject << ${p.uses.map(u=>`/Im${u} ${imgBase+u-1} 0 R`).join(" ")} >>`:""} >>`;
         objs.push(`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${PDF_PAGE.w} ${PDF_PAGE.h}] /Resources ${res} /Contents ${pageBase+i} 0 R >>`);
       });
       put("%PDF-1.4\n%\xE2\xE3\xCF\xD3\n");
@@ -189,7 +191,8 @@ function pdfDoc(){
   };
   function rawText(s,size,bold,dx,colour){
     if(!cur)d.page();const c=colour||[0,0,0];
-    cur.ops.push(`BT ${c[0]} ${c[1]} ${c[2]} rg /${bold?"F2":"F1"} ${size} Tf 1 0 0 1 ${(PDF_PAGE.margin+(dx||0)).toFixed(2)} ${(d.y-size).toFixed(2)} Tm (${pdfStr(s)}) Tj ET`);
+    const unicode=pdfUnicodeNeeded(String(s));
+    cur.ops.push(`BT ${c[0]} ${c[1]} ${c[2]} rg /${unicode?"FU":bold?"F2":"F1"} ${size} Tf ${unicode&&bold?"0.18 w 2 Tr":"0 Tr"} 1 0 0 1 ${(PDF_PAGE.margin+(dx||0)).toFixed(2)} ${(d.y-size).toFixed(2)} Tm ${unicode?"<"+pdfUnicodeHex(s)+">":"("+pdfStr(s)+")"} Tj ET`);
     d.y-=size*1.32;
   }
   d.page();
@@ -431,8 +434,8 @@ function selReadme(chosen){
   const L=[];
   L.push("Selected report material");
   L.push("");
-  L.push("Laboratory: "+(sopLabName()||"not stated"));
-  L.push("Analysis by: "+(sopAnalystName()||"not stated"));
+  L.push("Laboratory: "+(sopLabName()||ui("not stated")));
+  L.push("Analysis by: "+(sopAnalystName()||ui("not stated")));
   L.push("Profile: "+SOP.name+" v"+SOP.version+" sha256:"+sopHash());
   L.push("Built: "+new Date().toISOString());
   L.push("Runs loaded: "+RUNS.length+(RUNS.length?" ("+RUNS.map(runName).join(", ")+")":""));
@@ -479,8 +482,8 @@ function selTableBlock(doc,rows,note,options={}){
   const shown=options.full?rows:rows.slice(0,SEL_TABLE_ROWS);
   const size=8.5,gap=6;
   const wid=cols.map(c=>{
-    let w=pdfWidth(c,size,true);
-    shown.forEach(r=>{w=Math.max(w,pdfWidth(String(r[c]==null?"":r[c]),size,false));});
+    let w=pdfWidth(reportDisplay(c),size,true);
+    shown.forEach(r=>{w=Math.max(w,pdfWidth(reportTableValue(c,r[c]),size,false));});
     return w;
   });
   /* Water-filling: a column never takes more than it needs, and a column that needs
@@ -501,20 +504,20 @@ function selTableBlock(doc,rows,note,options={}){
     const cells=vals.map((v,i)=>pdfWrap(String(v),widths[i],size,bold));
     const count=Math.max(1,...cells.map(c=>c.length)),leading=size*1.32;
     const height=count*leading+4;
-    if(!doc.room(height)&&!bold){line(cols,true);doc.rule();}
+    if(!doc.room(height)&&!bold){line(cols.map(reportDisplay),true);doc.rule();}
     const top=doc.y;
     let x=0;
     cells.forEach((lines,i)=>{
-      lines.forEach((value,j)=>{doc.y=top-j*leading;doc.text(value,size,bold,x);});
+      lines.forEach((value,j)=>{doc.y=top-j*leading;doc.text(value,size,bold,x,undefined,true);});
       x+=widths[i]+gap;
     });
     doc.y=top-height;
   };
-  line(cols,true);
+  line(cols.map(reportDisplay),true);
   doc.rule();
   shown.forEach(r=>line(cols.map(c=>{
     const v=r[c];
-    return typeof v==="number"?String(+v.toPrecision(6)):String(v==null?"":v);
+    return typeof v==="number"?String(+v.toPrecision(6)):reportTableValue(c,v);
   }),false));
   doc.gap(2);
   const left=rows.length-shown.length;
@@ -529,8 +532,8 @@ async function selBuildReportBase(){
   doc.text(selReportTitle(),20,true);
   doc.gap(4);doc.rule();doc.gap(6);
   const meta=[
-    ["Laboratory",sopLabName()||"not stated"],
-    ["Analysis by",sopAnalystName()||"not stated"],
+    ["Laboratory",sopLabName()||ui("not stated")],
+    ["Analysis by",sopAnalystName()||ui("not stated")],
     ["Profile",SOP.name+"  v"+SOP.version],
     ["Profile checksum","sha256:"+sopHash()],
     ["Built",new Date().toISOString().replace("T"," ").slice(0,19)+" UTC"],
@@ -542,10 +545,10 @@ async function selBuildReportBase(){
   const labelW=120,valueW=doc.width-labelW,size=10,line=size*1.32;
   meta.forEach(([k,v])=>{
     const values=Array.isArray(v)?(v.length?v.map(String):["none"]):[String(v==null?"none":v)];
-    const lines=values.flatMap(x=>pdfWrap(x,valueW,size,false));
+    const lines=values.flatMap(x=>pdfWrap(["Figure coverage","Table coverage"].includes(k)?reportDisplay(x):x,valueW,size,false));
     doc.room(line+4);
     doc.text(k,size,true);doc.y+=line;
-    lines.forEach(x=>{if(!doc.room(line)){doc.text(k+" (continued)",size,true);doc.y+=line;}doc.text(x,size,false,labelW);});
+    lines.forEach(x=>{if(!doc.room(line)){doc.text(k+" (continued)",size,true);doc.y+=line;}doc.text(x,size,false,labelW,undefined,true);});
   });
   doc.gap(10);doc.rule();doc.gap(4);
   doc.para("Stored vendor results are kept unchanged. Statistics and diagnostic plots are independently derived by MISSY and are descriptive. Research Use Only. Not validated for clinical or instrument qualification decisions. This report does not replace the vendor QC report or validated laboratory procedures.",9,false);
@@ -563,7 +566,7 @@ async function selBuildReportBase(){
       let f=null;
       try{f=x.figure();}catch(e){doc.para("This figure could not be drawn: "+(e&&e.message||e),9.5,false);}
       if(f){
-        const jpg=await svgToJpeg(f.svg,2);
+        const jpg=await svgToJpeg(reportSvg(f.svg),2);
         if(jpg){
           let w=doc.width,h=w*jpg.natH/jpg.natW;
           const maxH=PDF_PAGE.h-2*PDF_PAGE.margin-100;if(h>maxH){h=maxH;w=h*jpg.natW/jpg.natH;}
@@ -706,8 +709,8 @@ async function cmdExecBase(raw){
     case "analyst":sopLab().analyst=arg;sopProfileEdited(true);cmdPrint("analysis by: "+(arg||"(cleared)"),"ok");break;
     case "title":SEL_STATE.title=arg;cmdPrint("report title: "+(arg||"(default)"),"ok");break;
     case "profile":
-      cmdTable([["name",SOP.name],["version",SOP.version],["laboratory",sopLabName()||"not stated"],
-        ["analyst",sopAnalystName()||"not stated"],["checksum","sha256:"+sopHash()]]);break;
+      cmdTable([["name",SOP.name],["version",SOP.version],["laboratory",sopLabName()||ui("not stated")],
+        ["analyst",sopAnalystName()||ui("not stated")],["checksum","sha256:"+sopHash()]]);break;
     case "status":cmdPrint(cmdStatusLine());break;
     case "issues":{
       const want=arg?arg.toLowerCase():"",rows=issueOverviewRows(issueSelectedRunIndexes()),groups=new Map();

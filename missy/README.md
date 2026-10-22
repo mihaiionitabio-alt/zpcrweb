@@ -98,3 +98,7 @@ Expanded Chinese labels and result templates; removed three verbose export descr
 ## Terminology review — 22 October 2026
 
 LC480-specific manuals guide legacy IXO terminology; PRO, Bio-Rad and Thermo Fisher references supplement it. See the [review and source sections](./source/CHINESE_TERMINOLOGY_REVIEW_2026-10-22.md). The documents are not redistributed. Chinese mode checks passed for separate IXO, EDS, RDML, ZPCR and PCRD batches. Scientific graph descriptions were clarified without changing calculations or acceptance limits. Source names, filenames, checksums and commands remain unchanged. This is a terminology review, not a claim that every explanatory paragraph has been translated.
+
+## Chinese PDF update — 2026.10.22.zhpdf3
+
+Chinese PDFs embed an OFL-licensed Noto Sans SC subset, retain source identifiers, and translate report copy before layout. Five separate-format reports (79 pages) passed bounds, portrait, pagination and source-manifest checks. Plate geometry remains source-specific: MiniOpticon 48 wells, CFX96 96 wells, CFX384 384 wells. The offline Chinese GPL translation is attributed, with its disclaimer; the original English licence remains verbatim. See NotoSansSC-LICENSE.txt and the review notes in source.
