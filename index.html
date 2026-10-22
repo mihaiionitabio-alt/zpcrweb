@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Offline reader for Roche LightCycler 480 .ixo and Applied Biosystems QuantStudio 3/5 .eds files: traceable stored values, container integrity checks, open qPCR exports, graphs, quality review, forensic log and JSON-LD metadata.">
 <meta name="application-name" content="qPCR raw values, quality-control and forensic export tool">
-<meta name="software-version" content="2026.10.22.console4">
+<meta name="software-version" content="2026.10.22.concise1">
 
 <!--
   MACHINE-READABLE LANDING-PAGE METADATA
@@ -12765,13 +12765,14 @@ function cmdPrint(text,cls){
   const out=cmdEl("cmd-out");if(!out)return;
   const div=document.createElement("div");
   div.className="cmd-line"+(cls?" "+cls:"");
+  if(cls==="echo")div.setAttribute("data-i18n-skip","");
   div.textContent=String(text==null?"":text);
   out.appendChild(div);out.scrollTop=out.scrollHeight;
 }
-function cmdTable(rows){
+function cmdTable(rows,literalValues=false){
   if(!rows.length){cmdPrint("  (nothing)");return;}
   const w=rows.reduce((a,r)=>Math.max(a,String(r[0]).length),0);
-  rows.forEach(r=>cmdPrint("  "+String(r[0]).padEnd(w+2)+String(r[1]==null?"":r[1])));
+  rows.forEach(r=>{const div=document.createElement("div"),key=document.createElement("span"),value=document.createElement("span");div.className="cmd-line";key.setAttribute("data-i18n-skip","");key.textContent="  "+String(r[0]).padEnd(w+2);if(literalValues)value.setAttribute("data-i18n-skip","");value.textContent=String(r[1]??"");div.append(key,value);cmdEl("cmd-out").append(div);});
 }
 function cmdStatusLine(){
   return `files ${RUNS.length} · results ${RUNS.reduce((a,r)=>a+((r.wells||[]).length),0)} · selected ${SEL_STATE.ids.size} · profile ${SOP.name} v${SOP.version}`;
@@ -12805,12 +12806,13 @@ async function cmdExecBase(raw){
   if(!line||line.startsWith("#"))return;
   const sp=line.indexOf(" "),cmd=(sp<0?line:line.slice(0,sp)).toLowerCase(),arg=sp<0?"":line.slice(sp+1).trim();
   switch(cmd){
-    case "help":case "?":cmdTable(CMD_HELP);break;
+    case "help":case "?":CMD_HELP.forEach(r=>cmdPrint(r[0],"echo"));break;
     case "list":{
       const which=(arg||"all").toLowerCase();
       const items=which==="images"?selImageItems():which==="data"||which==="tables"?selDataItems():selCatalogue();
-      cmdPrint(items.length+" item(s):");
-      cmdTable(items.map(x=>[x.id,(x.ready()?"":"(not available yet) ")+x.title]));
+      const available=items.filter(reportItemVisible);
+      cmdPrint(available.length+" item(s):");
+      cmdTable(available.map(x=>[x.id,(x.ready()?"":"(not available yet) ")+x.title]));
       break;}
     case "select":case "add":{
       if(!arg){cmdPrint("select what? try: select img:*","warn");break;}
@@ -12829,7 +12831,7 @@ async function cmdExecBase(raw){
       cmdPrint(s.length+" selected:");cmdTable(s.map(x=>[x.id,x.title]));break;}
     case "runs":
       cmdPrint(RUNS.length?"loaded runs:":"no file has been read yet");
-      cmdTable(RUNS.map((r,i)=>[String(i),runName(r)+"  ("+((r.wells||[]).length)+" results)"]));break;
+      cmdTable(RUNS.map((r,i)=>[String(i),runName(r)+"  ("+((r.wells||[]).length)+" "+ui("results")+")"]),true);break;
     case "run":{
       if(String(arg).toLowerCase()==="all"){SEL_STATE.figureScope="all";cmdPrint("standard figures: every compatible loaded run, separately; tables: all loaded data","ok");break;}
       const n=Number(arg);
@@ -12840,8 +12842,8 @@ async function cmdExecBase(raw){
     case "analyst":sopLab().analyst=arg;sopProfileEdited(true);cmdPrint("analysis by: "+(arg||"(cleared)"),"ok");break;
     case "title":SEL_STATE.title=arg;cmdPrint("report title: "+(arg||"(default)"),"ok");break;
     case "profile":
-      cmdTable([["name",SOP.name],["version",SOP.version],["laboratory",sopLabName()||ui("not stated")],
-        ["analyst",sopAnalystName()||ui("not stated")],["checksum","sha256:"+sopHash()]]);break;
+      cmdTable([[ui("name"),SOP.name],[ui("version"),SOP.version],[ui("laboratory"),sopLabName()||ui("not stated")],
+        [ui("analyst"),sopAnalystName()||ui("not stated")],[ui("checksum"),"sha256:"+sopHash()]],true);break;
     case "status":cmdPrint(cmdStatusLine());break;
     case "issues":{
       const want=arg?arg.toLowerCase():"",rows=issueOverviewRows(issueSelectedRunIndexes()),groups=new Map();
@@ -12897,8 +12899,7 @@ function cmdOpen(){
   CMD.open=true;document.getElementById("cmdm").classList.add("on");
   const out=cmdEl("cmd-out");
   if(out&&!out.childElementCount){
-    cmdPrint("Command mode. Type help for the list of commands.");
-    cmdPrint("A procedure can be pasted as a script: press Script, paste, then Run.");
+
   }
   cmdEl("cmd-status").textContent=cmdStatusLine();
   const i=cmdEl("cmd-in");if(i)setTimeout(()=>i.focus(),0);
@@ -12947,8 +12948,7 @@ function astRenderBase(){
       <div class="ast-items">${items.map(x=>`<label class="ast-item${x.ready()?"":" ast-off"}">
         <input type="checkbox" data-id="${esc(x.id)}"${SEL_STATE.ids.has(x.id)?" checked":""}${x.ready()?"":" disabled"}>
         <span class="ast-title">${esc(x.title)}</span>
-        <span class="ast-id">${esc(x.id)}</span>
-        <span class="ast-note">${esc(x.ready()?(x.uiNote??x.note??""):"not available until a file is read")}</span>
+        <span class="ast-id" data-i18n-skip>${esc(x.id)}</span>
       </label>`).join("")}</div></section>`;
   }).join("");
   box.querySelectorAll("input[data-id]").forEach(cb=>cb.onchange=()=>{
@@ -15408,7 +15408,7 @@ function zcReportItems(selected){const zp=selected.filter(x=>/^cc:z_/.test(x.id)
 let ZPCR_REPORT_EXPAND=false;MISSY_HOOKS.use("selSelected","core/biorad/zpcr_compact_report.js:34",34, next => function(){const s=next();return ZPCR_REPORT_EXPAND?zcReportItems(s):s;});
 MISSY_HOOKS.use("selBuildReport","core/biorad/zpcr_compact_report.js:35",35, next => async function(){const previous=ZPCR_REPORT_EXPAND;ZPCR_REPORT_EXPAND=true;try{return await next();}finally{ZPCR_REPORT_EXPAND=previous;}});
 MISSY_HOOKS.use("astRender","core/biorad/zpcr_compact_report.js:36",36, next => function(){next();if(RUNS.some(r=>r.zpcr)){const p=document.createElement('p');p.className='notice';p.textContent='• PDF: comparative raw channels per SN / protocol / step. • Endpoint N=7 by default. • A1 for per-well panels. • No single-point control charts.';astEl('ast-list').prepend(p);}});
-CMD_HELP.push(['ZPCR PDF scope','compact raw-channel comparisons per SN/protocol/step; no single-point control charts']);
+
 /* One raw comparison catalogue for Console, Command, Assisted and PDF. */
 function zcModeItemsBase(){return zcReportItems(CC_CHARTS.filter(d=>d.id.startsWith('z_')).map(d=>({id:'cc:'+d.id}))).map((item,i)=>{const hash=(item.note.match(/Protocol SHA-256: ([a-f0-9]+)/)||[])[1]||'unknown';return {...item,id:'img:zc_'+i,kind:'image',group:'ZPCR comparative channels',title:item.title+' | P '+hash.slice(0,12),file:'zpcr_comparison_'+i+'.svg',note:item.note+'\n• Channels combined; protocols separate. • Endpoint N='+ZPCR_ENDPOINT_N+'.',ready:()=>true};});}
 function zcModeItems(...args){return MISSY_HOOKS.invoke('zcModeItems',this,args,zcModeItemsBase);}
@@ -15876,10 +15876,9 @@ MISSY_HOOKS.use('mgCommand','report/preview-exit',200,next=>function(text,...arg
 });
 MISSY_HOOKS.use('astRender','report/coverage-controls',200,next=>function(){
  next();const select=astEl('ast-run'),label=select.closest('label');label.firstChild.textContent=ui('Runs for standard figures');
- let help=document.getElementById('ast-coverage-help');if(!help){help=document.createElement('p');help.id='ast-coverage-help';label.after(help);}
- help.textContent=ui('Choose All loaded runs to repeat selected standard figures for every compatible run. Acquisition comparisons keep their labelled source groups. Tables cover all loaded data. Only available items are shown.');
+ document.getElementById('ast-coverage-help')?.remove();
  let tools=document.getElementById('ast-available-tools');if(!tools){tools=document.createElement('div');tools.id='ast-available-tools';const all=document.createElement('button'),none=document.createElement('button');all.type=none.type='button';all.textContent=ui('Select all available');none.textContent=ui('Clear selection');all.onclick=()=>{for(const x of selCatalogue().filter(reportItemVisible))SEL_STATE.ids.add(x.id);astRender();};none.onclick=()=>{SEL_STATE.ids.clear();astRender();};tools.append(all,none);astEl('ast-list').prepend(tools);}
- const manifestInput=astEl('ast-list').querySelector('input[data-id="data:source_manifest"]');if(manifestInput){const required=selSelected().some(item=>item.id!=='data:source_manifest');manifestInput.checked=required||SEL_STATE.ids.has('data:source_manifest');manifestInput.disabled=required;manifestInput.closest('label').title='Included automatically with selected report material to retain full source identities.';}
+ const manifestInput=astEl('ast-list').querySelector('input[data-id="data:source_manifest"]');if(manifestInput){const required=selSelected().some(item=>item.id!=='data:source_manifest');manifestInput.checked=required||SEL_STATE.ids.has('data:source_manifest');manifestInput.disabled=required;manifestInput.closest('label').removeAttribute('title');}
  const empty=astEl('ast-list').querySelector('.ast-empty');empty?.remove();if(!astEl('ast-list').querySelector('.ast-group')){const p=document.createElement('p');p.className='ast-empty';p.textContent=ui('No report items are available for this selection. Choose another run or load decoded data.');astEl('ast-list').append(p);}
  const endpoint=document.getElementById('assisted-endpoint');if(endpoint)endpoint.hidden=!RUNS.some(r=>r.zpcr||r.pcrd||r.cfxRDML);
 });
@@ -15898,6 +15897,9 @@ reportWorkflowStyle.textContent+='#assisted-endpoint[hidden]{display:none!import
 
 /* Keep long identifiers inside the existing Assisted cards. */
 reportWorkflowStyle.textContent+=`#ast-list .ast-item{grid-template-columns:22px minmax(0,1fr);grid-template-rows:min-content min-content min-content;align-content:start;min-width:0}#ast-list .ast-item>span{min-width:0;max-width:100%;overflow-wrap:anywhere;white-space:normal}`;
+
+/* Navigation uses concise labels; scientific report notes remain in the report catalogue. */
+document.querySelector('label[for=cmd-script]')?.remove();
 /* Descriptive across-run coverage: never pool incompatible measurement cohorts. */
 const OVERVIEW_CACHE={runs:null,revision:-1,generation:-1,value:null};
 function overviewProtocol(run){
@@ -15955,7 +15957,7 @@ function overviewTables(){const d=overviewData(),allRows=d.runRows;
 }
 MISSY_HOOKS.use('selImageItems','overview/comparison-catalogue',220,next=>function(){return next().filter(x=>!x.id.startsWith('img:overview_')).concat(overviewImages());});
 MISSY_HOOKS.use('selDataItems','overview/summary-catalogue',220,next=>function(){return next().concat(overviewTables());});
-MISSY_HOOKS.use('astRender','overview/preset',220,next=>function(){next();const tools=document.getElementById('ast-available-tools');if(!tools)return;const button=document.createElement('button');button.type='button';button.textContent=ui('Overview + comparisons');button.id='ast-overview-preset';button.title='Adds overall counts, separated Cq statistics and all available cross-run Cq comparisons; keeps current selections.';button.onclick=()=>{SEL_STATE.figureScope='all';SEL_STATE.ids.add('data:loaded_overview');if(overviewData().stats.length)SEL_STATE.ids.add('data:cohort_statistics');for(const x of overviewImages())SEL_STATE.ids.add(x.id);astRender();};tools.prepend(button);});
+MISSY_HOOKS.use('astRender','overview/preset',220,next=>function(){next();const tools=document.getElementById('ast-available-tools');if(!tools)return;const button=document.createElement('button');button.type='button';button.textContent=ui('Overview + comparisons');button.id='ast-overview-preset';button.onclick=()=>{SEL_STATE.figureScope='all';SEL_STATE.ids.add('data:loaded_overview');if(overviewData().stats.length)SEL_STATE.ids.add('data:cohort_statistics');for(const x of overviewImages())SEL_STATE.ids.add(x.id);astRender();};tools.prepend(button);});
 MISSY_HOOKS.use('cmdExec','overview/command',220,next=>async function(raw){if(/^overview$/i.test(String(raw).trim())){SEL_STATE.figureScope='all';SEL_STATE.ids.add('data:loaded_overview');if(overviewData().stats.length)SEL_STATE.ids.add('data:cohort_statistics');for(const x of overviewImages())SEL_STATE.ids.add(x.id);cmdPrint('Overall summary and compatible cross-run comparisons added to report selection.','ok');return;}return next(raw);});
 CMD_HELP.push(['overview','add overall counts, separated cohort statistics and cross-run comparisons']);
 Object.assign(ZH_TERMS,{'Overview + comparisons':'总体统计与跨运行比较'});
@@ -16208,6 +16210,27 @@ if((m=s.match(/^([A-Z]-[A-Z]\d+[a-z]?) (.+)$/))){const translated=zhPhrase(m[2])
 else if((m=s.match(/^(lower|upper) spec ([-+\d.eE]+)( — (below|above) this scale)?$/)))out=(m[1]==='lower'?'规格下限 ':'规格上限 ')+m[2]+(m[3]?' — '+(m[4]==='below'?'低于当前坐标范围':'高于当前坐标范围'):'');
 return out===undefined?next(value):raw.replace(s,out);
 });
+
+/* Concise mode controls; command syntax and source identifiers are literal. */
+Object.assign(ZH_TERMS,{'results':'结果','name':'名称','version':'版本','laboratory':'实验室','analyst':'分析人员','checksum':'校验和','loaded runs:':'已加载运行：','Control charts · hardware':'控制图 · 硬件','Control charts · software':'控制图 · 软件','Control charts · method':'控制图 · 方法','Control charts · operator':'控制图 · 操作人员','IC shift from fixed reference':'内部质控相对固定参照的偏移','standard figures: every compatible loaded run, separately; tables: all loaded data':'标准图：分别绘制各兼容运行；表格：所有已加载数据','script finished':'脚本执行完毕','selection emptied':'已清空选择','building the report…':'正在生成报告…','building the archive…':'正在生成压缩包…','(nothing)':'（无）','(not available yet)':'（尚不可用）','(cleared)':'（已清除）','(default)':'（默认）','error:':'错误：'});
+MISSY_HOOKS.use('i18n.phrase','i18n/command-responses',125,next=>function(value){const raw=String(value??''),s=raw.trim();let m,out;
+if((m=s.match(/^(\d+) selected:$/)))out='已选 '+m[1]+' 项：';
+else if((m=s.match(/^(\d+) item\(s\):$/)))out=m[1]+' 项：';
+else if((m=s.match(/^selected (\d+): (.+)$/)))out='已选择 '+m[1]+' 项：'+m[2];
+else if((m=s.match(/^deselected (\d+)$/)))out='已取消选择 '+m[1]+' 项';
+else if((m=s.match(/^selection is now (\d+) item\(s\)$/)))out='当前已选 '+m[1]+' 项';
+else if((m=s.match(/^options (updated|reset) for (\d+) item\(s\)$/)))out='已'+(m[1]==='updated'?'更新':'重置')+' '+m[2]+' 项的选项';
+else if((m=s.match(/^running (\d+) line\(s\) of script$/)))out='正在执行 '+m[1]+' 行脚本';
+else if((m=s.match(/^report written, ([\d,]+) bytes$/)))out='报告已生成，'+m[1]+' 字节';
+else if((m=s.match(/^archive written, (\d+) entries$/)))out='压缩包已生成，'+m[1]+' 项';
+else if((m=s.match(/^error: (.+)$/)))out='错误：'+zhPhrase(m[1]);
+else if((m=s.match(/^(.+) does not accept option (.+)$/)))out=m[1]+' 不支持选项 '+m[2];
+else if((m=s.match(/^(laboratory|analysis by|report title): (.*)$/)))out=({'laboratory':'实验室','analysis by':'分析人员','report title':'报告标题'})[m[1]]+'：'+m[2];
+else if((m=s.match(/^standard figures: (.+); tables still cover all loaded data$/)))out='标准图：'+m[1]+'；表格仍涵盖所有已加载数据';
+else if((m=s.match(/^nothing matches (.+)$/)))out='无匹配项：'+m[1];
+else if((m=s.match(/^unknown command: (.+?)   \(help lists them\)$/)))out='未知命令：'+m[1];
+return out===undefined?next(value):raw.replace(s,out);
+});
 /* Mascots are presentation-only; footer resize includes wrapping and expanded details. */
 document.addEventListener('DOMContentLoaded',()=>{
  const friends=document.querySelector('.cute-friends'),bar=document.getElementById('statusbar');if(!friends||!bar)return;
@@ -16234,15 +16257,17 @@ return PDF_UNICODE_OBJECTS=[
 {dict:'<< /Length '+font.length+' /Length1 '+f.fontBytes+' /Filter /FlateDecode >>',stream:font},
 {dict:'<< /Length '+map.length+' /Filter /FlateDecode >>',stream:map},
 {dict:'<< /Length '+cmap.length+' >>',stream:cmap}];}
-const REPORT_LITERAL_COLUMNS=new Set(['filename','file','source','source_file','source_filename','sha256','source_sha256','sourceSHA256','checksum','protocol_sha256','acquisition_sha256','analysis','analysis_name','sample','sample_name','sampleId','target','target_name','gene','dye','channel','instrument','instrument_sn','instrument_id','serial','serial_number','SN','well','position','date','time','experiment','run','run_name','profile','profile_name','command','script','read_from','protocol','format']);
+const REPORT_LITERAL_COLUMNS=new Set(['filename','file','source','source_file','source_filename','sha256','source_sha256','sourceSHA256','checksum','protocol_sha256','acquisition_sha256','analysis','analysis_name','sample','sample_name','sampleId','target','target_name','gene','dye','channel','instrument','instrument_sn','instrument_id','serial','serial_number','SN','well','position','date','time','experiment','run','run_name','profile','profile_name','command','script','protocol','format']);
 function reportTableValue(column,value){const s=String(value??'');return (REPORT_LITERAL_COLUMNS.has(String(column))||REPORT_LITERAL_COLUMNS.has(String(column).toLowerCase()))||/(?:sha256|checksum|filename|sample.?name|serial.?number|protocol.?hash)/i.test(column)?s:reportDisplay(s);}
 function reportDisplay(value){const s=String(value??'');if(UI_LANG!=='zh')return s;
  const trimmed=s.trim();if(trimmed&&trimmed!==s)return s.replace(trimmed,reportDisplay(trimmed));
  if(s.includes('\n'))return s.split('\n').map(reportDisplay).join('\n');
  const match=s.match(/^(\s*(?:[•-]|\d+\.)\s+)([\s\S]*)$/);if(match)return match[1]+reportDisplay(match[2]);
  let suffix=s.match(/^(.+?)(\s+\[[^\]]+\])$/);if(suffix)return reportDisplay(suffix[1])+suffix[2];
+ if(s.includes(' | '))return s.split(' | ').map(reportDisplay).join(' | ');
+ let part;if((part=s.match(/^channel (.+)$/)))return '通道 '+reportDisplay(part[1]);
+ if((part=s.match(/^analysis (MISSY independent raw-channel Cq\/Tm v1\.0)$/)))return '分析 '+zhPhrase(part[1]);
  let out=zhPhrase(s);if(out!==s)return out;
- if(s.includes(' | '))return s.split(' | ').map(x=>zhPhrase(x)).join(' | ');
  let m;if((m=s.match(/^(.+) (\(\d{4}-\d{2}-\d{2} .+\))$/)))return reportDisplay(m[1])+' '+m[2];
  if((m=s.match(/^(.+) — SOP outcome$/)))return m[1]+'－SOP 判定';
  if((m=s.match(/^(File|Source SHA-256|Acquisition SHA-256|Protocol SHA-256|Endpoint N|Source|Protocol fingerprint)(: .+)$/)))return zhPhrase(m[1])+': '+reportDisplay(m[2].slice(2));
@@ -16305,6 +16330,51 @@ Object.assign(ZH_TERMS,{
 MISSY_HOOKS.use('i18n.phrase','i18n/report-geometry',118,next=>function(value){const s=String(value??'');let m;if((m=s.match(/^Decoded plate layout: (\d+) wells; (\d+) rows x (\d+) columns\.$/)))return `解码的板规格：${m[1]} 孔，${m[2]} 行 × ${m[3]} 列。`;if((m=s.match(/^Plate row ([A-P])$/)))return '板行 '+m[1];return next(value);});
 
 Object.assign(ZH_TERMS,{"Application source (index.html on GitHub)":"应用源代码（GitHub 上的 index.html）"});
+
+Object.assign(ZH_TERMS,{'The block temperature the LightCycler 480 logged about every 0.41 s, decoded from the TemperatureLog inside the .ixo file, with the protocol setpoints. Heating and cooling rates, overshoot, settling and transition times on the control panel are measured on the full trace; the graph keeps the lowest and highest value of every time slice, so overshoots and short holds are not lost when it is thinned for display.':'从 .ixo 内的 TemperatureLog 解码模块温度，采样间隔约 0.41 秒，并显示程序设定温度。控制面板使用完整记录计算升降温速率、过冲、稳定时间和转换时间；图中保留各时间片的最小值与最大值。'});
+
+Object.assign(ZH_TERMS,{'No explicit normal-completion log':'无明确的正常完成日志','MISSY independent raw-channel Cq/Tm v1.0':'MISSY 独立计算原始通道 Cq／Tm v1.0'});
+MISSY_HOOKS.use('i18n.phrase','i18n/derived-channel-labels',126,next=>function(value){const raw=String(value??''),s=raw.trim();let m,out;
+if((m=s.match(/^acquisition group (\d+)$/)))out='采集组 '+m[1];
+else if((m=s.match(/^(.+) \/ raw channel (\d+)$/)))out=m[1]+'／原始通道 '+m[2];
+else if((m=s.match(/^channel (.+) \/ raw channel (\d+)$/)))out='通道 '+m[1]+'／原始通道 '+m[2];
+return out===undefined?next(value):raw.replace(s,out);
+});
+
+Object.assign(ZH_TERMS,{
+'Independently calculated; not vendor-reported Cq/Tm or a qualification verdict.':'独立计算值；不是厂商报告的 Cq／Tm，也不是资格确认结论。',
+'Stored channel means only; no spectral unmixing, gain calibration or vendor well factors. Dye mapping uses the stored plate channelPosition.':'仅使用保存的通道均值；不作光谱解混、增益校准或厂商孔位因子校正。染料映射使用板设置中的 channelPosition。',
+'Cq: constant-temperature acquisition, at least 20 reads; ordinary least-squares baseline over cycles 3-10. No interpolation over missing reads.':'Cq：恒温采集，至少 20 个读数；使用第 3–10 循环作普通最小二乘基线拟合。缺失读数不插值。',
+'One threshold per loaded dye/channel and acquisition: max(10 × median baseline residual SD, 10% × median positive plateau). Positive cohort requires a final-five median rise above 10 × its baseline SD.':'每个已加载染料／通道及采集使用一个阈值：基线残差标准差中位数的 10 倍与阳性平台中位数的 10% 中取最大值。阳性分组要求末五个读数的中位增量超过基线标准差的 10 倍。',
+'Cq crossing: linear cycle interpolation after cycle 10, with three consecutive reads above threshold and a rising crossing. A plateau below threshold or a rise concentrated in the baseline gives no Cq.':'Cq：第 10 循环后，在上升穿越处作线性插值，要求连续三个读数高于阈值。平台低于阈值或增量集中在基线区时不计算 Cq。',
+'Tm: at least eight reads, ascending ramp spanning at least 5 degrees C; stored sample-temperature field preferred, measured block temperature fallback. Temperature source is retained.':'Tm：至少八个读数，升温范围至少 5 °C；优先使用保存的样本温度，否则使用实测模块温度。保留温度来源。',
+'Tm: quadratic Savitzky-Golay window 5; central -dF/dT; exclude two edge points. Require fluorescence fall ≥3% of the median absolute level, and an interior positive local peak. Quadratic peak refinement; secondary peaks ≥25% of the primary and >=1 degrees C apart are listed.':'Tm：二次 Savitzky-Golay 平滑，窗口 5；计算中心差分 -dF/dT，排除两端各两个点。荧光下降须至少达到绝对值中位数的 3%，且存在内部正局部峰。用二次拟合细化峰位；列出峰高至少为主峰 25% 且相距至少 1 °C 的次峰。',
+'CFX comparisons require exact original PCRD SHA-256 linkage, geometry, stored dye/channel mapping and well position. Cq acquisition uses explicit ProtocolStepMapper plus equal cycle axes. Melt references require a unique matching temperature axis.':'CFX 比较要求原始 PCRD SHA-256、板规格、保存的染料／通道映射及孔位精确匹配。Cq 采集使用明确的 ProtocolStepMapper 映射，且循环轴相同；熔解参照须有唯一匹配的温度轴。',
+'Delta = independent PCRD value minus reference. Missing calls remain missing and are counted separately. No acceptance tolerance or pass/fail is assigned.':'差值为独立计算的 PCRD 值减参照值。缺失判定保持缺失并单独计数。不设置验收容差或通过／失败判定。',
+'The supplied CFX RDML exports contain Cq and processed melt curves but no vendor-reported meltTemp. Tm derived from those exported curves is labelled independently derived reference, never vendor-reported Tm.':'提供的 CFX RDML 含 Cq 和处理后的熔解曲线，不含厂商报告的 meltTemp。从导出曲线推导的 Tm 标记为独立推导参照，不标记为厂商报告值。',
+'Research Use Only. These calculations and comparisons do not replace the vendor QC report or establish instrument conformity.':'仅供研究使用。这些计算与比较不能替代厂商质控报告，也不能证明仪器符合性。',
+'No acceptance limits; see Independent calculation methods and comparison summary.':'无验收限值；参见独立计算方法及比较摘要。',
+'Completion/log/count checks supported; no vendor verdict':'完成状态、日志与计数检查有证据支持；无厂商判定',
+'Reference: vendor-exported CFX RDML Cq. Delta = independent minus reference.':'参照：厂商导出的 CFX RDML Cq。差值为独立计算值减参照值。',
+'Reference: independently derived from CFX processed melt curve when vendor meltTemp is absent; not vendor-reported Tm.':'参照：厂商 meltTemp 缺失时，由 CFX 处理后的熔解曲线独立推导；不是厂商报告的 Tm。',
+'PCRD · Independent Cq':'PCRD · 独立计算 Cq','PCRD · Independent Tm':'PCRD · 独立计算 Tm','PCRD · Independent Cq comparisons':'PCRD · 独立 Cq 比较','PCRD · Independent Tm comparisons':'PCRD · 独立 Tm 比较'
+});
+MISSY_HOOKS.use('i18n.phrase','i18n/independent-evidence',127,next=>function(value){const raw=String(value??''),s=raw.trim();let m,out;
+if((m=s.match(/^Source quality: (.+)$/)))out='源数据质量：'+zhPhrase(m[1]);
+else if((m=s.match(/^Baseline cycles 3-10; channel threshold (.+)$/)))out='基线循环 3–10；通道阈值 '+m[1];
+else if((m=s.match(/^Dye (.+) uses stored channelPosition (\d+); temperature axis (.+)$/)))out='染料 '+m[1]+' 使用保存的 channelPosition '+m[2]+'；温度轴 '+zhPhrase(m[3]);
+return out===undefined?next(value):raw.replace(s,out);
+});
+
+Object.assign(ZH_TERMS,{'Independent Cq/Tm methods and CFX reference comparison summary':'独立 Cq／Tm 计算方法与 CFX 参照比较摘要','Source keys (full filenames):':'来源编号（完整文件名）：','Fluorescence (stored)':'荧光（保存值）','Minutes from the start of the log':'距日志开始的分钟数','sample block':'样本模块','zone spread ×10':'温区温差 ×10','Cq (independently calculated)':'Cq（独立计算）','Physical well index (row-major)':'物理孔序号（按行排列）','Run legend: R1 solid · R2 dashed · additional runs use labelled points; no vendor control limits':'运行图例：R1 实线 · R2 虚线 · 其他运行用标注点区分；无厂商控制限','wcStandard':'标准品','wcSample':'样本','wcPostiveControl':'阳性质控','wcNTC':'无模板对照'});
+MISSY_HOOKS.use('i18n.phrase','i18n/report-axis-labels',128,next=>function(value){const raw=String(value??''),s=raw.trim();let m,out;
+if((m=s.match(/^(.+) — all targets$/)))out=m[1]+'－全部靶标';
+else if((m=s.match(/^SOP zone spread (.+) °C \(×10\)$/)))out='SOP 温区温差 '+m[1]+' °C（×10）';
+else if((m=s.match(/^SN (.+) · protocol ([a-f0-9]+) · acquisition group (\d+)$/)))out='SN '+m[1]+' · 实验程序 '+m[2]+' · 采集组 '+m[3];
+return out===undefined?next(value):raw.replace(s,out);
+});
+
+Object.assign(ZH_TERMS,{'Cq independently calculated':'独立计算的 Cq','Tm independently calculated':'独立计算的 Tm','Independent Cq comparison':'独立 Cq 比较','Independent Tm comparison':'独立 Tm 比较','PCRD · Independent calculations':'PCRD · 独立计算','Group / Ch / metric':'采集组／通道／指标','Calls / NA':'有效值／缺失值','Pairs':'配对数','Only I / R':'仅独立值／仅参照值','Median d':'差值中位数','Max abs d':'最大绝对差值','Reference':'参照','Unmatched':'无匹配参照','Curve Tm':'曲线推导 Tm','Vendor Tm':'厂商 Tm','Normal completion supported by log and acquisition counts':'日志与采集数量支持正常完成'});
 /* Registration order does not override conflicting content signatures. */
 registerReader({id:'ixo',version:'zenodo-23437639',extensions:['.ixo'],probe:s=>!s.zipNames&&/<objectstream\b[^>]*signature=["\']IXOS["\']/i.test(new TextDecoder().decode(s.bytes.subarray(0,2048))),decode:async s=>{const source={...s,text:s.text||new TextDecoder().decode(s.bytes)},r=await decodeIxo(source,'auto');await ccExtractOnLoad(r,source);return r;}});
 registerReader({id:'eds',version:'zenodo-23437639',extensions:['.eds','.edt'],probe:s=>s.zipNames?.some(n=>/^apldbio\/sds\/experiment\.xml$/i.test(n)),decode:async s=>{const r=await decodeEds(s);await ccExtractOnLoad(r,s);return r;}});
