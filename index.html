@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Offline reader for Roche LightCycler 480 .ixo and Applied Biosystems QuantStudio 3/5 .eds files: traceable stored values, container integrity checks, open qPCR exports, graphs, quality review, forensic log and JSON-LD metadata.">
 <meta name="application-name" content="qPCR raw values, quality-control and forensic export tool">
-<meta name="software-version" content="2026.10.22.english1">
+<meta name="software-version" content="2026.10.22.summaryzh1">
 
 <!--
   MACHINE-READABLE LANDING-PAGE METADATA
@@ -16253,6 +16253,31 @@ MISSY_HOOKS.use('i18n.phrase','i18n/catalogue-channel-variants',129,next=>functi
  const def=CC_CHARTS.find(c=>s.startsWith(c.title+' · '));
  if(def){const title=zhPhrase(def.title);if(title!==def.title)return raw.replace(s,title+s.slice(def.title.length));}
  return next(value);
+});
+
+/* Console overview cards use dynamic counts, separately from graph captions. */
+Object.assign(ZH_TERMS,{
+'Attention':'待关注','Charts still collecting a baseline':'仍在积累基线的控制图','no limits yet':'尚无控制限','BASE':'基线',
+'Data available; this chart is still building its baseline.':'已有数据，仍在积累基线。','Files read into this session':'本次会话已读取的文件','files read':'已读取文件','stored results':'保存结果','Curves decoded':'已解码曲线','Melting results':'熔解结果','Instruments':'仪器','Operators':'操作人员','Active profile':'当前规程','Software':'软件','Run minutes':'运行分钟数','Channels':'通道','Bytes':'字节数',
+'Decoded file metadata and stored results are ready. Open File integrity for any file-integrity mismatch.':'文件元数据与保存结果已就绪。','File decoded; stored values are ready for review.':'文件已解码；保存值可供审核。',
+'Every outcome on this page is produced by this profile. Stored Cq values, calls and fluorescence are never changed.':'本页判定来自当前规程；保存的 Cq、判定和荧光值不变。','profile':'规程','target rule':'靶标规则','control':'质控','replicates and control':'重复孔与质控','run acceptance':'运行验收','rules':'规则','Replicates and internal control':'重复孔与内部质控','Run acceptance rules':'运行验收规则','Results under this profile':'当前规程下的结果','interpreted results':'已判定结果','No instrument history yet':'暂无仪器历史','runs in this history':'历史运行数','Every chart with limits is in control on the latest run.':'最近一次运行中，所有已有控制限的图均受控。','Collecting a baseline':'积累基线中','Baseline needed':'所需基线','Outside limits':'超出控制限','To watch':'待关注','No chart is outside a limit':'无控制图超出限值','All checks passed':'所有检查通过',
+'Nothing is outside a control or specification limit. Use the top row to read any part of the data set.':'无数据超出控制限或规格限。','Every chart with limits is in control and no error-level finding is open. Use the top row to read any part of the data set.':'所有已有控制限的图均受控，且无未处理的错误级发现。','In control. Select Show chart to inspect the trend and limits.':'受控。','No experiment files are loaded':'尚未加载实验文件','Files staged, ready to read':'文件已暂存，可读取','Controls missing':'缺少质控','Controls failing':'质控失败','Minimum replicates':'最少重复孔数','Positive replicates':'阳性重复孔数','Runs evaluated':'已评估运行数','Name':'名称','Author':'作者','Effective':'生效日期','Locked':'已锁定','Samples':'样本','Need action':'需处理','mean Cq':'平均 Cq','Standards':'标准品'
+});
+MISSY_HOOKS.use('i18n.phrase','i18n/console-summary-counts',130,next=>function(value){const raw=String(value??''),s=raw.trim();let m,out;
+if((m=s.match(/^(.+?)\s*·\s*item (\d+) of (\d+)\s*·\s*(\d+) outside limits\s*·\s*(\d+) to watch$/)))out=zhPhrase(m[1])+' · 第 '+m[2]+' / '+m[3]+' 项 · '+m[4]+' 项超限 · '+m[5]+' 项待关注';
+else if((m=s.match(/^of (\d+)$/)))out='／共 '+m[1]+' 项';
+else if((m=s.match(/^a chart needs (\d+) runs before it has limits$/)))out='建立控制限需要 '+m[1]+' 次基线运行';
+else if((m=s.match(/^(\d+) run\(s\) are in this instrument's history\. Until a chart has its baseline it can raise no alarm\.$/)))out='该仪器历史包含 '+m[1]+' 次运行。基线未建立时，不作控制图报警判定。';
+else if((m=s.match(/^(.+) · (\d+) run\(s\) · chart gallery$/)))out=m[1]+' · '+m[2]+' 次运行 · 图表库';
+else if((m=s.match(/^(\d+) stored results · (\d+) curves decoded$/)))out=m[1]+' 条保存结果 · '+m[2]+' 条已解码曲线';
+else if((m=s.match(/^([\dx]+) plate · (\d+) cycles · (\d+) curves$/)))out=m[1]+' 孔板 · '+m[2]+' 个循环 · '+m[3]+' 条曲线';
+else if((m=s.match(/^(\d+) target rule\(s\) · (\d+) control\(s\) · (\d+) run rule\(s\)$/)))out=m[1]+' 条靶标规则 · '+m[2]+' 项质控 · '+m[3]+' 条运行规则';
+else if((m=s.match(/^(\d+) chart\(s\) · (\d+) outside limits · (\d+) to watch$/)))out=m[1]+' 张图 · '+m[2]+' 项超限 · '+m[3]+' 项待关注';
+else if((m=s.match(/^(\d+) instrument\(s\) in the loaded history$/)))out='已加载历史包含 '+m[1]+' 台仪器';
+else if((m=s.match(/^(\d+) chart\(s\) have a point outside a control or specification limit\.$/)))out=m[1]+' 张图存在超出控制限或规格限的点。';
+else if((m=s.match(/^(\d+) chart\(s\) show a pattern inside the limits\.$/)))out=m[1]+' 张图存在限内异常模式。';
+else if((m=s.match(/^(\d+) runs$/)))out=m[1]+' 次运行';
+return out===undefined?next(value):raw.replace(s,out);
 });
 /* Mascots are presentation-only; footer resize includes wrapping and expanded details. */
 document.addEventListener('DOMContentLoaded',()=>{
