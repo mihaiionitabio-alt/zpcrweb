@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Offline reader for Roche LightCycler 480 .ixo and Applied Biosystems QuantStudio 3/5 .eds files: traceable stored values, container integrity checks, open qPCR exports, graphs, quality review, forensic log and JSON-LD metadata.">
 <meta name="application-name" content="qPCR raw values, quality-control and forensic export tool">
-<meta name="software-version" content="2026.10.22.concise1">
+<meta name="software-version" content="2026.10.22.chartzh1">
 
 <!--
   MACHINE-READABLE LANDING-PAGE METADATA
@@ -16230,6 +16230,28 @@ else if((m=s.match(/^standard figures: (.+); tables still cover all loaded data$
 else if((m=s.match(/^nothing matches (.+)$/)))out='无匹配项：'+m[1];
 else if((m=s.match(/^unknown command: (.+?)   \(help lists them\)$/)))out='未知命令：'+m[1];
 return out===undefined?next(value):raw.replace(s,out);
+});
+
+/* Chart variants retain literal channel identifiers after a translated catalogue title. */
+Object.assign(ZH_TERMS,{
+'Ambient temperature field — quantised/inferred encoding':'环境温度字段－量化／推定编码',
+'Detector dark reading — within-run change':'探测器暗读数－运行内变化',
+'Optical reference row — within-run change':'光学参照行－运行内变化',
+'Optical reference versus stored factory value':'光学参照与保存的出厂值比较',
+'LED DAC setting — configuration history':'LED DAC 设置－配置历史',
+'Dark-reading SD — maximum within acquisition step':'暗读数标准差－采集步骤内最大值',
+'Dark-reading min–max spread — maximum within acquisition step':'暗读数极差－采集步骤内最大值',
+'Raw early-cycle linear slope':'原始早期循环线性斜率',
+'Raw early-cycle linear-fit residual RMS':'原始早期循环线性拟合残差均方根',
+'Ordered block-temperature non-increasing transitions':'按采集顺序的模块温度非升温转换',
+'Ordered block-temperature absolute increment — maximum':'按采集顺序的模块温度绝对增量－最大值',
+'Raw endpoint — last-N-read range':'原始终点－末 N 个读数的极差'
+});
+MISSY_HOOKS.use('i18n.phrase','i18n/catalogue-channel-variants',129,next=>function(value){
+ const raw=String(value??''),s=raw.trim();
+ const def=CC_CHARTS.find(c=>s.startsWith(c.title+' · '));
+ if(def){const title=zhPhrase(def.title);if(title!==def.title)return raw.replace(s,title+s.slice(def.title.length));}
+ return next(value);
 });
 /* Mascots are presentation-only; footer resize includes wrapping and expanded details. */
 document.addEventListener('DOMContentLoaded',()=>{
