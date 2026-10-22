@@ -1,4 +1,4 @@
-# MISSY public modular edition — 21 October 2026
+# MISSY public modular edition — 22 October 2026
 
 [Open the live page](https://mihaiionitabio-alt.github.io/zpcrweb/), or download [the single offline HTML](./MISSY_PUBLIC_MODULAR_2026-10-21.html) and open it locally. The older `MISSY_PUBLIC_2026-10-20.html` path is retained as an identical compatibility copy.
 
@@ -86,3 +86,7 @@ Tests cover exact preview return via Close graph/Return, source-aware visibility
 - Overview cards show concise cohort/count descriptions; full report notes and exports are unchanged.
 - Long filenames and identifiers wrap within the existing card grid.
 - Re-tested the five separate format batches, all eligible comparison previews, two-row Console controls, and both PDF export routes on the final build. Assisted text checked at 1500 and 1920 px; 99 report pages checked.
+
+## Terminology review — 22 October 2026
+
+LC480-specific manuals guide legacy IXO terminology; PRO, Bio-Rad and Thermo Fisher references supplement it. See the [review and source sections](./source/CHINESE_TERMINOLOGY_REVIEW_2026-10-22.md). The documents are not redistributed. Chinese mode checks passed for separate IXO, EDS, RDML, ZPCR and PCRD batches. Scientific graph descriptions were clarified without changing calculations or acceptance limits. Source names, filenames, checksums and commands remain unchanged. This is a terminology review, not a claim that every explanatory paragraph has been translated.

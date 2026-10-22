@@ -11,7 +11,7 @@ shell/03_body.html
 vendor/plotly-basic.html
 shell/04_script_open.html
 core/hooks.js
-core/i18n_constants.js
+variants/public/hooks/core/i18n_constants.js
 core/helpers.js
 core/statistics.js
 variants/public/zip.js
@@ -85,6 +85,8 @@ core/analysis/pcrd_independent.js
 core/biorad/lifecycle.js
 core/ui/report_workflow.js
 core/analysis/loaded_overview.js
+core/i18n/english_scientific_wording.js
+core/i18n/zh_manual_terminology.js
 readers/register_public.js
 shell/public_script_end.html
 shell/public_legal.html
