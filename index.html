@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Offline reader for Roche LightCycler 480 .ixo and Applied Biosystems QuantStudio 3/5 .eds files: traceable stored values, container integrity checks, open qPCR exports, graphs, quality review, forensic log and JSON-LD metadata.">
 <meta name="application-name" content="qPCR raw values, quality-control and forensic export tool">
-<meta name="software-version" content="2026.10.23.sop-menu1">
+<meta name="software-version" content="2026.10.23.evidence1">
 
 <!--
   MACHINE-READABLE LANDING-PAGE METADATA
@@ -17227,6 +17227,119 @@ document.addEventListener('DOMContentLoaded',()=>{
  }catch(e){state='error';}render();});
  new MutationObserver(render).observe(document.body,{attributes:true,attributeFilter:['class']});render();
 });
+/* Read-only evidence inventory. No reader, result, SOP, selection or cache writes.
+ * Presence is scoped to the decoded view; absence is never a biological verdict.
+ * Raw arrays are not scanned and no independent calculation is triggered here.
+ */
+const MISSY_EVIDENCE=(()=>{
+ const text=(en,zh)=>UI_LANG==='zh'?zh:en;
+ const list=v=>Array.isArray(v)?v:[];
+ const size=(r,c)=>Number.isInteger(r)&&r>0&&Number.isInteger(c)&&c>0?r+' × '+c:null;
+ const words={
+  reader:['Reader','读取器'],source:['Source SHA-256','源文件 SHA-256'],
+  access:['Decoded view','已解码视图'],results:['Stored result records','保存的结果记录'],
+  raw:['Raw acquisition reads','原始采集读数'],curves:['Decoded curve entries','已解码曲线条目'],
+  sample:['Sample layout: rows × columns','样本布局：行数 × 列数'],
+  physical:['Physical read layout: rows × columns','实际读取布局：行数 × 列数'],
+  reference:['Declared reference rows','声明的参比行数'],statistics:['Stored read components','保存的读数组分'],
+  thermal:['Thermal evidence','温度记录'],optical:['Optical evidence','光学记录'],
+  declared:['Declared source data name','文件内声明的源数据名称'],limits:['Interpretation boundary','判读范围'],
+ };
+ const statuses={retained:['Retained','已保留'],not_exposed:['Not exposed by this decoded view','此解码视图未提供'],
+  locked:['Locked inventory only','仅有加密文件清单'],template:['Template / setup only','仅模板／设置'],
+  different_name:['Different name; not proof of corruption','名称不同；不能据此认定文件损坏'],same_name:['Same name','名称相同']};
+ function snapshot(run,index=0){
+  const raw=run.zpcr||run.pcrd,reads=list(raw?.reads),first=reads[0],meta=run.meta||{};
+  const counts={amplification:list(run.wells).length,melting:list(run.tmWells).length,relative:list(run.rqResults).length,genotype:list(run.genoResults).length,other:list(run.otherResults).length};
+  const facts=[];const add=(code,status,detail)=>facts.push({code,status_code:status,detail:String(detail??'')});
+  add('reader','retained',String(run.reader?.id||'unknown')+' · '+String(run.reader?.version||'unknown'));
+  add('source',meta.sourceSHA256?'retained':'not_exposed',meta.sourceSHA256||'');
+  add('access',run.pcrdLocked?'locked':run.isTemplate?'template':'retained','');
+  add('results','retained',JSON.stringify(counts));
+  if(!run.pcrdLocked&&!run.isTemplate){
+   add('raw',reads.length?'retained':'not_exposed',reads.length?String(reads.length):'');
+   const curves=Object.keys(run.allCurves||{}).length;add('curves',curves?'retained':'not_exposed',curves?String(curves):'');
+  }
+  const sample=size(run.rows,run.cols);add('sample',sample?'retained':'not_exposed',sample||'');
+  const physical=size(first?.rows,first?.cols);add('physical',physical?'retained':'not_exposed',physical||'');
+  if(Number.isInteger(raw?.grid?.referenceRows))add('reference','retained',raw.grid.referenceRows);
+  if(run.zpcr&&reads.length)add('statistics','retained','native_mean_sd_min_max');
+  else if(run.pcrd&&Number.isInteger(first?.tupleWidth))add('statistics','retained','native_component_count:'+first.tupleWidth);
+  else add('statistics','not_exposed','');
+  const thermal=!!(run.cc?.thermal&&Object.keys(run.cc.thermal).length)||!!(first?.temps&&Object.keys(first.temps).length);
+  const optical=!!list(run.cc?.acq).length||!!Object.keys(run.cc?.qs?.exposure||{}).length||!!first?.darkData?.length||!!first?.leds?.length;
+  add('thermal',thermal?'retained':'not_exposed',thermal?'decoded_temperature_fields_or_diagnostics':'');
+  add('optical',optical?'retained':'not_exposed',optical?'decoded_optical_fields':'');
+  const declared=run.zpcr?.runInfo?.DataFile||run.pcrd?.runInfo?.DataFile||'';
+  if(declared)add('declared',declared===run.file?'same_name':'different_name',declared);
+  const boundary=run.pcrdLocked?'locked':run.isTemplate?'template':run.zpcr?'zpcr':run.pcrd?'pcrd':run.rdmlDoc?'exchange':'native';
+  add('limits','retained',boundary);
+  return {run_index:index+1,filename:run.file||'',facts};
+ }
+ function detail(f,localized){
+  const choose=(en,zh)=>localized?text(en,zh):en;
+  if(f.code==='results'){
+   const c=JSON.parse(f.detail);return choose('Amplification ','扩增 ')+c.amplification+choose('; melting ','；熔解 ')+c.melting+choose('; relative ','；相对定量 ')+c.relative+choose('; genotype ','；基因分型 ')+c.genotype+choose('; other ','；其他 ')+c.other;
+  }
+  if(f.detail==='native_mean_sd_min_max')return choose('Native mean, SD, minimum and maximum; contributing count not established.','原始均值、标准差、最小值和最大值；未确定构成该读数的测量次数。');
+  if(f.detail.startsWith('native_component_count:'))return f.detail.split(':')[1]+choose(' native components; missing components are not zero.',' 个原始组分；缺失组分不等于零。');
+  if(f.detail==='decoded_temperature_fields_or_diagnostics')return choose('Temperature fields or derived diagnostics are present; measurement basis remains source-specific.','已提供温度字段或派生诊断值；测量依据以源文件为准。');
+  if(f.detail==='decoded_optical_fields')return choose('Acquisition, dark/reference or optical-setting fields are present; calibration validity is not established.','已提供采集、暗信号／参比或光学设置字段；尚不能据此确认校准有效性。');
+  if(f.code==='limits')return ({
+   locked:choose('No decoded measurements; access credentials are not included.','未解码测量数据；不包含访问凭据。'),
+   template:choose('Setup only; no completed acquisition is implied.','仅有设置；不表示已完成数据采集。'),
+   zpcr:choose('Raw acquisitions; an optical channel does not establish dye or sample identity.','原始采集数据；光学通道不能据此确定染料或样本标识。'),
+   pcrd:choose('Raw acquisitions; independently calculated Cq/Tm belong to a separate method.','原始采集数据；独立计算的 Cq／Tm 属于另一分析方法。'),
+   exchange:choose('Exchange-file evidence; no new inference about the analysis producer is applied.','交换文件中的记录；不对分析结果的生成方作新的推断。'),
+   native:choose('Stored native results and decoded fields; complete numeric precision and processing history may be unavailable.','保存的原始结果及已解码字段；完整数值精度和处理历史可能未提供。')
+  })[f.detail];
+  return f.detail;
+ }
+ function rows(localized=false){
+  return RUNS.flatMap((run,i)=>snapshot(run,i).facts.map(f=>({evidence_view:i+1,filename:run.file||'',evidence_item:localized?text(...words[f.code]):words[f.code][0],evidence_state:localized?text(...statuses[f.status_code]):statuses[f.status_code][0],evidence_detail:detail(f,localized),evidence_code:f.code,status_code:f.status_code})));
+ }
+ function render(){
+  const host=document.getElementById('loadedcard');if(!host)return;
+  let box=document.getElementById('missy-evidence-summary');
+  if(!box){box=document.createElement('details');box.id='missy-evidence-summary';box.setAttribute('data-i18n-skip','');host.append(box);}
+  box.hidden=!RUNS.length;const open=box.open;box.replaceChildren();
+  const title=document.createElement('summary');title.textContent=text('Data evidence and limits (read only)','数据记录与局限（只读）');box.append(title);
+  if(!open)return;
+  const note=document.createElement('p');note.className='hint';note.textContent=text('Decoded-view inventory only. Not a sample verdict or MISSY 0.3 conformance assessment.','仅列出此解码视图中的记录。不代表样本判定或 MISSY 0.3 符合性评估。');box.append(note);
+  const all=rows(true);
+  RUNS.forEach((run,i)=>{
+   const card=document.createElement('div'),h=document.createElement('h4'),dl=document.createElement('dl');card.className='evidence-run';h.textContent=(i+1)+' · '+run.file;card.append(h,dl);
+   for(const r of all.filter(r=>r.evidence_view===i+1)){const term=document.createElement('dt'),value=document.createElement('dd');term.textContent=r.evidence_item;value.textContent=r.evidence_state+(r.evidence_detail?' · '+r.evidence_detail:'');dl.append(term,value);}
+   box.append(card);
+  });
+ }
+ function boot(){
+  render();const box=document.getElementById('missy-evidence-summary');box?.addEventListener('toggle',render);
+  const loaded=document.getElementById('loaded');if(loaded)new MutationObserver(render).observe(loaded,{childList:true});
+  new MutationObserver(render).observe(document.body,{attributes:true,attributeFilter:['class']});
+ }
+ MISSY_HOOKS.use('showTab','evidence/read-only-panel',260,next=>function(...args){const result=next(...args);render();return result;});
+ MISSY_HOOKS.use('selDataItems','evidence/optional-report-table',260,next=>function(){return next().concat({
+  id:'data:evidence_limits',kind:'data',group:'Source provenance',title:'Data evidence and limits',note:'',
+  ready:()=>RUNS.length>0,rows:()=>rows(true),file:'data_evidence_limits.csv',
+  tableOptions:{full:true,columns:['evidence_view','filename','evidence_item','evidence_state','evidence_detail']},text:()=>csvOf(rows(false))
+ });});
+ MISSY_HOOKS.use('exportCatalogue','evidence/optional-csv',260,next=>function(){return next().concat({
+  title:'Data evidence and limits (CSV)',note:'',ready:()=>RUNS.length>0,
+  run:()=>download('data_evidence_limits.csv',csvOf(rows(false)),'text/csv')
+ });});
+ MISSY_HOOKS.use('cmdExec','evidence/read-only-command',260,next=>async function(raw){
+  if(String(raw).trim().toLowerCase()==='evidence'){cmdTable(rows(true).map(r=>[r.evidence_view+' · '+r.filename,[r.evidence_item,r.evidence_state,r.evidence_detail].filter(Boolean).join(' · ')]),true);return;}
+  return next(raw);
+ });
+ if(typeof REPORT_LITERAL_COLUMNS!=='undefined')REPORT_LITERAL_COLUMNS.add('evidence_detail');
+ CMD_HELP.push(['evidence','show read-only data evidence and limits']);
+ Object.assign(ZH_TERMS,{'Data evidence and limits':'数据记录与局限','Data evidence and limits (CSV)':'数据记录与局限（CSV）','show read-only data evidence and limits':'显示只读数据记录与局限',evidence_view:'运行序号',evidence_item:'记录项目',evidence_state:'记录状态',evidence_detail:'记录详情'});
+ const style=document.createElement('style');style.textContent='#missy-evidence-summary{margin-top:16px;border-top:1px solid #d8dee8;padding-top:10px}#missy-evidence-summary[hidden]{display:none!important}#missy-evidence-summary summary{cursor:pointer;font-weight:600}#missy-evidence-summary .evidence-run{padding:10px 0;border-top:1px solid #e5e7eb}#missy-evidence-summary h4{margin:6px 0;overflow-wrap:anywhere}#missy-evidence-summary dl{display:grid;grid-template-columns:minmax(180px,260px) minmax(0,1fr);gap:6px 14px;margin:8px 0}#missy-evidence-summary dt,#missy-evidence-summary dd{margin:0;min-width:0;overflow-wrap:anywhere}#missy-evidence-summary dt{font-weight:600}@media(max-width:600px){#missy-evidence-summary dl{grid-template-columns:minmax(0,1fr)}#missy-evidence-summary dd{margin-bottom:6px}}';document.head.append(style);
+ document.addEventListener('DOMContentLoaded',boot);
+ return Object.freeze({snapshot,rows,render});
+})();
+window.MISSY_EVIDENCE=MISSY_EVIDENCE;
 /* Registration order does not override conflicting content signatures. */
 registerReader({id:'ixo',version:'zenodo-23437639',extensions:['.ixo'],probe:s=>!s.zipNames&&/<objectstream\b[^>]*signature=["\']IXOS["\']/i.test(new TextDecoder().decode(s.bytes.subarray(0,2048))),decode:async s=>{const source={...s,text:s.text||new TextDecoder().decode(s.bytes)},r=await decodeIxo(source,'auto');await ccExtractOnLoad(r,source);return r;}});
 registerReader({id:'eds',version:'zenodo-23437639',extensions:['.eds','.edt'],probe:s=>s.zipNames?.some(n=>/^apldbio\/sds\/experiment\.xml$/i.test(n)),decode:async s=>{const r=await decodeEds(s);await ccExtractOnLoad(r,s);return r;}});
@@ -17243,7 +17356,7 @@ MISSY_HOOKS.seal();
 </script>
 <style>.missy-license-zh{display:none}body.lang-zh .missy-license-zh{display:block}body.lang-zh .missy-license-en{display:none}.missy-gpl-translation{line-height:1.6;overflow-wrap:anywhere;max-width:100%}.missy-gpl-translation h1{font-size:20px}.missy-gpl-translation h2{font-size:17px}</style>
 
-<details id="missy-public-license" style="margin:16px 16px 100px;padding:12px;border:1px solid #40546c;border-radius:8px"><summary>GPL-3.0 · Attribution and source / 许可与源代码</summary><pre class="missy-license-en" style="white-space:pre-wrap;overflow-wrap:anywhere">MISSY public build — modified 23 October 2026. Release: 2026.10.23.sop-menu1.
+<details id="missy-public-license" style="margin:16px 16px 100px;padding:12px;border:1px solid #40546c;border-radius:8px"><summary>GPL-3.0 · Attribution and source / 许可与源代码</summary><pre class="missy-license-en" style="white-space:pre-wrap;overflow-wrap:anywhere">MISSY public build — modified 23 October 2026. Release: 2026.10.23.evidence1.
 Released under GNU GPL version 3. No warranty.
 ZPCR/PCRD format research and adapted parsing: R. Byers / zpcrweb contributors.
 Upstream: https://github.com/RByers/zpcrweb
@@ -17260,7 +17373,7 @@ Supported PCRD ZIP compression: stored / Deflate. Other methods remain unsupport
 Modular port: 21 October 2026. Baseline: Zenodo record 23437639.
 The single-file application retains the existing reader registrations and format support.
 </pre><div class="missy-license-zh" data-i18n-skip>
-<p>MISSY 公开版本，更新日期：2026 年 10 月 23 日。版本：2026.10.23.sop-menu1。按 GNU 通用公共许可协议第三版（GPL-3.0）发布，不提供品质担保。</p>
+<p>MISSY 公开版本，更新日期：2026 年 10 月 23 日。版本：2026.10.23.evidence1。按 GNU 通用公共许可协议第三版（GPL-3.0）发布，不提供品质担保。</p>
 <p>ZPCR／PCRD 格式研究及改编解析：R. Byers 与 zpcrweb 贡献者。上游：<a href="https://github.com/RByers/zpcrweb">github.com/RByers/zpcrweb</a>。</p>
 <p>修改内容：MISSY 集成、质控图、独立计算 Cq／Tm，以及本地密码流程。未分发 Bio-Rad 密码、从 CFX 派生的解密状态或厂商 DLL。独立计算不能替代厂商质控认证。</p>
 <p>HTML 保留 Plotly 的版权与 MIT 许可声明，包含可读应用代码和内嵌依赖。本 index.html 文件同时包含应用程序及其可读源代码。</p>
