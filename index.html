@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Offline reader for Roche LightCycler 480 .ixo and Applied Biosystems QuantStudio 3/5 .eds files: traceable stored values, container integrity checks, open qPCR exports, graphs, quality review, forensic log and JSON-LD metadata.">
 <meta name="application-name" content="qPCR raw values, quality-control and forensic export tool">
-<meta name="software-version" content="2026.10.23.a11yvoice2">
+<meta name="software-version" content="2026.10.23.voicekeys3">
 
 <!--
   MACHINE-READABLE LANDING-PAGE METADATA
@@ -8081,16 +8081,9 @@ function mgRenderBase(){
     ?[{key:"1",label:"Confirm "+MG.pending.id,cmd:"confirm",cls:"primary"},{key:"2",label:"Cancel",cmd:"cancel"},
       {key:"0",label:"Leave the console",cmd:"exit"}]
     :charting
-      ?[{key:"1",label:onChart?"Previous chart":"Previous graph",cmd:onChart?"chart previous":"previous",cls:"primary"},
-        {key:"2",label:onChart?"Next chart":"Next graph",cmd:onChart?"chart next":"next",cls:"primary"},
-        {key:"3",label:onChart?"Close chart":"Close graph",cmd:"chart close"},
-        ...typeActs,...axisActs,
-        {key:"−",label:"Zoom out",cmd:"zoom out"},
-        {key:"⟲",label:`Reset view · ${Math.round((Number.isFinite(MG.zoom)?MG.zoom:1)*100)}%`,cmd:"zoom reset"},
-        {key:"+",label:"Zoom in",cmd:"zoom in"},
-        {key:"←",label:"Pan left",cmd:"pan left"},{key:"→",label:"Pan right",cmd:"pan right"},{key:"↑",label:"Pan up",cmd:"pan up"},{key:"↓",label:"Pan down",cmd:"pan down"},
-        {key:"8",label:"Light theme",cmd:"theme light"},
-        {key:"9",label:"Dark theme",cmd:"theme dark"},
+      ?[{key:"1",label:UI_LANG==='zh'?(onChart?'图表':'图形'):(onChart?'Chart':'Graph'),cmd:"navigation menu",cls:"primary"},
+        {key:"2",label:UI_LANG==='zh'?'视图 · 缩放和平移':'View · Zoom / pan',cmd:"view menu",cls:"sheet"},
+        {key:"3",label:UI_LANG==='zh'?'外观':'Appearance',cmd:"appearance menu",cls:"sheet"},
         {key:"0",label:"Return to the page",cmd:"exit"}]
       :[{key:"1",label:"Next",cmd:"next",cls:"primary"},{key:"2",label:"Previous",cmd:"previous"}]
         .concat((it&&it.actions||[]).map(a=>Object.assign({},a)))
@@ -8110,11 +8103,25 @@ function mgRender(...args){return MISSY_HOOKS.invoke("mgRender",this,args,mgRend
 /* ---------- option sheets: one question, large targets, number-addressable ---------- */
 function mgSheet(kind){
   const it=mgItem(),box=document.getElementById("mg-sheet");
-  if(!it||!it.chartId)return;
-  const opts=kind==="type"?mgChartTypeOptions(it):mgChartAxisOptions(it);
+  if(!it||(!it.chartId&&!["view","zoom","pan","navigation","appearance"].includes(kind)))return;
+  const tr=(en,zh)=>UI_LANG==='zh'?zh:en;
+  const opts=kind==="navigation"?[
+    {value:it.chartId?'chart previous':'previous',label:tr('Previous','上一个')},
+    {value:it.chartId?'chart next':'next',label:tr('Next','下一个')},
+    {value:'chart close',label:tr('Close chart','关闭图表')},
+    ...(it.chartId&&mgChartTypeOptions(it).length>1?[{value:'chart type',label:tr('Chart type','图表类型')}]:[]),
+    ...(it.chartId&&mgChartAxisOptions(it).length>1?[{value:'x axis',label:tr('X axis','横轴')}]:[]),
+    ...(!it.chartId&&RUNS.length>1?[{value:'next run',label:tr('Next run','下一次运行')}]:[])
+  ]:kind==="appearance"?[{value:'theme light',label:tr('Light theme','浅色主题')},{value:'theme dark',label:tr('Dark theme','深色主题')}]:kind==="view"?[
+    ['zoom menu','Zoom','缩放'],['pan menu','Pan','平移'],['zoom reset','Reset view · 100%','重置视图 · 100%']
+  ].map(([value,en,zh])=>({value,label:tr(en,zh)})):kind==="zoom"?[
+    ['zoom out','Zoom out','缩小'],['zoom in','Zoom in','放大'],['zoom reset','Reset view · 100%','重置视图 · 100%']
+  ].map(([value,en,zh])=>({value,label:tr(en,zh)})):kind==="pan"?[
+    ['pan left','Pan left','向左平移'],['pan right','Pan right','向右平移'],['pan up','Pan up','向上平移'],['pan down','Pan down','向下平移']
+  ].map(([value,en,zh])=>({value,label:UI_LANG==='zh'?zh:en})):kind==="type"?mgChartTypeOptions(it):mgChartAxisOptions(it);
   if(opts.length<2)return;
   MG.sheet={kind,opts};
-  document.getElementById("mg-sheet-title").textContent=kind==="type"?"Chart type":"X axis";
+  document.getElementById("mg-sheet-title").textContent=kind==="zoom"?tr("Zoom","缩放"):kind==="pan"?tr("Pan","平移"):kind==="navigation"?tr("Chart / graph","图表 / 图形"):kind==="appearance"?tr("Appearance","外观"):kind==="view"?(UI_LANG==='zh'?"视图 · 缩放和平移":"View · Zoom / pan"):kind==="type"?"Chart type":"X axis";
   document.getElementById("mg-sheet-list").innerHTML=opts.map((o,i)=>
     `<button data-i="${i}" class="${o.current?"current":""}">
        <span class="k">${i+1} · select${o.current?" · in use":""}</span>
@@ -8126,7 +8133,7 @@ function mgSheet(kind){
 function mgSheetPick(i){
   const st=MG.sheet;if(!st||!st.opts[i])return;
   const v=st.opts[i].value;mgSheetClose();
-  if(st.kind==="type")mgSetChartType(v);else mgSetChartAxis(v);
+  if(["view","zoom","pan","navigation","appearance"].includes(st.kind)){mgCommand(v,"button");return;}if(st.kind==="type")mgSetChartType(v);else mgSetChartAxis(v);
   mgRender();
 }
 function mgSheetClose(){MG.sheet=null;const b=document.getElementById("mg-sheet");if(b)b.hidden=true;}
@@ -8167,6 +8174,11 @@ function mgZoom(kind){
 function mgPan(dx,dy){MG.panX=Math.max(-1200,Math.min(1200,MG.panX+dx));MG.panY=Math.max(-1200,Math.min(1200,MG.panY+dy));mgApplyChartView();}
 
 const MG_COMMANDS=[
+  {re:/^zoom menu$/,id:"zoom menu",act:()=>mgSheet("zoom")},
+  {re:/^pan menu$/,id:"pan menu",act:()=>mgSheet("pan")},
+  {re:/^navigation menu$/,id:"navigation menu",act:()=>mgSheet("navigation")},
+  {re:/^appearance menu$/,id:"appearance menu",act:()=>mgSheet("appearance")},
+  {re:/^view menu$/,id:"view menu",act:()=>mgSheet("view")},
   {re:/^next$/, id:"next", act:()=>mgGo(1)},
   {re:/^previous$/, id:"previous", act:()=>mgGo(-1)},
   {re:/^chart previous$/, id:"chart previous", act:()=>mgGoChart(-1)},
@@ -8735,6 +8747,8 @@ function mgInit(){
     const tg=e.target,tag=tg&&tg.tagName;
     if(tag==="INPUT"||tag==="TEXTAREA"||tag==="SELECT"||(tg&&tg.isContentEditable))return;
     const key={"-":"−","=":"+",ArrowLeft:"←",ArrowRight:"→",ArrowUp:"↑",ArrowDown:"↓"}[e.key]||e.key;
+    const viewKey={"−":"zoom out","+":"zoom in","←":"pan left","→":"pan right","↑":"pan up","↓":"pan down"}[key];
+    if(MG.chart&&viewKey){e.preventDefault();mgCommand(viewKey,"keyboard");return;}
     const b=[...document.querySelectorAll("#mg-actions .mg-act")].find(x=>{const k=x.querySelector(".k");return k&&k.textContent.trim().split(/\s/)[0]===key;});
     if(!b)return;
     e.preventDefault();b.click();
@@ -17244,12 +17258,12 @@ const MISSY_CONSOLE_VOICE=(()=>{
   const pending=[];
   for(const button of buttons){const token=button.querySelector('.k')?.textContent.trim().split(/\s/)[0]||'',n=/^(?:[0-9]|1[0-5])$/.test(token)?Number(token):null;if(n!==null&&!result.has(n))result.set(n,button);else pending.push(button);}
   for(const button of pending){const n=Array.from({length:16},(_,i)=>i).find(i=>!result.has(i));if(n!==undefined)result.set(n,button);}
-  for(const [n,button]of result){const badge=document.createElement('span');badge.className='missy-voice-key';badge.setAttribute('data-i18n-skip','');badge.textContent=t('Voice ','语音 ')+n;(button.querySelector('.k')||button).append(badge);}
+  for(const [n,button]of result){const badge=document.createElement('span');badge.className='missy-voice-key';badge.setAttribute('data-i18n-skip','');badge.textContent=' '+t('Voice ','语音 ')+n;(button.querySelector('.k')||button).append(badge);}
   return result;
  }
  function command(text){const n=parse(text);if(n===null||!MG.open||!panel?.open||document.hidden)return false;if(MG.sheet&&n===0&&shown(document.getElementById('mg-sheet'))){mgSheetClose();say('Voice key 0','语音按键 0');return true;}const active=document.activeElement;if(active&&(/^(INPUT|TEXTAREA|SELECT)$/.test(active.tagName)||active.isContentEditable))return false;const button=keys().get(n);if(!shown(button))return false;button.click();say('Voice key '+n,'语音按键 '+n);return true;}
  function localAPI(){const C=window.SpeechRecognition||window.webkitSpeechRecognition;if(!C||typeof C.available!=='function')throw Error('local-unavailable');const r=new C();if(!('processLocally'in r))throw Error('local-unavailable');r.processLocally=true;if(r.processLocally!==true)throw Error('local-unavailable');return {C,r};}
- function controls(){if(startButton)startButton.disabled=busy||listening;if(setupButton)setupButton.disabled=busy||listening;if(stopButton)stopButton.disabled=!busy&&!listening;}
+ function controls(){if(startButton)startButton.disabled=busy||listening||!MG.open;if(setupButton)setupButton.disabled=busy||listening;if(stopButton)stopButton.disabled=!busy&&!listening;}
  function stop(){generation++;busy=false;listening=false;const old=recognizer;recognizer=null;if(old){old.onend=null;old.onerror=null;old.onresult=null;try{old.abort();}catch{}}controls();say('Voice off','语音已关闭');}
  async function setup(){if(busy||listening)return;busy=true;controls();const token=++generation;try{const {C}=localAPI();const state=await C.available({langs:['en-US'],processLocally:true});if(token!==generation)return;if(state==='available'){say('English pack is ready; Start uses offline recognition.','英语语言包已就绪；启动后使用离线识别。');return;}if(state!=='downloadable'||typeof C.install!=='function'){say('Local English pack unavailable or still downloading.','本地英语语言包不可用或仍在下载。');return;}say('Installing English pack (one-time internet required)…','正在安装英语语言包（首次需要联网）…');const ok=await C.install({langs:['en-US'],processLocally:true});if(token!==generation)return;say(ok?'English pack installed; you can work offline.':'English pack installation failed.',ok?'英语语言包已安装；可离线使用。':'英语语言包安装失败。');}catch{say('On-device English recognition is unavailable. No online recognition is used.','设备端英语识别不可用。不使用在线识别。');}finally{if(token===generation){busy=false;controls();}}}
  async function start(){if(busy||listening||!MG.open||!panel?.open)return;busy=true;controls();const token=++generation;try{const {C,r}=localAPI();if(await C.available({langs:['en-US'],processLocally:true})!=='available'){say('Install the English pack using Setup first. Voice remains off.','请先通过设置安装英语语言包。语音保持关闭。');return;}if(token!==generation||!MG.open||!panel.open)return;recognizer=r;seen=new Set();lastAt=0;r.lang='en-US';r.continuous=true;r.interimResults=false;
@@ -17258,21 +17272,49 @@ const MISSY_CONSOLE_VOICE=(()=>{
   r.onerror=()=>{if(token!==generation)return;stop();say('Voice stopped after a recognition error; no online fallback.','识别出错后语音已停止；不切换至在线识别。');};
   r.onend=()=>{if(token!==generation)return;recognizer=null;listening=false;busy=false;controls();say('Voice ended. Press Start to listen again.','语音已结束。按启动可再次聆听。');};r.start();
  }catch{stop();say('Local recognition could not start. No online fallback.','无法启动本地识别。不切换至在线识别。');}finally{if(token===generation&&!recognizer){busy=false;controls();}}}
- function mount(){const host=document.getElementById('mg-top');if(!host)return;
+ function dock(){const host=MG.open?document.getElementById('mg-statusbar'):document.querySelector('#statusbar .sb-right');if(panel&&host&&panel.parentNode!==host)host.append(panel);controls();}
+ function mount(){const host=document.querySelector('#statusbar .sb-right');if(!host)return;
   panel=document.createElement('details');panel.id='missy-console-voice';panel.setAttribute('data-i18n-skip','');const summary=document.createElement('summary');panel.append(summary);const note=document.createElement('p');panel.append(note);
-  setupButton=document.createElement('button');setupButton.type='button';setupButton.onclick=setup;startButton=document.createElement('button');startButton.type='button';startButton.onclick=start;stopButton=document.createElement('button');stopButton.type='button';stopButton.onclick=stop;panel.append(setupButton,startButton,stopButton);status=document.createElement('p');status.setAttribute('role','status');status.setAttribute('aria-live','polite');panel.append(status);host.append(panel);
-  const labels=()=>{summary.textContent=t('English voice keys (optional, offline)','英语语音按键（可选、离线）');note.textContent=t('Console action buttons only. Say a shown Voice number, zero to fifteen. Existing number keys keep their numbers; symbol buttons get unused voice numbers. Setup downloads an English pack once. Start requires on-device recognition; no online fallback. Voice stops on closing Console, hiding controls or leaving the tab.','仅控制控制台操作按钮。用英语说出显示的语音编号（0至15）。已有数字按键保留原编号；符号按钮分配未使用的语音编号。设置时首次下载英语语言包。启动须支持设备端识别；不切换至在线识别。关闭控制台、隐藏控件或离开标签页时停止语音。');setupButton.textContent=t('Setup English (one-time download)','设置英语（首次下载）');startButton.textContent=t('Start voice','启动语音');stopButton.textContent=t('Stop voice','停止语音');};
+  setupButton=document.createElement('button');setupButton.type='button';setupButton.onclick=setup;startButton=document.createElement('button');startButton.type='button';startButton.onclick=start;stopButton=document.createElement('button');stopButton.type='button';stopButton.onclick=stop;const popover=document.createElement('div');popover.className='missy-voice-popover';popover.append(note,setupButton,startButton,stopButton);status=document.createElement('p');status.setAttribute('role','status');status.setAttribute('aria-live','polite');popover.append(status);panel.append(popover);host.append(panel);
+  const labels=()=>{summary.textContent=t('English voice','英语语音');note.textContent=t('Console action buttons only. Say a shown Voice number, zero to fifteen. Existing number keys keep their numbers; symbol buttons get unused voice numbers. Setup downloads an English pack once. Start requires on-device recognition; no online fallback. Voice stops on closing Console, hiding controls or leaving the tab.','仅控制控制台操作按钮。用英语说出显示的语音编号（0至15）。已有数字按键保留原编号；符号按钮分配未使用的语音编号。设置时首次下载英语语言包。启动须支持设备端识别；不切换至在线识别。关闭控制台、隐藏控件或离开标签页时停止语音。');setupButton.textContent=t('Setup English (one-time download)','设置英语（首次下载）');startButton.textContent=t('Start voice','启动语音');stopButton.textContent=t('Stop voice','停止语音');};
   panel.addEventListener('toggle',()=>{if(!panel.open){stop();document.querySelectorAll('.missy-voice-key').forEach(e=>e.remove());}else{labels();keys();}});labels();controls();say('Voice off','语音已关闭');
   new MutationObserver(()=>{if(!MG.open||document.getElementById('mg').classList.contains('mg-focus'))stop();}).observe(document.getElementById('mg'),{attributes:true,attributeFilter:['class']});
   new MutationObserver(()=>{labels();keys();}).observe(document.body,{attributes:true,attributeFilter:['class']});
  }
- MISSY_HOOKS.use('mgRender','console-voice/visible-key-labels',281,next=>function(...args){const result=next(...args);if(panel?.open)keys();return result;});
- MISSY_HOOKS.use('mgClose','console-voice/stop-on-close',281,next=>function(...args){stop();return next(...args);});
+ MISSY_HOOKS.use('mgRender','console-voice/visible-key-labels',281,next=>function(...args){const result=next(...args);dock();if(panel?.open)keys();return result;});
+ MISSY_HOOKS.use('mgClose','console-voice/stop-on-close',281,next=>function(...args){stop();if(panel)panel.open=false;const result=next(...args);dock();return result;});
  document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();});window.addEventListener('pagehide',stop);document.addEventListener('DOMContentLoaded',mount);
- const style=document.createElement('style');style.textContent='#missy-console-voice{width:100%;font:14px Arial,sans-serif}#missy-console-voice p{margin:6px 0;overflow-wrap:anywhere}#missy-console-voice summary{cursor:pointer}#missy-console-voice button{margin:3px;padding:6px 10px}#missy-console-voice :focus-visible{outline:3px solid #69b3ff;outline-offset:2px}.missy-voice-key{float:right;margin-left:6px;font-size:12px;color:#87d7b3}';document.head.append(style);
+ const style=document.createElement('style');style.textContent='#missy-console-voice{position:relative;flex:none;font:13px Arial,sans-serif;color:inherit;margin-left:auto}#missy-console-voice summary{white-space:nowrap;padding:5px 8px;border:1px solid #64748b;border-radius:5px}#missy-console-voice .missy-voice-popover{position:absolute;right:0;bottom:calc(100% + 8px);width:min(520px,calc(100vw - 24px));max-height:65vh;overflow:auto;background:#0b111b;color:#e8edf5;border:1px solid #64748b;border-radius:8px;padding:12px;box-shadow:0 4px 24px #0006;z-index:50}#missy-console-voice p{margin:6px 0;overflow-wrap:anywhere}#missy-console-voice summary{cursor:pointer}#missy-console-voice button{margin:3px;padding:6px 10px}#missy-console-voice :focus-visible{outline:3px solid #69b3ff;outline-offset:2px}.missy-voice-key{float:right;margin-left:6px;font-size:12px;color:#87d7b3}';document.head.append(style);
  return Object.freeze({parse,command,keys});
 })();
 window.MISSY_CONSOLE_VOICE=MISSY_CONSOLE_VOICE;
+/* Console presentation only: reserve space for the chart, retain all controls. */
+Object.assign(ZH_TERMS,{'View · Zoom / pan':'视图 · 缩放和平移','Appearance':'外观','Chart / graph':'图表 / 图形'});
+const consoleLayoutStyle=document.createElement('style');consoleLayoutStyle.textContent=`
+#mg #mg-top{padding:8px 14px;gap:8px}
+#mg #mg-mode{font-size:17px}
+#mg #mg-facts{font-size:13px;padding-right:180px}
+#mg #mg-nav{background:transparent;gap:5px;padding:0}
+#mg #mg-nav button{padding:6px 9px;font-size:13px;min-height:32px}
+#mg #console-selectors{grid-template-columns:minmax(260px,1.5fr) minmax(220px,1fr) 210px;gap:10px}
+#mg #console-selectors label{font-size:13px;white-space:nowrap}
+#mg #console-selectors select,#mg #console-selectors input,#mg #console-selectors button{padding:6px;min-height:34px}
+#mg .mg-sheet-box{max-height:85vh;overflow:auto}#mg #mg-sheet-list{display:flex;flex-direction:column;gap:8px}#mg #mg-sheet-list button{min-height:48px;padding:8px 12px}#mg #mg-sheet-list .l{font-size:16px}
+#mg #mg-body{min-height:0;min-width:0}
+#mg.charting #mg-chart{padding:10px}
+#mg.charting #mg-chart-stage{height:100%;width:100%;flex:1 1 0}
+#mg.charting #mg-chart-stage svg{height:100%;width:100%;flex:1 1 0}
+#mg.charting #mg-actions{grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:none;grid-auto-rows:minmax(54px,auto);gap:6px;padding:7px 12px}
+#mg.charting #mg-actions .mg-act{min-height:54px;padding:5px 9px;gap:2px;border-radius:7px}
+#mg.charting #mg-actions .k{font-size:11px;letter-spacing:normal;line-height:1.2}
+#mg.charting #mg-actions .l{font-size:14px;line-height:1.2;overflow-wrap:normal}
+#mg #mg-statusbar{min-height:28px;padding:3px 14px;position:relative;overflow:visible}
+#mg .missy-voice-key{font-size:11px}
+#mg.mg-focus #mg-statusbar{position:absolute}
+#mg.mg-focus #missy-console-voice{display:none}
+@media(max-width:1100px){#mg #console-selectors{grid-template-columns:minmax(220px,1fr) minmax(180px,1fr)}#mg #console-selectors label:last-child{grid-column:1/-1}#mg.charting #mg-actions{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:650px){#mg:not(.mg-focus){overflow-y:auto}#mg #mg-top{padding:40px 10px 8px}#mg #mg-facts{padding-right:0}#mg #console-selectors{grid-template-columns:minmax(0,1fr)}#mg.charting #mg-body{flex:0 0 50vh;min-height:280px}#mg.charting #mg-actions{grid-template-columns:repeat(2,minmax(0,1fr));overflow:visible}#mg.charting #mg-actions .l{font-size:13px}#mg #mg-statusbar{flex-wrap:wrap;font-size:11px}#mg.mg-focus #mg-body{flex:1 1 0;min-height:0}}
+`;document.head.append(consoleLayoutStyle);
 /* UI-only focus preservation for the existing evidence panels. No data access. */
 const MISSY_EVIDENCE_A11Y=(()=>{
  function refresh(id,render){
