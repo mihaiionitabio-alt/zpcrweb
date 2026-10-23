@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Offline reader for Roche LightCycler 480 .ixo and Applied Biosystems QuantStudio 3/5 .eds files: traceable stored values, container integrity checks, open qPCR exports, graphs, quality review, forensic log and JSON-LD metadata.">
 <meta name="application-name" content="qPCR raw values, quality-control and forensic export tool">
-<meta name="software-version" content="2026.10.23.guide1">
+<meta name="software-version" content="2026.10.23.readers1">
 
 <!--
   MACHINE-READABLE LANDING-PAGE METADATA
@@ -17633,6 +17633,31 @@ const MISSY_EVIDENCE_GUIDE=(()=>{
  return Object.freeze({render});
 })();
 window.MISSY_EVIDENCE_GUIDE=MISSY_EVIDENCE_GUIDE;
+/* P01/M01: display existing registration metadata only. Never invoke readers. */
+const MISSY_READER_INVENTORY=(()=>{
+ const t=(en,zh)=>UI_LANG==='zh'?zh:en;
+ function snapshot(){
+  return {build:typeof APP_VERSION==='undefined'?null:APP_VERSION,model:typeof MISSY_MODEL_VERSION==='undefined'?null:MISSY_MODEL_VERSION,
+   readers:(typeof MISSY_READERS==='undefined'?[]:MISSY_READERS).map(r=>({reader_id:r.id,adapter_version:r.version,extensions:Array.isArray(r.extensions)?r.extensions.join(', '):''}))};
+ }
+ function csvRows(){const s=snapshot();return s.readers.map(r=>({display_build:s.build,decoded_model_version:s.model,...r}));}
+ function render(){
+  const host=document.getElementById('loadedcard');if(!host)return;let box=document.getElementById('missy-reader-inventory');
+  if(!box){box=document.createElement('details');box.id='missy-reader-inventory';box.setAttribute('data-i18n-skip','');box.addEventListener('toggle',render);host.append(box);}
+  const title=document.createElement('summary');title.textContent=t('Registered readers in this build (read only)','本版本已注册的读取器（只读）');box.replaceChildren(title);if(!box.open)return;
+  const s=snapshot(),info=document.createElement('p');info.textContent=t('Display build: ','显示版本：')+String(s.build??'')+' · '+t('Decoded model version: ','解码模型版本：')+String(s.model??'');box.append(info);
+  const note=document.createElement('p');note.textContent=t('These are current registration declarations, not vendor algorithm versions or conformance results. A listed extension does not guarantee every file variant is supported. ZIP batch intake is separate from these readers and does not declare MISSY package support. No files are inspected by this inventory.','以下为当前注册声明，不代表厂商算法版本或符合性结果。列出的扩展名不能保证支持所有文件变体。ZIP批量加载与这些读取器分开，不表示支持MISSY数据包。本清单不检查任何文件。');box.append(note);
+  const table=document.createElement('table'),head=document.createElement('thead'),tr=document.createElement('tr');for(const label of [t('Reader ID','读取器标识'),t('Adapter version','适配器版本'),t('Registered extensions','已注册扩展名')]){const th=document.createElement('th');th.scope='col';th.textContent=label;tr.append(th);}head.append(tr);table.append(head);
+  const body=document.createElement('tbody');for(const row of s.readers){const tr=document.createElement('tr');for(const key of ['reader_id','adapter_version','extensions']){const td=document.createElement('td');td.textContent=String(row[key]??'');tr.append(td);}body.append(tr);}table.append(body);box.append(table);
+  if(!s.readers.length){const empty=document.createElement('p');empty.textContent=t('No reader registrations are exposed.','未提供读取器注册信息。');box.append(empty);}
+  const button=document.createElement('button');button.type='button';button.textContent=t('Download reader inventory (CSV)','下载读取器清单（CSV）');button.onclick=()=>download('registered_readers.csv',csvOf(csvRows()),'text/csv');box.append(button);
+ }
+ MISSY_HOOKS.use('showTab','reader-inventory/registration-display',266,next=>function(...args){const result=next(...args);render();return result;});
+ const style=document.createElement('style');style.textContent='#missy-reader-inventory{margin-top:16px;border-top:1px solid #d8dee8;padding-top:10px}#missy-reader-inventory summary{cursor:pointer;font-weight:600}#missy-reader-inventory p{overflow-wrap:anywhere}#missy-reader-inventory table{table-layout:fixed;width:100%;border-collapse:collapse;margin-bottom:10px}#missy-reader-inventory th,#missy-reader-inventory td{padding:6px;text-align:left;vertical-align:top;overflow-wrap:anywhere;border-bottom:1px solid #d8dee8}#missy-reader-inventory button{max-width:100%;white-space:normal}';document.head.append(style);
+ document.addEventListener('DOMContentLoaded',()=>{render();new MutationObserver(render).observe(document.body,{attributes:true,attributeFilter:['class']});});
+ return Object.freeze({snapshot,csvRows,render});
+})();
+window.MISSY_READER_INVENTORY=MISSY_READER_INVENTORY;
 /* Registration order does not override conflicting content signatures. */
 registerReader({id:'ixo',version:'zenodo-23437639',extensions:['.ixo'],probe:s=>!s.zipNames&&/<objectstream\b[^>]*signature=["\']IXOS["\']/i.test(new TextDecoder().decode(s.bytes.subarray(0,2048))),decode:async s=>{const source={...s,text:s.text||new TextDecoder().decode(s.bytes)},r=await decodeIxo(source,'auto');await ccExtractOnLoad(r,source);return r;}});
 registerReader({id:'eds',version:'zenodo-23437639',extensions:['.eds','.edt'],probe:s=>s.zipNames?.some(n=>/^apldbio\/sds\/experiment\.xml$/i.test(n)),decode:async s=>{const r=await decodeEds(s);await ccExtractOnLoad(r,s);return r;}});
@@ -17649,7 +17674,7 @@ MISSY_HOOKS.seal();
 </script>
 <style>.missy-license-zh{display:none}body.lang-zh .missy-license-zh{display:block}body.lang-zh .missy-license-en{display:none}.missy-gpl-translation{line-height:1.6;overflow-wrap:anywhere;max-width:100%}.missy-gpl-translation h1{font-size:20px}.missy-gpl-translation h2{font-size:17px}</style>
 
-<details id="missy-public-license" style="margin:16px 16px 100px;padding:12px;border:1px solid #40546c;border-radius:8px"><summary>GPL-3.0 · Attribution and source / 许可与源代码</summary><pre class="missy-license-en" style="white-space:pre-wrap;overflow-wrap:anywhere">MISSY public build — modified 23 October 2026. Release: 2026.10.23.guide1.
+<details id="missy-public-license" style="margin:16px 16px 100px;padding:12px;border:1px solid #40546c;border-radius:8px"><summary>GPL-3.0 · Attribution and source / 许可与源代码</summary><pre class="missy-license-en" style="white-space:pre-wrap;overflow-wrap:anywhere">MISSY public build — modified 23 October 2026. Release: 2026.10.23.readers1.
 Released under GNU GPL version 3. No warranty.
 ZPCR/PCRD format research and adapted parsing: R. Byers / zpcrweb contributors.
 Upstream: https://github.com/RByers/zpcrweb
@@ -17666,7 +17691,7 @@ Supported PCRD ZIP compression: stored / Deflate. Other methods remain unsupport
 Modular port: 21 October 2026. Baseline: Zenodo record 23437639.
 The single-file application retains the existing reader registrations and format support.
 </pre><div class="missy-license-zh" data-i18n-skip>
-<p>MISSY 公开版本，更新日期：2026 年 10 月 23 日。版本：2026.10.23.guide1。按 GNU 通用公共许可协议第三版（GPL-3.0）发布，不提供品质担保。</p>
+<p>MISSY 公开版本，更新日期：2026 年 10 月 23 日。版本：2026.10.23.readers1。按 GNU 通用公共许可协议第三版（GPL-3.0）发布，不提供品质担保。</p>
 <p>ZPCR／PCRD 格式研究及改编解析：R. Byers 与 zpcrweb 贡献者。上游：<a href="https://github.com/RByers/zpcrweb">github.com/RByers/zpcrweb</a>。</p>
 <p>修改内容：MISSY 集成、质控图、独立计算 Cq／Tm，以及本地密码流程。未分发 Bio-Rad 密码、从 CFX 派生的解密状态或厂商 DLL。独立计算不能替代厂商质控认证。</p>
 <p>HTML 保留 Plotly 的版权与 MIT 许可声明，包含可读应用代码和内嵌依赖。本 index.html 文件同时包含应用程序及其可读源代码。</p>
