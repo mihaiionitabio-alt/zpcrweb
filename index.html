@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Offline reader for Roche LightCycler 480 .ixo and Applied Biosystems QuantStudio 3/5 .eds files: traceable stored values, container integrity checks, open qPCR exports, graphs, quality review, forensic log and JSON-LD metadata.">
 <meta name="application-name" content="qPCR raw values, quality-control and forensic export tool">
-<meta name="software-version" content="2026.10.22.profile-scope1">
+<meta name="software-version" content="2026.10.23.sop-menu1">
 
 <!--
   MACHINE-READABLE LANDING-PAGE METADATA
@@ -626,7 +626,7 @@ body.lang-zh .cute-toast.show{opacity:1;transform:translateY(0) scale(1)}
     <h2>Laboratory SOP profile</h2>
     
     <div class="toolbar">
-      <label>Start from<select id="sop-preset"><option value="sc">SC screening — SOP-06 laboratory default</option><option value="demo">SC screening — SOP-06-DEMO (synthetic demonstration only)</option></select></label>
+      <label>Start from<select id="sop-preset"><option value="" disabled selected>Select a SOP profile</option></select></label>
       <button class="ghost" id="sop-apply-preset" type="button">Use this starting point</button>
       <button class="ghost" id="sop-open" type="button">Open profile (JSON)</button><input type="file" id="sop-file" accept=".json" hidden>
       <button class="act" id="sop-save" type="button">Save profile (JSON)</button>
@@ -4722,182 +4722,29 @@ const SOP_PRESETS={
   })
 };
 SOP_PRESETS.lab=sopLabScreening;
-SOP_PRESETS.sc=()=>{
-  const p=sopBase();
-  p.name="SC screening — SOP-06 laboratory default";p.version="1.4";
-  p.assay="GMO screening SOP-06 (35S / T-NOS with HMG or LEC reference)";
-  p.notes="Laboratory default for SC_ experiments. Runs are simplex, so colour compensation is not required. Review-only until the approved SOP owner confirms acceptance decisions and the comparison direction in section 6.2 c5.";
-  p.reviewOnly=true;
-  p.sourceProposalSchema="qpcr-control-mapping-proposal/v1";
-  p.samplePattern="^\\d+\\s*GM\\d{2}(?:\\b|_)";
-  p.classificationPrecedence=["explicit reviewed run/well override","assay-scoped name rule","vendor role as supporting evidence","unresolved"];
-  p.blockedAutomaticInterpretations=["SOP06 section 6.2 c5 comparison direction versus the LOD control requires laboratory clarification before automated sample calls","Unexplained suffixes and DIL labels remain distinct","2025 SOP acceptance rules do not retroactively replace historical SOP versions"];
-  p.targets=[
-    {match:"HMG|hmgA|LEC|Le1",kind:"reference",cqMax:40,cqLate:36,quantMin:"",lateOutcome:"Inconclusive"},
-    {match:"35S|P35S|CaMV P-35S|T-NOS|T-nos|TNOS",kind:"target",cqMax:40,cqLate:38,quantMin:"",lateOutcome:"Repeat"},
-    {match:"*",kind:"target",cqMax:40,cqLate:38,quantMin:"",lateOutcome:"Repeat"}
-  ];
-  const c=(id,name,match,targets,expect,purpose,material,lo="",hi="",reps=1)=>({id,name,matchBy:"name",match,targets,expect,purpose,material,cqLo:lo,cqHi:hi,minReplicates:reps,minPerRun:0,onFail:"review"});
-  p.controls=[
-    c("ntc","NTC","/^NTC$/i","*","negative","reaction blank",""),
-    c("extr","Extraction blank","/^(BLANK|BLK)\\s*EX/i","*","negative","extraction process blank",""),
-    c("grind","Grinding / environment blank","/^(BLANK|BLK)\\s*MAC/i","*","negative","grinding/environment blank",""),
-    c("cn-maize","Negative maize — target","/^(CN|NC)\\s+PORUMB\\b/i","35S|P35S|CaMV P-35S|T-NOS|T-nos|TNOS","negative","negative matrix control",""),
-    c("cn-maize-ref","Negative maize — HMG reference","/^(CN|NC)\\s+PORUMB\\b/i","HMG|hmgA","positive","reference amplification","",20,27),
-    c("cn-soy","Negative soy — target","/^(CN|NC)\\s+SOIA\\b/i","35S|P35S|CaMV P-35S|T-NOS|T-nos|TNOS","negative","negative matrix control",""),
-    c("cn-soy-ref","Negative soy — LEC reference","/^(CN|NC)\\s+SOIA\\b/i","LEC|Le1","positive","reference amplification","",20,27),
-    c("crm-415b-35s","415B — 35S LOD control","/^415B(?=\\b|\\d)/i","35S|P35S|CaMV P-35S","positive","LOD positive control","ERM-BF415b",29,36,2),
-    c("crm-415b-tnos","415B — T-NOS LOD control","/^415B(?=\\b|\\d)/i","T-NOS|T-nos|TNOS","positive","LOD positive control","ERM-BF415b",29,36,2),
-    c("crm-415b-hmg","415B — HMG reference","/^415B(?=\\b|\\d)/i","HMG|hmgA","positive","reference amplification","ERM-BF415b",20,27,2),
-    c("crm-410cp-35s","410CP — 35S LOD control","/^410CP(?=\\b|\\d)/i","35S|P35S|CaMV P-35S","positive","LOD positive control","ERM-BF410cp",29,36,2),
-    c("crm-410cp-tnos","410CP — T-NOS LOD control","/^410CP(?=\\b|\\d)/i","T-NOS|T-nos|TNOS","positive","LOD positive control","ERM-BF410cp",29,36,2),
-    c("crm-410cp-lec","410CP — LEC reference","/^410CP(?=\\b|\\d)/i","LEC|Le1","positive","reference amplification","ERM-BF410cp",20,27,2)
-  ];
-  /* The profile carries the method itself as well as the numeric rules.  These
-     are editable laboratory statements; they do not replace stored Cq values
-     or vendor calls. */
-  p.profileSchemaVersion=2;
-  p.method={id:"SOP-06-SC-screening",revision:"2025-II",scope:"SC_ GMO screening experiments",reference_genes:SC_REFERENCE_GENES(),
-    reference_correlation:{mode:"any-valid",target_patterns:["35S|P35S|CaMV P-35S","T-NOS|T-nos|TNOS"],description:"A target result is correlated with the valid taxon reference detected for the sample; an alternate undeclared species reference is not treated as a failed sample control."},
-    applies_when:{run_name_pattern:"^SC(?:[_\\s-]|$)",platforms:["LightCycler","QuantStudio"],
-      target_patterns:["35S|P35S|CaMV P-35S","T-NOS|T-nos|TNOS","HMG|hmgA","LEC|Le1"]},
-    on_not_applicable:"unresolved"};
-  p.procedure={id:"SOP-06",title:"Qualitative GMO screening of SC_ experiments",revision:"2025-II",
-    purpose:"Screen extracted plant DNA for 35S and T-NOS markers with HMG or LEC as the taxon reference.",
-    steps:[
-      {id:"P01",title:"Sample identity and extraction linkage",instruction:"Keep the SC_ sample identifier, material code, aliquot or dilution suffix, and extraction date together. Parse DD.MM.YYYY strictly and flag a date later than the run date.",acceptance:"No silent renaming; unresolved dates remain unresolved."},
-      {id:"P02",title:"Plate and control placement",instruction:"Use two technical replicates for samples and LOD controls. Use one well for NTC, matrix negatives and process blanks unless the approved procedure specifies a periodic environmental blank.",acceptance:"Required controls are present before sample calls are issued."},
-      {id:"P03",title:"Amplification and analysis",instruction:"Use the instrument's declared amplification analysis and preserve the original Cq, call, curve and analysis status. A curve without a same-channel result is evidence for review, not a replacement Cq.",acceptance:"Amplification cycles are evaluated separately from melt acquisitions."},
-      {id:"P04",title:"Control review",instruction:"Check LOD controls against their target-specific Cq windows, use hmgA (HMG) for Zea mays and Le1 (LEC) for Glycine max as taxon-specific DNA / extraction references, and check negative controls for absence of target amplification.",acceptance:"A failed control changes the run status according to the rule action."},
-      {id:"P05",title:"Sample interpretation",instruction:"Interpret a marker only when the target result and its required reference/control evidence meet this profile. Retain inconclusive or repeat outcomes when replicate or reference evidence is incomplete.",acceptance:"Every outcome names the rule and retains the stored call."},
-      {id:"P06",title:"Reporting and traceability",instruction:"Review the generated sample report against the loaded experiment, record the profile name, version and SHA-256, and release only the report belonging to that analysis.",acceptance:"No result is reported without an experiment and profile identity."}
-    ]};
-  p.interpretation={principles:[
-      "HMG/hmgA (hmgA F + hmgA R with hmgA probe) verifies Zea mays DNA; Le1/LEC (Le1 F + Le1 R with Le1 probe) verifies Glycine max DNA. These are taxon/extraction references, not GMO targets.",
-      "A detected 35S or T-NOS marker is reportable only when the required taxon reference is detected and the run controls pass.",
-      "A negative marker with a failed or shifted reference is not reported as negative; it is invalid or inconclusive according to the applicable rule.",
-      "A late signal, discordant replicate or Cq outside a control window is retained and reported with its reason.",
-      "The stored Cq values, calls and fluorescence traces are never changed by this profile."
-    ],rules:[
-      {id:"I01",when:"35S or T-NOS detected within the target Cq cut-off and required reference detected",action:"report detected for that marker",outcome:"Positive"},
-      {id:"I02",when:"marker not detected and the required HMG or LEC reference is valid",action:"report not detected for that marker",outcome:"Negative"},
-      {id:"I03",when:"marker replicates disagree, are late, or exceed the validated Cq window",action:"retain the evidence and request repeat or review",outcome:"Repeat"},
-      {id:"I04",when:"negative control amplifies in a screening target",action:"do not issue a sample call; reject or review the run",outcome:"Control fail"},
-      {id:"I05",when:"run is not an SC_ experiment or required method data are unavailable",action:"do not apply this profile",outcome:"Profile not applicable"}
-    ],reporting:{include_rule_id:true,include_reason:true,include_stored_call:true,release_statuses:["Accepted","Accepted with review"]}};
-  p.materials=[{code:"ERM-BF415b",purpose:"LOD positive control",matrix:"maize",shelf_life_days:1095},
-    {code:"ERM-BF410cp",purpose:"LOD positive control",matrix:"soy",shelf_life_days:1095}];
-  p.replicates={min:2,positiveMin:2,by_role:{sample:2,"positive control":2,"calibrator":2,"negative control":1,NTC:1,blank:1},partialOutcome:"Repeat",maxSd:0.5,sdOutcome:"Repeat"};
-  p.sample_id={pattern:"^\\d+\\s*GM\\d{2}(?:\\b|_)",flags:"i",description:"SC_ sample identifier: market number followed by GM code."};
-  /* SOP-06 is a review profile for assay interpretation.  An .ixo checksum
-     discrepancy remains auditable in File integrity, but it is not an assay
-     acceptance failure and must not turn every sample into a rejected run. */
-  p.run.integrity="review";p.run.controlsMissing="review";p.run.controlsFail="review";p.run.colourCompensation="off";p.run.referencePolicy="any-valid";p.run.invalidRunOverrides=false;
-  return p;
-};
-/* ---------------------------------------------------------------------------
-   SOP-06-DEMO — a demonstration profile for the synthetic demonstration runs.
-
-   It exists so that a demonstration set of a few files populates every graph
-   and draws real control limits instead of "collecting baseline" everywhere.
-
-   What it changes, and nothing else:
-     - the sample-identifier pattern also accepts the SYNTH demonstration
-       identifiers, so a demonstration run is not flagged for review over a
-       name that was never meant to match the laboratory pattern.  Acceptance
-       then reflects the faults the demonstration data actually carries.
-     - phase1 drops from 20 runs to 5 on every control chart, so a short
-       demonstration shows limits, run rules and alarms.
-
-   Everything else — every Cq cut-off, target kind, control definition and
-   window, replicate rule, run rule, acceptance action, procedure and
-   interpretation text — is inherited from SOP_PRESETS.sc() unchanged.
-
-   One chart is deliberately NOT reached from here.  B-M6 "IC shift from fixed
-   reference" needs a target of kind "ic" and a numeric ic.referenceCq, and an
-   earlier version of this profile declared LEC / Le1 as that internal control
-   to make the chart compute.  It was withdrawn: sopSampleRows() excludes only
-   kind "reference" from the sample screening decision, so an ic row counts as
-   an assay target, and a GMO-negative soy sample whose internal control
-   amplified was reported Positive — "35S: Not detected; T-NOS: Not detected;
-   LEC: Detected" gave sample_outcome Positive.  A false positive screening
-   call is not an acceptable price for one populated chart, so B-M6 stays empty
-   under this profile too.  (The same applies to any profile declaring an ic
-   target, including the shipped SOP_PRESETS.lab, whose "IPC|IC" rule has this
-   behaviour today.)
-
-   This is NOT a laboratory profile: limits computed from five runs are
-   indicative only, and the identifier pattern is widened for synthetic names.
-   It is deliberately treated as a template, so a reload returns to the
-   laboratory default and a browser used for a demonstration cannot quietly
-   stay on it.
-   --------------------------------------------------------------------------- */
-SOP_PRESETS.demo=()=>{
-  const p=SOP_PRESETS.sc();
-  p.name="SC screening — SOP-06-DEMO (synthetic demonstration only)";
-  p.version="1.4-demo";
-  p.assay="GMO screening SOP-06 — demonstration variant for synthetic runs";
-  p.notes="Demonstration profile for synthetic demonstration data. Inherits every numeric rule, target kind and control definition from the SOP-06 laboratory default and changes two things so that a short demonstration populates all graphs and draws real control limits: the sample-identifier pattern also accepts SYNTH demonstration identifiers, and the control-chart baseline drops from 20 runs to 5. Limits from five runs are indicative only and the widened identifier pattern is not a laboratory rule, so this profile must not be used to interpret laboratory runs. Chart B-M6 (IC shift) stays empty: reaching it needs a target of kind ic, and an ic target is currently counted as an assay target in the sample screening decision, which would report a GMO-negative sample as positive. It is treated as a template and is not restored after a reload.";
-  p.reviewOnly=true;
-  p.sample_id={pattern:"^(?:\\d+\\s*GM\\d{2}(?:\\b|_)|SYNTH\\s+(?:MZE|SOY|ORPHAN)\\s+\\d{3,5}\\b)",flags:"i",
-    description:"SC_ sample identifier (market number followed by GM code), or a SYNTH demonstration identifier."};
-  p.samplePattern=p.sample_id.pattern;
-  /* Five runs is the floor the statistics allow, so even a short demonstration
-     shows limits, run rules and alarms instead of "collecting baseline". */
-  if(typeof CC_CHARTS!=="undefined"){
-    p.controlCharts=Object.assign({},p.controlCharts);
-    CC_CHARTS.forEach(d=>{p.controlCharts[d.id]=Object.assign({},p.controlCharts[d.id],{phase1:5});});
-  }
-  p.method=Object.assign({},p.method,{id:"SOP-06-DEMO",scope:"synthetic demonstration runs (SC_SYNTH_*)"});
-  p.procedure=Object.assign({},p.procedure,{id:"SOP-06-DEMO",
-    title:"Demonstration variant of SOP-06 for synthetic runs"});
-  return p;
-};
+function sopNoProfile(){
+  const p=sopBase();p.name="No SOP selected";p.version="1.0";p.assay="";p.reviewOnly=true;p.evaluationMode="unconfigured";
+  p.notes="Select a SOP profile before interpreting experiment results.";p.targets=[];p.controls=[];
+  p.replicates={min:"",positiveMin:"",partialOutcome:"Inconclusive",maxSd:"",sdOutcome:"Repeat"};
+  p.ic={referenceCq:"",maxShift:"",shiftOutcome:"Inconclusive",missingOutcome:"Invalid"};
+  Object.assign(p.run,{minR2:"",effMin:"",effMax:"",minLogs:"",ntcGap:"",maxZoneSpread:""});return p;
+}
 const STORED_SOP=sopLoadStored();
 const STORED_SOP_IS_TEMPLATE=!!(STORED_SOP&&/^(Generic qPCR|GMO laboratory control mapping|GMO screening — qualitative|Forensic DNA quantification triage|SC screening — SOP-06-DEMO)/i.test(String(STORED_SOP.name||"")));
-let SOP=STORED_SOP&&!STORED_SOP_IS_TEMPLATE?STORED_SOP:SOP_PRESETS.sc();
+const STORED_SOP_IS_RETIRED_SC=!!(STORED_SOP&&/^SC screening\s*(?:—|-|�)\s*SOP-06/i.test(String(STORED_SOP.name||"")));
+let SOP=STORED_SOP&&!STORED_SOP_IS_TEMPLATE&&!STORED_SOP_IS_RETIRED_SC&&STORED_SOP.evaluationMode!=="unconfigured"?STORED_SOP:sopNoProfile();
 let SOP_AUTO_DEFAULT=!STORED_SOP||STORED_SOP_IS_TEMPLATE;
 let SOP_CACHE=null;
 function sopLoadStored(){try{const t=localStorage.getItem("qpcr_sop_profile");return t?sopNormalise(JSON.parse(t)):null;}catch(e){return null;}}
 function sopStore(){try{localStorage.setItem("qpcr_sop_profile",JSON.stringify(SOP));}catch(e){}}
-function sopMaybeSelectScDefault(){
-  if(!RUNS.length)return;
-  const sc=RUNS.every(r=>/^SC(?:[_\s-]|$)/i.test(runName(r)));
-  const old=String(SOP&&SOP.name||"");
-  if(sc&&/^(Generic qPCR|GMO screening — qualitative|Forensic DNA quantification)/i.test(old)){
-    SOP=SOP_PRESETS.sc();sopStore();invalidateAnalysisCaches();
-  }
-  /* Migrate the previously stored SC-06 default so an existing browser
-     profile receives the same review-only integrity rule as a fresh profile. */
-  if(sc&&SOP&&SOP.name==="SC screening — SOP-06 laboratory default"&&String(SOP.version)==="1.0"&&SOP.run&&SOP.run.integrity==="reject"){
-    SOP.run.integrity="review";SOP.version="1.1";sopStore();invalidateAnalysisCaches();
-  }
-  /* SC-06 runs are simplex.  An older saved profile may have inherited the
-     generic multi-channel compensation review; migrate it to the laboratory
-     setting without changing stored curves or calls. */
-  const scVersion=parseFloat(SOP&&SOP.version||"0")||0;
-  if(sc&&SOP&&SOP.name==="SC screening — SOP-06 laboratory default"&&scVersion<1.2&&SOP.run&&SOP.run.colourCompensation!=="off"){
-    SOP.run.colourCompensation="off";SOP.version="1.2";sopStore();invalidateAnalysisCaches();
-  }
-  /* Make the validated taxon-reference mapping explicit in profiles saved
-     before SC-06 profile version 1.3. */
-  if(sc&&SOP&&SOP.name==="SC screening — SOP-06 laboratory default"&&parseFloat(SOP.version||"0")<1.3&&(!SOP.method||!Array.isArray(SOP.method.reference_genes)||!SOP.method.reference_correlation)){
-    SOP.method=Object.assign({},SOP.method||{}, {reference_genes:SC_REFERENCE_GENES(),reference_correlation:{mode:"any-valid",target_patterns:["35S|P35S|CaMV P-35S","T-NOS|T-nos|TNOS"],description:"A target result is correlated with the valid taxon reference detected for the sample; an alternate undeclared species reference is not treated as a failed sample control."}});SOP.version="1.3";sopStore();invalidateAnalysisCaches();
-  }
-  /* Correlate a marker with the valid taxon reference present in simplex
-     samples; an alternate species reference is not a failed control. */
-  if(sc&&SOP&&SOP.name==="SC screening — SOP-06 laboratory default"&&parseFloat(SOP.version||"0")<1.4){
-    SOP.run=SOP.run||{};
-    if(SOP.run.referencePolicy==null)SOP.run.referencePolicy="any-valid";
-    SOP.version="1.4";sopStore();invalidateAnalysisCaches();
-  }
-}
+// Retained intake entry point; SC presets are no longer selected automatically.
+function sopMaybeSelectScDefault(){}
 function sopNormalise(p){
   if(p&&p.schema==="qpcr-control-mapping-proposal/v1"){
     /* The review proposal intentionally has a different schema.  Opening it
        converts its reviewed SC-06 rules to the application profile shape;
        stored run values and calls remain untouched. */
-    const q=SOP_PRESETS.sc();q.name="SC screening — SOP-06 laboratory default";q.version="1.0";return q;
+    throw new Error("The retired SC control-mapping proposal is not a supported profile. Select or import a complete SOP profile.");
   }
   const b=sopBase();if(!p||typeof p!=="object")return b;
   const o=Object.assign({},b,p);
@@ -5119,6 +4966,7 @@ function sopStdCurvesBase(run){
 /* ---- the interpretation itself ---- */
 function sopEvaluateRun(run,ri){return MISSY_HOOKS.invoke('sopEvaluateRun',this,[run,ri],sopEvaluateRunBase);}
 function sopEvaluateRunBase(run,ri){
+  if(SOP.evaluationMode==="unconfigured")return {run,ri,rows:[],criteria:[{criterion:ui("No SOP selected"),action:"unresolved",status:"n/a",evidence:ui("Select a SOP profile before interpreting experiment results.")}],status:"Profile not applicable — "+ui("No SOP selected"),rejected:[],reviewed:[],icMedian:NaN,times:runTimes(run)};
   const processing=sopProcessingApplicability(run);
   const applicability=processing.applicable?sopRunApplicability(run):processing;
   if(!applicability.applicable){
@@ -16830,7 +16678,7 @@ const MARA_LABELS={
 Object.assign(ZH_TERMS,MARA_LABELS);
 function maraProfileActive(p=SOP){return String(p?.method?.id||'').startsWith('MARA1012-');}
 function maraStandardsIndex(){
- const lines=['# MARA 1012 — JSON profiles and method references','','32 JSON profiles: 2 screening, 15 identification, 15 quantification. SC screening is unchanged.','','Calculations are provisional until laboratory approval. Enter actual control assignments; no commercial CRM identity or percentage is invented. The LOD is not the positive-control percentage.','','## Method specifications','','- Identification, standards 1–15: section 5. Controls: 5.4.5 / 5.4.7; three independent subsamples × one PCR each (5.4.6.1); majority interpretation (5.5); conditional relative comparison (5.5.2). Positive control: the named event at an actual content within 0.1–1.0% (5.4.5.3).','- Quantification, standards 1–15: section 6. Three subsamples × at least three PCR each (6.4.7.1); matched CRM curves (6.4.6–6.4.8); ratio of mean copies (6.4.9); separate QC/sample acceptance (6.4.10); per-event uncertainty (6.4.11); reporting (6.5); LOD/LOQ (6.6–6.7). Quantitative control: the named event at its actual assigned/certified percentage, comparable to the declared threshold.','- Threshold screening, standard 16: control/uncertainty coverage (3.1); ≥3 subsamples × three PCR each (5.3.6.1); controls (5.3.7); two-stage ΔCt/ΔΔCt (5.3.8); decisions and inclusive ±0.4 band (5.4). No numerical percentage or calibration curves.','- Presence screening, standard 17: controls (7.3.4–7.3.5); sample calls (8.1); LOD 1% (10). No fixed positive-control percentage is specified. Record the actual event/target-containing material and assigned percentage when applicable. Plasmids have no genomic mass fraction by default.','','## Profiles',''];
+ const lines=['# MARA 1012 — JSON profiles and method references','','32 JSON profiles: 2 screening, 15 identification, 15 quantification.','','Calculations are provisional until laboratory approval. Enter actual control assignments; no commercial CRM identity or percentage is invented. The LOD is not the positive-control percentage.','','## Method specifications','','- Identification, standards 1–15: section 5. Controls: 5.4.5 / 5.4.7; three independent subsamples × one PCR each (5.4.6.1); majority interpretation (5.5); conditional relative comparison (5.5.2). Positive control: the named event at an actual content within 0.1–1.0% (5.4.5.3).','- Quantification, standards 1–15: section 6. Three subsamples × at least three PCR each (6.4.7.1); matched CRM curves (6.4.6–6.4.8); ratio of mean copies (6.4.9); separate QC/sample acceptance (6.4.10); per-event uncertainty (6.4.11); reporting (6.5); LOD/LOQ (6.6–6.7). Quantitative control: the named event at its actual assigned/certified percentage, comparable to the declared threshold.','- Threshold screening, standard 16: control/uncertainty coverage (3.1); ≥3 subsamples × three PCR each (5.3.6.1); controls (5.3.7); two-stage ΔCt/ΔΔCt (5.3.8); decisions and inclusive ±0.4 band (5.4). No numerical percentage or calibration curves.','- Presence screening, standard 17: controls (7.3.4–7.3.5); sample calls (8.1); LOD 1% (10). No fixed positive-control percentage is specified. Record the actual event/target-containing material and assigned percentage when applicable. Plasmids have no genomic mass fraction by default.','','## Profiles',''];
  for(const role of ['screening','identification','quantification']){
   lines.push('### '+role,'','| SOP / standard | Event / scope | Reference | JSON | Control declaration |','|---|---|---|---|---|');
   for(const x of MARA_PROFILE_LIBRARY.filter(x=>x.role===role)){
@@ -17267,6 +17115,13 @@ MISSY_HOOKS.use('sopEvaluateRun','experiment.configuration.only',40,next=>functi
  const reason=ui('Configuration only; no independent experiment calculation engine selected');for(const row of result.rows){row.outcome='Not interpreted';row.label=ui('Not interpreted');row.report=reason;row.reason=reason;row.conc=NaN;}
  result.status='Not evaluated';result.criteria=[{criterion:reason,action:'review',status:'review',evidence:''}];result.rejected=[];result.reviewed=result.criteria;return result;
 });
+/* A method must be selected deliberately; retired SC presets are not restored. */
+Object.assign(ZH_TERMS,{'No SOP selected':'尚未选择SOP','Select a SOP profile':'请选择SOP配置','Select a SOP profile before interpreting experiment results.':'判定实验结果前，请先选择SOP配置。'});
+document.addEventListener('DOMContentLoaded',()=>{
+ const select=document.getElementById('sop-preset'),apply=document.getElementById('sop-apply-preset');
+ const sync=()=>{apply.disabled=!select.value||typeof SOP_PRESETS[select.value]!=='function';};
+ select.addEventListener('change',sync);sync();localizeDOM(select);
+});
 /* Explanatory views generated from the active profile; no scientific defaults
  * or measurements are inserted into SC or the standards profiles. */
 function methodNarrative(p,lang='en'){
@@ -17388,7 +17243,7 @@ MISSY_HOOKS.seal();
 </script>
 <style>.missy-license-zh{display:none}body.lang-zh .missy-license-zh{display:block}body.lang-zh .missy-license-en{display:none}.missy-gpl-translation{line-height:1.6;overflow-wrap:anywhere;max-width:100%}.missy-gpl-translation h1{font-size:20px}.missy-gpl-translation h2{font-size:17px}</style>
 
-<details id="missy-public-license" style="margin:16px 16px 100px;padding:12px;border:1px solid #40546c;border-radius:8px"><summary>GPL-3.0 · Attribution and source / 许可与源代码</summary><pre class="missy-license-en" style="white-space:pre-wrap;overflow-wrap:anywhere">MISSY public build — modified 22 October 2026. Release: 2026.10.22.profile-scope1.
+<details id="missy-public-license" style="margin:16px 16px 100px;padding:12px;border:1px solid #40546c;border-radius:8px"><summary>GPL-3.0 · Attribution and source / 许可与源代码</summary><pre class="missy-license-en" style="white-space:pre-wrap;overflow-wrap:anywhere">MISSY public build — modified 23 October 2026. Release: 2026.10.23.sop-menu1.
 Released under GNU GPL version 3. No warranty.
 ZPCR/PCRD format research and adapted parsing: R. Byers / zpcrweb contributors.
 Upstream: https://github.com/RByers/zpcrweb
@@ -17405,7 +17260,7 @@ Supported PCRD ZIP compression: stored / Deflate. Other methods remain unsupport
 Modular port: 21 October 2026. Baseline: Zenodo record 23437639.
 The single-file application retains the existing reader registrations and format support.
 </pre><div class="missy-license-zh" data-i18n-skip>
-<p>MISSY 公开版本，更新日期：2026 年 10 月 22 日。版本：2026.10.22.profile-scope1。按 GNU 通用公共许可协议第三版（GPL-3.0）发布，不提供品质担保。</p>
+<p>MISSY 公开版本，更新日期：2026 年 10 月 23 日。版本：2026.10.23.sop-menu1。按 GNU 通用公共许可协议第三版（GPL-3.0）发布，不提供品质担保。</p>
 <p>ZPCR／PCRD 格式研究及改编解析：R. Byers 与 zpcrweb 贡献者。上游：<a href="https://github.com/RByers/zpcrweb">github.com/RByers/zpcrweb</a>。</p>
 <p>修改内容：MISSY 集成、质控图、独立计算 Cq／Tm，以及本地密码流程。未分发 Bio-Rad 密码、从 CFX 派生的解密状态或厂商 DLL。独立计算不能替代厂商质控认证。</p>
 <p>HTML 保留 Plotly 的版权与 MIT 许可声明，包含可读应用代码和内嵌依赖。本 index.html 文件同时包含应用程序及其可读源代码。</p>
