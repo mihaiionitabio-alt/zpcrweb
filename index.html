@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Offline reader for Roche LightCycler 480 .ixo and Applied Biosystems QuantStudio 3/5 .eds files: traceable stored values, container integrity checks, open qPCR exports, graphs, quality review, forensic log and JSON-LD metadata.">
 <meta name="application-name" content="qPCR raw values, quality-control and forensic export tool">
-<meta name="software-version" content="2026.10.23.dictionary2">
+<meta name="software-version" content="2026.10.23.precision1">
 
 <!--
   MACHINE-READABLE LANDING-PAGE METADATA
@@ -17609,7 +17609,7 @@ const MISSY_SCOPE_SNAPSHOT=(()=>{
  return Object.freeze({snapshot,rows,render});
 })();
 window.MISSY_SCOPE_SNAPSHOT=MISSY_SCOPE_SNAPSHOT;
-/* Static evidence definitions (M06/M13/M19-M24/M28). No data evaluation. */
+/* Static evidence definitions (M06/M13/M19-M24/M28/M29). No data evaluation. */
 const MISSY_EVIDENCE_GUIDE=(()=>{
  const items=[
   ['Source bytes and checksums','源文件字节与校验和','The source-byte SHA-256 identifies the loaded bytes. Native checksums use their own algorithm and scope; compare only the same method and scope. A match supports byte identity or integrity, not authenticity, operator identity or scientific validity.','源文件字节的SHA-256用于标识已加载的字节。原生校验和采用各自的算法与范围；仅可比较算法和范围相同的值。匹配可支持字节一致性或完整性，但不能证明真实性、操作者身份或科学有效性。'],
@@ -17619,6 +17619,10 @@ const MISSY_EVIDENCE_GUIDE=(()=>{
   ['Native reading statistics','原生读数统计量','The native inspector shows already-decoded statistics and dimensions where retained. A within-read SD describes that reading; it is not PCR replicate SD, between-run precision or measurement uncertainty. Undocumented tuple positions remain uninterpreted.','原生读数检查器显示已保留并解码的统计量与维度。单次读数内的标准差描述该次读数，不等于PCR重复标准差、批间精密度或测量不确定度。未说明的元组位置不作解释。'],
   ['Thermal, optical and calibration context','温度、光学与校准背景信息','Context inspectors display retained source fields and excerpts without applying corrections. A programmed setpoint is not a measured temperature, and a retained calibration value alone does not establish validity or traceability. These fields help investigate conditions without diagnosing a component failure.','背景信息检查器显示保留的源字段与摘录，不应用校正。程序设定温度不等于实测温度；仅保留校准值不能证明其有效性或计量溯源性。这些字段可辅助调查运行条件，不能据此诊断部件故障。'],
   ['Scope counts and review state','范围计数与审核状态','The scope snapshot counts existing result records using the applied user mask. Draft changes are not applied, and pending review withholds inclusion counts. Record counts are not unique samples or valid results. This identifies report scope without altering sample decisions.','范围快照按已应用的用户掩码统计现有结果记录。草稿更改尚未应用；待审核时不提供纳入计数。记录数不等于独立样本数或有效结果数。此视图用于说明报告范围，不改变样本判定。'],
+  ["Display rounding", "显示舍入", "Tables, graph labels and tooltips may format a decoded value to fewer digits. Equal displayed values need not be equal underlying values. Displayed decimal places do not establish instrument resolution, accuracy or measurement uncertainty. This explanation does not change any formatter or calculation.", "表格、图形标签及提示框可能将解码数值显示为较少位数。显示相同的数值，其底层数值不一定相同。显示的小数位数不能证明仪器分辨率、准确度或测量不确定度。本说明不更改任何格式化或计算。"],
+  ["Decoded values and source precision", "解码数值与源精度", "A decoded number is the value available to MISSY after the existing reader has parsed it. It does not by itself preserve the original binary bits, decimal text or the precision used by the producer before storage. Where an explicit source declaration is unavailable, source numeric precision and pre-storage rounding are unknown; do not infer them from the number of visible digits or the file extension.", "解码数值是已有读取器解析后可供MISSY使用的值。仅凭该值不能保留原始二进制位、十进制文本或生产商存储前采用的精度。未提供明确源声明时，源数值精度及存储前舍入方式均为未知；不能按可见位数或文件扩展名推断。"],
+  ["Rounding and comparisons", "舍入与比较", "This disclosure adds no rounding tolerance or acceptance rule. Keep using the applicable method and its existing decisions. A rounded label is not a replacement input for recalculation or a reason to change a boundary decision. Source precision declarations, when available, must be read in their own field and algorithm context.", "本说明不增加舍入容差或验收规则。继续采用适用方法及其已有判定。舍入后的标签不能替代重新计算的输入，也不能作为更改边界判定的理由。源精度声明如有提供，应结合其字段与算法背景读取。"],
+  ["Export precision limits", "导出精度界限", "Exports keep their existing serialization and formatting. A CSV, PDF or RDML value is not a guarantee of source-bit or original-decimal round-trip preservation. Keep the original files for that evidence. This static guide neither audits precision per field nor changes exported values, bytes or rounding policies.", "导出沿用已有序列化与格式。CSV、PDF或RDML中的数值不能保证往返转换后保留源二进制位或原始十进制表示。应保留原始文件作为此类证据。本静态指南既不逐字段审核精度，也不更改导出数值、字节或舍入规则。"],
   ['Export and conformance limits','导出与符合性界限','Optional CSV and PDF evidence tables describe their selected scope; they are not a complete acquisition package or authenticated audit history. Availability in an inspector is not manufacturer conformance or a report-release decision. Original files remain necessary for evidence not represented by the selected export.','可选CSV与PDF证据表仅描述其所选范围，不是完整采集数据包或经过身份认证的审计历史。检查器中可见的数据不能证明厂商符合标准，也不代表报告发布决定。对于所选导出未包含的证据，仍需保留原始文件。']
  ];
  function render(){
@@ -17761,7 +17765,7 @@ MISSY_HOOKS.seal();
 </script>
 <style>.missy-license-zh{display:none}body.lang-zh .missy-license-zh{display:block}body.lang-zh .missy-license-en{display:none}.missy-gpl-translation{line-height:1.6;overflow-wrap:anywhere;max-width:100%}.missy-gpl-translation h1{font-size:20px}.missy-gpl-translation h2{font-size:17px}</style>
 
-<details id="missy-public-license" style="margin:16px 16px 100px;padding:12px;border:1px solid #40546c;border-radius:8px"><summary>GPL-3.0 · Attribution and source / 许可与源代码</summary><pre class="missy-license-en" style="white-space:pre-wrap;overflow-wrap:anywhere">MISSY public build — modified 23 October 2026. Release: 2026.10.23.dictionary2.
+<details id="missy-public-license" style="margin:16px 16px 100px;padding:12px;border:1px solid #40546c;border-radius:8px"><summary>GPL-3.0 · Attribution and source / 许可与源代码</summary><pre class="missy-license-en" style="white-space:pre-wrap;overflow-wrap:anywhere">MISSY public build — modified 23 October 2026. Release: 2026.10.23.precision1.
 Released under GNU GPL version 3. No warranty.
 ZPCR/PCRD format research and adapted parsing: R. Byers / zpcrweb contributors.
 Upstream: https://github.com/RByers/zpcrweb
@@ -17778,7 +17782,7 @@ Supported PCRD ZIP compression: stored / Deflate. Other methods remain unsupport
 Modular port: 21 October 2026. Baseline: Zenodo record 23437639.
 The single-file application retains the existing reader registrations and format support.
 </pre><div class="missy-license-zh" data-i18n-skip>
-<p>MISSY 公开版本，更新日期：2026 年 10 月 23 日。版本：2026.10.23.dictionary2。按 GNU 通用公共许可协议第三版（GPL-3.0）发布，不提供品质担保。</p>
+<p>MISSY 公开版本，更新日期：2026 年 10 月 23 日。版本：2026.10.23.precision1。按 GNU 通用公共许可协议第三版（GPL-3.0）发布，不提供品质担保。</p>
 <p>ZPCR／PCRD 格式研究及改编解析：R. Byers 与 zpcrweb 贡献者。上游：<a href="https://github.com/RByers/zpcrweb">github.com/RByers/zpcrweb</a>。</p>
 <p>修改内容：MISSY 集成、质控图、独立计算 Cq／Tm，以及本地密码流程。未分发 Bio-Rad 密码、从 CFX 派生的解密状态或厂商 DLL。独立计算不能替代厂商质控认证。</p>
 <p>HTML 保留 Plotly 的版权与 MIT 许可声明，包含可读应用代码和内嵌依赖。本 index.html 文件同时包含应用程序及其可读源代码。</p>
