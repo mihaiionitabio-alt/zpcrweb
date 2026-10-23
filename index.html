@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Offline reader for Roche LightCycler 480 .ixo and Applied Biosystems QuantStudio 3/5 .eds files: traceable stored values, container integrity checks, open qPCR exports, graphs, quality review, forensic log and JSON-LD metadata.">
 <meta name="application-name" content="qPCR raw values, quality-control and forensic export tool">
-<meta name="software-version" content="2026.10.23.dictionary1">
+<meta name="software-version" content="2026.10.23.identity1">
 
 <!--
   MACHINE-READABLE LANDING-PAGE METADATA
@@ -17679,6 +17679,32 @@ const MISSY_EXPORT_DICTIONARY=(()=>{
  return Object.freeze({snapshot,render});
 })();
 window.MISSY_EXPORT_DICTIONARY=MISSY_EXPORT_DICTIONARY;
+/* P04/M05-M06: compare retained source identity metadata only. Never deduplicate. */
+const MISSY_SOURCE_MATCHES=(()=>{
+ const t=(en,zh)=>UI_LANG==='zh'?zh:en;
+ function snapshot(runs){
+  const views=runs.map((run,i)=>{const meta=run.meta||{},hash=meta.sourceSHA256;return {view:i+1,filename:run.file||'',source_sha256:typeof hash==='string'?hash:'',source_bytes:Number.isSafeInteger(meta.sourceBytes)&&meta.sourceBytes>=0?meta.sourceBytes:null,hash_available:typeof hash==='string'&&/^[a-f\d]{64}$/i.test(hash)};});
+  const groups=new Map();for(const view of views)if(view.hash_available){const key=view.source_sha256.toLowerCase();if(!groups.has(key))groups.set(key,[]);groups.get(key).push(view);}
+  for(const view of views){const group=view.hash_available?groups.get(view.source_sha256.toLowerCase()):[],known=group.filter(v=>v.source_bytes!==null).map(v=>v.source_bytes);view.match_view_count=view.hash_available?group.length:null;view.comparison_state=!view.hash_available?'hash_unavailable':new Set(known).size>1?'byte_count_conflict':group.length<2?'single_view':'shared_views';view.byte_count_state=!view.hash_available?'not_compared':new Set(known).size>1?'conflict':known.length===group.length&&group.length?'available':'incomplete';}
+  return views;
+ }
+ function rows(runs){return snapshot(runs).map(({hash_available,...row})=>row);}
+ const state=code=>({hash_unavailable:t('Source hash unavailable; not compared','源文件哈希不可用；未比较'),single_view:t('No other decoded view shares this hash','没有其他解码视图共享此哈希'),shared_views:t('Source hash shared by decoded views','多个解码视图共享源文件哈希'),byte_count_conflict:t('Shared hash with inconsistent byte-count metadata; informational only','共享哈希的字节数元数据不一致；仅供参考')})[code];
+ function render(){
+  const host=document.getElementById('loadedcard');if(!host)return;let box=document.getElementById('missy-source-matches');
+  if(!box){box=document.createElement('details');box.id='missy-source-matches';box.setAttribute('data-i18n-skip','');box.addEventListener('toggle',render);host.append(box);}
+  box.hidden=!RUNS.length;const title=document.createElement('summary');title.textContent=t('Views sharing source identity (read only)','共享源文件标识的视图（只读）');box.replaceChildren(title);if(!box.open)return;
+  const p=document.createElement('p');p.textContent=t('Compares existing source SHA-256 metadata only; no files are rehashed. Counts include the current decoded view, not files or duplicate analyses: one source may contain several valid views. Names do not establish identity. No views, companions, cohorts or results are suppressed or changed. Matching metadata is not authentication, acquisition-content identity or a new integrity verdict.','仅比较已有源文件SHA-256元数据；不重新计算文件哈希。计数包含当前解码视图，不是文件数或重复分析数：一个源文件可包含多个有效视图。名称不能确立身份标识。不隐藏或更改任何视图、配套文件、比较组或结果。元数据匹配不代表身份认证、采集内容标识或新的完整性结论。');box.append(p);
+  const table=document.createElement('table'),head=document.createElement('thead'),tr=document.createElement('tr');for(const text of [t('View / filename','视图／文件名称'),t('Retained source SHA-256','保留的源文件SHA-256'),t('Bytes / sharing views','字节数／共享视图数'),t('Comparison scope','比较范围')]){const th=document.createElement('th');th.scope='col';th.textContent=text;tr.append(th);}head.append(tr);table.append(head);const body=document.createElement('tbody');
+  for(const row of snapshot(RUNS)){const tr=document.createElement('tr');let column=0;for(const value of [row.view+' · '+row.filename,row.source_sha256||t('Unavailable','不可用'),(row.source_bytes===null?t('Unavailable','不可用'):String(row.source_bytes))+' / '+(row.match_view_count===null?t('Unavailable','不可用'):row.match_view_count),state(row.comparison_state)+(row.byte_count_state==='incomplete'?' · '+t('Byte-count evidence incomplete','字节数记录不完整'):'')]){const td=document.createElement('td');td.setAttribute('data-label',head.firstChild.children[column++].textContent);td.textContent=value;tr.append(td);}body.append(tr);}table.append(body);box.append(table);
+  const button=document.createElement('button');button.type='button';button.textContent=t('Download source identity comparison (CSV)','下载源文件标识比较（CSV）');button.onclick=()=>download('source_identity_comparison.csv',csvOf(rows(RUNS)),'text/csv');box.append(button);
+ }
+ MISSY_HOOKS.use('showTab','source-matches/metadata-only',268,next=>function(...args){const result=next(...args);render();return result;});
+ const style=document.createElement('style');style.textContent='#missy-source-matches{margin-top:16px;border-top:1px solid #d8dee8;padding-top:10px}#missy-source-matches[hidden]{display:none!important}#missy-source-matches summary{cursor:pointer;font-weight:600}#missy-source-matches p{overflow-wrap:anywhere}#missy-source-matches table{width:100%;table-layout:fixed;border-collapse:collapse;margin:10px 0}#missy-source-matches th,#missy-source-matches td{padding:6px;text-align:left;vertical-align:top;overflow-wrap:anywhere;border-bottom:1px solid #d8dee8}#missy-source-matches button{max-width:100%;white-space:normal}@media(max-width:600px){#missy-source-matches table,#missy-source-matches tbody,#missy-source-matches tr,#missy-source-matches td{display:block;width:auto}#missy-source-matches thead{display:none}#missy-source-matches tr{border:1px solid #d8dee8;margin:8px 0}#missy-source-matches td{border:0}#missy-source-matches td::before{content:attr(data-label);display:block;font-weight:600}}';document.head.append(style);
+ document.addEventListener('DOMContentLoaded',()=>{render();const loaded=document.getElementById('loaded');if(loaded)new MutationObserver(render).observe(loaded,{childList:true});new MutationObserver(render).observe(document.body,{attributes:true,attributeFilter:['class']});});
+ return Object.freeze({snapshot,rows,render});
+})();
+window.MISSY_SOURCE_MATCHES=MISSY_SOURCE_MATCHES;
 /* Registration order does not override conflicting content signatures. */
 registerReader({id:'ixo',version:'zenodo-23437639',extensions:['.ixo'],probe:s=>!s.zipNames&&/<objectstream\b[^>]*signature=["\']IXOS["\']/i.test(new TextDecoder().decode(s.bytes.subarray(0,2048))),decode:async s=>{const source={...s,text:s.text||new TextDecoder().decode(s.bytes)},r=await decodeIxo(source,'auto');await ccExtractOnLoad(r,source);return r;}});
 registerReader({id:'eds',version:'zenodo-23437639',extensions:['.eds','.edt'],probe:s=>s.zipNames?.some(n=>/^apldbio\/sds\/experiment\.xml$/i.test(n)),decode:async s=>{const r=await decodeEds(s);await ccExtractOnLoad(r,s);return r;}});
@@ -17695,7 +17721,7 @@ MISSY_HOOKS.seal();
 </script>
 <style>.missy-license-zh{display:none}body.lang-zh .missy-license-zh{display:block}body.lang-zh .missy-license-en{display:none}.missy-gpl-translation{line-height:1.6;overflow-wrap:anywhere;max-width:100%}.missy-gpl-translation h1{font-size:20px}.missy-gpl-translation h2{font-size:17px}</style>
 
-<details id="missy-public-license" style="margin:16px 16px 100px;padding:12px;border:1px solid #40546c;border-radius:8px"><summary>GPL-3.0 · Attribution and source / 许可与源代码</summary><pre class="missy-license-en" style="white-space:pre-wrap;overflow-wrap:anywhere">MISSY public build — modified 23 October 2026. Release: 2026.10.23.dictionary1.
+<details id="missy-public-license" style="margin:16px 16px 100px;padding:12px;border:1px solid #40546c;border-radius:8px"><summary>GPL-3.0 · Attribution and source / 许可与源代码</summary><pre class="missy-license-en" style="white-space:pre-wrap;overflow-wrap:anywhere">MISSY public build — modified 23 October 2026. Release: 2026.10.23.identity1.
 Released under GNU GPL version 3. No warranty.
 ZPCR/PCRD format research and adapted parsing: R. Byers / zpcrweb contributors.
 Upstream: https://github.com/RByers/zpcrweb
@@ -17712,7 +17738,7 @@ Supported PCRD ZIP compression: stored / Deflate. Other methods remain unsupport
 Modular port: 21 October 2026. Baseline: Zenodo record 23437639.
 The single-file application retains the existing reader registrations and format support.
 </pre><div class="missy-license-zh" data-i18n-skip>
-<p>MISSY 公开版本，更新日期：2026 年 10 月 23 日。版本：2026.10.23.dictionary1。按 GNU 通用公共许可协议第三版（GPL-3.0）发布，不提供品质担保。</p>
+<p>MISSY 公开版本，更新日期：2026 年 10 月 23 日。版本：2026.10.23.identity1。按 GNU 通用公共许可协议第三版（GPL-3.0）发布，不提供品质担保。</p>
 <p>ZPCR／PCRD 格式研究及改编解析：R. Byers 与 zpcrweb 贡献者。上游：<a href="https://github.com/RByers/zpcrweb">github.com/RByers/zpcrweb</a>。</p>
 <p>修改内容：MISSY 集成、质控图、独立计算 Cq／Tm，以及本地密码流程。未分发 Bio-Rad 密码、从 CFX 派生的解密状态或厂商 DLL。独立计算不能替代厂商质控认证。</p>
 <p>HTML 保留 Plotly 的版权与 MIT 许可声明，包含可读应用代码和内嵌依赖。本 index.html 文件同时包含应用程序及其可读源代码。</p>
