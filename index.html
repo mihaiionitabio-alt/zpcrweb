@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Offline reader for Roche LightCycler 480 .ixo and Applied Biosystems QuantStudio 3/5 .eds files: traceable stored values, container integrity checks, open qPCR exports, graphs, quality review, forensic log and JSON-LD metadata.">
 <meta name="application-name" content="qPCR raw values, quality-control and forensic export tool">
-<meta name="software-version" content="2026.10.23.identity1">
+<meta name="software-version" content="2026.10.23.calmeta1">
 
 <!--
   MACHINE-READABLE LANDING-PAGE METADATA
@@ -17705,6 +17705,44 @@ const MISSY_SOURCE_MATCHES=(()=>{
  return Object.freeze({snapshot,rows,render});
 })();
 window.MISSY_SOURCE_MATCHES=MISSY_SOURCE_MATCHES;
+/* P09/M21: retained header excerpts/count only. No time/validity/correction logic. */
+const MISSY_CALIBRATION_METADATA=(()=>{
+ const t=(en,zh)=>UI_LANG==='zh'?zh:en,limit=20;
+ const fields=['file','name','id','version','ts','exp'];
+ const labels={record_count:['Retained record count','保留的记录数'],omitted_record_count:['Header records outside this excerpt','本摘录未显示的头部记录数'],file:['Header filename','头部文件名称'],name:['Calibration name','校准名称'],id:['Calibration ID','校准标识'],version:['Stored version','保存的版本'],ts:['Stored timestamp (unconverted)','保存的时间戳（未转换）'],exp:['Stored expiry field (unevaluated)','保存的到期字段（未评估）'],availability:['Availability','提供情况']};
+ const states={provided:['Retained value','已保留的值'],empty:['Empty retained field','保留字段为空'],unavailable:['Field unavailable; not zero','字段不可用；不等于零'],native_nonfinite:['Retained non-finite token','保留的非有限标记'],count_only:['Declared count only; header contents not exposed here','仅声明的计数；此处未提供头部内容'],not_exposed:['Not exposed by this decoded view','此解码视图未提供'],locked:['Locked inventory; no calibration headers decoded here','加密文件清单；此处未解码校准头部']};
+ function snapshot(run,index=0){
+  const out=[],scope=run.pcrdLocked?'locked':run.isTemplate?'template':'decoded';
+  const add=(record,field,value,state,path)=>out.push({view:index+1,filename:run.file||'',scope,record,field,value,state,source_path:path});
+  const scalar=v=>v==null?null:typeof v==='number'?(Object.is(v,-0)?'-0':String(v)):typeof v==='string'||typeof v==='boolean'?String(v):null;
+  const put=(record,field,v,path,state)=>add(record,field,scalar(v),state||(v==null||scalar(v)===null?'unavailable':v===''?'empty':typeof v==='number'&&!Number.isFinite(v)?'native_nonfinite':'provided'),path);
+  if(run.pcrdLocked){add(null,'availability',null,'locked','');return out;}
+  if(Array.isArray(run.eds?.calibrations)){
+   const records=run.eds.calibrations;put(null,'record_count',records.length,'eds.calibrations.length');
+   for(let i=0;i<Math.min(limit,records.length);i++)for(const key of fields)put(i+1,key,records[i]?.[key],'eds.calibrations['+i+'].'+key);
+   if(records.length>limit)put(null,'omitted_record_count',records.length-limit,'eds.calibrations.length');
+   return out;
+  }
+  const count=run.pcrd?.calibrationRecords;
+  if(Number.isSafeInteger(count)&&count>=0){put(null,'record_count',count,'pcrd.calibrationRecords','count_only');return out;}
+  add(null,'availability',null,'not_exposed','');return out;
+ }
+ function rows(runs){return runs.flatMap((run,i)=>snapshot(run,i).map(r=>({calibration_view:r.view,filename:r.filename,calibration_scope:r.scope,calibration_record:r.record,calibration_field:r.field,calibration_value:r.value,calibration_state:r.state,source_path:r.source_path})));}
+ function render(){
+  const host=document.getElementById('loadedcard');if(!host)return;let box=document.getElementById('missy-calibration-metadata');
+  if(!box){box=document.createElement('details');box.id='missy-calibration-metadata';box.setAttribute('data-i18n-skip','');box.addEventListener('toggle',render);host.append(box);}
+  box.hidden=!RUNS.length;const title=document.createElement('summary');title.textContent=t('Retained calibration metadata (read only)','保留的校准元数据（只读）');box.replaceChildren(title);if(!box.open)return;
+  const p=document.createElement('p');p.textContent=t('QuantStudio: first 20 retained header records. PCRD: declared count only. Timestamps/expiry fields remain unconverted and unevaluated; presence does not establish validity, traceability or fitness. Template headers do not imply a completed run. Operator identities and calibration coefficients are outside this excerpt. No corrections, expiry decisions or existing calibration checks are changed.','QuantStudio：前20条保留的头部记录。PCRD：仅声明的计数。时间戳与到期字段不转换也不评估；记录存在不能证明有效性、计量溯源性或适用性。模板头部不代表已完成运行。操作者身份与校准系数不在本摘录范围内。不更改任何校正、到期判定或已有校准检查。');box.append(p);
+  const table=document.createElement('table'),head=document.createElement('thead'),tr=document.createElement('tr');const titles=[t('View / filename / scope','视图／文件名称／范围'),t('Record / field','记录／字段'),t('Retained value','保留的值'),t('Evidence state / source','记录状态／来源')];for(const text of titles){const th=document.createElement('th');th.scope='col';th.textContent=text;tr.append(th);}head.append(tr);table.append(head);const body=document.createElement('tbody');
+  RUNS.forEach((run,i)=>{for(const r of snapshot(run,i)){const tr=document.createElement('tr'),scope=r.scope==='template'?t('Template/setup','模板／设置'):r.scope==='locked'?t('Locked','加密锁定'):t('Decoded view','解码视图');const values=[r.view+' · '+r.filename+' · '+scope,(r.record===null?'':r.record+' · ')+t(...labels[r.field]),r.value===null?t('Unavailable','不可用'):r.value,t(...states[r.state])+(r.source_path?' · '+r.source_path:'')];values.forEach((value,j)=>{const td=document.createElement('td');td.setAttribute('data-label',titles[j]);td.textContent=value;tr.append(td);});body.append(tr);}});table.append(body);box.append(table);
+  const button=document.createElement('button');button.type='button';button.textContent=t('Download calibration metadata excerpt (CSV)','下载校准元数据摘录（CSV）');button.onclick=()=>download('calibration_metadata_excerpt.csv',csvOf(rows(RUNS)),'text/csv');box.append(button);
+ }
+ MISSY_HOOKS.use('showTab','calibration-metadata/retained-headers',269,next=>function(...args){const result=next(...args);render();return result;});
+ const style=document.createElement('style');style.textContent='#missy-calibration-metadata{margin-top:16px;border-top:1px solid #d8dee8;padding-top:10px}#missy-calibration-metadata[hidden]{display:none!important}#missy-calibration-metadata summary{cursor:pointer;font-weight:600}#missy-calibration-metadata p{overflow-wrap:anywhere}#missy-calibration-metadata table{width:100%;table-layout:fixed;border-collapse:collapse;margin:10px 0}#missy-calibration-metadata th,#missy-calibration-metadata td{padding:6px;text-align:left;vertical-align:top;overflow-wrap:anywhere;border-bottom:1px solid #d8dee8}#missy-calibration-metadata button{max-width:100%;white-space:normal}@media(max-width:600px){#missy-calibration-metadata table,#missy-calibration-metadata tbody,#missy-calibration-metadata tr,#missy-calibration-metadata td{display:block;width:auto}#missy-calibration-metadata thead{display:none}#missy-calibration-metadata tr{border:1px solid #d8dee8;margin:8px 0}#missy-calibration-metadata td{border:0}#missy-calibration-metadata td::before{content:attr(data-label);display:block;font-weight:600}}';document.head.append(style);
+ document.addEventListener('DOMContentLoaded',()=>{render();const loaded=document.getElementById('loaded');if(loaded)new MutationObserver(render).observe(loaded,{childList:true});new MutationObserver(render).observe(document.body,{attributes:true,attributeFilter:['class']});});
+ return Object.freeze({snapshot,rows,render});
+})();
+window.MISSY_CALIBRATION_METADATA=MISSY_CALIBRATION_METADATA;
 /* Registration order does not override conflicting content signatures. */
 registerReader({id:'ixo',version:'zenodo-23437639',extensions:['.ixo'],probe:s=>!s.zipNames&&/<objectstream\b[^>]*signature=["\']IXOS["\']/i.test(new TextDecoder().decode(s.bytes.subarray(0,2048))),decode:async s=>{const source={...s,text:s.text||new TextDecoder().decode(s.bytes)},r=await decodeIxo(source,'auto');await ccExtractOnLoad(r,source);return r;}});
 registerReader({id:'eds',version:'zenodo-23437639',extensions:['.eds','.edt'],probe:s=>s.zipNames?.some(n=>/^apldbio\/sds\/experiment\.xml$/i.test(n)),decode:async s=>{const r=await decodeEds(s);await ccExtractOnLoad(r,s);return r;}});
@@ -17721,7 +17759,7 @@ MISSY_HOOKS.seal();
 </script>
 <style>.missy-license-zh{display:none}body.lang-zh .missy-license-zh{display:block}body.lang-zh .missy-license-en{display:none}.missy-gpl-translation{line-height:1.6;overflow-wrap:anywhere;max-width:100%}.missy-gpl-translation h1{font-size:20px}.missy-gpl-translation h2{font-size:17px}</style>
 
-<details id="missy-public-license" style="margin:16px 16px 100px;padding:12px;border:1px solid #40546c;border-radius:8px"><summary>GPL-3.0 · Attribution and source / 许可与源代码</summary><pre class="missy-license-en" style="white-space:pre-wrap;overflow-wrap:anywhere">MISSY public build — modified 23 October 2026. Release: 2026.10.23.identity1.
+<details id="missy-public-license" style="margin:16px 16px 100px;padding:12px;border:1px solid #40546c;border-radius:8px"><summary>GPL-3.0 · Attribution and source / 许可与源代码</summary><pre class="missy-license-en" style="white-space:pre-wrap;overflow-wrap:anywhere">MISSY public build — modified 23 October 2026. Release: 2026.10.23.calmeta1.
 Released under GNU GPL version 3. No warranty.
 ZPCR/PCRD format research and adapted parsing: R. Byers / zpcrweb contributors.
 Upstream: https://github.com/RByers/zpcrweb
@@ -17738,7 +17776,7 @@ Supported PCRD ZIP compression: stored / Deflate. Other methods remain unsupport
 Modular port: 21 October 2026. Baseline: Zenodo record 23437639.
 The single-file application retains the existing reader registrations and format support.
 </pre><div class="missy-license-zh" data-i18n-skip>
-<p>MISSY 公开版本，更新日期：2026 年 10 月 23 日。版本：2026.10.23.identity1。按 GNU 通用公共许可协议第三版（GPL-3.0）发布，不提供品质担保。</p>
+<p>MISSY 公开版本，更新日期：2026 年 10 月 23 日。版本：2026.10.23.calmeta1。按 GNU 通用公共许可协议第三版（GPL-3.0）发布，不提供品质担保。</p>
 <p>ZPCR／PCRD 格式研究及改编解析：R. Byers 与 zpcrweb 贡献者。上游：<a href="https://github.com/RByers/zpcrweb">github.com/RByers/zpcrweb</a>。</p>
 <p>修改内容：MISSY 集成、质控图、独立计算 Cq／Tm，以及本地密码流程。未分发 Bio-Rad 密码、从 CFX 派生的解密状态或厂商 DLL。独立计算不能替代厂商质控认证。</p>
 <p>HTML 保留 Plotly 的版权与 MIT 许可声明，包含可读应用代码和内嵌依赖。本 index.html 文件同时包含应用程序及其可读源代码。</p>
