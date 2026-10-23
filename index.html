@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Offline reader for Roche LightCycler 480 .ixo and Applied Biosystems QuantStudio 3/5 .eds files: traceable stored values, container integrity checks, open qPCR exports, graphs, quality review, forensic log and JSON-LD metadata.">
 <meta name="application-name" content="qPCR raw values, quality-control and forensic export tool">
-<meta name="software-version" content="2026.10.23.calmeta1">
+<meta name="software-version" content="2026.10.23.zipnames1">
 
 <!--
   MACHINE-READABLE LANDING-PAGE METADATA
@@ -2647,7 +2647,7 @@ async function inflate(bytes,format){
     .pipeThrough(new DecompressionStream(format))).arrayBuffer());
 }
 
-async function readZip(ab,archive,filter=/\.ixo$/i){
+async function readZipFiltered(ab,archive,filter=/\.ixo$/i){
   const u8=new Uint8Array(ab),dv=new DataView(ab);let eocd=-1;
   for(let i=u8.length-22;i>=Math.max(0,u8.length-66000);i--){if(dv.getUint32(i,true)===0x06054b50){eocd=i;break;}}
   if(eocd<0)throw new Error("ZIP end-of-central-directory not found");
@@ -2674,6 +2674,8 @@ async function readZip(ab,archive,filter=/\.ixo$/i){
   }
   return out;
 }
+/* Preserve the published __qc.readZip/global compatibility entry point. */
+async function readZip(ab,archive,filter=/\.ixo$/i){return readZipFiltered(ab,archive,filter);}
 function dosStamp(date){
   const t=((date.getHours()&31)<<11)|((date.getMinutes()&63)<<5)|((date.getSeconds()/2)&31);
   const d=(((date.getFullYear()-1980)&127)<<9)|(((date.getMonth()+1)&15)<<5)|(date.getDate()&31);
@@ -11260,8 +11262,8 @@ async function intake(fileList){
       if(source){accepted.push(source);continue;}
       if(/\.zip$/i.test(f.name)){
         const archive={name:f.name,size:bytes.length};
-        const entries=await readZip(ab,archive,/\.(ixo|eds|edt|rdml|zpcr|pcrd|xml)$/i);
-        const manifests=await readZip(ab,archive,/(^|\/)CFX_RDML_manifest\.json$/i);
+        const entries=await readZipFiltered(ab,archive,/\.(ixo|eds|edt|rdml|zpcr|pcrd|xml)$/i);
+        const manifests=await readZipFiltered(ab,archive,/(^|\/)CFX_RDML_manifest\.json$/i);
         for(const e of manifests){const m=JSON.parse(new TextDecoder().decode(e.bytes));if(m.schema!=='MISSY_CFX_RDML_manifest_v1'||!Array.isArray(m.entries)||m.entries.length>1000)throw Error('Invalid CFX provenance manifest');provenance.push(...m.entries);}
         let usable=0;for(const e of entries){if(accepted.length>=APP_STATE.limits.maxFiles)throw Error('Archive file count limit');expanded+=e.bytes.length;if(expanded>APP_STATE.limits.maxBytes)throw Error('Expanded archive byte limit');const staged=await stageReaderFile({name:e.name},e.bytes,e.archive,e.path);if(staged){accepted.push({...staged,zip:e.zip});usable++;}}
         if(!usable)errors.push(f.name+': no supported experiment entries');
@@ -11741,7 +11743,7 @@ window.__qc={
 /* ---------- 1 · container ---------- */
 async function rdmlEntries(ab,archive){
   /* the intake ZIP reader already verifies CRC-32 and rejects unknown compression */
-  return readZip(ab,archive,/^[^/]*\.xml$/i);
+  return readZipFiltered(ab,archive,/^[^/]*\.xml$/i);
 }
 function rdmlIsContainer(entries){
   return entries.some(e=>/^rdml_data\.xml$/i.test(e.name));
@@ -17759,7 +17761,7 @@ MISSY_HOOKS.seal();
 </script>
 <style>.missy-license-zh{display:none}body.lang-zh .missy-license-zh{display:block}body.lang-zh .missy-license-en{display:none}.missy-gpl-translation{line-height:1.6;overflow-wrap:anywhere;max-width:100%}.missy-gpl-translation h1{font-size:20px}.missy-gpl-translation h2{font-size:17px}</style>
 
-<details id="missy-public-license" style="margin:16px 16px 100px;padding:12px;border:1px solid #40546c;border-radius:8px"><summary>GPL-3.0 · Attribution and source / 许可与源代码</summary><pre class="missy-license-en" style="white-space:pre-wrap;overflow-wrap:anywhere">MISSY public build — modified 23 October 2026. Release: 2026.10.23.calmeta1.
+<details id="missy-public-license" style="margin:16px 16px 100px;padding:12px;border:1px solid #40546c;border-radius:8px"><summary>GPL-3.0 · Attribution and source / 许可与源代码</summary><pre class="missy-license-en" style="white-space:pre-wrap;overflow-wrap:anywhere">MISSY public build — modified 23 October 2026. Release: 2026.10.23.zipnames1.
 Released under GNU GPL version 3. No warranty.
 ZPCR/PCRD format research and adapted parsing: R. Byers / zpcrweb contributors.
 Upstream: https://github.com/RByers/zpcrweb
@@ -17776,7 +17778,7 @@ Supported PCRD ZIP compression: stored / Deflate. Other methods remain unsupport
 Modular port: 21 October 2026. Baseline: Zenodo record 23437639.
 The single-file application retains the existing reader registrations and format support.
 </pre><div class="missy-license-zh" data-i18n-skip>
-<p>MISSY 公开版本，更新日期：2026 年 10 月 23 日。版本：2026.10.23.calmeta1。按 GNU 通用公共许可协议第三版（GPL-3.0）发布，不提供品质担保。</p>
+<p>MISSY 公开版本，更新日期：2026 年 10 月 23 日。版本：2026.10.23.zipnames1。按 GNU 通用公共许可协议第三版（GPL-3.0）发布，不提供品质担保。</p>
 <p>ZPCR／PCRD 格式研究及改编解析：R. Byers 与 zpcrweb 贡献者。上游：<a href="https://github.com/RByers/zpcrweb">github.com/RByers/zpcrweb</a>。</p>
 <p>修改内容：MISSY 集成、质控图、独立计算 Cq／Tm，以及本地密码流程。未分发 Bio-Rad 密码、从 CFX 派生的解密状态或厂商 DLL。独立计算不能替代厂商质控认证。</p>
 <p>HTML 保留 Plotly 的版权与 MIT 许可声明，包含可读应用代码和内嵌依赖。本 index.html 文件同时包含应用程序及其可读源代码。</p>
