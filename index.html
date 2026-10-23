@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Offline reader for Roche LightCycler 480 .ixo and Applied Biosystems QuantStudio 3/5 .eds files: traceable stored values, container integrity checks, open qPCR exports, graphs, quality review, forensic log and JSON-LD metadata.">
 <meta name="application-name" content="qPCR raw values, quality-control and forensic export tool">
-<meta name="software-version" content="2026.10.23.scope1">
+<meta name="software-version" content="2026.10.23.guide1">
 
 <!--
   MACHINE-READABLE LANDING-PAGE METADATA
@@ -17607,6 +17607,32 @@ const MISSY_SCOPE_SNAPSHOT=(()=>{
  return Object.freeze({snapshot,rows,render});
 })();
 window.MISSY_SCOPE_SNAPSHOT=MISSY_SCOPE_SNAPSHOT;
+/* Static evidence definitions (M06/M13/M19-M24/M28). No data evaluation. */
+const MISSY_EVIDENCE_GUIDE=(()=>{
+ const items=[
+  ['Source bytes and checksums','源文件字节与校验和','The source-byte SHA-256 identifies the loaded bytes. Native checksums use their own algorithm and scope; compare only the same method and scope. A match supports byte identity or integrity, not authenticity, operator identity or scientific validity.','源文件字节的SHA-256用于标识已加载的字节。原生校验和采用各自的算法与范围；仅可比较算法和范围相同的值。匹配可支持字节一致性或完整性，但不能证明真实性、操作者身份或科学有效性。'],
+  ['Stored and independent results','保存结果与独立计算结果','MISSY displays retained vendor results separately from supported independent calculations and SOP interpretation. This preserves the original evidence for comparison. An independent result does not establish that the vendor used the same algorithm or settings.','MISSY分别显示保留的厂商结果、受支持的独立计算结果及SOP判定，便于对照原始证据。独立计算结果不能证明厂商采用了相同的算法或参数。'],
+  ['Signal layers and units','信号层与单位','Readers retain the signal layers available in each format. Raw fluorescence, Rn and ΔRn have different meanings; their labels are not interchangeable. Retaining the signal basis helps assess comparisons without inventing missing transforms or converting undocumented units.','读取器保留各格式中可用的信号层。原始荧光、Rn和ΔRn含义不同，不可互换标签。保留信号依据有助于评估可比性，不推断缺失的变换，也不换算未说明的单位。'],
+  ['Missing, locked and template data','缺失、加密锁定与模板数据','Evidence views describe what was decoded, retained or unavailable. A locked file or template does not supply measured results; unavailable evidence is not a zero or a negative sample. These distinctions explain coverage without adding rejection rules.','证据视图说明哪些数据已解码、已保留或不可用。锁定文件或模板不提供实测结果；不可用的证据不等于零值或阴性样本。这些区别用于解释覆盖范围，不增加拒收规则。'],
+  ['Native reading statistics','原生读数统计量','The native inspector shows already-decoded statistics and dimensions where retained. A within-read SD describes that reading; it is not PCR replicate SD, between-run precision or measurement uncertainty. Undocumented tuple positions remain uninterpreted.','原生读数检查器显示已保留并解码的统计量与维度。单次读数内的标准差描述该次读数，不等于PCR重复标准差、批间精密度或测量不确定度。未说明的元组位置不作解释。'],
+  ['Thermal, optical and calibration context','温度、光学与校准背景信息','Context inspectors display retained source fields and excerpts without applying corrections. A programmed setpoint is not a measured temperature, and a retained calibration value alone does not establish validity or traceability. These fields help investigate conditions without diagnosing a component failure.','背景信息检查器显示保留的源字段与摘录，不应用校正。程序设定温度不等于实测温度；仅保留校准值不能证明其有效性或计量溯源性。这些字段可辅助调查运行条件，不能据此诊断部件故障。'],
+  ['Scope counts and review state','范围计数与审核状态','The scope snapshot counts existing result records using the applied user mask. Draft changes are not applied, and pending review withholds inclusion counts. Record counts are not unique samples or valid results. This identifies report scope without altering sample decisions.','范围快照按已应用的用户掩码统计现有结果记录。草稿更改尚未应用；待审核时不提供纳入计数。记录数不等于独立样本数或有效结果数。此视图用于说明报告范围，不改变样本判定。'],
+  ['Export and conformance limits','导出与符合性界限','Optional CSV and PDF evidence tables describe their selected scope; they are not a complete acquisition package or authenticated audit history. Availability in an inspector is not manufacturer conformance or a report-release decision. Original files remain necessary for evidence not represented by the selected export.','可选CSV与PDF证据表仅描述其所选范围，不是完整采集数据包或经过身份认证的审计历史。检查器中可见的数据不能证明厂商符合标准，也不代表报告发布决定。对于所选导出未包含的证据，仍需保留原始文件。']
+ ];
+ function render(){
+  const host=document.getElementById('loadedcard');if(!host)return;
+  let box=document.getElementById('missy-evidence-guide');
+  if(!box){box=document.createElement('details');box.id='missy-evidence-guide';box.setAttribute('data-i18n-skip','');box.addEventListener('toggle',render);host.append(box);}
+  const zh=UI_LANG==='zh',title=document.createElement('summary');title.textContent=zh?'证据含义与界限（只读）':'Evidence meanings and limits (read only)';box.replaceChildren(title);
+  if(!box.open)return;
+  const dl=document.createElement('dl');for(const item of items){const dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=item[zh?1:0];dd.textContent=item[zh?3:2];dl.append(dt,dd);}box.append(dl);
+ }
+ MISSY_HOOKS.use('showTab','evidence-guide/static-descriptions',265,next=>function(...args){const result=next(...args);render();return result;});
+ const style=document.createElement('style');style.textContent='#missy-evidence-guide{margin-top:16px;border-top:1px solid #d8dee8;padding-top:10px}#missy-evidence-guide summary{cursor:pointer;font-weight:600}#missy-evidence-guide dl{display:grid;grid-template-columns:minmax(160px,300px) minmax(0,1fr);gap:10px 16px}#missy-evidence-guide dt,#missy-evidence-guide dd{margin:0;min-width:0;overflow-wrap:anywhere}#missy-evidence-guide dt{font-weight:600}@media(max-width:600px){#missy-evidence-guide dl{grid-template-columns:minmax(0,1fr)}#missy-evidence-guide dd{margin-bottom:8px}}';document.head.append(style);
+ document.addEventListener('DOMContentLoaded',()=>{render();new MutationObserver(render).observe(document.body,{attributes:true,attributeFilter:['class']});});
+ return Object.freeze({render});
+})();
+window.MISSY_EVIDENCE_GUIDE=MISSY_EVIDENCE_GUIDE;
 /* Registration order does not override conflicting content signatures. */
 registerReader({id:'ixo',version:'zenodo-23437639',extensions:['.ixo'],probe:s=>!s.zipNames&&/<objectstream\b[^>]*signature=["\']IXOS["\']/i.test(new TextDecoder().decode(s.bytes.subarray(0,2048))),decode:async s=>{const source={...s,text:s.text||new TextDecoder().decode(s.bytes)},r=await decodeIxo(source,'auto');await ccExtractOnLoad(r,source);return r;}});
 registerReader({id:'eds',version:'zenodo-23437639',extensions:['.eds','.edt'],probe:s=>s.zipNames?.some(n=>/^apldbio\/sds\/experiment\.xml$/i.test(n)),decode:async s=>{const r=await decodeEds(s);await ccExtractOnLoad(r,s);return r;}});
@@ -17623,7 +17649,7 @@ MISSY_HOOKS.seal();
 </script>
 <style>.missy-license-zh{display:none}body.lang-zh .missy-license-zh{display:block}body.lang-zh .missy-license-en{display:none}.missy-gpl-translation{line-height:1.6;overflow-wrap:anywhere;max-width:100%}.missy-gpl-translation h1{font-size:20px}.missy-gpl-translation h2{font-size:17px}</style>
 
-<details id="missy-public-license" style="margin:16px 16px 100px;padding:12px;border:1px solid #40546c;border-radius:8px"><summary>GPL-3.0 · Attribution and source / 许可与源代码</summary><pre class="missy-license-en" style="white-space:pre-wrap;overflow-wrap:anywhere">MISSY public build — modified 23 October 2026. Release: 2026.10.23.scope1.
+<details id="missy-public-license" style="margin:16px 16px 100px;padding:12px;border:1px solid #40546c;border-radius:8px"><summary>GPL-3.0 · Attribution and source / 许可与源代码</summary><pre class="missy-license-en" style="white-space:pre-wrap;overflow-wrap:anywhere">MISSY public build — modified 23 October 2026. Release: 2026.10.23.guide1.
 Released under GNU GPL version 3. No warranty.
 ZPCR/PCRD format research and adapted parsing: R. Byers / zpcrweb contributors.
 Upstream: https://github.com/RByers/zpcrweb
@@ -17640,7 +17666,7 @@ Supported PCRD ZIP compression: stored / Deflate. Other methods remain unsupport
 Modular port: 21 October 2026. Baseline: Zenodo record 23437639.
 The single-file application retains the existing reader registrations and format support.
 </pre><div class="missy-license-zh" data-i18n-skip>
-<p>MISSY 公开版本，更新日期：2026 年 10 月 23 日。版本：2026.10.23.scope1。按 GNU 通用公共许可协议第三版（GPL-3.0）发布，不提供品质担保。</p>
+<p>MISSY 公开版本，更新日期：2026 年 10 月 23 日。版本：2026.10.23.guide1。按 GNU 通用公共许可协议第三版（GPL-3.0）发布，不提供品质担保。</p>
 <p>ZPCR／PCRD 格式研究及改编解析：R. Byers 与 zpcrweb 贡献者。上游：<a href="https://github.com/RByers/zpcrweb">github.com/RByers/zpcrweb</a>。</p>
 <p>修改内容：MISSY 集成、质控图、独立计算 Cq／Tm，以及本地密码流程。未分发 Bio-Rad 密码、从 CFX 派生的解密状态或厂商 DLL。独立计算不能替代厂商质控认证。</p>
 <p>HTML 保留 Plotly 的版权与 MIT 许可声明，包含可读应用代码和内嵌依赖。本 index.html 文件同时包含应用程序及其可读源代码。</p>
