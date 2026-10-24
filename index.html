@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Offline reader for Roche LightCycler 480 .ixo and Applied Biosystems QuantStudio 3/5 .eds files: traceable stored values, container integrity checks, open qPCR exports, graphs, quality review, forensic log and JSON-LD metadata.">
 <meta name="application-name" content="qPCR raw values, quality-control and forensic export tool">
-<meta name="software-version" content="2026.10.24.commandmenu1">
+<meta name="software-version" content="2026.10.24.animalmenu1">
 
 
 <style>
@@ -789,6 +789,18 @@ main .tip,main .curve-canvas-tip{background:#140b1c;color:#ecd6f5;border-color:#
 #statusbar #missy-command-menu-items button{border-radius:0 16px 16px 0;background:#26172e;border-color:#ac84b9;color:#eed9f5;padding:6px 9px}
 #statusbar #missy-command-menu-items button:hover{background:#ff9966;color:#211121}
 #statusbar #missy-command-menu-toggle:focus-visible,#statusbar #missy-command-menu-items button:focus-visible{outline:2px solid #ffcc99;outline-offset:2px}
+/* Remove the duplicate page banner; live SOP status remains in the footer. */
+body>header,body.lang-zh>header{display:none}
+@media(min-width:1000px){body>nav,body.lang-zh>nav{top:16px}body>main{margin-top:12px}}
+#statusbar #console-profile{color:#d9bce8;font-size:11px;white-space:normal;max-width:420px;margin-right:8px}
+#missy-animal-menu{display:inline-flex;align-items:center;gap:5px;max-width:100%;flex-wrap:wrap}
+#statusbar #missy-animal-menu-toggle{background:#cc99cc;color:#211121;border:0;border-radius:22px 0 0 22px;padding:7px 12px;font-weight:700}
+#statusbar #missy-animal-menu-items.cute-friends{position:static;inset:auto;display:inline-flex;width:auto;max-width:100%;margin:0;flex-wrap:wrap;justify-content:flex-start;border-left:7px solid #cc99cc;padding-left:5px;gap:2px;z-index:auto}
+#statusbar #missy-animal-menu-items[hidden]{display:none!important}
+#statusbar #missy-animal-menu-items button{background:#271632;border:1px solid #9976af;border-radius:0 18px 18px 0;font-size:23px;min-width:32px;min-height:32px;line-height:1.1;padding:3px;filter:none;transform:none}
+#statusbar #missy-animal-menu-items #mascot-config{font-size:19px}
+#statusbar #missy-animal-menu-items button:hover{background:#4c2d52;transform:none}
+#statusbar #missy-animal-menu-toggle:focus-visible,#statusbar #missy-animal-menu-items button:focus-visible{outline:2px solid #ffcc99;outline-offset:2px}
 </style>
 <header>
   <div class="header-row">
@@ -18184,6 +18196,16 @@ window.MISSY_CALIBRATION_METADATA=MISSY_CALIBRATION_METADATA;
  bar.insertBefore(group,buttons[0]);group.append(toggle,items);buttons.forEach(b=>items.append(b));
  group.addEventListener('keydown',e=>{if(e.key==='Escape'&&!items.hidden){e.preventDefault();e.stopPropagation();open(false);toggle.focus();}});
  new MutationObserver(label).observe(document.body,{attributes:true,attributeFilter:['class']});label();
+ },{once:true});})();
+/* Existing animal nodes and SOP indicator are relocated without changing actions. */
+(()=>{document.addEventListener('DOMContentLoaded',()=>{
+ const bar=document.querySelector('#statusbar .sb-right'),friends=document.querySelector('.cute-friends'),profile=document.getElementById('console-profile');if(!bar||!friends)return;
+ if(profile){profile.id='console-profile';bar.prepend(profile);}
+ const group=document.createElement('span');group.id='missy-animal-menu';const toggle=document.createElement('button');toggle.id='missy-animal-menu-toggle';toggle.type='button';toggle.setAttribute('aria-controls','missy-animal-menu-items');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('data-i18n-skip','');
+ friends.id='missy-animal-menu-items';friends.hidden=true;friends.setAttribute('role','group');
+ const label=()=>{const zh=document.body.classList.contains('lang-zh'),name=zh?'动物快捷方式':'Animal shortcuts';toggle.textContent=(friends.hidden?'▸ ':'◂ ')+name;friends.setAttribute('aria-label',name);};
+ const open=value=>{friends.hidden=!value;toggle.setAttribute('aria-expanded',String(value));label();};toggle.onclick=()=>open(friends.hidden);group.append(toggle,friends);bar.insertBefore(group,document.getElementById('missy-command-menu'));
+ group.addEventListener('keydown',e=>{if(e.key==='Escape'&&!friends.hidden){e.preventDefault();e.stopPropagation();open(false);toggle.focus();}});new MutationObserver(label).observe(document.body,{attributes:true,attributeFilter:['class']});label();
  },{once:true});})();
 /* Registration order does not override conflicting content signatures. */
 registerReader({id:'ixo',version:'zenodo-23437639',extensions:['.ixo'],probe:s=>!s.zipNames&&/<objectstream\b[^>]*signature=["\']IXOS["\']/i.test(new TextDecoder().decode(s.bytes.subarray(0,2048))),decode:async s=>{const source={...s,text:s.text||new TextDecoder().decode(s.bytes)},r=await decodeIxo(source,'auto');await ccExtractOnLoad(r,source);return r;}});
