@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Offline reader for Roche LightCycler 480 .ixo and Applied Biosystems QuantStudio 3/5 .eds files: traceable stored values, container integrity checks, open qPCR exports, graphs, quality review, forensic log and JSON-LD metadata.">
 <meta name="application-name" content="qPCR raw values, quality-control and forensic export tool">
-<meta name="software-version" content="2026.10.24.earlycss1">
+<meta name="software-version" content="2026.10.24.consoleprevnext1">
 
 <!--
   MACHINE-READABLE LANDING-PAGE METADATA
@@ -552,7 +552,7 @@ body.lang-zh .cute-toast.show{opacity:1;transform:translateY(0) scale(1)}
 #mg.charting #mg-chart{padding:10px}
 #mg.charting #mg-chart-stage{height:100%;width:100%;flex:1 1 0}
 #mg.charting #mg-chart-stage svg{height:100%;width:100%;flex:1 1 0}
-#mg.charting #mg-actions{grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:none;grid-auto-rows:minmax(54px,auto);gap:6px;padding:7px 12px}
+#mg.charting #mg-actions{grid-template-columns:repeat(6,minmax(0,1fr));grid-template-rows:none;grid-auto-rows:minmax(54px,auto);gap:6px;padding:7px 12px}
 #mg.charting #mg-actions .mg-act{min-height:54px;padding:5px 9px;gap:2px;border-radius:7px}
 #mg.charting #mg-actions .k{font-size:11px;letter-spacing:normal;line-height:1.2}
 #mg.charting #mg-actions .l{font-size:14px;line-height:1.2;overflow-wrap:normal}
@@ -560,7 +560,7 @@ body.lang-zh .cute-toast.show{opacity:1;transform:translateY(0) scale(1)}
 #mg .missy-voice-key{font-size:11px}
 #mg.mg-focus #mg-statusbar{position:absolute}
 #mg.mg-focus #missy-console-voice{display:none}
-@media(max-width:1100px){#mg #console-selectors{grid-template-columns:minmax(220px,1fr) minmax(180px,1fr)}#mg #console-selectors label:last-child{grid-column:1/-1}#mg.charting #mg-actions{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:1100px){#mg #console-selectors{grid-template-columns:minmax(220px,1fr) minmax(180px,1fr)}#mg #console-selectors label:last-child{grid-column:1/-1}#mg.charting #mg-actions{grid-template-columns:repeat(6,minmax(0,1fr))}}
 @media(max-width:650px){#mg:not(.mg-focus){overflow-y:auto}#mg #mg-top{padding:40px 10px 8px}#mg #mg-facts{padding-right:0}#mg #console-selectors{grid-template-columns:minmax(0,1fr)}#mg.charting #mg-body{flex:0 0 50vh;min-height:280px}#mg.charting #mg-actions{grid-template-columns:repeat(2,minmax(0,1fr));overflow:visible}#mg.charting #mg-actions .l{font-size:13px}#mg #mg-statusbar{flex-wrap:wrap;font-size:11px}#mg.mg-focus #mg-body{flex:1 1 0;min-height:0}}
 
 
@@ -8170,9 +8170,11 @@ function mgRenderBase(){
     ?[{key:"1",label:"Confirm "+MG.pending.id,cmd:"confirm",cls:"primary"},{key:"2",label:"Cancel",cmd:"cancel"},
       {key:"0",label:"Leave the console",cmd:"exit"}]
     :charting
-      ?[{key:"1",label:UI_LANG==='zh'?(onChart?'图表':'图形'):(onChart?'Chart':'Graph'),cmd:"navigation menu",cls:"primary"},
-        {key:"2",label:UI_LANG==='zh'?'视图 · 缩放和平移':'View · Zoom / pan',cmd:"view menu",cls:"sheet"},
-        {key:"3",label:UI_LANG==='zh'?'外观':'Appearance',cmd:"appearance menu",cls:"sheet"},
+      ?[{key:"1",label:UI_LANG==='zh'?'上一个':'Previous',cmd:onChart?'chart previous':'previous',cls:"primary"},
+        {key:"2",label:UI_LANG==='zh'?'下一个':'Next',cmd:onChart?'chart next':'next',cls:"primary"},
+        {key:"3",label:UI_LANG==='zh'?(onChart?'图表':'图形'):(onChart?'Chart':'Graph'),cmd:"navigation menu",cls:"sheet"},
+        {key:"4",label:UI_LANG==='zh'?'视图 · 缩放和平移':'View · Zoom / pan',cmd:"view menu",cls:"sheet"},
+        {key:"5",label:UI_LANG==='zh'?'外观':'Appearance',cmd:"appearance menu",cls:"sheet"},
         {key:"0",label:"Return to the page",cmd:"exit"}]
       :[{key:"1",label:"Next",cmd:"next",cls:"primary"},{key:"2",label:"Previous",cmd:"previous"}]
         .concat((it&&it.actions||[]).map(a=>Object.assign({},a)))
