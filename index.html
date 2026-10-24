@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Offline reader for Roche LightCycler 480 .ixo and Applied Biosystems QuantStudio 3/5 .eds files: traceable stored values, container integrity checks, open qPCR exports, graphs, quality review, forensic log and JSON-LD metadata.">
 <meta name="application-name" content="qPCR raw values, quality-control and forensic export tool">
-<meta name="software-version" content="2026.10.24.bootdetails1">
+<meta name="software-version" content="2026.10.24.lavenderrails1">
 
 
 <style>
@@ -729,6 +729,26 @@ main th{background:#efe1eb;color:#38273b}main td{background-color:#fffdfb}main .
  #mg #mg-actions .mg-act{border-radius:28px 8px 28px 8px;border-width:2px}
  #mg .mg-sheet-box{border-left:18px solid #c59bcf;border-top:7px solid #f0a05e;border-radius:36px 0 24px 0}
 }
+/* Desktop menu rail. Existing buttons and their event handlers are retained. */
+@media(min-width:1000px){
+ body,body.lang-zh{background:#000}
+ body>header,body.lang-zh>header{margin-left:0;border-left:32px solid #cc99cc;border-radius:0 0 0 56px;background:#ff9966}
+ body>nav,body.lang-zh>nav{position:fixed;left:16px;top:154px;bottom:90px;width:190px;box-sizing:border-box;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:6px;padding:0 0 14px;border:0;border-top:22px solid #cc99cc;border-radius:50px 0 0 0;background:#000;overflow:auto;z-index:30;box-shadow:none}
+ body>nav button,body.lang-zh>nav button{flex:none;min-height:57px;margin:0;padding:13px 14px;text-align:right;background:#cc99cc;color:#190c1c;border:0;border-radius:0;font-family:'Arial Narrow',Arial,sans-serif;font-weight:700;box-shadow:none;white-space:normal}
+ body>nav button:first-child{border-radius:26px 0 0 0}
+ body>nav button:nth-child(3n+2),body.lang-zh>nav button:nth-child(3n+2){background:#b7a4e4}
+ body>nav button.on,body.lang-zh>nav button.on{background:#ff9966;box-shadow:inset -7px 0 #ffcc99}
+ body>nav button:hover{background:#ffcc99;color:#190c1c}
+ body>nav button:focus-visible{outline:3px solid white;outline-offset:-4px}
+ body>main{margin-left:222px;border-left:12px solid #cc99cc;border-top:10px solid #cc99cc;border-radius:46px 0 0 0;padding-left:20px;box-sizing:border-box;min-width:0}
+ main .card,body.lang-zh main .card{border-left-width:0;border-top-width:4px;border-radius:0 0 20px 0}
+ #mg #mg-top{border-left-color:#cc99cc;background:#ff9966}
+ #mg #mg-nav button{background:#cc99cc;border-radius:0;min-height:36px}
+ #mg #mg-nav button:first-child{border-radius:24px 0 0 0}
+ #mg #mg-nav button:last-child{border-radius:0 22px 22px 0}
+ #mg #mg-actions .mg-act{border-radius:0 22px 0 22px}
+}
+@media(min-width:1000px){body>main{width:calc(100% - 222px);max-width:calc(100% - 222px)}#mascot-settings,#missy-sound-settings{border-top:8px solid #ff9966;border-left:14px solid #cc99cc;border-radius:32px 0 22px 0}}
 </style>
 <header>
   <div class="header-row">
