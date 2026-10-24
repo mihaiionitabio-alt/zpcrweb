@@ -1,0 +1,318 @@
+{
+  "basis": "Reconciled against the current public source on 24 October 2026. Original 0.3 work-package scope retained; UI additions are not whole-package completion.",
+  "requirements": 30,
+  "work_packages": 14,
+  "partially_integrated_packages": 6,
+  "not_integrated_packages": 8,
+  "fully_completed_work_packages_claimed": 0,
+  "whole_packages_validated_ready_to_deploy": 0,
+  "prior_low_risk_release_increments": 13,
+  "current_increment": {
+    "version": "2026.10.24.clarity1",
+    "description": "Offline voice capability explanations and disabled unavailable controls; current/historical build identity; Chinese demo narration and cue coverage; consolidated 30-lesson tests; readiness reconciliation",
+    "status": "tested; public release",
+    "live_url": "https://mihaiionitabio-alt.github.io/zpcrweb/?v=2026.10.24.clarity1"
+  },
+  "readiness_note": "Documented designs/reference kernels are not production-ready patches. One next low-risk slice was selected for implementation; no unsupported count of remaining small slices is claimed. Existing pre-0.3 application capabilities are not counted as missing merely because a proposed extension is not integrated.",
+  "packages": [
+    {
+      "id": "P01",
+      "title": "Feature flags and capability inventory",
+      "integration": "partial display/evidence integration",
+      "whole_package_deploy_ready": false
+    },
+    {
+      "id": "P02",
+      "title": "Versioned, isolated native adapters",
+      "integration": "proposed 0.3 extension not integrated",
+      "whole_package_deploy_ready": false
+    },
+    {
+      "id": "P03",
+      "title": "Per-analysis provenance and orthogonal states",
+      "integration": "proposed 0.3 extension not integrated",
+      "whole_package_deploy_ready": false
+    },
+    {
+      "id": "P04",
+      "title": "Three identities and verified companion links",
+      "integration": "partial source identity/fingerprint display and metadata-only sharing comparisons; no deduplication",
+      "whole_package_deploy_ready": false
+    },
+    {
+      "id": "P05",
+      "title": "Physical roles, native tuples, missingness and precision",
+      "integration": "partial display/evidence integration",
+      "whole_package_deploy_ready": false
+    },
+    {
+      "id": "P06",
+      "title": "Channel/axis identity and comparable cohorts",
+      "integration": "proposed 0.3 extension not integrated",
+      "whole_package_deploy_ready": false
+    },
+    {
+      "id": "P07",
+      "title": "Annex A structured metadata",
+      "integration": "proposed 0.3 extension not integrated",
+      "whole_package_deploy_ready": false
+    },
+    {
+      "id": "P08",
+      "title": "Generic engines and automatic results",
+      "integration": "proposed 0.3 extension not integrated",
+      "whole_package_deploy_ready": false
+    },
+    {
+      "id": "P09",
+      "title": "Thermal, optical and calibration evidence",
+      "integration": "partial retained thermal/optical context and bounded calibration header/count display; no metrics/corrections/validity changes",
+      "whole_package_deploy_ready": false
+    },
+    {
+      "id": "P10",
+      "title": "Persistent audit, selection and revision history",
+      "integration": "proposed 0.3 extension not integrated",
+      "whole_package_deploy_ready": false
+    },
+    {
+      "id": "P11",
+      "title": "Complete export, precision and deterministic output",
+      "integration": "partial static dictionary and read-only precision/rounding disclosure; no complete-package exporter or deterministic-output implementation",
+      "whole_package_deploy_ready": false
+    },
+    {
+      "id": "P12",
+      "title": "Expand schema/validator and report evidence honestly",
+      "integration": "proposed 0.3 extension not integrated",
+      "whole_package_deploy_ready": false
+    },
+    {
+      "id": "P13",
+      "title": "Safe package reader and batch/API scope",
+      "integration": "proposed 0.3 extension not integrated",
+      "whole_package_deploy_ready": false
+    },
+    {
+      "id": "P14",
+      "title": "UI, reports and internationalization",
+      "integration": "partial evidence accessibility, desktop LCARS/session controls, optional local voice capability checks, sound menus and isolated bilingual 30-lesson demo; not universal browser voice or manufacturer conformance",
+      "whole_package_deploy_ready": false
+    }
+  ],
+  "prior_releases": [
+    {
+      "version": "2026.10.23.evidence1",
+      "description": "Read-only decoded evidence/limits inventory"
+    },
+    {
+      "version": "2026.10.23.provenance1",
+      "description": "Source identity and native fingerprint-method display"
+    },
+    {
+      "version": "2026.10.23.native1",
+      "description": "Native reading inspector and applied excerpts"
+    },
+    {
+      "version": "2026.10.23.context1",
+      "description": "Retained thermal/optical context excerpts"
+    }
+  ],
+  "documented_requirement_entries": [
+    {
+      "requirement": "M01",
+      "update": "Record reader/model/exporter/analysis versions, supported modes, evidence basis and exclusions per run; expose partial capabilities honestly.",
+      "production_integration_risk": "L for display; M for identity/grouping",
+      "work_packages": "P01, P02, P12"
+    },
+    {
+      "requirement": "M02",
+      "update": "Preserve offline native access and explicit locked inventory; document actual batch/API capability separately from simply being an unencrypted ZIP.",
+      "production_integration_risk": "L for declarations; H for access/decryption changes",
+      "work_packages": "P01, P13"
+    },
+    {
+      "requirement": "M03",
+      "update": "Add a bounded, content-probed `.missy.zip` reader with safe archive handling, separate from ZIP batch intake and existing native readers.",
+      "production_integration_risk": "H for parser/security integration",
+      "work_packages": "P02, P13"
+    },
+    {
+      "requirement": "M04",
+      "update": "Preserve exact labels, finite/null semantics, units and machine keys; add explicit precision/rounding metadata without display-rounding raw values.",
+      "production_integration_risk": "M; H if changing numeric parsing",
+      "work_packages": "P03, P05"
+    },
+    {
+      "requirement": "M05",
+      "update": "Separate run-instance, source-byte, acquisition-content, physical-position, sample, assay, channel and analysis IDs. Names are not identities.",
+      "production_integration_risk": "M; H if used to suppress records",
+      "work_packages": "P03, P04"
+    },
+    {
+      "requirement": "M06",
+      "update": "Preserve source hashes and CRCs, verify all package payloads, and distinguish integrity from authentication. Never replace exact hashes with normalized comparison hashes.",
+      "production_integration_risk": "M/H",
+      "work_packages": "P04, P13"
+    },
+    {
+      "requirement": "M07",
+      "update": "Represent template/locked/incomplete/aborted/completed states separately from analysis provenance; preserve time basis and clock changes.",
+      "production_integration_risk": "M",
+      "work_packages": "P03, P10"
+    },
+    {
+      "requirement": "M08",
+      "update": "Separate addressable sample layout from physical measurement layout, retaining orientation and all actual positions.",
+      "production_integration_risk": "H if decoder stride changes; M as sidecar",
+      "work_packages": "P05"
+    },
+    {
+      "requirement": "M09",
+      "update": "Preserve preparation, subsample, dilution and PCR replicate identities; avoid equating multiple technical wells to independent preparations.",
+      "production_integration_risk": "M/H when interpretation changes",
+      "work_packages": "P05, P08"
+    },
+    {
+      "requirement": "M10",
+      "update": "Preserve explicit per-target control roles, crop reference assays and physical reference positions as distinct concepts; do not infer one from names.",
+      "production_integration_risk": "H for changed control decisions",
+      "work_packages": "P05, P08"
+    },
+    {
+      "requirement": "M11",
+      "update": "Keep protocol/stage/step/repeat identity; use protocol-aware cohorts and never treat a setpoint as a measurement.",
+      "production_integration_risk": "M/H",
+      "work_packages": "P06, P09"
+    },
+    {
+      "requirement": "M12",
+      "update": "Bind channel IDs directly; preserve multiple acquisitions per cycle and independent raw/derivative grids.",
+      "production_integration_risk": "H if remapping native channels/axes",
+      "work_packages": "P05, P06"
+    },
+    {
+      "requirement": "M13",
+      "update": "Preserve raw and processed layers with transform lineage; never relabel Rn/Î”Rn/RFU as ADC counts.",
+      "production_integration_risk": "M as annotation; H if reprocessing",
+      "work_packages": "P05, P08"
+    },
+    {
+      "requirement": "M14",
+      "update": "Carry measured/missing/saturated/error/not-collected/derived-interpolation states without zero filling or index shifts.",
+      "production_integration_risk": "H if replacing legacy missingness behavior",
+      "work_packages": "P05"
+    },
+    {
+      "requirement": "M15",
+      "update": "Keep value, calculation state, detection call, QC disposition, native token and output metric separate. Preserve valid last-cycle Cq versus undetermined sentinels.",
+      "production_integration_risk": "H for interpretation changes",
+      "work_packages": "P03, P08"
+    },
+    {
+      "requirement": "M16",
+      "update": "Track provenance per analysis/result family, algorithm/version/settings/overrides, precision and pre-storage rounding; preserve originals and independent revisions.",
+      "production_integration_risk": "M/H",
+      "work_packages": "P03, P05, P08"
+    },
+    {
+      "requirement": "M17",
+      "update": "Complete generic absolute/relative engine execution behind explicit models, pairing, controls, range, unit and uncertainty gates. Preserve existing MARA behavior.",
+      "production_integration_risk": "H",
+      "work_packages": "P08"
+    },
+    {
+      "requirement": "M18",
+      "update": "Complete generic melting execution only for validated supported algorithms/chemistries; preserve own grids, peak/shoulder identity and stored versus derived status.",
+      "production_integration_risk": "H",
+      "work_packages": "P08"
+    },
+    {
+      "requirement": "M19",
+      "update": "Preserve thermal sensor basis/specification/calibration and time resolution; use supported measured logs for existing diagnostic metrics without claiming component-failure certainty.",
+      "production_integration_risk": "M for evidence; H for metric replacement",
+      "work_packages": "P09"
+    },
+    {
+      "requirement": "M20",
+      "update": "Preserve actual exposure/gain/range/dark/reference/compensation context and coverage. Treat undocumented masks as opaque; distinguish channels from dyes.",
+      "production_integration_risk": "M/H",
+      "work_packages": "P09"
+    },
+    {
+      "requirement": "M21",
+      "update": "Declare calibration axes/dimensions/index order/reserved slots; preserve validity/traceability and maintenance events; no silent correction.",
+      "production_integration_risk": "M for evidence; H for applying coefficients",
+      "work_packages": "P09, P10"
+    },
+    {
+      "requirement": "M22",
+      "update": "Persist selections/revisions/parameter deltas with actor/time/reason; retain source data; support privacy. A local hash chain is not authenticated immutable audit storage.",
+      "production_integration_risk": "M/H",
+      "work_packages": "P10"
+    },
+    {
+      "requirement": "M23",
+      "update": "Export complete supported data with scope/counts/omissions, field definitions and provenance; keep companion CSV/PDF/RDML distinct from the new complete package.",
+      "production_integration_risk": "M/H",
+      "work_packages": "P11, P13"
+    },
+    {
+      "requirement": "M24",
+      "update": "Add staged validation and per-subclaim evidence classes; do not turn unsupported/missing evidence into negative samples.",
+      "production_integration_risk": "H for new strict rejection rules",
+      "work_packages": "P01, P02, P12"
+    },
+    {
+      "requirement": "M25",
+      "update": "Implement structured Annex A entry/import/export and availability for all 54 existing catalogue fields; completeness must not silently become a biological failure.",
+      "production_integration_risk": "M; H if made a release gate",
+      "work_packages": "P07"
+    },
+    {
+      "requirement": "M26",
+      "update": "Implement one versioned canonical acquired-content profile and source-name diagnostics; equal content is duplicate-candidate evidence, not one acquisition ID.",
+      "production_integration_risk": "M for diagnostics; H for deduplication",
+      "work_packages": "P04"
+    },
+    {
+      "requirement": "M27",
+      "update": "Model non-sample physical roles independently, preserve their readings, and exclude them from sample results through roles. Explicit sparse masks, no fabricated samples.",
+      "production_integration_risk": "H for model/decoder migration",
+      "work_packages": "P05"
+    },
+    {
+      "requirement": "M28",
+      "update": "Preserve original per-reading statistics/count availability and definitions. Handle variable native tuple widths; within-read SD is not replicate/between-run SD.",
+      "production_integration_risk": "L for existing-value display; H for tuple/strict changes",
+      "work_packages": "P05"
+    },
+    {
+      "requirement": "M29",
+      "update": "Add numeric representation and original-bit/lexeme evidence; round-trip acquired export to the source representation. Accept shorter exact decimals; protect signed zero where source-significant.",
+      "production_integration_risk": "H for serialization/parser changes",
+      "work_packages": "P05, P11"
+    },
+    {
+      "requirement": "M30",
+      "update": "Remove render-order/global-counter dependence; define canonical repeated-export comparison including manifest dependencies and archive metadata; apply scoped structural self-checks.",
+      "production_integration_risk": "M for local IDs; H for export/strict gate changes",
+      "work_packages": "P11, P12"
+    }
+  ],
+  "history_note": "The prior count of 14 low-risk increments describes the a11yvoice2 checkpoint, not the number of remaining updates or the current release count.",
+  "implemented_after_register_checkpoint": [
+    "Precision and rounding disclosure",
+    "ZIP helper namespace compatibility",
+    "Consolidated desktop LCARS navigation and session setup",
+    "Optional local voice duration, error/level feedback, focus controls and capability messaging",
+    "Original synthesised sound library and footer controls",
+    "Embedded isolated 30-lesson demo with English/Chinese narrative, chart cues and PDF preview",
+    "Current build identity and consolidated demo test entry point"
+  ],
+  "deferred_scope": [
+    "Generic channel/dye/signal relabelling remains deferred pending per-format official evidence",
+    "No new reader, missingness, sample-role, scientific engine, calibration-correction or strict-rejection behaviour",
+    "No complete 0.3 schema/validator/package conformance claimed"
+  ]
+}
