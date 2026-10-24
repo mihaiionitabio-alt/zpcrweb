@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Offline reader for Roche LightCycler 480 .ixo and Applied Biosystems QuantStudio 3/5 .eds files: traceable stored values, container integrity checks, open qPCR exports, graphs, quality review, forensic log and JSON-LD metadata.">
 <meta name="application-name" content="qPCR raw values, quality-control and forensic export tool">
-<meta name="software-version" content="2026.10.24.lavenderrails1">
+<meta name="software-version" content="2026.10.24.darklcars1">
 
 
 <style>
@@ -749,6 +749,38 @@ main th{background:#efe1eb;color:#38273b}main td{background-color:#fffdfb}main .
  #mg #mg-actions .mg-act{border-radius:0 22px 0 22px}
 }
 @media(min-width:1000px){body>main{width:calc(100% - 222px);max-width:calc(100% - 222px)}#mascot-settings,#missy-sound-settings{border-top:8px solid #ff9966;border-left:14px solid #cc99cc;border-radius:32px 0 22px 0}}
+/* Dark LCARS data surfaces. Plot SVG/canvas styling and semantic status colours
+   remain owned by their existing renderers. */
+body,body.lang-zh{--ink:#ddc4e8;--text:#ddc4e8;--muted:#bea4ce;--line:#694d78;--bg:#000;--card:#000;--soft:#160e1d;--accent:#ffb36b;color:#ddc4e8;background:#000}
+main,main .card,body.lang-zh main .card{background:#000;color:#ddc4e8;border-color:#9976af;box-shadow:none}
+main .card h2,main .card h3,main .card h4{color:#ffb36b}
+main .card .sub,main .sub{color:#bea4ce}
+main th{background:#26172f;color:#efd9f6;border-color:#694d78}main td{background-color:#000;border-color:#694d78}
+main input[type=text],main input[type=number],main input[type=date],main input[type=search],main select,main textarea{background:#160e1d;color:#eedbf7;border-color:#9c77ae;color-scheme:dark}
+main button.ghost,body.lang-zh main button.ghost{background:#271632;color:#ecd6f5;border-color:#aa7fbd}
+main button.act,body.lang-zh main button.act{background:#ff9966;color:#24111d}
+main button.act[disabled],body.lang-zh main button.act[disabled]{background:#4b3c4f;color:#b9a4c4}
+main .drop,body.lang-zh main .drop{background:#100a16;color:#ddc4e8;border-color:#aa7fbd}
+main .drop.hot,body.lang-zh main .drop.hot{background:#351b19;color:#ffd2aa;border-color:#ff9966}
+main .metric,body.lang-zh main .metric,main .notice,main .sop-sec,main .dl{background:#0d0812;color:#ddc4e8;border-color:#694d78}
+main a{color:#c9b8ff}main a:hover{color:#ffcc99}
+main code,main pre{background:#190f22;color:#e3c9ef;border-color:#694d78}
+#ast-list .ast-item>button,#ast-available-tools button{background:#271632;color:#ecd6f5;border-color:#aa7fbd}
+#ast-coverage-help{color:#bea4ce}
+#mascot-settings,#missy-sound-settings,#missy-console-voice .missy-voice-settings{background:#000;color:#ddc4e8;border-color:#9976af}
+#mascot-settings h2,#missy-sound-settings h2{color:#ffb36b}
+#mascot-settings button,#missy-sound-settings button{background:#271632;color:#ecd6f5;border-color:#aa7fbd}
+#mascot-settings select,#missy-sound-settings select{background:#160e1d;color:#eedbf7;border-color:#9c77ae;color-scheme:dark}
+@media(min-width:1000px){
+ body>nav button,body.lang-zh>nav button{border-radius:0 30px 30px 0;padding-right:20px}
+ body>nav button:first-child,body.lang-zh>nav button:first-child{border-radius:30px 30px 30px 0}
+ body>nav button.on,body.lang-zh>nav button.on{box-shadow:none;border-right:8px solid #ffcc99}
+ body>main{border-radius:64px 0 0 0}
+}
+main .steps li,main .cc-tile,main .cc-lim>div,main .control-category-editor,main .issue-run-picker,main .issue-category,main .issue-category.bad,main .graph-finding,main .graph-finding.error,main .graph-finding.review{background:#09050e;color:#ddc4e8}
+main button:not(.act):not(.ghost):not(.cc-tile){background:#271632;color:#ecd6f5;border-color:#aa7fbd}
+main .tip,main .curve-canvas-tip{background:#140b1c;color:#ecd6f5;border-color:#aa7fbd}
+/* Small status tags retain their existing semantic foreground and background. */
 </style>
 <header>
   <div class="header-row">
