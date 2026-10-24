@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Offline reader for Roche LightCycler 480 .ixo and Applied Biosystems QuantStudio 3/5 .eds files: traceable stored values, container integrity checks, open qPCR exports, graphs, quality review, forensic log and JSON-LD metadata.">
 <meta name="application-name" content="qPCR raw values, quality-control and forensic export tool">
-<meta name="software-version" content="2026.10.24.darklcars1">
+<meta name="software-version" content="2026.10.24.commandmenu1">
 
 
 <style>
@@ -781,6 +781,14 @@ main .steps li,main .cc-tile,main .cc-lim>div,main .control-category-editor,main
 main button:not(.act):not(.ghost):not(.cc-tile){background:#271632;color:#ecd6f5;border-color:#aa7fbd}
 main .tip,main .curve-canvas-tip{background:#140b1c;color:#ecd6f5;border-color:#aa7fbd}
 /* Small status tags retain their existing semantic foreground and background. */
+/* Inline LCARS command disclosure; no overlay over plots or data panels. */
+#missy-command-menu{display:inline-flex;align-items:center;gap:5px;max-width:100%;flex-wrap:wrap}
+#missy-command-menu-items{display:inline-flex;align-items:center;gap:4px;flex-wrap:wrap;border-left:7px solid #cc99cc;padding-left:6px}
+#missy-command-menu-items[hidden]{display:none!important}
+#statusbar #missy-command-menu-toggle{background:#cc99cc;color:#211121;border:0;border-radius:22px 0 0 22px;padding:7px 12px;font-weight:700}
+#statusbar #missy-command-menu-items button{border-radius:0 16px 16px 0;background:#26172e;border-color:#ac84b9;color:#eed9f5;padding:6px 9px}
+#statusbar #missy-command-menu-items button:hover{background:#ff9966;color:#211121}
+#statusbar #missy-command-menu-toggle:focus-visible,#statusbar #missy-command-menu-items button:focus-visible{outline:2px solid #ffcc99;outline-offset:2px}
 </style>
 <header>
   <div class="header-row">
@@ -18162,6 +18170,21 @@ window.MISSY_CALIBRATION_METADATA=MISSY_CALIBRATION_METADATA;
  function render(){if(!dialog)return;dialog.querySelector('h2').textContent=t('Sounds (60)','声音（60）');dialog.querySelector('#sound-settings-close').textContent=t('Close','关闭');dialog.querySelector('#sound-preview-stop').textContent=t('Stop preview','停止试听');dialog.querySelector('#sound-alert-stop').textContent=t('Stop alert','停止警报');const group=select.value;select.replaceChildren();select.add(new Option(t('All sounds','全部声音'),'all'));for(const g of Object.keys(groups))select.add(new Option(zh()?groups[g]:g,g));select.value=group||'all';select.setAttribute('aria-label',t('Sound category','声音类别'));list.replaceChildren();for(const cue of sound.catalog.filter(x=>select.value==='all'||x.group===select.value)){const row=document.createElement('div');row.className='sound-row';row.dataset.sound=cue.id;const label=document.createElement('label'),check=document.createElement('input'),text=document.createElement('span'),play=document.createElement('button');check.type='checkbox';check.checked=sound.cueEnabled(cue.id);check.onchange=()=>sound.setCue(cue.id,check.checked);text.textContent=cue[zh()?'zh':'en'];check.setAttribute('aria-label',t('Enable: ','启用：')+text.textContent);label.append(check,text);play.type='button';play.textContent='▶';play.setAttribute('aria-label',t('Preview: ','试听：')+text.textContent);play.onclick=()=>sound.preview(cue.id);row.append(label,play);list.append(row);}update();}
  document.addEventListener('DOMContentLoaded',()=>{dialog=document.createElement('dialog');dialog.id='missy-sound-settings';dialog.setAttribute('data-i18n-skip','');dialog.setAttribute('aria-labelledby','sound-settings-title');dialog.innerHTML='<div class="sound-heading"><h2 id="sound-settings-title"></h2><button type="button" id="sound-settings-close"></button></div><select></select><div id="sound-settings-list"></div><div class="sound-footer"><button type="button" id="sound-preview-stop"></button><button type="button" id="sound-alert-stop" hidden></button></div>';document.body.append(dialog);select=dialog.querySelector('select');list=dialog.querySelector('#sound-settings-list');select.onchange=render;dialog.querySelector('#sound-settings-close').onclick=()=>dialog.close();dialog.querySelector('#sound-preview-stop').onclick=sound.stopPreview;dialog.querySelector('#sound-alert-stop').onclick=sound.stopAlert;dialog.addEventListener('close',sound.stopPreview);dialog.addEventListener('keydown',e=>e.stopPropagation());document.getElementById('missy-sound-settings-open').onclick=()=>{render();dialog.showModal();};document.addEventListener('missy-sound-state',update);new MutationObserver(()=>{const b=document.getElementById('missy-sound-settings-open');b.title=t('Sound settings','声音设置');b.setAttribute('aria-label',b.title);if(dialog.open)render();}).observe(document.body,{attributes:true,attributeFilter:['class']});render();});
 })();
+/* Footer disclosure only: move existing buttons, preserving their handlers. */
+(()=>{document.addEventListener('DOMContentLoaded',()=>{
+ const bar=document.querySelector('#statusbar .sb-right');if(!bar||document.getElementById('missy-command-menu'))return;
+ const ids=['sb-command','sb-console','sb-assist','sb-save','sb-license','sb-toggle'];
+ const buttons=ids.map(id=>document.getElementById(id)).filter(Boolean);if(!buttons.length)return;
+ const group=document.createElement('span');group.id='missy-command-menu';
+ const toggle=document.createElement('button');toggle.id='missy-command-menu-toggle';toggle.type='button';toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-controls','missy-command-menu-items');toggle.setAttribute('data-i18n-skip','');
+ const items=document.createElement('span');items.id='missy-command-menu-items';items.hidden=true;items.setAttribute('role','group');
+ const label=()=>{const name=document.body.classList.contains('lang-zh')?'命令':'Commands';toggle.textContent=(items.hidden?'▸ ':'◂ ')+name;items.setAttribute('aria-label',name);};
+ const open=value=>{items.hidden=!value;toggle.setAttribute('aria-expanded',String(value));label();};
+ toggle.onclick=()=>open(items.hidden);
+ bar.insertBefore(group,buttons[0]);group.append(toggle,items);buttons.forEach(b=>items.append(b));
+ group.addEventListener('keydown',e=>{if(e.key==='Escape'&&!items.hidden){e.preventDefault();e.stopPropagation();open(false);toggle.focus();}});
+ new MutationObserver(label).observe(document.body,{attributes:true,attributeFilter:['class']});label();
+ },{once:true});})();
 /* Registration order does not override conflicting content signatures. */
 registerReader({id:'ixo',version:'zenodo-23437639',extensions:['.ixo'],probe:s=>!s.zipNames&&/<objectstream\b[^>]*signature=["\']IXOS["\']/i.test(new TextDecoder().decode(s.bytes.subarray(0,2048))),decode:async s=>{const source={...s,text:s.text||new TextDecoder().decode(s.bytes)},r=await decodeIxo(source,'auto');await ccExtractOnLoad(r,source);return r;}});
 registerReader({id:'eds',version:'zenodo-23437639',extensions:['.eds','.edt'],probe:s=>s.zipNames?.some(n=>/^apldbio\/sds\/experiment\.xml$/i.test(n)),decode:async s=>{const r=await decodeEds(s);await ccExtractOnLoad(r,s);return r;}});
