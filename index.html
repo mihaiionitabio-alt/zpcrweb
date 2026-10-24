@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Offline reader for Roche LightCycler 480 .ixo and Applied Biosystems QuantStudio 3/5 .eds files: traceable stored values, container integrity checks, open qPCR exports, graphs, quality review, forensic log and JSON-LD metadata.">
 <meta name="application-name" content="qPCR raw values, quality-control and forensic export tool">
-<meta name="software-version" content="2026.10.24.computerfx1">
+<meta name="software-version" content="2026.10.24.computerfx2">
 
 
 <style>
@@ -19,6 +19,8 @@
 /* Original oscillator effects and ordinary installed local TTS. No sampled recordings. */
 (()=>{
  const key='missy_startup_sound_v1';let enabled=true,ready=false,announced=false,pending=false,context=null,alerting=false,alarmTimer=null,alive=true,lastSpeech=0,alarmGeneration=0;
+ // Request local voice enumeration early, while the embedded page is still loading.
+ try{window.speechSynthesis?.getVoices();}catch{}
  const alarmNodes=new Set();try{enabled=localStorage.getItem(key)!=='off';}catch{}
  const zh=()=>document.body?.classList.contains('lang-zh');
  const phrases={ready:['Program complete. Enter when ready.','程序已就绪。请开始操作。'],working:['Working.','正在处理。'],received:['Data being received.','正在接收数据。'],loaded:['Data loaded. Analysis ready.','数据已加载。分析已就绪。'],affirmative:['Affirmative.','已确认。'],download:['Preparing download.','正在准备下载。'],logs:['Integrity records opened.','已打开完整性记录。'],error:['Unable to complete the requested action. Review the details.','无法完成所请求的操作。请查看详细信息。']};
