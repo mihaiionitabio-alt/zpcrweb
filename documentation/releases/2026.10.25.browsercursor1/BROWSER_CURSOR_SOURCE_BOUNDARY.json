@@ -1,0 +1,9 @@
+{
+  "changedSourceModules": [
+    "src/shell/public_browser_guard.html",
+    "src/variants/public/startup_head.html",
+    "src/core/ui/guided_demo.js",
+    "src/core/ui/mission_theme.css"
+  ],
+  "scientificModulesUnchanged": true
+}

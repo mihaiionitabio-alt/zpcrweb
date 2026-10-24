@@ -1,0 +1,42 @@
+[
+  {
+    "motion": "no-preference",
+    "lessons": 30,
+    "start": {
+      "x": 12.34375,
+      "y": 352.09375,
+      "transition": "1.2s, 1.2s"
+    },
+    "mid": {
+      "x": 60.90625,
+      "y": 379.140625,
+      "transition": "1.2s, 1.2s"
+    },
+    "end": {
+      "x": 135.71875,
+      "y": 420.796875,
+      "transition": "1.2s, 1.2s"
+    },
+    "visible": true
+  },
+  {
+    "motion": "reduce",
+    "lessons": 30,
+    "start": {
+      "x": 14.84375,
+      "y": 353.5,
+      "transition": "1.2s, 1.2s"
+    },
+    "mid": {
+      "x": 69.84375,
+      "y": 384.109375,
+      "transition": "1.2s, 1.2s"
+    },
+    "end": {
+      "x": 135.71875,
+      "y": 420.796875,
+      "transition": "1.2s, 1.2s"
+    },
+    "visible": true
+  }
+]
