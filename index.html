@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Offline reader for Roche LightCycler 480 .ixo and Applied Biosystems QuantStudio 3/5 .eds files: traceable stored values, container integrity checks, open qPCR exports, graphs, quality review, forensic log and JSON-LD metadata.">
 <meta name="application-name" content="qPCR raw values, quality-control and forensic export tool">
-<meta name="software-version" content="2026.10.24.animalmenu1">
+<meta name="software-version" content="2026.10.24.soundmenu1">
 
 
 <style>
@@ -801,6 +801,17 @@ body>header,body.lang-zh>header{display:none}
 #statusbar #missy-animal-menu-items #mascot-config{font-size:19px}
 #statusbar #missy-animal-menu-items button:hover{background:#4c2d52;transform:none}
 #statusbar #missy-animal-menu-toggle:focus-visible,#statusbar #missy-animal-menu-items button:focus-visible{outline:2px solid #ffcc99;outline-offset:2px}
+/* Sound controls belong to a footer, never float over page content. */
+#missy-sound-menu{display:inline-flex;align-items:center;gap:5px;flex-wrap:wrap;max-width:100%;pointer-events:auto}
+#missy-sound-menu #missy-sound-dock{position:static;inset:auto;display:inline-flex;align-items:center;gap:4px;flex-wrap:wrap;z-index:auto;border-left:7px solid #cc99cc;padding-left:6px}
+#missy-sound-menu #missy-sound-dock[hidden],#missy-sound-menu [hidden]{display:none!important}
+#missy-sound-menu #missy-sound-menu-toggle{background:#cc99cc;color:#211121;border:0;border-radius:22px 0 0 22px;padding:7px 12px;font-weight:700;cursor:pointer}
+#missy-sound-menu #missy-sound-settings-open{background:#271632;color:#eed9f5;border:1px solid #ac84b9;border-radius:0 16px 16px 0;padding:6px 9px;cursor:pointer}
+#missy-sound-menu #missy-red-alert{border-radius:0 16px 16px 0}
+#missy-sound-menu #missy-footer-alert-stop{background:#a51e2b;color:white;border:1px solid #f59aab;border-radius:16px;padding:6px 9px;cursor:pointer;font:12px Arial,sans-serif}
+#missy-sound-menu :focus-visible{outline:2px solid #ffcc99;outline-offset:2px}
+#mg #missy-sound-menu{margin-left:8px;flex-shrink:0}#mg.mg-focus #mg-statusbar:has(#missy-sound-menu){pointer-events:auto}
+.missy-mode-sound-footer{flex:none;display:flex;justify-content:flex-end;padding:5px 12px;background:#0c0811;border-top:1px solid #9976af;color:#eed9f5}
 </style>
 <header>
   <div class="header-row">
@@ -18206,6 +18217,18 @@ window.MISSY_CALIBRATION_METADATA=MISSY_CALIBRATION_METADATA;
  const label=()=>{const zh=document.body.classList.contains('lang-zh'),name=zh?'动物快捷方式':'Animal shortcuts';toggle.textContent=(friends.hidden?'▸ ':'◂ ')+name;friends.setAttribute('aria-label',name);};
  const open=value=>{friends.hidden=!value;toggle.setAttribute('aria-expanded',String(value));label();};toggle.onclick=()=>open(friends.hidden);group.append(toggle,friends);bar.insertBefore(group,document.getElementById('missy-command-menu'));
  group.addEventListener('keydown',e=>{if(e.key==='Escape'&&!friends.hidden){e.preventDefault();e.stopPropagation();open(false);toggle.focus();}});new MutationObserver(label).observe(document.body,{attributes:true,attributeFilter:['class']});label();
+ },{once:true});})();
+/* Sound disclosure relocates controls only; the looping audio engine is untouched. */
+(()=>{document.addEventListener('DOMContentLoaded',()=>{
+ const home=document.querySelector('#statusbar .sb-right'),dock=document.getElementById('missy-sound-dock'),sound=window.MISSY_COMPUTER_SOUND;if(!home||!dock||document.getElementById('missy-sound-menu'))return;
+ const group=document.createElement('span');group.id='missy-sound-menu';group.setAttribute('data-i18n-skip','');const toggle=document.createElement('button');toggle.id='missy-sound-menu-toggle';toggle.type='button';toggle.setAttribute('aria-controls','missy-sound-dock');toggle.setAttribute('aria-expanded','false');dock.hidden=true;dock.setAttribute('role','group');
+ const stop=document.createElement('button');stop.id='missy-footer-alert-stop';stop.type='button';stop.onclick=()=>sound.stopAlert();
+ const master=document.getElementById('missy-startup-sound');if(master)dock.append(master);group.append(toggle,dock,stop);home.append(group);
+ const label=()=>{const zh=document.body.classList.contains('lang-zh'),name=zh?'声音':'Sounds';toggle.textContent=(dock.hidden?'▸ ':'◂ ')+name;dock.setAttribute('aria-label',name);stop.textContent=zh?'■ 停止警报':'■ Stop alert';stop.hidden=!sound.alerting;};
+ const open=value=>{dock.hidden=!value;toggle.setAttribute('aria-expanded',String(value));label();};toggle.onclick=()=>open(dock.hidden);group.addEventListener('keydown',e=>{if(e.key==='Escape'&&!dock.hidden){e.preventDefault();e.stopPropagation();open(false);toggle.focus();}});
+ const modes=['mg','cmdm','astm'].map(id=>document.getElementById(id)).filter(Boolean),footers=new Map();for(const mode of modes){if(mode.id==='mg'){footers.set(mode,document.getElementById('mg-statusbar'));continue;}const footer=document.createElement('div');footer.className='missy-mode-sound-footer';mode.append(footer);footers.set(mode,footer);}
+ const locate=()=>{const active=[...modes].reverse().find(e=>e.classList.contains('on')),host=active?footers.get(active):home;if(host&&group.parentElement!==host)host.append(group);};
+ for(const mode of modes)new MutationObserver(locate).observe(mode,{attributes:true,attributeFilter:['class']});new MutationObserver(label).observe(document.body,{attributes:true,attributeFilter:['class']});document.addEventListener('missy-sound-state',label);label();locate();
  },{once:true});})();
 /* Registration order does not override conflicting content signatures. */
 registerReader({id:'ixo',version:'zenodo-23437639',extensions:['.ixo'],probe:s=>!s.zipNames&&/<objectstream\b[^>]*signature=["\']IXOS["\']/i.test(new TextDecoder().decode(s.bytes.subarray(0,2048))),decode:async s=>{const source={...s,text:s.text||new TextDecoder().decode(s.bytes)},r=await decodeIxo(source,'auto');await ccExtractOnLoad(r,source);return r;}});
