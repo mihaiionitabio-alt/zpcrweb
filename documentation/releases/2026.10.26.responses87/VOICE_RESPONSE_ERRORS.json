@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "tested": [
+    "voiceNoSpeech",
+    "voicePermission",
+    "voiceUnavailable",
+    "voiceTimeLimit"
+  ],
+  "recognitionEmulated": true,
+  "errors": []
+}

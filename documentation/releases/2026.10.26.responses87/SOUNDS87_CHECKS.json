@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "cues": 87,
+  "actualDistinctToneSequences": 87,
+  "individualSwitches": 87,
+  "previewsBypassMuteWithoutEnabling": true,
+  "previewAlarmDoesNotLoop": true,
+  "preferencesPersist": true,
+  "disabledCueSilent": true,
+  "dialogCanStopAlarm": true,
+  "EN_ZH_mobile": true,
+  "scienceUnchanged": true,
+  "pageErrors": []
+}

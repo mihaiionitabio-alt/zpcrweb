@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "checked": [
+    "reviewOverview",
+    "reviewPlate",
+    "reviewCompare",
+    "reviewStatistics",
+    "reviewControls",
+    "reviewRuns",
+    "reviewCurves",
+    "reviewRising",
+    "reviewInstrument",
+    "workspaceBack",
+    "demoBegin",
+    "demoPlayback",
+    "demoExit",
+    "graphSelected",
+    "signalSelected",
+    "targetSelected",
+    "resultsFiltered",
+    "workspaceEnter",
+    "checking",
+    "installing",
+    "installed",
+    "already-installed",
+    "failed",
+    "unsupported",
+    "unavailable"
+  ],
+  "scientificSnapshotUnchanged": true,
+  "scope": "Presentation event-routing fixtures; live microphone and pack installation not asserted",
+  "errors": []
+}
