@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "eachWakeOneTwoToneChime": true,
+  "secondWakeAfter60SecondsNoUtterance": true,
+  "cooldownSurvivesReload": true,
+  "utteranceAllowedAfterFiveMinutes": true,
+  "wedgedAcknowledgementTimeout": true,
+  "ttsEmulated": true
+}

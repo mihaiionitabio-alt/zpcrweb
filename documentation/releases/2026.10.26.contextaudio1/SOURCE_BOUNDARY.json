@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "baseline": "3fb21fd",
+  "onlyChanged": [
+    "synthesis engine/catalogue",
+    "console voice and contextual questions",
+    "presentation sound-event routing",
+    "sound settings"
+  ],
+  "allOtherHTMLIdentical": true,
+  "scientificReadersCalculationsExportsAndFullFontUnchanged": true
+}

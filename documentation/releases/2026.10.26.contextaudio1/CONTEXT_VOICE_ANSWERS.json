@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "views": [
+    "load",
+    "sop",
+    "results",
+    "panel",
+    "graphs",
+    "review",
+    "export",
+    "integrity"
+  ],
+  "countsFromLoadedState": true,
+  "exactUnknownFallback": true,
+  "acknowledgementFiveMinuteSpeechLimit": true,
+  "computerStyleParameters": true,
+  "interimQuestionDeduplicated": true,
+  "groupAndIndividualControls": true,
+  "scientificSnapshotUnchanged": true,
+  "missingFieldsGuarded": true,
+  "remoteVoiceNotUsed": true,
+  "recognitionAndTTS": "Emulated; no physical microphone accuracy claim",
+  "errors": []
+}

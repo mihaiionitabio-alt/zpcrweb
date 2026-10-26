@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "selfEchoIgnored": true,
+  "wakeBargeInAllowed": true,
+  "previouslySeenResultCanBargeIn": true,
+  "computerStopStopsSpeechAndRecognition": true,
+  "missyQuestionInterruptsAndAnswers": true,
+  "noNumericNavigationFromEcho": true,
+  "recognitionAndSpeechEmulated": true,
+  "errors": []
+}

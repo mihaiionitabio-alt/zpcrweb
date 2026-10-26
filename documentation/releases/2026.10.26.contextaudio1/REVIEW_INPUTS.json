@@ -1,0 +1,22 @@
+[
+  {
+    "name": "missy_audio.js",
+    "sha256": "16dd6358a5894b30b3aea1625153c32c11af2af601876df5241d706d10f594c7",
+    "usedAs": "Static review input, not executed or installed"
+  },
+  {
+    "name": "missy_speak.js",
+    "sha256": "3c66ae8d18a4f48ab3f6d46c4a878970ca7d0afb105493a59b0da3b869210798",
+    "usedAs": "Static review input, not executed or installed"
+  },
+  {
+    "name": "missy_assist.js",
+    "sha256": "7156a9ee9481a6907ae0d268eaa71fbb29af5ccfc1affc6910431531f06918a2",
+    "usedAs": "Static review input, not executed or installed"
+  },
+  {
+    "name": "HOW_IT_WORKS.md",
+    "sha256": "2ee9bb6ff8e8b1613810e0908f612dec5a3d99addcc09bb8816b89ab4958e899",
+    "usedAs": "Static review input, not executed or installed"
+  }
+]

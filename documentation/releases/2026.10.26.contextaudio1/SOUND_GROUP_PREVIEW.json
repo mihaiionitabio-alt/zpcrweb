@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "groupSwitches": true,
+  "individualOverride": true,
+  "mutedCuePreviewWorks": true,
+  "previewTogglesStop": true,
+  "silenceNotOfferedAsPlay": true,
+  "bassFundamentalAndAudibleHarmonic": true,
+  "unavailableAudioReported": true,
+  "errors": []
+}
