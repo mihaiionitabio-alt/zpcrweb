@@ -1,0 +1,16 @@
+{
+  "sources": [
+    {
+      "archive": "scripts_mov.zip",
+      "sha256": "3b2544d67199b1eb07a7d92975d9c6c5024a71f632f7dc6c32463775c559ca70",
+      "textFiles": 10
+    },
+    {
+      "archive": "scripts_tng.zip",
+      "sha256": "20315386a90fca3f1866db37cf1f8e19e760a818cf42abb1bcb9b742b842cb1b",
+      "textFiles": 176
+    }
+  ],
+  "usage": "Read as script data only. Original MISSY adaptations; no script archives, character voices or recordings redistributed.",
+  "unchangedScientificCode": true
+}

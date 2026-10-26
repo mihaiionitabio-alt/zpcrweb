@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "wakeRequired": true,
+  "standaloneWake": true,
+  "wakeExpires": true,
+  "ackOnce": true,
+  "stableInterim": true,
+  "finalDedup": true,
+  "repeatedWordsOnce": true,
+  "filler": true,
+  "conflictsRejected": true,
+  "negationRejected": true,
+  "wholeWords": true,
+  "stopCancels": true,
+  "errors": []
+}
