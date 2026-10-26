@@ -1,0 +1,114 @@
+{
+  "passed": true,
+  "phrases": [
+    "how many instruments",
+    "are these runs comparable",
+    "which run is newest",
+    "which run is oldest",
+    "how long did run 3 take",
+    "what protocol was used",
+    "what targets are loaded",
+    "read the results",
+    "summarise the run",
+    "which samples should i repeat",
+    "check the controls",
+    "did any control fail",
+    "what does the profile require",
+    "is the run acceptable",
+    "does this profile apply",
+    "how many standards",
+    "which chart is this",
+    "where did this run come from",
+    "which target is the reference",
+    "what will the export contain",
+    "run a diagnostic"
+  ],
+  "formats": [
+    {
+      "format": "IXO",
+      "files": 10,
+      "checks": {
+        "routes": 21,
+        "targets": 6,
+        "standards": 4,
+        "repeat": 0,
+        "controlGroups": 0,
+        "failedControlGroups": 0
+      },
+      "scientificSnapshotUnchanged": true,
+      "errors": []
+    },
+    {
+      "format": "EDS",
+      "files": 2,
+      "checks": {
+        "routes": 21,
+        "targets": 5,
+        "standards": 80,
+        "repeat": 0,
+        "controlGroups": 0,
+        "failedControlGroups": 0
+      },
+      "scientificSnapshotUnchanged": true,
+      "errors": []
+    },
+    {
+      "format": "EDT",
+      "files": 1,
+      "checks": {
+        "routes": 21,
+        "targets": 0,
+        "standards": 0,
+        "repeat": 0,
+        "controlGroups": 0,
+        "failedControlGroups": 0
+      },
+      "scientificSnapshotUnchanged": true,
+      "errors": []
+    },
+    {
+      "format": "RDML",
+      "files": 3,
+      "checks": {
+        "routes": 21,
+        "targets": 11,
+        "standards": 0,
+        "repeat": 0,
+        "controlGroups": 0,
+        "failedControlGroups": 0
+      },
+      "scientificSnapshotUnchanged": true,
+      "errors": []
+    },
+    {
+      "format": "CFX_RDML",
+      "files": 24,
+      "checks": {
+        "routes": 21,
+        "targets": 135,
+        "standards": 0,
+        "repeat": 0,
+        "controlGroups": 0,
+        "failedControlGroups": 0
+      },
+      "scientificSnapshotUnchanged": true,
+      "errors": []
+    },
+    {
+      "format": "ZPCR",
+      "files": 7,
+      "checks": {
+        "routes": 21,
+        "targets": 0,
+        "standards": 0,
+        "repeat": 0,
+        "controlGroups": 0,
+        "failedControlGroups": 0
+      },
+      "scientificSnapshotUnchanged": true,
+      "errors": []
+    }
+  ],
+  "physicalMicrophone": false,
+  "scope": "Existing model and profile computations read without changed rules or exported values"
+}

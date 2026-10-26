@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "baseline": "3e27ffa",
+  "excludedRegions": [
+    "voice module",
+    "publication meta"
+  ],
+  "remainingLFUTF8SHA256": "567bcb5503d54b3ee88e8d1fbfa61bb7b7cd59615dca64da19c8501d4333fce4",
+  "allOtherHTMLUnchanged": true
+}
