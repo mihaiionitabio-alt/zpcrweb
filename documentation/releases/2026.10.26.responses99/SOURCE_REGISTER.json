@@ -1,0 +1,60 @@
+{
+  "additionalSources": [
+    {
+      "name": "challenge.htm",
+      "sha256": "276ce0d1b06f8a7b0f225fc5aee5db875e295bfc422427d42e5c83cfcf291587",
+      "screenplayEvidence": false
+    },
+    {
+      "name": "ins.txt",
+      "sha256": "03885a480a4a836aee5e735f9bbed52c6ceea33d4449ec78c84184ce728019b6",
+      "screenplayEvidence": true
+    },
+    {
+      "name": "nem.txt",
+      "sha256": "12215c9ef74ae0ae8ef0ba9b4d285dc825b24c8988ce98eefff23b84ee7cbc61",
+      "screenplayEvidence": true
+    },
+    {
+      "name": "STintoD.html",
+      "sha256": "0675aecb347094770223806243ac99bb0568c7b04f0128e0d716b93b8b4c4b94",
+      "screenplayEvidence": true
+    },
+    {
+      "name": "star-trek-2009.htm",
+      "sha256": "906a050f62a5db7759d99070f8735268298be2ce061e04349e1f478d510652ca",
+      "screenplayEvidence": false
+    },
+    {
+      "name": "fc.txt",
+      "sha256": "4a860c5866577c6b4b16d63149e7bc23e97fff882d96b12b7a9b3e212a3ca3c0",
+      "screenplayEvidence": true
+    },
+    {
+      "name": "tvh.txt",
+      "sha256": "e197f1ccde0a4aaf6f77f17b74c8227272d1bb3bd3e028b406743bf37218f3ec",
+      "screenplayEvidence": true
+    },
+    {
+      "name": "tff.txt",
+      "sha256": "17316d68b41948c3191b50cae570afa6e8073fcdb9052d71e9f025208b1ec52c",
+      "screenplayEvidence": true
+    },
+    {
+      "name": "tuc.txt",
+      "sha256": "9208d8174408b63c06aa6c480b5250eb27a36c9aca365b27557a3ff08e938153",
+      "screenplayEvidence": true
+    },
+    {
+      "name": "star-trek-iii-the-search-for-spock-1984.pdf",
+      "sha256": "18db1413fef67cb29cf14d0c0c7b18c376856076def265ff17b32498d52f2e82",
+      "screenplayEvidence": true
+    },
+    {
+      "name": "star-trek-the-motion-picture-1979.pdf",
+      "sha256": "333610eb5e197168643e37c9173a087a918dbb5ccb22a9601dca0acd44e5d5a0",
+      "screenplayEvidence": true
+    }
+  ],
+  "usage": "Original paraphrased MISSY phrases, not copied audio or character imitation. Source files treated as data and never executed."
+}
