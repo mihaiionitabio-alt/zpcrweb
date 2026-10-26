@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "realRowAndGroupCheckboxes": true,
+  "captureBeforeDOMReplacement": true,
+  "checkUncheckDistinct": true,
+  "scientificStateUnchangedAfterRestoringSelection": true,
+  "readingTicks": 3,
+  "lifecyclePulseTest": "Simulated reading/staging phase; actual native intake tested by load()",
+  "pulseStopsOnReady": true,
+  "errors": []
+}

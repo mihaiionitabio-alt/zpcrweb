@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "catalogue": 512,
+  "audible": 504,
+  "silent": 8,
+  "loops": 14,
+  "defaultOff": 117,
+  "oneAudioContext": true,
+  "queueFirstAndLatestOnly": true,
+  "manualAlertPersistsInFocus": true,
+  "noiseSynthesized": true,
+  "ambienceOffByDefault": true,
+  "focusStopsAmbience": true,
+  "allPreviewNodesStopped": true,
+  "scienceUnchanged": true,
+  "errors": []
+}

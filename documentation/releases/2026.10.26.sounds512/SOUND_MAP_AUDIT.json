@@ -1,0 +1,2971 @@
+{
+  "catalogueCount": 300,
+  "newCues": 201,
+  "mapRows": [
+    {
+      "number": 1,
+      "action": "wake word `computer` / `missy` matched",
+      "recipe": "`v.tone(440)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "voiceAcknowledge"
+    },
+    {
+      "number": 2,
+      "action": "bare wake word, awaiting command",
+      "recipe": "`v.soft()` — 330",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map002"
+    },
+    {
+      "number": 3,
+      "action": "command matched in grammar",
+      "recipe": "`v.ok()`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map003"
+    },
+    {
+      "number": 4,
+      "action": "command not in grammar",
+      "recipe": "`v.alert(4)` — double square",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map004"
+    },
+    {
+      "number": 5,
+      "action": "command incomplete, `Please specify`",
+      "recipe": "`v.query()` — 660 → 494",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map005"
+    },
+    {
+      "number": 6,
+      "action": "`#missy-console-voice-controls` ▶ start",
+      "recipe": "`v.open()` — 440 → 1320",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "voiceStart"
+    },
+    {
+      "number": 7,
+      "action": "`#missy-console-voice-controls` ■ stop",
+      "recipe": "`v.close()` — 1320 → 440",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "voiceStop"
+    },
+    {
+      "number": 8,
+      "action": "listening time limit reached",
+      "recipe": "`v.alert(2)` — double square",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "voiceTimeLimit"
+    },
+    {
+      "number": 9,
+      "action": "microphone permission blocked",
+      "recipe": "`v.alarm(1)` — beating saw pair",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "voicePermission"
+    },
+    {
+      "number": 10,
+      "action": "`en-US` pack download begins (`setup`)",
+      "recipe": "`v.work()` — 2 s pulsing loop",
+      "kind": "loop",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "packInstalling"
+    },
+    {
+      "number": 11,
+      "action": "`en-US` pack ready",
+      "recipe": "`v.attn()` — 523 → 659 → 880",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "packReady"
+    },
+    {
+      "number": 12,
+      "action": "recognition result discarded by 400 ms debounce",
+      "recipe": "`v.none()` — deliberate silence",
+      "kind": "—",
+      "selectors": [],
+      "status": "silent",
+      "cueId": "map012",
+      "correction": "Current recognizer uses 700 ms stability and per-result deduplication, not the obsolete 400 ms description."
+    },
+    {
+      "number": 13,
+      "action": "page parse begins",
+      "recipe": "`v.bed(1)` — 8 s drone bed",
+      "kind": "loop",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map013"
+    },
+    {
+      "number": 14,
+      "action": "startup stage 01 of 05 passes",
+      "recipe": "`v.key(1)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map014"
+    },
+    {
+      "number": 15,
+      "action": "startup stage 02 of 05 passes",
+      "recipe": "`v.key(2)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map015"
+    },
+    {
+      "number": 16,
+      "action": "startup stage 03 of 05 passes",
+      "recipe": "`v.key(3)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map016"
+    },
+    {
+      "number": 17,
+      "action": "startup stage 04 of 05 passes",
+      "recipe": "`v.key(4)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map017"
+    },
+    {
+      "number": 18,
+      "action": "startup stage 05 of 05 passes",
+      "recipe": "`v.done()` — four-tone resolve",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map018"
+    },
+    {
+      "number": 19,
+      "action": "`[READY] Initialization complete`",
+      "recipe": "`v.hail()` — 523+659+784 triad",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "ready"
+    },
+    {
+      "number": 20,
+      "action": "`[DATA] No experiment files read`",
+      "recipe": "`v.soft()` — 330",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map020"
+    },
+    {
+      "number": 21,
+      "action": "boot log line appended",
+      "recipe": "`v.key(1)`, gain 0.04",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map021"
+    },
+    {
+      "number": 22,
+      "action": "boot log scrolled by operator",
+      "recipe": "`v.noise(60)` — high-pass burst",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map022"
+    },
+    {
+      "number": 23,
+      "action": "MISSY logo clicked, entering setup",
+      "recipe": "`v.xfer('short')` — 0.35 s",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "enter"
+    },
+    {
+      "number": 24,
+      "action": "`#language-select` changed",
+      "recipe": "`v.ok()`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "language"
+    },
+    {
+      "number": 25,
+      "action": "`Download offline HTML` pressed",
+      "recipe": "`v.xfer('short')` — 0.35 s",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map025"
+    },
+    {
+      "number": 26,
+      "action": "`Enter workspace` pressed",
+      "recipe": "`v.bed(4)` — 8 s drone bed",
+      "kind": "loop",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "workspaceEnter"
+    },
+    {
+      "number": 27,
+      "action": "`Back to loading screen` pressed",
+      "recipe": "`v.chirp(2)` — 1568 → 1046",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "workspaceBack"
+    },
+    {
+      "number": 28,
+      "action": "`Session setup` reopened from status bar",
+      "recipe": "`v.tone(440)`",
+      "kind": "one-shot",
+      "selectors": [
+        "missy-setup-reopen"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map028"
+    },
+    {
+      "number": 29,
+      "action": "`#missy-forget-password` pressed",
+      "recipe": "`v.alert(6)` — double square",
+      "kind": "one-shot",
+      "selectors": [
+        "missy-forget-password"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map029"
+    },
+    {
+      "number": 30,
+      "action": "workspace idle, no files, 60 s",
+      "recipe": "`v.bed(1)` — 8 s drone bed",
+      "kind": "loop",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map030"
+    },
+    {
+      "number": 31,
+      "action": "`#tab-load` · 1 Load files",
+      "recipe": "`v.tone(440)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "loadPage"
+    },
+    {
+      "number": 32,
+      "action": "`#tab-sop` · 2 SOP",
+      "recipe": "`v.tone(494)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "sopPage"
+    },
+    {
+      "number": 33,
+      "action": "`#tab-results` · 3 Results",
+      "recipe": "`v.tone(523)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "resultsPage"
+    },
+    {
+      "number": 34,
+      "action": "`#tab-panel` · 4 Control panel",
+      "recipe": "`v.tone(587)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "panelPage"
+    },
+    {
+      "number": 35,
+      "action": "`#tab-graphs` · 5 Graphs",
+      "recipe": "`v.tone(659)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "graphsPage"
+    },
+    {
+      "number": 36,
+      "action": "`#tab-review` · 6 Quality & forensic review",
+      "recipe": "`v.tone(698)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "reviewPage"
+    },
+    {
+      "number": 37,
+      "action": "`#tab-export` · 7 Open formats",
+      "recipe": "`v.tone(784)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "formatsPage"
+    },
+    {
+      "number": 38,
+      "action": "`#tab-integrity` · 8 File integrity",
+      "recipe": "`v.tone(880)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "logs"
+    },
+    {
+      "number": 39,
+      "action": "tab change while a long render is pending",
+      "recipe": "`v.query()` — 660 → 494",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map039"
+    },
+    {
+      "number": 40,
+      "action": "tab blocked — nothing loaded",
+      "recipe": "`v.alert(4)` — double square",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map040"
+    },
+    {
+      "number": 41,
+      "action": "`#review-tabs` sub-tab change",
+      "recipe": "`v.key(2)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "reviewOverview"
+    },
+    {
+      "number": 42,
+      "action": "`#statusbar` `Details` expanded",
+      "recipe": "`v.key(3)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map042"
+    },
+    {
+      "number": 43,
+      "action": "`#statusbar` `Details` collapsed",
+      "recipe": "`v.key(3)`, reversed envelope",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map043"
+    },
+    {
+      "number": 44,
+      "action": "`#sb-toggle` command bar opened",
+      "recipe": "`v.open()` — 440 → 1320",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map044"
+    },
+    {
+      "number": 45,
+      "action": "`#sb-toggle` command bar closed",
+      "recipe": "`v.close()` — 1320 → 440",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map045"
+    },
+    {
+      "number": 46,
+      "action": "`#missy-public-license` opened",
+      "recipe": "`v.key(4)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map046"
+    },
+    {
+      "number": 47,
+      "action": "`mgOpen()` — console opens",
+      "recipe": "`v.chirp(1)` — 1046 → 1568",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "consoleOpen"
+    },
+    {
+      "number": 48,
+      "action": "`mgClose()` — console closes",
+      "recipe": "`v.chirp(3)` — 784 → 1046",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "consoleClose"
+    },
+    {
+      "number": 49,
+      "action": "console key 0 pressed",
+      "recipe": "`v.key(1)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map049"
+    },
+    {
+      "number": 50,
+      "action": "console key 1 pressed",
+      "recipe": "`v.key(1)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map050"
+    },
+    {
+      "number": 51,
+      "action": "console key 2 pressed",
+      "recipe": "`v.key(1)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map051"
+    },
+    {
+      "number": 52,
+      "action": "console key 3 pressed",
+      "recipe": "`v.key(1)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map052"
+    },
+    {
+      "number": 53,
+      "action": "console key 4 pressed",
+      "recipe": "`v.key(1)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map053"
+    },
+    {
+      "number": 54,
+      "action": "console key 5 pressed",
+      "recipe": "`v.key(1)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map054"
+    },
+    {
+      "number": 55,
+      "action": "console key 6 pressed",
+      "recipe": "`v.key(1)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map055"
+    },
+    {
+      "number": 56,
+      "action": "console key 7 pressed",
+      "recipe": "`v.key(1)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map056"
+    },
+    {
+      "number": 57,
+      "action": "console key 8 pressed",
+      "recipe": "`v.key(1)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map057"
+    },
+    {
+      "number": 58,
+      "action": "console key 9 pressed",
+      "recipe": "`v.key(1)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map058"
+    },
+    {
+      "number": 59,
+      "action": "console keys 10–15 pressed",
+      "recipe": "`v.key(1)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map059"
+    },
+    {
+      "number": 60,
+      "action": "`#mg-sheet` opens",
+      "recipe": "`v.swell()` — 1.5 s low triad",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map060"
+    },
+    {
+      "number": 61,
+      "action": "`mgSheetClose()`",
+      "recipe": "`v.key(4)`, reversed envelope",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map061"
+    },
+    {
+      "number": 62,
+      "action": "`mgSheetPick()` — option chosen",
+      "recipe": "`v.ok()`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map062"
+    },
+    {
+      "number": 63,
+      "action": "`#sb-command` · Command mode",
+      "recipe": "`v.query()` — 660 → 494",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "commandOpen"
+    },
+    {
+      "number": 64,
+      "action": "`#sb-console` · Console mode",
+      "recipe": "`v.query()` — 660 → 494",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "consoleOpen"
+    },
+    {
+      "number": 65,
+      "action": "`#sb-assist` · Assisted mode",
+      "recipe": "`v.query()` — 660 → 494",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "assistedOpen"
+    },
+    {
+      "number": 66,
+      "action": "`#cmd-in` command submitted",
+      "recipe": "`v.key(2)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map066"
+    },
+    {
+      "number": 67,
+      "action": "`#cmd-script-run` script executed",
+      "recipe": "`v.work()` — 2 s pulsing loop",
+      "kind": "loop",
+      "selectors": [
+        "cmd-script-run"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map067"
+    },
+    {
+      "number": 68,
+      "action": "`mg-focus` entered — chrome hidden",
+      "recipe": "`v.none()` — deliberate silence",
+      "kind": "—",
+      "selectors": [],
+      "status": "silent",
+      "cueId": "map068",
+      "correction": "Transient cues and ambience mute in focus; explicit manual Red alert keeps playing until stopped, preserving user authorization."
+    },
+    {
+      "number": 69,
+      "action": "`#drop` dragenter",
+      "recipe": "`v.key(3)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map069"
+    },
+    {
+      "number": 70,
+      "action": "`#drop` dragleave",
+      "recipe": "`v.none()` — deliberate silence",
+      "kind": "—",
+      "selectors": [],
+      "status": "silent",
+      "cueId": "map070"
+    },
+    {
+      "number": 71,
+      "action": "file dropped on `#drop`",
+      "recipe": "`v.xfer('short')` — 0.35 s",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map071"
+    },
+    {
+      "number": 72,
+      "action": "`#file` chooser opened",
+      "recipe": "`v.key(2)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map072"
+    },
+    {
+      "number": 73,
+      "action": "`#read` · Read the files",
+      "recipe": "`v.work()` — 2 s pulsing loop",
+      "kind": "loop",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "working"
+    },
+    {
+      "number": 74,
+      "action": "each file staged (`stageReaderFile`)",
+      "recipe": "`v.key(1)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map074"
+    },
+    {
+      "number": 75,
+      "action": "`.ixo` decoded",
+      "recipe": "`v.ok()` at 523",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map075"
+    },
+    {
+      "number": 76,
+      "action": "`.eds` decoded",
+      "recipe": "`v.ok()` at 587",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map076"
+    },
+    {
+      "number": 77,
+      "action": "`.edt` decoded",
+      "recipe": "`v.ok()` at 622",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map077"
+    },
+    {
+      "number": 78,
+      "action": "`.rdml` decoded",
+      "recipe": "`v.ok()` at 659",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map078"
+    },
+    {
+      "number": 79,
+      "action": "`.zpcr` decoded",
+      "recipe": "`v.ok()` at 698",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map079"
+    },
+    {
+      "number": 80,
+      "action": "`.pcrd` encrypted, reported and skipped",
+      "recipe": "`v.alert(8)` — double square",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map080",
+      "correction": "PCRD may be unlocked; encryption alone is not evidence that a file was skipped."
+    },
+    {
+      "number": 81,
+      "action": "`.zip` archive opened",
+      "recipe": "`v.key(4)`, ×3 at 40 ms",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map081"
+    },
+    {
+      "number": 82,
+      "action": "archive member filtered out",
+      "recipe": "`v.none()` — deliberate silence",
+      "kind": "—",
+      "selectors": [],
+      "status": "silent",
+      "cueId": "map082"
+    },
+    {
+      "number": 83,
+      "action": "archive file-count limit reached",
+      "recipe": "`v.alarm(2)` — beating saw pair",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map083"
+    },
+    {
+      "number": 84,
+      "action": "archive byte limit reached",
+      "recipe": "`v.alarm(2)` — beating saw pair",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map084"
+    },
+    {
+      "number": 85,
+      "action": "CRC mismatch on a member",
+      "recipe": "`v.alarm(3)` — beating saw pair",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map085"
+    },
+    {
+      "number": 86,
+      "action": "unsupported compression method",
+      "recipe": "`v.alert(10)` — double square",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map086"
+    },
+    {
+      "number": 87,
+      "action": "unsafe archive path rejected",
+      "recipe": "`v.alarm(3)` — beating saw pair",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map087"
+    },
+    {
+      "number": 88,
+      "action": "all files read, `#readmsg` success",
+      "recipe": "`v.hail()` — 523+659+784 triad",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "loaded"
+    },
+    {
+      "number": 89,
+      "action": "intake finished with errors",
+      "recipe": "`v.alert(12)` — double square",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map089"
+    },
+    {
+      "number": 90,
+      "action": "`#csvread` · Read pasted values",
+      "recipe": "`v.attn()` — 523 → 659 → 880",
+      "kind": "one-shot",
+      "selectors": [
+        "csvread"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map090"
+    },
+    {
+      "number": 91,
+      "action": "`#csvfilebtn` · Upload a CSV instead",
+      "recipe": "`v.key(2)`",
+      "kind": "one-shot",
+      "selectors": [
+        "csvfilebtn"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map091"
+    },
+    {
+      "number": 92,
+      "action": "`#csvdemo` · worked example loaded",
+      "recipe": "`v.done()` — four-tone resolve",
+      "kind": "one-shot",
+      "selectors": [
+        "csvdemo"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map092"
+    },
+    {
+      "number": 93,
+      "action": "`Clear experiments` pressed",
+      "recipe": "`v.alert(3)` — double square",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map093"
+    },
+    {
+      "number": 94,
+      "action": "clear confirmed, runs discarded",
+      "recipe": "`v.fade(+1)` — 110 → 880",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map094"
+    },
+    {
+      "number": 95,
+      "action": "`#sop-preset` profile selected",
+      "recipe": "`v.ok()`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "profileSelect"
+    },
+    {
+      "number": 96,
+      "action": "`#sop-apply-preset` · Use this starting point",
+      "recipe": "`v.attn()` — 523 → 659 → 880",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "affirmative"
+    },
+    {
+      "number": 97,
+      "action": "`#sop-open` · Open profile (JSON)",
+      "recipe": "`v.key(2)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "profileOpen"
+    },
+    {
+      "number": 98,
+      "action": "profile JSON parsed and valid",
+      "recipe": "`v.done()` — four-tone resolve",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map098"
+    },
+    {
+      "number": 99,
+      "action": "profile JSON rejected",
+      "recipe": "`v.alert(4)` — double square",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map099"
+    },
+    {
+      "number": 100,
+      "action": "`#sop-json-apply` · Apply JSON",
+      "recipe": "`v.attn()` — 523 → 659 → 880",
+      "kind": "one-shot",
+      "selectors": [
+        "sop-json-apply"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map100"
+    },
+    {
+      "number": 101,
+      "action": "`#sop-save` · Save profile (JSON)",
+      "recipe": "`v.xfer('short')` — 0.35 s",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "profileSave"
+    },
+    {
+      "number": 102,
+      "action": "`#sop-dl-zip` · SOP bundle (ZIP)",
+      "recipe": "`v.xfer('long')` — 1.2 s",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "resultBundle"
+    },
+    {
+      "number": 103,
+      "action": "`#sop-dl-xlsx` · SOP report (XLSX)",
+      "recipe": "`v.xfer('long')` — 1.2 s",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "resultWorkbook"
+    },
+    {
+      "number": 104,
+      "action": "`#sop-dl-csv` · SOP tables (CSV)",
+      "recipe": "`v.xfer('short')` — 0.35 s",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "resultCSV"
+    },
+    {
+      "number": 105,
+      "action": "`#sop-lock` locked",
+      "recipe": "`v.fade(-1)` — 880 → 110",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "profileLock"
+    },
+    {
+      "number": 106,
+      "action": "`#sop-lock` unlocked",
+      "recipe": "`v.fade(+1)` — 110 → 880",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "profileLock"
+    },
+    {
+      "number": 107,
+      "action": "profile hash recomputed",
+      "recipe": "`v.query()` — 660 → 494",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map107"
+    },
+    {
+      "number": 108,
+      "action": "`#sop-next` · next criterion",
+      "recipe": "`v.key(1)`, pitch +8 %",
+      "kind": "one-shot",
+      "selectors": [
+        "sop-next"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map108"
+    },
+    {
+      "number": 109,
+      "action": "`#sop-prev` · previous criterion",
+      "recipe": "`v.key(1)`, pitch −8 %",
+      "kind": "one-shot",
+      "selectors": [
+        "sop-prev"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map109"
+    },
+    {
+      "number": 110,
+      "action": "`#sop-add-found` · Add a row for every target",
+      "recipe": "`v.key(3)`, ×2 at 40 ms",
+      "kind": "one-shot",
+      "selectors": [
+        "sop-add-found"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map110"
+    },
+    {
+      "number": 111,
+      "action": "`#sop-targets` row added",
+      "recipe": "`v.key(3)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map111"
+    },
+    {
+      "number": 112,
+      "action": "`#sop-targets` row deleted",
+      "recipe": "`v.key(3)`, reversed envelope",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map112"
+    },
+    {
+      "number": 113,
+      "action": "`#sop-search` pattern edited",
+      "recipe": "`v.none()` — deliberate silence",
+      "kind": "—",
+      "selectors": [],
+      "status": "silent",
+      "cueId": "map113"
+    },
+    {
+      "number": 114,
+      "action": "profile not applicable to the run",
+      "recipe": "`v.alert(7)` — double square",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map114"
+    },
+    {
+      "number": 115,
+      "action": "run acceptance evaluated, all pass",
+      "recipe": "`v.done()` — four-tone resolve",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map115"
+    },
+    {
+      "number": 116,
+      "action": "run acceptance evaluated, failures",
+      "recipe": "`v.alert(9)` — double square",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map116"
+    },
+    {
+      "number": 117,
+      "action": "`#mara-input-import` · Import method inputs",
+      "recipe": "`v.key(2)`",
+      "kind": "one-shot",
+      "selectors": [
+        "mara-input-import"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map117"
+    },
+    {
+      "number": 118,
+      "action": "`#mara-input-export` · Export method inputs",
+      "recipe": "`v.xfer('short')` — 0.35 s",
+      "kind": "one-shot",
+      "selectors": [
+        "mara-input-export"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map118"
+    },
+    {
+      "number": 119,
+      "action": "`Download all MARA profiles (ZIP)`",
+      "recipe": "`v.xfer('long')` — 1.2 s",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map119"
+    },
+    {
+      "number": 120,
+      "action": "`#mara-decision-rules` expanded",
+      "recipe": "`v.key(4)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map120"
+    },
+    {
+      "number": 121,
+      "action": "`#experiment-melting-rules` expanded",
+      "recipe": "`v.key(4)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map121"
+    },
+    {
+      "number": 122,
+      "action": "`#sop-outcome` interpretation changed by operator",
+      "recipe": "`v.alert(5)` — double square",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "resultsFiltered",
+      "correction": "sop-outcome filters displayed results; it does not edit an interpretation."
+    },
+    {
+      "number": 123,
+      "action": "`#sop-results` rendered",
+      "recipe": "`v.soft()` — 330",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map123"
+    },
+    {
+      "number": 124,
+      "action": "`#ss-edit` · Edit sample selection",
+      "recipe": "`v.key(2)`",
+      "kind": "one-shot",
+      "selectors": [
+        "ss-edit"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map124"
+    },
+    {
+      "number": 125,
+      "action": "`#ss-select` · Select all matching",
+      "recipe": "`v.key(3)`, pitch +8 %",
+      "kind": "one-shot",
+      "selectors": [
+        "ss-select"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map125"
+    },
+    {
+      "number": 126,
+      "action": "`#ss-unselect` · Unselect all matching",
+      "recipe": "`v.key(3)`, pitch −8 %",
+      "kind": "one-shot",
+      "selectors": [
+        "ss-unselect"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map126"
+    },
+    {
+      "number": 127,
+      "action": "`#ss-enable` scope toggled",
+      "recipe": "`v.key(1)`",
+      "kind": "one-shot",
+      "selectors": [
+        "ss-enable"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map127"
+    },
+    {
+      "number": 128,
+      "action": "`#ss-apply` · Apply selection and analyse",
+      "recipe": "`v.work()` — 2 s pulsing loop",
+      "kind": "loop",
+      "selectors": [
+        "ss-apply"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map128"
+    },
+    {
+      "number": 129,
+      "action": "`#ss-cancel` · Cancel edits",
+      "recipe": "`v.key(4)`, reversed envelope",
+      "kind": "one-shot",
+      "selectors": [
+        "ss-cancel"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map129"
+    },
+    {
+      "number": 130,
+      "action": "`#ss-next` page",
+      "recipe": "`v.key(1)`, pitch +8 %",
+      "kind": "one-shot",
+      "selectors": [
+        "ss-next"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map130"
+    },
+    {
+      "number": 131,
+      "action": "`#ss-prev` page",
+      "recipe": "`v.key(1)`, pitch −8 %",
+      "kind": "one-shot",
+      "selectors": [
+        "ss-prev"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map131"
+    },
+    {
+      "number": 132,
+      "action": "`#ss-group` · Group unusual names",
+      "recipe": "`v.query()` — 660 → 494",
+      "kind": "one-shot",
+      "selectors": [
+        "ss-group"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map132"
+    },
+    {
+      "number": 133,
+      "action": "`#ss-names-enable` pseudonymisation on",
+      "recipe": "`v.fade(-1)` — 880 → 110",
+      "kind": "one-shot",
+      "selectors": [
+        "ss-names-enable"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map133"
+    },
+    {
+      "number": 134,
+      "action": "`#ss-names-enable` pseudonymisation off",
+      "recipe": "`v.fade(+1)` — 110 → 880",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map134"
+    },
+    {
+      "number": 135,
+      "action": "`#ss-names-sensitivity` changed",
+      "recipe": "`v.key(2)`",
+      "kind": "one-shot",
+      "selectors": [
+        "ss-names-sensitivity"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map135"
+    },
+    {
+      "number": 136,
+      "action": "sample marked repeat by the profile",
+      "recipe": "`v.alert(11)` — double square",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map136"
+    },
+    {
+      "number": 137,
+      "action": "sample undetermined",
+      "recipe": "`v.soft()` — 330",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map137"
+    },
+    {
+      "number": 138,
+      "action": "sample positive",
+      "recipe": "`v.ok()` at 523",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map138"
+    },
+    {
+      "number": 139,
+      "action": "sample negative",
+      "recipe": "`v.ok()` at 392",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map139"
+    },
+    {
+      "number": 140,
+      "action": "cycle-limit sentinel detected in a Cq field",
+      "recipe": "`v.alarm(1)` — beating saw pair",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map140"
+    },
+    {
+      "number": 141,
+      "action": "`#derived-run` changed",
+      "recipe": "`v.key(2)`",
+      "kind": "one-shot",
+      "selectors": [
+        "derived-run"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map141"
+    },
+    {
+      "number": 142,
+      "action": "`Stored vs re-derived Ct` opened",
+      "recipe": "`v.query()` — 660 → 494",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map142"
+    },
+    {
+      "number": 143,
+      "action": "re-derived value differs from stored",
+      "recipe": "`v.alert(13)` — double square",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map143"
+    },
+    {
+      "number": 144,
+      "action": "`#cmp-a` / `#cmp-b` comparison pair set",
+      "recipe": "`v.key(2)`",
+      "kind": "one-shot",
+      "selectors": [
+        "cmp-a",
+        "cmp-b"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map144"
+    },
+    {
+      "number": 145,
+      "action": "`Sample comparison` rendered",
+      "recipe": "`v.soft()` — 330",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map145"
+    },
+    {
+      "number": 146,
+      "action": "`#stat-rep-limit` changed",
+      "recipe": "`v.key(1)`",
+      "kind": "one-shot",
+      "selectors": [
+        "stat-rep-limit"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map146"
+    },
+    {
+      "number": 147,
+      "action": "`Statistics` recomputed",
+      "recipe": "`v.work()` — 2 s pulsing loop",
+      "kind": "loop",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map147"
+    },
+    {
+      "number": 148,
+      "action": "`Recompute` pressed",
+      "recipe": "`v.work()` — 2 s pulsing loop",
+      "kind": "loop",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map148"
+    },
+    {
+      "number": 149,
+      "action": "`#g-graph` graph selected",
+      "recipe": "`v.ok()`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "graphSelected"
+    },
+    {
+      "number": 150,
+      "action": "`#g-run` run changed",
+      "recipe": "`v.key(2)`",
+      "kind": "one-shot",
+      "selectors": [
+        "g-run"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map150"
+    },
+    {
+      "number": 151,
+      "action": "`#g-target` target changed",
+      "recipe": "`v.key(2)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "targetSelected"
+    },
+    {
+      "number": 152,
+      "action": "`#g-metric` metric changed",
+      "recipe": "`v.key(2)`",
+      "kind": "one-shot",
+      "selectors": [
+        "g-metric"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map152"
+    },
+    {
+      "number": 153,
+      "action": "`#g-signal` signal layer changed",
+      "recipe": "`v.tone(440)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "signalSelected",
+      "correction": "Current g-signal exposes stored and drn. Seven layer names are not inferred."
+    },
+    {
+      "number": 154,
+      "action": "`detector_counts` layer selected",
+      "recipe": "`v.tone(330)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map154"
+    },
+    {
+      "number": 155,
+      "action": "`dark_corrected` layer selected",
+      "recipe": "`v.tone(370)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map155"
+    },
+    {
+      "number": 156,
+      "action": "`spectrally_unmixed` layer selected",
+      "recipe": "`v.tone(415)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map156"
+    },
+    {
+      "number": 157,
+      "action": "`reference_normalized` layer selected",
+      "recipe": "`v.tone(466)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map157"
+    },
+    {
+      "number": 158,
+      "action": "`baseline_corrected` layer selected",
+      "recipe": "`v.tone(523)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map158"
+    },
+    {
+      "number": 159,
+      "action": "`smoothed` layer selected",
+      "recipe": "`v.tone(587)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map159"
+    },
+    {
+      "number": 160,
+      "action": "`negative_first_derivative` layer selected",
+      "recipe": "`v.tone(659)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map160"
+    },
+    {
+      "number": 161,
+      "action": "`#g-log` log scale toggled",
+      "recipe": "`v.key(1)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "logDisplay"
+    },
+    {
+      "number": 162,
+      "action": "`#g-level` threshold moved",
+      "recipe": "`v.none()` — deliberate silence",
+      "kind": "—",
+      "selectors": [],
+      "status": "silent",
+      "cueId": "map162",
+      "correction": "g-level is a fluorescence-level selector, not a draggable threshold."
+    },
+    {
+      "number": 163,
+      "action": "threshold released",
+      "recipe": "`v.ok()`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map163"
+    },
+    {
+      "number": 164,
+      "action": "`#g-colourby` grouping changed",
+      "recipe": "`v.key(2)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "colourDisplay"
+    },
+    {
+      "number": 165,
+      "action": "chart render starts",
+      "recipe": "`v.work()` — 2 s pulsing loop",
+      "kind": "loop",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map165"
+    },
+    {
+      "number": 166,
+      "action": "chart render completes",
+      "recipe": "`v.attn()` — 523 → 659 → 880",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map166"
+    },
+    {
+      "number": 167,
+      "action": "chart render exceeds 3 s",
+      "recipe": "`v.work()` — 2 s pulsing loop",
+      "kind": "loop",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map167"
+    },
+    {
+      "number": 168,
+      "action": "point beyond the SOP limit drawn",
+      "recipe": "`v.alert(14)` — double square",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map168"
+    },
+    {
+      "number": 169,
+      "action": "`#g-dl-png` · Save as PNG",
+      "recipe": "`v.xfer('short')` — 0.35 s",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "graphPNG"
+    },
+    {
+      "number": 170,
+      "action": "`#g-dl-svg` · Save as SVG",
+      "recipe": "`v.xfer('short')` — 0.35 s",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "graphSVG"
+    },
+    {
+      "number": 171,
+      "action": "`#g-dl-csv` · Download chart data (CSV)",
+      "recipe": "`v.xfer('short')` — 0.35 s",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "graphCSV"
+    },
+    {
+      "number": 172,
+      "action": "`#g-dl-all` · All graphs, all runs (ZIP)",
+      "recipe": "`v.xfer('long')` — 1.2 s",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "graphBundle"
+    },
+    {
+      "number": 173,
+      "action": "`Amplification curves` opened",
+      "recipe": "`v.soft()` — 330",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map173"
+    },
+    {
+      "number": 174,
+      "action": "`Plate heat map` opened",
+      "recipe": "`v.soft()` — 330",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map174"
+    },
+    {
+      "number": 175,
+      "action": "`Plate map` opened",
+      "recipe": "`v.soft()` — 330",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map175"
+    },
+    {
+      "number": 176,
+      "action": "`Run timeline` opened",
+      "recipe": "`v.soft()` — 330",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map176"
+    },
+    {
+      "number": 177,
+      "action": "`Background and plateau` opened",
+      "recipe": "`v.soft()` — 330",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map177"
+    },
+    {
+      "number": 178,
+      "action": "`Reset view` / `Restore defaults`",
+      "recipe": "`v.key(4)`, reversed envelope",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map178"
+    },
+    {
+      "number": 179,
+      "action": "`#cc-inst` instrument changed",
+      "recipe": "`v.ok()`",
+      "kind": "one-shot",
+      "selectors": [
+        "cc-inst"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map179"
+    },
+    {
+      "number": 180,
+      "action": "`#cc-proto` protocol scope changed",
+      "recipe": "`v.key(2)`",
+      "kind": "one-shot",
+      "selectors": [
+        "cc-proto"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map180"
+    },
+    {
+      "number": 181,
+      "action": "`#cc-type` chart type changed",
+      "recipe": "`v.key(2)`",
+      "kind": "one-shot",
+      "selectors": [
+        "cc-type"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map181"
+    },
+    {
+      "number": 182,
+      "action": "`#cc-variant` variant changed",
+      "recipe": "`v.key(2)`",
+      "kind": "one-shot",
+      "selectors": [
+        "cc-variant"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map182"
+    },
+    {
+      "number": 183,
+      "action": "`#cc-x` x axis changed",
+      "recipe": "`v.key(2)`",
+      "kind": "one-shot",
+      "selectors": [
+        "cc-x"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map183"
+    },
+    {
+      "number": 184,
+      "action": "`#cc-filter` filter applied",
+      "recipe": "`v.query()` — 660 → 494",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map184"
+    },
+    {
+      "number": 185,
+      "action": "chart computed",
+      "recipe": "`v.attn()` — 523 → 659 → 880",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map185"
+    },
+    {
+      "number": 186,
+      "action": "point outside the control limits",
+      "recipe": "`v.alert(15)` — double square",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map186"
+    },
+    {
+      "number": 187,
+      "action": "run of points on one side of centre",
+      "recipe": "`v.alert(16)` — double square",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map187"
+    },
+    {
+      "number": 188,
+      "action": "`#cc-rebase` · Start a new baseline",
+      "recipe": "`v.alert(5)` — double square",
+      "kind": "one-shot",
+      "selectors": [
+        "cc-rebase"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map188"
+    },
+    {
+      "number": 189,
+      "action": "`#cc-reset` · Reset this chart to defaults",
+      "recipe": "`v.key(4)`, reversed envelope",
+      "kind": "one-shot",
+      "selectors": [
+        "cc-reset"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map189"
+    },
+    {
+      "number": 190,
+      "action": "`#cc-remember` preference stored",
+      "recipe": "`v.key(1)`",
+      "kind": "one-shot",
+      "selectors": [
+        "cc-remember"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map190"
+    },
+    {
+      "number": 191,
+      "action": "`#cc-import` history imported (JSON)",
+      "recipe": "`v.key(2)`",
+      "kind": "one-shot",
+      "selectors": [
+        "cc-import"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map191"
+    },
+    {
+      "number": 192,
+      "action": "`#cc-export` history exported (JSON)",
+      "recipe": "`v.xfer('short')` — 0.35 s",
+      "kind": "one-shot",
+      "selectors": [
+        "cc-export"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map192"
+    },
+    {
+      "number": 193,
+      "action": "`#cc-export-csv` history exported (CSV)",
+      "recipe": "`v.xfer('short')` — 0.35 s",
+      "kind": "one-shot",
+      "selectors": [
+        "cc-export-csv"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map193"
+    },
+    {
+      "number": 194,
+      "action": "`#cc-csv` · Data (CSV)",
+      "recipe": "`v.xfer('short')` — 0.35 s",
+      "kind": "one-shot",
+      "selectors": [
+        "cc-csv"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map194"
+    },
+    {
+      "number": 195,
+      "action": "`#cc-png` · chart PNG",
+      "recipe": "`v.xfer('short')` — 0.35 s",
+      "kind": "one-shot",
+      "selectors": [
+        "cc-png"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map195"
+    },
+    {
+      "number": 196,
+      "action": "`#cc-svg` · chart SVG",
+      "recipe": "`v.xfer('short')` — 0.35 s",
+      "kind": "one-shot",
+      "selectors": [
+        "cc-svg"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map196"
+    },
+    {
+      "number": 197,
+      "action": "`#cc-zip` · All control charts (ZIP)",
+      "recipe": "`v.xfer('long')` — 1.2 s",
+      "kind": "one-shot",
+      "selectors": [
+        "cc-zip"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map197"
+    },
+    {
+      "number": 198,
+      "action": "`#cc-zip-png` · All chart images (ZIP)",
+      "recipe": "`v.xfer('long')` — 1.2 s",
+      "kind": "one-shot",
+      "selectors": [
+        "cc-zip-png"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map198"
+    },
+    {
+      "number": 199,
+      "action": "`#cc-ml` advisory layer opened",
+      "recipe": "`v.query()` — 660 → 494",
+      "kind": "one-shot",
+      "selectors": [
+        "cc-ml"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map199"
+    },
+    {
+      "number": 200,
+      "action": "`#cc-ml` advisory produced a note",
+      "recipe": "`v.alarm(1)` — beating saw pair",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map200",
+      "correction": "No alarm is inferred merely from opening an advisory layer."
+    },
+    {
+      "number": 201,
+      "action": "`Block temperature — LightCycler` opened",
+      "recipe": "`v.soft()` — 330",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map201"
+    },
+    {
+      "number": 202,
+      "action": "`Block, cover and zones — QuantStudio` opened",
+      "recipe": "`v.soft()` — 330",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map202"
+    },
+    {
+      "number": 203,
+      "action": "`#review-overview` opened",
+      "recipe": "`v.soft()` — 330",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "reviewOverview"
+    },
+    {
+      "number": 204,
+      "action": "`#review-runs` · Runs and QC",
+      "recipe": "`v.soft()` — 330",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "reviewRuns"
+    },
+    {
+      "number": 205,
+      "action": "`#review-curves` opened",
+      "recipe": "`v.soft()` — 330",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "reviewCurves"
+    },
+    {
+      "number": 206,
+      "action": "`#review-plate` opened",
+      "recipe": "`v.soft()` — 330",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "reviewPlate"
+    },
+    {
+      "number": 207,
+      "action": "`#review-rising` · Rising curves without result",
+      "recipe": "`v.alert(9)` — double square",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "reviewRising"
+    },
+    {
+      "number": 208,
+      "action": "`#open-rising-review` opened",
+      "recipe": "`v.query()` — 660 → 494",
+      "kind": "one-shot",
+      "selectors": [
+        "open-rising-review"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map208"
+    },
+    {
+      "number": 209,
+      "action": "`#review-instrument` · Instrument records",
+      "recipe": "`v.soft()` — 330",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "reviewInstrument"
+    },
+    {
+      "number": 210,
+      "action": "`#review-statistics` opened",
+      "recipe": "`v.soft()` — 330",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "reviewStatistics"
+    },
+    {
+      "number": 211,
+      "action": "`#review-compare` opened",
+      "recipe": "`v.soft()` — 330",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "reviewCompare"
+    },
+    {
+      "number": 212,
+      "action": "`#issue-overview` grouped problems opened",
+      "recipe": "`v.query()` — 660 → 494",
+      "kind": "one-shot",
+      "selectors": [
+        "issue-overview"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map212"
+    },
+    {
+      "number": 213,
+      "action": "`#issue-category` changed",
+      "recipe": "`v.key(2)`",
+      "kind": "one-shot",
+      "selectors": [
+        "issue-category"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map213"
+    },
+    {
+      "number": 214,
+      "action": "`#issue-all-runs` scope widened",
+      "recipe": "`v.key(3)`",
+      "kind": "one-shot",
+      "selectors": [
+        "issue-all-runs"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map214"
+    },
+    {
+      "number": 215,
+      "action": "`#issue-clear-runs` scope cleared",
+      "recipe": "`v.key(3)`, reversed envelope",
+      "kind": "one-shot",
+      "selectors": [
+        "issue-clear-runs"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map215"
+    },
+    {
+      "number": 216,
+      "action": "forensic event, severity info",
+      "recipe": "`v.soft()` — 330",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map216"
+    },
+    {
+      "number": 217,
+      "action": "forensic event, severity warning",
+      "recipe": "`v.alert(14)` — double square",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map217"
+    },
+    {
+      "number": 218,
+      "action": "forensic event, severity error",
+      "recipe": "`v.alarm(2)` — beating saw pair",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map218"
+    },
+    {
+      "number": 219,
+      "action": "acquisition interrupted in the record",
+      "recipe": "`v.alarm(3)` — beating saw pair",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map219"
+    },
+    {
+      "number": 220,
+      "action": "firmware change detected in the record",
+      "recipe": "`v.alert(17)` — double square",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": "map220"
+    },
+    {
+      "number": 221,
+      "action": "`#control-category-editor` opened",
+      "recipe": "`v.key(4)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": null
+    },
+    {
+      "number": 222,
+      "action": "`#reset-control-categories` pressed",
+      "recipe": "`v.key(4)`, reversed envelope",
+      "kind": "one-shot",
+      "selectors": [
+        "reset-control-categories"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map222"
+    },
+    {
+      "number": 223,
+      "action": "`#dl-rising-csv` / `#dl-rising-png`",
+      "recipe": "`v.xfer('short')` — 0.35 s",
+      "kind": "one-shot",
+      "selectors": [
+        "dl-rising-csv",
+        "dl-rising-png"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map223"
+    },
+    {
+      "number": 224,
+      "action": "`#dl-review-all` · Review tables (ZIP)",
+      "recipe": "`v.xfer('long')` — 1.2 s",
+      "kind": "one-shot",
+      "selectors": [
+        "dl-review-all"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map224"
+    },
+    {
+      "number": 225,
+      "action": "`#dl-curves-csv` · Download curves (CSV)",
+      "recipe": "`v.xfer('short')` — 0.35 s",
+      "kind": "one-shot",
+      "selectors": [
+        "dl-curves-csv"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map225"
+    },
+    {
+      "number": 226,
+      "action": "`#dl-curves-png` · Combined rising curves (PNG)",
+      "recipe": "`v.xfer('short')` — 0.35 s",
+      "kind": "one-shot",
+      "selectors": [
+        "dl-curves-png"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map226"
+    },
+    {
+      "number": 227,
+      "action": "`#dl-plate-csv` · Plate map (CSV)",
+      "recipe": "`v.xfer('short')` — 0.35 s",
+      "kind": "one-shot",
+      "selectors": [
+        "dl-plate-csv"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map227"
+    },
+    {
+      "number": 228,
+      "action": "`#dl-plate-png` · Plate map (PNG)",
+      "recipe": "`v.xfer('short')` — 0.35 s",
+      "kind": "one-shot",
+      "selectors": [
+        "dl-plate-png"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map228"
+    },
+    {
+      "number": 229,
+      "action": "`#dl-derived` · Derived values (CSV)",
+      "recipe": "`v.xfer('short')` — 0.35 s",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "derivedTable"
+    },
+    {
+      "number": 230,
+      "action": "`#dl-derived-all` · For all runs (CSV)",
+      "recipe": "`v.xfer('long')` — 1.2 s",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "allDerivedTables"
+    },
+    {
+      "number": 231,
+      "action": "`#dl-statistics` · Statistics (CSV)",
+      "recipe": "`v.xfer('short')` — 0.35 s",
+      "kind": "one-shot",
+      "selectors": [
+        "dl-statistics"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map231"
+    },
+    {
+      "number": 232,
+      "action": "`#dl-compare` · Comparison (CSV)",
+      "recipe": "`v.xfer('short')` — 0.35 s",
+      "kind": "one-shot",
+      "selectors": [
+        "dl-compare"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map232"
+    },
+    {
+      "number": 233,
+      "action": "`#dl-runs` · Runs and forensic log (CSV)",
+      "recipe": "`v.xfer('short')` — 0.35 s",
+      "kind": "one-shot",
+      "selectors": [
+        "dl-runs"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map233"
+    },
+    {
+      "number": 234,
+      "action": "`#dl-instrument` · Instrument records (ZIP)",
+      "recipe": "`v.xfer('long')` — 1.2 s",
+      "kind": "one-shot",
+      "selectors": [
+        "dl-instrument"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map234"
+    },
+    {
+      "number": 235,
+      "action": "`#dl-issue-overview` · Grouped problems (CSV)",
+      "recipe": "`v.xfer('short')` — 0.35 s",
+      "kind": "one-shot",
+      "selectors": [
+        "dl-issue-overview"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map235"
+    },
+    {
+      "number": 236,
+      "action": "`#dl-lj-csv` / `#dl-lj-png`",
+      "recipe": "`v.xfer('short')` — 0.35 s",
+      "kind": "one-shot",
+      "selectors": [
+        "dl-lj-csv",
+        "dl-lj-png"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map236"
+    },
+    {
+      "number": 237,
+      "action": "`#dl-temp-png` · Temperature chart (PNG)",
+      "recipe": "`v.xfer('short')` — 0.35 s",
+      "kind": "one-shot",
+      "selectors": [
+        "dl-temp-png"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map237"
+    },
+    {
+      "number": 238,
+      "action": "`#dl-metadata` · Dataset metadata (JSON-LD)",
+      "recipe": "`v.xfer('short')` — 0.35 s",
+      "kind": "one-shot",
+      "selectors": [
+        "dl-metadata"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map238"
+    },
+    {
+      "number": 239,
+      "action": "`#dl-pseudo-map` · Pseudonym mapping (CSV)",
+      "recipe": "`v.alert(6)` — double square",
+      "kind": "one-shot",
+      "selectors": [
+        "dl-pseudo-map"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map239",
+      "correction": "Mapping download request uses a distinct attention cue; no actual privacy judgment is inferred."
+    },
+    {
+      "number": 240,
+      "action": "`#dl-integrity` · File-integrity list (CSV)",
+      "recipe": "`v.xfer('short')` — 0.35 s",
+      "kind": "one-shot",
+      "selectors": [
+        "dl-integrity"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map240"
+    },
+    {
+      "number": 241,
+      "action": "`#dl-py` · Download Python script",
+      "recipe": "`v.xfer('short')` — 0.35 s",
+      "kind": "one-shot",
+      "selectors": [
+        "dl-py"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map241"
+    },
+    {
+      "number": 242,
+      "action": "`#dl-r` · Download R script",
+      "recipe": "`v.xfer('short')` — 0.35 s",
+      "kind": "one-shot",
+      "selectors": [
+        "dl-r"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map242"
+    },
+    {
+      "number": 243,
+      "action": "`#dl-site` / `#missy-source-download`",
+      "recipe": "`v.xfer('long')` — 1.2 s",
+      "kind": "one-shot",
+      "selectors": [
+        "dl-site",
+        "missy-source-download"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map243"
+    },
+    {
+      "number": 244,
+      "action": "`Download HTML source`",
+      "recipe": "`v.xfer('long')` — 1.2 s",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": null
+    },
+    {
+      "number": 245,
+      "action": "`#prev-py` / `#prev-r` preview shown",
+      "recipe": "`v.key(4)`",
+      "kind": "one-shot",
+      "selectors": [
+        "prev-py",
+        "prev-r"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map245"
+    },
+    {
+      "number": 246,
+      "action": "`#sb-save` · Save status report",
+      "recipe": "`v.xfer('short')` — 0.35 s",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "statusSave"
+    },
+    {
+      "number": 247,
+      "action": "`#diag-save` · Save diagnostics (JSON)",
+      "recipe": "`v.xfer('short')` — 0.35 s",
+      "kind": "one-shot",
+      "selectors": [
+        "diag-save"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map247"
+    },
+    {
+      "number": 248,
+      "action": "`#diag-refresh` · Refresh diagnostics",
+      "recipe": "`v.query()` — 660 → 494",
+      "kind": "one-shot",
+      "selectors": [
+        "diag-refresh"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map248"
+    },
+    {
+      "number": 249,
+      "action": "export blocked — nothing to write",
+      "recipe": "`v.alert(4)` — double square",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": null
+    },
+    {
+      "number": 250,
+      "action": "export produced an empty file",
+      "recipe": "`v.alert(12)` — double square",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": null
+    },
+    {
+      "number": 251,
+      "action": "download suppressed by the browser",
+      "recipe": "`v.alarm(1)` — beating saw pair",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": null
+    },
+    {
+      "number": 252,
+      "action": "any export completes",
+      "recipe": "`v.done()` — four-tone resolve",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": null,
+      "correction": "Browser download completion is not established by a click; automatic completion cue remains unbound."
+    },
+    {
+      "number": 253,
+      "action": "`#integrity-summary` computed",
+      "recipe": "`v.query()` — 660 → 494",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": null
+    },
+    {
+      "number": 254,
+      "action": "all files match their stored checksum",
+      "recipe": "`v.done()` — four-tone resolve",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": null
+    },
+    {
+      "number": 255,
+      "action": "one file fails its checksum",
+      "recipe": "`v.alarm(3)` — beating saw pair",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": null
+    },
+    {
+      "number": 256,
+      "action": "archive integrity comparison fails",
+      "recipe": "`v.alarm(3)` — beating saw pair",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": null
+    },
+    {
+      "number": 257,
+      "action": "no stored checksum present in a file",
+      "recipe": "`v.soft()` — 330",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": null
+    },
+    {
+      "number": 258,
+      "action": "`#integrity-list` row expanded",
+      "recipe": "`v.key(4)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": null
+    },
+    {
+      "number": 259,
+      "action": "manifest hash recomputed",
+      "recipe": "`v.query()` — 660 → 494",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": null
+    },
+    {
+      "number": 260,
+      "action": "declared byte length disagrees with the file",
+      "recipe": "`v.alarm(2)` — beating saw pair",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": null
+    },
+    {
+      "number": 261,
+      "action": "duplicate identifier found",
+      "recipe": "`v.alert(10)` — double square",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": null
+    },
+    {
+      "number": 262,
+      "action": "reference does not resolve",
+      "recipe": "`v.alert(10)` — double square",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": null
+    },
+    {
+      "number": 263,
+      "action": "content identity recomputed and matches",
+      "recipe": "`v.ok()`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": null
+    },
+    {
+      "number": 264,
+      "action": "content identity differs from declared",
+      "recipe": "`v.alarm(2)` — beating saw pair",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": null
+    },
+    {
+      "number": 265,
+      "action": "two archives resolve to the same content",
+      "recipe": "`v.alert(1)` — double square",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": null
+    },
+    {
+      "number": 266,
+      "action": "declared source name differs from container",
+      "recipe": "`v.alert(7)` — double square",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": null
+    },
+    {
+      "number": 267,
+      "action": "demo started",
+      "recipe": "`v.xfer('long')` — 1.2 s",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "demoBegin"
+    },
+    {
+      "number": 268,
+      "action": "`Next / 下一步`",
+      "recipe": "`v.key(1)`, pitch +8 %",
+      "kind": "one-shot",
+      "selectors": [
+        "demo-next"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map268"
+    },
+    {
+      "number": 269,
+      "action": "`Previous / 上一步`",
+      "recipe": "`v.key(1)`, pitch −8 %",
+      "kind": "one-shot",
+      "selectors": [
+        "demo-prev"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map269"
+    },
+    {
+      "number": 270,
+      "action": "`Pause / 暂停`",
+      "recipe": "`v.pause()` — 2 clipped pulses",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "demoPlayback"
+    },
+    {
+      "number": 271,
+      "action": "resume from pause",
+      "recipe": "`v.resume()` — 440 → 554",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "demoPlayback"
+    },
+    {
+      "number": 272,
+      "action": "chapter card appears",
+      "recipe": "`v.swell()` — 1.5 s low triad",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": null
+    },
+    {
+      "number": 273,
+      "action": "`LOOK HERE / 看这里` callout appears",
+      "recipe": "`v.attn()` — 523 → 659 → 880",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": null
+    },
+    {
+      "number": 274,
+      "action": "callout dismissed",
+      "recipe": "`v.key(3)`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": null
+    },
+    {
+      "number": 275,
+      "action": "lesson changed in the selector",
+      "recipe": "`v.ok()`",
+      "kind": "one-shot",
+      "selectors": [
+        "demo-lesson"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map275"
+    },
+    {
+      "number": 276,
+      "action": "step time changed",
+      "recipe": "`v.key(2)`",
+      "kind": "one-shot",
+      "selectors": [
+        "demo-delay"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map276"
+    },
+    {
+      "number": 277,
+      "action": "`Pointer motion` toggled",
+      "recipe": "`v.key(1)`",
+      "kind": "one-shot",
+      "selectors": [
+        "demo-pointer-motion"
+      ],
+      "status": "mapped-control-request",
+      "cueId": "map277"
+    },
+    {
+      "number": 278,
+      "action": "artificial file staged",
+      "recipe": "`v.key(4)`, ×2 at 40 ms",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": null
+    },
+    {
+      "number": 279,
+      "action": "artificial evidence read",
+      "recipe": "`v.hail()` — 523+659+784 triad",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": null
+    },
+    {
+      "number": 280,
+      "action": "final step of a lesson reached",
+      "recipe": "`v.done()` — four-tone resolve",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": null
+    },
+    {
+      "number": 281,
+      "action": "`Exit demo / 退出演示`",
+      "recipe": "`v.fade(+1)` — 110 → 880",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "existing-cue",
+      "cueId": "demoExit"
+    },
+    {
+      "number": 282,
+      "action": "demo auto-advance tick",
+      "recipe": "`v.none()` — deliberate silence",
+      "kind": "—",
+      "selectors": [],
+      "status": "silent",
+      "cueId": "map282"
+    },
+    {
+      "number": 283,
+      "action": "workspace idle 60 s, nothing loaded",
+      "recipe": "`v.bed(1)` — 8 s drone bed",
+      "kind": "loop",
+      "selectors": [],
+      "status": "opt-in-background",
+      "cueId": "map283"
+    },
+    {
+      "number": 284,
+      "action": "workspace idle, runs loaded",
+      "recipe": "`v.bed(2)` — 8 s drone bed",
+      "kind": "loop",
+      "selectors": [],
+      "status": "opt-in-background",
+      "cueId": "map284"
+    },
+    {
+      "number": 285,
+      "action": "Graphs view idle",
+      "recipe": "`v.bed(3)` — 8 s drone bed",
+      "kind": "loop",
+      "selectors": [],
+      "status": "opt-in-background",
+      "cueId": "map285"
+    },
+    {
+      "number": 286,
+      "action": "Control panel view idle",
+      "recipe": "`v.bed(4)` — 8 s drone bed",
+      "kind": "loop",
+      "selectors": [],
+      "status": "opt-in-background",
+      "cueId": "map286"
+    },
+    {
+      "number": 287,
+      "action": "long render in progress > 3 s",
+      "recipe": "`v.work()` — 2 s pulsing loop",
+      "kind": "loop",
+      "selectors": [],
+      "status": "opt-in-background",
+      "cueId": "map287"
+    },
+    {
+      "number": 288,
+      "action": "intake in progress",
+      "recipe": "`v.scan()` — 2 s filtered-noise loop",
+      "kind": "loop",
+      "selectors": [],
+      "status": "opt-in-background",
+      "cueId": "map288"
+    },
+    {
+      "number": 289,
+      "action": "random idle blip, 20–45 s interval",
+      "recipe": "`v.soft()` — 330, gain 0.05",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": null
+    },
+    {
+      "number": 290,
+      "action": "random idle blip, variant",
+      "recipe": "`v.key(1)`, gain 0.04",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": null
+    },
+    {
+      "number": 291,
+      "action": "random idle blip, variant",
+      "recipe": "`v.key(2)`, gain 0.04",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": null
+    },
+    {
+      "number": 292,
+      "action": "random idle blip, variant",
+      "recipe": "`v.tone(440)`, gain 0.04",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": null
+    },
+    {
+      "number": 293,
+      "action": "memory above the soft limit",
+      "recipe": "`v.alert(2)` — double square",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": null
+    },
+    {
+      "number": 294,
+      "action": "fault recorded while idle",
+      "recipe": "`v.alert(14)` — double square",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": null
+    },
+    {
+      "number": 295,
+      "action": "`#sb-faults` count increments",
+      "recipe": "`v.alert(12)` — double square",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": null
+    },
+    {
+      "number": 296,
+      "action": "`#sb-state` phase changes to busy",
+      "recipe": "`v.query()` — 660 → 494",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": null
+    },
+    {
+      "number": 297,
+      "action": "`#sb-state` phase returns to ready",
+      "recipe": "`v.ok()`",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": null
+    },
+    {
+      "number": 298,
+      "action": "`#sb-progress` crosses 25 / 50 / 75 %",
+      "recipe": "`v.rise()` — 523 → 659 → 784",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": null
+    },
+    {
+      "number": 299,
+      "action": "tab hidden (`visibilitychange`)",
+      "recipe": "`v.none()` — deliberate silence",
+      "kind": "—",
+      "selectors": [],
+      "status": "silent",
+      "cueId": "map299"
+    },
+    {
+      "number": 300,
+      "action": "tab visible again",
+      "recipe": "`v.soft()` — 330, gain 0.05",
+      "kind": "one-shot",
+      "selectors": [],
+      "status": "preview-only-unverified-event",
+      "cueId": null
+    }
+  ],
+  "routes": {
+    "click": {
+      "missy-setup-reopen": "map028",
+      "missy-forget-password": "map029",
+      "cmd-script-run": "map067",
+      "csvread": "map090",
+      "csvfilebtn": "map091",
+      "csvdemo": "map092",
+      "sop-json-apply": "map100",
+      "sop-next": "map108",
+      "sop-prev": "map109",
+      "sop-add-found": "map110",
+      "mara-input-import": "map117",
+      "mara-input-export": "map118",
+      "ss-edit": "map124",
+      "ss-select": "map125",
+      "ss-unselect": "map126",
+      "ss-apply": "map128",
+      "ss-cancel": "map129",
+      "ss-next": "map130",
+      "ss-prev": "map131",
+      "ss-group": "map132",
+      "cc-rebase": "map188",
+      "cc-reset": "map189",
+      "cc-remember": "map190",
+      "cc-import": "map191",
+      "cc-export": "map192",
+      "cc-export-csv": "map193",
+      "cc-csv": "map194",
+      "cc-png": "map195",
+      "cc-svg": "map196",
+      "cc-zip": "map197",
+      "cc-zip-png": "map198",
+      "cc-ml": "map199",
+      "open-rising-review": "map208",
+      "issue-overview": "map212",
+      "issue-all-runs": "map214",
+      "issue-clear-runs": "map215",
+      "reset-control-categories": "map222",
+      "dl-rising-csv": "map223",
+      "dl-rising-png": "map223",
+      "dl-review-all": "map224",
+      "dl-curves-csv": "map225",
+      "dl-curves-png": "map226",
+      "dl-plate-csv": "map227",
+      "dl-plate-png": "map228",
+      "dl-statistics": "map231",
+      "dl-compare": "map232",
+      "dl-runs": "map233",
+      "dl-instrument": "map234",
+      "dl-issue-overview": "map235",
+      "dl-lj-csv": "map236",
+      "dl-lj-png": "map236",
+      "dl-temp-png": "map237",
+      "dl-metadata": "map238",
+      "dl-pseudo-map": "map239",
+      "dl-integrity": "map240",
+      "dl-py": "map241",
+      "dl-r": "map242",
+      "dl-site": "map243",
+      "missy-source-download": "map243",
+      "prev-py": "map245",
+      "prev-r": "map245",
+      "diag-save": "map247",
+      "diag-refresh": "map248",
+      "demo-next": "map268",
+      "demo-prev": "map269"
+    },
+    "change": {
+      "ss-enable": "map127",
+      "ss-names-enable": "checked:map133;unchecked:map134",
+      "ss-names-sensitivity": "map135",
+      "derived-run": "map141",
+      "cmp-a": "map144",
+      "cmp-b": "map144",
+      "stat-rep-limit": "map146",
+      "g-run": "map150",
+      "g-metric": "map152",
+      "cc-inst": "map179",
+      "cc-proto": "map180",
+      "cc-type": "map181",
+      "cc-variant": "map182",
+      "cc-x": "map183",
+      "issue-category": "map213",
+      "demo-lesson": "map275",
+      "demo-delay": "map276",
+      "demo-pointer-motion": "map277"
+    },
+    "dragenter": {
+      "drop": "map069"
+    },
+    "drop": {
+      "drop": "map071"
+    }
+  }
+}

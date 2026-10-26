@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "baseline": "f06308c",
+  "changed": [
+    "sound engine/catalogue",
+    "presentation event routing",
+    "sound settings"
+  ],
+  "allOtherHTMLIdentical": true,
+  "codeAndMetadataGrowthBytes": 107559,
+  "sampledAudioBytes": 0
+}
