@@ -1,0 +1,93 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="missy-publication-version" content="2026.10.26.voicefacts2">
+<link rel="icon" href="data:,">
+<title>Missy, RUO - A single-file local HTML page for .ixo, .eds/.edt and .rdml experiment runs</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Offline reader for Roche LightCycler 480 .ixo and Applied Biosystems QuantStudio 3/5 .eds files: traceable stored values, container integrity checks, open qPCR exports, graphs, quality review, forensic log and JSON-LD metadata.">
+<meta name="application-name" content="qPCR raw values, quality-control and forensic export tool">
+<meta name="software-version" content="2026.09.23.hardening2">
+
+
+//#include shell/public_browser_guard.html
+//#include shell/public_startup_sound.html
+<style id="missy-startup-style">
+html.missy-starting{background:#070d18}html.missy-starting body{overflow:hidden!important}html.missy-starting body>:not(#missy-startup){visibility:hidden!important}
+#missy-startup{display:none}html.missy-starting #missy-startup{visibility:visible!important;display:grid;place-items:center;position:fixed;inset:0;z-index:2147483647;padding:24px;overflow:auto;background:radial-gradient(ellipse at 20% 10%,#173244 0,transparent 55%),#070d18;color:#dbe8f1;font:14px/1.5 Arial,sans-serif;box-sizing:border-box}
+#missy-startup .startup-window{width:min(640px,100%);max-height:calc(100dvh - 48px);overflow:auto;box-sizing:border-box;border:1px solid #385166;border-radius:14px;background:linear-gradient(135deg,#162331,#0d1725);box-shadow:0 20px 80px #0007}
+#missy-startup .startup-title{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 22px;border-bottom:1px solid #2b4053;color:#9ab4c9;font:11px/1.4 monospace;letter-spacing:1.8px}
+#missy-startup .startup-title button{font:13px Arial,sans-serif;margin:0;padding:4px 7px;border:1px solid #3c566d;border-radius:5px;background:#152838;color:#dbe8f1;cursor:pointer}
+#missy-startup .startup-content{padding:25px 28px 22px;min-width:0}
+#missy-startup .startup-instrument{display:grid;place-items:center;padding:12px 0 24px;background-image:linear-gradient(#38516622 1px,transparent 1px),linear-gradient(90deg,#38516622 1px,transparent 1px);background-size:24px 24px;border-radius:8px}
+#missy-startup-enter{display:block;width:min(310px,100%);padding:18px;border:1px solid #8babbc;border-radius:8px;background:#f9fbfc;cursor:pointer;box-shadow:0 0 0 5px #91c5d009}
+#missy-startup-enter img{display:block;width:100%;height:auto;margin:0;transform:none}#missy-startup-enter:disabled{cursor:progress;opacity:.75}#missy-startup-enter.is-ready img{animation:missyEntryBlink 2.6s ease-in-out infinite}#missy-startup-enter:hover img,#missy-startup-enter:focus-visible img{animation:none;opacity:1}
+#missy-startup-enter:focus-visible{outline:3px solid #67d1d8;outline-offset:5px}
+#missy-startup-status{color:#dbe8f1;font:13px/1.5 Arial,sans-serif;min-height:20px;margin:19px 0 9px;letter-spacing:.2px}
+#missy-startup .startup-track{height:5px;border:0;border-radius:4px;overflow:hidden;background:#293c4c;padding:0}
+#missy-startup-fill{height:100%;width:0;background:linear-gradient(90deg,#45a8bc,#99e0db);border-radius:4px}
+#missy-startup .startup-log-title{margin:17px 0 7px;color:#91aabd;font:10px/1.5 monospace;letter-spacing:1.3px}
+#missy-startup-log{min-height:220px;max-height:290px;overflow:auto;margin:0;padding:12px 14px;border:1px solid #284051;border-radius:6px;background:#060d15;color:#9cd0c4;font:11px/1.65 "Consolas","Courier New",monospace;white-space:pre-wrap;overflow-wrap:anywhere;text-align:left}
+#missy-startup .startup-calibration{display:flex;gap:2px;height:5px;margin-top:18px;opacity:.65}#missy-startup .startup-calibration i{flex:1;background:var(--swatch)}
+#missy-startup .startup-footer{display:flex;gap:9px;align-items:center;justify-content:flex-end;margin-top:12px}#missy-startup .startup-footer button{border:1px solid #38596b;background:#162b3b;color:#c6e3eb;border-radius:5px;padding:5px 10px;font:12px Arial,sans-serif;cursor:pointer}#missy-startup [hidden]{display:none!important}
+@keyframes missyEntryBlink{0%,100%{opacity:1}50%{opacity:.08}}
+@media(prefers-reduced-motion:reduce){#missy-startup-enter.is-ready img{animation:none}#missy-startup-enter.is-ready{outline:2px solid #67d1d8;outline-offset:4px}}
+@media(max-width:480px){html.missy-starting #missy-startup{padding:12px}#missy-startup .startup-window{max-height:calc(100dvh - 24px)}#missy-startup .startup-title{padding:12px 16px;font-size:10px}#missy-startup .startup-content{padding:18px 16px}#missy-startup-log{font-size:10px;padding:10px}}
+@media(max-height:600px){#missy-startup .startup-content{padding:12px 20px}#missy-startup .startup-instrument{padding:0 0 10px}#missy-startup-enter{width:230px;padding:10px}#missy-startup-log{min-height:60px;max-height:90px}#missy-startup-status{margin-top:10px}#missy-startup .startup-calibration{margin-top:10px}}
+@media(max-height:600px) and (min-width:600px){#missy-startup .startup-content{display:grid;grid-template-columns:170px minmax(0,1fr);column-gap:20px;padding:12px 18px}#missy-startup .startup-instrument{grid-column:1;grid-row:1/7;padding:0}#missy-startup-enter{width:160px;padding:10px}#missy-startup-status,#missy-startup .startup-track,#missy-startup .startup-log-title,#missy-startup-log,#missy-startup .startup-calibration,#missy-startup .startup-footer{grid-column:2}#missy-startup-status{margin:0 0 7px}#missy-startup .startup-log-title{margin:9px 0 5px}#missy-startup-log{min-height:70px;max-height:100px}#missy-startup .startup-footer{margin:3px 0 0}}
+
+/* Mission-console palette and segmented, factual startup display. */
+html.missy-starting #missy-startup{background:radial-gradient(ellipse at 15% 0,#302533,transparent 60%),#070709}
+#missy-startup .startup-window{width:min(860px,100%);border:1px solid #654756;border-radius:28px;background:#050507;box-shadow:0 20px 80px #0009}
+#missy-startup .startup-title{background:#f0a05e;color:#150d12;border:0;border-bottom:8px solid #050507;border-left:24px solid #c59bcf;padding:11px 20px;font-weight:bold;letter-spacing:1.3px}
+#missy-startup .startup-title button{background:#e7b6db;color:#120c13;border:1px solid #9a658e;border-radius:20px}
+#missy-startup .startup-content{display:grid;grid-template-columns:190px minmax(0,1fr);column-gap:24px;border-left:24px solid #c59bcf;padding:22px 26px 22px 14px}
+#missy-startup .startup-radial{grid-column:1;grid-row:1/8;align-self:center;min-width:0}#missy-startup .startup-radial svg{display:block;width:100%;height:auto;font-family:monospace}#missy-startup [data-boot-step]{opacity:.25}#missy-startup [data-boot-step].is-loaded{opacity:1}
+#missy-startup .startup-instrument{grid-column:2;grid-row:1;background:none;padding:0 0 10px}#missy-startup-enter{width:min(280px,100%);box-shadow:none;border-radius:8px}
+#missy-startup-status,#missy-startup .startup-track,#missy-startup .startup-log-title,#missy-startup-log,#missy-startup .startup-calibration,#missy-startup .startup-footer{grid-column:2}
+#missy-startup-status{grid-row:2;color:#eed8eb}#missy-startup .startup-track{grid-row:3;background:#372b39}#missy-startup-fill{background:linear-gradient(90deg,#ef9c4c,#d5a1d8)}
+#missy-startup .startup-log-title{grid-row:4;color:#c79ac7}#missy-startup-log{grid-row:5;background:#0b090f;border-color:#684c70;color:#d6bee2}
+#missy-startup .startup-calibration{grid-row:6}#missy-startup .startup-footer{grid-row:7}#missy-startup .startup-footer button{background:#302033;color:#f4d9f0;border-color:#8f6698;border-radius:16px}
+@media(max-width:600px){#missy-startup .startup-content{display:flex;flex-direction:column;border-left-width:12px;padding:14px 16px 18px;gap:0}#missy-startup .startup-radial{width:105px;margin:0 auto 10px}#missy-startup .startup-title{border-left-width:12px;font-size:9px;padding:10px 12px}#missy-startup-enter{width:260px;padding:12px}#missy-startup .startup-instrument{padding:0 0 3px}#missy-startup-status{margin:12px 0 8px}#missy-startup-log{min-height:116px;max-height:145px}}
+@media(max-height:600px) and(min-width:600px){#missy-startup .startup-content{grid-template-columns:155px minmax(0,1fr);column-gap:17px;padding:10px 18px 12px 10px}#missy-startup .startup-title{padding:9px 14px}#missy-startup .startup-radial{grid-column:1;grid-row:1/8}#missy-startup .startup-instrument{grid-column:2;grid-row:1;padding:0 0 6px}#missy-startup-enter{width:190px;padding:8px}#missy-startup-status{grid-row:2;margin:0 0 5px}#missy-startup-log{min-height:65px;max-height:80px}#missy-startup .startup-log-title{margin:7px 0 4px}#missy-startup .startup-calibration{margin-top:8px}#missy-startup .startup-footer{margin-top:0}}
+
+</style>
+<script>
+/* Startup presentation only. Progress counts completed startup stages, not download bytes. */
+(()=>{
+ document.documentElement.classList.add('missy-starting');
+ const bootStart=performance.now(),completed=[];
+ let failed=false,ready=false,current=0,label='Loading interface';
+ const components=['Shell / interface / embedded styles','Plotly chart engine','IXO / EDS / EDT / RDML / ZPCR / PCRD readers + ZIP archive support','Full PDF font / bilingual interface / public extensions','SOP profiles / Console / keyboard / voice / sound library'];
+ const details=['Document shell and embedded CSS parsed','Chart engine script evaluated','Embedded readers evaluated; experiment data not read','Embedded font and extension scripts evaluated','DOM ready; reader API and voice controls present'];
+ const ms=n=>n.toFixed(1)+' ms';
+ const paint=()=>{const text=document.getElementById('missy-startup-status'),bar=document.getElementById('missy-startup-progress'),fill=document.getElementById('missy-startup-fill');if(text)text.textContent=label;if(bar){bar.setAttribute('aria-valuenow',String(current));bar.setAttribute('aria-valuetext',label);}if(fill)fill.style.width=(current/5*100)+'%';const count=document.getElementById('startup-stage-count');if(count)count.textContent=current+' / 5';document.querySelectorAll('#missy-startup [data-boot-step]').forEach(e=>e.classList.toggle('is-loaded',Number(e.dataset.bootStep)<=current));const log=document.getElementById('missy-startup-log');if(log){const lines=['Elapsed since startup script; stage intervals include HTML parsing.'];components.slice(0,Math.min(current+1,5)).forEach((name,i)=>{const done=completed[i];lines.push((done?'[OK]   ':'[LOAD] ')+name);if(done)lines.push('       '+ms(done.end)+' elapsed | '+ms(done.duration)+' stage interval  -  '+details[i]);});if(current===5){lines.push('[READY] Initialization complete in '+ms(completed[4].end));lines.push('[DATA]  No experiment files read during startup.');lines.push('[ENTER] Click the MISSY logo');}if(failed)lines.push('[ERROR] Startup initialization failed.');log.textContent=lines.join('\n');log.scrollTop=log.scrollHeight;}};
+ const fail=()=>{if(ready||failed)return;failed=true;const enter=document.getElementById('missy-startup-enter');if(enter){enter.disabled=true;enter.classList.remove('is-ready');}label='Startup failed. Please reload.';paint();const retry=document.getElementById('missy-startup-retry');if(retry)retry.hidden=false;};
+ window.MISSY_STARTUP=Object.freeze({stage(n,text){if(failed||ready)return;const next=Math.max(current,Math.min(5,n)),end=performance.now()-bootStart;for(let i=current;i<next;i++){const previous=i?completed[i-1].end:0;completed[i]={end,duration:end-previous};}current=next;label=text;paint();}});
+ window.addEventListener('error',e=>{if(e instanceof ErrorEvent)fail();});
+ document.addEventListener('DOMContentLoaded',()=>{paint();const retry=document.getElementById('missy-startup-retry');if(retry)retry.onclick=()=>location.reload();requestAnimationFrame(()=>{if(failed)return;if(!window.__qc||!document.getElementById('missy-console-voice-controls')){fail();return;}window.MISSY_STARTUP.stage(5,'Ready — click the MISSY logo to enter.');const enter=document.getElementById('missy-startup-enter');enter.disabled=false;enter.classList.add('is-ready');enter.onclick=()=>{if(failed||ready)return;ready=true;document.documentElement.classList.remove('missy-starting');if(window.MISSY_SETUP&&!window.__MISSY_DEMO_FRAME){window.MISSY_SETUP.open();return;}performance.mark('missy-page-ready');document.dispatchEvent(new Event('missy-ready'));};performance.mark('missy-initialized');document.dispatchEvent(new Event('missy-initialized'));});},{once:true});
+})();
+</script>
+<div id="missy-startup" aria-label="MISSY startup">
+ <div class="startup-window"><div class="startup-title"><span>MISSY / SYSTEM INITIALIZATION</span><button type="button" data-missy-sound-toggle data-i18n-skip aria-label="Interface sounds: on" aria-pressed="true">🔊</button></div>
+ <div class="startup-content">
+<div class="startup-radial"><svg viewBox="0 0 250 250" aria-label="Five startup stages"><g data-boot-step="1"><path d="M132.53 17.26 A108 108 0 0 1 225.14 84.54 L198.25 95.41 A79 79 0 0 0 130.51 46.19 Z" fill="#f59b48"/><text x="180.25" y="52.95" text-anchor="middle" fill="#090909" font-size="12" font-weight="bold">01</text></g><g data-boot-step="2"><path d="M229.79 98.87 A108 108 0 0 1 194.42 207.73 L175.78 185.52 A79 79 0 0 0 201.65 105.89 Z" fill="#d9895c"/><text x="214.40" y="158.05" text-anchor="middle" fill="#090909" font-size="12" font-weight="bold">02</text></g><g data-boot-step="3"><path d="M182.23 216.59 A108 108 0 0 1 67.77 216.59 L83.14 192.00 A79 79 0 0 0 166.86 192.00 Z" fill="#d6a2d3"/><text x="125.00" y="223.00" text-anchor="middle" fill="#090909" font-size="12" font-weight="bold">03</text></g><g data-boot-step="4"><path d="M55.58 207.73 A108 108 0 0 1 20.21 98.87 L48.35 105.89 A79 79 0 0 0 74.22 185.52 Z" fill="#ab7fc0"/><text x="35.60" y="158.05" text-anchor="middle" fill="#090909" font-size="12" font-weight="bold">04</text></g><g data-boot-step="5"><path d="M24.86 84.54 A108 108 0 0 1 117.47 17.26 L119.49 46.19 A79 79 0 0 0 51.75 95.41 Z" fill="#e0a560"/><text x="69.75" y="52.95" text-anchor="middle" fill="#090909" font-size="12" font-weight="bold">05</text></g><circle cx="125" cy="125" r="64" fill="none" stroke="#684c70"/><text x="125" y="111" text-anchor="middle" fill="#d3a0d7" font-size="11" letter-spacing="2">STARTUP</text><text id="startup-stage-count" x="125" y="143" text-anchor="middle" fill="#f5a355" font-size="27">0 / 5</text></svg></div>
+  <div class="startup-instrument"><button id="missy-startup-enter" type="button" disabled aria-label="Enter MISSY" title="Click the MISSY logo when ready"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNTAgNTAiIHdpZHRoPSIxNTAiIGhlaWdodD0iNTAiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iTUlTU1kgUlVPIE5PVCBWQUxJREFURUQiPjxwb2x5Z29uIHBvaW50cz0iMjMuMDAsNC4wMCA0MS4yNywxNC41MCA0MS4yNywzNS41MCAyMy4wMCw0Ni4wMCA0LjczLDM1LjUwIDQuNzMsMTQuNTAiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iIzEwMmY0ZCIgc3Ryb2tlLXdpZHRoPSIxLjU1IiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBhdGggZD0iTTE5LjAxIDEyLjYxYzcuOTc5OTk5OTk5OTk5OTk5NSA1LjA0IDcuOTc5OTk5OTk5OTk5OTk5NSA4LjQgMCAxMy40NHMtNy45Nzk5OTk5OTk5OTk5OTk1IDguNCAwIDEzLjQ0TTI2Ljk5IDEyLjYxYy03Ljk3OTk5OTk5OTk5OTk5OTUgNS4wNCAtNy45Nzk5OTk5OTk5OTk5OTk1IDguNCAwIDEzLjQ0czcuOTc5OTk5OTk5OTk5OTk5NSA4LjQgMCAxMy40NCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMGQ4NzkwIiBzdHJva2Utd2lkdGg9IjEuMjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxwYXRoIGQ9Ik0yMC40OCAxNi4xOGg1LjA0TTE5LjAxIDIwLjU5aDcuOThNMTkuMDEgMjUuMDBoNy45OE0yMC40OCAyOS40MWg1LjA0TTE5LjAxIDMzLjgyaDcuOThNMTkuMDEgMzguMjNoNy45OCIgc3Ryb2tlPSIjZTdhMTJjIiBzdHJva2Utd2lkdGg9IjAuOTIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjx0ZXh0IHg9IjUyIiB5PSIxNy4wMCIgdGV4dC1hbmNob3I9InN0YXJ0IiBmb250LWZhbWlseT0nIkNvdXJpZXIgTmV3IiwiTmltYnVzIE1vbm8gUFMiLCJMaWJlcmF0aW9uIE1vbm8iLG1vbm9zcGFjZScgZm9udC1zaXplPSIxNC4wMCIgZm9udC13ZWlnaHQ9IjcwMCIgbGV0dGVyLXNwYWNpbmc9IjIuMjQiIGZpbGw9IiMxMDJmNGQiPk1JU1NZPC90ZXh0Pjx0ZXh0IHg9IjUyIiB5PSIzMS41NiIgdGV4dC1hbmNob3I9InN0YXJ0IiBmb250LWZhbWlseT0nIkNvdXJpZXIgTmV3IiwiTmltYnVzIE1vbm8gUFMiLCJMaWJlcmF0aW9uIE1vbm8iLG1vbm9zcGFjZScgZm9udC1zaXplPSI5LjI0IiBmb250LXdlaWdodD0iNzAwIiBsZXR0ZXItc3BhY2luZz0iMS42OCIgZmlsbD0iIzBkODc5MCI+UlVPPC90ZXh0Pjx0ZXh0IHg9IjUyIiB5PSI0NC4xNiIgdGV4dC1hbmNob3I9InN0YXJ0IiBmb250LWZhbWlseT0nIkNvdXJpZXIgTmV3IiwiTmltYnVzIE1vbm8gUFMiLCJMaWJlcmF0aW9uIE1vbm8iLG1vbm9zcGFjZScgZm9udC1zaXplPSI1LjYwIiBmb250LXdlaWdodD0iNzAwIiBsZXR0ZXItc3BhY2luZz0iMS4xMiIgZmlsbD0iIzEwMmY0ZCI+Tk9UIFZBTElEQVRFRDwvdGV4dD48L3N2Zz4=" alt="MISSY · RUO · NOT VALIDATED" width="300" height="100"></button></div>
+  <p id="missy-startup-status" role="status" aria-live="polite">Loading interface</p>
+  <div class="startup-track" id="missy-startup-progress" role="progressbar" aria-label="Startup stages" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0"><div id="missy-startup-fill"></div></div>
+  <div class="startup-log-title">BOOT LOG / EMBEDDED COMPONENTS</div>
+  <pre id="missy-startup-log" aria-label="Embedded component loading log">[LOAD] shell/interface + embedded styles</pre>
+  <div class="startup-calibration" aria-hidden="true"><i style="--swatch:#cbd6df"></i><i style="--swatch:#d0c64c"></i><i style="--swatch:#48c9ce"></i><i style="--swatch:#53b679"></i><i style="--swatch:#b66bba"></i><i style="--swatch:#d56e6e"></i><i style="--swatch:#627dc6"></i></div>
+  <div class="startup-footer"><button type="button" data-missy-ready-play hidden aria-label="Play ready announcement">▶</button><button id="missy-startup-retry" type="button" hidden>Reload</button></div>
+ </div></div>
+</div>
+
+<!--
+  MACHINE-READABLE LANDING-PAGE METADATA
+  This source-level graph describes the application even before JavaScript runs.
+  After local .ixo files are read, the page replaces this graph in memory with a
+  DataCatalog containing one Dataset per experiment and DataDownload nodes for
+  every export that the decoded content can actually produce. No local path or
+  experiment value is transmitted; the graph remains inside this offline page.
+-->
+<script id="machine-metadata" type="application/ld+json">
+

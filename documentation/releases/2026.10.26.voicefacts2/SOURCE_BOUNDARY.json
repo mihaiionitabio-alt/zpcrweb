@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "baseline": "b424165",
+  "excludedRegions": [
+    "voice module",
+    "publication version meta"
+  ],
+  "remainingLFUTF8SHA256": "567bcb5503d54b3ee88e8d1fbfa61bb7b7cd59615dca64da19c8501d4333fce4",
+  "scope": "All other HTML bytes after LF normalization unchanged: readers, scientific calculations, results, export implementations, font coverage, sound engine and styles."
+}
