@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "baseline": "b59417b",
+  "excludedPresentationRegions": [
+    "voice module",
+    "session setup module",
+    "build identity label",
+    "publication version meta"
+  ],
+  "remainingUTF8SHA256": "731c8b8ee80a0d9fb93c8784a5b46eaef40e18d13c4f1a64ffd1511477b183a2",
+  "scope": "All other HTML bytes after LF normalization are unchanged, including readers, calculations, full embedded font, audio synthesis and export implementations."
+}

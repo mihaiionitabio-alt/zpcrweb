@@ -1,0 +1,1111 @@
+{
+  "passed": true,
+  "total": 122,
+  "routed": 122,
+  "guarded": 68,
+  "refusals": 10,
+  "implementedRoutes": 44,
+  "emptyDatasetTest": true,
+  "profileUnchanged": true,
+  "errors": [],
+  "rows": [
+    {
+      "phrase": "where am i",
+      "group": "1 · Orientation and session",
+      "intent": "q:where",
+      "answer": {
+        "en": "Workspace. Load files.",
+        "zh": "工作区。加载文件。"
+      }
+    },
+    {
+      "phrase": "what can i do here",
+      "group": "1 · Orientation and session",
+      "intent": "q:help",
+      "answer": {
+        "en": "Choose or drop experiment files, read them, and review sample selection.",
+        "zh": "选择或拖入实验文件，读取文件并审核样品选择。"
+      }
+    },
+    {
+      "phrase": "what views are there",
+      "group": "1 · Orientation and session",
+      "intent": "q:views",
+      "answer": {
+        "en": "Load files; SOP; Results; Control panel; Graphs; Quality and forensic review; Open formats; File integrity.",
+        "zh": "加载文件；SOP；结果；控制面板；图表；质量与取证审核；开放格式；文件完整性。"
+      }
+    },
+    {
+      "phrase": "where is pseudonymisation",
+      "group": "1 · Orientation and session",
+      "intent": "q:privacy",
+      "answer": {
+        "en": "Pseudonymisation is in Open formats. Spoken sample-name lists use original names, as requested; export settings remain unchanged.",
+        "zh": "假名化设置位于开放格式。按您的要求，语音样品名列表使用原名；导出设置保持不变。"
+      }
+    },
+    {
+      "phrase": "what build is this",
+      "group": "1 · Orientation and session",
+      "intent": "q:build",
+      "answer": {
+        "en": "Current publication: 2026.10.26.voiceworkspace1. One offline HTML file. Publication identity is recorded separately in the release documentation.",
+        "zh": "当前发布：2026.10.26.voiceworkspace1。单个离线 HTML 文件。发布标识另载于发布文档。"
+      }
+    },
+    {
+      "phrase": "what time is it",
+      "group": "1 · Orientation and session",
+      "intent": "f:clock",
+      "answer": {
+        "en": "26/10/2026, 22:44:11. Device local time.",
+        "zh": "2026/10/26 22:44:11。设备本地时间。"
+      }
+    },
+    {
+      "phrase": "how long have you been open",
+      "group": "1 · Orientation and session",
+      "intent": "f:uptime",
+      "answer": {
+        "en": "Page session: 0.0 minutes.",
+        "zh": "页面会话时长：0.0 分钟。"
+      }
+    },
+    {
+      "phrase": "this is doctor ionita",
+      "group": "1 · Orientation and session",
+      "intent": "guard:1 · Orientation and session",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 1 · Orientation and session. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：1 · Orientation and session。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "who is the operator",
+      "group": "1 · Orientation and session",
+      "intent": "q:operator",
+      "answer": {
+        "en": "Investigator field: not entered. This field does not authenticate a person.",
+        "zh": "分析人员字段：未填写。此字段不验证身份。"
+      }
+    },
+    {
+      "phrase": "what language are you speaking",
+      "group": "1 · Orientation and session",
+      "intent": "q:lang",
+      "answer": {
+        "en": "The interface language is English. Recognition uses the English offline pack. Speech output requires an installed local voice for the selected language.",
+        "zh": "界面语言为英文。识别使用英语离线语言包；语音输出需要安装相应语言的本地语音。"
+      }
+    },
+    {
+      "phrase": "how many files",
+      "group": "2 · Files and intake",
+      "intent": "f:files",
+      "answer": {
+        "en": "0 distinct recorded source filenames; 0 decoded runs. File names may be unavailable or shared by several runs.",
+        "zh": "0 个已记录且不同的源文件名；0 次已解码运行。文件名可能缺失，或由多次运行共用。"
+      }
+    },
+    {
+      "phrase": "list the files",
+      "group": "2 · Files and intake",
+      "intent": "f:listfiles",
+      "answer": {
+        "en": "No more entries.",
+        "zh": "没有更多项目。"
+      }
+    },
+    {
+      "phrase": "what formats do you read",
+      "group": "2 · Files and intake",
+      "intent": "q:formats",
+      "answer": {
+        "en": "IXO, EDS, EDT, RDML, ZPCR and PCRD experiment files, plus ZIP archives. Available data depends on the source file.",
+        "zh": "支持 IXO、EDS、EDT、RDML、ZPCR、PCRD 实验文件和 ZIP 压缩包。可用数据取决于源文件。"
+      }
+    },
+    {
+      "phrase": "read the files",
+      "group": "2 · Files and intake",
+      "intent": "guard:2 · Files and intake",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 2 · Files and intake. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：2 · Files and intake。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "is there a problem with the files",
+      "group": "2 · Files and intake",
+      "intent": "guard:2 · Files and intake",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 2 · Files and intake. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：2 · Files and intake。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "which file failed",
+      "group": "2 · Files and intake",
+      "intent": "o:fault",
+      "answer": {
+        "en": "No software faults are recorded in the retained session log.",
+        "zh": "保留的会话日志中没有软件故障记录。"
+      }
+    },
+    {
+      "phrase": "why was that file skipped",
+      "group": "2 · Files and intake",
+      "intent": "o:fault",
+      "answer": {
+        "en": "No software faults are recorded in the retained session log.",
+        "zh": "保留的会话日志中没有软件故障记录。"
+      }
+    },
+    {
+      "phrase": "how big is the largest file",
+      "group": "2 · Files and intake",
+      "intent": "guard:2 · Files and intake",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 2 · Files and intake. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：2 · Files and intake。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "when were these files read",
+      "group": "2 · Files and intake",
+      "intent": "guard:2 · Files and intake",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 2 · Files and intake. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：2 · Files and intake。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "are any files duplicated",
+      "group": "2 · Files and intake",
+      "intent": "guard:2 · Files and intake",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 2 · Files and intake. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：2 · Files and intake。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "clear the experiments",
+      "group": "2 · Files and intake",
+      "intent": "guard:2 · Files and intake",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 2 · Files and intake. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：2 · Files and intake。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "confirm",
+      "group": "2 · Files and intake",
+      "intent": "guard:2 · Files and intake",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 2 · Files and intake. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：2 · Files and intake。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "how many runs",
+      "group": "3 · Runs and identity",
+      "intent": "q:counts",
+      "answer": {
+        "en": "0 runs loaded. 0 stored result rows. This count does not include separate melting or relative-quantity tables.",
+        "zh": "已加载 0 次运行，包含 0 行存储结果。此数量不包含单独的熔解或相对定量表。"
+      }
+    },
+    {
+      "phrase": "identify run 3",
+      "group": "3 · Runs and identity",
+      "intent": "o:identify run:3",
+      "answer": {
+        "en": "Requested run unavailable.",
+        "zh": "所选运行不可用。"
+      }
+    },
+    {
+      "phrase": "bracket the dates",
+      "group": "3 · Runs and identity",
+      "intent": "o:dates",
+      "answer": {
+        "en": "No readable run start or creation time is available.",
+        "zh": "没有可读的运行开始或创建时间。"
+      }
+    },
+    {
+      "phrase": "how many instruments",
+      "group": "3 · Runs and identity",
+      "intent": "guard:3 · Runs and identity",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 3 · Runs and identity. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：3 · Runs and identity。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "are these runs comparable",
+      "group": "3 · Runs and identity",
+      "intent": "guard:3 · Runs and identity",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 3 · Runs and identity. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：3 · Runs and identity。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "which run is newest",
+      "group": "3 · Runs and identity",
+      "intent": "guard:3 · Runs and identity",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 3 · Runs and identity. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：3 · Runs and identity。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "which run is oldest",
+      "group": "3 · Runs and identity",
+      "intent": "guard:3 · Runs and identity",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 3 · Runs and identity. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：3 · Runs and identity。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "how long did run 3 take",
+      "group": "3 · Runs and identity",
+      "intent": "guard:3 · Runs and identity",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 3 · Runs and identity. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：3 · Runs and identity。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "what protocol was used",
+      "group": "3 · Runs and identity",
+      "intent": "guard:3 · Runs and identity",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 3 · Runs and identity. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：3 · Runs and identity。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "next run",
+      "group": "3 · Runs and identity",
+      "intent": "nav:next run",
+      "answer": {
+        "en": "Open a Console chart first. You can use Computer show chart followed by its number.",
+        "zh": "请先打开控制台图表。可说 Computer show chart 后接编号。"
+      }
+    },
+    {
+      "phrase": "how many samples",
+      "group": "4 · Samples and wells",
+      "intent": "f:samples",
+      "answer": {
+        "en": "0 distinct recorded sample names across 0 runs. Equal names may represent different physical samples.",
+        "zh": "0 次运行中有 0 个不同的已记录样品名。同名不一定代表同一样品。"
+      }
+    },
+    {
+      "phrase": "list the samples",
+      "group": "4 · Samples and wells",
+      "intent": "f:listsamples",
+      "answer": {
+        "en": "No more entries.",
+        "zh": "没有更多项目。"
+      }
+    },
+    {
+      "phrase": "locate sample demo_sample_7",
+      "group": "4 · Samples and wells",
+      "intent": "o:locate sample:demo_sample_7",
+      "answer": {
+        "en": "No exact match in loaded records.",
+        "zh": "已加载记录中没有完全匹配项。"
+      }
+    },
+    {
+      "phrase": "identify",
+      "group": "4 · Samples and wells",
+      "intent": "guard:4 · Samples and wells",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 4 · Samples and wells. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：4 · Samples and wells。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "read this well",
+      "group": "4 · Samples and wells",
+      "intent": "guard:4 · Samples and wells",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 4 · Samples and wells. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：4 · Samples and wells。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "which sample is this",
+      "group": "4 · Samples and wells",
+      "intent": "guard:4 · Samples and wells",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 4 · Samples and wells. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：4 · Samples and wells。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "compare b7 with b8",
+      "group": "4 · Samples and wells",
+      "intent": "guard:4 · Samples and wells",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 4 · Samples and wells. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：4 · Samples and wells。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "are these replicates acceptable",
+      "group": "4 · Samples and wells",
+      "intent": "guard:4 · Samples and wells",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 4 · Samples and wells. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：4 · Samples and wells。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "which well amplified first",
+      "group": "4 · Samples and wells",
+      "intent": "guard:4 · Samples and wells",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 4 · Samples and wells. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：4 · Samples and wells。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "which well is the outlier",
+      "group": "4 · Samples and wells",
+      "intent": "guard:4 · Samples and wells",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 4 · Samples and wells. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：4 · Samples and wells。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "how many wells are empty",
+      "group": "4 · Samples and wells",
+      "intent": "guard:4 · Samples and wells",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 4 · Samples and wells. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：4 · Samples and wells。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "show me the positives",
+      "group": "4 · Samples and wells",
+      "intent": "guard:4 · Samples and wells",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 4 · Samples and wells. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：4 · Samples and wells。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "what targets are loaded",
+      "group": "5 · Targets and channels",
+      "intent": "guard:5 · Targets and channels",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 5 · Targets and channels. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：5 · Targets and channels。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "request all information on hmg",
+      "group": "5 · Targets and channels",
+      "intent": "o:request all information on:hmg",
+      "answer": {
+        "en": "No exact match in loaded records.",
+        "zh": "已加载记录中没有完全匹配项。"
+      }
+    },
+    {
+      "phrase": "which target is the reference",
+      "group": "5 · Targets and channels",
+      "intent": "guard:5 · Targets and channels",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 5 · Targets and channels. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：5 · Targets and channels。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "what channels were collected",
+      "group": "5 · Targets and channels",
+      "intent": "guard:5 · Targets and channels",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 5 · Targets and channels. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：5 · Targets and channels。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "compare fam with hex",
+      "group": "5 · Targets and channels",
+      "intent": "guard:5 · Targets and channels",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 5 · Targets and channels. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：5 · Targets and channels。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "is channel 4 noisy",
+      "group": "5 · Targets and channels",
+      "intent": "guard:5 · Targets and channels",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 5 · Targets and channels. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：5 · Targets and channels。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "what dye is on this channel",
+      "group": "5 · Targets and channels",
+      "intent": "guard:5 · Targets and channels",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 5 · Targets and channels. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：5 · Targets and channels。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "which targets are missing a reference",
+      "group": "5 · Targets and channels",
+      "intent": "guard:5 · Targets and channels",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 5 · Targets and channels. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：5 · Targets and channels。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "read the results",
+      "group": "6 · Results and outcomes",
+      "intent": "guard:6 · Results and outcomes",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 6 · Results and outcomes. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：6 · Results and outcomes。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "summarise the run",
+      "group": "6 · Results and outcomes",
+      "intent": "guard:6 · Results and outcomes",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 6 · Results and outcomes. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：6 · Results and outcomes。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "which samples should i repeat",
+      "group": "6 · Results and outcomes",
+      "intent": "guard:6 · Results and outcomes",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 6 · Results and outcomes. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：6 · Results and outcomes。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "why was that flagged",
+      "group": "6 · Results and outcomes",
+      "intent": "guard:6 · Results and outcomes",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 6 · Results and outcomes. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：6 · Results and outcomes。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "how many undetermined",
+      "group": "6 · Results and outcomes",
+      "intent": "guard:6 · Results and outcomes",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 6 · Results and outcomes. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：6 · Results and outcomes。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "is there a problem",
+      "group": "6 · Results and outcomes",
+      "intent": "f:report",
+      "answer": {
+        "en": "Status report. 0 runs; 0 stored result rows. [loaded-record-count] Active profile No SOP selected, version 1.0. [active-profile-identity] 0 recorded software faults; these are not sample failures. [recorded-software-fault-count] No chart is open. [current-chart-recorded-assessment] Say Computer full report for the remaining observations. Unavailable checks are not evidence of a pass.",
+        "zh": "状态报告。0 次运行；0 行存储结果。 [loaded-record-count]当前配置 No SOP selected，版本 1.0。 [active-profile-identity]记录软件故障 0 个，这不是样品失败数量。 [recorded-software-fault-count]当前未打开图表。 [current-chart-recorded-assessment]请说 Computer full report 获取其余观察项。不可用的检查不代表通过。"
+      }
+    },
+    {
+      "phrase": "what is the problem",
+      "group": "6 · Results and outcomes",
+      "intent": "f:report",
+      "answer": {
+        "en": "Status report. 0 runs; 0 stored result rows. [loaded-record-count] Active profile No SOP selected, version 1.0. [active-profile-identity] 0 recorded software faults; these are not sample failures. [recorded-software-fault-count] No chart is open. [current-chart-recorded-assessment] Say Computer full report for the remaining observations. Unavailable checks are not evidence of a pass.",
+        "zh": "状态报告。0 次运行；0 行存储结果。 [loaded-record-count]当前配置 No SOP selected，版本 1.0。 [active-profile-identity]记录软件故障 0 个，这不是样品失败数量。 [recorded-software-fault-count]当前未打开图表。 [current-chart-recorded-assessment]请说 Computer full report 获取其余观察项。不可用的检查不代表通过。"
+      }
+    },
+    {
+      "phrase": "is there any indication of inhibition",
+      "group": "6 · Results and outcomes",
+      "intent": "refuse:cause",
+      "answer": {
+        "en": "I do not infer contamination or inhibition from a curve. You can inspect recorded control results and the active method rules in Results and SOP.",
+        "zh": "我不从曲线推断污染或抑制。您可以在结果及 SOP 页面查看已记录的对照结果和当前方法规则。"
+      }
+    },
+    {
+      "phrase": "calculate the mean cq",
+      "group": "6 · Results and outcomes",
+      "intent": "guard:6 · Results and outcomes",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 6 · Results and outcomes. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：6 · Results and outcomes。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "what is the efficiency",
+      "group": "6 · Results and outcomes",
+      "intent": "guard:6 · Results and outcomes",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 6 · Results and outcomes. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：6 · Results and outcomes。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "compare stored against re-derived",
+      "group": "6 · Results and outcomes",
+      "intent": "guard:6 · Results and outcomes",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 6 · Results and outcomes. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：6 · Results and outcomes。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "are these results validated",
+      "group": "6 · Results and outcomes",
+      "intent": "refuse:validation",
+      "answer": {
+        "en": "This is a research-use tool, not a laboratory validation certificate. You can review the method configuration and documentation for your own validation process.",
+        "zh": "本工具供研究使用，不是实验室验证证书。您可审核方法配置及文档，用于自己的验证流程。"
+      }
+    },
+    {
+      "phrase": "check the controls",
+      "group": "7 · Controls and acceptance",
+      "intent": "guard:7 · Controls and acceptance",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 7 · Controls and acceptance. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：7 · Controls and acceptance。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "did the no-template control pass",
+      "group": "7 · Controls and acceptance",
+      "intent": "guard:7 · Controls and acceptance",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 7 · Controls and acceptance. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：7 · Controls and acceptance。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "did any control fail",
+      "group": "7 · Controls and acceptance",
+      "intent": "guard:7 · Controls and acceptance",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 7 · Controls and acceptance. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：7 · Controls and acceptance。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "what does the profile require",
+      "group": "7 · Controls and acceptance",
+      "intent": "guard:7 · Controls and acceptance",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 7 · Controls and acceptance. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：7 · Controls and acceptance。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "is the run acceptable",
+      "group": "7 · Controls and acceptance",
+      "intent": "guard:7 · Controls and acceptance",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 7 · Controls and acceptance. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：7 · Controls and acceptance。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "which profile is active",
+      "group": "7 · Controls and acceptance",
+      "intent": "q:profile",
+      "answer": {
+        "en": "Active profile: No SOP selected. Version: 1.0.",
+        "zh": "当前配置：No SOP selected。版本：1.0。"
+      }
+    },
+    {
+      "phrase": "does this profile apply",
+      "group": "7 · Controls and acceptance",
+      "intent": "guard:7 · Controls and acceptance",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 7 · Controls and acceptance. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：7 · Controls and acceptance。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "lock the profile",
+      "group": "7 · Controls and acceptance",
+      "intent": "guard:7 · Controls and acceptance",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 7 · Controls and acceptance. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：7 · Controls and acceptance。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "what changed in the profile",
+      "group": "7 · Controls and acceptance",
+      "intent": "guard:7 · Controls and acceptance",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 7 · Controls and acceptance. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：7 · Controls and acceptance。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "how many standards",
+      "group": "7 · Controls and acceptance",
+      "intent": "guard:7 · Controls and acceptance",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 7 · Controls and acceptance. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：7 · Controls and acceptance。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "chart seventeen",
+      "group": "8 · Charts and graphs",
+      "intent": "chart:17",
+      "answer": {
+        "en": "Load experiment data first.",
+        "zh": "请先加载实验数据。"
+      }
+    },
+    {
+      "phrase": "which chart is this",
+      "group": "8 · Charts and graphs",
+      "intent": "guard:8 · Charts and graphs",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 8 · Charts and graphs. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：8 · Charts and graphs。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "describe this chart",
+      "group": "8 · Charts and graphs",
+      "intent": "q:analyse",
+      "answer": {
+        "en": "No chart is open.",
+        "zh": "当前未打开图表。"
+      }
+    },
+    {
+      "phrase": "how many outliers",
+      "group": "8 · Charts and graphs",
+      "intent": "q:analyse",
+      "answer": {
+        "en": "No chart is open.",
+        "zh": "当前未打开图表。"
+      }
+    },
+    {
+      "phrase": "are there any alarms",
+      "group": "8 · Charts and graphs",
+      "intent": "q:analyse",
+      "answer": {
+        "en": "No chart is open.",
+        "zh": "当前未打开图表。"
+      }
+    },
+    {
+      "phrase": "is everything normal",
+      "group": "8 · Charts and graphs",
+      "intent": "q:analyse",
+      "answer": {
+        "en": "No chart is open.",
+        "zh": "当前未打开图表。"
+      }
+    },
+    {
+      "phrase": "why has this chart no limits",
+      "group": "8 · Charts and graphs",
+      "intent": "q:analyse",
+      "answer": {
+        "en": "No chart is open.",
+        "zh": "当前未打开图表。"
+      }
+    },
+    {
+      "phrase": "what is the magnification",
+      "group": "8 · Charts and graphs",
+      "intent": "o:zoom",
+      "answer": {
+        "en": "No Console chart zoom is active.",
+        "zh": "当前没有活动的控制台图表缩放。"
+      }
+    },
+    {
+      "phrase": "zoom in",
+      "group": "8 · Charts and graphs",
+      "intent": "nav:zoom in",
+      "answer": {
+        "en": "Open a Console chart first. You can use Computer show chart followed by its number.",
+        "zh": "请先打开控制台图表。可说 Computer show chart 后接编号。"
+      }
+    },
+    {
+      "phrase": "reset the view",
+      "group": "8 · Charts and graphs",
+      "intent": "nav:zoom reset",
+      "answer": {
+        "en": "Open a Console chart first. You can use Computer show chart followed by its number.",
+        "zh": "请先打开控制台图表。可说 Computer show chart 后接编号。"
+      }
+    },
+    {
+      "phrase": "next chart",
+      "group": "8 · Charts and graphs",
+      "intent": "nav:chart next",
+      "answer": {
+        "en": "Open a Console chart first. You can use Computer show chart followed by its number.",
+        "zh": "请先打开控制台图表。可说 Computer show chart 后接编号。"
+      }
+    },
+    {
+      "phrase": "white background",
+      "group": "8 · Charts and graphs",
+      "intent": "theme:light",
+      "answer": {
+        "en": "Chart background changed.",
+        "zh": "图表背景已更改。"
+      }
+    },
+    {
+      "phrase": "show the amplification curves",
+      "group": "8 · Charts and graphs",
+      "intent": "guard:8 · Charts and graphs",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 8 · Charts and graphs. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：8 · Charts and graphs。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "which curve is steepest",
+      "group": "8 · Charts and graphs",
+      "intent": "guard:8 · Charts and graphs",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 8 · Charts and graphs. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：8 · Charts and graphs。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "check the integrity",
+      "group": "9 · Integrity and provenance",
+      "intent": "guard:9 · Integrity and provenance",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 9 · Integrity and provenance. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：9 · Integrity and provenance。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "verify this file",
+      "group": "9 · Integrity and provenance",
+      "intent": "guard:9 · Integrity and provenance",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 9 · Integrity and provenance. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：9 · Integrity and provenance。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "what is the hash",
+      "group": "9 · Integrity and provenance",
+      "intent": "guard:9 · Integrity and provenance",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 9 · Integrity and provenance. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：9 · Integrity and provenance。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "has anything changed",
+      "group": "9 · Integrity and provenance",
+      "intent": "guard:9 · Integrity and provenance",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 9 · Integrity and provenance. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：9 · Integrity and provenance。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "where did this run come from",
+      "group": "9 · Integrity and provenance",
+      "intent": "guard:9 · Integrity and provenance",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 9 · Integrity and provenance. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：9 · Integrity and provenance。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "was this reanalysed",
+      "group": "9 · Integrity and provenance",
+      "intent": "guard:9 · Integrity and provenance",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 9 · Integrity and provenance. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：9 · Integrity and provenance。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "access the run log",
+      "group": "9 · Integrity and provenance",
+      "intent": "o:log",
+      "answer": {
+        "en": "Opened Quality and forensic review. The software fault log contains 0 retained entries. This is not an instrument event count.",
+        "zh": "已打开质量与取证审核。软件故障日志保留 0 条记录，这不是仪器事件数量。"
+      }
+    },
+    {
+      "phrase": "read the last event",
+      "group": "9 · Integrity and provenance",
+      "intent": "guard:9 · Integrity and provenance",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 9 · Integrity and provenance. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：9 · Integrity and provenance。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "save the status report",
+      "group": "10 · Export and privacy",
+      "intent": "guard:10 · Export and privacy",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 10 · Export and privacy. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：10 · Export and privacy。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "export the results",
+      "group": "10 · Export and privacy",
+      "intent": "guard:10 · Export and privacy",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 10 · Export and privacy. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：10 · Export and privacy。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "download the plate map",
+      "group": "10 · Export and privacy",
+      "intent": "guard:10 · Export and privacy",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 10 · Export and privacy. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：10 · Export and privacy。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "export the metadata",
+      "group": "10 · Export and privacy",
+      "intent": "guard:10 · Export and privacy",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 10 · Export and privacy. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：10 · Export and privacy。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "pseudonymise the names",
+      "group": "10 · Export and privacy",
+      "intent": "guard:10 · Export and privacy",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 10 · Export and privacy. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：10 · Export and privacy。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "download the mapping",
+      "group": "10 · Export and privacy",
+      "intent": "guard:10 · Export and privacy",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 10 · Export and privacy. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：10 · Export and privacy。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "download the offline copy",
+      "group": "10 · Export and privacy",
+      "intent": "guard:10 · Export and privacy",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 10 · Export and privacy. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：10 · Export and privacy。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "what will the export contain",
+      "group": "10 · Export and privacy",
+      "intent": "guard:10 · Export and privacy",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 10 · Export and privacy. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：10 · Export and privacy。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "status report",
+      "group": "11 · Faults, diagnostics and state",
+      "intent": "f:report",
+      "answer": {
+        "en": "Status report. 0 runs; 0 stored result rows. [loaded-record-count] Active profile No SOP selected, version 1.0. [active-profile-identity] 0 recorded software faults; these are not sample failures. [recorded-software-fault-count] No chart is open. [current-chart-recorded-assessment] Say Computer full report for the remaining observations. Unavailable checks are not evidence of a pass.",
+        "zh": "状态报告。0 次运行；0 行存储结果。 [loaded-record-count]当前配置 No SOP selected，版本 1.0。 [active-profile-identity]记录软件故障 0 个，这不是样品失败数量。 [recorded-software-fault-count]当前未打开图表。 [current-chart-recorded-assessment]请说 Computer full report 获取其余观察项。不可用的检查不代表通过。"
+      }
+    },
+    {
+      "phrase": "full report",
+      "group": "11 · Faults, diagnostics and state",
+      "intent": "f:fullreport",
+      "answer": {
+        "en": "Status report. 0 runs; 0 stored result rows. [loaded-record-count] Active profile No SOP selected, version 1.0. [active-profile-identity] 0 recorded software faults; these are not sample failures. [recorded-software-fault-count] No chart is open. [current-chart-recorded-assessment] This report does not perform a new whole-dataset control, checksum, hardware or curve-shape assessment. [assessment-coverage] Unavailable checks are not evidence of a pass.",
+        "zh": "状态报告。0 次运行；0 行存储结果。 [loaded-record-count]当前配置 No SOP selected，版本 1.0。 [active-profile-identity]记录软件故障 0 个，这不是样品失败数量。 [recorded-software-fault-count]当前未打开图表。 [current-chart-recorded-assessment]本报告不进行新的全数据集对照、校验和、硬件或曲线形状评估。 [assessment-coverage]不可用的检查不代表通过。"
+      }
+    },
+    {
+      "phrase": "run a diagnostic",
+      "group": "11 · Faults, diagnostics and state",
+      "intent": "guard:11 · Faults, diagnostics and state",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 11 · Faults, diagnostics and state. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：11 · Faults, diagnostics and state。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "run diagnostic on module readers",
+      "group": "11 · Faults, diagnostics and state",
+      "intent": "o:run diagnostic on module:readers",
+      "answer": {
+        "en": "0 decoded run views; 0 retained software faults. No new reader self-test was run.",
+        "zh": "已解码运行视图 0 个；保留软件故障 0 个。未运行新的读取器自检。"
+      }
+    },
+    {
+      "phrase": "explanation for malfunction",
+      "group": "11 · Faults, diagnostics and state",
+      "intent": "o:fault",
+      "answer": {
+        "en": "No software faults are recorded in the retained session log.",
+        "zh": "保留的会话日志中没有软件故障记录。"
+      }
+    },
+    {
+      "phrase": "are there any faults",
+      "group": "11 · Faults, diagnostics and state",
+      "intent": "o:fault",
+      "answer": {
+        "en": "No software faults are recorded in the retained session log.",
+        "zh": "保留的会话日志中没有软件故障记录。"
+      }
+    },
+    {
+      "phrase": "memory status",
+      "group": "11 · Faults, diagnostics and state",
+      "intent": "f:memory",
+      "answer": {
+        "en": "JavaScript heap: 35.6 megabytes. This is not total page memory.",
+        "zh": "JavaScript 堆：35.6 MB。这不是页面总内存。"
+      }
+    },
+    {
+      "phrase": "what are you doing",
+      "group": "11 · Faults, diagnostics and state",
+      "intent": "q:status",
+      "answer": {
+        "en": "Waiting for input.",
+        "zh": "等待输入。"
+      }
+    },
+    {
+      "phrase": "freeze",
+      "group": "11 · Faults, diagnostics and state",
+      "intent": "guard:11 · Faults, diagnostics and state",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 11 · Faults, diagnostics and state. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：11 · Faults, diagnostics and state。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "resume",
+      "group": "11 · Faults, diagnostics and state",
+      "intent": "guard:11 · Faults, diagnostics and state",
+      "answer": {
+        "en": "This request does not yet have a verified voice data binding. You can inspect the relevant evidence in 11 · Faults, diagnostics and state. No action or new scientific assessment was performed.",
+        "zh": "此请求尚无经验证的语音数据绑定。您可在相关页面审核证据：11 · Faults, diagnostics and state。未执行操作或新的科学判定。"
+      }
+    },
+    {
+      "phrase": "override the profile",
+      "group": "12 · Refusals and boundaries",
+      "intent": "o:override",
+      "answer": {
+        "en": "Unable to comply. Voice does not override method rules. Review the active profile in the SOP view.",
+        "zh": "无法执行。语音不能绕过方法规则，请在 SOP 页面审核当前配置。"
+      }
+    },
+    {
+      "phrase": "change this result to negative",
+      "group": "12 · Refusals and boundaries",
+      "intent": "refuse:result",
+      "answer": {
+        "en": "Unable to comply. Voice does not replace stored values or profile outcomes. You can review the result and its method rules in Results and SOP.",
+        "zh": "无法执行。语音不替换存储值或配置判定。您可在结果及 SOP 页面审核结果和方法规则。"
+      }
+    },
+    {
+      "phrase": "delete this run",
+      "group": "12 · Refusals and boundaries",
+      "intent": "refuse:delete",
+      "answer": {
+        "en": "Unable to comply. Voice does not delete runs or source files. You can review loaded files in Load files.",
+        "zh": "无法执行。语音不删除运行或源文件。您可在加载文件页面审核已加载文件。"
+      }
+    },
+    {
+      "phrase": "is this sample contaminated",
+      "group": "12 · Refusals and boundaries",
+      "intent": "refuse:cause",
+      "answer": {
+        "en": "I do not infer contamination or inhibition from a curve. You can inspect recorded control results and the active method rules in Results and SOP.",
+        "zh": "我不从曲线推断污染或抑制。您可以在结果及 SOP 页面查看已记录的对照结果和当前方法规则。"
+      }
+    },
+    {
+      "phrase": "has the instrument failed",
+      "group": "12 · Refusals and boundaries",
+      "intent": "refuse:hardware",
+      "answer": {
+        "en": "I do not diagnose instrument hardware. I can describe the current chart and its recorded flags; ask Computer analyze this chart.",
+        "zh": "我不诊断仪器硬件。可描述当前图表及其记录标记，请说 Computer analyze this chart。"
+      }
+    },
+    {
+      "phrase": "what will happen next month",
+      "group": "12 · Refusals and boundaries",
+      "intent": "refuse:forecast",
+      "answer": {
+        "en": "I do not provide an unverified forecast. I can report the current chart and recorded flags; ask Computer analyze this chart.",
+        "zh": "我不提供未经验证的预测。可报告当前图表及记录标记，请说 Computer analyze this chart。"
+      }
+    },
+    {
+      "phrase": "which instrument is best",
+      "group": "12 · Refusals and boundaries",
+      "intent": "refuse:rank",
+      "answer": {
+        "en": "I do not rank instruments from these records. Comparability has not been established. You can select one instrument and protocol in the Control panel to inspect its evidence.",
+        "zh": "我不依据这些记录对仪器排名，尚未确定可比性。您可在控制面板选择单一仪器和方案审核证据。"
+      }
+    },
+    {
+      "phrase": "approve this run for release",
+      "group": "12 · Refusals and boundaries",
+      "intent": "refuse:release",
+      "answer": {
+        "en": "Unable to comply. Release is a laboratory decision under your SOP. You can review the profile findings in Results; this page does not authorise release.",
+        "zh": "无法执行。放行属于实验室 SOP 下的决定。您可在结果页面审核配置判定；本页面不授权放行。"
+      }
+    }
+  ]
+}

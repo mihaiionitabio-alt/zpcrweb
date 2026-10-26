@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "highlightSeconds": 5,
+  "reducedMotionHonoured": true,
+  "exportSVGUnchanged": true,
+  "scientificSnapshotUnchanged": true,
+  "pointHighlight": "Only existing SVG circle tooltip bindings; otherwise chart container only"
+}

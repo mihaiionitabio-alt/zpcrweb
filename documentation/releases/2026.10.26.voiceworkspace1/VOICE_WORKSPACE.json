@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "chartCount": 112,
+  "controlSummary": {
+    "en": "B-H1 Peak heating rate (2-s window). 10 assessed points; 0 beyond available limits; 0 points with recorded flags. 0 missing or non-finite points; 0 before baseline. 10 points have available limits. Control baseline is not ready. No recorded flags. This is not proof that all data are nominal.",
+    "zh": "B-H1 Peak heating rate (2-s window)。评估点 10 个；超出可用限值 0 个；有记录标记 0 个。缺失或非有限值 0 个；基线之前 0 个。有可用限值的点 10 个。控制基线尚未就绪。没有记录标记，但不代表所有数据均正常。"
+  },
+  "report": {
+    "en": "Status report. 10 runs; 431 stored result rows. [loaded-record-count] Active profile No SOP selected, version 1.0. [active-profile-identity] 0 recorded software faults; these are not sample failures. [recorded-software-fault-count] B-H1 Peak heating rate (2-s window). 10 assessed points; 0 beyond available limits; 0 points with recorded flags. 0 missing or non-finite points; 0 before baseline. 10 points have available limits. Control baseline is not ready. No recorded flags. This is not proof that all data are nominal. [current-chart-recorded-assessment] Say Computer full report for the remaining observations. Unavailable checks are not evidence of a pass.",
+    "zh": "状态报告。10 次运行；431 行存储结果。 [loaded-record-count]当前配置 No SOP selected，版本 1.0。 [active-profile-identity]记录软件故障 0 个，这不是样品失败数量。 [recorded-software-fault-count]B-H1 Peak heating rate (2-s window)。评估点 10 个；超出可用限值 0 个；有记录标记 0 个。缺失或非有限值 0 个；基线之前 0 个。有可用限值的点 10 个。控制基线尚未就绪。没有记录标记，但不代表所有数据均正常。 [current-chart-recorded-assessment]请说 Computer full report 获取其余观察项。不可用的检查不代表通过。"
+  },
+  "allEightViews": true,
+  "screenThemeOnly": true,
+  "scientificSnapshotUnchanged": true,
+  "errors": []
+}
