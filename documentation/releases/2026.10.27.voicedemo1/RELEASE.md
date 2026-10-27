@@ -34,3 +34,9 @@ DIALOGUE_MANIFEST records each utterance, intent, actual bilingual answer, plann
 Readers, scientific formulas, stored calls/results, export implementations, existing sound synthesis and full PDF font coverage remain unchanged. The normal typed-question helper now returns the actual view acknowledgement after a successful numbered action instead of leaving a stale prior answer; the underlying numeric command action remains unchanged. Who am I aliases the existing investigator-field response. Report/control wording is shorter without changing its assessment or data basis; rule/source identifiers remain in the structured status findings. The new data and profile additions are conditional on the voice-demo flag and never affect laboratory runs or the first demo.
 
 The app is still **one offline HTML file**, approximately 18.7 MB including the new dialogue. The MP4 and subtitle/manifest files are optional separate viewing artifacts, not runtime dependencies.
+
+## Post-capture controller cleanup
+
+Back-to-back testing found that an exited Guided-demo controller remained reachable and could make the next voice demo say that a closed demo was paused. Both demo exit handlers now clear their closed controller. The two cleanup guards are the only post-capture app changes. All 69 actual replies were rechecked against the embedded clips, and the Guided-demo-to-Voice-demo sequence passed.
+
+The video render source is preserved in commit a7d1a19, whose index.html has SHA-256 cd19450816fd205e3445e5b0a01ce5d4ca766c3bc2cd79361ed3b59be59195fe. RENDER_BUILD_IDENTITY describes that exact render source. BUILD_IDENTITY describes the final publication after cleanup. VIDEO_MANIFEST retains the original render hashes and separately names the verified final publication hash; the recording was not relabelled as a different build.

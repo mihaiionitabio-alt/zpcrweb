@@ -9,6 +9,8 @@ $male=@($english | Where-Object {$_.GetAttribute('Gender') -eq 'Male'})
 $female=@($english | Where-Object {$_.GetAttribute('Gender') -eq 'Female'})
 $operatorVoice=if($male.Count){$male[0]}else{$english[0]}
 $missyVoice=if($female.Count){$female[0]}elseif($english.Count -gt 1){$english[1]}else{$english[0]}
+$distinctCandidates=@($english | Where-Object {$_.Id -ne $operatorVoice.Id})
+if($missyVoice.Id -eq $operatorVoice.Id -and $distinctCandidates.Count -gt 0){$missyVoice=$distinctCandidates[0]}
 $voiceInfo=@{operator=@{name=$operatorVoice.GetDescription();language=$operatorVoice.GetAttribute('Language');rate=4;pitch=2};missy=@{name=$missyVoice.GetDescription();language=$missyVoice.GetAttribute('Language');rate=2;pitch=-2};distinct=($operatorVoice.Id -ne $missyVoice.Id);engine='Installed offline Windows SAPI voices; original generated wording, no reference recording or actor imitation'}
 $voiceInfo | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath (Join-Path $Output 'VOICES.json') -Encoding UTF8
 foreach($step in $data.steps){

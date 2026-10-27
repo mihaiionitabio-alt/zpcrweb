@@ -1617,5 +1617,17 @@
       "replyStartSeconds": 848.4383000488283
     }
   ],
-  "reproducibility": "Fixed data, clock, script, generated voice settings and recorded step timings; cross-machine or browser-bit-identical video is not claimed."
+  "reproducibility": "Fixed data, clock, script, generated voice settings and recorded step timings; cross-machine or browser-bit-identical video is not claimed.",
+  "renderBuildCommit": "a7d1a19",
+  "validatedReleaseLFHTMLSHA256": "b23bb3ae386c48125b1ec0cc7ed6f23092b4876d01d37502f19e45aa7a4d4bfd",
+  "postCapturePatch": {
+    "description": "Clear closed guided/voice demo controllers on exit. No captured scene or spoken answer changes.",
+    "scope": "Two exit-handler cleanup guards only",
+    "all69ActualAnswersRechecked": true,
+    "backToBackDemoTestPassed": true
+  },
+  "subtitleSHA256": {
+    "en": "8df65ce3517102687e29cf0538619329f4925036d342d742f762c6ad1883db3a",
+    "zh": "5cdc17e9be052fd2ba94122d8b8c78eff3e43f96f3b4b59295d3a1ff1e06356a"
+  }
 }

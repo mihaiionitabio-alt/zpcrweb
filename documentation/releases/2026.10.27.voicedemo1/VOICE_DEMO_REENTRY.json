@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "closedGuidedControllerRemoved": true,
+  "closedVoiceControllerRemoved": true,
+  "allStopReplyStableAfterFirstDemo": true
+}
