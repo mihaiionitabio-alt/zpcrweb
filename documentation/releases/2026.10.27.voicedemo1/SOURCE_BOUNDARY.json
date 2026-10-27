@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "baseline": "75526c2",
+  "excludedRegions": [
+    "publication meta",
+    "voice module",
+    "guided demo plus new voice demo/assets modules",
+    "session setup module"
+  ],
+  "remainingLFUTF8SHA256": "b913491fba002a736b7f75b5a8778cc1d330b423a5b211ee6d193223ec6d0dcb",
+  "scope": "All other HTML is unchanged, including readers, scientific calculations, export implementations, full embedded font and existing synthesized sound engine."
+}

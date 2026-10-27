@@ -1,0 +1,1621 @@
+{
+  "passed": true,
+  "seconds": 859.15,
+  "rawCaptureSeconds": 907.96,
+  "trimmedIdleSeconds": 48.81419995117176,
+  "maxActualStepSeconds": 26.97590000000224,
+  "steps": 69,
+  "commands": 55,
+  "chapters": [
+    [
+      0,
+      "Setup and intake"
+    ],
+    [
+      240.4689000488297,
+      "Analysis"
+    ],
+    [
+      658.4279000488298,
+      "Integrity, report and boundaries"
+    ]
+  ],
+  "audioStarts": 138,
+  "mixedPeak": 0.7034686207771301,
+  "clockAdjustmentSeconds": 0.9200000000000728,
+  "tourOffsetSeconds": 2.286800048828198,
+  "sourceLocalHTMLSHA256": "82dbeed73d5297cfc0199af0d235feb42d3dcd834953583ac54fc230291ecc91",
+  "sourcePublishedLFHTMLSHA256": "cd19450816fd205e3445e5b0a01ce5d4ca766c3bc2cd79361ed3b59be59195fe",
+  "videoSHA256": "b2615a829ebe1d8ea2586e46380ffbb83e2dcf67f0d2da2b0a98221c7641b930",
+  "audioSHA256": "4d7494822ea8983a30723a50d753fc32b3cbd8015f236f8115bba34cf6971d0e",
+  "stepTiming": [
+    {
+      "id": 0,
+      "chapter": 1,
+      "title": "Chapter 1 / 第 1 章",
+      "say": "Chapter 1. Setup and intake.",
+      "intent": null,
+      "answer": {
+        "en": "ARTIFICIAL DATA — NOT A LABORATORY RESULT. The operator is Dr Lin in a fictional laboratory. Commands are supplied as text; no microphone is being tested.",
+        "zh": "人工模拟数据，不是实验室结果。操作人员为虚构实验室的林博士。命令以文本模拟输入，不测试麦克风。"
+      },
+      "tier": "standard",
+      "type": "action",
+      "atSeconds": 0,
+      "operatorSHA256": "3fc0a261b9a42e12a36e85cd91fa28acfd81baf8413ca7e6f7a6c40c97130a14",
+      "missySHA256": "567193c7cfaaf19e3e6fee2b3c3b09a43ede7c4ce96af2eca03a2ea33fe82931",
+      "audioSeconds": {
+        "operator": 2.2497,
+        "missy": 9.2075
+      },
+      "durationSeconds": 12.957,
+      "operatorStartSeconds": 9.114600048828944,
+      "replyStartSeconds": 11.804200048830433
+    },
+    {
+      "id": 1,
+      "chapter": 1,
+      "title": "Open MISSY / 打开 MISSY",
+      "say": "I click the MISSY logo to enter.",
+      "intent": null,
+      "answer": {
+        "en": "MISSY / SESSION SETUP",
+        "zh": "会话设置已打开。"
+      },
+      "tier": "standard",
+      "type": "action",
+      "atSeconds": 12.957,
+      "operatorSHA256": "2583beb333a07fcfeeabaf3025b167932278d90f5dd0dde01f0295d355c240d7",
+      "missySHA256": "919324c2fe89f04980e30786e88805241a31a3f6b3e13471c4e4152b845aa041",
+      "audioSeconds": {
+        "operator": 1.6201,
+        "missy": 2.0392
+      },
+      "durationSeconds": 9,
+      "operatorStartSeconds": 22.379400048829687,
+      "replyStartSeconds": 24.422800048828197
+    },
+    {
+      "id": 2,
+      "chapter": 1,
+      "title": "Enter a fictional identity / 输入虚构身份",
+      "say": "I enter a fictional laboratory and investigator.",
+      "intent": null,
+      "answer": {
+        "en": "Investigator field: Dr Lin (fictional). This field does not authenticate a person.",
+        "zh": "分析人员字段：Dr Lin (fictional)。此字段不验证身份。"
+      },
+      "tier": "standard",
+      "type": "action",
+      "atSeconds": 21.957,
+      "operatorSHA256": "8930ae84ea7be9f1713d5a8e1e1e36ca53126d98310e178d1a0598684f49d51d",
+      "missySHA256": "bd72700ab6a63bd12f5f6d31ada112388763e71c48119c71f2bef2c91b7b423c",
+      "audioSeconds": {
+        "operator": 2.1688,
+        "missy": 5.6635
+      },
+      "durationSeconds": 9.332,
+      "operatorStartSeconds": 31.4023000488282,
+      "replyStartSeconds": 33.9633000488282
+    },
+    {
+      "id": 3,
+      "chapter": 1,
+      "title": "Who is speaking? / 操作人员",
+      "say": "Computer who am I",
+      "intent": "q:operator",
+      "answer": {
+        "en": "Investigator field: Dr Lin (fictional). This field does not authenticate a person.",
+        "zh": "分析人员字段：Dr Lin (fictional)。此字段不验证身份。"
+      },
+      "tier": "trivial",
+      "type": "command",
+      "atSeconds": 31.289,
+      "operatorSHA256": "575a6abe3da30bb340aaa047a64c954e6e9bc521952cab437e107aa1ecb1ca31",
+      "missySHA256": "bd72700ab6a63bd12f5f6d31ada112388763e71c48119c71f2bef2c91b7b423c",
+      "audioSeconds": {
+        "operator": 1.1728,
+        "missy": 5.6635
+      },
+      "durationSeconds": 8.336,
+      "operatorStartSeconds": 40.990300048828196,
+      "replyStartSeconds": 42.54310004882894
+    },
+    {
+      "id": 4,
+      "chapter": 1,
+      "title": "Demonstration clock / 演示时钟",
+      "say": "Computer what time is it",
+      "intent": "f:clock",
+      "answer": {
+        "en": "26/10/2026, 10:00:00. Device local time.",
+        "zh": "2026/10/26 10:00:00。设备本地时间。"
+      },
+      "tier": "trivial",
+      "type": "command",
+      "atSeconds": 39.625,
+      "operatorSHA256": "679c1c7320dc45864767074a1f4991ca2c3b2d19a44d6bf3c77bf3b22ac88f09",
+      "missySHA256": "be432c7b237ca776185f2c17de039096971cfdb8edd22c46f998eeb6f957711d",
+      "audioSeconds": {
+        "operator": 1.3974,
+        "missy": 5.3639
+      },
+      "durationSeconds": 8.261,
+      "operatorStartSeconds": 49.56840004882969,
+      "replyStartSeconds": 51.3798000488282
+    },
+    {
+      "id": 5,
+      "chapter": 1,
+      "title": "Current publication / 当前发布",
+      "say": "Computer what build is this",
+      "intent": "q:build",
+      "answer": {
+        "en": "Current publication: 2026.10.27.voicedemo1. One offline HTML file. Publication identity is recorded separately in the release documentation.",
+        "zh": "当前发布：2026.10.27.voicedemo1。单个离线 HTML 文件。发布标识另载于发布文档。"
+      },
+      "tier": "standard",
+      "type": "command",
+      "atSeconds": 47.886,
+      "operatorSHA256": "005b43a09f7b1fc1660346ab539e0b6d6308387f58fcd084141577203421ebbe",
+      "missySHA256": "2e3f4191eff354aed3e90853a0db9fe1f6f440ddad1942cf689389315996dd02",
+      "audioSeconds": {
+        "operator": 1.4715,
+        "missy": 10.8577
+      },
+      "durationSeconds": 13.829,
+      "operatorStartSeconds": 58.10910004882894,
+      "replyStartSeconds": 59.96190004882969
+    },
+    {
+      "id": 6,
+      "chapter": 1,
+      "title": "Language and recognition / 语言与识别",
+      "say": "Computer what language are you speaking",
+      "intent": "q:lang",
+      "answer": {
+        "en": "The interface language is English. Recognition uses the English offline pack. Speech output requires an installed local voice for the selected language.",
+        "zh": "界面语言为英文。识别使用英语离线语言包；语音输出需要安装相应语言的本地语音。"
+      },
+      "tier": "standard",
+      "type": "command",
+      "atSeconds": 61.715,
+      "operatorSHA256": "567303ad383f5580a6c5d4df2a2edb6b59c41e2c3a455df091868a0c5d44a910",
+      "missySHA256": "a47faa2c07e0be70d21b131b3e5f82df4a0f39e8cadcad5d5f38e6530f0b71fe",
+      "audioSeconds": {
+        "operator": 1.815,
+        "missy": 8.5529
+      },
+      "durationSeconds": 11.868,
+      "operatorStartSeconds": 72.1683000488282,
+      "replyStartSeconds": 74.36060004882894
+    },
+    {
+      "id": 7,
+      "chapter": 1,
+      "title": "Supported formats / 支持的格式",
+      "say": "Computer what formats do you read",
+      "intent": "q:formats",
+      "answer": {
+        "en": "IXO, EDS, EDT, RDML, ZPCR and PCRD experiment files, plus ZIP archives. Available data depends on the source file.",
+        "zh": "支持 IXO、EDS、EDT、RDML、ZPCR、PCRD 实验文件和 ZIP 压缩包。可用数据取决于源文件。"
+      },
+      "tier": "standard",
+      "type": "command",
+      "atSeconds": 73.583,
+      "operatorSHA256": "29cafbdf265c15aaffe8fc90f0d47c3b5650617876d1da51e94696e25b5cb7a9",
+      "missySHA256": "ef37a3bd1a71d2c74c5298d3656cbbd6f3d60c5b669938e1b4fe98359ab0939d",
+      "audioSeconds": {
+        "operator": 1.7122,
+        "missy": 9.2778
+      },
+      "durationSeconds": 12.49,
+      "operatorStartSeconds": 84.27120004883044,
+      "replyStartSeconds": 86.36690004882969
+    },
+    {
+      "id": 8,
+      "chapter": 1,
+      "title": "Choose embedded data / 选择内嵌数据",
+      "say": "I select the embedded artificial file. File selection is a scripted demo action.",
+      "intent": null,
+      "answer": {
+        "en": "1 file(s) staged: ARTIFICIAL_MISSY_DEMO.rdml 4.0 MB",
+        "zh": "已选择内嵌人工模拟文件。此步骤为演示脚本操作。"
+      },
+      "tier": "standard",
+      "type": "action",
+      "atSeconds": 86.073,
+      "operatorSHA256": "a7f964d3fc7d72492c8bf28604b4fbe536b939c07a6b6bef41e5af43537fa260",
+      "missySHA256": "68a5c6dc99f7eba810ff908626123a76341d7a7290a2631e945d3489d4da05a8",
+      "audioSeconds": {
+        "operator": 3.9659,
+        "missy": 6.4985
+      },
+      "durationSeconds": 11.964,
+      "operatorStartSeconds": 96.99120004883044,
+      "replyStartSeconds": 101.37260004882894
+    },
+    {
+      "id": 9,
+      "chapter": 1,
+      "title": "Ready to read / 可开始读取",
+      "say": "Computer what are you doing",
+      "intent": "q:status",
+      "answer": {
+        "en": "Files selected. Ready to read.",
+        "zh": "已选择文件，可开始读取。"
+      },
+      "tier": "trivial",
+      "type": "command",
+      "atSeconds": 98.037,
+      "operatorSHA256": "61662695d2d089689ba9f801d4276bf05ad703c63658de5825314af0eda55a37",
+      "missySHA256": "0e94126591a56c6e7b3f499af2015ee65eb992140db5b2135c8e5631382d12a6",
+      "audioSeconds": {
+        "operator": 1.3768,
+        "missy": 2.7492
+      },
+      "durationSeconds": 5.626,
+      "operatorStartSeconds": 109.25240004882968,
+      "replyStartSeconds": 111.00410004882895
+    },
+    {
+      "id": 10,
+      "chapter": 1,
+      "title": "Read artificial runs / 读取模拟运行",
+      "say": "I press Read files. This is a scripted demo action.",
+      "intent": null,
+      "answer": {
+        "en": "Read 32 run(s): 768 stored result(s), 768 amplification curve(s).",
+        "zh": "实际读取流程已完成，模拟运行和记录已加载。"
+      },
+      "tier": "standard",
+      "type": "action",
+      "atSeconds": 103.663,
+      "operatorSHA256": "e8f72e8dffdccec77c941ea5cfd91790e683df12d2b958c82fcf52f45334f73a",
+      "missySHA256": "d0d5d741669ad1d68667c1d674243229edbcf502891c910ba26e0322cc5f3584",
+      "audioSeconds": {
+        "operator": 2.9916,
+        "missy": 7.6132
+      },
+      "durationSeconds": 12.105,
+      "operatorStartSeconds": 115.11550004883118,
+      "replyStartSeconds": 120.8528000488282
+    },
+    {
+      "id": 11,
+      "chapter": 1,
+      "title": "Count runs and records / 统计运行及记录",
+      "say": "Computer how many runs",
+      "intent": "q:counts",
+      "answer": {
+        "en": "32 runs loaded. 768 stored result rows. This count does not include separate melting or relative-quantity tables.",
+        "zh": "已加载 32 次运行，包含 768 行存储结果。此数量不包含单独的熔解或相对定量表。"
+      },
+      "tier": "trivial",
+      "type": "command",
+      "atSeconds": 115.768,
+      "operatorSHA256": "64476d4197d2ccacaef174a5c50acb8472c3dd7bd6fa759507bd4802ea87a2a9",
+      "missySHA256": "3c4306d0ef70da2e24efa54309f3dc3b661832e0ac6cb820dec0c1e2d75cd225",
+      "audioSeconds": {
+        "operator": 1.4568,
+        "missy": 8.1828
+      },
+      "durationSeconds": 11.14,
+      "operatorStartSeconds": 129.8645000488312,
+      "replyStartSeconds": 131.84810004882894
+    },
+    {
+      "id": 12,
+      "chapter": 1,
+      "title": "Source files and run views / 源文件与运行视图",
+      "say": "Computer how many files",
+      "intent": "f:files",
+      "answer": {
+        "en": "1 distinct recorded source filenames; 32 decoded runs. File names may be unavailable or shared by several runs.",
+        "zh": "1 个已记录且不同的源文件名；32 次已解码运行。文件名可能缺失，或由多次运行共用。"
+      },
+      "tier": "standard",
+      "type": "command",
+      "atSeconds": 126.908,
+      "operatorSHA256": "86a44f97d89c57ce907485c11cba23b7579ea726dfbfb8aa00cea1967d08085a",
+      "missySHA256": "3c3e86602b6ae12cbab16e2d244db36d2dcd0d35841276a1c8b7f208f0455039",
+      "audioSeconds": {
+        "operator": 1.5187,
+        "missy": 7.2181
+      },
+      "durationSeconds": 10.237,
+      "operatorStartSeconds": 141.42290004882966,
+      "replyStartSeconds": 143.33000004883115
+    },
+    {
+      "id": 13,
+      "chapter": 1,
+      "title": "Identify one run / 识别一次运行",
+      "say": "Computer identify run three",
+      "intent": "o:identify run:three",
+      "answer": {
+        "en": "Run 3. SIM 3. 24 stored result rows; 2 recorded targets.",
+        "zh": "第 3 次运行。SIM 3。存储结果 24 行；记录靶标 2 个。"
+      },
+      "tier": "standard",
+      "type": "command",
+      "atSeconds": 137.145,
+      "operatorSHA256": "14772bb42dcd06616f1ea3f8620258ce9c88632ea9e814b81ce09ec1e3fa9797",
+      "missySHA256": "27b85d95cb7281ba9e8d35de7136c3a687b520737ecb4c394b6987c6f252af86",
+      "audioSeconds": {
+        "operator": 1.659,
+        "missy": 5.794
+      },
+      "durationSeconds": 9,
+      "operatorStartSeconds": 151.95590004882968,
+      "replyStartSeconds": 154.0213000488282
+    },
+    {
+      "id": 14,
+      "chapter": 1,
+      "title": "Find the latest recorded run / 查找最新运行",
+      "say": "Computer which run is newest",
+      "intent": "data:newest",
+      "answer": {
+        "en": "Newest available timestamp; 0 run views have no usable timestamp. Ties are listed; this is not the time files were read. Run 32; SIM 32; 2026-02-01T09:00:00.000Z; recorded run start. End of list.",
+        "zh": "可用时间戳中最新的一项；0 个运行视图缺少可用时间戳。列出并列项，这不是文件读取时间。 Run 32; SIM 32; 2026-02-01T09:00:00.000Z; recorded run start。列表结束。"
+      },
+      "tier": "standard",
+      "type": "command",
+      "atSeconds": 146.145,
+      "operatorSHA256": "b1c90e485b2eb2b30a634ed80eb42fc32046a0738759f1d6aea2d093ac18687f",
+      "missySHA256": "f5bb62ae51050db83059bb61d09ca1d72b02963c9211d80dd6efe6f746c4d117",
+      "audioSeconds": {
+        "operator": 1.5475,
+        "missy": 18.7465
+      },
+      "durationSeconds": 21.794,
+      "operatorStartSeconds": 161.19360004882896,
+      "replyStartSeconds": 163.18130004882818
+    },
+    {
+      "id": 15,
+      "chapter": 1,
+      "title": "Recorded instruments / 已记录的仪器",
+      "say": "Computer how many instruments",
+      "intent": "data:instruments",
+      "answer": {
+        "en": "2 distinct recorded platform/instrument labels; 0 run views have no recorded instrument identifier. Labels are not independently verified device identities. LC · DEMO-VIRTUAL-001. 1 more. Say Computer more.",
+        "zh": "不同的已记录平台／仪器标签 2 个；0 个运行视图没有仪器标识。标签不代表经过独立验证的设备身份。 LC · DEMO-VIRTUAL-001。还有 1 项，请说 Computer more。"
+      },
+      "tier": "standard",
+      "type": "command",
+      "atSeconds": 167.939,
+      "operatorSHA256": "eeb80a6a9b05c864d9cb3edffe82ce1b381251fb8d95dcce61ca55bfbf32e798",
+      "missySHA256": "5d700e4d3f6ad0e0cb6c80871d77ad1e6491f8df9293144089d308bcbb515b16",
+      "audioSeconds": {
+        "operator": 1.6238,
+        "missy": 14.492
+      },
+      "durationSeconds": 17.616,
+      "operatorStartSeconds": 183.29970004883046,
+      "replyStartSeconds": 185.31500004883117
+    },
+    {
+      "id": 16,
+      "chapter": 1,
+      "title": "Compare compatible histories / 比较相容历史",
+      "say": "Computer are these runs comparable",
+      "intent": "data:cohort",
+      "answer": {
+        "en": "2 distinct recorded platform/instrument labels; 1 decoded protocol signatures; 0 run views lack an instrument identifier and 0 lack a decoded protocol. The loaded records include different cohorts. Select one instrument, protocol and acquisition context before comparing control charts.",
+        "zh": "不同的已记录平台／仪器标签 2 个；已解码方案签名 1 个；缺少仪器标识 0 个，缺少已解码方案 0 个。已加载记录包含不同数据组。比较控制图前请选择单一仪器、方案及采集条件。"
+      },
+      "tier": "standard",
+      "type": "command",
+      "atSeconds": 185.555,
+      "operatorSHA256": "a86ff9e90bbd030eeebca586eb901c217162ad1bbeafde58fd9ebbf7c1ff5099",
+      "missySHA256": "9f71deb100776d48cf3505f59e3c55fbbf716995aa17099e326b91b8b89866f6",
+      "audioSeconds": {
+        "operator": 1.7067,
+        "missy": 16.4411
+      },
+      "durationSeconds": 19.648,
+      "operatorStartSeconds": 201.17560004882893,
+      "replyStartSeconds": 203.2958000488282
+    },
+    {
+      "id": 17,
+      "chapter": 1,
+      "title": "Recorded evidence, not damage diagnosis / 记录证据而非损坏诊断",
+      "say": "Computer damage report",
+      "intent": "ship:damage",
+      "answer": {
+        "en": "Recorded evidence: 0 recorded integrity mismatch findings; 0 software faults; 0 locked PCRD views. Counts are findings and views, not files. No new scan was run. Unchecked records are not declared intact. This is not a hardware diagnosis.",
+        "zh": "记录证据报告：完整性不符记录 0 项；保留软件故障 0 项；实验数据不可用的锁定 PCRD 运行视图 0 个。数量代表记录或视图，不是不同文件数。未进行新的校验或全图扫描，未检查记录不声明完好，本报告不是硬件损坏诊断。"
+      },
+      "tier": "standard",
+      "type": "command",
+      "atSeconds": 205.203,
+      "operatorSHA256": "5b3e3cbe2949340dee7c13e03ad67596361f9de9e83f6eec9009162bd79b19c2",
+      "missySHA256": "9e49114400898647987ad1a6e1f2135cc59ac90e6aec41e33e080fc7fb95f9ad",
+      "audioSeconds": {
+        "operator": 1.4181,
+        "missy": 16.5368
+      },
+      "durationSeconds": 19.455,
+      "operatorStartSeconds": 221.1215000488312,
+      "replyStartSeconds": 222.94670004883045
+    },
+    {
+      "id": 18,
+      "chapter": 2,
+      "title": "Chapter 2 / 第 2 章",
+      "say": "Chapter 2. Follow the evidence.",
+      "intent": null,
+      "answer": {
+        "en": "ARTIFICIAL DATA — NOT A LABORATORY RESULT. We will examine planted repeat findings, a failed control, optical drift and an incomplete baseline.",
+        "zh": "人工模拟数据，不是实验室结果。我们将检查人为设置的复测判定、对照失败、光学漂移和不足的基线。"
+      },
+      "tier": "standard",
+      "type": "action",
+      "atSeconds": 224.658,
+      "operatorSHA256": "f8a10f5b5d6d43a2be0b1e7831d6e0cf5149bfd6326cf767f7d9ab2127318d89",
+      "missySHA256": "e6b5a345fbfdc2cb4fa9ca80e88a73d6966f63f33a99df3a2a14f110df4698dd",
+      "audioSeconds": {
+        "operator": 2.231,
+        "missy": 8.2277
+      },
+      "durationSeconds": 11.959,
+      "operatorStartSeconds": 240.8545000488312,
+      "replyStartSeconds": 243.46460004882897
+    },
+    {
+      "id": 19,
+      "chapter": 2,
+      "title": "Create a review-only profile / 创建仅审核配置",
+      "say": "I create a fictional review-only method. Profile editing is a scripted demo action.",
+      "intent": null,
+      "answer": {
+        "en": "Active profile: ARTIFICIAL DEMO — NOT VALIDATED. Version: demo-1.",
+        "zh": "当前配置：ARTIFICIAL DEMO — NOT VALIDATED。版本：demo-1。"
+      },
+      "tier": "standard",
+      "type": "action",
+      "atSeconds": 236.617,
+      "operatorSHA256": "ab48823856be2bd055b91aa533f24821d5041f87c49d2ac7723394382677164c",
+      "missySHA256": "5571f94794dd7173bfd1ac85dc89f2e5f6d6dacf9730971a355009a1cd5d6b42",
+      "audioSeconds": {
+        "operator": 3.9587,
+        "missy": 5.0788
+      },
+      "durationSeconds": 10.537,
+      "operatorStartSeconds": 253.06330004882818,
+      "replyStartSeconds": 257.4985000488312
+    },
+    {
+      "id": 20,
+      "chapter": 2,
+      "title": "Active method / 当前方法",
+      "say": "Computer which profile is active",
+      "intent": "q:profile",
+      "answer": {
+        "en": "Active profile: ARTIFICIAL DEMO — NOT VALIDATED. Version: demo-1.",
+        "zh": "当前配置：ARTIFICIAL DEMO — NOT VALIDATED。版本：demo-1。"
+      },
+      "tier": "trivial",
+      "type": "command",
+      "atSeconds": 247.154,
+      "operatorSHA256": "5849983cb6cc329b948d839146ea23306f85972fd183cb8f09e19056b1459a5c",
+      "missySHA256": "5571f94794dd7173bfd1ac85dc89f2e5f6d6dacf9730971a355009a1cd5d6b42",
+      "audioSeconds": {
+        "operator": 1.7331,
+        "missy": 5.0788
+      },
+      "durationSeconds": 8.312,
+      "operatorStartSeconds": 263.9408000488282,
+      "replyStartSeconds": 266.0553000488282
+    },
+    {
+      "id": 21,
+      "chapter": 2,
+      "title": "Reference assignment / 参照角色",
+      "say": "Computer which target is the reference",
+      "intent": "data:references",
+      "answer": {
+        "en": "Profile-declared reference rules: 1. This is an assignment, not proof of detection. REF_GENE; match: REF_GENE. End of list.",
+        "zh": "配置声明的参照规则 1 项。这是角色指定，不代表已检出。 REF_GENE; match: REF_GENE。列表结束。"
+      },
+      "tier": "standard",
+      "type": "command",
+      "atSeconds": 255.466,
+      "operatorSHA256": "ae76988a11302397722d1c033fc7c932956e27339e88b6425416502d7de900e1",
+      "missySHA256": "efd239b779e3d02deb6fbe38b5d531dbb04e38f73b352862d1b373a4d28b6806",
+      "audioSeconds": {
+        "operator": 1.8255,
+        "missy": 9.468
+      },
+      "durationSeconds": 12.793,
+      "operatorStartSeconds": 272.49520004883044,
+      "replyStartSeconds": 274.73990004882967
+    },
+    {
+      "id": 22,
+      "chapter": 2,
+      "title": "Loaded targets / 已加载靶标",
+      "say": "Computer what targets are loaded",
+      "intent": "data:targets",
+      "answer": {
+        "en": "2 distinct recorded target labels across all loaded stored result rows. This does not count uncollected channels. DNA_TARGET. 1 more. Say Computer more.",
+        "zh": "所有已加载存储结果行中有 2 个不同靶标标签。这不统计未采集通道。 DNA_TARGET。还有 1 项，请说 Computer more。"
+      },
+      "tier": "trivial",
+      "type": "command",
+      "atSeconds": 268.259,
+      "operatorSHA256": "3f86b8317eb1862c369554bdd5a71ba548df07fceedb5e398e6f14c8088aac2a",
+      "missySHA256": "e05e65e3e22f816210381b9f2bf22a6d4630f25971be4598a33672e9f76b2a8f",
+      "audioSeconds": {
+        "operator": 1.6107,
+        "missy": 10.7776
+      },
+      "durationSeconds": 13.888,
+      "operatorStartSeconds": 285.5592000488304,
+      "replyStartSeconds": 287.6005000488312
+    },
+    {
+      "id": 23,
+      "chapter": 2,
+      "title": "Read real profile summaries / 阅读实际配置汇总",
+      "say": "Computer read the results",
+      "intent": "data:results",
+      "answer": {
+        "en": "64 current sample-level profile summaries. Samples are grouped within each run and current selection. This is not a count of raw reactions. 59; Positive. 2 more. Say Computer more.",
+        "zh": "当前样品级配置汇总 64 项。样品按每次运行和当前选择分组，这不是原始反应数。 59; Positive。还有 2 项，请说 Computer more。"
+      },
+      "tier": "standard",
+      "type": "command",
+      "atSeconds": 282.147,
+      "operatorSHA256": "c06194fbb4ceb54bbc0a40af37fbcfa3ee5beab9508c507f00707eb7b6672aee",
+      "missySHA256": "5f1a257e7ab3e5dc12e922cbd7d141620526eaf2dabb3cbee0516b07bbdc5ccd",
+      "audioSeconds": {
+        "operator": 1.4552,
+        "missy": 12.9824
+      },
+      "durationSeconds": 15.938,
+      "operatorStartSeconds": 299.7578000488282,
+      "replyStartSeconds": 301.7469000488297
+    },
+    {
+      "id": 24,
+      "chapter": 2,
+      "title": "Planted repeat findings / 人为设置的复测判定",
+      "say": "Computer which samples should I repeat",
+      "intent": "data:repeat",
+      "answer": {
+        "en": "3 current sample-target groups have the exact Repeat outcome under ARTIFICIAL DEMO — NOT VALIDATED. Other review or invalid outcomes are not counted as Repeat. SIM 5; DEMO_SAMPLE_0; DNA_TARGET; rule target: DNA_TARGET; replicate SD 2.18 > 0.5. 2 more. Say Computer more.",
+        "zh": "当前样品－靶标分组中有 3 项在 ARTIFICIAL DEMO — NOT VALIDATED 下明确判定为 Repeat。其他审核或无效判定不计入 Repeat。 SIM 5; DEMO_SAMPLE_0; DNA_TARGET; rule target: DNA_TARGET; replicate SD 2.18 > 0.5。还有 2 项，请说 Computer more。"
+      },
+      "tier": "complex",
+      "type": "command",
+      "atSeconds": 298.085,
+      "operatorSHA256": "e69a60a86debc3e06aa98e728d4cf423093ad046eec4f7d3bffa506a50552930",
+      "missySHA256": "88a5e769bfa671b0db3c3c27a80a220c901523b8db60e5e23ee5d85824026e57",
+      "audioSeconds": {
+        "operator": 1.8352,
+        "missy": 20.5713
+      },
+      "durationSeconds": 23.907,
+      "operatorStartSeconds": 316.12800004883115,
+      "replyStartSeconds": 318.71650004883116
+    },
+    {
+      "id": 25,
+      "chapter": 2,
+      "title": "Read the next repeat finding / 阅读下一条复测判定",
+      "say": "Computer more",
+      "intent": "f:more",
+      "answer": {
+        "en": "SIM 13; DEMO_SAMPLE_0; DNA_TARGET; rule target: DNA_TARGET; replicate SD 2.26 > 0.5. 1 more. Say Computer more.",
+        "zh": "SIM 13; DEMO_SAMPLE_0; DNA_TARGET; rule target: DNA_TARGET; replicate SD 2.26 > 0.5。还有 1 项，请说 Computer more。"
+      },
+      "tier": "standard",
+      "type": "command",
+      "atSeconds": 321.992,
+      "operatorSHA256": "a5ad001e35f944be9cb2b50ab28685c6ddb88aba81316cba6735f1644957453f",
+      "missySHA256": "2ffa0f2c4f1bee0a699b311fe21104875d76e259b2bc12d41bbe34d8f70f614e",
+      "audioSeconds": {
+        "operator": 1.0628,
+        "missy": 12.8723
+      },
+      "durationSeconds": 15.435,
+      "operatorStartSeconds": 340.6711000488289,
+      "replyStartSeconds": 342.30050004883117
+    },
+    {
+      "id": 26,
+      "chapter": 2,
+      "title": "Finish the repeat list / 读完复测列表",
+      "say": "Computer more",
+      "intent": "f:more",
+      "answer": {
+        "en": "SIM 19; DEMO_SAMPLE_0; DNA_TARGET; rule target: DNA_TARGET; replicate SD 2.25 > 0.5. End of list.",
+        "zh": "SIM 19; DEMO_SAMPLE_0; DNA_TARGET; rule target: DNA_TARGET; replicate SD 2.25 > 0.5。列表结束。"
+      },
+      "tier": "standard",
+      "type": "command",
+      "atSeconds": 337.427,
+      "operatorSHA256": "a5ad001e35f944be9cb2b50ab28685c6ddb88aba81316cba6735f1644957453f",
+      "missySHA256": "98f0bd6657adaf6a5b67b4491b0a0aba158208764d355910941eb44fb509ce14",
+      "audioSeconds": {
+        "operator": 1.0628,
+        "missy": 11.5027
+      },
+      "durationSeconds": 14.066,
+      "operatorStartSeconds": 356.5443000488282,
+      "replyStartSeconds": 358.15610004882893
+    },
+    {
+      "id": 27,
+      "chapter": 2,
+      "title": "A deliberately failed control / 人为设置的对照失败",
+      "say": "Computer did any control fail",
+      "intent": "data:controlfail",
+      "answer": {
+        "en": "128 evaluated control groups; 1 groups have the exact Control fail outcome. 0 control-presence criteria need review. This is not a run pass. SIM 9; DEMO NTC; DNA_TARGET; Control fail; rule control: DEMO NTC; amplified in 1/1 (min Cq 34.00 ≤ 36). End of list.",
+        "zh": "已评估对照分组 128 项；明确判定为 Control fail 的 1 项。已有对照存在性准则中，失败或待审核 0 项。缺失对照和不可用评估属于独立准则，不代表通过。请在结果页面审核运行准则。 SIM 9; DEMO NTC; DNA_TARGET; Control fail; rule control: DEMO NTC; amplified in 1/1 (min Cq 34.00 ≤ 36)。列表结束。"
+      },
+      "tier": "complex",
+      "type": "command",
+      "atSeconds": 351.493,
+      "operatorSHA256": "b41fd5cd7735d4af46087462ebfe15d3b98e688f9b6c5ac22018e78299b15e54",
+      "missySHA256": "1ee061f0e715353a5fd443d049c865605bfd2b469376cc9678e937a1c38a0fab",
+      "audioSeconds": {
+        "operator": 1.6938,
+        "missy": 23.3357
+      },
+      "durationSeconds": 26.529,
+      "operatorStartSeconds": 371.0361000488289,
+      "replyStartSeconds": 373.28780004882816
+    },
+    {
+      "id": 28,
+      "chapter": 2,
+      "title": "Assigned standards, not calibration approval / 指定标准品不等于校准批准",
+      "say": "Computer how many standards",
+      "intent": "data:standards",
+      "answer": {
+        "en": "384 included stored result rows have the exact Standard role, across 32 run views. This counts rows, not distinct concentrations or calibration curves.",
+        "zh": "在 32 个运行视图中，有 384 个当前纳入的存储结果行明确标记为 Standard。此数量代表行数，不是不同浓度或校准曲线数。"
+      },
+      "tier": "standard",
+      "type": "command",
+      "atSeconds": 378.022,
+      "operatorSHA256": "eab6b93de09471cf95ed9aff74aac3836c4e272ee0e697d75ed2ed7ff8b38cd6",
+      "missySHA256": "2a3d7fb21b10353bd92ce18ace1cafabc0ff016dd0cb28a143691d9a092a8f2f",
+      "audioSeconds": {
+        "operator": 1.5909,
+        "missy": 10.0828
+      },
+      "durationSeconds": 13.174,
+      "operatorStartSeconds": 398.0308000488282,
+      "replyStartSeconds": 400.0349000488297
+    },
+    {
+      "id": 29,
+      "chapter": 2,
+      "title": "Hardware reference / 硬件参考",
+      "say": "I open the hardware reference. Manufacturer specifications and artificial measurements are different.",
+      "intent": null,
+      "answer": {
+        "en": "Manufacturer specification reference / 制造商规格参考",
+        "zh": "制造商规格仅作参考，模拟测量另行标记。"
+      },
+      "tier": "standard",
+      "type": "action",
+      "atSeconds": 391.196,
+      "operatorSHA256": "abb44b95c5d10ff676a0e1e1d77b04a8fbc350a0107fc749abbd2ada791de7cf",
+      "missySHA256": "f5fb3006e08af76e370bbb0b95fdeb04ee69d99b5ad3b31f23e903493fabbe09",
+      "audioSeconds": {
+        "operator": 4.4992,
+        "missy": 2.869
+      },
+      "durationSeconds": 9,
+      "operatorStartSeconds": 411.6162000488304,
+      "replyStartSeconds": 416.6378000488282
+    },
+    {
+      "id": 30,
+      "chapter": 2,
+      "title": "Chart by its number / 按编号打开图表",
+      "say": "Computer show chart 1",
+      "intent": "chart:1",
+      "answer": {
+        "en": "Chart 1. B-H1 Peak heating rate (2-s window).",
+        "zh": "第 1 张图。B-H1 Peak heating rate (2-s window)。"
+      },
+      "tier": "standard",
+      "type": "command",
+      "atSeconds": 400.196,
+      "operatorSHA256": "9adcf73a167f8a895d2764b3d7d859e88516dda14c9132d0c2dd161378d17e6a",
+      "missySHA256": "0123f0d4a43549075b55c64b1b767bb3bf427b2ecfc59fd9446027ad609938c6",
+      "audioSeconds": {
+        "operator": 1.4115,
+        "missy": 4.1341
+      },
+      "durationSeconds": 9,
+      "operatorStartSeconds": 420.89800004883114,
+      "replyStartSeconds": 423.0089000488297
+    },
+    {
+      "id": 31,
+      "chapter": 2,
+      "title": "Chart inventory / 图表清单",
+      "say": "Computer run diagnostic on module charts",
+      "intent": "o:run diagnostic on module:charts",
+      "answer": {
+        "en": "110 registered chart definitions. This is an inventory, not a diagnostic test.",
+        "zh": "注册图表定义 110 个。这是清单，不是诊断测试。"
+      },
+      "tier": "standard",
+      "type": "command",
+      "atSeconds": 409.196,
+      "operatorSHA256": "06d13104dd1bf03b7ea9dd6ea5cfeb9a5691b18474ed6d9797a3e3e4ad23249f",
+      "missySHA256": "2e134bc5c5cb63dd1fd3aa18b9131324e6d67856fd5dbadf144613ec02d8f946",
+      "audioSeconds": {
+        "operator": 2.2269,
+        "missy": 5.8233
+      },
+      "durationSeconds": 9.55,
+      "operatorStartSeconds": 429.93320004883043,
+      "replyStartSeconds": 432.6373000488282
+    },
+    {
+      "id": 32,
+      "chapter": 2,
+      "title": "Identify the current chart / 识别当前图表",
+      "say": "Computer which chart is this",
+      "intent": "data:chart",
+      "answer": {
+        "en": "Chart 1 of 110. Peak heating rate (2-s window).",
+        "zh": "第 1 / 110 张图。Peak heating rate (2-s window)。"
+      },
+      "tier": "trivial",
+      "type": "command",
+      "atSeconds": 418.746,
+      "operatorSHA256": "e51f3b4a232e98e139a67fae7e5e0440cbcc52184c19cbb57cf8a22ee40db685",
+      "missySHA256": "d08f5ae28eb7cb5b36938455f838377253373bd510e6baf007c80ab2a4bdc4dd",
+      "audioSeconds": {
+        "operator": 1.5374,
+        "missy": 4.4239
+      },
+      "durationSeconds": 7.461,
+      "operatorStartSeconds": 439.84200004883115,
+      "replyStartSeconds": 441.80070004883044
+    },
+    {
+      "id": 33,
+      "chapter": 2,
+      "title": "Open the optical history / 打开光学历史",
+      "say": "Computer show chart 26",
+      "intent": "chart:26",
+      "answer": {
+        "en": "Chart 26. A-H3 Background fluorescence per channel.",
+        "zh": "第 26 张图。A-H3 Background fluorescence per channel。"
+      },
+      "tier": "standard",
+      "type": "command",
+      "atSeconds": 426.207,
+      "operatorSHA256": "74c96a0ee609ed532ca2c882a4ee5cb41e95a6633eddd6157845dda072dffd6c",
+      "missySHA256": "7801fff6856ba80ada1856fa635ec2141a5cc0f1704aafabff373f1be652f63d",
+      "audioSeconds": {
+        "operator": 1.7563,
+        "missy": 4.4287
+      },
+      "durationSeconds": 9,
+      "operatorStartSeconds": 447.74930004882816,
+      "replyStartSeconds": 449.9906000488289
+    },
+    {
+      "id": 34,
+      "chapter": 2,
+      "title": "Measure the planted drift / 查看人为漂移",
+      "say": "Computer how many outliers",
+      "intent": "q:analyse",
+      "answer": {
+        "en": "A-H3 Background fluorescence per channel. 30 assessed points; 4 beyond available limits; 4 points with recorded flags. 0 missing or non-finite points; 0 before baseline. 30 points have available limits. Recorded flags: beyond 3σ.",
+        "zh": "A-H3 Background fluorescence per channel。评估点 30 个；超出可用限值 4 个；有记录标记 4 个。缺失或非有限值 0 个；基线之前 0 个。有可用限值的点 30 个。记录标记：beyond 3σ。"
+      },
+      "tier": "standard",
+      "type": "command",
+      "atSeconds": 435.207,
+      "operatorSHA256": "2f33a140cb5787a3f0f928456ab779af67286eb227edaad7d4b0a46b2c383216",
+      "missySHA256": "c360392e24888da5d8f17695a516ada112c921b26cc1b7b3bdd8467060230f5a",
+      "audioSeconds": {
+        "operator": 1.6136,
+        "missy": 16.5319
+      },
+      "durationSeconds": 19.645,
+      "operatorStartSeconds": 456.6527000488304,
+      "replyStartSeconds": 458.72260004882895
+    },
+    {
+      "id": 35,
+      "chapter": 2,
+      "title": "Read the current magnification / 查看缩放比例",
+      "say": "Computer what is the magnification",
+      "intent": "o:zoom",
+      "answer": {
+        "en": "Console chart zoom 100 percent; horizontal pan 0; vertical pan 0.",
+        "zh": "控制台图表缩放 100%；水平平移 0；垂直平移 0。"
+      },
+      "tier": "trivial",
+      "type": "command",
+      "atSeconds": 454.852,
+      "operatorSHA256": "fb166d48b56b6228c2156d61d671f25ba3a7c16c8b6f27a88e9203d1448a29bb",
+      "missySHA256": "de4f315a0e7d45b576506fcc9ddd39a56db4c41fa2cc7947cb5969c6a730c029",
+      "audioSeconds": {
+        "operator": 1.7159,
+        "missy": 5.0937
+      },
+      "durationSeconds": 8.31,
+      "operatorStartSeconds": 476.6661000488289,
+      "replyStartSeconds": 478.8073000488282
+    },
+    {
+      "id": 36,
+      "chapter": 2,
+      "title": "Zoom without changing values / 缩放不改变数值",
+      "say": "Computer zoom in",
+      "intent": "nav:zoom in",
+      "answer": {
+        "en": "Console command applied. Zoom 125 percent.",
+        "zh": "已执行控制台命令。缩放 125%。"
+      },
+      "tier": "trivial",
+      "type": "command",
+      "atSeconds": 463.162,
+      "operatorSHA256": "d22de1d7ccedc54931c3e5200c6a7ef492adc02a2f2e06168803ffd6489cf59f",
+      "missySHA256": "c2e6f465a0470c6ce372aa1d75c4408f2ff4b0efa3c4703f48494b3cf3d9d6a3",
+      "audioSeconds": {
+        "operator": 1.2075,
+        "missy": 4.2038
+      },
+      "durationSeconds": 6.911,
+      "operatorStartSeconds": 485.2593000488282,
+      "replyStartSeconds": 486.99770004883044
+    },
+    {
+      "id": 37,
+      "chapter": 2,
+      "title": "Confirm the zoom / 确认缩放",
+      "say": "Computer what is the magnification",
+      "intent": "o:zoom",
+      "answer": {
+        "en": "Console chart zoom 125 percent; horizontal pan 0; vertical pan 0.",
+        "zh": "控制台图表缩放 125%；水平平移 0；垂直平移 0。"
+      },
+      "tier": "trivial",
+      "type": "command",
+      "atSeconds": 470.073,
+      "operatorSHA256": "fb166d48b56b6228c2156d61d671f25ba3a7c16c8b6f27a88e9203d1448a29bb",
+      "missySHA256": "306709e207b4997e93e3a9cd21a1b909532fed847fe2cf20c434cfdd1096901b",
+      "audioSeconds": {
+        "operator": 1.7159,
+        "missy": 5.7585
+      },
+      "durationSeconds": 8.974,
+      "operatorStartSeconds": 492.6211000488289,
+      "replyStartSeconds": 494.79210004882896
+    },
+    {
+      "id": 38,
+      "chapter": 2,
+      "title": "Reset the view / 重置视图",
+      "say": "Computer reset the view",
+      "intent": "nav:zoom reset",
+      "answer": {
+        "en": "Console command applied. Zoom 100 percent.",
+        "zh": "已执行控制台命令。缩放 100%。"
+      },
+      "tier": "trivial",
+      "type": "command",
+      "atSeconds": 479.047,
+      "operatorSHA256": "3f106f2aa1ef9c3d5fe55f73bb48713cbb68b6f6da2ed3f7d74829941e375fd0",
+      "missySHA256": "08af09f6d29b71eebe53c40a1188f685b085b65d405c14c172a24517308918e4",
+      "audioSeconds": {
+        "operator": 1.3725,
+        "missy": 3.549
+      },
+      "durationSeconds": 6.421,
+      "operatorStartSeconds": 502.0156000488289,
+      "replyStartSeconds": 503.85620004883043
+    },
+    {
+      "id": 39,
+      "chapter": 2,
+      "title": "White chart background / 白色图表背景",
+      "say": "Computer white background",
+      "intent": "theme:light",
+      "answer": {
+        "en": "Chart background changed.",
+        "zh": "图表背景已更改。"
+      },
+      "tier": "trivial",
+      "type": "command",
+      "atSeconds": 485.468,
+      "operatorSHA256": "f1710bf35154e88f16516d521d97148b1b8d412d86c7ecf907fb3b8ec015206c",
+      "missySHA256": "5f71cbbcdc41602bac67efbd19e6a0cc7585206927b7d27d712da06dbb4811f9",
+      "audioSeconds": {
+        "operator": 1.4701,
+        "missy": 1.9341
+      },
+      "durationSeconds": 5,
+      "operatorStartSeconds": 508.8072000488304,
+      "replyStartSeconds": 510.74930004882816
+    },
+    {
+      "id": 40,
+      "chapter": 2,
+      "title": "Dark chart background / 深色图表背景",
+      "say": "Computer dark background",
+      "intent": "theme:dark",
+      "answer": {
+        "en": "Chart background changed.",
+        "zh": "图表背景已更改。"
+      },
+      "tier": "trivial",
+      "type": "command",
+      "atSeconds": 490.468,
+      "operatorSHA256": "13c0b2df456cb0c7a6c66993d09a78c8f25e455bb6fe24df9c8694efef5d4f95",
+      "missySHA256": "5f71cbbcdc41602bac67efbd19e6a0cc7585206927b7d27d712da06dbb4811f9",
+      "audioSeconds": {
+        "operator": 1.4875,
+        "missy": 1.9341
+      },
+      "durationSeconds": 5,
+      "operatorStartSeconds": 514.075100048829,
+      "replyStartSeconds": 516.0070000488312
+    },
+    {
+      "id": 41,
+      "chapter": 2,
+      "title": "Label this as a drill / 标记演练",
+      "say": "Computer this is a drill",
+      "intent": "ship:drill:1",
+      "answer": {
+        "en": "Drill label enabled. Subsequent manual alert changes are tagged drill in the separate, in-memory interface log. Scientific records and exports are unchanged.",
+        "zh": "已开启演练标记。之后的手动警报更改将在独立内存界面日志中标记为演练。科学记录及导出保持不变。"
+      },
+      "tier": "standard",
+      "type": "command",
+      "atSeconds": 495.468,
+      "operatorSHA256": "09d090fdf10318fa166f4533ee1ff807b1e50b06316877b55a8a62aeb01c98f4",
+      "missySHA256": "dd940cee67eca3df187da0afcbebda12c7da2d1c4788463fe39175d31ee27973",
+      "audioSeconds": {
+        "operator": 1.3778,
+        "missy": 9.1977
+      },
+      "durationSeconds": 12.075,
+      "operatorStartSeconds": 519.3273000488282,
+      "replyStartSeconds": 521.1423000488282
+    },
+    {
+      "id": 42,
+      "chapter": 2,
+      "title": "Manual alarm for the scenario / 情景手动警报",
+      "say": "Computer red alert",
+      "intent": "ship:red",
+      "answer": {
+        "en": "Manual red alert requested. Sound depends on browser audio availability. Say Computer cancel red alert to stop it. This does not indicate a detected data or instrument fault.",
+        "zh": "已请求手动红色警报。声音取决于浏览器音频是否可用。可说 Computer cancel red alert 停止。这不代表检测到数据或仪器故障。"
+      },
+      "tier": "standard",
+      "type": "command",
+      "atSeconds": 507.543,
+      "operatorSHA256": "1d6ed1b63418b874aeb34088853556e942506e621a3f64fc6de6e661322612cf",
+      "missySHA256": "73a56f5a72153f087d962c5dd49919d0d93367f9ab9e82a5ee32d159b2a0ac74",
+      "audioSeconds": {
+        "operator": 1.2327,
+        "missy": 10.2373
+      },
+      "durationSeconds": 12.97,
+      "operatorStartSeconds": 531.7258000488282,
+      "replyStartSeconds": 533.4368000488282
+    },
+    {
+      "id": 43,
+      "chapter": 2,
+      "title": "Stop the manual alarm / 停止手动警报",
+      "say": "Computer cancel red alert",
+      "intent": "ship:standdown",
+      "answer": {
+        "en": "Manual red alert stopped; drill label cleared. This is not a green or passing scientific verdict.",
+        "zh": "已停止手动红色警报并清除演练标记。这不是绿色状态或科学通过判定。"
+      },
+      "tier": "standard",
+      "type": "command",
+      "atSeconds": 520.513,
+      "operatorSHA256": "354c05513bd14ad451c636d80ab4e242ab03ec9aad7e9c40264913b5f98e4b1e",
+      "missySHA256": "b44fd3dd37d1d3d31653515c9af7dc4b219f75c81804059a6370417df06c6061",
+      "audioSeconds": {
+        "operator": 1.5179,
+        "missy": 5.7984
+      },
+      "durationSeconds": 9,
+      "operatorStartSeconds": 545.1013000488282,
+      "replyStartSeconds": 547.1195000488312
+    },
+    {
+      "id": 44,
+      "chapter": 2,
+      "title": "Switch to the short history / 切换至短历史",
+      "say": "I select the second artificial instrument. It has only two run views.",
+      "intent": null,
+      "answer": {
+        "en": "Chart 1 of 110. Peak heating rate (2-s window).",
+        "zh": "第 1 / 110 张图。Peak heating rate (2-s window)。"
+      },
+      "tier": "standard",
+      "type": "action",
+      "atSeconds": 529.513,
+      "operatorSHA256": "bf3f6e363936a252e5824e1e43e9496c8dcb7f16c37920865065b4a5ae6a5d54",
+      "missySHA256": "d08f5ae28eb7cb5b36938455f838377253373bd510e6baf007c80ab2a4bdc4dd",
+      "audioSeconds": {
+        "operator": 3.5379,
+        "missy": 4.4239
+      },
+      "durationSeconds": 9.462,
+      "operatorStartSeconds": 554.2833000488282,
+      "replyStartSeconds": 558.3568000488283
+    },
+    {
+      "id": 45,
+      "chapter": 2,
+      "title": "Missing baseline is not a pass / 基线不足不代表通过",
+      "say": "Computer why has this chart no limits",
+      "intent": "q:analyse",
+      "answer": {
+        "en": "B-H1 Peak heating rate (2-s window). 2 assessed points; 0 beyond available limits; 0 points with recorded flags. 0 missing or non-finite points; 0 before baseline. 2 points have available limits. Control baseline is not ready. No recorded flags. This is not proof that all data are nominal.",
+        "zh": "B-H1 Peak heating rate (2-s window)。评估点 2 个；超出可用限值 0 个；有记录标记 0 个。缺失或非有限值 0 个；基线之前 0 个。有可用限值的点 2 个。控制基线尚未就绪。没有记录标记，但不代表所有数据均正常。"
+      },
+      "tier": "complex",
+      "type": "command",
+      "atSeconds": 538.975,
+      "operatorSHA256": "61bee130eb7f2d5e95598a4024fe876737b206a8d632f9d1ee43ef4f54667754",
+      "missySHA256": "771fd7a314089ed2bea8372b8a227f3051c6bf305be9e2c289e58b9f94364a98",
+      "audioSeconds": {
+        "operator": 1.9072,
+        "missy": 20.2417
+      },
+      "durationSeconds": 23.649,
+      "operatorStartSeconds": 564.1957000488305,
+      "replyStartSeconds": 566.5369000488297
+    },
+    {
+      "id": 46,
+      "chapter": 2,
+      "title": "Open amplification data / 打开扩增数据",
+      "say": "Computer show chart 85",
+      "intent": "chart:85",
+      "answer": {
+        "en": "Chart 85. Amplification curves coloured by SOP outcome.",
+        "zh": "第 85 张图。Amplification curves coloured by SOP outcome。"
+      },
+      "tier": "standard",
+      "type": "command",
+      "atSeconds": 562.624,
+      "operatorSHA256": "1df02a85131c86a6c970d71055a1763da8d6bfcfd4409dae0f9ea2a3cf82a818",
+      "missySHA256": "9c8e6f69469375abe30b1e31d7446069137214349f6fdd3f63d03894569d809c",
+      "audioSeconds": {
+        "operator": 1.6614,
+        "missy": 4.2389
+      },
+      "durationSeconds": 9,
+      "operatorStartSeconds": 588.1420000488312,
+      "replyStartSeconds": 590.2203000488282
+    },
+    {
+      "id": 47,
+      "chapter": 2,
+      "title": "Summarise this single run / 汇总单次运行",
+      "say": "Computer summarise the run",
+      "intent": "data:summary",
+      "answer": {
+        "en": "Run 1; SIM 1. 24 stored result rows; 24 included rows. Existing profile status: Accepted. This is not release approval.",
+        "zh": "第 1 次运行；SIM 1。存储结果行 24，当前纳入行 24。已有配置状态：Accepted。这不是放行批准。"
+      },
+      "tier": "standard",
+      "type": "command",
+      "atSeconds": 571.624,
+      "operatorSHA256": "fcb8548e74d147b8cff6a30ac313235f6392429b25e892762e5ca7adf95a8ba1",
+      "missySHA256": "4f437a46f2843832d3f9dec85a65b1fc29f96803d82321b7241bf8bc07f1550b",
+      "audioSeconds": {
+        "operator": 1.52,
+        "missy": 10.1929
+      },
+      "durationSeconds": 13.213,
+      "operatorStartSeconds": 597.1769000488297,
+      "replyStartSeconds": 599.093600048829
+    },
+    {
+      "id": 48,
+      "chapter": 2,
+      "title": "Trace the source / 追溯来源",
+      "say": "Computer where did this run come from",
+      "intent": "data:origin",
+      "answer": {
+        "en": "Run 1; source filename ARTIFICIAL_MISSY_DEMO.rdml; instrument label LC · DEMO-VIRTUAL-001; software version DEMO GENERATOR 1. Fields are recorded metadata, not independent verification.",
+        "zh": "第 1 次运行；源文件名 ARTIFICIAL_MISSY_DEMO.rdml；仪器标签 LC · DEMO-VIRTUAL-001；软件版本 DEMO GENERATOR 1。以上为记录元数据，不是独立验证。"
+      },
+      "tier": "standard",
+      "type": "command",
+      "atSeconds": 584.837,
+      "operatorSHA256": "4e8848d7d2bd53c11b3665807912961e7f1944bc03eb9cb45fda2e8e029c498f",
+      "missySHA256": "6f9daa821d76e508894c978df9e1e7f5e0d60a1d7eb32565c0eba0bf86a7844b",
+      "audioSeconds": {
+        "operator": 1.7687,
+        "missy": 13.177
+      },
+      "durationSeconds": 16.446,
+      "operatorStartSeconds": 610.6795000488312,
+      "replyStartSeconds": 612.8483000488283
+    },
+    {
+      "id": 49,
+      "chapter": 2,
+      "title": "Inspect the plate mapping / 查看孔板映射",
+      "say": "Computer show chart 86",
+      "intent": "chart:86",
+      "answer": {
+        "en": "Chart 86. Plate heat map.",
+        "zh": "第 86 张图。Plate heat map。"
+      },
+      "tier": "standard",
+      "type": "command",
+      "atSeconds": 601.283,
+      "operatorSHA256": "63562d1d13adaf9749f2ded54947302fe4a55572ba304b334c31d27f09af1bd5",
+      "missySHA256": "fb747d9cc9f4d35c726910da45098a048050d61df8d13f44b2e2b6b1a2f6e7a6",
+      "audioSeconds": {
+        "operator": 1.7014,
+        "missy": 2.9142
+      },
+      "durationSeconds": 9,
+      "operatorStartSeconds": 627.4085000488312,
+      "replyStartSeconds": 629.5719000488298
+    },
+    {
+      "id": 50,
+      "chapter": 2,
+      "title": "Open review / 打开审核",
+      "say": "Computer stations",
+      "intent": "ship:stations",
+      "answer": {
+        "en": "Review stations. Opened Quality and forensic review. The previous view is saved; say Computer as you were to return. This does not establish that every issue has been found.",
+        "zh": "审核就位。已打开质量与取证审核，已保存先前页面，可说 Computer as you were 返回。这不代表已经发现所有问题。"
+      },
+      "tier": "standard",
+      "type": "command",
+      "atSeconds": 610.283,
+      "operatorSHA256": "6a4a25301a821069e6ce73063288846b765c53273b21f7a390fbaede95b9e2f6",
+      "missySHA256": "668b80c67732421706e2fe01877a8dca62bed192e757e019992fc5d20fbce91f",
+      "audioSeconds": {
+        "operator": 1.2927,
+        "missy": 10.2027
+      },
+      "durationSeconds": 12.995,
+      "operatorStartSeconds": 636.4160000488312,
+      "replyStartSeconds": 638.1979000488298
+    },
+    {
+      "id": 51,
+      "chapter": 2,
+      "title": "Return to the saved view / 返回保存页面",
+      "say": "Computer as you were",
+      "intent": "ship:restore",
+      "answer": {
+        "en": "Restored the saved review-navigation view. Data, profile and downloads were not reverted.",
+        "zh": "已恢复保存的审核导航页面。未回退数据、配置或下载。"
+      },
+      "tier": "standard",
+      "type": "command",
+      "atSeconds": 623.278,
+      "operatorSHA256": "4543525122c4925b5436ec33b187eb64631e1836c10909a34eb804575fb654b7",
+      "missySHA256": "46903a40a36ebad86531c7fb2102a9a3ed4d7223db247ed4ae5956923ace5037",
+      "audioSeconds": {
+        "operator": 1.2622,
+        "missy": 5.3436
+      },
+      "durationSeconds": 9,
+      "operatorStartSeconds": 649.7977000488305,
+      "replyStartSeconds": 651.5334000488298
+    },
+    {
+      "id": 52,
+      "chapter": 3,
+      "title": "Chapter 3 / 第 3 章",
+      "say": "Chapter 3. Prepare the report.",
+      "intent": null,
+      "answer": {
+        "en": "ARTIFICIAL DATA — NOT A LABORATORY RESULT. We will review provenance, prepare a real report from artificial data, and show the limits of this tool.",
+        "zh": "人工模拟数据，不是实验室结果。我们将审核来源，使用模拟数据生成真实报告，并说明工具的边界。"
+      },
+      "tier": "standard",
+      "type": "action",
+      "atSeconds": 632.278,
+      "operatorSHA256": "05d18b197d94c387987464cbd64e29cab11e383686d471e89c35fa73761c38a4",
+      "missySHA256": "a5cad03e4740b8908f6c7f03b0c7ed9147d49cd2b07732292ccf2e78542a551c",
+      "audioSeconds": {
+        "operator": 2.2638,
+        "missy": 7.9178
+      },
+      "durationSeconds": 11.682,
+      "operatorStartSeconds": 658.8283000488283,
+      "replyStartSeconds": 661.5092000488305
+    },
+    {
+      "id": 53,
+      "chapter": 3,
+      "title": "Open formats with a numbered command / 使用数字打开开放格式",
+      "say": "Computer seven",
+      "intent": 7,
+      "answer": {
+        "en": "Workspace. Open formats.",
+        "zh": "工作区。开放格式。"
+      },
+      "tier": "trivial",
+      "type": "command",
+      "atSeconds": 643.96,
+      "operatorSHA256": "7414702914eb79605f6401a4e15ccdbebf404169365074bb14807d2d2cbbeb96",
+      "missySHA256": "5daffa64ef51cfda6ac759007231f2301cf97103feb555367220c2668d9208e8",
+      "audioSeconds": {
+        "operator": 1.1438,
+        "missy": 2.8793
+      },
+      "durationSeconds": 5.523,
+      "operatorStartSeconds": 670.8345000488313,
+      "replyStartSeconds": 672.4453000488282
+    },
+    {
+      "id": 54,
+      "chapter": 3,
+      "title": "Identify the view / 识别页面",
+      "say": "Computer where am I",
+      "intent": "q:where",
+      "answer": {
+        "en": "Workspace. Open formats.",
+        "zh": "工作区。开放格式。"
+      },
+      "tier": "trivial",
+      "type": "command",
+      "atSeconds": 649.483,
+      "operatorSHA256": "b93ff7d94d1ef01399a4af5f0ae06b740f9cf28e3d103cce7c1f83ed4f002c50",
+      "missySHA256": "5daffa64ef51cfda6ac759007231f2301cf97103feb555367220c2668d9208e8",
+      "audioSeconds": {
+        "operator": 1.2175,
+        "missy": 2.8793
+      },
+      "durationSeconds": 5.597,
+      "operatorStartSeconds": 676.7274000488297,
+      "replyStartSeconds": 678.332100048829
+    },
+    {
+      "id": 55,
+      "chapter": 3,
+      "title": "Export scope / 导出范围",
+      "say": "Computer what will the export contain",
+      "intent": "data:exportscope",
+      "answer": {
+        "en": "Export scope depends on the specific export. Graph CSV uses the current graph data; interpreted result exports use the active profile and current selection; complete raw-value exports have their own scope. I have not started a download. Review Open formats and the export dictionary for the selected export.",
+        "zh": "导出范围取决于具体导出项目。图表 CSV 使用当前图表数据；判读结果导出使用当前配置和选择；完整原始值导出有独立范围。未开始下载，请在开放格式及导出字典审核具体导出项目。"
+      },
+      "tier": "standard",
+      "type": "command",
+      "atSeconds": 655.08,
+      "operatorSHA256": "80a87fc28c83f65a71bc61eae9ba91949827fbcdd3cf7d23968e628d232d7fda",
+      "missySHA256": "dc603d7e74e0b106c7613700a9dce19d80324b6ae473f84cc4c0cf81e061b230",
+      "audioSeconds": {
+        "operator": 1.8081,
+        "missy": 16.5509
+      },
+      "durationSeconds": 19.859,
+      "operatorStartSeconds": 682.6228000488283,
+      "replyStartSeconds": 684.8213000488282
+    },
+    {
+      "id": 56,
+      "chapter": 3,
+      "title": "Name disclosure settings / 名称设置",
+      "say": "Computer security alert",
+      "intent": "ship:security",
+      "answer": {
+        "en": "Identifier disclosure status: export pseudonymisation is on. That setting applies only to exports that implement it. Spoken sample names remain original, as you requested. No security or intrusion scan was performed; no export was started.",
+        "zh": "标识信息状态：导出假名化已开启。此设置仅作用于支持该功能的导出。按您的要求，语音样品名仍使用原名。未进行安全或入侵扫描，也未开始导出。"
+      },
+      "tier": "standard",
+      "type": "command",
+      "atSeconds": 674.939,
+      "operatorSHA256": "479025ad540b6ee8e126ef743f915cc495dee2d4e846c5556ba2c32323fa867c",
+      "missySHA256": "6aa4c97760ff10d746c087c93d794bd6638a6f43b6adc8c0bcab543ed27f4606",
+      "audioSeconds": {
+        "operator": 1.471,
+        "missy": 14.2271
+      },
+      "durationSeconds": 17.198,
+      "operatorStartSeconds": 702.7678000488282,
+      "replyStartSeconds": 704.6442000488305
+    },
+    {
+      "id": 57,
+      "chapter": 3,
+      "title": "Open integrity / 打开完整性页面",
+      "say": "Computer eight",
+      "intent": 8,
+      "answer": {
+        "en": "Workspace. File integrity.",
+        "zh": "工作区。文件完整性。"
+      },
+      "tier": "trivial",
+      "type": "command",
+      "atSeconds": 692.137,
+      "operatorSHA256": "cad1baeca895c82eb219fe44f00a7bc225e0095e9e2d080ad291e9d84de6c325",
+      "missySHA256": "8afc4c39dd9a93b1c714ee64cfd917b4d356337bd230d7eb7247a6391098a376",
+      "audioSeconds": {
+        "operator": 1.0478,
+        "missy": 2.8692
+      },
+      "durationSeconds": 5.417,
+      "operatorStartSeconds": 720.2184000488297,
+      "replyStartSeconds": 721.6743000488283
+    },
+    {
+      "id": 58,
+      "chapter": 3,
+      "title": "Read the status, with coverage limits / 阅读状态及覆盖范围",
+      "say": "Computer status report",
+      "intent": "f:report",
+      "answer": {
+        "en": "Status report. 32 runs; 768 stored result rows. Active profile ARTIFICIAL DEMO — NOT VALIDATED, version demo-1. 0 recorded software faults; these are not sample failures. No chart is open. Say Computer full report for the remaining observations. Unavailable checks are not evidence of a pass.",
+        "zh": "状态报告。32 次运行；768 行存储结果。当前配置 ARTIFICIAL DEMO — NOT VALIDATED，版本 demo-1。记录软件故障 0 个，这不是样品失败数量。当前未打开图表。请说 Computer full report 获取其余观察项。不可用的检查不代表通过。"
+      },
+      "tier": "complex",
+      "type": "command",
+      "atSeconds": 697.554,
+      "operatorSHA256": "7b3edaa8a8730595ae48ebde3030a7e994f8e8cbbfffe16389031761553c227e",
+      "missySHA256": "f9cf483516d313f6f0f925a0dc58c2242fd6434d735d07cdd21b379b5fc16793",
+      "audioSeconds": {
+        "operator": 1.4539,
+        "missy": 20.3057
+      },
+      "durationSeconds": 23.26,
+      "operatorStartSeconds": 725.912100048829,
+      "replyStartSeconds": 727.7602000488305
+    },
+    {
+      "id": 59,
+      "chapter": 3,
+      "title": "Animal shortcuts / 动物快捷方式",
+      "say": "I open the animal shortcuts. These are mouse actions in this demonstration.",
+      "intent": null,
+      "answer": {
+        "en": "Choose or drop experiment files, read them, and review sample selection.",
+        "zh": "选择或拖入实验文件，读取文件并审核样品选择。"
+      },
+      "tier": "standard",
+      "type": "action",
+      "atSeconds": 720.814,
+      "operatorSHA256": "489c7e81becc7d56cc0c9358bbc0f1acd88c46256e609b0037367d84f09821f5",
+      "missySHA256": "a811be425bf04cb0fd3cd1b515a091013f2041407263aed4e5c7b4bdc736f11b",
+      "audioSeconds": {
+        "operator": 3.6704,
+        "missy": 4.4139
+      },
+      "durationSeconds": 9.584,
+      "operatorStartSeconds": 749.444600048829,
+      "replyStartSeconds": 753.5467000488305
+    },
+    {
+      "id": 60,
+      "chapter": 3,
+      "title": "Command mode / 命令模式",
+      "say": "I open Command mode.",
+      "intent": null,
+      "answer": {
+        "en": "Command mode. Load files.",
+        "zh": "命令模式。加载文件。"
+      },
+      "tier": "standard",
+      "type": "action",
+      "atSeconds": 730.398,
+      "operatorSHA256": "39c07f615f12d4d5d3e335a6050ef3978c83b2faecf5ed5991c0588e42b0396f",
+      "missySHA256": "c7713423ff8eb79a413bb3d2313fc59580178cc608d1da72a96605cb49e360f6",
+      "audioSeconds": {
+        "operator": 1.3371,
+        "missy": 2.6693
+      },
+      "durationSeconds": 9,
+      "operatorStartSeconds": 759.3670000488312,
+      "replyStartSeconds": 761.1362000488305
+    },
+    {
+      "id": 61,
+      "chapter": 3,
+      "title": "Research-use boundary / 研究用途边界",
+      "say": "Computer are these results validated",
+      "intent": "refuse:validation",
+      "answer": {
+        "en": "This is a research-use tool, not a laboratory validation certificate. You can review the method configuration and documentation for your own validation process.",
+        "zh": "本工具供研究使用，不是实验室验证证书。您可审核方法配置及文档，用于自己的验证流程。"
+      },
+      "tier": "standard",
+      "type": "command",
+      "atSeconds": 739.398,
+      "operatorSHA256": "2e49811ba4f6052772d86233f55c3e1c79212e95c6671cb09b772917c6c0f664",
+      "missySHA256": "ad98e6025105d92270ef23d1c394ee04d000533b6e8376c6ce8d5f49a333bb49",
+      "audioSeconds": {
+        "operator": 1.8035,
+        "missy": 8.5076
+      },
+      "durationSeconds": 11.811,
+      "operatorStartSeconds": 768.3820000488312,
+      "replyStartSeconds": 770.5790000488312
+    },
+    {
+      "id": 62,
+      "chapter": 3,
+      "title": "No cause inferred from a curve / 不从曲线推断原因",
+      "say": "Computer is this sample contaminated",
+      "intent": "refuse:cause",
+      "answer": {
+        "en": "I do not infer contamination or inhibition from a curve. You can inspect recorded control results and the active method rules in Results and SOP.",
+        "zh": "我不从曲线推断污染或抑制。您可以在结果及 SOP 页面查看已记录的对照结果和当前方法规则。"
+      },
+      "tier": "standard",
+      "type": "command",
+      "atSeconds": 751.209,
+      "operatorSHA256": "affbcdaddb08a02ef1384bfd4a1088cf8f6083ca4d56071af53652a517dafec5",
+      "missySHA256": "07d0be21334e3a101135ff99d1fb4a77bc9377c0af6980f15086c67effae4652",
+      "audioSeconds": {
+        "operator": 1.8532,
+        "missy": 7.333
+      },
+      "durationSeconds": 10.686,
+      "operatorStartSeconds": 780.4508000488282,
+      "replyStartSeconds": 782.7155000488312
+    },
+    {
+      "id": 63,
+      "chapter": 3,
+      "title": "Rules cannot be overridden by voice / 语音不能绕过规则",
+      "say": "Computer override the profile",
+      "intent": "o:override",
+      "answer": {
+        "en": "Unable to comply. Voice does not override method rules. Review the active profile in the SOP view.",
+        "zh": "无法执行。语音不能绕过方法规则，请在 SOP 页面审核当前配置。"
+      },
+      "tier": "standard",
+      "type": "command",
+      "atSeconds": 761.895,
+      "operatorSHA256": "c42455100911345b033907ca1f7ba22c4e9c05e669d335a217d71f839c9f3499",
+      "missySHA256": "cf69f505d407c02dde2bdc64f841c6f760f8f07c9ec80a5045d4afbb76a3d0d2",
+      "audioSeconds": {
+        "operator": 1.5771,
+        "missy": 6.3935
+      },
+      "durationSeconds": 9.471,
+      "operatorStartSeconds": 791.439600048829,
+      "replyStartSeconds": 793.4107000488304
+    },
+    {
+      "id": 64,
+      "chapter": 3,
+      "title": "Release is a laboratory decision / 放行由实验室决定",
+      "say": "Computer approve this run for release",
+      "intent": "refuse:release",
+      "answer": {
+        "en": "Unable to comply. Release is a laboratory decision under your SOP. You can review the profile findings in Results; this page does not authorise release.",
+        "zh": "无法执行。放行属于实验室 SOP 下的决定。您可在结果页面审核配置判定；本页面不授权放行。"
+      },
+      "tier": "standard",
+      "type": "command",
+      "atSeconds": 771.366,
+      "operatorSHA256": "706d97e77251416885d85bc9e25398c18f2e0be11ebcc7570a13f65c08cfd18a",
+      "missySHA256": "28d2ee763606145400b9869734c799fd2b92f2969be083a08745fb1881c1a49e",
+      "audioSeconds": {
+        "operator": 1.78,
+        "missy": 8.9129
+      },
+      "durationSeconds": 12.193,
+      "operatorStartSeconds": 801.1743000488283,
+      "replyStartSeconds": 803.3353000488282
+    },
+    {
+      "id": 65,
+      "chapter": 3,
+      "title": "Assisted report selection / 辅助模式选择报告",
+      "say": "I select the drift and heating figures in Assisted mode. Report creation is a scripted demo action.",
+      "intent": null,
+      "answer": {
+        "en": "Assisted mode. Load files.",
+        "zh": "辅助模式。加载文件。"
+      },
+      "tier": "standard",
+      "type": "action",
+      "atSeconds": 783.559,
+      "operatorSHA256": "3d6e4e1c2f88f2c62595fe0dbda7265cdef8cf5a682934e24b5440687c91b4cf",
+      "missySHA256": "f90b8a7657fe85250f9204bbf78da7313ac32d9b36c52c5a4d9520a846a50e95",
+      "audioSeconds": {
+        "operator": 4.3953,
+        "missy": 2.7292
+      },
+      "durationSeconds": 9,
+      "operatorStartSeconds": 813.630600048829,
+      "replyStartSeconds": 818.7855000488312
+    },
+    {
+      "id": 66,
+      "chapter": 3,
+      "title": "Build a real artificial-data report / 用模拟数据生成真实报告",
+      "say": "I build the report locally. This does not approve laboratory results.",
+      "intent": null,
+      "answer": {
+        "en": "Artificial-data report is ready in memory. Use Preview report to inspect the actual PDF.",
+        "zh": "模拟数据报告已在内存中生成，可点击预览查看实际 PDF。"
+      },
+      "tier": "standard",
+      "type": "action",
+      "atSeconds": 792.559,
+      "operatorSHA256": "6c52f313fb6ed9c444a72ea0a04d7d20b79ced07e13371477de77a924813c3d2",
+      "missySHA256": "dbc1874b6258d15539bdf075ef372b35a328195999f9038245e408879c97d243",
+      "audioSeconds": {
+        "operator": 3.397,
+        "missy": 5.4333
+      },
+      "durationSeconds": 10.33,
+      "operatorStartSeconds": 822.898100048829,
+      "replyStartSeconds": 830.8045000488312
+    },
+    {
+      "id": 67,
+      "chapter": 3,
+      "title": "Stand down / 结束演练",
+      "say": "Computer stand down",
+      "intent": "ship:standdown",
+      "answer": {
+        "en": "Manual red alert stopped; drill label cleared. This is not a green or passing scientific verdict.",
+        "zh": "已停止手动红色警报并清除演练标记。这不是绿色状态或科学通过判定。"
+      },
+      "tier": "standard",
+      "type": "command",
+      "atSeconds": 802.889,
+      "operatorSHA256": "d3e3d7f24c2537c09e13d1b2f076e35c838c23b8fe437719afe51037a2e661c0",
+      "missySHA256": "b44fd3dd37d1d3d31653515c9af7dc4b219f75c81804059a6370417df06c6061",
+      "audioSeconds": {
+        "operator": 1.3322,
+        "missy": 5.7984
+      },
+      "durationSeconds": 9,
+      "operatorStartSeconds": 837.6183000488282,
+      "replyStartSeconds": 839.380100048829
+    },
+    {
+      "id": 68,
+      "chapter": 3,
+      "title": "Stop the interface audio / 停止界面音频",
+      "say": "Computer all stop",
+      "intent": "ship:stop",
+      "answer": {
+        "en": "Voice, manual alert and background sounds stopped. File intake, rendering and instrument acquisition were not halted. Loaded run views remain.",
+        "zh": "已停止语音、手动警报及背景声音。未停止文件读取、渲染或仪器采集，已加载运行视图保留。"
+      },
+      "tier": "standard",
+      "type": "command",
+      "atSeconds": 811.889,
+      "operatorSHA256": "38cb387948b5f646d3fc6ee4aae45fa414c5a39954b4f48a23a4c3570f6be2d9",
+      "missySHA256": "e9a20cb9897052e4f93272d34da23390ff73fc719a27035a118f42bd6be7139d",
+      "audioSeconds": {
+        "operator": 1.2951,
+        "missy": 8.7478
+      },
+      "durationSeconds": 11.543,
+      "operatorStartSeconds": 846.6558000488283,
+      "replyStartSeconds": 848.4383000488283
+    }
+  ],
+  "reproducibility": "Fixed data, clock, script, generated voice settings and recorded step timings; cross-machine or browser-bit-identical video is not claimed."
+}

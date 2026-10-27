@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "reviewAndReturn": [
+    "workspace",
+    "Console",
+    "Command",
+    "Assisted"
+  ],
+  "existingManualAlertStartedAndStopped": true,
+  "drillTagsInSeparateMemoryLog": true,
+  "negationGuards": true,
+  "noFalseAllClear": true,
+  "allStopScopeExplicit": true,
+  "headphonePreferenceRespected": true,
+  "scientificSnapshotUnchanged": true,
+  "errors": []
+}

@@ -1,0 +1,1270 @@
+{
+  "passed": true,
+  "offline": true,
+  "externalRequests": [],
+  "speakerAudibilityClaim": false,
+  "voices": {
+    "operator": {
+      "pitch": 2,
+      "rate": 4,
+      "name": "Microsoft David Desktop - English (United States)",
+      "language": "409"
+    },
+    "distinct": true,
+    "missy": {
+      "pitch": -2,
+      "rate": 2,
+      "name": "Microsoft Zira Desktop - English (United States)",
+      "language": "409"
+    },
+    "engine": "Installed offline Windows SAPI voices; original generated wording, no reference recording or actor imitation"
+  },
+  "seconds": 823.432,
+  "steps": 69,
+  "commands": 55,
+  "complexOver20": 4,
+  "rows": [
+    {
+      "id": 0,
+      "role": "operator",
+      "bytes": 16500,
+      "seconds": 2.249705215419501,
+      "peak": 0.7734436392784119,
+      "rms": 0.05690283339457704,
+      "mediaProgressed": true
+    },
+    {
+      "id": 0,
+      "role": "missy",
+      "bytes": 65140,
+      "seconds": 9.207528344671202,
+      "peak": 0.5838929414749146,
+      "rms": 0.08446244816283013,
+      "mediaProgressed": true
+    },
+    {
+      "id": 1,
+      "role": "operator",
+      "bytes": 12111,
+      "seconds": 1.6217233560090702,
+      "peak": 0.7926125526428223,
+      "rms": 0.0718142335639767,
+      "mediaProgressed": true
+    },
+    {
+      "id": 1,
+      "role": "missy",
+      "bytes": 15037,
+      "seconds": 2.0396825396825395,
+      "peak": 0.59815913438797,
+      "rms": 0.07756607955409106,
+      "mediaProgressed": true
+    },
+    {
+      "id": 2,
+      "role": "operator",
+      "bytes": 15951,
+      "seconds": 2.170294784580499,
+      "peak": 0.7507873177528381,
+      "rms": 0.07804643147963906,
+      "mediaProgressed": true
+    },
+    {
+      "id": 2,
+      "role": "missy",
+      "bytes": 40271,
+      "seconds": 5.663537414965987,
+      "peak": 0.5711650848388672,
+      "rms": 0.07554804252062447,
+      "mediaProgressed": true
+    },
+    {
+      "id": 3,
+      "role": "operator",
+      "bytes": 8820,
+      "seconds": 1.1728344671201814,
+      "peak": 0.7483695149421692,
+      "rms": 0.06660675056331349,
+      "mediaProgressed": true
+    },
+    {
+      "id": 3,
+      "role": "missy",
+      "bytes": 40271,
+      "seconds": 5.663537414965987,
+      "peak": 0.5711650848388672,
+      "rms": 0.07554804252062447,
+      "mediaProgressed": true
+    },
+    {
+      "id": 4,
+      "role": "operator",
+      "bytes": 10466,
+      "seconds": 1.3974149659863946,
+      "peak": 0.8036430478096008,
+      "rms": 0.07345733060378512,
+      "mediaProgressed": true
+    },
+    {
+      "id": 4,
+      "role": "missy",
+      "bytes": 38260,
+      "seconds": 5.363900226757369,
+      "peak": 0.6191057562828064,
+      "rms": 0.07727688972934543,
+      "mediaProgressed": true
+    },
+    {
+      "id": 5,
+      "role": "operator",
+      "bytes": 11014,
+      "seconds": 1.4715192743764172,
+      "peak": 0.5950636863708496,
+      "rms": 0.06338767742997235,
+      "mediaProgressed": true
+    },
+    {
+      "id": 5,
+      "role": "missy",
+      "bytes": 76660,
+      "seconds": 10.857732426303855,
+      "peak": 0.6061749458312988,
+      "rms": 0.09102602767062165,
+      "mediaProgressed": true
+    },
+    {
+      "id": 6,
+      "role": "operator",
+      "bytes": 13391,
+      "seconds": 1.8150113378684807,
+      "peak": 0.7168801426887512,
+      "rms": 0.0711546777200599,
+      "mediaProgressed": true
+    },
+    {
+      "id": 6,
+      "role": "missy",
+      "bytes": 60568,
+      "seconds": 8.552925170068027,
+      "peak": 0.6282945275306702,
+      "rms": 0.08582266157535166,
+      "mediaProgressed": true
+    },
+    {
+      "id": 7,
+      "role": "operator",
+      "bytes": 12660,
+      "seconds": 1.7122448979591838,
+      "peak": 0.7965880632400513,
+      "rms": 0.07739775055593279,
+      "mediaProgressed": true
+    },
+    {
+      "id": 7,
+      "role": "missy",
+      "bytes": 65688,
+      "seconds": 9.277777777777779,
+      "peak": 0.6140023469924927,
+      "rms": 0.08908113157791044,
+      "mediaProgressed": true
+    },
+    {
+      "id": 8,
+      "role": "operator",
+      "bytes": 28386,
+      "seconds": 3.9658503401360545,
+      "peak": 0.8057281970977783,
+      "rms": 0.08270430125253052,
+      "mediaProgressed": true
+    },
+    {
+      "id": 8,
+      "role": "missy",
+      "bytes": 46123,
+      "seconds": 6.498503401360544,
+      "peak": 0.6298454403877258,
+      "rms": 0.08691849447074987,
+      "mediaProgressed": true
+    },
+    {
+      "id": 9,
+      "role": "operator",
+      "bytes": 10283,
+      "seconds": 1.3768253968253967,
+      "peak": 0.6838014721870422,
+      "rms": 0.06875394333306245,
+      "mediaProgressed": true
+    },
+    {
+      "id": 9,
+      "role": "missy",
+      "bytes": 19974,
+      "seconds": 2.749206349206349,
+      "peak": 0.6971373558044434,
+      "rms": 0.07895832113564663,
+      "mediaProgressed": true
+    },
+    {
+      "id": 10,
+      "role": "operator",
+      "bytes": 21620,
+      "seconds": 2.9916099773242633,
+      "peak": 0.8056489825248718,
+      "rms": 0.07303518601307689,
+      "mediaProgressed": true
+    },
+    {
+      "id": 10,
+      "role": "missy",
+      "bytes": 53986,
+      "seconds": 7.6131972789115645,
+      "peak": 0.5864536166191101,
+      "rms": 0.08381671704130908,
+      "mediaProgressed": true
+    },
+    {
+      "id": 11,
+      "role": "operator",
+      "bytes": 10831,
+      "seconds": 1.4567800453514739,
+      "peak": 0.7972412705421448,
+      "rms": 0.07987721399803502,
+      "mediaProgressed": true
+    },
+    {
+      "id": 11,
+      "role": "missy",
+      "bytes": 58008,
+      "seconds": 8.18281179138322,
+      "peak": 0.6981728076934814,
+      "rms": 0.08486434764860533,
+      "mediaProgressed": true
+    },
+    {
+      "id": 12,
+      "role": "operator",
+      "bytes": 11380,
+      "seconds": 1.5186848072562358,
+      "peak": 0.7808153033256531,
+      "rms": 0.08001758005928541,
+      "mediaProgressed": true
+    },
+    {
+      "id": 12,
+      "role": "missy",
+      "bytes": 51243,
+      "seconds": 7.218095238095238,
+      "peak": 0.7146592140197754,
+      "rms": 0.09607387350207083,
+      "mediaProgressed": true
+    },
+    {
+      "id": 13,
+      "role": "operator",
+      "bytes": 12294,
+      "seconds": 1.6590022675736962,
+      "peak": 0.767930269241333,
+      "rms": 0.08102715294522307,
+      "mediaProgressed": true
+    },
+    {
+      "id": 13,
+      "role": "missy",
+      "bytes": 41186,
+      "seconds": 5.793968253968254,
+      "peak": 0.6298788785934448,
+      "rms": 0.08018440459387911,
+      "mediaProgressed": true
+    },
+    {
+      "id": 14,
+      "role": "operator",
+      "bytes": 11563,
+      "seconds": 1.5474829931972789,
+      "peak": 0.7941359281539917,
+      "rms": 0.07838484767266428,
+      "mediaProgressed": true
+    },
+    {
+      "id": 14,
+      "role": "missy",
+      "bytes": 131883,
+      "seconds": 18.746485260770974,
+      "peak": 0.6905167698860168,
+      "rms": 0.09205419624935735,
+      "mediaProgressed": true
+    },
+    {
+      "id": 15,
+      "role": "operator",
+      "bytes": 12111,
+      "seconds": 1.6238095238095238,
+      "peak": 0.7018160820007324,
+      "rms": 0.07699727317458312,
+      "mediaProgressed": true
+    },
+    {
+      "id": 15,
+      "role": "missy",
+      "bytes": 102077,
+      "seconds": 14.491972789115646,
+      "peak": 0.6491890549659729,
+      "rms": 0.09152106685375835,
+      "mediaProgressed": true
+    },
+    {
+      "id": 16,
+      "role": "operator",
+      "bytes": 12660,
+      "seconds": 1.7067120181405895,
+      "peak": 0.8087336421012878,
+      "rms": 0.078928136285089,
+      "mediaProgressed": true
+    },
+    {
+      "id": 16,
+      "role": "missy",
+      "bytes": 115791,
+      "seconds": 16.441088435374148,
+      "peak": 0.6246218681335449,
+      "rms": 0.08676052557497722,
+      "mediaProgressed": true
+    },
+    {
+      "id": 17,
+      "role": "operator",
+      "bytes": 10648,
+      "seconds": 1.418095238095238,
+      "peak": 0.7480775117874146,
+      "rms": 0.07095615105718196,
+      "mediaProgressed": true
+    },
+    {
+      "id": 17,
+      "role": "missy",
+      "bytes": 116523,
+      "seconds": 16.53764172335601,
+      "peak": 0.6782639622688293,
+      "rms": 0.08607119106441313,
+      "mediaProgressed": true
+    },
+    {
+      "id": 18,
+      "role": "operator",
+      "bytes": 16317,
+      "seconds": 2.2310204081632654,
+      "peak": 0.8089970350265503,
+      "rms": 0.06648722477918549,
+      "mediaProgressed": true
+    },
+    {
+      "id": 18,
+      "role": "missy",
+      "bytes": 58191,
+      "seconds": 8.227664399092971,
+      "peak": 0.5971184372901917,
+      "rms": 0.09117671563277188,
+      "mediaProgressed": true
+    },
+    {
+      "id": 19,
+      "role": "operator",
+      "bytes": 28386,
+      "seconds": 3.958730158730159,
+      "peak": 0.8254385590553284,
+      "rms": 0.08498284482663648,
+      "mediaProgressed": true
+    },
+    {
+      "id": 19,
+      "role": "missy",
+      "bytes": 36248,
+      "seconds": 5.078775510204082,
+      "peak": 0.5926120281219482,
+      "rms": 0.07873258816662991,
+      "mediaProgressed": true
+    },
+    {
+      "id": 20,
+      "role": "operator",
+      "bytes": 12843,
+      "seconds": 1.7331065759637188,
+      "peak": 0.7991665005683899,
+      "rms": 0.0759862357099274,
+      "mediaProgressed": true
+    },
+    {
+      "id": 20,
+      "role": "missy",
+      "bytes": 36248,
+      "seconds": 5.078775510204082,
+      "peak": 0.5926120281219482,
+      "rms": 0.07873258816662991,
+      "mediaProgressed": true
+    },
+    {
+      "id": 21,
+      "role": "operator",
+      "bytes": 13391,
+      "seconds": 1.8254875283446712,
+      "peak": 0.7690596580505371,
+      "rms": 0.06714112612687924,
+      "mediaProgressed": true
+    },
+    {
+      "id": 21,
+      "role": "missy",
+      "bytes": 66968,
+      "seconds": 9.468027210884355,
+      "peak": 0.70782870054245,
+      "rms": 0.08201839930016372,
+      "mediaProgressed": true
+    },
+    {
+      "id": 22,
+      "role": "operator",
+      "bytes": 11928,
+      "seconds": 1.610702947845805,
+      "peak": 0.7179738283157349,
+      "rms": 0.07202170545828707,
+      "mediaProgressed": true
+    },
+    {
+      "id": 22,
+      "role": "missy",
+      "bytes": 76111,
+      "seconds": 10.777596371882087,
+      "peak": 0.6200392842292786,
+      "rms": 0.08388654164350681,
+      "mediaProgressed": true
+    },
+    {
+      "id": 23,
+      "role": "operator",
+      "bytes": 10831,
+      "seconds": 1.4552380952380952,
+      "peak": 0.6946468353271484,
+      "rms": 0.07059878559833452,
+      "mediaProgressed": true
+    },
+    {
+      "id": 23,
+      "role": "missy",
+      "bytes": 91471,
+      "seconds": 12.982448979591837,
+      "peak": 0.699766218662262,
+      "rms": 0.08194733692803188,
+      "mediaProgressed": true
+    },
+    {
+      "id": 24,
+      "role": "operator",
+      "bytes": 13574,
+      "seconds": 1.8351927437641724,
+      "peak": 0.7399952411651611,
+      "rms": 0.07133701018122915,
+      "mediaProgressed": true
+    },
+    {
+      "id": 24,
+      "role": "missy",
+      "bytes": 144683,
+      "seconds": 20.571337868480725,
+      "peak": 0.6291749477386475,
+      "rms": 0.08965673369528926,
+      "mediaProgressed": true
+    },
+    {
+      "id": 25,
+      "role": "operator",
+      "bytes": 8088,
+      "seconds": 1.06281179138322,
+      "peak": 0.583324670791626,
+      "rms": 0.0641569261500041,
+      "mediaProgressed": true
+    },
+    {
+      "id": 25,
+      "role": "missy",
+      "bytes": 90740,
+      "seconds": 12.872335600907029,
+      "peak": 0.6281585097312927,
+      "rms": 0.08829766709350789,
+      "mediaProgressed": true
+    },
+    {
+      "id": 26,
+      "role": "operator",
+      "bytes": 8088,
+      "seconds": 1.06281179138322,
+      "peak": 0.583324670791626,
+      "rms": 0.0641569261500041,
+      "mediaProgressed": true
+    },
+    {
+      "id": 26,
+      "role": "missy",
+      "bytes": 81231,
+      "seconds": 11.502675736961452,
+      "peak": 0.6550654172897339,
+      "rms": 0.09073891173884717,
+      "mediaProgressed": true
+    },
+    {
+      "id": 27,
+      "role": "operator",
+      "bytes": 12477,
+      "seconds": 1.6938321995464853,
+      "peak": 0.6236659288406372,
+      "rms": 0.07755259899416361,
+      "mediaProgressed": true
+    },
+    {
+      "id": 27,
+      "role": "missy",
+      "bytes": 164066,
+      "seconds": 23.335691609977324,
+      "peak": 0.6574790477752686,
+      "rms": 0.08953039238473197,
+      "mediaProgressed": true
+    },
+    {
+      "id": 28,
+      "role": "operator",
+      "bytes": 11746,
+      "seconds": 1.5908843537414965,
+      "peak": 0.7726556062698364,
+      "rms": 0.07813405609378814,
+      "mediaProgressed": true
+    },
+    {
+      "id": 28,
+      "role": "missy",
+      "bytes": 71174,
+      "seconds": 10.08281179138322,
+      "peak": 0.6072598099708557,
+      "rms": 0.08909379880863111,
+      "mediaProgressed": true
+    },
+    {
+      "id": 29,
+      "role": "operator",
+      "bytes": 32226,
+      "seconds": 4.49922902494331,
+      "peak": 0.8222774863243103,
+      "rms": 0.0811257164483651,
+      "mediaProgressed": true
+    },
+    {
+      "id": 29,
+      "role": "missy",
+      "bytes": 20706,
+      "seconds": 2.8689795918367347,
+      "peak": 0.6073724627494812,
+      "rms": 0.08498393583101375,
+      "mediaProgressed": true
+    },
+    {
+      "id": 30,
+      "role": "operator",
+      "bytes": 10648,
+      "seconds": 1.4127437641723355,
+      "peak": 0.8012028932571411,
+      "rms": 0.07042906628768646,
+      "mediaProgressed": true
+    },
+    {
+      "id": 30,
+      "role": "missy",
+      "bytes": 29666,
+      "seconds": 4.1340589569161,
+      "peak": 0.6127446293830872,
+      "rms": 0.08674630846792303,
+      "mediaProgressed": true
+    },
+    {
+      "id": 31,
+      "role": "operator",
+      "bytes": 16317,
+      "seconds": 2.226938775510204,
+      "peak": 0.8174251914024353,
+      "rms": 0.08877367930700807,
+      "mediaProgressed": true
+    },
+    {
+      "id": 31,
+      "role": "missy",
+      "bytes": 41368,
+      "seconds": 5.823310657596372,
+      "peak": 0.592773973941803,
+      "rms": 0.08430548168343896,
+      "mediaProgressed": true
+    },
+    {
+      "id": 32,
+      "role": "operator",
+      "bytes": 11380,
+      "seconds": 1.5374149659863945,
+      "peak": 0.809373676776886,
+      "rms": 0.06529440981266865,
+      "mediaProgressed": true
+    },
+    {
+      "id": 32,
+      "role": "missy",
+      "bytes": 31677,
+      "seconds": 4.42390022675737,
+      "peak": 0.5786727070808411,
+      "rms": 0.08502772822224246,
+      "mediaProgressed": true
+    },
+    {
+      "id": 33,
+      "role": "operator",
+      "bytes": 13026,
+      "seconds": 1.7563265306122449,
+      "peak": 0.7997754216194153,
+      "rms": 0.07352375517489966,
+      "mediaProgressed": true
+    },
+    {
+      "id": 33,
+      "role": "missy",
+      "bytes": 31677,
+      "seconds": 4.428707482993198,
+      "peak": 0.6563519239425659,
+      "rms": 0.08093433396985526,
+      "mediaProgressed": true
+    },
+    {
+      "id": 34,
+      "role": "operator",
+      "bytes": 11928,
+      "seconds": 1.6136054421768709,
+      "peak": 0.8024506568908691,
+      "rms": 0.08537791513520963,
+      "mediaProgressed": true
+    },
+    {
+      "id": 34,
+      "role": "missy",
+      "bytes": 116340,
+      "seconds": 16.531927437641723,
+      "peak": 0.6576515436172485,
+      "rms": 0.08401835539966583,
+      "mediaProgressed": true
+    },
+    {
+      "id": 35,
+      "role": "operator",
+      "bytes": 12660,
+      "seconds": 1.7158730158730158,
+      "peak": 0.8079426288604736,
+      "rms": 0.06814357721593625,
+      "mediaProgressed": true
+    },
+    {
+      "id": 35,
+      "role": "missy",
+      "bytes": 36248,
+      "seconds": 5.093741496598639,
+      "peak": 0.6318731904029846,
+      "rms": 0.08533069754583006,
+      "mediaProgressed": true
+    },
+    {
+      "id": 36,
+      "role": "operator",
+      "bytes": 9186,
+      "seconds": 1.2075283446712017,
+      "peak": 0.538170576095581,
+      "rms": 0.06423564684023098,
+      "mediaProgressed": true
+    },
+    {
+      "id": 36,
+      "role": "missy",
+      "bytes": 30031,
+      "seconds": 4.203809523809523,
+      "peak": 0.588057279586792,
+      "rms": 0.08813942115404434,
+      "mediaProgressed": true
+    },
+    {
+      "id": 37,
+      "role": "operator",
+      "bytes": 12660,
+      "seconds": 1.7158730158730158,
+      "peak": 0.8079426288604736,
+      "rms": 0.06814357721593625,
+      "mediaProgressed": true
+    },
+    {
+      "id": 37,
+      "role": "missy",
+      "bytes": 41003,
+      "seconds": 5.758503401360544,
+      "peak": 0.636062741279602,
+      "rms": 0.08687266978209546,
+      "mediaProgressed": true
+    },
+    {
+      "id": 38,
+      "role": "operator",
+      "bytes": 10283,
+      "seconds": 1.372517006802721,
+      "peak": 0.5171122550964355,
+      "rms": 0.06202584987272912,
+      "mediaProgressed": true
+    },
+    {
+      "id": 38,
+      "role": "missy",
+      "bytes": 25460,
+      "seconds": 3.5490249433106578,
+      "peak": 0.6208048462867737,
+      "rms": 0.08489435516154563,
+      "mediaProgressed": true
+    },
+    {
+      "id": 39,
+      "role": "operator",
+      "bytes": 11014,
+      "seconds": 1.4701133786848073,
+      "peak": 0.7811638116836548,
+      "rms": 0.07206813512413912,
+      "mediaProgressed": true
+    },
+    {
+      "id": 39,
+      "role": "missy",
+      "bytes": 14306,
+      "seconds": 1.9351927437641723,
+      "peak": 0.6129555106163025,
+      "rms": 0.07831816559395606,
+      "mediaProgressed": true
+    },
+    {
+      "id": 40,
+      "role": "operator",
+      "bytes": 11014,
+      "seconds": 1.4875283446712018,
+      "peak": 0.792596161365509,
+      "rms": 0.06840761402246928,
+      "mediaProgressed": true
+    },
+    {
+      "id": 40,
+      "role": "missy",
+      "bytes": 14306,
+      "seconds": 1.9351927437641723,
+      "peak": 0.6129555106163025,
+      "rms": 0.07831816559395606,
+      "mediaProgressed": true
+    },
+    {
+      "id": 41,
+      "role": "operator",
+      "bytes": 10283,
+      "seconds": 1.3777777777777778,
+      "peak": 0.5175609588623047,
+      "rms": 0.061957791613414664,
+      "mediaProgressed": true
+    },
+    {
+      "id": 41,
+      "role": "missy",
+      "bytes": 65140,
+      "seconds": 9.197732426303855,
+      "peak": 0.6171954870223999,
+      "rms": 0.08654963179454275,
+      "mediaProgressed": true
+    },
+    {
+      "id": 42,
+      "role": "operator",
+      "bytes": 9368,
+      "seconds": 1.2326530612244897,
+      "peak": 0.5728330612182617,
+      "rms": 0.06737122793691927,
+      "mediaProgressed": true
+    },
+    {
+      "id": 42,
+      "role": "missy",
+      "bytes": 72271,
+      "seconds": 10.237324263038548,
+      "peak": 0.6300371289253235,
+      "rms": 0.09053939659530313,
+      "mediaProgressed": true
+    },
+    {
+      "id": 43,
+      "role": "operator",
+      "bytes": 11380,
+      "seconds": 1.5178684807256235,
+      "peak": 0.6779102683067322,
+      "rms": 0.07086231003255918,
+      "mediaProgressed": true
+    },
+    {
+      "id": 43,
+      "role": "missy",
+      "bytes": 41186,
+      "seconds": 5.798412698412698,
+      "peak": 0.6334380507469177,
+      "rms": 0.09050598193549539,
+      "mediaProgressed": true
+    },
+    {
+      "id": 44,
+      "role": "operator",
+      "bytes": 25460,
+      "seconds": 3.5379138321995467,
+      "peak": 0.8057281970977783,
+      "rms": 0.07813820730222151,
+      "mediaProgressed": true
+    },
+    {
+      "id": 44,
+      "role": "missy",
+      "bytes": 31677,
+      "seconds": 4.42390022675737,
+      "peak": 0.5786727070808411,
+      "rms": 0.08502772822224246,
+      "mediaProgressed": true
+    },
+    {
+      "id": 45,
+      "role": "operator",
+      "bytes": 14123,
+      "seconds": 1.9090702947845806,
+      "peak": 0.8192949295043945,
+      "rms": 0.08367898125737416,
+      "mediaProgressed": true
+    },
+    {
+      "id": 45,
+      "role": "missy",
+      "bytes": 142306,
+      "seconds": 20.241678004535146,
+      "peak": 0.657529890537262,
+      "rms": 0.08690517272010023,
+      "mediaProgressed": true
+    },
+    {
+      "id": 46,
+      "role": "operator",
+      "bytes": 12294,
+      "seconds": 1.661360544217687,
+      "peak": 0.8060244917869568,
+      "rms": 0.0793134068336582,
+      "mediaProgressed": true
+    },
+    {
+      "id": 46,
+      "role": "missy",
+      "bytes": 30397,
+      "seconds": 4.238866213151927,
+      "peak": 0.6280487179756165,
+      "rms": 0.07912529520063459,
+      "mediaProgressed": true
+    },
+    {
+      "id": 47,
+      "role": "operator",
+      "bytes": 11380,
+      "seconds": 1.520045351473923,
+      "peak": 0.7962126135826111,
+      "rms": 0.08157115887346764,
+      "mediaProgressed": true
+    },
+    {
+      "id": 47,
+      "role": "missy",
+      "bytes": 72088,
+      "seconds": 10.192879818594104,
+      "peak": 0.7149704694747925,
+      "rms": 0.08192746198847951,
+      "mediaProgressed": true
+    },
+    {
+      "id": 48,
+      "role": "operator",
+      "bytes": 13026,
+      "seconds": 1.7687074829931972,
+      "peak": 0.809631884098053,
+      "rms": 0.07669464044193336,
+      "mediaProgressed": true
+    },
+    {
+      "id": 48,
+      "role": "missy",
+      "bytes": 92934,
+      "seconds": 13.177006802721088,
+      "peak": 0.682219922542572,
+      "rms": 0.09537223254874344,
+      "mediaProgressed": true
+    },
+    {
+      "id": 49,
+      "role": "operator",
+      "bytes": 12660,
+      "seconds": 1.7013605442176871,
+      "peak": 0.8060393333435059,
+      "rms": 0.07667299451940116,
+      "mediaProgressed": true
+    },
+    {
+      "id": 49,
+      "role": "missy",
+      "bytes": 21071,
+      "seconds": 2.9141950113378683,
+      "peak": 0.5903972387313843,
+      "rms": 0.06670648795640804,
+      "mediaProgressed": true
+    },
+    {
+      "id": 50,
+      "role": "operator",
+      "bytes": 9734,
+      "seconds": 1.2926530612244898,
+      "peak": 0.5189889669418335,
+      "rms": 0.05423305932518582,
+      "mediaProgressed": true
+    },
+    {
+      "id": 50,
+      "role": "missy",
+      "bytes": 72088,
+      "seconds": 10.202721088435375,
+      "peak": 0.6744151711463928,
+      "rms": 0.08558534962808141,
+      "mediaProgressed": true
+    },
+    {
+      "id": 51,
+      "role": "operator",
+      "bytes": 9551,
+      "seconds": 1.2621768707482994,
+      "peak": 0.5347300171852112,
+      "rms": 0.06408942740779938,
+      "mediaProgressed": true
+    },
+    {
+      "id": 51,
+      "role": "missy",
+      "bytes": 38077,
+      "seconds": 5.343582766439909,
+      "peak": 0.5818648934364319,
+      "rms": 0.089130892504499,
+      "mediaProgressed": true
+    },
+    {
+      "id": 52,
+      "role": "operator",
+      "bytes": 16500,
+      "seconds": 2.263764172335601,
+      "peak": 0.7693912386894226,
+      "rms": 0.06291485766365058,
+      "mediaProgressed": true
+    },
+    {
+      "id": 52,
+      "role": "missy",
+      "bytes": 56180,
+      "seconds": 7.9178231292517,
+      "peak": 0.6116116046905518,
+      "rms": 0.08781670095743432,
+      "mediaProgressed": true
+    },
+    {
+      "id": 53,
+      "role": "operator",
+      "bytes": 8637,
+      "seconds": 1.143764172335601,
+      "peak": 0.6310237646102905,
+      "rms": 0.05802339251820251,
+      "mediaProgressed": true
+    },
+    {
+      "id": 53,
+      "role": "missy",
+      "bytes": 20888,
+      "seconds": 2.8792743764172335,
+      "peak": 0.5536912083625793,
+      "rms": 0.06634168186257887,
+      "mediaProgressed": true
+    },
+    {
+      "id": 54,
+      "role": "operator",
+      "bytes": 9186,
+      "seconds": 1.2174603174603174,
+      "peak": 0.6715224385261536,
+      "rms": 0.06861291016768858,
+      "mediaProgressed": true
+    },
+    {
+      "id": 54,
+      "role": "missy",
+      "bytes": 20888,
+      "seconds": 2.8792743764172335,
+      "peak": 0.5536912083625793,
+      "rms": 0.06634168186257887,
+      "mediaProgressed": true
+    },
+    {
+      "id": 55,
+      "role": "operator",
+      "bytes": 13391,
+      "seconds": 1.8080725623582767,
+      "peak": 0.6826760172843933,
+      "rms": 0.06854039410162321,
+      "mediaProgressed": true
+    },
+    {
+      "id": 55,
+      "role": "missy",
+      "bytes": 116523,
+      "seconds": 16.5508843537415,
+      "peak": 0.6784386038780212,
+      "rms": 0.08535621748810744,
+      "mediaProgressed": true
+    },
+    {
+      "id": 56,
+      "role": "operator",
+      "bytes": 11014,
+      "seconds": 1.4709750566893425,
+      "peak": 0.5764418840408325,
+      "rms": 0.06643177433641749,
+      "mediaProgressed": true
+    },
+    {
+      "id": 56,
+      "role": "missy",
+      "bytes": 100248,
+      "seconds": 14.227074829931972,
+      "peak": 0.6566874384880066,
+      "rms": 0.08410651044951342,
+      "mediaProgressed": true
+    },
+    {
+      "id": 57,
+      "role": "operator",
+      "bytes": 8088,
+      "seconds": 1.0477551020408162,
+      "peak": 0.5617133975028992,
+      "rms": 0.0506403141229722,
+      "mediaProgressed": true
+    },
+    {
+      "id": 57,
+      "role": "missy",
+      "bytes": 20706,
+      "seconds": 2.8692063492063493,
+      "peak": 0.7181745767593384,
+      "rms": 0.06825843693591384,
+      "mediaProgressed": true
+    },
+    {
+      "id": 58,
+      "role": "operator",
+      "bytes": 10831,
+      "seconds": 1.453922902494331,
+      "peak": 0.7747761011123657,
+      "rms": 0.06779798662048686,
+      "mediaProgressed": true
+    },
+    {
+      "id": 58,
+      "role": "missy",
+      "bytes": 142854,
+      "seconds": 20.305714285714284,
+      "peak": 0.7004333138465881,
+      "rms": 0.08360686366276057,
+      "mediaProgressed": true
+    },
+    {
+      "id": 59,
+      "role": "operator",
+      "bytes": 26374,
+      "seconds": 3.670385487528345,
+      "peak": 0.8223602771759033,
+      "rms": 0.07986122867733407,
+      "mediaProgressed": true
+    },
+    {
+      "id": 59,
+      "role": "missy",
+      "bytes": 31494,
+      "seconds": 4.413877551020408,
+      "peak": 0.653537392616272,
+      "rms": 0.08133482503159727,
+      "mediaProgressed": true
+    },
+    {
+      "id": 60,
+      "role": "operator",
+      "bytes": 10100,
+      "seconds": 1.3371428571428572,
+      "peak": 0.819238007068634,
+      "rms": 0.07911371182744281,
+      "mediaProgressed": true
+    },
+    {
+      "id": 60,
+      "role": "missy",
+      "bytes": 19426,
+      "seconds": 2.669297052154195,
+      "peak": 0.6936423778533936,
+      "rms": 0.07221519455087998,
+      "mediaProgressed": true
+    },
+    {
+      "id": 61,
+      "role": "operator",
+      "bytes": 13391,
+      "seconds": 1.804580498866213,
+      "peak": 0.7010082006454468,
+      "rms": 0.0759874726573355,
+      "mediaProgressed": true
+    },
+    {
+      "id": 61,
+      "role": "missy",
+      "bytes": 60203,
+      "seconds": 8.507573696145124,
+      "peak": 0.6160259246826172,
+      "rms": 0.09245082830629915,
+      "mediaProgressed": true
+    },
+    {
+      "id": 62,
+      "role": "operator",
+      "bytes": 13574,
+      "seconds": 1.8531972789115647,
+      "peak": 0.7653096318244934,
+      "rms": 0.07685827794117929,
+      "mediaProgressed": true
+    },
+    {
+      "id": 62,
+      "role": "missy",
+      "bytes": 51974,
+      "seconds": 7.333015873015873,
+      "peak": 0.5863358378410339,
+      "rms": 0.09188354930265326,
+      "mediaProgressed": true
+    },
+    {
+      "id": 63,
+      "role": "operator",
+      "bytes": 11746,
+      "seconds": 1.5770975056689343,
+      "peak": 0.8080283403396606,
+      "rms": 0.08056391291952296,
+      "mediaProgressed": true
+    },
+    {
+      "id": 63,
+      "role": "missy",
+      "bytes": 45391,
+      "seconds": 6.393514739229025,
+      "peak": 0.7337950468063354,
+      "rms": 0.08550159817265958,
+      "mediaProgressed": true
+    },
+    {
+      "id": 64,
+      "role": "operator",
+      "bytes": 13208,
+      "seconds": 1.780045351473923,
+      "peak": 0.8105864524841309,
+      "rms": 0.07479006349851176,
+      "mediaProgressed": true
+    },
+    {
+      "id": 64,
+      "role": "missy",
+      "bytes": 63128,
+      "seconds": 8.912879818594105,
+      "peak": 0.7125570178031921,
+      "rms": 0.08725906061521183,
+      "mediaProgressed": true
+    },
+    {
+      "id": 65,
+      "role": "operator",
+      "bytes": 31494,
+      "seconds": 4.3953287981859415,
+      "peak": 0.8057281970977783,
+      "rms": 0.07612221468287707,
+      "mediaProgressed": true
+    },
+    {
+      "id": 65,
+      "role": "missy",
+      "bytes": 19791,
+      "seconds": 2.729206349206349,
+      "peak": 0.7067729830741882,
+      "rms": 0.05896652242817994,
+      "mediaProgressed": true
+    },
+    {
+      "id": 66,
+      "role": "operator",
+      "bytes": 24546,
+      "seconds": 3.3980498866213154,
+      "peak": 0.8276098966598511,
+      "rms": 0.08128402801117586,
+      "mediaProgressed": true
+    },
+    {
+      "id": 66,
+      "role": "missy",
+      "bytes": 38626,
+      "seconds": 5.433333333333334,
+      "peak": 0.5878256559371948,
+      "rms": 0.08834541829838327,
+      "mediaProgressed": true
+    },
+    {
+      "id": 67,
+      "role": "operator",
+      "bytes": 9917,
+      "seconds": 1.3321995464852607,
+      "peak": 0.8006731867790222,
+      "rms": 0.06976506311084808,
+      "mediaProgressed": true
+    },
+    {
+      "id": 67,
+      "role": "missy",
+      "bytes": 41186,
+      "seconds": 5.798412698412698,
+      "peak": 0.6334380507469177,
+      "rms": 0.09050598193549539,
+      "mediaProgressed": true
+    },
+    {
+      "id": 68,
+      "role": "operator",
+      "bytes": 9734,
+      "seconds": 1.2951473922902494,
+      "peak": 0.74991774559021,
+      "rms": 0.0768834480531698,
+      "mediaProgressed": true
+    },
+    {
+      "id": 68,
+      "role": "missy",
+      "bytes": 61848,
+      "seconds": 8.747755102040816,
+      "peak": 0.7096521854400635,
+      "rms": 0.08844326864995275,
+      "mediaProgressed": true
+    }
+  ]
+}

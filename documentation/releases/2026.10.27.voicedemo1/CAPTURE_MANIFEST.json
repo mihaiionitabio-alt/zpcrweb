@@ -1,0 +1,2930 @@
+{
+  "captureStartEpochMs": 1793062499605,
+  "captureEndEpochMs": 1793063406645,
+  "localHTMLSHA256": "82dbeed73d5297cfc0199af0d235feb42d3dcd834953583ac54fc230291ecc91",
+  "publishedLFHTMLSHA256": "cd19450816fd205e3445e5b0a01ce5d4ca766c3bc2cd79361ed3b59be59195fe",
+  "browser": "156.0.8078.48",
+  "offline": true,
+  "externalRequests": [],
+  "errors": [],
+  "clockOriginEpochMs": 1793062500971.8,
+  "events": [
+    {
+      "event": "step-start",
+      "id": 0,
+      "atSeconds": 6.43170000000298,
+      "say": "Chapter 1. Setup and intake."
+    },
+    {
+      "event": "operator-start",
+      "id": 0,
+      "atSeconds": 6.827800000000745
+    },
+    {
+      "event": "operator-end",
+      "id": 0,
+      "atSeconds": 9.240800000000744
+    },
+    {
+      "event": "action-applied",
+      "id": 0,
+      "atSeconds": 9.246800000000745,
+      "say": "Chapter 1. Setup and intake.",
+      "intent": null,
+      "answer": {
+        "en": "ARTIFICIAL DATA — NOT A LABORATORY RESULT. The operator is Dr Lin in a fictional laboratory. Commands are supplied as text; no microphone is being tested.",
+        "zh": "人工模拟数据，不是实验室结果。操作人员为虚构实验室的林博士。命令以文本模拟输入，不测试麦克风。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 0,
+      "atSeconds": 9.517400000002235
+    },
+    {
+      "event": "missy-end",
+      "id": 0,
+      "atSeconds": 18.780600000001492
+    },
+    {
+      "event": "step-end",
+      "id": 0,
+      "atSeconds": 19.70810000000149
+    },
+    {
+      "event": "step-start",
+      "id": 1,
+      "atSeconds": 19.709,
+      "say": "I click the MISSY logo to enter."
+    },
+    {
+      "event": "operator-start",
+      "id": 1,
+      "atSeconds": 20.09260000000149
+    },
+    {
+      "event": "operator-end",
+      "id": 1,
+      "atSeconds": 21.78070000000298
+    },
+    {
+      "event": "action-applied",
+      "id": 1,
+      "atSeconds": 21.82160000000149,
+      "say": "I click the MISSY logo to enter.",
+      "intent": null,
+      "answer": {
+        "en": "MISSY / SESSION SETUP",
+        "zh": "会话设置已打开。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 1,
+      "atSeconds": 22.136
+    },
+    {
+      "event": "missy-end",
+      "id": 1,
+      "atSeconds": 24.24060000000149
+    },
+    {
+      "event": "step-end",
+      "id": 1,
+      "atSeconds": 28.72710000000149
+    },
+    {
+      "event": "step-start",
+      "id": 2,
+      "atSeconds": 28.727400000002234,
+      "say": "I enter a fictional laboratory and investigator."
+    },
+    {
+      "event": "operator-start",
+      "id": 2,
+      "atSeconds": 29.1155
+    },
+    {
+      "event": "operator-end",
+      "id": 2,
+      "atSeconds": 31.3405
+    },
+    {
+      "event": "action-applied",
+      "id": 2,
+      "atSeconds": 31.377,
+      "say": "I enter a fictional laboratory and investigator.",
+      "intent": null,
+      "answer": {
+        "en": "Investigator field: Dr Lin (fictional). This field does not authenticate a person.",
+        "zh": "分析人员字段：Dr Lin (fictional)。此字段不验证身份。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 2,
+      "atSeconds": 31.6765
+    },
+    {
+      "event": "missy-end",
+      "id": 2,
+      "atSeconds": 37.401
+    },
+    {
+      "event": "step-end",
+      "id": 2,
+      "atSeconds": 38.32240000000223
+    },
+    {
+      "event": "step-start",
+      "id": 3,
+      "atSeconds": 38.32270000000298,
+      "say": "Computer who am I"
+    },
+    {
+      "event": "operator-start",
+      "id": 3,
+      "atSeconds": 38.7035
+    },
+    {
+      "event": "operator-end",
+      "id": 3,
+      "atSeconds": 39.940400000002235
+    },
+    {
+      "event": "action-applied",
+      "id": 3,
+      "atSeconds": 39.952100000001494,
+      "say": "Computer who am I",
+      "intent": "q:operator",
+      "answer": {
+        "en": "Investigator field: Dr Lin (fictional). This field does not authenticate a person.",
+        "zh": "分析人员字段：Dr Lin (fictional)。此字段不验证身份。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 3,
+      "atSeconds": 40.25630000000074
+    },
+    {
+      "event": "missy-end",
+      "id": 3,
+      "atSeconds": 45.98080000000075
+    },
+    {
+      "event": "step-end",
+      "id": 3,
+      "atSeconds": 46.901900000002236
+    },
+    {
+      "event": "step-start",
+      "id": 4,
+      "atSeconds": 46.90220000000298,
+      "say": "Computer what time is it"
+    },
+    {
+      "event": "operator-start",
+      "id": 4,
+      "atSeconds": 47.28160000000149
+    },
+    {
+      "event": "operator-end",
+      "id": 4,
+      "atSeconds": 48.76070000000298
+    },
+    {
+      "event": "action-applied",
+      "id": 4,
+      "atSeconds": 48.78610000000149,
+      "say": "Computer what time is it",
+      "intent": "f:clock",
+      "answer": {
+        "en": "26/10/2026, 10:00:00. Device local time.",
+        "zh": "2026/10/26 10:00:00。设备本地时间。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 4,
+      "atSeconds": 49.093
+    },
+    {
+      "event": "missy-end",
+      "id": 4,
+      "atSeconds": 54.52040000000223
+    },
+    {
+      "event": "step-end",
+      "id": 4,
+      "atSeconds": 55.44210000000149
+    },
+    {
+      "event": "step-start",
+      "id": 5,
+      "atSeconds": 55.44270000000298,
+      "say": "Computer what build is this"
+    },
+    {
+      "event": "operator-start",
+      "id": 5,
+      "atSeconds": 55.822300000000745
+    },
+    {
+      "event": "operator-end",
+      "id": 5,
+      "atSeconds": 57.36060000000149
+    },
+    {
+      "event": "action-applied",
+      "id": 5,
+      "atSeconds": 57.37410000000149,
+      "say": "Computer what build is this",
+      "intent": "q:build",
+      "answer": {
+        "en": "Current publication: 2026.10.27.voicedemo1. One offline HTML file. Publication identity is recorded separately in the release documentation.",
+        "zh": "当前发布：2026.10.27.voicedemo1。单个离线 HTML 文件。发布标识另载于发布文档。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 5,
+      "atSeconds": 57.67510000000149
+    },
+    {
+      "event": "missy-end",
+      "id": 5,
+      "atSeconds": 68.5805
+    },
+    {
+      "event": "step-end",
+      "id": 5,
+      "atSeconds": 69.50120000000298
+    },
+    {
+      "event": "step-start",
+      "id": 6,
+      "atSeconds": 69.50160000000149,
+      "say": "Computer what language are you speaking"
+    },
+    {
+      "event": "operator-start",
+      "id": 6,
+      "atSeconds": 69.8815
+    },
+    {
+      "event": "operator-end",
+      "id": 6,
+      "atSeconds": 71.76080000000074
+    },
+    {
+      "event": "action-applied",
+      "id": 6,
+      "atSeconds": 71.7705,
+      "say": "Computer what language are you speaking",
+      "intent": "q:lang",
+      "answer": {
+        "en": "The interface language is English. Recognition uses the English offline pack. Speech output requires an installed local voice for the selected language.",
+        "zh": "界面语言为英文。识别使用英语离线语言包；语音输出需要安装相应语言的本地语音。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 6,
+      "atSeconds": 72.07380000000074
+    },
+    {
+      "event": "missy-end",
+      "id": 6,
+      "atSeconds": 80.68030000000074
+    },
+    {
+      "event": "step-end",
+      "id": 6,
+      "atSeconds": 81.601
+    },
+    {
+      "event": "step-start",
+      "id": 7,
+      "atSeconds": 81.6015,
+      "say": "Computer what formats do you read"
+    },
+    {
+      "event": "operator-start",
+      "id": 7,
+      "atSeconds": 81.98440000000224
+    },
+    {
+      "event": "operator-end",
+      "id": 7,
+      "atSeconds": 83.76030000000074
+    },
+    {
+      "event": "action-applied",
+      "id": 7,
+      "atSeconds": 83.77390000000223,
+      "say": "Computer what formats do you read",
+      "intent": "q:formats",
+      "answer": {
+        "en": "IXO, EDS, EDT, RDML, ZPCR and PCRD experiment files, plus ZIP archives. Available data depends on the source file.",
+        "zh": "支持 IXO、EDS、EDT、RDML、ZPCR、PCRD 实验文件和 ZIP 压缩包。可用数据取决于源文件。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 7,
+      "atSeconds": 84.0801000000015
+    },
+    {
+      "event": "missy-end",
+      "id": 7,
+      "atSeconds": 93.40030000000074
+    },
+    {
+      "event": "step-end",
+      "id": 7,
+      "atSeconds": 94.32180000000075
+    },
+    {
+      "event": "step-start",
+      "id": 8,
+      "atSeconds": 94.32240000000223,
+      "say": "I select the embedded artificial file. File selection is a scripted demo action."
+    },
+    {
+      "event": "operator-start",
+      "id": 8,
+      "atSeconds": 94.70440000000224
+    },
+    {
+      "event": "operator-end",
+      "id": 8,
+      "atSeconds": 98.74040000000224
+    },
+    {
+      "event": "action-applied",
+      "id": 8,
+      "atSeconds": 98.77780000000074,
+      "say": "I select the embedded artificial file. File selection is a scripted demo action.",
+      "intent": null,
+      "answer": {
+        "en": "1 file(s) staged: ARTIFICIAL_MISSY_DEMO.rdml 4.0 MB",
+        "zh": "已选择内嵌人工模拟文件。此步骤为演示脚本操作。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 8,
+      "atSeconds": 99.08580000000075
+    },
+    {
+      "event": "missy-end",
+      "id": 8,
+      "atSeconds": 105.66040000000224
+    },
+    {
+      "event": "step-end",
+      "id": 8,
+      "atSeconds": 106.58180000000074
+    },
+    {
+      "event": "step-start",
+      "id": 9,
+      "atSeconds": 106.58240000000224,
+      "say": "Computer what are you doing"
+    },
+    {
+      "event": "operator-start",
+      "id": 9,
+      "atSeconds": 106.96560000000149
+    },
+    {
+      "event": "operator-end",
+      "id": 9,
+      "atSeconds": 108.40020000000298
+    },
+    {
+      "event": "action-applied",
+      "id": 9,
+      "atSeconds": 108.41440000000223,
+      "say": "Computer what are you doing",
+      "intent": "q:status",
+      "answer": {
+        "en": "Files selected. Ready to read.",
+        "zh": "已选择文件，可开始读取。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 9,
+      "atSeconds": 108.71730000000075
+    },
+    {
+      "event": "missy-end",
+      "id": 9,
+      "atSeconds": 111.5206000000015
+    },
+    {
+      "event": "step-end",
+      "id": 9,
+      "atSeconds": 112.44210000000149
+    },
+    {
+      "event": "step-start",
+      "id": 10,
+      "atSeconds": 112.4425,
+      "say": "I press Read files. This is a scripted demo action."
+    },
+    {
+      "event": "operator-start",
+      "id": 10,
+      "atSeconds": 112.82870000000298
+    },
+    {
+      "event": "operator-end",
+      "id": 10,
+      "atSeconds": 115.90030000000074
+    },
+    {
+      "event": "action-applied",
+      "id": 10,
+      "atSeconds": 118.23570000000298,
+      "say": "I press Read files. This is a scripted demo action.",
+      "intent": null,
+      "answer": {
+        "en": "Read 32 run(s): 768 stored result(s), 768 amplification curve(s).",
+        "zh": "实际读取流程已完成，模拟运行和记录已加载。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 10,
+      "atSeconds": 118.566
+    },
+    {
+      "event": "missy-end",
+      "id": 10,
+      "atSeconds": 126.26030000000074
+    },
+    {
+      "event": "step-end",
+      "id": 10,
+      "atSeconds": 127.182
+    },
+    {
+      "event": "step-start",
+      "id": 11,
+      "atSeconds": 127.18310000000149,
+      "say": "Computer how many runs"
+    },
+    {
+      "event": "operator-start",
+      "id": 11,
+      "atSeconds": 127.57770000000298
+    },
+    {
+      "event": "operator-end",
+      "id": 11,
+      "atSeconds": 129.08230000000074
+    },
+    {
+      "event": "action-applied",
+      "id": 11,
+      "atSeconds": 129.11140000000225,
+      "say": "Computer how many runs",
+      "intent": "q:counts",
+      "answer": {
+        "en": "32 runs loaded. 768 stored result rows. This count does not include separate melting or relative-quantity tables.",
+        "zh": "已加载 32 次运行，包含 768 行存储结果。此数量不包含单独的熔解或相对定量表。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 11,
+      "atSeconds": 129.56130000000076
+    },
+    {
+      "event": "missy-end",
+      "id": 11,
+      "atSeconds": 137.82040000000222
+    },
+    {
+      "event": "step-end",
+      "id": 11,
+      "atSeconds": 138.74190000000223
+    },
+    {
+      "event": "step-start",
+      "id": 12,
+      "atSeconds": 138.74230000000074,
+      "say": "Computer how many files"
+    },
+    {
+      "event": "operator-start",
+      "id": 12,
+      "atSeconds": 139.13610000000148
+    },
+    {
+      "event": "operator-end",
+      "id": 12,
+      "atSeconds": 140.70040000000225
+    },
+    {
+      "event": "action-applied",
+      "id": 12,
+      "atSeconds": 140.7246000000015,
+      "say": "Computer how many files",
+      "intent": "f:files",
+      "answer": {
+        "en": "1 distinct recorded source filenames; 32 decoded runs. File names may be unavailable or shared by several runs.",
+        "zh": "1 个已记录且不同的源文件名；32 次已解码运行。文件名可能缺失，或由多次运行共用。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 12,
+      "atSeconds": 141.04320000000297
+    },
+    {
+      "event": "missy-end",
+      "id": 12,
+      "atSeconds": 148.3405
+    },
+    {
+      "event": "step-end",
+      "id": 12,
+      "atSeconds": 149.26180000000073
+    },
+    {
+      "event": "step-start",
+      "id": 13,
+      "atSeconds": 149.2626000000015,
+      "say": "Computer identify run three"
+    },
+    {
+      "event": "operator-start",
+      "id": 13,
+      "atSeconds": 149.6691000000015
+    },
+    {
+      "event": "operator-end",
+      "id": 13,
+      "atSeconds": 151.380200000003
+    },
+    {
+      "event": "action-applied",
+      "id": 13,
+      "atSeconds": 151.40260000000148,
+      "say": "Computer identify run three",
+      "intent": "o:identify run:three",
+      "answer": {
+        "en": "Run 3. SIM 3. 24 stored result rows; 2 recorded targets.",
+        "zh": "第 3 次运行。SIM 3。存储结果 24 行；记录靶标 2 个。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 13,
+      "atSeconds": 151.7345
+    },
+    {
+      "event": "missy-end",
+      "id": 13,
+      "atSeconds": 157.58040000000224
+    },
+    {
+      "event": "step-end",
+      "id": 13,
+      "atSeconds": 158.50190000000222
+    },
+    {
+      "event": "step-start",
+      "id": 14,
+      "atSeconds": 158.50260000000148,
+      "say": "Computer which run is newest"
+    },
+    {
+      "event": "operator-start",
+      "id": 14,
+      "atSeconds": 158.90680000000074
+    },
+    {
+      "event": "operator-end",
+      "id": 14,
+      "atSeconds": 160.5205
+    },
+    {
+      "event": "action-applied",
+      "id": 14,
+      "atSeconds": 160.544,
+      "say": "Computer which run is newest",
+      "intent": "data:newest",
+      "answer": {
+        "en": "Newest available timestamp; 0 run views have no usable timestamp. Ties are listed; this is not the time files were read. Run 32; SIM 32; 2026-02-01T09:00:00.000Z; recorded run start. End of list.",
+        "zh": "可用时间戳中最新的一项；0 个运行视图缺少可用时间戳。列出并列项，这不是文件读取时间。 Run 32; SIM 32; 2026-02-01T09:00:00.000Z; recorded run start。列表结束。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 14,
+      "atSeconds": 160.8945
+    },
+    {
+      "event": "missy-end",
+      "id": 14,
+      "atSeconds": 179.70030000000074
+    },
+    {
+      "event": "step-end",
+      "id": 14,
+      "atSeconds": 180.62090000000222
+    },
+    {
+      "event": "step-start",
+      "id": 15,
+      "atSeconds": 180.622,
+      "say": "Computer how many instruments"
+    },
+    {
+      "event": "operator-start",
+      "id": 15,
+      "atSeconds": 181.01290000000225
+    },
+    {
+      "event": "operator-end",
+      "id": 15,
+      "atSeconds": 182.69990000000223
+    },
+    {
+      "event": "action-applied",
+      "id": 15,
+      "atSeconds": 182.71660000000148,
+      "say": "Computer how many instruments",
+      "intent": "data:instruments",
+      "answer": {
+        "en": "2 distinct recorded platform/instrument labels; 0 run views have no recorded instrument identifier. Labels are not independently verified device identities. LC · DEMO-VIRTUAL-001. 1 more. Say Computer more.",
+        "zh": "不同的已记录平台／仪器标签 2 个；0 个运行视图没有仪器标识。标签不代表经过独立验证的设备身份。 LC · DEMO-VIRTUAL-001。还有 1 项，请说 Computer more。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 15,
+      "atSeconds": 183.02820000000298
+    },
+    {
+      "event": "missy-end",
+      "id": 15,
+      "atSeconds": 197.58030000000073
+    },
+    {
+      "event": "step-end",
+      "id": 15,
+      "atSeconds": 198.50230000000076
+    },
+    {
+      "event": "step-start",
+      "id": 16,
+      "atSeconds": 198.502700000003,
+      "say": "Computer are these runs comparable"
+    },
+    {
+      "event": "operator-start",
+      "id": 16,
+      "atSeconds": 198.88880000000074
+    },
+    {
+      "event": "operator-end",
+      "id": 16,
+      "atSeconds": 200.66010000000148
+    },
+    {
+      "event": "action-applied",
+      "id": 16,
+      "atSeconds": 200.68030000000076,
+      "say": "Computer are these runs comparable",
+      "intent": "data:cohort",
+      "answer": {
+        "en": "2 distinct recorded platform/instrument labels; 1 decoded protocol signatures; 0 run views lack an instrument identifier and 0 lack a decoded protocol. The loaded records include different cohorts. Select one instrument, protocol and acquisition context before comparing control charts.",
+        "zh": "不同的已记录平台／仪器标签 2 个；已解码方案签名 1 个；缺少仪器标识 0 个，缺少已解码方案 0 个。已加载记录包含不同数据组。比较控制图前请选择单一仪器、方案及采集条件。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 16,
+      "atSeconds": 201.009
+    },
+    {
+      "event": "missy-end",
+      "id": 16,
+      "atSeconds": 217.5201000000015
+    },
+    {
+      "event": "step-end",
+      "id": 16,
+      "atSeconds": 218.44130000000075
+    },
+    {
+      "event": "step-start",
+      "id": 17,
+      "atSeconds": 218.442,
+      "say": "Computer damage report"
+    },
+    {
+      "event": "operator-start",
+      "id": 17,
+      "atSeconds": 218.83470000000298
+    },
+    {
+      "event": "operator-end",
+      "id": 17,
+      "atSeconds": 220.32
+    },
+    {
+      "event": "action-applied",
+      "id": 17,
+      "atSeconds": 220.34490000000224,
+      "say": "Computer damage report",
+      "intent": "ship:damage",
+      "answer": {
+        "en": "Recorded evidence: 0 recorded integrity mismatch findings; 0 software faults; 0 locked PCRD views. Counts are findings and views, not files. No new scan was run. Unchecked records are not declared intact. This is not a hardware diagnosis.",
+        "zh": "记录证据报告：完整性不符记录 0 项；保留软件故障 0 项；实验数据不可用的锁定 PCRD 运行视图 0 个。数量代表记录或视图，不是不同文件数。未进行新的校验或全图扫描，未检查记录不声明完好，本报告不是硬件损坏诊断。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 17,
+      "atSeconds": 220.65990000000224
+    },
+    {
+      "event": "missy-end",
+      "id": 17,
+      "atSeconds": 237.2601000000015
+    },
+    {
+      "event": "step-end",
+      "id": 17,
+      "atSeconds": 238.18130000000073
+    },
+    {
+      "event": "step-start",
+      "id": 18,
+      "atSeconds": 238.1821000000015,
+      "say": "Chapter 2. Follow the evidence."
+    },
+    {
+      "event": "operator-start",
+      "id": 18,
+      "atSeconds": 238.567700000003
+    },
+    {
+      "event": "operator-end",
+      "id": 18,
+      "atSeconds": 240.85980000000075
+    },
+    {
+      "event": "action-applied",
+      "id": 18,
+      "atSeconds": 240.86330000000075,
+      "say": "Chapter 2. Follow the evidence.",
+      "intent": null,
+      "answer": {
+        "en": "ARTIFICIAL DATA — NOT A LABORATORY RESULT. We will examine planted repeat findings, a failed control, optical drift and an incomplete baseline.",
+        "zh": "人工模拟数据，不是实验室结果。我们将检查人为设置的复测判定、对照失败、光学漂移和不足的基线。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 18,
+      "atSeconds": 241.17780000000076
+    },
+    {
+      "event": "missy-end",
+      "id": 18,
+      "atSeconds": 249.461700000003
+    },
+    {
+      "event": "step-end",
+      "id": 18,
+      "atSeconds": 250.38340000000224
+    },
+    {
+      "event": "step-start",
+      "id": 19,
+      "atSeconds": 250.38390000000223,
+      "say": "I create a fictional review-only method. Profile editing is a scripted demo action."
+    },
+    {
+      "event": "operator-start",
+      "id": 19,
+      "atSeconds": 250.7765
+    },
+    {
+      "event": "operator-end",
+      "id": 19,
+      "atSeconds": 254.78040000000223
+    },
+    {
+      "event": "action-applied",
+      "id": 19,
+      "atSeconds": 254.901700000003,
+      "say": "I create a fictional review-only method. Profile editing is a scripted demo action.",
+      "intent": null,
+      "answer": {
+        "en": "Active profile: ARTIFICIAL DEMO — NOT VALIDATED. Version: demo-1.",
+        "zh": "当前配置：ARTIFICIAL DEMO — NOT VALIDATED。版本：demo-1。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 19,
+      "atSeconds": 255.211700000003
+    },
+    {
+      "event": "missy-end",
+      "id": 19,
+      "atSeconds": 260.340200000003
+    },
+    {
+      "event": "step-end",
+      "id": 19,
+      "atSeconds": 261.2606000000015
+    },
+    {
+      "event": "step-start",
+      "id": 20,
+      "atSeconds": 261.261,
+      "say": "Computer which profile is active"
+    },
+    {
+      "event": "operator-start",
+      "id": 20,
+      "atSeconds": 261.654
+    },
+    {
+      "event": "operator-end",
+      "id": 20,
+      "atSeconds": 263.43990000000224
+    },
+    {
+      "event": "action-applied",
+      "id": 20,
+      "atSeconds": 263.4591000000015,
+      "say": "Computer which profile is active",
+      "intent": "q:profile",
+      "answer": {
+        "en": "Active profile: ARTIFICIAL DEMO — NOT VALIDATED. Version: demo-1.",
+        "zh": "当前配置：ARTIFICIAL DEMO — NOT VALIDATED。版本：demo-1。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 20,
+      "atSeconds": 263.7685
+    },
+    {
+      "event": "missy-end",
+      "id": 20,
+      "atSeconds": 268.9001000000015
+    },
+    {
+      "event": "step-end",
+      "id": 20,
+      "atSeconds": 269.820700000003
+    },
+    {
+      "event": "step-start",
+      "id": 21,
+      "atSeconds": 269.8211000000015,
+      "say": "Computer which target is the reference"
+    },
+    {
+      "event": "operator-start",
+      "id": 21,
+      "atSeconds": 270.20840000000226
+    },
+    {
+      "event": "operator-end",
+      "id": 21,
+      "atSeconds": 272.0801000000015
+    },
+    {
+      "event": "action-applied",
+      "id": 21,
+      "atSeconds": 272.111,
+      "say": "Computer which target is the reference",
+      "intent": "data:references",
+      "answer": {
+        "en": "Profile-declared reference rules: 1. This is an assignment, not proof of detection. REF_GENE; match: REF_GENE. End of list.",
+        "zh": "配置声明的参照规则 1 项。这是角色指定，不代表已检出。 REF_GENE; match: REF_GENE。列表结束。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 21,
+      "atSeconds": 272.4531000000015
+    },
+    {
+      "event": "missy-end",
+      "id": 21,
+      "atSeconds": 281.960200000003
+    },
+    {
+      "event": "step-end",
+      "id": 21,
+      "atSeconds": 282.88140000000226
+    },
+    {
+      "event": "step-start",
+      "id": 22,
+      "atSeconds": 282.88220000000297,
+      "say": "Computer what targets are loaded"
+    },
+    {
+      "event": "operator-start",
+      "id": 22,
+      "atSeconds": 283.2724000000022
+    },
+    {
+      "event": "operator-end",
+      "id": 22,
+      "atSeconds": 284.9403000000007
+    },
+    {
+      "event": "action-applied",
+      "id": 22,
+      "atSeconds": 284.9755,
+      "say": "Computer what targets are loaded",
+      "intent": "data:targets",
+      "answer": {
+        "en": "2 distinct recorded target labels across all loaded stored result rows. This does not count uncollected channels. DNA_TARGET. 1 more. Say Computer more.",
+        "zh": "所有已加载存储结果行中有 2 个不同靶标标签。这不统计未采集通道。 DNA_TARGET。还有 1 项，请说 Computer more。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 22,
+      "atSeconds": 285.313700000003
+    },
+    {
+      "event": "missy-end",
+      "id": 22,
+      "atSeconds": 296.1599000000022
+    },
+    {
+      "event": "step-end",
+      "id": 22,
+      "atSeconds": 297.080200000003
+    },
+    {
+      "event": "step-start",
+      "id": 23,
+      "atSeconds": 297.08090000000226,
+      "say": "Computer read the results"
+    },
+    {
+      "event": "operator-start",
+      "id": 23,
+      "atSeconds": 297.471
+    },
+    {
+      "event": "operator-end",
+      "id": 23,
+      "atSeconds": 298.97990000000226
+    },
+    {
+      "event": "action-applied",
+      "id": 23,
+      "atSeconds": 299.13910000000146,
+      "say": "Computer read the results",
+      "intent": "data:results",
+      "answer": {
+        "en": "64 current sample-level profile summaries. Samples are grouped within each run and current selection. This is not a count of raw reactions. 59; Positive. 2 more. Say Computer more.",
+        "zh": "当前样品级配置汇总 64 项。样品按每次运行和当前选择分组，这不是原始反应数。 59; Positive。还有 2 项，请说 Computer more。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 23,
+      "atSeconds": 299.4601000000015
+    },
+    {
+      "event": "missy-end",
+      "id": 23,
+      "atSeconds": 312.51970000000296
+    },
+    {
+      "event": "step-end",
+      "id": 23,
+      "atSeconds": 313.4415
+    },
+    {
+      "event": "step-start",
+      "id": 24,
+      "atSeconds": 313.442,
+      "say": "Computer which samples should I repeat"
+    },
+    {
+      "event": "operator-start",
+      "id": 24,
+      "atSeconds": 313.84120000000297
+    },
+    {
+      "event": "operator-end",
+      "id": 24,
+      "atSeconds": 315.75970000000297
+    },
+    {
+      "event": "action-applied",
+      "id": 24,
+      "atSeconds": 316.106700000003,
+      "say": "Computer which samples should I repeat",
+      "intent": "data:repeat",
+      "answer": {
+        "en": "3 current sample-target groups have the exact Repeat outcome under ARTIFICIAL DEMO — NOT VALIDATED. Other review or invalid outcomes are not counted as Repeat. SIM 5; DEMO_SAMPLE_0; DNA_TARGET; rule target: DNA_TARGET; replicate SD 2.18 > 0.5. 2 more. Say Computer more.",
+        "zh": "当前样品－靶标分组中有 3 项在 ARTIFICIAL DEMO — NOT VALIDATED 下明确判定为 Repeat。其他审核或无效判定不计入 Repeat。 SIM 5; DEMO_SAMPLE_0; DNA_TARGET; rule target: DNA_TARGET; replicate SD 2.18 > 0.5。还有 2 项，请说 Computer more。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 24,
+      "atSeconds": 316.429700000003
+    },
+    {
+      "event": "missy-end",
+      "id": 24,
+      "atSeconds": 337.0796000000015
+    },
+    {
+      "event": "step-end",
+      "id": 24,
+      "atSeconds": 338.001200000003
+    },
+    {
+      "event": "step-start",
+      "id": 25,
+      "atSeconds": 338.002,
+      "say": "Computer more"
+    },
+    {
+      "event": "operator-start",
+      "id": 25,
+      "atSeconds": 338.38430000000074
+    },
+    {
+      "event": "operator-end",
+      "id": 25,
+      "atSeconds": 339.51970000000296
+    },
+    {
+      "event": "action-applied",
+      "id": 25,
+      "atSeconds": 339.67940000000226,
+      "say": "Computer more",
+      "intent": "f:more",
+      "answer": {
+        "en": "SIM 13; DEMO_SAMPLE_0; DNA_TARGET; rule target: DNA_TARGET; replicate SD 2.26 > 0.5. 1 more. Say Computer more.",
+        "zh": "SIM 13; DEMO_SAMPLE_0; DNA_TARGET; rule target: DNA_TARGET; replicate SD 2.26 > 0.5。还有 1 项，请说 Computer more。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 25,
+      "atSeconds": 340.013700000003
+    },
+    {
+      "event": "missy-end",
+      "id": 25,
+      "atSeconds": 352.9406000000015
+    },
+    {
+      "event": "step-end",
+      "id": 25,
+      "atSeconds": 353.8611000000015
+    },
+    {
+      "event": "step-start",
+      "id": 26,
+      "atSeconds": 353.86180000000076,
+      "say": "Computer more"
+    },
+    {
+      "event": "operator-start",
+      "id": 26,
+      "atSeconds": 354.2575
+    },
+    {
+      "event": "operator-end",
+      "id": 26,
+      "atSeconds": 355.35980000000075
+    },
+    {
+      "event": "action-applied",
+      "id": 26,
+      "atSeconds": 355.54030000000074,
+      "say": "Computer more",
+      "intent": "f:more",
+      "answer": {
+        "en": "SIM 19; DEMO_SAMPLE_0; DNA_TARGET; rule target: DNA_TARGET; replicate SD 2.25 > 0.5. End of list.",
+        "zh": "SIM 19; DEMO_SAMPLE_0; DNA_TARGET; rule target: DNA_TARGET; replicate SD 2.25 > 0.5。列表结束。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 26,
+      "atSeconds": 355.86930000000075
+    },
+    {
+      "event": "missy-end",
+      "id": 26,
+      "atSeconds": 367.4395
+    },
+    {
+      "event": "step-end",
+      "id": 26,
+      "atSeconds": 368.365
+    },
+    {
+      "event": "step-start",
+      "id": 27,
+      "atSeconds": 368.3655,
+      "say": "Computer did any control fail"
+    },
+    {
+      "event": "operator-start",
+      "id": 27,
+      "atSeconds": 368.74930000000074
+    },
+    {
+      "event": "operator-end",
+      "id": 27,
+      "atSeconds": 370.51980000000077
+    },
+    {
+      "event": "action-applied",
+      "id": 27,
+      "atSeconds": 370.6851000000015,
+      "say": "Computer did any control fail",
+      "intent": "data:controlfail",
+      "answer": {
+        "en": "128 evaluated control groups; 1 groups have the exact Control fail outcome. 0 control-presence criteria need review. This is not a run pass. SIM 9; DEMO NTC; DNA_TARGET; Control fail; rule control: DEMO NTC; amplified in 1/1 (min Cq 34.00 ≤ 36). End of list.",
+        "zh": "已评估对照分组 128 项；明确判定为 Control fail 的 1 项。已有对照存在性准则中，失败或待审核 0 项。缺失对照和不可用评估属于独立准则，不代表通过。请在结果页面审核运行准则。 SIM 9; DEMO NTC; DNA_TARGET; Control fail; rule control: DEMO NTC; amplified in 1/1 (min Cq 34.00 ≤ 36)。列表结束。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 27,
+      "atSeconds": 371.001
+    },
+    {
+      "event": "missy-end",
+      "id": 27,
+      "atSeconds": 394.4195
+    },
+    {
+      "event": "step-end",
+      "id": 27,
+      "atSeconds": 395.34140000000224
+    },
+    {
+      "event": "step-start",
+      "id": 28,
+      "atSeconds": 395.3419000000022,
+      "say": "Computer how many standards"
+    },
+    {
+      "event": "operator-start",
+      "id": 28,
+      "atSeconds": 395.744
+    },
+    {
+      "event": "operator-end",
+      "id": 28,
+      "atSeconds": 397.39940000000223
+    },
+    {
+      "event": "action-applied",
+      "id": 28,
+      "atSeconds": 397.42260000000147,
+      "say": "Computer how many standards",
+      "intent": "data:standards",
+      "answer": {
+        "en": "384 included stored result rows have the exact Standard role, across 32 run views. This counts rows, not distinct concentrations or calibration curves.",
+        "zh": "在 32 个运行视图中，有 384 个当前纳入的存储结果行明确标记为 Standard。此数量代表行数，不是不同浓度或校准曲线数。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 28,
+      "atSeconds": 397.7481000000015
+    },
+    {
+      "event": "missy-end",
+      "id": 28,
+      "atSeconds": 407.90030000000075
+    },
+    {
+      "event": "step-end",
+      "id": 28,
+      "atSeconds": 408.82140000000226
+    },
+    {
+      "event": "step-start",
+      "id": 29,
+      "atSeconds": 408.8221000000015,
+      "say": "I open the hardware reference. Manufacturer specifications and artificial measurements are different."
+    },
+    {
+      "event": "operator-start",
+      "id": 29,
+      "atSeconds": 409.32940000000224
+    },
+    {
+      "event": "operator-end",
+      "id": 29,
+      "atSeconds": 413.87940000000225
+    },
+    {
+      "event": "action-applied",
+      "id": 29,
+      "atSeconds": 414.026200000003,
+      "say": "I open the hardware reference. Manufacturer specifications and artificial measurements are different.",
+      "intent": null,
+      "answer": {
+        "en": "Manufacturer specification reference / 制造商规格参考",
+        "zh": "制造商规格仅作参考，模拟测量另行标记。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 29,
+      "atSeconds": 414.351
+    },
+    {
+      "event": "missy-end",
+      "id": 29,
+      "atSeconds": 417.2793000000007
+    },
+    {
+      "event": "step-end",
+      "id": 29,
+      "atSeconds": 418.201
+    },
+    {
+      "event": "step-start",
+      "id": 30,
+      "atSeconds": 418.2015,
+      "say": "Computer show chart 1"
+    },
+    {
+      "event": "operator-start",
+      "id": 30,
+      "atSeconds": 418.61120000000295
+    },
+    {
+      "event": "operator-end",
+      "id": 30,
+      "atSeconds": 420.0994000000022
+    },
+    {
+      "event": "action-applied",
+      "id": 30,
+      "atSeconds": 420.3854000000022,
+      "say": "Computer show chart 1",
+      "intent": "chart:1",
+      "answer": {
+        "en": "Chart 1. B-H1 Peak heating rate (2-s window).",
+        "zh": "第 1 张图。B-H1 Peak heating rate (2-s window)。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 30,
+      "atSeconds": 420.7221000000015
+    },
+    {
+      "event": "missy-end",
+      "id": 30,
+      "atSeconds": 424.93960000000146
+    },
+    {
+      "event": "step-end",
+      "id": 30,
+      "atSeconds": 427.22040000000226
+    },
+    {
+      "event": "step-start",
+      "id": 31,
+      "atSeconds": 427.2215,
+      "say": "Computer run diagnostic on module charts"
+    },
+    {
+      "event": "operator-start",
+      "id": 31,
+      "atSeconds": 427.64640000000225
+    },
+    {
+      "event": "operator-end",
+      "id": 31,
+      "atSeconds": 429.943700000003
+    },
+    {
+      "event": "action-applied",
+      "id": 31,
+      "atSeconds": 430.01280000000077,
+      "say": "Computer run diagnostic on module charts",
+      "intent": "o:run diagnostic on module:charts",
+      "answer": {
+        "en": "110 registered chart definitions. This is an inventory, not a diagnostic test.",
+        "zh": "注册图表定义 110 个。这是清单，不是诊断测试。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 31,
+      "atSeconds": 430.3505
+    },
+    {
+      "event": "missy-end",
+      "id": 31,
+      "atSeconds": 436.239700000003
+    },
+    {
+      "event": "step-end",
+      "id": 31,
+      "atSeconds": 437.16060000000147
+    },
+    {
+      "event": "step-start",
+      "id": 32,
+      "atSeconds": 437.1615,
+      "say": "Computer which chart is this"
+    },
+    {
+      "event": "operator-start",
+      "id": 32,
+      "atSeconds": 437.55520000000297
+    },
+    {
+      "event": "operator-end",
+      "id": 32,
+      "atSeconds": 439.159700000003
+    },
+    {
+      "event": "action-applied",
+      "id": 32,
+      "atSeconds": 439.1931000000015,
+      "say": "Computer which chart is this",
+      "intent": "data:chart",
+      "answer": {
+        "en": "Chart 1 of 110. Peak heating rate (2-s window).",
+        "zh": "第 1 / 110 张图。Peak heating rate (2-s window)。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 32,
+      "atSeconds": 439.51390000000225
+    },
+    {
+      "event": "missy-end",
+      "id": 32,
+      "atSeconds": 444.001700000003
+    },
+    {
+      "event": "step-end",
+      "id": 32,
+      "atSeconds": 444.923
+    },
+    {
+      "event": "step-start",
+      "id": 33,
+      "atSeconds": 444.9239000000022,
+      "say": "Computer show chart 26"
+    },
+    {
+      "event": "operator-start",
+      "id": 33,
+      "atSeconds": 445.4625
+    },
+    {
+      "event": "operator-end",
+      "id": 33,
+      "atSeconds": 447.2794000000022
+    },
+    {
+      "event": "action-applied",
+      "id": 33,
+      "atSeconds": 447.36730000000074,
+      "say": "Computer show chart 26",
+      "intent": "chart:26",
+      "answer": {
+        "en": "Chart 26. A-H3 Background fluorescence per channel.",
+        "zh": "第 26 张图。A-H3 Background fluorescence per channel。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 33,
+      "atSeconds": 447.70380000000074
+    },
+    {
+      "event": "missy-end",
+      "id": 33,
+      "atSeconds": 452.2011000000015
+    },
+    {
+      "event": "step-end",
+      "id": 33,
+      "atSeconds": 453.92730000000074
+    },
+    {
+      "event": "step-start",
+      "id": 34,
+      "atSeconds": 453.92820000000296,
+      "say": "Computer how many outliers"
+    },
+    {
+      "event": "operator-start",
+      "id": 34,
+      "atSeconds": 454.3659000000022
+    },
+    {
+      "event": "operator-end",
+      "id": 34,
+      "atSeconds": 456.04090000000224
+    },
+    {
+      "event": "action-applied",
+      "id": 34,
+      "atSeconds": 456.08420000000297,
+      "say": "Computer how many outliers",
+      "intent": "q:analyse",
+      "answer": {
+        "en": "A-H3 Background fluorescence per channel. 30 assessed points; 4 beyond available limits; 4 points with recorded flags. 0 missing or non-finite points; 0 before baseline. 30 points have available limits. Recorded flags: beyond 3σ.",
+        "zh": "A-H3 Background fluorescence per channel。评估点 30 个；超出可用限值 4 个；有记录标记 4 个。缺失或非有限值 0 个；基线之前 0 个。有可用限值的点 30 个。记录标记：beyond 3σ。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 34,
+      "atSeconds": 456.43580000000077
+    },
+    {
+      "event": "missy-end",
+      "id": 34,
+      "atSeconds": 473.039200000003
+    },
+    {
+      "event": "step-end",
+      "id": 34,
+      "atSeconds": 473.96090000000225
+    },
+    {
+      "event": "step-start",
+      "id": 35,
+      "atSeconds": 473.9616000000015,
+      "say": "Computer what is the magnification"
+    },
+    {
+      "event": "operator-start",
+      "id": 35,
+      "atSeconds": 474.37930000000074
+    },
+    {
+      "event": "operator-end",
+      "id": 35,
+      "atSeconds": 476.1795
+    },
+    {
+      "event": "action-applied",
+      "id": 35,
+      "atSeconds": 476.20830000000075,
+      "say": "Computer what is the magnification",
+      "intent": "o:zoom",
+      "answer": {
+        "en": "Console chart zoom 100 percent; horizontal pan 0; vertical pan 0.",
+        "zh": "控制台图表缩放 100%；水平平移 0；垂直平移 0。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 35,
+      "atSeconds": 476.5205
+    },
+    {
+      "event": "missy-end",
+      "id": 35,
+      "atSeconds": 481.6594000000022
+    },
+    {
+      "event": "step-end",
+      "id": 35,
+      "atSeconds": 482.5805
+    },
+    {
+      "event": "step-start",
+      "id": 36,
+      "atSeconds": 482.5815,
+      "say": "Computer zoom in"
+    },
+    {
+      "event": "operator-start",
+      "id": 36,
+      "atSeconds": 482.9725
+    },
+    {
+      "event": "operator-end",
+      "id": 36,
+      "atSeconds": 484.23940000000226
+    },
+    {
+      "event": "action-applied",
+      "id": 36,
+      "atSeconds": 484.306,
+      "say": "Computer zoom in",
+      "intent": "nav:zoom in",
+      "answer": {
+        "en": "Console command applied. Zoom 125 percent.",
+        "zh": "已执行控制台命令。缩放 125%。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 36,
+      "atSeconds": 484.71090000000225
+    },
+    {
+      "event": "missy-end",
+      "id": 36,
+      "atSeconds": 488.979700000003
+    },
+    {
+      "event": "step-end",
+      "id": 36,
+      "atSeconds": 489.9
+    },
+    {
+      "event": "step-start",
+      "id": 37,
+      "atSeconds": 489.901200000003,
+      "say": "Computer what is the magnification"
+    },
+    {
+      "event": "operator-start",
+      "id": 37,
+      "atSeconds": 490.3343000000007
+    },
+    {
+      "event": "operator-end",
+      "id": 37,
+      "atSeconds": 492.119200000003
+    },
+    {
+      "event": "action-applied",
+      "id": 37,
+      "atSeconds": 492.1546000000015,
+      "say": "Computer what is the magnification",
+      "intent": "o:zoom",
+      "answer": {
+        "en": "Console chart zoom 125 percent; horizontal pan 0; vertical pan 0.",
+        "zh": "控制台图表缩放 125%；水平平移 0；垂直平移 0。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 37,
+      "atSeconds": 492.5053000000008
+    },
+    {
+      "event": "missy-end",
+      "id": 37,
+      "atSeconds": 498.33940000000223
+    },
+    {
+      "event": "step-end",
+      "id": 37,
+      "atSeconds": 499.26020000000295
+    },
+    {
+      "event": "step-start",
+      "id": 38,
+      "atSeconds": 499.2609000000022,
+      "say": "Computer reset the view"
+    },
+    {
+      "event": "operator-start",
+      "id": 38,
+      "atSeconds": 499.7288000000007
+    },
+    {
+      "event": "operator-end",
+      "id": 38,
+      "atSeconds": 501.1594000000022
+    },
+    {
+      "event": "action-applied",
+      "id": 38,
+      "atSeconds": 501.2161000000015,
+      "say": "Computer reset the view",
+      "intent": "nav:zoom reset",
+      "answer": {
+        "en": "Console command applied. Zoom 100 percent.",
+        "zh": "已执行控制台命令。缩放 100%。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 38,
+      "atSeconds": 501.56940000000225
+    },
+    {
+      "event": "missy-end",
+      "id": 38,
+      "atSeconds": 505.199200000003
+    },
+    {
+      "event": "step-end",
+      "id": 38,
+      "atSeconds": 506.1195
+    },
+    {
+      "event": "step-start",
+      "id": 39,
+      "atSeconds": 506.12020000000297,
+      "say": "Computer white background"
+    },
+    {
+      "event": "operator-start",
+      "id": 39,
+      "atSeconds": 506.5204000000022
+    },
+    {
+      "event": "operator-end",
+      "id": 39,
+      "atSeconds": 508.05940000000226
+    },
+    {
+      "event": "action-applied",
+      "id": 39,
+      "atSeconds": 508.1256000000015,
+      "say": "Computer white background",
+      "intent": "theme:light",
+      "answer": {
+        "en": "Chart background changed.",
+        "zh": "图表背景已更改。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 39,
+      "atSeconds": 508.4625
+    },
+    {
+      "event": "missy-end",
+      "id": 39,
+      "atSeconds": 510.4595
+    },
+    {
+      "event": "step-end",
+      "id": 39,
+      "atSeconds": 511.3798000000007
+    },
+    {
+      "event": "step-start",
+      "id": 40,
+      "atSeconds": 511.3806000000015,
+      "say": "Computer dark background"
+    },
+    {
+      "event": "operator-start",
+      "id": 40,
+      "atSeconds": 511.78830000000073
+    },
+    {
+      "event": "operator-end",
+      "id": 40,
+      "atSeconds": 513.3398000000008
+    },
+    {
+      "event": "action-applied",
+      "id": 40,
+      "atSeconds": 513.396,
+      "say": "Computer dark background",
+      "intent": "theme:dark",
+      "answer": {
+        "en": "Chart background changed.",
+        "zh": "图表背景已更改。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 40,
+      "atSeconds": 513.7202000000029
+    },
+    {
+      "event": "missy-end",
+      "id": 40,
+      "atSeconds": 515.719200000003
+    },
+    {
+      "event": "step-end",
+      "id": 40,
+      "atSeconds": 516.6401000000014
+    },
+    {
+      "event": "step-start",
+      "id": 41,
+      "atSeconds": 516.641,
+      "say": "Computer this is a drill"
+    },
+    {
+      "event": "operator-start",
+      "id": 41,
+      "atSeconds": 517.0405
+    },
+    {
+      "event": "operator-end",
+      "id": 41,
+      "atSeconds": 518.483700000003
+    },
+    {
+      "event": "action-applied",
+      "id": 41,
+      "atSeconds": 518.5175,
+      "say": "Computer this is a drill",
+      "intent": "ship:drill:1",
+      "answer": {
+        "en": "Drill label enabled. Subsequent manual alert changes are tagged drill in the separate, in-memory interface log. Scientific records and exports are unchanged.",
+        "zh": "已开启演练标记。之后的手动警报更改将在独立内存界面日志中标记为演练。科学记录及导出保持不变。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 41,
+      "atSeconds": 518.8555
+    },
+    {
+      "event": "missy-end",
+      "id": 41,
+      "atSeconds": 528.1191000000015
+    },
+    {
+      "event": "step-end",
+      "id": 41,
+      "atSeconds": 529.0403000000008
+    },
+    {
+      "event": "step-start",
+      "id": 42,
+      "atSeconds": 529.0411000000015,
+      "say": "Computer red alert"
+    },
+    {
+      "event": "operator-start",
+      "id": 42,
+      "atSeconds": 529.439
+    },
+    {
+      "event": "operator-end",
+      "id": 42,
+      "atSeconds": 530.7193000000008
+    },
+    {
+      "event": "action-applied",
+      "id": 42,
+      "atSeconds": 530.8199000000022,
+      "say": "Computer red alert",
+      "intent": "ship:red",
+      "answer": {
+        "en": "Manual red alert requested. Sound depends on browser audio availability. Say Computer cancel red alert to stop it. This does not indicate a detected data or instrument fault.",
+        "zh": "已请求手动红色警报。声音取决于浏览器音频是否可用。可说 Computer cancel red alert 停止。这不代表检测到数据或仪器故障。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 42,
+      "atSeconds": 531.15
+    },
+    {
+      "event": "missy-end",
+      "id": 42,
+      "atSeconds": 541.4594000000022
+    },
+    {
+      "event": "step-end",
+      "id": 42,
+      "atSeconds": 542.3803000000007
+    },
+    {
+      "event": "step-start",
+      "id": 43,
+      "atSeconds": 542.381,
+      "say": "Computer cancel red alert"
+    },
+    {
+      "event": "operator-start",
+      "id": 43,
+      "atSeconds": 542.8145
+    },
+    {
+      "event": "operator-end",
+      "id": 43,
+      "atSeconds": 544.3792000000029
+    },
+    {
+      "event": "action-applied",
+      "id": 43,
+      "atSeconds": 544.4423000000007,
+      "say": "Computer cancel red alert",
+      "intent": "ship:standdown",
+      "answer": {
+        "en": "Manual red alert stopped; drill label cleared. This is not a green or passing scientific verdict.",
+        "zh": "已停止手动红色警报并清除演练标记。这不是绿色状态或科学通过判定。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 43,
+      "atSeconds": 544.832700000003
+    },
+    {
+      "event": "missy-end",
+      "id": 43,
+      "atSeconds": 550.679200000003
+    },
+    {
+      "event": "step-end",
+      "id": 43,
+      "atSeconds": 551.6009000000022
+    },
+    {
+      "event": "step-start",
+      "id": 44,
+      "atSeconds": 551.6015,
+      "say": "I select the second artificial instrument. It has only two run views."
+    },
+    {
+      "event": "operator-start",
+      "id": 44,
+      "atSeconds": 551.9965
+    },
+    {
+      "event": "operator-end",
+      "id": 44,
+      "atSeconds": 555.5793000000008
+    },
+    {
+      "event": "action-applied",
+      "id": 44,
+      "atSeconds": 555.73,
+      "say": "I select the second artificial instrument. It has only two run views.",
+      "intent": null,
+      "answer": {
+        "en": "Chart 1 of 110. Peak heating rate (2-s window).",
+        "zh": "第 1 / 110 张图。Peak heating rate (2-s window)。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 44,
+      "atSeconds": 556.07
+    },
+    {
+      "event": "missy-end",
+      "id": 44,
+      "atSeconds": 560.56
+    },
+    {
+      "event": "step-end",
+      "id": 44,
+      "atSeconds": 561.4808000000007
+    },
+    {
+      "event": "step-start",
+      "id": 45,
+      "atSeconds": 561.4816000000014,
+      "say": "Computer why has this chart no limits"
+    },
+    {
+      "event": "operator-start",
+      "id": 45,
+      "atSeconds": 561.9089000000023
+    },
+    {
+      "event": "operator-end",
+      "id": 45,
+      "atSeconds": 563.8791000000015
+    },
+    {
+      "event": "action-applied",
+      "id": 45,
+      "atSeconds": 563.9106000000015,
+      "say": "Computer why has this chart no limits",
+      "intent": "q:analyse",
+      "answer": {
+        "en": "B-H1 Peak heating rate (2-s window). 2 assessed points; 0 beyond available limits; 0 points with recorded flags. 0 missing or non-finite points; 0 before baseline. 2 points have available limits. Control baseline is not ready. No recorded flags. This is not proof that all data are nominal.",
+        "zh": "B-H1 Peak heating rate (2-s window)。评估点 2 个；超出可用限值 0 个；有记录标记 0 个。缺失或非有限值 0 个；基线之前 0 个。有可用限值的点 2 个。控制基线尚未就绪。没有记录标记，但不代表所有数据均正常。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 45,
+      "atSeconds": 564.2501000000015
+    },
+    {
+      "event": "missy-end",
+      "id": 45,
+      "atSeconds": 584.5393000000007
+    },
+    {
+      "event": "step-end",
+      "id": 45,
+      "atSeconds": 585.461200000003
+    },
+    {
+      "event": "step-start",
+      "id": 46,
+      "atSeconds": 585.462200000003,
+      "say": "Computer show chart 85"
+    },
+    {
+      "event": "operator-start",
+      "id": 46,
+      "atSeconds": 585.8552000000029
+    },
+    {
+      "event": "operator-end",
+      "id": 46,
+      "atSeconds": 587.5588000000007
+    },
+    {
+      "event": "action-applied",
+      "id": 46,
+      "atSeconds": 587.6231000000015,
+      "say": "Computer show chart 85",
+      "intent": "chart:85",
+      "answer": {
+        "en": "Chart 85. Amplification curves coloured by SOP outcome.",
+        "zh": "第 85 张图。Amplification curves coloured by SOP outcome。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 46,
+      "atSeconds": 587.9335
+    },
+    {
+      "event": "missy-end",
+      "id": 46,
+      "atSeconds": 592.2193000000008
+    },
+    {
+      "event": "step-end",
+      "id": 46,
+      "atSeconds": 594.5013000000007
+    },
+    {
+      "event": "step-start",
+      "id": 47,
+      "atSeconds": 594.502200000003,
+      "say": "Computer summarise the run"
+    },
+    {
+      "event": "operator-start",
+      "id": 47,
+      "atSeconds": 594.8901000000014
+    },
+    {
+      "event": "operator-end",
+      "id": 47,
+      "atSeconds": 596.458700000003
+    },
+    {
+      "event": "action-applied",
+      "id": 47,
+      "atSeconds": 596.4885,
+      "say": "Computer summarise the run",
+      "intent": "data:summary",
+      "answer": {
+        "en": "Run 1; SIM 1. 24 stored result rows; 24 included rows. Existing profile status: Accepted. This is not release approval.",
+        "zh": "第 1 次运行；SIM 1。存储结果行 24，当前纳入行 24。已有配置状态：Accepted。这不是放行批准。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 47,
+      "atSeconds": 596.8068000000007
+    },
+    {
+      "event": "missy-end",
+      "id": 47,
+      "atSeconds": 607.0789000000022
+    },
+    {
+      "event": "step-end",
+      "id": 47,
+      "atSeconds": 608.000200000003
+    },
+    {
+      "event": "step-start",
+      "id": 48,
+      "atSeconds": 608.0009000000023,
+      "say": "Computer where did this run come from"
+    },
+    {
+      "event": "operator-start",
+      "id": 48,
+      "atSeconds": 608.392700000003
+    },
+    {
+      "event": "operator-end",
+      "id": 48,
+      "atSeconds": 610.218700000003
+    },
+    {
+      "event": "action-applied",
+      "id": 48,
+      "atSeconds": 610.2496000000015,
+      "say": "Computer where did this run come from",
+      "intent": "data:origin",
+      "answer": {
+        "en": "Run 1; source filename ARTIFICIAL_MISSY_DEMO.rdml; instrument label LC · DEMO-VIRTUAL-001; software version DEMO GENERATOR 1. Fields are recorded metadata, not independent verification.",
+        "zh": "第 1 次运行；源文件名 ARTIFICIAL_MISSY_DEMO.rdml；仪器标签 LC · DEMO-VIRTUAL-001；软件版本 DEMO GENERATOR 1。以上为记录元数据，不是独立验证。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 48,
+      "atSeconds": 610.5615
+    },
+    {
+      "event": "missy-end",
+      "id": 48,
+      "atSeconds": 623.8059000000022
+    },
+    {
+      "event": "step-end",
+      "id": 48,
+      "atSeconds": 624.7268000000007
+    },
+    {
+      "event": "step-start",
+      "id": 49,
+      "atSeconds": 624.7276000000015,
+      "say": "Computer show chart 86"
+    },
+    {
+      "event": "operator-start",
+      "id": 49,
+      "atSeconds": 625.121700000003
+    },
+    {
+      "event": "operator-end",
+      "id": 49,
+      "atSeconds": 626.8985
+    },
+    {
+      "event": "action-applied",
+      "id": 49,
+      "atSeconds": 626.9761000000015,
+      "say": "Computer show chart 86",
+      "intent": "chart:86",
+      "answer": {
+        "en": "Chart 86. Plate heat map.",
+        "zh": "第 86 张图。Plate heat map。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 49,
+      "atSeconds": 627.2851000000015
+    },
+    {
+      "event": "missy-end",
+      "id": 49,
+      "atSeconds": 630.2589000000022
+    },
+    {
+      "event": "step-end",
+      "id": 49,
+      "atSeconds": 633.7391000000015
+    },
+    {
+      "event": "step-start",
+      "id": 50,
+      "atSeconds": 633.7399000000022,
+      "say": "Computer stations"
+    },
+    {
+      "event": "operator-start",
+      "id": 50,
+      "atSeconds": 634.1292000000029
+    },
+    {
+      "event": "operator-end",
+      "id": 50,
+      "atSeconds": 635.4786000000015
+    },
+    {
+      "event": "action-applied",
+      "id": 50,
+      "atSeconds": 635.5958000000007,
+      "say": "Computer stations",
+      "intent": "ship:stations",
+      "answer": {
+        "en": "Review stations. Opened Quality and forensic review. The previous view is saved; say Computer as you were to return. This does not establish that every issue has been found.",
+        "zh": "审核就位。已打开质量与取证审核，已保存先前页面，可说 Computer as you were 返回。这不代表已经发现所有问题。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 50,
+      "atSeconds": 635.9111000000015
+    },
+    {
+      "event": "missy-end",
+      "id": 50,
+      "atSeconds": 646.1786000000014
+    },
+    {
+      "event": "step-end",
+      "id": 50,
+      "atSeconds": 647.1011000000015
+    },
+    {
+      "event": "step-start",
+      "id": 51,
+      "atSeconds": 647.1021000000015,
+      "say": "Computer as you were"
+    },
+    {
+      "event": "operator-start",
+      "id": 51,
+      "atSeconds": 647.5109000000023
+    },
+    {
+      "event": "operator-end",
+      "id": 51,
+      "atSeconds": 648.838700000003
+    },
+    {
+      "event": "action-applied",
+      "id": 51,
+      "atSeconds": 648.9163000000008,
+      "say": "Computer as you were",
+      "intent": "ship:restore",
+      "answer": {
+        "en": "Restored the saved review-navigation view. Data, profile and downloads were not reverted.",
+        "zh": "已恢复保存的审核导航页面。未回退数据、配置或下载。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 51,
+      "atSeconds": 649.2466000000015
+    },
+    {
+      "event": "missy-end",
+      "id": 51,
+      "atSeconds": 654.658700000003
+    },
+    {
+      "event": "step-end",
+      "id": 51,
+      "atSeconds": 656.1405
+    },
+    {
+      "event": "step-start",
+      "id": 52,
+      "atSeconds": 656.1411000000015,
+      "say": "Chapter 3. Prepare the report."
+    },
+    {
+      "event": "operator-start",
+      "id": 52,
+      "atSeconds": 656.5415
+    },
+    {
+      "event": "operator-end",
+      "id": 52,
+      "atSeconds": 658.8789000000022
+    },
+    {
+      "event": "action-applied",
+      "id": 52,
+      "atSeconds": 658.8869000000022,
+      "say": "Chapter 3. Prepare the report.",
+      "intent": null,
+      "answer": {
+        "en": "ARTIFICIAL DATA — NOT A LABORATORY RESULT. We will review provenance, prepare a real report from artificial data, and show the limits of this tool.",
+        "zh": "人工模拟数据，不是实验室结果。我们将审核来源，使用模拟数据生成真实报告，并说明工具的边界。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 52,
+      "atSeconds": 659.2224000000023
+    },
+    {
+      "event": "missy-end",
+      "id": 52,
+      "atSeconds": 667.2193000000008
+    },
+    {
+      "event": "step-end",
+      "id": 52,
+      "atSeconds": 668.1404000000023
+    },
+    {
+      "event": "step-start",
+      "id": 53,
+      "atSeconds": 668.1411000000015,
+      "say": "Computer seven"
+    },
+    {
+      "event": "operator-start",
+      "id": 53,
+      "atSeconds": 668.547700000003
+    },
+    {
+      "event": "operator-end",
+      "id": 53,
+      "atSeconds": 669.7593000000007
+    },
+    {
+      "event": "action-applied",
+      "id": 53,
+      "atSeconds": 669.818,
+      "say": "Computer seven",
+      "intent": 7,
+      "answer": {
+        "en": "Workspace. Open formats.",
+        "zh": "工作区。开放格式。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 53,
+      "atSeconds": 670.1585
+    },
+    {
+      "event": "missy-end",
+      "id": 53,
+      "atSeconds": 673.0988000000008
+    },
+    {
+      "event": "step-end",
+      "id": 53,
+      "atSeconds": 674.0198000000007
+    },
+    {
+      "event": "step-start",
+      "id": 54,
+      "atSeconds": 674.0206000000015,
+      "say": "Computer where am I"
+    },
+    {
+      "event": "operator-start",
+      "id": 54,
+      "atSeconds": 674.4406000000015
+    },
+    {
+      "event": "operator-end",
+      "id": 54,
+      "atSeconds": 675.7186000000015
+    },
+    {
+      "event": "action-applied",
+      "id": 54,
+      "atSeconds": 675.7365,
+      "say": "Computer where am I",
+      "intent": "q:where",
+      "answer": {
+        "en": "Workspace. Open formats.",
+        "zh": "工作区。开放格式。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 54,
+      "atSeconds": 676.0453000000008
+    },
+    {
+      "event": "missy-end",
+      "id": 54,
+      "atSeconds": 678.9992000000029
+    },
+    {
+      "event": "step-end",
+      "id": 54,
+      "atSeconds": 679.92
+    },
+    {
+      "event": "step-start",
+      "id": 55,
+      "atSeconds": 679.920700000003,
+      "say": "Computer what will the export contain"
+    },
+    {
+      "event": "operator-start",
+      "id": 55,
+      "atSeconds": 680.336
+    },
+    {
+      "event": "operator-end",
+      "id": 55,
+      "atSeconds": 682.1991000000015
+    },
+    {
+      "event": "action-applied",
+      "id": 55,
+      "atSeconds": 682.2203000000007,
+      "say": "Computer what will the export contain",
+      "intent": "data:exportscope",
+      "answer": {
+        "en": "Export scope depends on the specific export. Graph CSV uses the current graph data; interpreted result exports use the active profile and current selection; complete raw-value exports have their own scope. I have not started a download. Review Open formats and the export dictionary for the selected export.",
+        "zh": "导出范围取决于具体导出项目。图表 CSV 使用当前图表数据；判读结果导出使用当前配置和选择；完整原始值导出有独立范围。未开始下载，请在开放格式及导出字典审核具体导出项目。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 55,
+      "atSeconds": 682.5345
+    },
+    {
+      "event": "missy-end",
+      "id": 55,
+      "atSeconds": 699.1585
+    },
+    {
+      "event": "step-end",
+      "id": 55,
+      "atSeconds": 700.08
+    },
+    {
+      "event": "step-start",
+      "id": 56,
+      "atSeconds": 700.0809000000022,
+      "say": "Computer security alert"
+    },
+    {
+      "event": "operator-start",
+      "id": 56,
+      "atSeconds": 700.481
+    },
+    {
+      "event": "operator-end",
+      "id": 56,
+      "atSeconds": 702.0182000000029
+    },
+    {
+      "event": "action-applied",
+      "id": 56,
+      "atSeconds": 702.040200000003,
+      "say": "Computer security alert",
+      "intent": "ship:security",
+      "answer": {
+        "en": "Identifier disclosure status: export pseudonymisation is on. That setting applies only to exports that implement it. Spoken sample names remain original, as you requested. No security or intrusion scan was performed; no export was started.",
+        "zh": "标识信息状态：导出假名化已开启。此设置仅作用于支持该功能的导出。按您的要求，语音样品名仍使用原名。未进行安全或入侵扫描，也未开始导出。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 56,
+      "atSeconds": 702.3574000000023
+    },
+    {
+      "event": "missy-end",
+      "id": 56,
+      "atSeconds": 716.6183000000008
+    },
+    {
+      "event": "step-end",
+      "id": 56,
+      "atSeconds": 717.5391000000014
+    },
+    {
+      "event": "step-start",
+      "id": 57,
+      "atSeconds": 717.54,
+      "say": "Computer eight"
+    },
+    {
+      "event": "operator-start",
+      "id": 57,
+      "atSeconds": 717.9316000000015
+    },
+    {
+      "event": "operator-end",
+      "id": 57,
+      "atSeconds": 719.038200000003
+    },
+    {
+      "event": "action-applied",
+      "id": 57,
+      "atSeconds": 719.0805,
+      "say": "Computer eight",
+      "intent": 8,
+      "answer": {
+        "en": "Workspace. File integrity.",
+        "zh": "工作区。文件完整性。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 57,
+      "atSeconds": 719.3875
+    },
+    {
+      "event": "missy-end",
+      "id": 57,
+      "atSeconds": 722.3186000000015
+    },
+    {
+      "event": "step-end",
+      "id": 57,
+      "atSeconds": 723.238700000003
+    },
+    {
+      "event": "step-start",
+      "id": 58,
+      "atSeconds": 723.2396000000015,
+      "say": "Computer status report"
+    },
+    {
+      "event": "operator-start",
+      "id": 58,
+      "atSeconds": 723.6253000000007
+    },
+    {
+      "event": "operator-end",
+      "id": 58,
+      "atSeconds": 725.1381000000015
+    },
+    {
+      "event": "action-applied",
+      "id": 58,
+      "atSeconds": 725.1599000000023,
+      "say": "Computer status report",
+      "intent": "f:report",
+      "answer": {
+        "en": "Status report. 32 runs; 768 stored result rows. Active profile ARTIFICIAL DEMO — NOT VALIDATED, version demo-1. 0 recorded software faults; these are not sample failures. No chart is open. Say Computer full report for the remaining observations. Unavailable checks are not evidence of a pass.",
+        "zh": "状态报告。32 次运行；768 行存储结果。当前配置 ARTIFICIAL DEMO — NOT VALIDATED，版本 demo-1。记录软件故障 0 个，这不是样品失败数量。当前未打开图表。请说 Computer full report 获取其余观察项。不可用的检查不代表通过。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 58,
+      "atSeconds": 725.4734000000022
+    },
+    {
+      "event": "missy-end",
+      "id": 58,
+      "atSeconds": 745.8384000000023
+    },
+    {
+      "event": "step-end",
+      "id": 58,
+      "atSeconds": 746.759
+    },
+    {
+      "event": "step-start",
+      "id": 59,
+      "atSeconds": 746.7598000000007,
+      "say": "I open the animal shortcuts. These are mouse actions in this demonstration."
+    },
+    {
+      "event": "operator-start",
+      "id": 59,
+      "atSeconds": 747.1578000000007
+    },
+    {
+      "event": "operator-end",
+      "id": 59,
+      "atSeconds": 750.8781000000015
+    },
+    {
+      "event": "action-applied",
+      "id": 59,
+      "atSeconds": 750.9416000000015,
+      "say": "I open the animal shortcuts. These are mouse actions in this demonstration.",
+      "intent": null,
+      "answer": {
+        "en": "Choose or drop experiment files, read them, and review sample selection.",
+        "zh": "选择或拖入实验文件，读取文件并审核样品选择。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 59,
+      "atSeconds": 751.2599000000023
+    },
+    {
+      "event": "missy-end",
+      "id": 59,
+      "atSeconds": 755.7586000000015
+    },
+    {
+      "event": "step-end",
+      "id": 59,
+      "atSeconds": 756.6803000000008
+    },
+    {
+      "event": "step-start",
+      "id": 60,
+      "atSeconds": 756.681200000003,
+      "say": "I open Command mode."
+    },
+    {
+      "event": "operator-start",
+      "id": 60,
+      "atSeconds": 757.080200000003
+    },
+    {
+      "event": "operator-end",
+      "id": 60,
+      "atSeconds": 758.478
+    },
+    {
+      "event": "action-applied",
+      "id": 60,
+      "atSeconds": 758.5373000000008,
+      "say": "I open Command mode.",
+      "intent": null,
+      "answer": {
+        "en": "Command mode. Load files.",
+        "zh": "命令模式。加载文件。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 60,
+      "atSeconds": 758.8494000000022
+    },
+    {
+      "event": "missy-end",
+      "id": 60,
+      "atSeconds": 761.578200000003
+    },
+    {
+      "event": "step-end",
+      "id": 60,
+      "atSeconds": 765.6996000000015
+    },
+    {
+      "event": "step-start",
+      "id": 61,
+      "atSeconds": 765.7,
+      "say": "Computer are these results validated"
+    },
+    {
+      "event": "operator-start",
+      "id": 61,
+      "atSeconds": 766.0952000000029
+    },
+    {
+      "event": "operator-end",
+      "id": 61,
+      "atSeconds": 767.9384000000023
+    },
+    {
+      "event": "action-applied",
+      "id": 61,
+      "atSeconds": 767.9595,
+      "say": "Computer are these results validated",
+      "intent": "refuse:validation",
+      "answer": {
+        "en": "This is a research-use tool, not a laboratory validation certificate. You can review the method configuration and documentation for your own validation process.",
+        "zh": "本工具供研究使用，不是实验室验证证书。您可审核方法配置及文档，用于自己的验证流程。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 61,
+      "atSeconds": 768.2922000000029
+    },
+    {
+      "event": "missy-end",
+      "id": 61,
+      "atSeconds": 776.8581000000015
+    },
+    {
+      "event": "step-end",
+      "id": 61,
+      "atSeconds": 777.7794000000023
+    },
+    {
+      "event": "step-start",
+      "id": 62,
+      "atSeconds": 777.7803000000007,
+      "say": "Computer is this sample contaminated"
+    },
+    {
+      "event": "operator-start",
+      "id": 62,
+      "atSeconds": 778.164
+    },
+    {
+      "event": "operator-end",
+      "id": 62,
+      "atSeconds": 780.098
+    },
+    {
+      "event": "action-applied",
+      "id": 62,
+      "atSeconds": 780.1179000000022,
+      "say": "Computer is this sample contaminated",
+      "intent": "refuse:cause",
+      "answer": {
+        "en": "I do not infer contamination or inhibition from a curve. You can inspect recorded control results and the active method rules in Results and SOP.",
+        "zh": "我不从曲线推断污染或抑制。您可以在结果及 SOP 页面查看已记录的对照结果和当前方法规则。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 62,
+      "atSeconds": 780.428700000003
+    },
+    {
+      "event": "missy-end",
+      "id": 62,
+      "atSeconds": 787.8383000000008
+    },
+    {
+      "event": "step-end",
+      "id": 62,
+      "atSeconds": 788.7596000000015
+    },
+    {
+      "event": "step-start",
+      "id": 63,
+      "atSeconds": 788.7604000000023,
+      "say": "Computer override the profile"
+    },
+    {
+      "event": "operator-start",
+      "id": 63,
+      "atSeconds": 789.1528000000008
+    },
+    {
+      "event": "operator-end",
+      "id": 63,
+      "atSeconds": 790.7979000000022
+    },
+    {
+      "event": "action-applied",
+      "id": 63,
+      "atSeconds": 790.8144000000023,
+      "say": "Computer override the profile",
+      "intent": "o:override",
+      "answer": {
+        "en": "Unable to comply. Voice does not override method rules. Review the active profile in the SOP view.",
+        "zh": "无法执行。语音不能绕过方法规则，请在 SOP 页面审核当前配置。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 63,
+      "atSeconds": 791.1239000000022
+    },
+    {
+      "event": "missy-end",
+      "id": 63,
+      "atSeconds": 797.5778000000007
+    },
+    {
+      "event": "step-end",
+      "id": 63,
+      "atSeconds": 798.4986000000015
+    },
+    {
+      "event": "step-start",
+      "id": 64,
+      "atSeconds": 798.4993000000007,
+      "say": "Computer approve this run for release"
+    },
+    {
+      "event": "operator-start",
+      "id": 64,
+      "atSeconds": 798.8875
+    },
+    {
+      "event": "operator-end",
+      "id": 64,
+      "atSeconds": 800.7178000000007
+    },
+    {
+      "event": "action-applied",
+      "id": 64,
+      "atSeconds": 800.735700000003,
+      "say": "Computer approve this run for release",
+      "intent": "refuse:release",
+      "answer": {
+        "en": "Unable to comply. Release is a laboratory decision under your SOP. You can review the profile findings in Results; this page does not authorise release.",
+        "zh": "无法执行。放行属于实验室 SOP 下的决定。您可在结果页面审核配置判定；本页面不授权放行。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 64,
+      "atSeconds": 801.0485
+    },
+    {
+      "event": "missy-end",
+      "id": 64,
+      "atSeconds": 810.0379000000022
+    },
+    {
+      "event": "step-end",
+      "id": 64,
+      "atSeconds": 810.9595
+    },
+    {
+      "event": "step-start",
+      "id": 65,
+      "atSeconds": 810.9604000000022,
+      "say": "I select the drift and heating figures in Assisted mode. Report creation is a scripted demo action."
+    },
+    {
+      "event": "operator-start",
+      "id": 65,
+      "atSeconds": 811.3438000000008
+    },
+    {
+      "event": "operator-end",
+      "id": 65,
+      "atSeconds": 815.7979000000022
+    },
+    {
+      "event": "action-applied",
+      "id": 65,
+      "atSeconds": 816.1835,
+      "say": "I select the drift and heating figures in Assisted mode. Report creation is a scripted demo action.",
+      "intent": null,
+      "answer": {
+        "en": "Assisted mode. Load files.",
+        "zh": "辅助模式。加载文件。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 65,
+      "atSeconds": 816.4987000000029
+    },
+    {
+      "event": "missy-end",
+      "id": 65,
+      "atSeconds": 819.2981000000015
+    },
+    {
+      "event": "step-end",
+      "id": 65,
+      "atSeconds": 820.2185
+    },
+    {
+      "event": "step-start",
+      "id": 66,
+      "atSeconds": 820.219,
+      "say": "I build the report locally. This does not approve laboratory results."
+    },
+    {
+      "event": "operator-start",
+      "id": 66,
+      "atSeconds": 820.6113000000007
+    },
+    {
+      "event": "operator-end",
+      "id": 66,
+      "atSeconds": 824.0579000000023
+    },
+    {
+      "event": "action-applied",
+      "id": 66,
+      "atSeconds": 828.1991000000015,
+      "say": "I build the report locally. This does not approve laboratory results.",
+      "intent": null,
+      "answer": {
+        "en": "Artificial-data report is ready in memory. Use Preview report to inspect the actual PDF.",
+        "zh": "模拟数据报告已在内存中生成，可点击预览查看实际 PDF。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 66,
+      "atSeconds": 828.517700000003
+    },
+    {
+      "event": "missy-end",
+      "id": 66,
+      "atSeconds": 834.0178000000008
+    },
+    {
+      "event": "step-end",
+      "id": 66,
+      "atSeconds": 834.9385
+    },
+    {
+      "event": "step-start",
+      "id": 67,
+      "atSeconds": 834.9396000000015,
+      "say": "Computer stand down"
+    },
+    {
+      "event": "operator-start",
+      "id": 67,
+      "atSeconds": 835.3315
+    },
+    {
+      "event": "operator-end",
+      "id": 67,
+      "atSeconds": 836.717700000003
+    },
+    {
+      "event": "action-applied",
+      "id": 67,
+      "atSeconds": 836.7764000000022,
+      "say": "Computer stand down",
+      "intent": "ship:standdown",
+      "answer": {
+        "en": "Manual red alert stopped; drill label cleared. This is not a green or passing scientific verdict.",
+        "zh": "已停止手动红色警报并清除演练标记。这不是绿色状态或科学通过判定。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 67,
+      "atSeconds": 837.0933000000008
+    },
+    {
+      "event": "missy-end",
+      "id": 67,
+      "atSeconds": 842.9379000000023
+    },
+    {
+      "event": "step-end",
+      "id": 67,
+      "atSeconds": 843.9781000000015
+    },
+    {
+      "event": "step-start",
+      "id": 68,
+      "atSeconds": 843.9794000000022,
+      "say": "Computer all stop"
+    },
+    {
+      "event": "operator-start",
+      "id": 68,
+      "atSeconds": 844.369
+    },
+    {
+      "event": "operator-end",
+      "id": 68,
+      "atSeconds": 845.737700000003
+    },
+    {
+      "event": "action-applied",
+      "id": 68,
+      "atSeconds": 845.8395,
+      "say": "Computer all stop",
+      "intent": "ship:stop",
+      "answer": {
+        "en": "Voice, manual alert and background sounds stopped. File intake, rendering and instrument acquisition were not halted. Loaded run views remain.",
+        "zh": "已停止语音、手动警报及背景声音。未停止文件读取、渲染或仪器采集，已加载运行视图保留。"
+      }
+    },
+    {
+      "event": "missy-start",
+      "id": 68,
+      "atSeconds": 846.1515
+    },
+    {
+      "event": "missy-end",
+      "id": 68,
+      "atSeconds": 854.9378000000007
+    },
+    {
+      "event": "step-end",
+      "id": 68,
+      "atSeconds": 855.859
+    }
+  ],
+  "reportBytes": 6595717,
+  "audit": {
+    "runs": 32,
+    "rows": 768,
+    "repeats": 3,
+    "failedControls": 1,
+    "instruments": [
+      "LC · DEMO-VIRTUAL-001",
+      "LC · DEMO-SHORT-BASELINE"
+    ],
+    "protocols": [
+      "95/10s 60/20s"
+    ],
+    "primaryFlagged": 4,
+    "primaryBaselineReady": true,
+    "shortBaselineReady": false,
+    "shortPoints": 2
+  },
+  "workspaceAndPreferencesUnchanged": true
+}

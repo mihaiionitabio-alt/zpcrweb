@@ -1,0 +1,53 @@
+{
+  "formats": [
+    {
+      "format": "IXO",
+      "files": 10,
+      "views": 10,
+      "scientificResultsAndExportRowsEqual": true,
+      "voiceOff": true,
+      "errors": []
+    },
+    {
+      "format": "EDS",
+      "files": 2,
+      "views": 2,
+      "scientificResultsAndExportRowsEqual": true,
+      "voiceOff": true,
+      "errors": []
+    },
+    {
+      "format": "EDT",
+      "files": 1,
+      "views": 1,
+      "scientificResultsAndExportRowsEqual": true,
+      "voiceOff": true,
+      "errors": []
+    },
+    {
+      "format": "RDML",
+      "files": 3,
+      "views": 7,
+      "scientificResultsAndExportRowsEqual": true,
+      "voiceOff": true,
+      "errors": []
+    },
+    {
+      "format": "CFX_RDML",
+      "files": 24,
+      "views": 38,
+      "scientificResultsAndExportRowsEqual": true,
+      "voiceOff": true,
+      "errors": []
+    },
+    {
+      "format": "ZPCR",
+      "files": 7,
+      "views": 7,
+      "scientificResultsAndExportRowsEqual": true,
+      "voiceOff": true,
+      "errors": []
+    }
+  ],
+  "scope": "Final public build, voice off; separate direct-format scientific/export-row/normalized-RDML equivalence against published precision1."
+}

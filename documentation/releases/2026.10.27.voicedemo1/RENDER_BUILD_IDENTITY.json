@@ -1,0 +1,7 @@
+{
+  "publication": "2026.10.27.voicedemo1",
+  "role": "Exact source build used for the recorded workflow, before the closed-controller cleanup fix",
+  "sha256": "cd19450816fd205e3445e5b0a01ce5d4ca766c3bc2cd79361ed3b59be59195fe",
+  "bytes": 18679551,
+  "method": "SHA-256 of exact UTF-8 index.html bytes stored in Git, LF newlines, no fields excluded."
+}
