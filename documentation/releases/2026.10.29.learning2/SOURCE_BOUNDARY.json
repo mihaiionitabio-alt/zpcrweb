@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "comparedSourceFiles": 158,
+  "existingChanged": [
+    "src/core/ui/guided_demo.js",
+    "src/core/ui/learning_game.js",
+    "src/variants/public/startup_head.html"
+  ],
+  "new": [
+    "src/core/ui/learning_workspace.js"
+  ],
+  "readerFilesUnchanged": 18,
+  "fullFontSourceUnchanged": [
+    "src/vendor/missy_pdf_font.js"
+  ],
+  "scientificSourceUnchanged": true,
+  "realSessionIsolation": "Separate owned srcdoc with memory-only storage; no parent RUNS or SOP replacement",
+  "buildSHA256": "03a1fd8400c1f59506723ee919b9bec8104c8633ebeb4b5e9d3b3c5cc31f1c5d"
+}

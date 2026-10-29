@@ -1,0 +1,61 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "format": "IXO",
+      "files": 2,
+      "snapshotEqual": true,
+      "runs": 2,
+      "coverage": "normal reader and scientific/export snapshots",
+      "errors": []
+    },
+    {
+      "format": "EDS",
+      "files": 1,
+      "snapshotEqual": true,
+      "runs": 1,
+      "coverage": "normal reader and scientific/export snapshots",
+      "errors": []
+    },
+    {
+      "format": "EDT",
+      "files": 1,
+      "snapshotEqual": true,
+      "runs": 1,
+      "coverage": "normal reader and scientific/export snapshots",
+      "errors": []
+    },
+    {
+      "format": "RDML",
+      "files": 1,
+      "snapshotEqual": true,
+      "runs": 1,
+      "coverage": "normal reader and scientific/export snapshots",
+      "errors": []
+    },
+    {
+      "format": "CFX_RDML",
+      "files": 1,
+      "snapshotEqual": true,
+      "runs": 2,
+      "coverage": "normal reader and scientific/export snapshots",
+      "errors": []
+    },
+    {
+      "format": "ZPCR",
+      "files": 1,
+      "snapshotEqual": true,
+      "runs": 1,
+      "coverage": "normal reader and scientific/export snapshots",
+      "errors": []
+    },
+    {
+      "format": "PCRD",
+      "files": 1,
+      "snapshotEqual": true,
+      "runs": 1,
+      "coverage": "locked/cancel path; no password supplied",
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,1166 @@
+{
+  "passed": true,
+  "physicalMicrophone": false,
+  "report": [
+    {
+      "language": "en",
+      "boot": {
+        "runs": 33,
+        "storedRows": 789,
+        "repeats": 3,
+        "failedControls": 1,
+        "shortPoints": 2,
+        "shortReady": false,
+        "primaryFlagged": 4,
+        "sentinels": 19,
+        "measuredFinal": 2,
+        "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+      },
+      "steps": [
+        {
+          "id": "intake",
+          "mode": "number",
+          "answer": {
+            "value": 33
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "files",
+          "mode": "open",
+          "answer": {
+            "evidence": {
+              "kind": "opened",
+              "id": "files"
+            }
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "replicates",
+          "mode": "number",
+          "answer": {
+            "value": 3
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "repeat-rule",
+          "mode": "quiz",
+          "answer": {
+            "call": "Repeat"
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "control-failure",
+          "mode": "quiz",
+          "answer": {
+            "call": "Control fail"
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "cause",
+          "mode": "quiz",
+          "answer": {
+            "call": "Observation only; investigate further"
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "sentinel",
+          "mode": "number",
+          "answer": {
+            "value": 19
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "crossings",
+          "mode": "number",
+          "answer": {
+            "value": 2
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "select-token",
+          "mode": "evidence",
+          "answer": {
+            "evidence": {
+              "kind": "well",
+              "run": "ARTIFICIAL_FINAL_CYCLE.rdml",
+              "pos": 0,
+              "target": "FINAL_TARGET"
+            }
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "baseline",
+          "mode": "quiz",
+          "answer": {
+            "call": "Cannot be determined"
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "baseline-count",
+          "mode": "number",
+          "answer": {
+            "value": 2
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "cohort",
+          "mode": "number",
+          "answer": {
+            "value": 30
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "drift",
+          "mode": "number",
+          "answer": {
+            "value": 4
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "point",
+          "mode": "point",
+          "answer": {
+            "evidence": {
+              "kind": "point",
+              "chart": "bg_median",
+              "index": 26
+            }
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "plate",
+          "mode": "number",
+          "answer": {
+            "value": 12
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "amplification",
+          "mode": "open",
+          "answer": {
+            "evidence": {
+              "kind": "opened",
+              "id": "amplification"
+            }
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "melting",
+          "mode": "number",
+          "answer": {
+            "value": 2
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "standards",
+          "mode": "number",
+          "answer": {
+            "value": 6
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "scope",
+          "mode": "quiz",
+          "answer": {
+            "call": "Not applicable"
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 0,
+            "failedControls": 0,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "f6bfa4b52fd2c68eeb6e60a78259f4b529ef856bbaa5138e3225192fedd099a8"
+          }
+        },
+        {
+          "id": "integrity-mismatch",
+          "mode": "quiz",
+          "answer": {
+            "call": "Stop and obtain a verified copy"
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "integrity-absent",
+          "mode": "quiz",
+          "answer": {
+            "call": "No comparison is available"
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "export",
+          "mode": "open",
+          "answer": {
+            "evidence": {
+              "kind": "opened",
+              "id": "export"
+            }
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "report",
+          "mode": "report",
+          "answer": {
+            "evidence": {
+              "kind": "report",
+              "ready": true
+            }
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "release",
+          "mode": "quiz",
+          "answer": {
+            "call": "Laboratory authorisation is required"
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        }
+      ],
+      "summary": {
+        "completed": 24,
+        "total": 24,
+        "unresolvedUnsafe": 0,
+        "passed": true,
+        "missProfile": {
+          "intake.count": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "integrity.identity": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "replicates.sd": {
+            "attempts": 2,
+            "misses": 0
+          },
+          "controls.acceptance": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "interpretation.boundary": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "sop.native": {
+            "attempts": 3,
+            "misses": 0
+          },
+          "chart.baseline": {
+            "attempts": 2,
+            "misses": 0
+          },
+          "chart.cohort": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "chart.flags": {
+            "attempts": 2,
+            "misses": 0
+          },
+          "plate.identity": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "signal.layer": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "melting.stored": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "quantification.standards": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "sop.scope": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "integrity.mismatch": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "integrity.absent": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "export.review": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "report.identity": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "release.boundary": {
+            "attempts": 1,
+            "misses": 0
+          }
+        }
+      },
+      "parentUnchanged": true,
+      "errors": []
+    },
+    {
+      "language": "zh",
+      "boot": {
+        "runs": 33,
+        "storedRows": 789,
+        "repeats": 3,
+        "failedControls": 1,
+        "shortPoints": 2,
+        "shortReady": false,
+        "primaryFlagged": 4,
+        "sentinels": 19,
+        "measuredFinal": 2,
+        "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+      },
+      "steps": [
+        {
+          "id": "intake",
+          "mode": "number",
+          "answer": {
+            "value": 33
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "files",
+          "mode": "open",
+          "answer": {
+            "evidence": {
+              "kind": "opened",
+              "id": "files"
+            }
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "replicates",
+          "mode": "number",
+          "answer": {
+            "value": 3
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "repeat-rule",
+          "mode": "quiz",
+          "answer": {
+            "call": "Repeat"
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "control-failure",
+          "mode": "quiz",
+          "answer": {
+            "call": "Control fail"
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "cause",
+          "mode": "quiz",
+          "answer": {
+            "call": "Observation only; investigate further"
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "sentinel",
+          "mode": "number",
+          "answer": {
+            "value": 19
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "crossings",
+          "mode": "number",
+          "answer": {
+            "value": 2
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "select-token",
+          "mode": "evidence",
+          "answer": {
+            "evidence": {
+              "kind": "well",
+              "run": "ARTIFICIAL_FINAL_CYCLE.rdml",
+              "pos": 0,
+              "target": "FINAL_TARGET"
+            }
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "baseline",
+          "mode": "quiz",
+          "answer": {
+            "call": "Cannot be determined"
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "baseline-count",
+          "mode": "number",
+          "answer": {
+            "value": 2
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "cohort",
+          "mode": "number",
+          "answer": {
+            "value": 30
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "drift",
+          "mode": "number",
+          "answer": {
+            "value": 4
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "point",
+          "mode": "point",
+          "answer": {
+            "evidence": {
+              "kind": "point",
+              "chart": "bg_median",
+              "index": 26
+            }
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "plate",
+          "mode": "number",
+          "answer": {
+            "value": 12
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "amplification",
+          "mode": "open",
+          "answer": {
+            "evidence": {
+              "kind": "opened",
+              "id": "amplification"
+            }
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "melting",
+          "mode": "number",
+          "answer": {
+            "value": 2
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "standards",
+          "mode": "number",
+          "answer": {
+            "value": 6
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "scope",
+          "mode": "quiz",
+          "answer": {
+            "call": "Not applicable"
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 0,
+            "failedControls": 0,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "f6bfa4b52fd2c68eeb6e60a78259f4b529ef856bbaa5138e3225192fedd099a8"
+          }
+        },
+        {
+          "id": "integrity-mismatch",
+          "mode": "quiz",
+          "answer": {
+            "call": "Stop and obtain a verified copy"
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "integrity-absent",
+          "mode": "quiz",
+          "answer": {
+            "call": "No comparison is available"
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "export",
+          "mode": "open",
+          "answer": {
+            "evidence": {
+              "kind": "opened",
+              "id": "export"
+            }
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "report",
+          "mode": "report",
+          "answer": {
+            "evidence": {
+              "kind": "report",
+              "ready": true
+            }
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        },
+        {
+          "id": "release",
+          "mode": "quiz",
+          "answer": {
+            "call": "Laboratory authorisation is required"
+          },
+          "snapshot": {
+            "runs": 33,
+            "storedRows": 789,
+            "repeats": 3,
+            "failedControls": 1,
+            "shortPoints": 2,
+            "shortReady": false,
+            "primaryFlagged": 4,
+            "sentinels": 19,
+            "measuredFinal": 2,
+            "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+          }
+        }
+      ],
+      "summary": {
+        "completed": 24,
+        "total": 24,
+        "unresolvedUnsafe": 0,
+        "passed": true,
+        "missProfile": {
+          "intake.count": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "integrity.identity": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "replicates.sd": {
+            "attempts": 2,
+            "misses": 0
+          },
+          "controls.acceptance": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "interpretation.boundary": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "sop.native": {
+            "attempts": 3,
+            "misses": 0
+          },
+          "chart.baseline": {
+            "attempts": 2,
+            "misses": 0
+          },
+          "chart.cohort": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "chart.flags": {
+            "attempts": 2,
+            "misses": 0
+          },
+          "plate.identity": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "signal.layer": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "melting.stored": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "quantification.standards": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "sop.scope": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "integrity.mismatch": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "integrity.absent": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "export.review": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "report.identity": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "release.boundary": {
+            "attempts": 1,
+            "misses": 0
+          }
+        }
+      },
+      "parentUnchanged": true,
+      "errors": []
+    }
+  ]
+}

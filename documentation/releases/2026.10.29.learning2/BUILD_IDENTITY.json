@@ -1,0 +1,7 @@
+{
+  "version": "2026.10.29.learning2",
+  "publishedHTMLSHA256": "fba080a9e8f491d41788ffde1709b7a3b3186805c1052b5e03fc5b86f8b6508a",
+  "publishedBytes": 18722287,
+  "localBuildRawSHA256": "03a1fd8400c1f59506723ee919b9bec8104c8633ebeb4b5e9d3b3c5cc31f1c5d",
+  "canonicalisation": "Published index.html has LF line endings. Hashes cover the exact named file bytes, UTF-8, with no excluded fields."
+}
