@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "existingChanged": [
+    "src/core/ui/learning_workspace.js",
+    "src/variants/public/startup_head.html"
+  ],
+  "new": [
+    "src/core/ui/learning_report.js",
+    "src/vendor/html2canvas.js"
+  ],
+  "readerCalculationExportAndFullFontFilesUnchanged": 28,
+  "buildRawSHA256": "45f16831042dbf68554b302069ae3688dac308b166ecd3ab43c04ffb7601acde"
+}

@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "physicalMicrophone": false,
+  "recognitionEngine": "Stubbed local recognizer with final onresult events",
+  "singleRecognizerStarted": true,
+  "duplicateFinalDoesNotRepeatAnswer": true,
+  "childVoiceControlsVisible": 0,
+  "accepted": "Computer, value thirty three"
+}
