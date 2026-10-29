@@ -1,0 +1,307 @@
+{
+  "passed": true,
+  "rows": [
+    {
+      "lang": "en",
+      "width": 1280,
+      "geometry": {
+        "width": 1280,
+        "height": 1080,
+        "x": 0,
+        "y": 0,
+        "scrollWidth": 1280,
+        "cards": [
+          {
+            "x": 180,
+            "y": 420.390625,
+            "right": 687,
+            "bottom": 750.390625,
+            "width": 507,
+            "height": 330
+          },
+          {
+            "x": 717,
+            "y": 420.390625,
+            "right": 1224,
+            "bottom": 750.390625,
+            "width": 507,
+            "height": 330
+          }
+        ]
+      }
+    },
+    {
+      "lang": "en",
+      "width": 1536,
+      "geometry": {
+        "width": 1536,
+        "height": 1080,
+        "x": 0,
+        "y": 0,
+        "scrollWidth": 1536,
+        "cards": [
+          {
+            "x": 180,
+            "y": 420.390625,
+            "right": 815,
+            "bottom": 750.390625,
+            "width": 635,
+            "height": 330
+          },
+          {
+            "x": 845,
+            "y": 420.390625,
+            "right": 1480,
+            "bottom": 750.390625,
+            "width": 635,
+            "height": 330
+          }
+        ]
+      }
+    },
+    {
+      "lang": "en",
+      "width": 1920,
+      "geometry": {
+        "width": 1920,
+        "height": 1080,
+        "x": 0,
+        "y": 0,
+        "scrollWidth": 1920,
+        "cards": [
+          {
+            "x": 350,
+            "y": 420.390625,
+            "right": 1007,
+            "bottom": 750.390625,
+            "width": 657,
+            "height": 330
+          },
+          {
+            "x": 1037,
+            "y": 420.390625,
+            "right": 1694,
+            "bottom": 750.390625,
+            "width": 657,
+            "height": 330
+          }
+        ]
+      }
+    },
+    {
+      "lang": "en",
+      "whileLoading": {
+        "loading": "true",
+        "mainHidden": "hidden",
+        "screen": true,
+        "stage": 1,
+        "time": "Elapsed: 588 ms"
+      },
+      "ready": {
+        "duration": 6281.9000000003725,
+        "stages": [
+          {
+            "stage": 1,
+            "elapsedMs": 1
+          },
+          {
+            "stage": 2,
+            "elapsedMs": 1083
+          },
+          {
+            "stage": 3,
+            "elapsedMs": 1199
+          },
+          {
+            "stage": 4,
+            "elapsedMs": 2309
+          },
+          {
+            "stage": 5,
+            "elapsedMs": 6275
+          }
+        ],
+        "snapshot": {
+          "runs": 33,
+          "storedRows": 789,
+          "repeats": 3,
+          "failedControls": 1,
+          "shortPoints": 2,
+          "shortReady": false,
+          "primaryFlagged": 4,
+          "sentinels": 19,
+          "measuredFinal": 2,
+          "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+        },
+        "loadingVisible": false,
+        "main": "visible"
+      },
+      "energy": [
+        {
+          "kind": "entry",
+          "peak": 0.044788435101509094
+        },
+        {
+          "kind": "learning",
+          "peak": 0.04493525251746178
+        },
+        {
+          "kind": "analysis",
+          "peak": 0.04515848681330681
+        }
+      ],
+      "errors": []
+    },
+    {
+      "lang": "zh",
+      "width": 1280,
+      "geometry": {
+        "width": 1280,
+        "height": 1080,
+        "x": 0,
+        "y": 0,
+        "scrollWidth": 1280,
+        "cards": [
+          {
+            "x": 180,
+            "y": 418.390625,
+            "right": 687,
+            "bottom": 748.390625,
+            "width": 507,
+            "height": 330
+          },
+          {
+            "x": 717,
+            "y": 418.390625,
+            "right": 1224,
+            "bottom": 748.390625,
+            "width": 507,
+            "height": 330
+          }
+        ]
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 1536,
+      "geometry": {
+        "width": 1536,
+        "height": 1080,
+        "x": 0,
+        "y": 0,
+        "scrollWidth": 1536,
+        "cards": [
+          {
+            "x": 180,
+            "y": 418.390625,
+            "right": 815,
+            "bottom": 748.390625,
+            "width": 635,
+            "height": 330
+          },
+          {
+            "x": 845,
+            "y": 418.390625,
+            "right": 1480,
+            "bottom": 748.390625,
+            "width": 635,
+            "height": 330
+          }
+        ]
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 1920,
+      "geometry": {
+        "width": 1920,
+        "height": 1080,
+        "x": 0,
+        "y": 0,
+        "scrollWidth": 1920,
+        "cards": [
+          {
+            "x": 350,
+            "y": 418.390625,
+            "right": 1007,
+            "bottom": 748.390625,
+            "width": 657,
+            "height": 330
+          },
+          {
+            "x": 1037,
+            "y": 418.390625,
+            "right": 1694,
+            "bottom": 748.390625,
+            "width": 657,
+            "height": 330
+          }
+        ]
+      }
+    },
+    {
+      "lang": "zh",
+      "whileLoading": {
+        "loading": "true",
+        "mainHidden": "hidden",
+        "screen": true,
+        "stage": 1,
+        "time": "已用时：721 ms"
+      },
+      "ready": {
+        "duration": 8435.199999999255,
+        "stages": [
+          {
+            "stage": 1,
+            "elapsedMs": 1
+          },
+          {
+            "stage": 2,
+            "elapsedMs": 1448
+          },
+          {
+            "stage": 3,
+            "elapsedMs": 1863
+          },
+          {
+            "stage": 4,
+            "elapsedMs": 3155
+          },
+          {
+            "stage": 5,
+            "elapsedMs": 8342
+          }
+        ],
+        "snapshot": {
+          "runs": 33,
+          "storedRows": 789,
+          "repeats": 3,
+          "failedControls": 1,
+          "shortPoints": 2,
+          "shortReady": false,
+          "primaryFlagged": 4,
+          "sentinels": 19,
+          "measuredFinal": 2,
+          "profileHash": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd"
+        },
+        "loadingVisible": false,
+        "main": "visible"
+      },
+      "energy": [
+        {
+          "kind": "entry",
+          "peak": 0.044788435101509094
+        },
+        {
+          "kind": "learning",
+          "peak": 0.04493525251746178
+        },
+        {
+          "kind": "analysis",
+          "peak": 0.04515848681330681
+        }
+      ],
+      "errors": []
+    }
+  ]
+}

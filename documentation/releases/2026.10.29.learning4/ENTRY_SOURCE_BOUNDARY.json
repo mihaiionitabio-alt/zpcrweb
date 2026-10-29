@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "existingChanged": [
+    "src/core/ui/learning_workspace.js",
+    "src/variants/public/startup_head.html"
+  ],
+  "new": [
+    "src/core/ui/workspace_entry.js"
+  ],
+  "allOtherExistingSourcesUnchanged": true,
+  "readerCalculationsExportsAndFontUnchanged": true
+}

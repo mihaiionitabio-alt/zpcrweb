@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "shortDesktop768Fits": true,
+  "cancelReturnsToFullChooser": true,
+  "failedWorkspaceRemainsHidden": true,
+  "retryCreatesOneReadyWorkspace": true,
+  "errors": []
+}

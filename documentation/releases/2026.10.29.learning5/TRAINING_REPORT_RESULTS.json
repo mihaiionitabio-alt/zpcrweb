@@ -1,0 +1,2840 @@
+{
+  "passed": true,
+  "physicalMicrophone": false,
+  "report": [
+    {
+      "lang": "en",
+      "steps": [
+        "intake",
+        "files",
+        "replicates",
+        "repeat-rule",
+        "control-failure",
+        "cause",
+        "sentinel",
+        "crossings",
+        "select-token",
+        "baseline",
+        "baseline-count",
+        "cohort",
+        "drift",
+        "point",
+        "plate",
+        "amplification",
+        "rising-channel",
+        "standards",
+        "scope",
+        "integrity-mismatch",
+        "integrity-absent",
+        "export",
+        "report",
+        "release"
+      ],
+      "imageInfo": [
+        {
+          "width": 1280,
+          "height": 840,
+          "bytes": 204583
+        },
+        {
+          "width": 1280,
+          "height": 840,
+          "bytes": 129507
+        },
+        {
+          "width": 1280,
+          "height": 840,
+          "bytes": 174783
+        },
+        {
+          "width": 1280,
+          "height": 840,
+          "bytes": 118683
+        },
+        {
+          "width": 1280,
+          "height": 840,
+          "bytes": 118319
+        },
+        {
+          "width": 1280,
+          "height": 840,
+          "bytes": 118219
+        },
+        {
+          "width": 1280,
+          "height": 840,
+          "bytes": 162147
+        },
+        {
+          "width": 1280,
+          "height": 840,
+          "bytes": 162111
+        },
+        {
+          "width": 1280,
+          "height": 840,
+          "bytes": 162099
+        },
+        {
+          "width": 1280,
+          "height": 840,
+          "bytes": 89643
+        },
+        {
+          "width": 1280,
+          "height": 840,
+          "bytes": 89643
+        },
+        {
+          "width": 1280,
+          "height": 840,
+          "bytes": 101595
+        },
+        {
+          "width": 1280,
+          "height": 840,
+          "bytes": 101595
+        },
+        {
+          "width": 1280,
+          "height": 840,
+          "bytes": 103239
+        },
+        {
+          "width": 1280,
+          "height": 840,
+          "bytes": 152855
+        },
+        {
+          "width": 1280,
+          "height": 840,
+          "bytes": 114331
+        },
+        {
+          "width": 1280,
+          "height": 840,
+          "bytes": 117187
+        },
+        {
+          "width": 1280,
+          "height": 840,
+          "bytes": 144735
+        },
+        {
+          "width": 1280,
+          "height": 840,
+          "bytes": 91747
+        },
+        {
+          "width": 1280,
+          "height": 840,
+          "bytes": 135935
+        },
+        {
+          "width": 1280,
+          "height": 840,
+          "bytes": 133071
+        },
+        {
+          "width": 1280,
+          "height": 840,
+          "bytes": 116439
+        },
+        {
+          "width": 1280,
+          "height": 840,
+          "bytes": 91883
+        },
+        {
+          "width": 1280,
+          "height": 840,
+          "bytes": 121659
+        }
+      ],
+      "summary": {
+        "points": 2400,
+        "maximum": 2400,
+        "completed": 24,
+        "total": 24,
+        "unresolvedUnsafe": 0,
+        "passed": true,
+        "missProfile": {
+          "intake.count": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "integrity.identity": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "replicates.sd": {
+            "attempts": 2,
+            "misses": 0
+          },
+          "controls.acceptance": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "interpretation.boundary": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "sop.native": {
+            "attempts": 3,
+            "misses": 0
+          },
+          "chart.baseline": {
+            "attempts": 2,
+            "misses": 0
+          },
+          "chart.cohort": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "chart.flags": {
+            "attempts": 2,
+            "misses": 0
+          },
+          "plate.identity": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "signal.layer": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "signal.own-channel": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "quantification.standards": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "sop.scope": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "integrity.mismatch": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "integrity.absent": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "export.review": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "report.identity": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "release.boundary": {
+            "attempts": 1,
+            "misses": 0
+          }
+        }
+      },
+      "identity": {
+        "laboratory": "Training Laboratory",
+        "investigator": "Test Investigator"
+      },
+      "records": [
+        {
+          "scenario": "intake",
+          "rule": "intake.count",
+          "attempt": 1,
+          "answer": {
+            "value": 33
+          },
+          "truth": {
+            "value": 33,
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "value": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "value": 33,
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 272.3999999985099,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "33",
+          "displayTruth": "33",
+          "at": "2026-10-29T12:23:45.249Z",
+          "title": "The incoming batch",
+          "question": "How many runs are loaded?",
+          "guide": "The artificial runs are already loaded. Check the run count.",
+          "sessionElapsedMs": 6436.099999997765
+        },
+        {
+          "scenario": "files",
+          "rule": "integrity.identity",
+          "attempt": 1,
+          "answer": {
+            "evidence": {
+              "kind": "opened",
+              "id": "files"
+            }
+          },
+          "truth": {
+            "evidence": {
+              "kind": "opened",
+              "id": "files"
+            },
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "evidence": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "evidence": {
+                "kind": "opened",
+                "id": "files"
+              },
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 126.19999999925494,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "Requested view opened",
+          "displayTruth": "Requested view opened",
+          "at": "2026-10-29T12:23:45.998Z",
+          "title": "Inspect the loaded file",
+          "question": "Open the highlighted evidence, then confirm.",
+          "guide": "Open File integrity to see the files used in this game.",
+          "sessionElapsedMs": 7184.89999999851
+        },
+        {
+          "scenario": "replicates",
+          "rule": "replicates.sd",
+          "attempt": 1,
+          "answer": {
+            "value": 3
+          },
+          "truth": {
+            "value": 3,
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "value": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "value": 3,
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 161.39999999850988,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "3",
+          "displayTruth": "3",
+          "at": "2026-10-29T12:23:46.670Z",
+          "title": "Find the repeat findings",
+          "question": "How many target groups have outcome Repeat?",
+          "guide": "Inspect the target results. These findings are computed by the active training profile.",
+          "sessionElapsedMs": 7857.5
+        },
+        {
+          "scenario": "repeat-rule",
+          "rule": "replicates.sd",
+          "attempt": 1,
+          "answer": {
+            "call": "Repeat"
+          },
+          "truth": {
+            "call": "Repeat",
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "call": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "call": "Repeat",
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 213.19999999925494,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "Repeat",
+          "displayTruth": "Repeat",
+          "at": "2026-10-29T12:23:47.557Z",
+          "title": "One group needs a repeat",
+          "question": "What does the active profile say?",
+          "guide": "Follow the highlighted sample and read its outcome.",
+          "sessionElapsedMs": 8744.5
+        },
+        {
+          "scenario": "control-failure",
+          "rule": "controls.acceptance",
+          "attempt": 1,
+          "answer": {
+            "call": "Control fail"
+          },
+          "truth": {
+            "call": "Control fail",
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "call": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "call": "Control fail",
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 147.80000000074506,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "Control fail",
+          "displayTruth": "Control fail",
+          "at": "2026-10-29T12:23:48.090Z",
+          "title": "The negative control has a signal",
+          "question": "Which finding is recorded?",
+          "guide": "Inspect the failed control. A signal is not a supported explanation of its cause.",
+          "sessionElapsedMs": 9277.099999997765
+        },
+        {
+          "scenario": "cause",
+          "rule": "interpretation.boundary",
+          "attempt": 1,
+          "answer": {
+            "call": "Observation only; investigate further"
+          },
+          "truth": {
+            "call": "Observation only; investigate further",
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "call": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "call": "Observation only; investigate further",
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 145.30000000074506,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "Observation only; investigate further",
+          "displayTruth": "Observation only; investigate further",
+          "at": "2026-10-29T12:23:48.587Z",
+          "title": "Do not guess the cause",
+          "question": "Choose the supported statement.",
+          "guide": "The same control has a signal. What can you conclude from this evidence alone?",
+          "sessionElapsedMs": 9774.199999999255
+        },
+        {
+          "scenario": "sentinel",
+          "rule": "sop.native",
+          "attempt": 1,
+          "answer": {
+            "value": 19
+          },
+          "truth": {
+            "value": 19,
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "value": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "value": 19,
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 231.79999999701977,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "19",
+          "displayTruth": "19",
+          "at": "2026-10-29T12:23:49.164Z",
+          "title": "The final-cycle tokens",
+          "question": "How many rows are cycle-limit tokens?",
+          "guide": "The extra RDML run is loaded in MISSY. Its rows retain the reader's cycle-limit classification.",
+          "sessionElapsedMs": 10351.599999997765
+        },
+        {
+          "scenario": "crossings",
+          "rule": "sop.native",
+          "attempt": 1,
+          "answer": {
+            "value": 2
+          },
+          "truth": {
+            "value": 2,
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "value": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "value": 2,
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 164.19999999925494,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "2",
+          "displayTruth": "2",
+          "at": "2026-10-29T12:23:49.861Z",
+          "title": "Same cycle, different evidence",
+          "question": "How many measured Cq values remain at cycle 40?",
+          "guide": "Two rows retain finite Cq values with supplied analysis evidence; the other rows do not.",
+          "sessionElapsedMs": 11048.39999999851
+        },
+        {
+          "scenario": "select-token",
+          "rule": "sop.native",
+          "attempt": 1,
+          "answer": {
+            "evidence": {
+              "kind": "well",
+              "run": "ARTIFICIAL_FINAL_CYCLE.rdml",
+              "pos": 0,
+              "target": "FINAL_TARGET"
+            }
+          },
+          "truth": {
+            "evidence": {
+              "kind": "well",
+              "run": "ARTIFICIAL_FINAL_CYCLE.rdml",
+              "pos": 0,
+              "target": "FINAL_TARGET"
+            },
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "evidence": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "evidence": {
+                "kind": "well",
+                "run": "ARTIFICIAL_FINAL_CYCLE.rdml",
+                "pos": 0,
+                "target": "FINAL_TARGET"
+              },
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 147.29999999701977,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "Well A01",
+          "displayTruth": "Well A01",
+          "at": "2026-10-29T12:23:50.596Z",
+          "title": "Select the token",
+          "question": "Select well A1, then confirm.",
+          "guide": "Use Quality & forensic review → Plate map. Select well A1, or type Computer, select well A1.",
+          "sessionElapsedMs": 11783.29999999702
+        },
+        {
+          "scenario": "baseline",
+          "rule": "chart.baseline",
+          "attempt": 1,
+          "answer": {
+            "call": "Cannot be determined"
+          },
+          "truth": {
+            "call": "Cannot be determined",
+            "noLimits": true,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "call": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "call": "Cannot be determined",
+              "noLimits": true,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 314.70000000298023,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "Cannot be determined",
+          "displayTruth": "Cannot be determined",
+          "at": "2026-10-29T12:23:51.361Z",
+          "title": "No limits yet",
+          "question": "Can this chart establish an in-control status?",
+          "guide": "The short instrument history has too few runs. Look at its actual chart.",
+          "sessionElapsedMs": 12548.29999999702
+        },
+        {
+          "scenario": "baseline-count",
+          "rule": "chart.baseline",
+          "attempt": 1,
+          "answer": {
+            "value": 2
+          },
+          "truth": {
+            "value": 2,
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "value": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "value": 2,
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 232,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "2",
+          "displayTruth": "2",
+          "at": "2026-10-29T12:23:52.210Z",
+          "title": "Count the short history",
+          "question": "How many points are in this instrument history?",
+          "guide": "Count the plotted history points, not the number of samples.",
+          "sessionElapsedMs": 13397.5
+        },
+        {
+          "scenario": "cohort",
+          "rule": "chart.cohort",
+          "attempt": 1,
+          "answer": {
+            "value": 30
+          },
+          "truth": {
+            "value": 30,
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "value": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "value": 30,
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 214.19999999925494,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "30",
+          "displayTruth": "30",
+          "at": "2026-10-29T12:23:53.077Z",
+          "title": "Compare the right instrument",
+          "question": "How many points are in the primary background chart?",
+          "guide": "The main and short histories are separate. Use the primary instrument.",
+          "sessionElapsedMs": 14264.199999999255
+        },
+        {
+          "scenario": "drift",
+          "rule": "chart.flags",
+          "attempt": 1,
+          "answer": {
+            "value": 4
+          },
+          "truth": {
+            "value": 4,
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "value": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "value": 4,
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 198.40000000223517,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "4",
+          "displayTruth": "4",
+          "at": "2026-10-29T12:23:54.093Z",
+          "title": "Find the flagged history",
+          "question": "How many points carry recorded flags?",
+          "guide": "Inspect the background chart. Count recorded flags; do not diagnose hardware failure.",
+          "sessionElapsedMs": 15280.099999997765
+        },
+        {
+          "scenario": "point",
+          "rule": "chart.flags",
+          "attempt": 1,
+          "answer": {
+            "evidence": {
+              "kind": "point",
+              "chart": "bg_median",
+              "index": 26
+            }
+          },
+          "truth": {
+            "evidence": {
+              "kind": "point",
+              "chart": "bg_median",
+              "index": 26
+            },
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "evidence": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "evidence": {
+                "kind": "point",
+                "chart": "bg_median",
+                "index": 26
+              },
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 247.79999999701977,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "Chart point 27",
+          "displayTruth": "Chart point 27",
+          "at": "2026-10-29T12:23:55.093Z",
+          "title": "Select a flagged point",
+          "question": "Select the first flagged point.",
+          "guide": "Click one highlighted point in the real MISSY chart.",
+          "sessionElapsedMs": 16280.29999999702
+        },
+        {
+          "scenario": "plate",
+          "rule": "plate.identity",
+          "attempt": 1,
+          "answer": {
+            "value": 12
+          },
+          "truth": {
+            "value": 12,
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "value": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "value": 12,
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 160.69999999925494,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "12",
+          "displayTruth": "12",
+          "at": "2026-10-29T12:23:56.274Z",
+          "title": "Wells are not result rows",
+          "question": "How many distinct well positions are occupied in run one?",
+          "guide": "One well can hold two target result rows. Count distinct occupied positions.",
+          "sessionElapsedMs": 17461.199999999255
+        },
+        {
+          "scenario": "amplification",
+          "rule": "signal.layer",
+          "attempt": 1,
+          "answer": {
+            "evidence": {
+              "kind": "opened",
+              "id": "amplification"
+            }
+          },
+          "truth": {
+            "evidence": {
+              "kind": "opened",
+              "id": "amplification"
+            },
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "evidence": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "evidence": {
+                "kind": "opened",
+                "id": "amplification"
+              },
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 216.69999999925494,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "Requested view opened",
+          "displayTruth": "Requested view opened",
+          "at": "2026-10-29T12:23:57.277Z",
+          "title": "Inspect amplification",
+          "question": "Open the highlighted evidence, then confirm.",
+          "guide": "Open the amplification graph. Mouse, keyboard and voice can navigate the same data.",
+          "sessionElapsedMs": 18464.099999997765
+        },
+        {
+          "scenario": "rising-channel",
+          "rule": "signal.own-channel",
+          "attempt": 1,
+          "answer": {
+            "value": 2
+          },
+          "truth": {
+            "value": 2,
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "value": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "value": 2,
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 169.80000000074506,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "2",
+          "displayTruth": "2",
+          "at": "2026-10-29T12:23:58.205Z",
+          "title": "Rising curves without a result in their own channel",
+          "question": "How many unnamed positions have a rising curve without an own-channel result?",
+          "guide": "Two unnamed positions retain FAM Cq 40. Their VIC traces rise, but VIC has no stored result. Open the highlighted review tab; do not copy the FAM Cq into VIC.",
+          "sessionElapsedMs": 19391.89999999851
+        },
+        {
+          "scenario": "standards",
+          "rule": "quantification.standards",
+          "attempt": 1,
+          "answer": {
+            "value": 6
+          },
+          "truth": {
+            "value": 6,
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "value": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "value": 6,
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 160.09999999776483,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "6",
+          "displayTruth": "6",
+          "at": "2026-10-29T12:23:58.952Z",
+          "title": "Inspect the standards",
+          "question": "How many distinct standard wells are in run one?",
+          "guide": "Standards have a role and a declared concentration. Do not treat a role label as a measured quantity.",
+          "sessionElapsedMs": 20139.199999999255
+        },
+        {
+          "scenario": "scope",
+          "rule": "sop.scope",
+          "attempt": 1,
+          "answer": {
+            "call": "Not applicable"
+          },
+          "truth": {
+            "call": "Not applicable",
+            "noLimits": false,
+            "notApplicable": true,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "call": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "call": "Not applicable",
+              "noLimits": false,
+              "notApplicable": true,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 158.80000000074506,
+          "profile": "f6bfa4b52fd2c68eeb6e60a78259f4b529ef856bbaa5138e3225192fedd099a8",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "Not applicable",
+          "displayTruth": "Not applicable",
+          "at": "2026-10-29T12:23:59.722Z",
+          "title": "Outside the method scope",
+          "question": "What does applicability say?",
+          "guide": "The training profile now requires a different run-name pattern. The acquired results are unchanged.",
+          "sessionElapsedMs": 20909.699999999255
+        },
+        {
+          "scenario": "integrity-mismatch",
+          "rule": "integrity.mismatch",
+          "attempt": 1,
+          "answer": {
+            "call": "Stop and obtain a verified copy"
+          },
+          "truth": {
+            "call": "Stop and obtain a verified copy",
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "call": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "call": "Stop and obtain a verified copy",
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 130.5,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "Stop and obtain a verified copy",
+          "displayTruth": "Stop and obtain a verified copy",
+          "at": "2026-10-29T12:24:00.400Z",
+          "title": "A changed evidence copy",
+          "question": "What is the safe next action?",
+          "guide": "The case manifest compares a trusted digest with a changed-copy digest. This is a training exhibit, not a vendor checksum failure claim.",
+          "sessionElapsedMs": 21587.39999999851
+        },
+        {
+          "scenario": "integrity-absent",
+          "rule": "integrity.absent",
+          "attempt": 1,
+          "answer": {
+            "call": "No comparison is available"
+          },
+          "truth": {
+            "call": "No comparison is available",
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "call": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "call": "No comparison is available",
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 144.30000000074506,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "No comparison is available",
+          "displayTruth": "No comparison is available",
+          "at": "2026-10-29T12:24:01.252Z",
+          "title": "A checksum was not supplied",
+          "question": "What does the absence establish?",
+          "guide": "The exhibit has no expected checksum. An absent comparison is not a failed comparison.",
+          "sessionElapsedMs": 22439.199999999255
+        },
+        {
+          "scenario": "export",
+          "rule": "export.review",
+          "attempt": 1,
+          "answer": {
+            "evidence": {
+              "kind": "opened",
+              "id": "export"
+            }
+          },
+          "truth": {
+            "evidence": {
+              "kind": "opened",
+              "id": "export"
+            },
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "evidence": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "evidence": {
+                "kind": "opened",
+                "id": "export"
+              },
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 346,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "Requested view opened",
+          "displayTruth": "Requested view opened",
+          "at": "2026-10-29T12:24:02.256Z",
+          "title": "Review before exporting",
+          "question": "Open the highlighted evidence, then confirm.",
+          "guide": "Inspect the report workspace before sharing. No report is released automatically.",
+          "sessionElapsedMs": 23443.699999999255
+        },
+        {
+          "scenario": "report",
+          "rule": "report.identity",
+          "attempt": 1,
+          "answer": {
+            "evidence": {
+              "kind": "report",
+              "ready": true
+            }
+          },
+          "truth": {
+            "evidence": {
+              "kind": "report",
+              "ready": true
+            },
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "evidence": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "evidence": {
+                "kind": "report",
+                "ready": true
+              },
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 3099.599999997765,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "Training report prepared",
+          "displayTruth": "Training report prepared",
+          "at": "2026-10-29T12:24:06.412Z",
+          "title": "Prepare the training report",
+          "question": "Build the report, then confirm.",
+          "guide": "Build a real PDF from the artificial data. This stays in the training workspace.",
+          "sessionElapsedMs": 27599.39999999851
+        },
+        {
+          "scenario": "release",
+          "rule": "release.boundary",
+          "attempt": 1,
+          "answer": {
+            "call": "Laboratory authorisation is required"
+          },
+          "truth": {
+            "call": "Laboratory authorisation is required",
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "call": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "call": "Laboratory authorisation is required",
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 260.30000000074506,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "Laboratory authorisation is required",
+          "displayTruth": "Laboratory authorisation is required",
+          "at": "2026-10-29T12:24:07.931Z",
+          "title": "A finding is not authorisation",
+          "question": "Who may authorise release?",
+          "guide": "Finish the review by stating who authorises laboratory release.",
+          "sessionElapsedMs": 29118.5
+        }
+      ],
+      "audio": {
+        "peak": 0.07118534296751022,
+        "rms": 0.011371907979121201
+      },
+      "formatCheck": "01:02:03.004",
+      "childVoiceVisible": 0,
+      "errors": []
+    },
+    {
+      "lang": "zh",
+      "steps": [
+        "intake",
+        "files",
+        "replicates",
+        "repeat-rule",
+        "control-failure",
+        "cause",
+        "sentinel",
+        "crossings",
+        "select-token",
+        "baseline",
+        "baseline-count",
+        "cohort",
+        "drift",
+        "point",
+        "plate",
+        "amplification",
+        "rising-channel",
+        "standards",
+        "scope",
+        "integrity-mismatch",
+        "integrity-absent",
+        "export",
+        "report",
+        "release"
+      ],
+      "imageInfo": [
+        {
+          "width": 1280,
+          "height": 838,
+          "bytes": 200143
+        },
+        {
+          "width": 1280,
+          "height": 838,
+          "bytes": 134431
+        },
+        {
+          "width": 1280,
+          "height": 838,
+          "bytes": 168771
+        },
+        {
+          "width": 1280,
+          "height": 838,
+          "bytes": 112059
+        },
+        {
+          "width": 1280,
+          "height": 838,
+          "bytes": 111979
+        },
+        {
+          "width": 1280,
+          "height": 838,
+          "bytes": 111967
+        },
+        {
+          "width": 1280,
+          "height": 838,
+          "bytes": 163811
+        },
+        {
+          "width": 1280,
+          "height": 838,
+          "bytes": 163751
+        },
+        {
+          "width": 1280,
+          "height": 838,
+          "bytes": 163799
+        },
+        {
+          "width": 1280,
+          "height": 838,
+          "bytes": 90383
+        },
+        {
+          "width": 1280,
+          "height": 838,
+          "bytes": 90387
+        },
+        {
+          "width": 1280,
+          "height": 838,
+          "bytes": 98719
+        },
+        {
+          "width": 1280,
+          "height": 838,
+          "bytes": 98771
+        },
+        {
+          "width": 1280,
+          "height": 838,
+          "bytes": 100235
+        },
+        {
+          "width": 1280,
+          "height": 838,
+          "bytes": 153615
+        },
+        {
+          "width": 1280,
+          "height": 838,
+          "bytes": 110799
+        },
+        {
+          "width": 1280,
+          "height": 838,
+          "bytes": 112907
+        },
+        {
+          "width": 1280,
+          "height": 838,
+          "bytes": 138763
+        },
+        {
+          "width": 1280,
+          "height": 838,
+          "bytes": 88311
+        },
+        {
+          "width": 1280,
+          "height": 838,
+          "bytes": 132507
+        },
+        {
+          "width": 1280,
+          "height": 838,
+          "bytes": 128947
+        },
+        {
+          "width": 1280,
+          "height": 838,
+          "bytes": 108787
+        },
+        {
+          "width": 1280,
+          "height": 838,
+          "bytes": 84075
+        },
+        {
+          "width": 1280,
+          "height": 838,
+          "bytes": 116579
+        }
+      ],
+      "summary": {
+        "points": 2400,
+        "maximum": 2400,
+        "completed": 24,
+        "total": 24,
+        "unresolvedUnsafe": 0,
+        "passed": true,
+        "missProfile": {
+          "intake.count": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "integrity.identity": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "replicates.sd": {
+            "attempts": 2,
+            "misses": 0
+          },
+          "controls.acceptance": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "interpretation.boundary": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "sop.native": {
+            "attempts": 3,
+            "misses": 0
+          },
+          "chart.baseline": {
+            "attempts": 2,
+            "misses": 0
+          },
+          "chart.cohort": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "chart.flags": {
+            "attempts": 2,
+            "misses": 0
+          },
+          "plate.identity": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "signal.layer": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "signal.own-channel": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "quantification.standards": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "sop.scope": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "integrity.mismatch": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "integrity.absent": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "export.review": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "report.identity": {
+            "attempts": 1,
+            "misses": 0
+          },
+          "release.boundary": {
+            "attempts": 1,
+            "misses": 0
+          }
+        }
+      },
+      "identity": {
+        "laboratory": "分子训练实验室",
+        "investigator": "林老师"
+      },
+      "records": [
+        {
+          "scenario": "intake",
+          "rule": "intake.count",
+          "attempt": 1,
+          "answer": {
+            "value": 33
+          },
+          "truth": {
+            "value": 33,
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "value": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "value": 33,
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 892.6000000014901,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "33",
+          "displayTruth": "33",
+          "at": "2026-10-29T12:24:23.388Z",
+          "title": "收到的文件",
+          "question": "已加载多少个运行？",
+          "guide": "模拟运行已加载。请查看运行数量。",
+          "sessionElapsedMs": 10979.300000000745
+        },
+        {
+          "scenario": "files",
+          "rule": "integrity.identity",
+          "attempt": 1,
+          "answer": {
+            "evidence": {
+              "kind": "opened",
+              "id": "files"
+            }
+          },
+          "truth": {
+            "evidence": {
+              "kind": "opened",
+              "id": "files"
+            },
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "evidence": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "evidence": {
+                "kind": "opened",
+                "id": "files"
+              },
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 879.3999999985099,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "已打开要求的视图",
+          "displayTruth": "已打开要求的视图",
+          "at": "2026-10-29T12:24:26.134Z",
+          "title": "查看已加载文件",
+          "question": "打开高亮证据，然后确认。",
+          "guide": "打开文件完整性页面，查看本游戏使用的文件。",
+          "sessionElapsedMs": 13725.900000002235
+        },
+        {
+          "scenario": "replicates",
+          "rule": "replicates.sd",
+          "attempt": 1,
+          "answer": {
+            "value": 3
+          },
+          "truth": {
+            "value": 3,
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "value": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "value": 3,
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 755,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "3",
+          "displayTruth": "3",
+          "at": "2026-10-29T12:24:28.774Z",
+          "title": "查找复测判定",
+          "question": "有多少个靶标组被判定为复测？",
+          "guide": "查看靶标结果。这些判定由当前训练配置计算。",
+          "sessionElapsedMs": 16365.300000000745
+        },
+        {
+          "scenario": "repeat-rule",
+          "rule": "replicates.sd",
+          "attempt": 1,
+          "answer": {
+            "call": "Repeat"
+          },
+          "truth": {
+            "call": "Repeat",
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "call": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "call": "Repeat",
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 760.8999999985099,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "复测",
+          "displayTruth": "复测",
+          "at": "2026-10-29T12:24:31.761Z",
+          "title": "一个组需要复测",
+          "question": "当前配置给出什么判定？",
+          "guide": "查看高亮样品及其判定。",
+          "sessionElapsedMs": 19352.699999999255
+        },
+        {
+          "scenario": "control-failure",
+          "rule": "controls.acceptance",
+          "attempt": 1,
+          "answer": {
+            "call": "Control fail"
+          },
+          "truth": {
+            "call": "Control fail",
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "call": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "call": "Control fail",
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 761.5,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "对照失败",
+          "displayTruth": "对照失败",
+          "at": "2026-10-29T12:24:34.076Z",
+          "title": "阴性对照出现信号",
+          "question": "记录了哪项判定？",
+          "guide": "检查失败的对照。信号不能直接证明其原因。",
+          "sessionElapsedMs": 21667.800000000745
+        },
+        {
+          "scenario": "cause",
+          "rule": "interpretation.boundary",
+          "attempt": 1,
+          "answer": {
+            "call": "Observation only; investigate further"
+          },
+          "truth": {
+            "call": "Observation only; investigate further",
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "call": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "call": "Observation only; investigate further",
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 570.8000000007451,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "仅能描述观察，需要进一步调查",
+          "displayTruth": "仅能描述观察，需要进一步调查",
+          "at": "2026-10-29T12:24:35.823Z",
+          "title": "不要猜测原因",
+          "question": "选择有证据支持的陈述。",
+          "guide": "同一对照出现信号。仅凭这些证据能得出什么结论？",
+          "sessionElapsedMs": 23414.400000002235
+        },
+        {
+          "scenario": "sentinel",
+          "rule": "sop.native",
+          "attempt": 1,
+          "answer": {
+            "value": 19
+          },
+          "truth": {
+            "value": 19,
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "value": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "value": 19,
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 1444,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "19",
+          "displayTruth": "19",
+          "at": "2026-10-29T12:24:38.276Z",
+          "title": "最后循环的标记",
+          "question": "有多少条记录属于循环上限标记？",
+          "guide": "附加RDML运行已加载。记录保留了读取器对循环上限标记的分类。",
+          "sessionElapsedMs": 25867.300000000745
+        },
+        {
+          "scenario": "crossings",
+          "rule": "sop.native",
+          "attempt": 1,
+          "answer": {
+            "value": 2
+          },
+          "truth": {
+            "value": 2,
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "value": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "value": 2,
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 1197.300000000745,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "2",
+          "displayTruth": "2",
+          "at": "2026-10-29T12:24:41.325Z",
+          "title": "相同循环，不同证据",
+          "question": "第40循环保留了多少个实测Cq？",
+          "guide": "两条记录保留有限Cq及所提供的分析证据，其余记录没有。",
+          "sessionElapsedMs": 28917
+        },
+        {
+          "scenario": "select-token",
+          "rule": "sop.native",
+          "attempt": 1,
+          "answer": {
+            "evidence": {
+              "kind": "well",
+              "run": "ARTIFICIAL_FINAL_CYCLE.rdml",
+              "pos": 0,
+              "target": "FINAL_TARGET"
+            }
+          },
+          "truth": {
+            "evidence": {
+              "kind": "well",
+              "run": "ARTIFICIAL_FINAL_CYCLE.rdml",
+              "pos": 0,
+              "target": "FINAL_TARGET"
+            },
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "evidence": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "evidence": {
+                "kind": "well",
+                "run": "ARTIFICIAL_FINAL_CYCLE.rdml",
+                "pos": 0,
+                "target": "FINAL_TARGET"
+              },
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 610.4000000022352,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "孔位 A01",
+          "displayTruth": "孔位 A01",
+          "at": "2026-10-29T12:24:43.686Z",
+          "title": "选择标记记录",
+          "question": "选择A1孔，然后确认。",
+          "guide": "进入质量与取证审核，再进入孔板布局。选择A1孔，也可输入命令选择。",
+          "sessionElapsedMs": 31277.699999999255
+        },
+        {
+          "scenario": "baseline",
+          "rule": "chart.baseline",
+          "attempt": 1,
+          "answer": {
+            "call": "Cannot be determined"
+          },
+          "truth": {
+            "call": "Cannot be determined",
+            "noLimits": true,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "call": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "call": "Cannot be determined",
+              "noLimits": true,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 1095.8999999985099,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "无法判断",
+          "displayTruth": "无法判断",
+          "at": "2026-10-29T12:24:46.102Z",
+          "title": "尚无控制限",
+          "question": "该图能否确定受控状态？",
+          "guide": "该仪器历史运行数量不足。请查看实际图表。",
+          "sessionElapsedMs": 33693.5
+        },
+        {
+          "scenario": "baseline-count",
+          "rule": "chart.baseline",
+          "attempt": 1,
+          "answer": {
+            "value": 2
+          },
+          "truth": {
+            "value": 2,
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "value": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "value": 2,
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 746.8999999985099,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "2",
+          "displayTruth": "2",
+          "at": "2026-10-29T12:24:48.285Z",
+          "title": "统计短历史记录",
+          "question": "该仪器历史有多少个点？",
+          "guide": "统计图中的历史点，不是样品数。",
+          "sessionElapsedMs": 35876.300000000745
+        },
+        {
+          "scenario": "cohort",
+          "rule": "chart.cohort",
+          "attempt": 1,
+          "answer": {
+            "value": 30
+          },
+          "truth": {
+            "value": 30,
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "value": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "value": 30,
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 680,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "30",
+          "displayTruth": "30",
+          "at": "2026-10-29T12:24:50.267Z",
+          "title": "比较正确的仪器",
+          "question": "主仪器背景图有多少个点？",
+          "guide": "主仪器与短历史仪器分开显示。请查看主仪器。",
+          "sessionElapsedMs": 37858.900000002235
+        },
+        {
+          "scenario": "drift",
+          "rule": "chart.flags",
+          "attempt": 1,
+          "answer": {
+            "value": 4
+          },
+          "truth": {
+            "value": 4,
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "value": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "value": 4,
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 713.1999999992549,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "4",
+          "displayTruth": "4",
+          "at": "2026-10-29T12:24:52.467Z",
+          "title": "查找有标记的历史",
+          "question": "有多少个点带有记录标记？",
+          "guide": "查看背景图。统计记录标记，不要直接诊断硬件故障。",
+          "sessionElapsedMs": 40058.300000000745
+        },
+        {
+          "scenario": "point",
+          "rule": "chart.flags",
+          "attempt": 1,
+          "answer": {
+            "evidence": {
+              "kind": "point",
+              "chart": "bg_median",
+              "index": 26
+            }
+          },
+          "truth": {
+            "evidence": {
+              "kind": "point",
+              "chart": "bg_median",
+              "index": 26
+            },
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "evidence": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "evidence": {
+                "kind": "point",
+                "chart": "bg_median",
+                "index": 26
+              },
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 865,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "图表点 27",
+          "displayTruth": "图表点 27",
+          "at": "2026-10-29T12:24:55.086Z",
+          "title": "选择有标记的点",
+          "question": "选择第一个有标记的点。",
+          "guide": "点击MISSY实际图表中的一个高亮点。",
+          "sessionElapsedMs": 42677.60000000149
+        },
+        {
+          "scenario": "plate",
+          "rule": "plate.identity",
+          "attempt": 1,
+          "answer": {
+            "value": 12
+          },
+          "truth": {
+            "value": 12,
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "value": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "value": 12,
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 1210.1000000014901,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "12",
+          "displayTruth": "12",
+          "at": "2026-10-29T12:24:58.331Z",
+          "title": "孔位与结果行不同",
+          "question": "第一个运行占用了多少个不同孔位？",
+          "guide": "同一孔可有两个靶标结果行。请统计不同的占用孔位。",
+          "sessionElapsedMs": 45922.900000002235
+        },
+        {
+          "scenario": "amplification",
+          "rule": "signal.layer",
+          "attempt": 1,
+          "answer": {
+            "evidence": {
+              "kind": "opened",
+              "id": "amplification"
+            }
+          },
+          "truth": {
+            "evidence": {
+              "kind": "opened",
+              "id": "amplification"
+            },
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "evidence": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "evidence": {
+                "kind": "opened",
+                "id": "amplification"
+              },
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 1258.300000000745,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "已打开要求的视图",
+          "displayTruth": "已打开要求的视图",
+          "at": "2026-10-29T12:25:01.562Z",
+          "title": "查看扩增曲线",
+          "question": "打开高亮证据，然后确认。",
+          "guide": "打开扩增图。鼠标、键盘和语音可查看同一数据。",
+          "sessionElapsedMs": 49153.300000000745
+        },
+        {
+          "scenario": "rising-channel",
+          "rule": "signal.own-channel",
+          "attempt": 1,
+          "answer": {
+            "value": 2
+          },
+          "truth": {
+            "value": 2,
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "value": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "value": 2,
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 1031,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "2",
+          "displayTruth": "2",
+          "at": "2026-10-29T12:25:04.825Z",
+          "title": "本通道没有结果的上升曲线",
+          "question": "多少个未命名孔位有本通道无结果的上升曲线？",
+          "guide": "两个未命名孔位保留FAM的Cq 40。VIC曲线上升，但VIC没有存储结果。打开高亮审核页，不要将FAM的Cq复制到VIC。",
+          "sessionElapsedMs": 52417
+        },
+        {
+          "scenario": "standards",
+          "rule": "quantification.standards",
+          "attempt": 1,
+          "answer": {
+            "value": 6
+          },
+          "truth": {
+            "value": 6,
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "value": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "value": 6,
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 912.5,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "6",
+          "displayTruth": "6",
+          "at": "2026-10-29T12:25:07.621Z",
+          "title": "查看标准品",
+          "question": "第一个运行有多少个不同的标准品孔？",
+          "guide": "标准品有角色及声明浓度。不要把角色标签当作测量数量。",
+          "sessionElapsedMs": 55213
+        },
+        {
+          "scenario": "scope",
+          "rule": "sop.scope",
+          "attempt": 1,
+          "answer": {
+            "call": "Not applicable"
+          },
+          "truth": {
+            "call": "Not applicable",
+            "noLimits": false,
+            "notApplicable": true,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "call": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "call": "Not applicable",
+              "noLimits": false,
+              "notApplicable": true,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 1211.5,
+          "profile": "f6bfa4b52fd2c68eeb6e60a78259f4b529ef856bbaa5138e3225192fedd099a8",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "不适用",
+          "displayTruth": "不适用",
+          "at": "2026-10-29T12:25:10.822Z",
+          "title": "超出方法范围",
+          "question": "适用性给出什么结果？",
+          "guide": "训练配置现要求不同的运行名称模式，采集结果未变。",
+          "sessionElapsedMs": 58413.300000000745
+        },
+        {
+          "scenario": "integrity-mismatch",
+          "rule": "integrity.mismatch",
+          "attempt": 1,
+          "answer": {
+            "call": "Stop and obtain a verified copy"
+          },
+          "truth": {
+            "call": "Stop and obtain a verified copy",
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "call": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "call": "Stop and obtain a verified copy",
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 960.3000000007451,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "停止并获取经核实的副本",
+          "displayTruth": "停止并获取经核实的副本",
+          "at": "2026-10-29T12:25:13.528Z",
+          "title": "证据副本发生变化",
+          "question": "安全的下一步是什么？",
+          "guide": "案例清单比较可信摘要与已更改副本的摘要。这是训练证据，不是对厂商校验失败的声明。",
+          "sessionElapsedMs": 61119.5
+        },
+        {
+          "scenario": "integrity-absent",
+          "rule": "integrity.absent",
+          "attempt": 1,
+          "answer": {
+            "call": "No comparison is available"
+          },
+          "truth": {
+            "call": "No comparison is available",
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "call": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "call": "No comparison is available",
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 907.6000000014901,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "无法进行比较",
+          "displayTruth": "无法进行比较",
+          "at": "2026-10-29T12:25:16.226Z",
+          "title": "未提供校验值",
+          "question": "缺失校验值能说明什么？",
+          "guide": "证据没有预期校验值。无法比较不等于比较失败。",
+          "sessionElapsedMs": 63817.400000002235
+        },
+        {
+          "scenario": "export",
+          "rule": "export.review",
+          "attempt": 1,
+          "answer": {
+            "evidence": {
+              "kind": "opened",
+              "id": "export"
+            }
+          },
+          "truth": {
+            "evidence": {
+              "kind": "opened",
+              "id": "export"
+            },
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "evidence": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "evidence": {
+                "kind": "opened",
+                "id": "export"
+              },
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 1110,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "已打开要求的视图",
+          "displayTruth": "已打开要求的视图",
+          "at": "2026-10-29T12:25:18.779Z",
+          "title": "导出前审核",
+          "question": "打开高亮证据，然后确认。",
+          "guide": "分享前检查报告工作区。系统不会自动签发报告。",
+          "sessionElapsedMs": 66370.5
+        },
+        {
+          "scenario": "report",
+          "rule": "report.identity",
+          "attempt": 1,
+          "answer": {
+            "evidence": {
+              "kind": "report",
+              "ready": true
+            }
+          },
+          "truth": {
+            "evidence": {
+              "kind": "report",
+              "ready": true
+            },
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "evidence": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "evidence": {
+                "kind": "report",
+                "ready": true
+              },
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 5596.199999999255,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "已准备训练报告",
+          "displayTruth": "已准备训练报告",
+          "at": "2026-10-29T12:25:27.279Z",
+          "title": "准备训练报告",
+          "question": "生成报告，然后确认。",
+          "guide": "使用模拟数据生成真实PDF，文件保留在训练工作区。",
+          "sessionElapsedMs": 74871.10000000149
+        },
+        {
+          "scenario": "release",
+          "rule": "release.boundary",
+          "attempt": 1,
+          "answer": {
+            "call": "Laboratory authorisation is required"
+          },
+          "truth": {
+            "call": "Laboratory authorisation is required",
+            "noLimits": false,
+            "notApplicable": false,
+            "integrityOpen": false
+          },
+          "score": {
+            "points": 100,
+            "rawEarned": 100,
+            "rawMax": 100,
+            "ceiling": 100,
+            "unsafe": false,
+            "retry": false,
+            "parts": {
+              "call": {
+                "correct": true,
+                "earned": 100,
+                "max": 100
+              }
+            },
+            "truth": {
+              "call": "Laboratory authorisation is required",
+              "noLimits": false,
+              "notApplicable": false,
+              "integrityOpen": false
+            }
+          },
+          "rationale": "",
+          "latencyMs": 1196.199999999255,
+          "profile": "54f3b684a6e86018725f61a25e93b22afbde79ad2cef1c0f158130cfe073dedd",
+          "buildVersion": "2026.10.29.learning5",
+          "displayAnswer": "需要实验室授权",
+          "displayTruth": "需要实验室授权",
+          "at": "2026-10-29T12:25:31.313Z",
+          "title": "判定不等于授权",
+          "question": "由谁授权签发？",
+          "guide": "完成审核，说明由谁授权签发实验室结果。",
+          "sessionElapsedMs": 78904.60000000149
+        }
+      ],
+      "audio": {
+        "peak": 0.07118534296751022,
+        "rms": 0.011371907979121201
+      },
+      "formatCheck": "01:02:03.004",
+      "childVoiceVisible": 0,
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "version": "2026.10.29.learning4",
+  "publishedHTMLSHA256": "38c9e98ef2cb1b0a55031ec64343726a10a3fe7cd2209b39de178a4ab9e28fa5",
+  "publishedBytes": 18950371,
+  "localBuildRawSHA256": "9ed51e44b88d21f412587a880b8d707f92297d56e6b625f896f80050c7050f1c",
+  "canonicalisation": "Each SHA-256 hashes the exact named UTF-8 file bytes, with no excluded fields. Published HTML uses LF line endings."
+}
