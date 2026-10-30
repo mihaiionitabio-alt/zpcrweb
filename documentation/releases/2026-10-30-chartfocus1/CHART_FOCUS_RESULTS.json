@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "open": true,
+      "chart": true,
+      "focus": true,
+      "topHidden": true,
+      "actionsHidden": true,
+      "chartId": "heat_rate",
+      "restore": true,
+      "answer": "Display chart 1. Chart 1. B-H1 Peak heating rate (2-s window)."
+    },
+    {
+      "open": true,
+      "chart": true,
+      "focus": true,
+      "topHidden": true,
+      "actionsHidden": true,
+      "chartId": "cool_rate",
+      "restore": true,
+      "answer": "Display chart 2. Chart 2. B-H2 Peak cooling rate (2-s window)."
+    },
+    {
+      "open": true,
+      "chart": true,
+      "focus": true,
+      "graphId": "timeline"
+    }
+  ],
+  "unchanged": true,
+  "errors": []
+}

@@ -1,6 +1,6 @@
 <!doctype html>
 <meta charset="utf-8">
-<meta name="missy-publication-version" content="2026.10.30.twotones1">
+<meta name="missy-publication-version" content="2026.10.30.chartfocus1">
 <link rel="icon" href="data:,">
 <title>Missy, RUO - A single-file offline HTML page for .ixo, .eds/.edt, .rdml, .zpcr and .pcrd experiment runs</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -195,6 +195,7 @@ html.missy-starting #missy-startup{background:radial-gradient(ellipse at 15% 0,#
   experiment value is transmitted; the graph remains inside this offline page.
 -->
 <script id="machine-metadata" type="application/ld+json">
+
 
 {
   "@context": {
@@ -17779,7 +17780,7 @@ const MISSY_CONSOLE_VOICE=(()=>{
  function chartList(){return [...Object.values(CC_BY_ID).map(d=>({id:d.id,control:true,title:d.code+' '+d.title})),...GRAPHS.map(g=>({id:g.id,control:false,title:g.title}))];}
  function numberChartLabels(){const index=chartList();for(const option of document.querySelectorAll('#g-graph option')){const n=index.findIndex(c=>!c.control&&c.id===option.value)+1;if(n&&!option.dataset.voiceNumber){option.dataset.voiceNumber=String(n);option.textContent=n+' · '+option.textContent;}}}
  function chartNumber(text){const hundred=text.match(/^one hundred(?: and)?(?: (.+))?$/);if(hundred){const tail=hundred[1]?chartNumber(hundred[1]):0;return tail!==null?100+tail:null;}if(/^\d{1,3}$/.test(text))return Number(text);const n=parse(text);if(n!==null)return n;const small=['sixteen','seventeen','eighteen','nineteen'];if(small.includes(text))return 16+small.indexOf(text);const m=text.match(/^(twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety)(?:[ -](one|two|three|four|five|six|seven|eight|nine))?$/);return m?(['twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety'].indexOf(m[1])+2)*10+(m[2]?words.indexOf(m[2]):0):null;}
- function openChart(n){const item=chartList()[n-1];if(!item)return {en:'Chart number unavailable.',zh:'图表编号不可用。'};if(!RUNS.length)return {en:'Load experiment data first.',zh:'请先加载实验数据。'};if(MG.open){MG.scope=item.control?'panel':'graphs';MG.filter='';mgRefresh();const at=MG.queue.findIndex(q=>item.control?q.chartId===item.id:q.graphId===item.id);if(at<0)return {en:'This chart has no available data in the current selection.',zh:'当前选择中没有此图的数据。'};MG.at=at;MG.chart=true;mgSheetClose();mgRender();}else if(item.control){showTab('panel');CC_STATE.open=item.id;renderCcDetail();}else{showTab('graphs');document.getElementById('g-graph').value=item.id;renderGraphs();numberChartLabels();}return {en:'Chart '+n+'. '+item.title+'.',zh:'第 '+n+' 张图。'+item.title+'。'};}
+ function openChart(n){const item=chartList()[n-1];if(!item)return {en:'Chart number unavailable.',zh:'图表编号不可用。'};if(!RUNS.length)return {en:'Load experiment data first.',zh:'请先加载实验数据。'};const scope=item.control?'panel':'graphs';cmdClose();astClose();if(!MG.open)mgOpen();MG.scope=scope;MG.filter='';mgRefresh();const at=MG.queue.findIndex(q=>item.control?q.chartId===item.id:q.graphId===item.id);if(at<0)return {en:'This chart has no available data in the current selection.',zh:'当前选择中没有此图的数据。'};MG.at=at;MG.chart=true;mgSheetClose();GRAPH_CHROME_HIDDEN=true;mgRender();return {en:'Chart '+n+'. '+item.title+'.',zh:'第 '+n+' 张图。'+item.title+'。'};}
  function chartSummary(){let res,title;if(MG.open&&MG.chart){const it=mgItem();if(it?.chartId){const d=CC_BY_ID[it.chartId];res=ccCompute(d,ccRowsFor(it.instrument),it.variant||'');title=d.code+' '+d.title;}else if(it?.graphId){title=it.title;}}else if(APP_STATE.activeTab==='panel'&&CC_STATE.open&&!document.getElementById('cc-detail').hidden){const d=CC_BY_ID[CC_STATE.open];res=ccCompute(d,ccRowsFor(CC_STATE.instrument),CC_STATE.variant||'');title=d.code+' '+d.title;}else if(APP_STATE.activeTab==='graphs')title=GRAPH_STATE.last?.g?.title;
  if(!title)return {en:'No chart is open.',zh:'当前未打开图表。'};
  if(!res)return {en:title+'. This chart has no general control-limit assessment. Use its data table and specific review rules; I cannot call all values nominal or count unrecorded errors.',zh:title+'。此图没有通用控制限判定。请查看数据表及相应审核规则；无法据此声称全部正常或统计未记录的错误。'};
