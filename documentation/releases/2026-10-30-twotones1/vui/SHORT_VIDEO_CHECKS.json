@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "durationSeconds": 44.02322,
+  "chapters": [
+    {
+      "title": "Overview",
+      "startMs": 0,
+      "endMs": 7000,
+      "silent": false
+    },
+    {
+      "title": "Example 1",
+      "startMs": 7000,
+      "endMs": 17000,
+      "silent": false
+    },
+    {
+      "title": "Example 2",
+      "startMs": 17000,
+      "endMs": 27000,
+      "silent": false
+    },
+    {
+      "title": "Example 3",
+      "startMs": 27000,
+      "endMs": 37000,
+      "silent": false
+    },
+    {
+      "title": "Try MISSY",
+      "startMs": 37000,
+      "endMs": 44000,
+      "silent": true
+    }
+  ],
+  "lastSlideAudioPeak": 0.0,
+  "speechRateChanged": false,
+  "responsesTruncated": true,
+  "subtitle": "Voice_User_Interface_VUI_Design_for_Missy_short.zh-CN.srt",
+  "sha256": "a7e86313198902417652e111eaa775acc5d2f44172ba50782854aee63f3318d1"
+}

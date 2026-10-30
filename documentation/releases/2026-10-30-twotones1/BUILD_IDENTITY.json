@@ -1,0 +1,11 @@
+{
+  "version": "2026.10.30.twotones1",
+  "localHTMLSHA256": "92e84e734b1b530a11a2288a46cfc039557795233657faade183aa51e14fb443",
+  "toneSourcesEmbedded": [
+    "Candidate_A",
+    "Candidate_B"
+  ],
+  "catalogueEntries": 515,
+  "protectedScientificFilesUnchanged": 28,
+  "published": false
+}

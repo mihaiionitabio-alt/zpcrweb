@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img"><title>MISSY — file composition and capabilities</title><style>text{font-family:Arial,Helvetica,sans-serif}</style>
+<rect x="0" y="0" width="1920" height="1080" rx="0" fill="#08050b" stroke="none"/>
+<rect x="35" y="35" width="1850" height="15" rx="7" fill="#ff9966" stroke="none"/>
+<rect x="35" y="35" width="15" height="1000" rx="7" fill="#cc99cc" stroke="none"/>
+<rect x="35" y="1020" width="1850" height="15" rx="7" fill="#cc99cc" stroke="none"/>
+<text x="80" y="107" font-size="45" fill="#ff9966" font-weight="bold" text-anchor="start">MISSY: one single, unencrypted HTML file</text>
+<text x="80" y="151" font-size="28" fill="#e6d3ec" font-weight="normal" text-anchor="start">Voice User Interface (VUI) Design for Missy</text>
+<rect x="75" y="193" width="810" height="805" rx="30" fill="#100b16" stroke="#65456e"/>
+<text x="105" y="237" font-size="26" fill="#ff9966" font-weight="bold" text-anchor="start">WHAT IS INSIDE THIS FILE?</text>
+<text x="105" y="272" font-size="23" fill="#e6d3ec" font-weight="normal" text-anchor="start">27.79 MB · 27,793,056 bytes · local build</text>
+<path d="M480,500 L480.000,320.000 A180,180 0 1,1 404.487,663.394 Z" fill="#ff9966" stroke="#08050b" stroke-width="2"/>
+<path d="M480,500 L404.487,663.394 A180,180 0 0,1 347.844,377.792 Z" fill="#cc99cc" stroke="#08050b" stroke-width="2"/>
+<path d="M480,500 L347.844,377.792 A180,180 0 0,1 381.019,349.658 Z" fill="#9999ff" stroke="#08050b" stroke-width="2"/>
+<path d="M480,500 L381.019,349.658 A180,180 0 0,1 385.905,346.552 Z" fill="#8fd1c8" stroke="#08050b" stroke-width="2"/>
+<path d="M480,500 L385.905,346.552 A180,180 0 0,1 391.291,343.377 Z" fill="#d4df82" stroke="#08050b" stroke-width="2"/>
+<path d="M480,500 L391.291,343.377 A180,180 0 0,1 480.000,320.000 Z" fill="#bd776f" stroke="#08050b" stroke-width="2"/>
+<rect x="0" y="0" width="0" height="0" rx="0" fill="none" stroke="none"/>
+<circle cx="480" cy="500" r="116" fill="#08050b"/>
+<path d="M435 431 H501 L530 460 V567 H435 Z" fill="#100b16" stroke="#ff9966" stroke-width="4"/><path d="M501 431 V460 H530" fill="none" stroke="#cc99cc" stroke-width="3"/>
+<text x="482" y="493" font-size="26" fill="#ff9966" font-weight="bold" text-anchor="middle">HTML</text>
+<text x="482" y="524" font-size="16" fill="#e6d3ec" font-weight="normal" text-anchor="middle">CSS · JS</text>
+<text x="482" y="550" font-size="16" fill="#9999ff" font-weight="normal" text-anchor="middle">AUDIO</text>
+<text x="480" y="602" font-size="19" fill="#ffcc99" font-weight="bold" text-anchor="middle">ONE FILE</text>
+<rect x="105" y="752" width="18" height="18" rx="3" fill="#ff9966" stroke="none"/>
+<text x="137" y="769" font-size="22" fill="#e6d3ec" font-weight="normal" text-anchor="start">Audio + voice system</text>
+<text x="704" y="769" font-size="22" fill="#ffcc99" font-weight="normal" text-anchor="end">56.89%</text>
+<text x="854" y="769" font-size="21" fill="#e6d3ec" font-weight="normal" text-anchor="end">15.81 MB</text>
+<rect x="105" y="784" width="18" height="18" rx="3" fill="#cc99cc" stroke="none"/>
+<text x="137" y="801" font-size="22" fill="#e6d3ec" font-weight="normal" text-anchor="start">Full CJK PDF font</text>
+<text x="704" y="801" font-size="22" fill="#ffcc99" font-weight="normal" text-anchor="end">29.99%</text>
+<text x="854" y="801" font-size="21" fill="#e6d3ec" font-weight="normal" text-anchor="end">8.33 MB</text>
+<rect x="105" y="816" width="18" height="18" rx="3" fill="#9999ff" stroke="none"/>
+<text x="137" y="833" font-size="22" fill="#e6d3ec" font-weight="normal" text-anchor="start">Chart engine</text>
+<text x="704" y="833" font-size="22" fill="#ffcc99" font-weight="normal" text-anchor="end">3.86%</text>
+<text x="854" y="833" font-size="21" fill="#e6d3ec" font-weight="normal" text-anchor="end">1.07 MB</text>
+<rect x="105" y="848" width="18" height="18" rx="3" fill="#8fd1c8" stroke="none"/>
+<text x="137" y="865" font-size="22" fill="#e6d3ec" font-weight="normal" text-anchor="start">Instrument readers</text>
+<text x="704" y="865" font-size="22" fill="#ffcc99" font-weight="normal" text-anchor="end">0.51%</text>
+<text x="854" y="865" font-size="21" fill="#e6d3ec" font-weight="normal" text-anchor="end">0.14 MB</text>
+<rect x="105" y="880" width="18" height="18" rx="3" fill="#d4df82" stroke="none"/>
+<text x="137" y="897" font-size="22" fill="#e6d3ec" font-weight="normal" text-anchor="start">Demos + learning</text>
+<text x="704" y="897" font-size="22" fill="#ffcc99" font-weight="normal" text-anchor="end">0.55%</text>
+<text x="854" y="897" font-size="21" fill="#e6d3ec" font-weight="normal" text-anchor="end">0.15 MB</text>
+<rect x="105" y="912" width="18" height="18" rx="3" fill="#bd776f" stroke="none"/>
+<text x="137" y="929" font-size="22" fill="#e6d3ec" font-weight="normal" text-anchor="start">App, interface + reports</text>
+<text x="704" y="929" font-size="22" fill="#ffcc99" font-weight="normal" text-anchor="end">8.20%</text>
+<text x="854" y="929" font-size="21" fill="#e6d3ec" font-weight="normal" text-anchor="end">2.28 MB</text>
+<text x="105" y="972" font-size="19" fill="#bba0c9" font-weight="normal" text-anchor="start">Exact HTML bytes; Base64 overhead is included.</text>
+<rect x="915" y="193" width="940" height="805" rx="30" fill="#100b16" stroke="#65456e"/>
+<text x="945" y="237" font-size="26" fill="#ff9966" font-weight="bold" text-anchor="start">EXPLORE · ASK QUESTIONS · PLAY</text>
+<text x="945" y="275" font-size="22" fill="#ff9966" font-weight="normal" text-anchor="start">•</text>
+<text x="966" y="275" font-size="22" fill="#e6d3ec" font-weight="normal" text-anchor="start">Learn real-time PCR data review by exploring, asking questions and playing.</text>
+<text x="945" y="309" font-size="22" fill="#ff9966" font-weight="normal" text-anchor="start">•</text>
+<text x="966" y="309" font-size="22" fill="#e6d3ec" font-weight="normal" text-anchor="start">A learning game plus two demos: a guided tour and a voice-command workflow.</text>
+<text x="966" y="335" font-size="22" fill="#e6d3ec" font-weight="normal" text-anchor="start">Artificial data, highlighted evidence, questions and points. Download a</text>
+<text x="966" y="361" font-size="22" fill="#e6d3ec" font-weight="normal" text-anchor="start">training report with answers, scores and time.</text>
+<text x="945" y="395" font-size="22" fill="#ff9966" font-weight="normal" text-anchor="start">•</text>
+<text x="966" y="395" font-size="22" fill="#e6d3ec" font-weight="normal" text-anchor="start">A single, unencrypted HTML file.</text>
+<text x="945" y="429" font-size="22" fill="#ff9966" font-weight="normal" text-anchor="start">•</text>
+<text x="966" y="429" font-size="22" fill="#e6d3ec" font-weight="normal" text-anchor="start">Free and open source. Save it and use it offline.</text>
+<text x="945" y="463" font-size="22" fill="#ff9966" font-weight="normal" text-anchor="start">•</text>
+<text x="966" y="463" font-size="22" fill="#e6d3ec" font-weight="normal" text-anchor="start">Local processing and multiple instrument file formats.</text>
+<text x="945" y="497" font-size="22" fill="#ff9966" font-weight="normal" text-anchor="start">•</text>
+<text x="966" y="497" font-size="22" fill="#e6d3ec" font-weight="normal" text-anchor="start">Interactive amplification curves and control charts.</text>
+<text x="945" y="531" font-size="22" fill="#ff9966" font-weight="normal" text-anchor="start">•</text>
+<text x="966" y="531" font-size="22" fill="#e6d3ec" font-weight="normal" text-anchor="start">Stored threshold-cycle, melting and quantity results, where available.</text>
+<text x="945" y="565" font-size="22" fill="#ff9966" font-weight="normal" text-anchor="start">•</text>
+<text x="966" y="565" font-size="22" fill="#e6d3ec" font-weight="normal" text-anchor="start">SOP rules for controls and replicates.</text>
+<text x="945" y="599" font-size="22" fill="#ff9966" font-weight="normal" text-anchor="start">•</text>
+<text x="966" y="599" font-size="22" fill="#e6d3ec" font-weight="normal" text-anchor="start">Outliers, drift and missing channel results.</text>
+<text x="945" y="633" font-size="22" fill="#ff9966" font-weight="normal" text-anchor="start">•</text>
+<text x="966" y="633" font-size="22" fill="#e6d3ec" font-weight="normal" text-anchor="start">English and Chinese interfaces.</text>
+<text x="945" y="667" font-size="22" fill="#ff9966" font-weight="normal" text-anchor="start">•</text>
+<text x="966" y="667" font-size="22" fill="#e6d3ec" font-weight="normal" text-anchor="start">Mouse, keyboard and optional voice commands on compatible browsers, with</text>
+<text x="966" y="693" font-size="22" fill="#e6d3ec" font-weight="normal" text-anchor="start">offline audio.</text>
+<rect x="944" y="920" width="882" height="57" rx="14" fill="#08050b" stroke="#cc99cc"/>
+<text x="960" y="945" font-size="21" fill="#ffcc99" font-weight="bold" text-anchor="start">Research use only. MISSY is not validated.</text>
+<text x="960" y="969" font-size="20" fill="#e6d3ec" font-weight="normal" text-anchor="start">The game supports practice, not competency certification.</text>
+<text x="105" y="708" font-size="18" fill="#e6d3ec">Recorded speech: compressed MP3, embedded in the HTML.</text><text x="105" y="732" font-size="18" fill="#e6d3ec">Offline after saving. Optional English voice pack: one-time download.</text></svg>

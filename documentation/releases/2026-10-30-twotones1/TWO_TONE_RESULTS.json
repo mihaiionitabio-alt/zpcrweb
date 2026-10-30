@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "embeddedOffline": true,
+  "energy": [
+    {
+      "id": "wakeTone",
+      "seconds": 0.2700226757369614,
+      "peak": 0.3697662353515625,
+      "frames": 5954
+    },
+    {
+      "id": "navigationTone",
+      "seconds": 0.4,
+      "peak": 0.1814422607421875,
+      "frames": 8820
+    }
+  ],
+  "wakeFirstInterimOnce": true,
+  "finalDoesNotRepeatWakeTone": true,
+  "sectionChange": true,
+  "sameSectionSilent": true,
+  "reviewSubsectionMouse": true,
+  "reviewSubsectionKeyboard": true,
+  "individualMute": true,
+  "loadedGraphSelection": true,
+  "voiceChartNavigationOnce": true,
+  "storedValuesAndCurvesUnchanged": true,
+  "recognitionEmulated": true,
+  "errors": []
+}

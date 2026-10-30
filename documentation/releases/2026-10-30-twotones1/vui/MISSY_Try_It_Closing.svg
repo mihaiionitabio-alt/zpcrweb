@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img"><title>Try MISSY — free, offline and open source</title><style>text{font-family:Arial,Helvetica,sans-serif}</style>
+<rect x="0" y="0" width="1920" height="1080" rx="0" fill="#08050b" stroke="none"/>
+<rect x="35" y="35" width="1850" height="15" rx="7" fill="#ff9966" stroke="none"/>
+<rect x="35" y="35" width="15" height="1000" rx="7" fill="#cc99cc" stroke="none"/>
+<rect x="35" y="1020" width="1850" height="15" rx="7" fill="#cc99cc" stroke="none"/>
+<text x="95" y="132" font-size="64" fill="#ff9966" font-weight="bold" text-anchor="start">Try MISSY</text>
+<text x="95" y="191" font-size="32" fill="#e6d3ec" font-weight="normal" text-anchor="start">Explore the demos. Ask questions. Try the learning game.</text>
+<rect x="90" y="248" width="1740" height="616" rx="45" fill="#100b16" stroke="#65456e"/>
+<text x="130" y="305" font-size="36" fill="#ffcc99" font-weight="bold" text-anchor="start">ONE SINGLE, UNENCRYPTED HTML FILE</text>
+<text x="130" y="356" font-size="30" fill="#e6d3ec" font-weight="normal" text-anchor="start">Save it. Run it offline. Inspect the full source code.</text>
+<rect x="130" y="423" width="15" height="58" rx="4" fill="#ff9966" stroke="none"/>
+<text x="170" y="448" font-size="23" fill="#ff9966" font-weight="bold" text-anchor="start">LIVE PAGE</text>
+<text x="170" y="491" font-size="32" fill="#ffffff" font-weight="normal" text-anchor="start">https://mihaiionitabio-alt.github.io/zpcrweb/</text>
+<rect x="130" y="550" width="15" height="58" rx="4" fill="#cc99cc" stroke="none"/>
+<text x="170" y="575" font-size="23" fill="#ff9966" font-weight="bold" text-anchor="start">FULL SOURCE · GITHUB</text>
+<text x="170" y="618" font-size="32" fill="#ffffff" font-weight="normal" text-anchor="start">https://github.com/mihaiionitabio-alt/zpcrweb</text>
+<rect x="130" y="677" width="15" height="58" rx="4" fill="#9999ff" stroke="none"/>
+<text x="170" y="702" font-size="23" fill="#ff9966" font-weight="bold" text-anchor="start">DOCUMENTATION · ZENODO</text>
+<text x="170" y="745" font-size="32" fill="#ffffff" font-weight="normal" text-anchor="start">https://zenodo.org/records/23623413</text>
+<text x="130" y="823" font-size="25" fill="#ffcc99" font-weight="normal" text-anchor="start">Zenodo documentation describes an older release and is not up to date with the latest build.</text>
+<text x="95" y="925" font-size="27" fill="#e6d3ec" font-weight="normal" text-anchor="start">Research use only. MISSY is not validated. Training is practice, not certification.</text>
+<text x="95" y="970" font-size="24" fill="#bba0c9" font-weight="normal" text-anchor="start">This video shows a local development build; the online release may differ.</text>
+</svg>
