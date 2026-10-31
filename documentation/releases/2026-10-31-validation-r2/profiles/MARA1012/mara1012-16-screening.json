@@ -1,0 +1,313 @@
+{
+  "schema": "qpcr-sop-profile/1",
+  "name": "MARA 1012-16-2026",
+  "version": "0.4-calculation",
+  "author": "",
+  "assay": "Selected published event assay / matching crop reference",
+  "lab": {
+    "name": "",
+    "analyst": ""
+  },
+  "effective": "",
+  "notes": "Automatic method calculations with explicit curve, control and sample-name evidence. Provisional until laboratory approval. No experiment data are embedded.",
+  "locked": false,
+  "targets": [
+    {
+      "match": "*",
+      "kind": "auto",
+      "cqMax": 40,
+      "cqLate": "",
+      "quantMin": "",
+      "lateOutcome": "Inconclusive"
+    }
+  ],
+  "controls": [
+    {
+      "name": "空白质控品 — blank control (ddH2O)",
+      "matchBy": "name",
+      "match": "/^(NTC|BLANK|BLK|空白)/i",
+      "expect": "negative",
+      "cqLo": "",
+      "cqHi": "",
+      "targets": "*",
+      "minPerRun": 1,
+      "onFail": "reject",
+      "id": "blank-qc",
+      "minReplicates": 3,
+      "purpose": "reaction blank",
+      "material": "ddH2O",
+      "acceptance": "reference gene AND event sequence: no typical amplification curve, or Ct > 36",
+      "source_clause": "5.3.5, 5.3.7"
+    },
+    {
+      "name": "阴性质控品 — reference gene",
+      "matchBy": "name",
+      "match": "/^(CN|NC|阴性)/i",
+      "expect": "positive",
+      "cqLo": "",
+      "cqHi": 36,
+      "targets": "*",
+      "minPerRun": 1,
+      "onFail": "reject",
+      "id": "neg-qc-ref",
+      "minReplicates": 3,
+      "purpose": "non-GM crop matrix",
+      "material": "non-GM crop of the same species",
+      "acceptance": "typical amplification curve and Ct <= 36",
+      "source_clause": "5.3.5, 5.3.7"
+    },
+    {
+      "name": "阴性质控品 — event sequence",
+      "matchBy": "name",
+      "match": "/^(CN|NC|阴性)/i",
+      "expect": "negative",
+      "cqLo": "",
+      "cqHi": "",
+      "targets": "*",
+      "minPerRun": 1,
+      "onFail": "reject",
+      "id": "neg-qc-event",
+      "minReplicates": 3,
+      "purpose": "non-GM crop matrix",
+      "material": "non-GM crop of the same species",
+      "acceptance": "no typical amplification curve, or Ct > 36",
+      "source_clause": "5.3.5, 5.3.7"
+    },
+    {
+      "name": "Positive control · event and content not declared",
+      "matchBy": "name",
+      "match": "/^(CPQ|阳性定量)/i",
+      "expect": "positive",
+      "cqLo": "",
+      "cqHi": 36,
+      "targets": "*",
+      "minPerRun": 1,
+      "onFail": "review",
+      "id": "pos-quant-qc",
+      "minReplicates": 3,
+      "purpose": "Required threshold-matched quantitative positive control",
+      "material": "content comparable to the labelling threshold",
+      "acceptance": "typical amplification curve and Ct <= 36",
+      "source_clause": "5.3.5, 5.3.7",
+      "event": "",
+      "content_percent": ""
+    }
+  ],
+  "replicates": {
+    "min": 3,
+    "positiveMin": 3,
+    "partialOutcome": "Repeat",
+    "maxSd": "",
+    "sdOutcome": "Repeat",
+    "subsamples": {
+      "count": 3,
+      "label": "平行子样",
+      "definition": "independent samples drawn at random from different positions of the prepared test portion",
+      "amplifications_per_subsample": 3,
+      "same_run_required": true,
+      "same_plate_required": true
+    },
+    "control_amplifications": 3,
+    "by_role": {
+      "sample": 3,
+      "positive control": 3,
+      "negative control": 3,
+      "blank": 3
+    },
+    "source_clause": "5.3.6.1"
+  },
+  "ic": {
+    "referenceCq": "",
+    "maxShift": "",
+    "shiftOutcome": "Inconclusive",
+    "missingOutcome": "Invalid"
+  },
+  "run": {
+    "integrity": "review",
+    "controlsMissing": "reject",
+    "controlsFail": "reject",
+    "colourCompensation": "off",
+    "referencePolicy": "declared-crop-reference-required",
+    "stdCurve": "off",
+    "minR2": "",
+    "effMin": "",
+    "effMax": "",
+    "minLogs": "",
+    "ntcGap": "",
+    "ntcGapAction": "reject",
+    "editDelayHours": 72,
+    "editAction": "review",
+    "calibration": "review",
+    "maxZoneSpread": 1.5,
+    "zoneAction": "review",
+    "runState": "reject",
+    "invalidRunOverrides": false,
+    "on_control_failure": "analyse the cause and repeat from DNA template preparation (5.4.4) or from amplification (5.4.6)",
+    "source_clause": "5.4.7.4",
+    "slopeMin": "",
+    "slopeMax": ""
+  },
+  "outcomes": {
+    "Positive": {
+      "label": "Detected",
+      "colour": "#dc2626",
+      "text": "{target} detected (mean Cq {cq}; {det}/{n} replicates)"
+    },
+    "Negative": {
+      "label": "Not detected",
+      "colour": "#64748b",
+      "text": "{target} not detected ({n} replicates; Cq cut-off {cutoff})"
+    },
+    "Inconclusive": {
+      "label": "Inconclusive",
+      "colour": "#d97706",
+      "text": "{target} inconclusive: {reason}"
+    },
+    "Repeat": {
+      "label": "Repeat analysis",
+      "colour": "#7c3aed",
+      "text": "{target}: repeat — {reason}"
+    },
+    "Invalid": {
+      "label": "Invalid result",
+      "colour": "#111827",
+      "text": "{target}: invalid — {reason}"
+    },
+    "Invalid run": {
+      "label": "Invalid run",
+      "colour": "#9f1239",
+      "text": "Run not accepted — {reason}"
+    },
+    "Control pass": {
+      "label": "Control accepted",
+      "colour": "#16a34a",
+      "text": "{sample} / {target}: control accepted"
+    },
+    "Control fail": {
+      "label": "Control failed",
+      "colour": "#e11d48",
+      "text": "{sample} / {target}: control FAILED — {reason}"
+    },
+    "Standard": {
+      "label": "Standard",
+      "colour": "#0891b2",
+      "text": "{sample} / {target}: standard"
+    },
+    "Not interpreted": {
+      "label": "Not interpreted",
+      "colour": "#cbd5e1",
+      "text": "{target}: not interpreted"
+    }
+  },
+  "graphs": {
+    "showCutoffs": true,
+    "showLate": true,
+    "showSdLimit": true
+  },
+  "profileSchemaVersion": 3,
+  "reviewOnly": true,
+  "performance": {
+    "ct_cutoff": 36,
+    "source_clause": "5.3.7"
+  },
+  "method": {
+    "id": "MARA1012-16-screening",
+    "revision": "2026",
+    "scope": "Threshold-compliance screening by relative event-content comparison; no numerical percentage",
+    "reference_genes": [],
+    "on_not_applicable": "unresolved",
+    "selected_event": "",
+    "crops": [
+      "maize",
+      "soybean"
+    ],
+    "standard_number": 16,
+    "applies_when": {
+      "target_patterns": []
+    },
+    "sources": [
+      {
+        "standard": "MARA 1012-16-2026",
+        "code_zh": "农业农村部公告第1012号—16—2026",
+        "title_zh": "转基因成分含量快速检测 实时荧光PCR ΔΔCt法",
+        "pdf": "P020260708599398824623.pdf",
+        "sha256": "499293e5839ae67d81b924de6a7e7d4f9a3539adea07cc20b813991a973e96d9",
+        "clauses": "3.1, 5.3.6–5.3.8, 5.4"
+      }
+    ],
+    "auxiliary_references": [
+      {
+        "pdf": "Standardul_16_DDCt_RO.pdf",
+        "sha256": "b91ebf37ea91e17e29cda7ef484be1adb6ba30a8477c3c0d347df2293f8b5c9e",
+        "role": "Romanian explanatory translation; Chinese standard remains authoritative"
+      }
+    ],
+    "provenance": {
+      "catalogue": "https://github.com/mihaiionitabio-alt/LIMS/blob/main/index.html",
+      "numeric_rules": "Published standard text; local PDF SHA-256 recorded",
+      "status": "Source-referenced draft; not laboratory approved"
+    }
+  },
+  "interpretation": {
+    "principles": [
+      "Threshold comparison only. Event identity must be established by a published event-specific assay. No standard curve or numerical percentage is produced."
+    ],
+    "rules": [
+      {
+        "id": "D01",
+        "when": "ddCt < -0.4",
+        "action": "event detected, content higher than control",
+        "outcome": "Positive"
+      },
+      {
+        "id": "D02",
+        "when": "ddCt > 0.4",
+        "action": "event detected, content lower than control",
+        "outcome": "Positive"
+      },
+      {
+        "id": "D03",
+        "when": "-0.4 <= ddCt <= 0.4",
+        "action": "determine content with a validated quantitative method",
+        "outcome": "Inconclusive"
+      }
+    ],
+    "reporting": {
+      "release_statuses": []
+    }
+  },
+  "controlCharts": {},
+  "blockedAutomaticInterpretations": [
+    "The quantitative control uncertainty interval must cover the declared labelling threshold.",
+    "This method is threshold screening, not event identification or a numerical percentage.",
+    "Laboratory approval is separate from automatic calculation. Missing method evidence produces a specific unresolved or repeat result; missing data never establish a GMO-negative sample."
+  ],
+  "comparison": {
+    "lower_threshold": -0.4,
+    "upper_threshold": 0.4,
+    "inside_band_action": "quantification required",
+    "control_content_percent": "",
+    "labelling_threshold_percent": "",
+    "control_expanded_uncertainty_percent": "",
+    "source_clause": "3.1, 5.3.8, 5.4"
+  },
+  "fileStem": "MARA1012-16-2026-screening",
+  "sample_id": {
+    "pattern": "",
+    "flags": "i"
+  },
+  "evaluationMode": "automatic-with-evidence",
+  "profileFamily": "MARA1012",
+  "analyticalRole": "screening",
+  "control_identity": {
+    "event": "",
+    "positive_percent": "",
+    "qualitative_min_percent": "",
+    "qualitative_max_percent": "",
+    "source_clause": "7.3.4"
+  },
+  "implementationReview": [
+    "laboratory_mapping"
+  ],
+  "sha256": "c5f20941558100ace36df193379092039b827afb0dc60b1d74f9ffad8f0bd804"
+}

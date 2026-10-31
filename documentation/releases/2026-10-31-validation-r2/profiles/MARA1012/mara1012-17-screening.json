@@ -1,0 +1,598 @@
+{
+  "schema": "qpcr-sop-profile/1",
+  "name": "MARA 1012-17-2026",
+  "version": "0.4-calculation",
+  "author": "",
+  "assay": "Broad element/trait screening: P-35S, T-NOS, E9 terminator, pat, cry1Ac, bar, with zSSIIb / Lectin / PLD / CruA taxon references",
+  "lab": {
+    "name": "",
+    "analyst": ""
+  },
+  "effective": "",
+  "notes": "Automatic method calculations with explicit curve, control and sample-name evidence. Provisional until laboratory approval. No experiment data are embedded.",
+  "locked": false,
+  "targets": [
+    {
+      "match": "zSSIIb|SSIIb",
+      "kind": "reference",
+      "cqMax": 36,
+      "cqLate": "",
+      "quantMin": "",
+      "lateOutcome": "Inconclusive",
+      "taxon": "Zea mays",
+      "source_clause": "8.1"
+    },
+    {
+      "match": "Lectin|LEC|Le1",
+      "kind": "reference",
+      "cqMax": 36,
+      "cqLate": "",
+      "quantMin": "",
+      "lateOutcome": "Inconclusive",
+      "taxon": "Glycine max",
+      "source_clause": "8.1"
+    },
+    {
+      "match": "PLD",
+      "kind": "reference",
+      "cqMax": 36,
+      "cqLate": "",
+      "quantMin": "",
+      "lateOutcome": "Inconclusive",
+      "taxon": "Oryza sativa",
+      "source_clause": "8.1"
+    },
+    {
+      "match": "CruA",
+      "kind": "reference",
+      "cqMax": 36,
+      "cqLate": "",
+      "quantMin": "",
+      "lateOutcome": "Inconclusive",
+      "taxon": "Brassica napus",
+      "source_clause": "8.1"
+    },
+    {
+      "match": "P-35S|P35S|35S|CaMV P-35S",
+      "kind": "target",
+      "cqMax": 36,
+      "cqLate": "",
+      "quantMin": "",
+      "lateOutcome": "Repeat",
+      "class": "element",
+      "source_clause": "8.1"
+    },
+    {
+      "match": "T-NOS|T-nos|TNOS",
+      "kind": "target",
+      "cqMax": 36,
+      "cqLate": "",
+      "quantMin": "",
+      "lateOutcome": "Repeat",
+      "class": "element",
+      "source_clause": "8.1"
+    },
+    {
+      "match": "tE9|E9|T-E9",
+      "kind": "target",
+      "cqMax": 36,
+      "cqLate": "",
+      "quantMin": "",
+      "lateOutcome": "Repeat",
+      "class": "element",
+      "source_clause": "8.1"
+    },
+    {
+      "match": "pat",
+      "kind": "target",
+      "cqMax": 36,
+      "cqLate": "",
+      "quantMin": "",
+      "lateOutcome": "Repeat",
+      "class": "trait",
+      "source_clause": "8.1"
+    },
+    {
+      "match": "cry1Ac|cryIAc",
+      "kind": "target",
+      "cqMax": 36,
+      "cqLate": "",
+      "quantMin": "",
+      "lateOutcome": "Repeat",
+      "class": "trait",
+      "source_clause": "8.1"
+    },
+    {
+      "match": "bar",
+      "kind": "target",
+      "cqMax": 36,
+      "cqLate": "",
+      "quantMin": "",
+      "lateOutcome": "Repeat",
+      "class": "trait",
+      "source_clause": "8.1"
+    }
+  ],
+  "controls": [
+    {
+      "name": "空白质控品 — blank control",
+      "matchBy": "name",
+      "match": "/^(NTC|BLANK|BLK)/i",
+      "expect": "negative",
+      "cqLo": "",
+      "cqHi": "",
+      "targets": "*",
+      "minPerRun": 1,
+      "onFail": "reject",
+      "id": "blank-qc",
+      "minReplicates": 1,
+      "purpose": "reaction blank",
+      "material": "",
+      "acceptance": "No amplification signal in blank and event-negative control; typical expected signal in positive and reference controls (7.3.5). Ct 36 applies to sample interpretation (8.1).",
+      "source_clause": "7.3.4–7.3.5"
+    },
+    {
+      "name": "阴性质控品 — taxon reference",
+      "matchBy": "name",
+      "match": "/^(CN|NC)\\b/i",
+      "expect": "positive",
+      "cqLo": "",
+      "cqHi": 36,
+      "targets": "zSSIIb|SSIIb|Lectin|LEC|Le1|PLD|CruA",
+      "minPerRun": 1,
+      "onFail": "reject",
+      "id": "neg-qc-ref",
+      "minReplicates": 1,
+      "purpose": "non-GM matrix, reference must amplify",
+      "material": "",
+      "acceptance": "No amplification signal in blank and event-negative control; typical expected signal in positive and reference controls (7.3.5). Ct 36 applies to sample interpretation (8.1).",
+      "source_clause": "7.3.4–7.3.5"
+    },
+    {
+      "name": "阴性质控品 — screening targets",
+      "matchBy": "name",
+      "match": "/^(CN|NC)\\b/i",
+      "expect": "negative",
+      "cqLo": "",
+      "cqHi": "",
+      "targets": "P-35S|P35S|35S|T-NOS|T-nos|TNOS|tE9|E9|pat|cry1Ac|cryIAc|bar",
+      "minPerRun": 1,
+      "onFail": "reject",
+      "id": "neg-qc-tgt",
+      "minReplicates": 1,
+      "purpose": "non-GM matrix, targets must not amplify",
+      "material": "",
+      "acceptance": "No amplification signal in blank and event-negative control; typical expected signal in positive and reference controls (7.3.5). Ct 36 applies to sample interpretation (8.1).",
+      "source_clause": "7.3.4–7.3.5"
+    },
+    {
+      "name": "Positive control · event and content not declared",
+      "matchBy": "name",
+      "match": "/^(CP|PC)\\b/i",
+      "expect": "positive",
+      "cqLo": "",
+      "cqHi": 36,
+      "targets": "*",
+      "minPerRun": 1,
+      "onFail": "reject",
+      "id": "pos-qual-qc",
+      "minReplicates": 1,
+      "purpose": "positive control (7.3.4a); no fixed event-content percentage specified",
+      "material": "GM plant genomic DNA or plasmid DNA containing the target sequence",
+      "acceptance": "No amplification signal in blank and event-negative control; typical expected signal in positive and reference controls (7.3.5). Ct 36 applies to sample interpretation (8.1).",
+      "source_clause": "7.3.4–7.3.5",
+      "event": "",
+      "content_percent": ""
+    }
+  ],
+  "replicates": {
+    "min": 1,
+    "positiveMin": 1,
+    "partialOutcome": "Repeat",
+    "maxSd": "",
+    "sdOutcome": "Repeat",
+    "by_role": {
+      "sample": 1,
+      "positive control": 1,
+      "negative control": 1,
+      "NTC": 1,
+      "blank": 1
+    },
+    "note": "Field screening format. The 3-subsample / majority rule of the laboratory event standards does not apply here."
+  },
+  "ic": {
+    "referenceCq": "",
+    "maxShift": "",
+    "shiftOutcome": "Inconclusive",
+    "missingOutcome": "Invalid"
+  },
+  "run": {
+    "integrity": "review",
+    "controlsMissing": "reject",
+    "controlsFail": "reject",
+    "colourCompensation": "off",
+    "referencePolicy": "taxon-must-match-declared-matrix",
+    "stdCurve": "off",
+    "minR2": "",
+    "effMin": "",
+    "effMax": "",
+    "minLogs": "",
+    "ntcGap": "",
+    "ntcGapAction": "off",
+    "editDelayHours": 72,
+    "editAction": "review",
+    "calibration": "review",
+    "maxZoneSpread": 1.5,
+    "zoneAction": "review",
+    "runState": "reject",
+    "invalidRunOverrides": false,
+    "slopeMin": "",
+    "slopeMax": ""
+  },
+  "outcomes": {
+    "Positive": {
+      "label": "Detected",
+      "colour": "#dc2626",
+      "text": "{target} detected (mean Cq {cq}; {det}/{n} replicates)"
+    },
+    "Negative": {
+      "label": "Not detected",
+      "colour": "#64748b",
+      "text": "{target} not detected ({n} replicates; Cq cut-off {cutoff})"
+    },
+    "Inconclusive": {
+      "label": "Inconclusive",
+      "colour": "#d97706",
+      "text": "{target} inconclusive: {reason}"
+    },
+    "Repeat": {
+      "label": "Repeat analysis",
+      "colour": "#7c3aed",
+      "text": "{target}: repeat — {reason}"
+    },
+    "Invalid": {
+      "label": "Invalid result",
+      "colour": "#111827",
+      "text": "{target}: invalid — {reason}"
+    },
+    "Invalid run": {
+      "label": "Invalid run",
+      "colour": "#9f1239",
+      "text": "Run not accepted — {reason}"
+    },
+    "Control pass": {
+      "label": "Control accepted",
+      "colour": "#16a34a",
+      "text": "{sample} / {target}: control accepted"
+    },
+    "Control fail": {
+      "label": "Control failed",
+      "colour": "#e11d48",
+      "text": "{sample} / {target}: control FAILED — {reason}"
+    },
+    "Standard": {
+      "label": "Standard",
+      "colour": "#0891b2",
+      "text": "{sample} / {target}: standard"
+    },
+    "Not interpreted": {
+      "label": "Not interpreted",
+      "colour": "#cbd5e1",
+      "text": "{target}: not interpreted"
+    }
+  },
+  "graphs": {
+    "showCutoffs": true,
+    "showLate": true,
+    "showSdLimit": true
+  },
+  "profileSchemaVersion": 3,
+  "reviewOnly": true,
+  "performance": {
+    "lod_percent": 1,
+    "loq_percent": null,
+    "ct_cutoff": 36,
+    "cycles": {
+      "min": 35,
+      "max": 40
+    },
+    "workflow_minutes_max": 40,
+    "extraction": "rapid alkaline",
+    "readout": [
+      "real-time fluorescence",
+      "lateral flow"
+    ],
+    "event_library_size": 25,
+    "source_clause": "7.3.2, 8.1, 10"
+  },
+  "method": {
+    "id": "MARA1012-17-screening",
+    "revision": "2026",
+    "scope": "On-site / triage screening of plant material and derived products",
+    "reference_genes": [
+      {
+        "target": "zSSIIb",
+        "gene": "zSSIIb",
+        "taxon": "Zea mays",
+        "purpose": "taxon-specific DNA / extraction verification"
+      },
+      {
+        "target": "Lectin",
+        "gene": "Le1",
+        "taxon": "Glycine max",
+        "purpose": "taxon-specific DNA / extraction verification"
+      },
+      {
+        "target": "PLD",
+        "gene": "PLD",
+        "taxon": "Oryza sativa",
+        "purpose": "taxon-specific DNA / extraction verification"
+      },
+      {
+        "target": "CruA",
+        "gene": "CruA",
+        "taxon": "Brassica napus",
+        "purpose": "taxon-specific DNA / extraction verification"
+      }
+    ],
+    "applies_when": {
+      "target_patterns": [
+        "P-35S|P35S|35S|CaMV P-35S",
+        "T-NOS|T-nos|TNOS",
+        "tE9|E9|T-E9",
+        "pat",
+        "cry1Ac|cryIAc",
+        "bar"
+      ]
+    },
+    "on_not_applicable": "unresolved",
+    "selected_assays": [],
+    "rapid_event_assay_catalogue": [
+      {
+        "row": 1,
+        "crop": "maize",
+        "target": "瑞丰125",
+        "source_clause": "Annex B, table B.1"
+      },
+      {
+        "row": 2,
+        "crop": "maize",
+        "target": "DBN9936",
+        "source_clause": "Annex B, table B.1"
+      },
+      {
+        "row": 3,
+        "crop": "maize",
+        "target": "DBN9858",
+        "source_clause": "Annex B, table B.1"
+      },
+      {
+        "row": 4,
+        "crop": "maize",
+        "target": "DBN9501",
+        "source_clause": "Annex B, table B.1"
+      },
+      {
+        "row": 5,
+        "crop": "maize",
+        "target": "ND207",
+        "source_clause": "Annex B, table B.1"
+      },
+      {
+        "row": 6,
+        "crop": "maize",
+        "target": "MON810",
+        "source_clause": "Annex B, table B.1"
+      },
+      {
+        "row": 7,
+        "crop": "maize",
+        "target": "DBN3601T (DBN9936 / DBN9501)",
+        "source_clause": "Annex B, table B.1"
+      },
+      {
+        "row": 8,
+        "crop": "maize",
+        "target": "Bt11",
+        "source_clause": "Annex B, table B.1"
+      },
+      {
+        "row": 9,
+        "crop": "maize",
+        "target": "GA21",
+        "source_clause": "Annex B, table B.1"
+      },
+      {
+        "row": 10,
+        "crop": "maize",
+        "target": "MIR162",
+        "source_clause": "Annex B, table B.1"
+      },
+      {
+        "row": 11,
+        "crop": "maize",
+        "target": "TC1507",
+        "source_clause": "Annex B, table B.1"
+      },
+      {
+        "row": 12,
+        "crop": "maize",
+        "target": "59122",
+        "source_clause": "Annex B, table B.1"
+      },
+      {
+        "row": 13,
+        "crop": "maize",
+        "target": "MIR604",
+        "source_clause": "Annex B, table B.1"
+      },
+      {
+        "row": 14,
+        "crop": "maize",
+        "target": "MON88017",
+        "source_clause": "Annex B, table B.1"
+      },
+      {
+        "row": 15,
+        "crop": "maize",
+        "target": "NK603",
+        "source_clause": "Annex B, table B.1"
+      },
+      {
+        "row": 16,
+        "crop": "maize",
+        "target": "MON89034",
+        "source_clause": "Annex B, table B.1"
+      },
+      {
+        "row": 17,
+        "crop": "maize",
+        "target": "4114",
+        "source_clause": "Annex B, table B.1"
+      },
+      {
+        "row": 18,
+        "crop": "maize",
+        "target": "MON863",
+        "source_clause": "Annex B, table B.1"
+      },
+      {
+        "row": 19,
+        "crop": "maize",
+        "target": "Bt176",
+        "source_clause": "Annex B, table B.1"
+      },
+      {
+        "row": 1,
+        "crop": "soybean",
+        "target": "DBN9004",
+        "source_clause": "Annex B, table B.1"
+      },
+      {
+        "row": 2,
+        "crop": "soybean",
+        "target": "中黄6106",
+        "source_clause": "Annex B, table B.1"
+      },
+      {
+        "row": 3,
+        "crop": "soybean",
+        "target": "SHZD3201",
+        "source_clause": "Annex B, table B.1"
+      },
+      {
+        "row": 4,
+        "crop": "soybean",
+        "target": "GTS 40-3-2",
+        "source_clause": "Annex B, table B.1"
+      },
+      {
+        "row": 5,
+        "crop": "soybean",
+        "target": "MON87701",
+        "source_clause": "Annex B, table B.1"
+      },
+      {
+        "row": 6,
+        "crop": "soybean",
+        "target": "MON89788",
+        "source_clause": "Annex B, table B.1"
+      }
+    ],
+    "standard_number": 17,
+    "sources": [
+      {
+        "standard": "MARA 1012-17-2026",
+        "code_zh": "农业农村部公告第1012号—17—2026",
+        "title_zh": "转基因植物及其产品现场快速检测 PCR法",
+        "pdf": "P020260708599399150770.pdf",
+        "sha256": "d7886646927c5c07ae29a49736fa03fdfad3b64617620d54cea4225e06ff9796",
+        "clauses": "7.3.2, 7.3.4–7.3.5, 8.1, 10"
+      }
+    ],
+    "provenance": {
+      "catalogue": "https://github.com/mihaiionitabio-alt/LIMS/blob/main/index.html",
+      "numeric_rules": "Published standard text; local PDF SHA-256 recorded",
+      "status": "Source-referenced draft; not laboratory approved"
+    }
+  },
+  "interpretation": {
+    "principles": [
+      "A detected element or trait gene is a candidate signal, not an event. P-35S occurs in many events and in natural cauliflower mosaic virus; a trait gene recurs across constructs.",
+      "The taxon reference establishes DNA fitness and crop presence and is never omitted because the element panel is optimised.",
+      "Every screening report states the panel actually used and its LOD.",
+      "A positive screen obliges event-specific identification; a labelling decision additionally obliges quantification.",
+      "A negative screen covers only the tested targets at the stated method LOD; it does not establish absence of all GMOs."
+    ],
+    "rules": [
+      {
+        "id": "S01",
+        "when": "taxon reference Ct <= 36 and a screening element Ct <= 36",
+        "action": "report element detected as a candidate; raise identification",
+        "outcome": "Positive"
+      },
+      {
+        "id": "S02",
+        "when": "taxon reference Ct <= 36 and no screening element below cut-off",
+        "action": "report no selected target detected at the stated LOD",
+        "outcome": "Negative"
+      },
+      {
+        "id": "S03",
+        "when": "taxon reference absent, late or Ct > 36",
+        "action": "do not report the element result",
+        "outcome": "Invalid"
+      },
+      {
+        "id": "S04",
+        "when": "blank or negative control amplifies a screening target",
+        "action": "do not issue sample calls",
+        "outcome": "Control fail"
+      },
+      {
+        "id": "S05",
+        "when": "a labelling threshold decision is requested",
+        "action": "do not answer from this profile",
+        "outcome": "Profile not applicable"
+      }
+    ],
+    "reporting": {
+      "include_rule_id": true,
+      "include_reason": true,
+      "include_stored_call": true,
+      "include_panel_coverage": true,
+      "include_lod": true,
+      "release_statuses": []
+    }
+  },
+  "controlCharts": {},
+  "blockedAutomaticInterpretations": [
+    "This profile cannot issue an event identity.",
+    "This profile cannot issue a quantitative result or a threshold decision; its LOD is 1 %.",
+    "A negative screen must not be reported as 'GMO free'.",
+    "Panel coverage and oligo identities must be confirmed against the published standard before any automated call.",
+    "Control acceptance is signal-based in 7.3.5; the event-method Ct-based control rule must not be substituted. Laboratory replication plan and control materials remain to be confirmed.",
+    "Select and record the actual Annex A/B assays; the 25 Annex B entries are a catalogue, not an automatically tested panel. Component assays alone do not establish a stacked event in one organism.",
+    "Portable rapid-PCR workflow and matrix must be verified; a desktop instrument name does not establish standard-17 applicability. Lateral-flow readings are outside the qPCR reader.",
+    "Laboratory approval is separate from automatic calculation. Missing method evidence produces a specific unresolved or repeat result; missing data never establish a GMO-negative sample."
+  ],
+  "fileStem": "MARA1012-17-2026-screening",
+  "sample_id": {
+    "pattern": "",
+    "flags": "i"
+  },
+  "evaluationMode": "automatic-with-evidence",
+  "profileFamily": "MARA1012",
+  "analyticalRole": "screening",
+  "control_identity": {
+    "event": "",
+    "positive_percent": "",
+    "qualitative_min_percent": "",
+    "qualitative_max_percent": "",
+    "source_clause": "7.3.4"
+  },
+  "implementationReview": [
+    "laboratory_mapping"
+  ],
+  "sha256": "66af6175d2aa791280d341f2108dc741e8f1aa408781a154b1ef0c286da86894"
+}

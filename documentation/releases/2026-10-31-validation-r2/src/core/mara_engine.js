@@ -1,0 +1,185 @@
+/* Pure MARA arithmetic and decisions. No DOM, stored-value mutation or curve-shape guesses.
+ * Reaction evidence is explicit: typical / absent / atypical / unknown. Cq is never
+ * substituted for a reviewed amplification curve. Unknown is not a negative result.
+ */
+const MARA_ENGINE=(()=>{
+ const STANDARD_UNCERTAINTY=[[.0252,.0511],[.0157,.0651],[.0174,.0645],[.0408,.0723],[.0231,.0655],[.0094,.105],[.0017,.1147],[.0083,.0721],[.012,.0783],[.0225,.069],[.0066,.0742],[.0168,.0783],[.0082,.0594],[.0062,.0702],[.0115,.0601]];
+ const N=x=>x===''||x===null||x===undefined?NaN:Number(x);
+ const avg=a=>a.length?a.reduce((s,x)=>s+x,0)/a.length:NaN;
+ const group=(a,key)=>{const m=new Map();for(const x of a){const k=key(x);if(!m.has(k))m.set(k,[]);m.get(k).push(x);}return m;};
+ function fit(points){
+  if(points.length<2||points.some(p=>!(N(p.copies)>0)||!Number.isFinite(N(p.cq))))return null;
+  const xs=points.map(p=>Math.log10(N(p.copies))),ys=points.map(p=>N(p.cq)),mx=avg(xs),my=avg(ys);
+  const xx=xs.reduce((s,x)=>s+(x-mx)**2,0);if(!xx)return null;
+  const slope=xs.reduce((s,x,i)=>s+(x-mx)*(ys[i]-my),0)/xx,intercept=my-slope*mx;
+  const ss=ys.reduce((s,y)=>s+(y-my)**2,0),err=xs.reduce((s,x,i)=>s+(ys[i]-intercept-slope*x)**2,0);
+  return {slope,intercept,r2:ss?1-err/ss:NaN,min:Math.min(...points.map(p=>N(p.copies))),max:Math.max(...points.map(p=>N(p.copies)))};
+ }
+ const copies=(cq,c)=>c&&c.slope<0&&Number.isFinite(N(cq))?10**((N(cq)-c.intercept)/c.slope):NaN;
+ function rangeStats(a,f=1.693){const mean=avg(a),s=(Math.max(...a)-Math.min(...a))/f;return {mean,s,rsd:mean>0?100*s/mean:NaN,uMean:s/Math.sqrt(a.length)};}
+ function crmAcceptance(values,expected,uCRM,f=1.693,measuredMean=avg(values)){
+  const s=rangeStats(values,f),bias=measuredMean-expected,uBias=Math.hypot(uCRM,s.uMean);
+  const tolerance=16*Number.EPSILON*Math.max(Math.abs(measuredMean),Math.abs(expected),2*uBias,Number.MIN_VALUE);
+  return {...s,mean:measuredMean,bias,uBias,pass:values.length===3&&values.every(Number.isFinite)&&expected>0&&Number.isFinite(uCRM)&&uCRM>=0&&Math.abs(bias)<2*uBias-tolerance};
+ }
+ function uncertainty(mean,u0,ur,k=2){
+  if(![mean,u0,ur,k].every(Number.isFinite)||mean<0||u0<0||ur<0||k<=0)return null;
+  const rawU=k*Math.hypot(u0,ur*mean);if(!(rawU>0))return null;
+  const U=Number(rawU.toPrecision(2)),place=Math.floor(Math.log10(U))-1,step=10**place;
+  const rounded=Math.round((mean+Number.EPSILON)*1/step)*step;
+  const format=x=>place<0?x.toFixed(Math.min(15,-place)):x.toFixed(0);
+  return {u:Math.hypot(u0,ur*mean),rawU,U,rounded,place,text:format(rounded)+' ± '+format(U)+' %'};
+ }
+ function signal(r,cut=36,rapid=false){
+  if(r.curve==='absent'||r.curve==='atypical')return false;
+  if(r.curve!=='typical')return null;
+  if(rapid)return true;
+  const q=N(r.cq);return q>0&&Number.isFinite(q)?q<=cut:null;
+ }
+ function compare(ddct,lo=-.4,hi=.4){
+  // Decimal Ct arithmetic can leave a few ulps at an inclusive boundary.
+  const tol=1e-12*Math.max(1,Math.abs(ddct));
+  return ddct<lo-tol?'higher':ddct>hi+tol?'lower':'quantification required';
+ }
+ function evaluate(p,records,ctx={}){
+  const q=p.analyticalRole==='quantification',rapid=p.method.standard_number===17,dd=p.method.standard_number===16;
+  const checks=[],decisions=[],curves={};
+  const add=(code,pass,detail='')=>checks.push({code,pass,detail});
+  const active=records.filter(r=>!r.omitted),cut=Math.min(36,N(p.performance?.ct_cutoff)||36);
+  add('supported_method',p.method.standard_number>=1&&p.method.standard_number<=17);
+  add('method_verified',ctx.methodVerified===true);
+  if(p.method.standard_number===6)add('sequence_verified',ctx.sequenceVerified===true);
+  if(p.dnaBasisDiscrepancy)add('dna_basis_verified',ctx.dnaBasisVerified===true);
+  const assays=ctx.assays||[];add('assay_selection',assays.length>0&&!!ctx.reference);
+  add('selection_applied',ctx.selectionPending!==true);
+  add('run_complete',ctx.complete!==false);
+  add('unique_reactions',new Set(active.map(r=>r.physicalId||r.id)).size===active.length);
+  add('control_mapping',active.every(r=>['sample','blank','negative','positive','quantitative','calibrator'].includes(r.role)));
+  if(!q&&!rapid&&!dd)add('positive_control_content',p.control_identity?.event===p.method.selected_event&&N(p.control_identity?.positive_percent)>=.1&&N(p.control_identity?.positive_percent)<=1);
+  if(dd){const c=p.comparison||{},pct=N(c.control_content_percent),threshold=N(c.labelling_threshold_percent),unc=N(c.control_expanded_uncertainty_percent);
+   add('threshold_control',pct>0&&threshold>0&&Number.isFinite(unc)&&unc>=0&&Math.abs(pct-threshold)<=unc+1e-12&&p.control_identity?.event===p.method.selected_event);
+   add('same_plate',ctx.samePlateVerified===true);
+  }
+  if(p.method.standard_number===15&&!q)add('same_plate',ctx.samePlateVerified===true);
+  if(rapid)add('rapid_workflow',ctx.rapidWorkflow===true);
+  if(q){add('same_plate',ctx.samePlateVerified===true);add('calibration_range',ctx.calibrationRangeVerified===true);}
+  // All control materials are checked individually, never pooled to reach n.
+  const controlMin=rapid?Math.max(1,N(p.replicates?.by_role?.['positive control'])||1):3;
+  const controlSets={};
+  function qc(role,assay,positive){
+   const found=active.filter(r=>r.role===role&&r.assay===assay),sets=group(found,r=>r.sample);
+   let pass=sets.size>0;for(const rs of sets.values())if(rs.length<controlMin||rs.some(r=>signal(r,cut,rapid)!==positive))pass=false;
+   add(role+':'+assay,pass,found.length+'');controlSets[role+':'+assay]=found;return found;
+  }
+  for(const a of [ctx.reference,...assays].filter(Boolean)){
+   qc('blank',a,false);qc('negative',a,a===ctx.reference);
+   if(!q)qc(dd?'quantitative':'positive',a,true);
+  }
+  if(q){
+   add('range_coefficient',Math.abs(N(p.calculation?.range_coefficient_f?.n_3)-1.693)<1e-12);
+   add('copy_units',p.calibrator?.quantity_unit==='copies');
+   const levelSets={};
+   for(const a of [ctx.reference,...assays].filter(Boolean)){
+    const pts=active.filter(r=>r.role==='calibrator'&&r.assay===a),levels=group(pts,r=>r.level||'');levelSets[a]=levels;
+    const count=Math.max(5,N(p.calibrator?.levels_min)||5);
+    const levelOK=levels.size>=count&&[...levels].every(([level,rs])=>level&&rs.length>=3&&rs.every(r=>r.curve==='typical'&&N(r.cq)>0&&N(r.copies)>0)&&new Set(rs.map(r=>N(r.copies))).size===1);
+    const curve=fit(pts);curves[a]=curve;
+    add('calibration_levels:'+a,levelOK);
+    const minR2=Math.max(.98,N(p.run?.minR2)||.98),minSlope=Math.max(-3.6,N(p.run?.slopeMin)||-3.6),maxSlope=Math.min(-3.1,N(p.run?.slopeMax)||-3.1);
+    add('calibration_fit:'+a,!!curve&&curve.r2>=minR2-1e-12&&curve.slope>=minSlope-1e-12&&curve.slope<=maxSlope+1e-12,curve?JSON.stringify(curve):'');
+    const low=pts.filter(r=>N(r.copies)===curve?.min);
+    add('lowest_calibrator:'+a,low.length>=3&&low.every(r=>signal(r,cut)===true));
+    if(a!==ctx.reference)add('lowest_copy_range:'+a,!!curve&&curve.min>N(p.performance?.lod_copies)&&curve.min<=N(p.performance?.loq_copies));
+   }
+   for(const a of assays){
+    const rLevels=levelSets[ctx.reference]||new Map(),eLevels=levelSets[a]||new Map();
+    add('matched_dilutions:'+a,rLevels.size===eLevels.size&&[...rLevels.keys()].every(k=>eLevels.has(k)));
+    // Shared IDs alone are insufficient: the event/reference copy ratio must be
+    // constant across the same CRM dilution series (up to assignment rounding).
+    const ratios=[...eLevels].map(([k,rs])=>N(rs[0]?.copies)/N(rLevels.get(k)?.[0]?.copies));
+    add('shared_crm_ratio:'+a,ratios.length>=5&&ratios.every(x=>x>0&&Number.isFinite(x))&&Math.max(...ratios)/Math.min(...ratios)<=1.001);
+    const ec=curves[a],rc=curves[ctx.reference],eq=active.filter(r=>r.role==='quantitative'&&r.assay===a),rq=active.filter(r=>r.role==='quantitative'&&r.assay===ctx.reference);
+    const oneMaterial= new Set([...eq,...rq].map(r=>r.sample)).size===1;
+    const paired=new Map();for(const r of [...eq,...rq]){if(!r.pair)continue;if(!paired.has(r.pair))paired.set(r.pair,[]);paired.get(r.pair).push(r);}
+    const pairOK=eq.length===3&&rq.length===3&&paired.size===3&&[...paired.values()].every(rs=>rs.length===2&&rs.some(r=>r.assay===a)&&rs.some(r=>r.assay===ctx.reference));
+    const allQC=[...eq,...rq];add('quantitative_control:'+a,oneMaterial&&pairOK&&allQC.every(r=>signal(r,cut)===true));
+    const evalCopies=r=>copies(r.cq,r.assay===a?ec:rc);
+    const within=r=>{const c=r.assay===a?ec:rc,x=evalCopies(r);return c&&x>=c.min*(1-1e-10)&&x<=c.max*(1+1e-10);};
+    add('qc_curve_range:'+a,allQC.length===6&&allQC.every(within));
+    const vals=[...paired.values()].map(rs=>{const e=rs.find(r=>r.assay===a),r=rs.find(r=>r.assay===ctx.reference);return e&&r?100*evalCopies(e)/evalCopies(r):NaN;});
+    const measured=100*avg(eq.map(evalCopies))/avg(rq.map(evalCopies));
+    const c=p.calibrator||{},expected=N(c.certified_content_percent);let uCRM=N(c.certified_uncertainty_percent);
+    if(c.certificate_uncertainty_kind==='expanded')uCRM=N(c.certificate_k)>0?uCRM/N(c.certificate_k):NaN;
+    else if(c.certificate_uncertainty_kind!=='standard')uCRM=NaN;
+    const acceptance=crmAcceptance(vals,expected,uCRM,1.693,measured);
+    const basis=c.content_basis==='copy-number ratio';
+    if(c.qc_kind==='laboratory'){
+     const st=rangeStats(vals);add('quantitative_acceptance:'+a,basis&&pairOK&&expected>0&&st.rsd<=25+1e-10&&Math.abs((measured-expected)/expected*100)<=25+1e-10,JSON.stringify({...st,measured,expected}));
+    }else add('quantitative_acceptance:'+a,basis&&pairOK&&acceptance.pass,JSON.stringify(acceptance));
+   }
+  }
+  const globalOK=()=>checks.every(c=>c.pass);
+  const samples=group(active.filter(r=>r.role==='sample'),r=>r.sampleGroup||r.sample);
+  for(const [sample,all] of samples){for(const a of assays){
+   const rs=all.filter(r=>r.assay===a||r.assay===ctx.reference),event=rs.filter(r=>r.assay===a),ref=rs.filter(r=>r.assay===ctx.reference);
+   const d={sample,target:a,outcome:'Inconclusive',code:'missing_evidence',values:{},reactions:rs};decisions.push(d);
+   const fail=checks.filter(c=>!c.pass);if(fail.length){d.code='run_requirements';d.failures=fail.map(c=>c.code);d.outcome=fail.some(c=>/^(blank|negative|positive:|quantitative|calibration_|lowest_|matched_|shared_|qc_)/.test(c.code))?'Invalid run':'Inconclusive';continue;}
+   if(!rs.length||!event.length||!ref.length){d.code='missing_assay';continue;}
+   if(rs.some(r=>r.mappingError)){d.code='sample_name_mapping';continue;}
+   const subs=group(rs,r=>r.subsample||'');
+   const nSub=rapid?1:3,nPCR=rapid?1:dd||q?3:1;
+   if((dd?subs.size<nSub:subs.size!==nSub)||(!rapid&&subs.has(''))||[...subs.values()].some(s=>{const e=s.filter(r=>r.assay===a),r=s.filter(r=>r.assay===ctx.reference);return (q||rapid?e.length<nPCR||r.length<nPCR:e.length!==nPCR||r.length!==nPCR);})){d.code='replicate_structure';d.outcome='Repeat';continue;}
+   if(rs.some(r=>signal(r,cut)===null)){d.code='curve_evidence';continue;}
+   if(ref.some(r=>signal(r,cut)!==true)){d.code='reference_failed';d.outcome='Invalid';continue;}
+   const subResults=[...subs].map(([id,s])=>{const e=s.filter(r=>r.assay===a),r=s.filter(r=>r.assay===ctx.reference);return {id,event:e,ref:r,detected:e.every(w=>signal(w,cut)===true)};});
+   if(rapid){const flags=event.map(r=>signal(r,cut));if(flags.some(x=>x!==flags[0])){d.outcome='Repeat';d.code='discordant';}else{d.outcome=flags[0]?'Positive':'Negative';d.code=flags[0]?'panel_detected':'panel_not_detected';}continue;}
+   if(!q&&!dd){
+    const positive=subResults.filter(s=>s.detected).length;d.outcome=positive>=2?'Positive':'Negative';d.code='majority';d.values={positive_subsamples:positive,total_subsamples:3};
+    // Section 5.5.2 is conditional. It supplements event identification, never
+    // replaces it, and never turns a Ct difference into a numerical percentage.
+    const quant=active.filter(r=>r.role==='quantitative'&&(r.assay===a||r.assay===ctx.reference));
+    if(p.comparison?.enabled||quant.length){
+     const e=quant.filter(r=>r.assay===a),r=quant.filter(r=>r.assay===ctx.reference);
+     if(positive!==3||e.length<3||r.length<3||new Set(quant.map(r=>r.sample)).size!==1||quant.some(w=>signal(w,cut)!==true))d.values.comparison_outcome='comparison_unavailable';
+     else{
+      const delta=avg(subResults.map(s=>avg(s.event.map(w=>N(w.cq)))-avg(s.ref.map(w=>N(w.cq))))),control=avg(e.map(w=>N(w.cq)))-avg(r.map(w=>N(w.cq))),ddct=delta-control;
+      d.values={...d.values,delta_ct:delta,control_delta_ct:control,delta_delta_ct:ddct,comparison_outcome:compare(ddct,N(p.comparison?.lower_threshold),N(p.comparison?.upper_threshold))};
+     }
+    }
+   }
+   if(dd){
+    if(!subResults.every(s=>s.detected)){d.code='comparison_not_detected';continue;}
+    const quant=active.filter(r=>r.role==='quantitative'&&(r.assay===a||r.assay===ctx.reference)),qe=quant.filter(r=>r.assay===a),qr=quant.filter(r=>r.assay===ctx.reference);
+    if(qe.length<3||qr.length<3||new Set(quant.map(r=>r.sample)).size!==1||quant.some(r=>signal(r,cut)!==true)||!(N(p.comparison?.control_content_percent)>0)){d.code='comparison_control';continue;}
+    const delta=avg(subResults.map(s=>avg(s.event.map(r=>N(r.cq)))-avg(s.ref.map(r=>N(r.cq))))),control=avg(qe.map(r=>N(r.cq)))-avg(qr.map(r=>N(r.cq))),ddct=delta-control;
+    const band=compare(ddct,N(p.comparison?.lower_threshold),N(p.comparison?.upper_threshold));
+    d.outcome=band==='quantification required'?'Inconclusive':'Positive';d.code=band;d.values={delta_ct:delta,control_delta_ct:control,delta_delta_ct:ddct,control_content_percent:N(p.comparison.control_content_percent)};continue;
+   }
+   if(q){
+    if(event.every(r=>signal(r,cut)===false)){d.code='event_not_detected';d.outcome='Negative';continue;}
+    if(!subResults.every(s=>s.detected)){d.code='not_quantifiable';d.outcome='Repeat';continue;}
+    const ec=curves[a],rc=curves[ctx.reference];
+    const vals=subResults.map(s=>{const e=s.event.map(r=>copies(r.cq,ec)),r=s.ref.map(r=>copies(r.cq,rc));return 100*avg(e)/avg(r);});
+    const st=rangeStats(vals),loq=N(p.performance.loq_percent),u=p.calculation?.uncertainty||{};
+    d.values={subsample_ratios:vals,content_percent:st.mean,rsd_percent:st.rsd};
+    // Below LOQ is categorical, so no numeric concentration is released.
+    if(st.mean<loq-1e-12){d.code='below_loq';d.outcome='Positive';delete d.values.content_percent;continue;}
+    if(Math.abs(st.mean-loq)<=1e-12&&p.calibrator?.loq_boundary!=='quantify'){d.code='loq_boundary';delete d.values.content_percent;continue;}
+    if(rs.some(r=>{const c=r.assay===a?ec:rc,x=copies(r.cq,c);return x<c.min*(1-1e-10)||x>c.max*(1+1e-10);})){d.code='sample_curve_range';delete d.values.content_percent;continue;}
+    const limit=Math.min(25,N(p.data_acceptance?.sample?.if_mean_at_or_above_LOQ?.maximum_rsd_percent)||25);
+    if(st.rsd>limit+1e-10){d.outcome='Repeat';d.code='sample_precision';delete d.values.content_percent;continue;}
+    const lab=u.mode==='laboratory',model=lab?u.laboratory||{}:u;
+    const standard=STANDARD_UNCERTAINTY[p.method.standard_number-1];
+    if(!lab&&(!standard||N(u.u0)!==standard[0]||N(u.ur)!==standard[1]||N(u.coverage_factor_k)!==2)){d.code='uncertainty_settings';delete d.values.content_percent;continue;}
+    if(lab&&(!(model.validated===true&&model.components_complete===true)||model.measurand!=='copy-number ratio'||!Number.isFinite(N(model.range_min_percent))||!Number.isFinite(N(model.range_max_percent))||!(N(model.range_max_percent)>N(model.range_min_percent))||st.mean<N(model.range_min_percent)||st.mean>N(model.range_max_percent))){d.code='laboratory_uncertainty';delete d.values.content_percent;continue;}
+    if(u.mode&&!['standard','laboratory'].includes(u.mode)){d.code='uncertainty_settings';delete d.values.content_percent;continue;}
+    const un=uncertainty(st.mean,N(model.u0),N(model.ur),N(model.coverage_factor_k));
+    if(!un){d.code='uncertainty_settings';delete d.values.content_percent;continue;}
+    d.values={...d.values,...un,coverage_factor:N(model.coverage_factor_k),uncertainty_basis:lab?'laboratory':'standard'};d.outcome='Positive';d.code='quantified';
+   }
+  }}
+  return {decisions,checks,curves,valid:globalOK(),provisional:!!p.reviewOnly};
+ }
+ return {evaluate,fit,copies,rangeStats,crmAcceptance,uncertainty,compare,signal};
+})();
+if(typeof module!=='undefined'&&module.exports)module.exports=MARA_ENGINE;

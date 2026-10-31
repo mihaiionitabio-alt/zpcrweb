@@ -1,0 +1,218 @@
+[
+  {
+    "id": "voice-demo",
+    "file": "tests/voice_demo_preflight.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 44.783,
+    "passed": true
+  },
+  {
+    "id": "formats",
+    "file": "tests/learning/formats_calm.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 71.466,
+    "passed": true
+  },
+  {
+    "id": "guided-tour",
+    "file": "tests/guided_demo_30.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 235.051,
+    "passed": true
+  },
+  {
+    "id": "voice-routing",
+    "file": "tests/voice_122_pairs.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 5.938,
+    "passed": true
+  },
+  {
+    "id": "voice-state",
+    "file": "tests/voice_stable.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 10.316,
+    "passed": true
+  },
+  {
+    "id": "ack-queue",
+    "file": "tests/response_patterns.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 5.359,
+    "passed": true
+  },
+  {
+    "id": "clarification",
+    "file": "tests/yes_no_responses.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 6.274,
+    "passed": true
+  },
+  {
+    "id": "voice-bargein",
+    "file": "tests/voice_barge_in.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 7.278,
+    "passed": true
+  },
+  {
+    "id": "command-finish",
+    "file": "tests/command_finish.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 11.069,
+    "passed": true
+  },
+  {
+    "id": "chart-focus",
+    "file": "tests/chart_focus.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 30.413,
+    "passed": true
+  },
+  {
+    "id": "evidence-keyboard",
+    "file": "tests/evidence_keyboard.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 83.467,
+    "passed": true
+  },
+  {
+    "id": "readonly-evidence",
+    "file": "tests/evidence_readonly.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 0.223,
+    "passed": true
+  },
+  {
+    "id": "scope-snapshot",
+    "file": "tests/scope_snapshot_readonly.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 0.174,
+    "passed": true
+  },
+  {
+    "id": "source-matching",
+    "file": "tests/source_matches_readonly.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 0.197,
+    "passed": true
+  },
+  {
+    "id": "reader-inventory",
+    "file": "tests/reader_inventory_readonly.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 0.19,
+    "passed": true
+  },
+  {
+    "id": "calibration",
+    "file": "tests/calibration_metadata_readonly.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 0.184,
+    "passed": true
+  },
+  {
+    "id": "precision",
+    "file": "tests/precision_disclosure.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 11.941,
+    "passed": true
+  },
+  {
+    "id": "zip",
+    "file": "tests/zip_regression.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 4.881,
+    "passed": true
+  },
+  {
+    "id": "model-contracts",
+    "file": "tests/hooks_and_models.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 0.216,
+    "passed": true
+  },
+  {
+    "id": "mara-math",
+    "file": "tests/mara_math.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 0.272,
+    "passed": true
+  },
+  {
+    "id": "mara-definitions",
+    "file": "tests/mara_definitions.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 32.591,
+    "passed": true
+  },
+  {
+    "id": "game-mechanics",
+    "file": "tests/learning/mechanics.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 0.221,
+    "passed": true
+  },
+  {
+    "id": "training",
+    "file": "tests/learning/training_report.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 571.946,
+    "passed": true
+  },
+  {
+    "id": "quantstudio",
+    "file": "tests/quantstudio_reader_exports.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 222.714,
+    "passed": true
+  }
+]

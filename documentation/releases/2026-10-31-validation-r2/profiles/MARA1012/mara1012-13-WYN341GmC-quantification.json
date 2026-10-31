@@ -1,0 +1,461 @@
+{
+  "schema": "qpcr-sop-profile/1",
+  "name": "MARA 1012-13-2026",
+  "version": "0.4-calculation",
+  "author": "",
+  "assay": "WYN341GmC / Lectin",
+  "lab": {
+    "name": "",
+    "analyst": ""
+  },
+  "effective": "",
+  "notes": "Automatic method calculations with explicit curve, control and sample-name evidence. Provisional until laboratory approval. No experiment data are embedded.",
+  "locked": false,
+  "targets": [
+    {
+      "match": "/^(?:Lectin|LEC|Le1)$/i",
+      "kind": "reference",
+      "cqMax": 36,
+      "cqLate": "",
+      "quantMin": "",
+      "lateOutcome": "Invalid",
+      "taxon": "Glycine max",
+      "source_clause": "6.4.8"
+    },
+    {
+      "match": "/^WYN341GmC$/i",
+      "kind": "target",
+      "cqMax": 36,
+      "cqLate": "",
+      "quantMin": "",
+      "lateOutcome": "Repeat",
+      "class": "event-junction",
+      "source_clause": "6.4.8"
+    }
+  ],
+  "controls": [
+    {
+      "name": "WYN341GmC · % (not declared)",
+      "matchBy": "name",
+      "match": "/^(CPQ|阳性定量)|^WYN341GmC\\s+[0-9]+(?:\\.[0-9]+)?\\s*%$/i",
+      "expect": "positive",
+      "cqLo": "",
+      "cqHi": 36,
+      "targets": "*",
+      "minPerRun": 1,
+      "onFail": "reject",
+      "id": "pos-quant-qc",
+      "minReplicates": 3,
+      "material": "certified reference material preferred; otherwise a verified laboratory-prepared sample",
+      "acceptance": "see data_acceptance.quantitative_control",
+      "source_clause": "6.4.10.1",
+      "event": "WYN341GmC",
+      "content_percent": ""
+    },
+    {
+      "name": "空白质控品",
+      "matchBy": "name",
+      "match": "/^(NTC|BLANK|BLK|空白)/i",
+      "expect": "negative",
+      "cqLo": "",
+      "cqHi": "",
+      "targets": "*",
+      "minPerRun": 1,
+      "onFail": "reject",
+      "id": "blank-qc",
+      "minReplicates": 3,
+      "material": "ddH2O",
+      "acceptance": "reference AND event: no typical curve, or Ct > 36",
+      "source_clause": "6.4.8.3"
+    },
+    {
+      "name": "阴性质控品 — reference gene",
+      "matchBy": "name",
+      "match": "/^(CN|NC|阴性)/i",
+      "expect": "positive",
+      "cqLo": "",
+      "cqHi": 36,
+      "targets": "/^(?:Lectin|LEC|Le1)$/i",
+      "minPerRun": 1,
+      "onFail": "reject",
+      "id": "neg-qc-ref",
+      "minReplicates": 3,
+      "acceptance": "typical curve and Ct <= 36",
+      "source_clause": "6.4.8.2"
+    },
+    {
+      "name": "阴性质控品 — event sequence",
+      "matchBy": "name",
+      "match": "/^(CN|NC|阴性)/i",
+      "expect": "negative",
+      "cqLo": "",
+      "cqHi": "",
+      "targets": "/^WYN341GmC$/i",
+      "minPerRun": 1,
+      "onFail": "reject",
+      "id": "neg-qc-event",
+      "minReplicates": 3,
+      "acceptance": "no typical curve, or Ct > 36",
+      "source_clause": "6.4.8.2"
+    },
+    {
+      "name": "最低浓度校准品 — lowest calibrator",
+      "matchBy": "name",
+      "match": "/^(CAL|校准)/i",
+      "expect": "positive",
+      "cqLo": "",
+      "cqHi": 36,
+      "targets": "*",
+      "minPerRun": 1,
+      "onFail": "reject",
+      "id": "cal-lowest",
+      "minReplicates": 3,
+      "acceptance": "reference AND event: typical curve and Ct <= 36",
+      "source_clause": "6.4.8.1"
+    }
+  ],
+  "replicates": {
+    "min": 3,
+    "positiveMin": 3,
+    "partialOutcome": "Repeat",
+    "maxSd": "",
+    "sdOutcome": "Repeat",
+    "subsamples": {
+      "count": 3,
+      "label": "平行子样",
+      "amplifications_per_subsample": 3,
+      "same_run_required": true,
+      "same_plate_required": true
+    },
+    "control_amplifications": 3,
+    "by_role": {
+      "sample": 3,
+      "calibrator": 3,
+      "positive control": 3,
+      "negative control": 3,
+      "blank": 3
+    },
+    "source_clause": "6.4.7.1"
+  },
+  "ic": {
+    "referenceCq": "",
+    "maxShift": "",
+    "shiftOutcome": "Inconclusive",
+    "missingOutcome": "Invalid"
+  },
+  "run": {
+    "integrity": "review",
+    "controlsMissing": "reject",
+    "controlsFail": "reject",
+    "colourCompensation": "off",
+    "referencePolicy": "declared-crop-reference-required",
+    "stdCurve": "reject",
+    "minR2": 0.98,
+    "effMin": "",
+    "effMax": "",
+    "minLogs": "",
+    "ntcGap": "",
+    "ntcGapAction": "off",
+    "editDelayHours": 72,
+    "editAction": "review",
+    "calibration": "review",
+    "maxZoneSpread": 1.5,
+    "zoneAction": "review",
+    "runState": "reject",
+    "invalidRunOverrides": false,
+    "slopeMin": -3.6,
+    "slopeMax": -3.1,
+    "minCalibratorLevels": 5,
+    "on_failure": "record, investigate, repeat amplification (6.4.7) or re-prepare the test portion (6.4.4) until valid data are obtained",
+    "source_clause": "6.4.8.4, 6.4.10.3"
+  },
+  "outcomes": {
+    "Positive": {
+      "label": "Detected",
+      "colour": "#dc2626",
+      "text": "{target} detected (mean Cq {cq}; {det}/{n} replicates)"
+    },
+    "Negative": {
+      "label": "Not detected",
+      "colour": "#64748b",
+      "text": "{target} not detected ({n} replicates; Cq cut-off {cutoff})"
+    },
+    "Inconclusive": {
+      "label": "Inconclusive",
+      "colour": "#d97706",
+      "text": "{target} inconclusive: {reason}"
+    },
+    "Repeat": {
+      "label": "Repeat analysis",
+      "colour": "#7c3aed",
+      "text": "{target}: repeat — {reason}"
+    },
+    "Invalid": {
+      "label": "Invalid result",
+      "colour": "#111827",
+      "text": "{target}: invalid — {reason}"
+    },
+    "Invalid run": {
+      "label": "Invalid run",
+      "colour": "#9f1239",
+      "text": "Run not accepted — {reason}"
+    },
+    "Control pass": {
+      "label": "Control accepted",
+      "colour": "#16a34a",
+      "text": "{sample} / {target}: control accepted"
+    },
+    "Control fail": {
+      "label": "Control failed",
+      "colour": "#e11d48",
+      "text": "{sample} / {target}: control FAILED — {reason}"
+    },
+    "Standard": {
+      "label": "Standard",
+      "colour": "#0891b2",
+      "text": "{sample} / {target}: standard"
+    },
+    "Not interpreted": {
+      "label": "Not interpreted",
+      "colour": "#cbd5e1",
+      "text": "{target}: not interpreted"
+    }
+  },
+  "graphs": {
+    "showCutoffs": true,
+    "showLate": true,
+    "showSdLimit": true
+  },
+  "profileSchemaVersion": 3,
+  "reviewOnly": true,
+  "calibrator": {
+    "source": "certified reference material (CRM)",
+    "levels_min": 5,
+    "lowest_level": "at or below LOQ (40 copies) and above LOD (20 copies)",
+    "highest_level": "above the DNA concentration of the test samples",
+    "shared_dilutions": true,
+    "curves": [
+      "event-specific sequence",
+      "crop reference gene"
+    ],
+    "source_clause": "6.4.6",
+    "maximum_template_ng_per_reaction": 100,
+    "crm_material": "",
+    "crm_lot": "",
+    "certified_content_percent": "",
+    "certified_uncertainty_percent": "",
+    "certificate_uncertainty_kind": "",
+    "certificate_k": "",
+    "quantity_unit": "copies",
+    "content_basis": "",
+    "qc_kind": "CRM",
+    "loq_boundary": "review"
+  },
+  "calculation": {
+    "per_subsample_ratio": "mean event copies / mean reference copies x 100, per subsample k",
+    "sample_result": "mean of the 3 subsample ratios",
+    "range_coefficient_f": {
+      "n_3": 1.693
+    },
+    "uncertainty": {
+      "model": "u = sqrt(u0^2 + (ur * mean)^2)",
+      "u0": 0.0082,
+      "ur": 0.0594,
+      "basis": "MARA 1012-13-2026 clause 6.4.11.2; values verified against this standard, not inherited from ND207",
+      "coverage_factor_k": 2,
+      "confidence": "95 %",
+      "expanded": "U = k * u, reported to 2 significant figures",
+      "result_statement": "C = mean +/- U, with the last significant digit of C rounded to that of U",
+      "laboratory_own_evaluation": "permitted, top-down or bottom-up, from sufficient positive samples or CRM",
+      "source_clause": "6.4.11.2, 6.4.11.3",
+      "expanded_significant_figures": 2,
+      "align_result_to_uncertainty": true,
+      "mode": "standard",
+      "laboratory": {
+        "u0": "",
+        "ur": "",
+        "coverage_factor_k": 2,
+        "range_min_percent": "",
+        "range_max_percent": "",
+        "validated": false,
+        "components_complete": false,
+        "measurand": "copy-number ratio"
+      }
+    },
+    "standard_curve_inverse": "copies = 10^((Ct - intercept) / slope), separately for event and reference",
+    "sample_rsd": "s_prime = (max(subsample_ratios) - min(subsample_ratios)) / 1.693; s_prime_R = s_prime / mean(subsample_ratios) * 100"
+  },
+  "data_acceptance": {
+    "quantitative_control": {
+      "if_certified_reference_material": {
+        "criterion": "|bias| < 2 * u_bias",
+        "u_bias": "sqrt(u_CRM^2 + u(mean)^2)",
+        "u_mean": "(cmax - cmin)/f / sqrt(n), n = 3, f = 1.693",
+        "source_clause": "6.4.10.1.2"
+      },
+      "if_laboratory_prepared": {
+        "criterion": "sR <= 25 % AND |biasR| <= 25 %",
+        "sR": "s / mean x 100, s = (cmax - cmin)/f",
+        "biasR": "(mean - expected)/expected x 100",
+        "source_clause": "6.4.10.1.3"
+      }
+    },
+    "sample": {
+      "if_mean_at_or_above_LOQ": {
+        "threshold_percent": 0.1,
+        "criterion": "s'R <= 25 % across the 3 subsamples",
+        "source_clause": "6.4.10.2.2",
+        "maximum_rsd_percent": 25
+      },
+      "if_mean_below_LOQ": {
+        "criterion": "no RSD criterion; report per the below-LOQ branch",
+        "source_clause": "6.4.10.2.2 -> 6.5.2"
+      }
+    },
+    "both_required": "the run yields a quantitative result only when the quantitative control AND the sample data are both acceptable",
+    "source_clause": "6.4.10.3"
+  },
+  "performance": {
+    "lod_percent": 0.05,
+    "lod_copies": 20,
+    "loq_percent": 0.1,
+    "loq_copies": 40,
+    "ct_cutoff": 36,
+    "template_ng_per_reaction": 50,
+    "source_clause": "6.6, 6.7",
+    "lod_basis_template_ng_per_reaction": 50,
+    "loq_basis_template_ng_per_reaction": 50
+  },
+  "method": {
+    "id": "MARA1012-13-quantification",
+    "revision": "2026",
+    "scope": "Event content as a percentage of the crop genome, standards 1-15",
+    "reference_genes": [
+      {
+        "target": "Lectin",
+        "gene": "Lectin",
+        "taxon": "Glycine max"
+      }
+    ],
+    "on_not_applicable": "unresolved",
+    "crop": "soybean",
+    "selected_event": "WYN341GmC",
+    "junction": "5′",
+    "reference_source_clause": "5.2.3, 6.2.3",
+    "standard_number": 13,
+    "applies_when": {
+      "target_patterns": [
+        "/^WYN341GmC$/i"
+      ]
+    },
+    "sources": [
+      {
+        "standard": "MARA 1012-13-2026",
+        "code_zh": "农业农村部公告第1012号—13—2026",
+        "title_zh": "耐除草剂大豆WYN341GmC及其衍生品种定性定量PCR检测方法",
+        "pdf": "P020260708599397754362.pdf",
+        "sha256": "2100bb44451a71c8ccfdce0f35ed1287f8551eb155459007eb58b5591d6f9f71",
+        "clauses": "6.4–6.7"
+      }
+    ],
+    "auxiliary_references": [
+      {
+        "pdf": "Standardul_MA1012_13_2026_WYN341GmC_RO.pdf",
+        "sha256": "f35200a9d894e5d0a858a8dd8785c5d034c32657cdd742d41942011704b982c2",
+        "role": "Romanian explanatory translation; Chinese standard remains authoritative"
+      }
+    ],
+    "provenance": {
+      "catalogue": "https://github.com/mihaiionitabio-alt/LIMS/blob/main/index.html",
+      "numeric_rules": "Published standard text; local PDF SHA-256 recorded",
+      "status": "Source-referenced draft; not laboratory approved"
+    }
+  },
+  "interpretation": {
+    "principles": [
+      "The measurand is a copy-number ratio, event over crop reference, expressed as a percentage.",
+      "The two standard curves come from the same dilution series, so the denominators are method-specific and not interchangeable with EURL references such as hmg, adh1 or acp1.",
+      "A result below the LOQ is not a number; it is reported through the below-LOQ branch.",
+      "Every quantitative result carries its expanded uncertainty; a bare percentage is not a result.",
+      "Cotton is allotetraploid, so the reference-copy assumption must be stated with the result."
+    ],
+    "rules": [
+      {
+        "id": "Q01",
+        "when": "all control and curve criteria pass and the sample mean >= LOQ with s'R <= 25 %",
+        "action": "report C = mean +/- U",
+        "outcome": "Positive"
+      },
+      {
+        "id": "Q02",
+        "when": "event detected but the mean is below the LOQ",
+        "action": "report detected, content below the quantification limit",
+        "outcome": "Positive",
+        "source_clause": "6.5.2"
+      },
+      {
+        "id": "Q03",
+        "when": "R2 < 0.98 or the slope falls outside -3.6 to -3.1",
+        "action": "reject the run",
+        "outcome": "Invalid run",
+        "source_clause": "6.4.8.4"
+      },
+      {
+        "id": "Q04",
+        "when": "the quantitative control fails its acceptance test",
+        "action": "issue no quantitative result; investigate and repeat",
+        "outcome": "Control fail",
+        "source_clause": "6.4.10.3"
+      },
+      {
+        "id": "Q05",
+        "when": "s'R > 25 % at or above the LOQ",
+        "action": "the sample data are not acceptable; repeat amplification or re-prepare the test portion",
+        "outcome": "Repeat",
+        "source_clause": "6.4.10.2.2"
+      }
+    ],
+    "reporting": {
+      "include_rule_id": true,
+      "include_reason": true,
+      "include_uncertainty": true,
+      "include_reference_gene": true,
+      "include_calibrator_levels": true,
+      "release_statuses": []
+    }
+  },
+  "controlCharts": {},
+  "blockedAutomaticInterpretations": [
+    "A quantitative result is not a labelling decision; the threshold and its decision rule belong to the regulation, not to this profile.",
+    "No result is released without the expanded uncertainty attached.",
+    "Clarify reporting at exactly the LOQ: data acceptance uses >= LOQ in 6.4.10.2.2, whereas 6.5.1 and 6.5.2 describe above and below LOQ.",
+    "Do not apply a copy threshold to stored CalcConc without explicit copy units; percent content is not the stored concentration field.",
+    "Laboratory approval is separate from automatic calculation. Missing method evidence produces a specific unresolved or repeat result; missing data never establish a GMO-negative sample."
+  ],
+  "reaction": {
+    "total_volume_ul": 25,
+    "template_ng_per_reaction": 50,
+    "source_clause": "table 2, 6.4.7.2"
+  },
+  "reaction_source_clause": "table 2, 6.4.7.2",
+  "fileStem": "MARA1012-13-2026-method-2",
+  "sample_id": {
+    "pattern": "",
+    "flags": "i"
+  },
+  "evaluationMode": "automatic-with-evidence",
+  "profileFamily": "MARA1012",
+  "analyticalRole": "quantification",
+  "control_identity": {
+    "event": "WYN341GmC",
+    "positive_percent": "",
+    "qualitative_min_percent": 0.1,
+    "qualitative_max_percent": 1,
+    "source_clause": "6.4.5.3"
+  },
+  "implementationReview": [
+    "laboratory_mapping",
+    "loq_boundary"
+  ],
+  "sha256": "6cb702d59effebeb54cddfc460eddd0aec7208741c8db69174f9df666b7745b4"
+}

@@ -1,0 +1,14 @@
+{
+  "applicationBuild": "2026.10.31.demolabels1",
+  "applicationCommit": "e8d8198d62cc4ac1470a4a9d034c14ff1e2c7ac4",
+  "localHTML": {
+    "bytes": 28081180,
+    "sha256": "d2ed246783339c8153db567872cc5baafbcde9e7be477db5981ea22521b68b0c"
+  },
+  "gitAndPagesHTML": {
+    "bytes": 28071158,
+    "sha256": "d4f5a223c69e37a1e51cd1bbb674b140a9f58011e790372c5ddde6c84ac72bb4"
+  },
+  "normalisedTextEqual": true,
+  "scope": "Documentation/test-only publication; no runtime HTML changes."
+}

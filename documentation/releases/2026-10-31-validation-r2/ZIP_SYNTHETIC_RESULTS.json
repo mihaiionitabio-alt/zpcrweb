@@ -1,0 +1,17 @@
+{
+  "scope": "Invented container guards and one RDML intake; does not replace native vendor quirks or password decryption coverage.",
+  "checks": [
+    "public readZip compatibility/default/explicit filters; UTF-8 nested paths; CRC metadata",
+    "bad_crc.zip: rejected CRC-32 mismatch",
+    "unsupported.zip: rejected unsupported compression method",
+    "oversize.zip: rejected ZIP member size limit",
+    "size_mismatch.zip: rejected size mismatch",
+    "malformed.zip: rejected end-of-central-directory not found",
+    "Traversal-looking path retained as metadata; basename used; no disk extraction. No path-rejection claim.",
+    "stored.zip: staged/read; same wells/analyses/cycles/curves as direct artificial RDML",
+    "deflated.zip: staged/read; same wells/analyses/cycles/curves as direct artificial RDML",
+    "Expanded-byte intake limit rejects compressed oversized content",
+    "File-count guard stops additional staging; current behaviour retains first accepted member"
+  ],
+  "errors": []
+}

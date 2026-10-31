@@ -1,0 +1,11 @@
+[
+  {
+    "id": "evidence-keyboard",
+    "file": "tests/evidence_keyboard.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 83.467,
+    "passed": true
+  }
+]

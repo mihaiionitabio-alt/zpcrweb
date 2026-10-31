@@ -1,0 +1,46 @@
+[
+  {
+    "file": "tests/voice_stable.cjs",
+    "reason": "Bring test harness up to current interfaces; no application code changed",
+    "coverageImpact": "Test harness compatibility only; see initial versus rerun logs for the actual failure cause.",
+    "diffLocation": "Exact original diffs are retained in the local Claude review archive; public subset includes the repaired synthetic tests."
+  },
+  {
+    "file": "tests/yes_no_responses.cjs",
+    "reason": "Bring test harness up to current interfaces; no application code changed",
+    "coverageImpact": "Test harness compatibility only; see initial versus rerun logs for the actual failure cause.",
+    "diffLocation": "Exact original diffs are retained in the local Claude review archive; public subset includes the repaired synthetic tests."
+  },
+  {
+    "file": "tests/mara_definitions.cjs",
+    "reason": "Bring test harness up to current interfaces; no application code changed",
+    "coverageImpact": "Test harness compatibility only; see initial versus rerun logs for the actual failure cause.",
+    "diffLocation": "Exact original diffs are retained in the local Claude review archive; public subset includes the repaired synthetic tests."
+  },
+  {
+    "file": "tests/quantstudio_reader_exports.cjs",
+    "reason": "Bring test harness up to current interfaces; no application code changed",
+    "coverageImpact": "Test harness compatibility only; see initial versus rerun logs for the actual failure cause.",
+    "diffLocation": "Exact original diffs are retained in the local Claude review archive; public subset includes the repaired synthetic tests."
+  },
+  {
+    "file": "tests/evidence_keyboard.cjs",
+    "reason": "Bring test harness up to current interfaces; no application code changed",
+    "coverageImpact": "PCRD batch cancelled without a password fixture. A keyboard pass covers locked-file/cancellation UI, not successful decryption or the unobserved pcrd reader family. See FUNCTION_VALIDATION_INDEX.json.",
+    "diffLocation": "Exact original diffs are retained in the local Claude review archive; public subset includes the repaired synthetic tests."
+  },
+  {
+    "file": "tests/zip_regression.cjs",
+    "revision": "R2",
+    "reason": "Replace absent native archive manifest dependency with generated, checksum-pinned synthetic fixtures. Native vendor quirks are explicitly not covered.",
+    "coverageImpact": "See R2_SCOPE.md for targeted coverage and remaining limits.",
+    "diffLocation": "Exact original diffs are retained in the local Claude review archive; public subset includes the repaired synthetic tests."
+  },
+  {
+    "file": "tests/mara_definitions.cjs",
+    "revision": "R2",
+    "reason": "Remove obsolete SC accessor; pin 32 shipped-library hashes and synthetic run outcomes, retain bilingual UI/save/import/ZIP checks.",
+    "coverageImpact": "See R2_SCOPE.md for targeted coverage and remaining limits.",
+    "diffLocation": "Exact original diffs are retained in the local Claude review archive; public subset includes the repaired synthetic tests."
+  }
+]

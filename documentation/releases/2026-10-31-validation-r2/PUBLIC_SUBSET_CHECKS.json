@@ -1,0 +1,7 @@
+{
+  "testedAgainst": "repository index.html; exact Git/Pages identity in BUILD_IDENTITY.json",
+  "zipSynthetic": true,
+  "mara32PinnedProfiles": true,
+  "instrumentation": false,
+  "runtimeHTMLChanged": false
+}

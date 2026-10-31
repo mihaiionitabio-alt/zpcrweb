@@ -1,0 +1,3 @@
+tmp/
+tests/*.png
+ZIP_PUBLIC_TEST_RESULTS.json

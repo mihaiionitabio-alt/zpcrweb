@@ -1,0 +1,6 @@
+{
+  "generatedFixtures": 11,
+  "manifestIdenticalAfterSecondGeneration": true,
+  "method": "Fixed timestamps, fixed contents and compression settings; regenerated and compared complete manifest bytes and all declared ZIP SHA-256 values.",
+  "scope": "Same Python/zlib environment, not an assertion of cross-version compressed-byte identity."
+}

@@ -1,0 +1,50 @@
+{
+  "schema": "MISSY_SYNTHETIC_ZIP_FIXTURES/1",
+  "scope": "Invented container guards and one RDML intake; does not replace native vendor quirks or password decryption coverage.",
+  "files": {
+    "stored.zip": {
+      "bytes": 650,
+      "sha256": "e130941f22a77c58e00872a66fc73a7987456864c40f21b9307746746d354740"
+    },
+    "deflated.zip": {
+      "bytes": 490,
+      "sha256": "daa3001b6765b37b53470eaa8ddb2b65524b09ace1a9c65f9ae1b63868f8f6bf"
+    },
+    "filters.zip": {
+      "bytes": 725,
+      "sha256": "a8ec7eeb259860ec64989524b2ea62fd4b061abbdb7319380507253ea4dba101"
+    },
+    "bad_crc.zip": {
+      "bytes": 119,
+      "sha256": "9a36b8a52b1a0435df5c5b572483b214191d42ba6fb8b26348ecdf964bf0abca"
+    },
+    "unsupported.zip": {
+      "bytes": 119,
+      "sha256": "a52cc8589fd04e2ac3242b074059e03949048acdd567405a7d0ba33c97a77567"
+    },
+    "oversize.zip": {
+      "bytes": 119,
+      "sha256": "fd87520097f946a651c183e736819eb81fe74f92925561b80123620b715a7c46"
+    },
+    "size_mismatch.zip": {
+      "bytes": 119,
+      "sha256": "412cb95b17b063573602345c2518ae1a9d939e5d433fc1db844e6a62af4cf016"
+    },
+    "traversal.zip": {
+      "bytes": 543,
+      "sha256": "f8c284af1f0d08b00be152f51d8403b4d7cbd5324d02a8a3ed522a7b6b727a84"
+    },
+    "expanded.zip": {
+      "bytes": 410,
+      "sha256": "33b851ad9d17549d7546eca89e7c26a5b6d733d688a911b96f0b991c73aa875f"
+    },
+    "two_members.zip": {
+      "bytes": 988,
+      "sha256": "0e468bea6bb9676a1bbf4bf320fcb990602029878524d4d890470b3cab1804a1"
+    },
+    "malformed.zip": {
+      "bytes": 14,
+      "sha256": "6bbf954ab0045bc546f16a6db16c95afef820dccd807348411ea924dabb972e9"
+    }
+  }
+}

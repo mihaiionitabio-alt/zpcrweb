@@ -1,0 +1,404 @@
+{
+  "schema": "qpcr-sop-profile/1",
+  "name": "MARA 1012-1-2026",
+  "version": "0.4-calculation",
+  "author": "",
+  "assay": "ND207 / zSSIIb",
+  "lab": {
+    "name": "",
+    "analyst": ""
+  },
+  "effective": "",
+  "notes": "Automatic method calculations with explicit curve, control and sample-name evidence. Provisional until laboratory approval. No experiment data are embedded.",
+  "locked": false,
+  "targets": [
+    {
+      "match": "/^(?:zSSIIb|SSIIb)$/i",
+      "kind": "reference",
+      "cqMax": 36,
+      "cqLate": "",
+      "quantMin": "",
+      "lateOutcome": "Invalid",
+      "taxon": "Zea mays",
+      "source_clause": "5.4.7"
+    },
+    {
+      "match": "/^ND207$/i",
+      "kind": "target",
+      "cqMax": 36,
+      "cqLate": "",
+      "quantMin": "",
+      "lateOutcome": "Repeat",
+      "class": "event-junction",
+      "source_clause": "5.5.1"
+    }
+  ],
+  "controls": [
+    {
+      "name": "ND207 · % (not declared)",
+      "matchBy": "name",
+      "match": "/^(CPQ|阳性定量)/i",
+      "expect": "positive",
+      "cqLo": "",
+      "cqHi": 36,
+      "targets": "*",
+      "minPerRun": 0,
+      "onFail": "review",
+      "id": "pos-quant-qc",
+      "minReplicates": 3,
+      "purpose": "required only when a content comparison is requested",
+      "material": "content comparable to the labelling threshold",
+      "acceptance": "typical amplification curve and Ct <= 36",
+      "source_clause": "5.4.5.3",
+      "event": "ND207",
+      "content_percent": ""
+    },
+    {
+      "name": "空白质控品 — blank control (ddH2O)",
+      "matchBy": "name",
+      "match": "/^(NTC|BLANK|BLK|空白)/i",
+      "expect": "negative",
+      "cqLo": "",
+      "cqHi": "",
+      "targets": "*",
+      "minPerRun": 1,
+      "onFail": "reject",
+      "id": "blank-qc",
+      "minReplicates": 3,
+      "purpose": "reaction blank",
+      "material": "ddH2O",
+      "acceptance": "reference gene AND event sequence: no typical amplification curve, or Ct > 36",
+      "source_clause": "5.4.5.2, 5.4.7.3"
+    },
+    {
+      "name": "阴性质控品 — reference gene",
+      "matchBy": "name",
+      "match": "/^(CN|NC|阴性)/i",
+      "expect": "positive",
+      "cqLo": "",
+      "cqHi": 36,
+      "targets": "/^(?:zSSIIb|SSIIb)$/i",
+      "minPerRun": 1,
+      "onFail": "reject",
+      "id": "neg-qc-ref",
+      "minReplicates": 3,
+      "purpose": "non-GM crop matrix",
+      "material": "non-GM crop of the same species",
+      "acceptance": "typical amplification curve and Ct <= 36",
+      "source_clause": "5.4.5.1, 5.4.7.2"
+    },
+    {
+      "name": "阴性质控品 — event sequence",
+      "matchBy": "name",
+      "match": "/^(CN|NC|阴性)/i",
+      "expect": "negative",
+      "cqLo": "",
+      "cqHi": "",
+      "targets": "/^ND207$/i",
+      "minPerRun": 1,
+      "onFail": "reject",
+      "id": "neg-qc-event",
+      "minReplicates": 3,
+      "purpose": "non-GM crop matrix",
+      "material": "non-GM crop of the same species",
+      "acceptance": "no typical amplification curve, or Ct > 36",
+      "source_clause": "5.4.7.2"
+    },
+    {
+      "name": "ND207 · % (not declared)",
+      "matchBy": "name",
+      "match": "/^(CP|PC|阳性)|^ND207\\s+[0-9]+(?:\\.[0-9]+)?\\s*%$/i",
+      "expect": "positive",
+      "cqLo": "",
+      "cqHi": 36,
+      "targets": "*",
+      "minPerRun": 1,
+      "onFail": "reject",
+      "id": "pos-qual-qc",
+      "minReplicates": 3,
+      "purpose": "qualitative positive control",
+      "material": "certified reference material or verified laboratory sample, event content 0.1 % to 1.0 %",
+      "acceptance": "reference gene AND event sequence: typical amplification curve and Ct <= 36",
+      "source_clause": "5.4.5.3, 5.4.7.1",
+      "event": "ND207",
+      "content_percent": ""
+    }
+  ],
+  "replicates": {
+    "min": 1,
+    "positiveMin": 1,
+    "partialOutcome": "Repeat",
+    "maxSd": "",
+    "sdOutcome": "Repeat",
+    "subsamples": {
+      "count": 3,
+      "label": "平行子样",
+      "definition": "independent samples drawn at random from different positions of the prepared test portion",
+      "amplifications_per_subsample": 1,
+      "same_run_required": false
+    },
+    "control_amplifications": 3,
+    "discordance_rule": "majority of the subsample results decides (PCR扩增结果不一致的, 以多数结果为准)",
+    "by_role": {
+      "sample": 1,
+      "positive control": 3,
+      "negative control": 3,
+      "blank": 3
+    },
+    "source_clause": "5.4.4, 5.4.6.1, 5.5"
+  },
+  "ic": {
+    "referenceCq": "",
+    "maxShift": "",
+    "shiftOutcome": "Inconclusive",
+    "missingOutcome": "Invalid"
+  },
+  "run": {
+    "integrity": "review",
+    "controlsMissing": "reject",
+    "controlsFail": "reject",
+    "colourCompensation": "off",
+    "referencePolicy": "declared-crop-reference-required",
+    "stdCurve": "off",
+    "minR2": "",
+    "effMin": "",
+    "effMax": "",
+    "minLogs": "",
+    "ntcGap": "",
+    "ntcGapAction": "off",
+    "editDelayHours": 72,
+    "editAction": "review",
+    "calibration": "review",
+    "maxZoneSpread": 1.5,
+    "zoneAction": "review",
+    "runState": "reject",
+    "invalidRunOverrides": false,
+    "on_control_failure": "analyse the cause and repeat from DNA template preparation (5.4.4) or from amplification (5.4.6)",
+    "source_clause": "5.4.7.4",
+    "slopeMin": "",
+    "slopeMax": ""
+  },
+  "outcomes": {
+    "Positive": {
+      "label": "Detected",
+      "colour": "#dc2626",
+      "text": "{target} detected (mean Cq {cq}; {det}/{n} replicates)"
+    },
+    "Negative": {
+      "label": "Not detected",
+      "colour": "#64748b",
+      "text": "{target} not detected ({n} replicates; Cq cut-off {cutoff})"
+    },
+    "Inconclusive": {
+      "label": "Inconclusive",
+      "colour": "#d97706",
+      "text": "{target} inconclusive: {reason}"
+    },
+    "Repeat": {
+      "label": "Repeat analysis",
+      "colour": "#7c3aed",
+      "text": "{target}: repeat — {reason}"
+    },
+    "Invalid": {
+      "label": "Invalid result",
+      "colour": "#111827",
+      "text": "{target}: invalid — {reason}"
+    },
+    "Invalid run": {
+      "label": "Invalid run",
+      "colour": "#9f1239",
+      "text": "Run not accepted — {reason}"
+    },
+    "Control pass": {
+      "label": "Control accepted",
+      "colour": "#16a34a",
+      "text": "{sample} / {target}: control accepted"
+    },
+    "Control fail": {
+      "label": "Control failed",
+      "colour": "#e11d48",
+      "text": "{sample} / {target}: control FAILED — {reason}"
+    },
+    "Standard": {
+      "label": "Standard",
+      "colour": "#0891b2",
+      "text": "{sample} / {target}: standard"
+    },
+    "Not interpreted": {
+      "label": "Not interpreted",
+      "colour": "#cbd5e1",
+      "text": "{target}: not interpreted"
+    }
+  },
+  "graphs": {
+    "showCutoffs": true,
+    "showLate": true,
+    "showSdLimit": true
+  },
+  "profileSchemaVersion": 3,
+  "reviewOnly": true,
+  "reaction": {
+    "total_volume_ul": 25,
+    "primer_each_umol_l": 0.4,
+    "probe_umol_l": 0.2,
+    "template_ng_per_reaction": 100,
+    "source_clause": "table 1, 5.6 note"
+  },
+  "performance": {
+    "lod_percent": 0.05,
+    "lod_copies": 20,
+    "ct_cutoff": 36,
+    "source_clause": "5.6",
+    "template_ng_per_reaction": 100
+  },
+  "method": {
+    "id": "MARA1012-1-identification",
+    "revision": "2026",
+    "scope": "Event-specific qualitative detection in the declared crop and its derived products",
+    "reference_genes": [
+      {
+        "target": "zSSIIb",
+        "gene": "zSSIIb",
+        "taxon": "Zea mays"
+      }
+    ],
+    "siblings": {
+      "method_2": "实时荧光PCR定量检测方法 — see the quantification profile",
+      "method_3": "普通PCR定性检测方法 — conventional PCR, size-based, not covered here"
+    },
+    "on_not_applicable": "unresolved",
+    "crop": "maize",
+    "selected_event": "ND207",
+    "junction": "3′",
+    "reference_source_clause": "5.2.3, 6.2.3",
+    "standard_number": 1,
+    "applies_when": {
+      "target_patterns": [
+        "/^ND207$/i"
+      ]
+    },
+    "sources": [
+      {
+        "standard": "MARA 1012-1-2026",
+        "code_zh": "农业农村部公告第1012号—1—2026",
+        "title_zh": "抗虫玉米ND207及其衍生品种定性定量PCR检测方法",
+        "pdf": "P020260708599392635545.pdf",
+        "sha256": "8134c20559442bfb678056068f73b3f52d67e6a022f241297bec0f0a9011c486",
+        "clauses": "5.4–5.6"
+      }
+    ],
+    "provenance": {
+      "catalogue": "https://github.com/mihaiionitabio-alt/LIMS/blob/main/index.html",
+      "numeric_rules": "Published standard text; local PDF SHA-256 recorded",
+      "status": "Source-referenced draft; not laboratory approved"
+    }
+  },
+  "interpretation": {
+    "principles": [
+      "The target is the insert-plant-genome junction. An element or a trait gene is not an event.",
+      "A result is read only when the crop reference gene amplifies: reference and event are evaluated together, never separately.",
+      "Ct > 36 or no typical amplification curve counts as not detected, even though 40 cycles are run.",
+      "Where the three subsamples disagree, the majority decides; the minority result is retained in the record.",
+      "Stored Cq values, calls and fluorescence traces are never altered by this profile."
+    ],
+    "rules": [
+      {
+        "id": "E01",
+        "when": "reference gene typical curve with Ct <= 36 AND event sequence typical curve with Ct <= 36",
+        "action": "report the event component as detected",
+        "outcome": "Positive",
+        "source_clause": "5.5.1"
+      },
+      {
+        "id": "E02",
+        "when": "reference gene typical curve with Ct <= 36 AND event sequence absent or Ct > 36",
+        "action": "report the event component as not detected",
+        "outcome": "Negative",
+        "source_clause": "5.5.1"
+      },
+      {
+        "id": "E03",
+        "when": "reference gene absent or Ct > 36 in a sample",
+        "action": "do not report; the DNA is not fit",
+        "outcome": "Invalid"
+      },
+      {
+        "id": "E04",
+        "when": "the three subsamples disagree",
+        "action": "apply the majority result and record the discordance",
+        "outcome": "Positive|Negative",
+        "source_clause": "5.5"
+      },
+      {
+        "id": "E05",
+        "when": "any control fails 5.4.7.1 to 5.4.7.3",
+        "action": "issue no sample call; repeat from 5.4.4 or 5.4.6",
+        "outcome": "Control fail",
+        "source_clause": "5.4.7.4"
+      },
+      {
+        "id": "E06",
+        "when": "E01 holds and a content comparison against the quantitative control is requested",
+        "action": "compute dCt and ddCt and apply the band in E07",
+        "outcome": "Positive"
+      },
+      {
+        "id": "E07",
+        "when": "ddCt < -0.4",
+        "action": "ddCt < -0.4: higher; ddCt > +0.4: lower; |ddCt| <= 0.4: use method 2 quantification, including both boundary values.",
+        "outcome": "Positive",
+        "source_clause": "5.5.2",
+        "note": "Direction verified for this event standard; this does not modify laboratory SOP-06."
+      }
+    ],
+    "reporting": {
+      "include_rule_id": true,
+      "include_reason": true,
+      "include_stored_call": true,
+      "include_subsample_detail": true,
+      "statement_template": "试样中检测出 {event} 转化体成分，检测结果为阳性",
+      "release_statuses": []
+    }
+  },
+  "controlCharts": {},
+  "blockedAutomaticInterpretations": [
+    "This profile identifies an event; it does not quantify it. A percentage requires method 二.",
+    "The ddCt band in E07 classifies relative to the quantitative control only, and only when that control is present and accepted.",
+    "Oligo sequences and the event-specific junction must be taken from the published standard, not from this profile.",
+    "Laboratory approval is separate from automatic calculation. Missing method evidence produces a specific unresolved or repeat result; missing data never establish a GMO-negative sample."
+  ],
+  "reaction_source_clause": "table 1, 5.6",
+  "comparison": {
+    "delta_ct": "mean(Ct_event) - mean(Ct_reference)",
+    "delta_delta_ct": "mean(delta_ct_sample_subsamples) - mean(delta_ct_quantitative_control)",
+    "negative_direction": "higher content than control",
+    "positive_direction": "lower content than control",
+    "indeterminate_band": {
+      "absolute_ddct_lte": 0.4,
+      "action": "full quantification required"
+    },
+    "source_clause": "5.5.2",
+    "lower_threshold": -0.4,
+    "upper_threshold": 0.4,
+    "inside_band_action": "quantification required"
+  },
+  "fileStem": "MARA1012-1-2026-method-1",
+  "sample_id": {
+    "pattern": "",
+    "flags": "i"
+  },
+  "evaluationMode": "automatic-with-evidence",
+  "profileFamily": "MARA1012",
+  "analyticalRole": "identification",
+  "control_identity": {
+    "event": "ND207",
+    "positive_percent": "",
+    "qualitative_min_percent": 0.1,
+    "qualitative_max_percent": 1,
+    "source_clause": "5.4.5.3"
+  },
+  "implementationReview": [
+    "laboratory_mapping"
+  ],
+  "sha256": "02ef5a78675a4190b62d59496b929d2671f5e493760af9b3e2f8465c0709652b"
+}
