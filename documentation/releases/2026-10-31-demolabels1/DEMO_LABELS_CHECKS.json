@@ -1,0 +1,158 @@
+{
+  "passed": true,
+  "rows": [
+    {
+      "width": 1920,
+      "height": 1080,
+      "lang": "en",
+      "checks": [
+        {
+          "id": "missy-startup-demo-note",
+          "text": "Explore MISSY with artificial data",
+          "x": 783,
+          "y": 812.328125,
+          "right": 1363,
+          "bottom": 827.328125,
+          "width": 580,
+          "height": 15
+        },
+        {
+          "id": "missy-startup-demo",
+          "text": "▶ Guided demo · artificial data",
+          "x": 868.53125,
+          "y": 836.328125,
+          "right": 1079.5625,
+          "bottom": 870.328125,
+          "width": 211.03125,
+          "height": 34
+        },
+        {
+          "id": "missy-startup-voice-demo",
+          "text": "▶ Voice-command demo · artificial data",
+          "x": 1088.5625,
+          "y": 839.328125,
+          "right": 1321.65625,
+          "bottom": 867.328125,
+          "width": 233.09375,
+          "height": 28
+        }
+      ],
+      "errors": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "lang": "en",
+      "checks": [
+        {
+          "id": "missy-startup-demo-note",
+          "text": "Explore MISSY with artificial data",
+          "x": 506,
+          "y": 656.328125,
+          "right": 1086,
+          "bottom": 671.328125,
+          "width": 580,
+          "height": 15
+        },
+        {
+          "id": "missy-startup-demo",
+          "text": "▶ Guided demo · artificial data",
+          "x": 591.53125,
+          "y": 680.328125,
+          "right": 802.5625,
+          "bottom": 714.328125,
+          "width": 211.03125,
+          "height": 34
+        },
+        {
+          "id": "missy-startup-voice-demo",
+          "text": "▶ Voice-command demo · artificial data",
+          "x": 811.5625,
+          "y": 683.328125,
+          "right": 1044.65625,
+          "bottom": 711.328125,
+          "width": 233.09375,
+          "height": 28
+        }
+      ],
+      "errors": []
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "lang": "en",
+      "checks": [
+        {
+          "id": "missy-startup-demo-note",
+          "text": "Explore MISSY with artificial data",
+          "x": 463,
+          "y": 649.65625,
+          "right": 1043,
+          "bottom": 664.65625,
+          "width": 580,
+          "height": 15
+        },
+        {
+          "id": "missy-startup-demo",
+          "text": "▶ Guided demo · artificial data",
+          "x": 548.53125,
+          "y": 673.65625,
+          "right": 759.5625,
+          "bottom": 707.65625,
+          "width": 211.03125,
+          "height": 34
+        },
+        {
+          "id": "missy-startup-voice-demo",
+          "text": "▶ Voice-command demo · artificial data",
+          "x": 768.5625,
+          "y": 676.65625,
+          "right": 1001.65625,
+          "bottom": 704.65625,
+          "width": 233.09375,
+          "height": 28
+        }
+      ],
+      "errors": []
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "lang": "zh",
+      "checks": [
+        {
+          "id": "missy-startup-demo-note",
+          "text": "使用模拟数据体验 MISSY",
+          "x": 783,
+          "y": 811.328125,
+          "right": 1363,
+          "bottom": 828.328125,
+          "width": 580,
+          "height": 17
+        },
+        {
+          "id": "missy-startup-demo",
+          "text": "▶ 导览演示 · 模拟数据",
+          "x": 989.96875,
+          "y": 837.328125,
+          "right": 1146.3125,
+          "bottom": 871.328125,
+          "width": 156.34375,
+          "height": 34
+        },
+        {
+          "id": "missy-startup-voice-demo",
+          "text": "▶ 语音指令演示 · 模拟数据",
+          "x": 1155.3125,
+          "y": 840.328125,
+          "right": 1321.65625,
+          "bottom": 868.328125,
+          "width": 166.34375,
+          "height": 28
+        }
+      ],
+      "errors": []
+    }
+  ],
+  "bothDemosOpen": true
+}
