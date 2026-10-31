@@ -1,0 +1,1 @@
+(x,i)=>[i,x.errors,0,`${x.area}: ${x.errors} error(s)`]

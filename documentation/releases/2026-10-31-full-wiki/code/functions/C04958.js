@@ -1,0 +1,1 @@
+function(e){var t=i.fromJD(e),r=this._g2tYear(t.year());return this.newDate(r,t.month(),t.day())}

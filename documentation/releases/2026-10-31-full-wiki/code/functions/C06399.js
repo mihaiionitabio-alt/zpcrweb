@@ -1,0 +1,1 @@
+x=>x.id===$("#g-graph").value

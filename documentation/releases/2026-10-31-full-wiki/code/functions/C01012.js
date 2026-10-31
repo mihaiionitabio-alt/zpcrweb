@@ -1,0 +1,1 @@
+function(){for(var e=(Le=re(U,Se)).slice(),t=0;t<d.length;t++){for(var r=d[t],n=!1,a=0;a<e.length;a++)if(e[a].curveNumber===r.curveNumber&&e[a].pointNumber===r.pointNumber){n=!0;break}n||e.push(r)}e.length&&(ie||(ie={}),ie.points=e),Ce(ie,c),function(e,t){e.emit("plotly_selecting",t)}(M,ie)}

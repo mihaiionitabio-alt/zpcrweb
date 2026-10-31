@@ -1,0 +1,1 @@
+function(e,t){return d3_scale_linearTickFormat(r,e,t)}

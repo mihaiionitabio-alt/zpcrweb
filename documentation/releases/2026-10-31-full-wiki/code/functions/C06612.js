@@ -1,0 +1,1 @@
+g=>Math.abs(mean(g.map(x=>x.e)))

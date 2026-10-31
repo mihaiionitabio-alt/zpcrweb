@@ -1,0 +1,1 @@
+function(e){var a,l=n.select(this);if(e.selected){a=o.ensureUniformFontSize(r,g(l,e,t,r));var s=t.selected.textfont&&t.selected.textfont.color;s&&(a.color=s),i.font(l,a)}else i.selectedTextStyle(l,t)}

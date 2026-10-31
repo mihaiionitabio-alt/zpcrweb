@@ -1,0 +1,1 @@
+function a(e){var t=e.description?" "+e.description:"",r=e.keys||[];if(r.length>0){for(var n=[],a=0;a<r.length;a++)n[a]="`"+r[a]+"`";t+="Finally, the template string has access to ",t=1===r.length?t+"variable "+n[0]:t+"variables "+n.slice(0,-1).join(", ")+" and "+n.slice(-1)+"."}return t}

@@ -1,0 +1,1 @@
+function(e,t,r,n){n=n||f.identity;var a=f.nestedProperty(e,r).get();return f.isArrayOrTypedArray(a)?Array.isArray(t)&&f.isArrayOrTypedArray(a[t[0]])?n(a[t[0]][t[1]]):n(a[t]):a}

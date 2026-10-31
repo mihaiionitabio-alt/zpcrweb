@@ -1,0 +1,1 @@
+function Gr(e){for(var t=e.source,r=e.target,n=function(e,t){if(e===t)return e;for(var r=Zr(e),n=Zr(t),a=r.pop(),i=n.pop(),o=null;a===i;)o=a,a=r.pop(),i=n.pop();return o}(t,r),a=[t];t!==n;)t=t.parent,a.push(t);for(var i=a.length;r!==n;)a.splice(i,0,r),r=r.parent;return a}

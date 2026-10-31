@@ -1,0 +1,1 @@
+function H(e,t,r,n,a){return e.append("path").attr("class","zoombox").style({fill:t>.2?"rgba(0,0,0,0)":"rgba(255,255,255,0)","stroke-width":0}).attr("transform",c(r,n)).attr("d",a+"Z")}

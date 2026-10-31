@@ -1,0 +1,1 @@
+function(e,t){e=this._validateYear(e);var r,n=parseInt(t);if(isNaN(n))"闰"===t[0]&&(r=!0,t=t.substring(1)),"月"===t[t.length-1]&&(t=t.substring(0,t.length-1)),n=1+["一","二","三","四","五","六","七","八","九","十","十一","十二"].indexOf(t);else{var a=t[t.length-1];r="i"===a||"I"===a}return this.toMonthIndex(e,n,r)}

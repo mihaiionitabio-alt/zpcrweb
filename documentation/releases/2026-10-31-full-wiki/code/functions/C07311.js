@@ -1,0 +1,1 @@
+w=>w.meltCurve&&w.meltCurve.length

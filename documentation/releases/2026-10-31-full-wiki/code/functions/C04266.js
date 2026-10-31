@@ -1,0 +1,1 @@
+function we(e,t){return b(e.getUTCFullYear()%1e4,t,4)}

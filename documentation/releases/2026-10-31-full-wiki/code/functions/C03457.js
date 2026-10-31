@@ -1,0 +1,1 @@
+function(t){return n.map((function(e){return s(t[e])})).join(e)}

@@ -1,0 +1,1 @@
+function(){if(S=[],t.length){S[0]={element:r[0][0],gd:g,prepFn:V,doneFn:U,clickFn:q},a.init(S[0])}}

@@ -1,0 +1,1 @@
+()=>focus('[data-review-sheet="statistics"]','Use the grouping and count information to judge what these statistics actually cover.')

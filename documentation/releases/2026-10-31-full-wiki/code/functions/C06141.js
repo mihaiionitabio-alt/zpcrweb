@@ -1,0 +1,1 @@
+function ssReset(){SAMPLE_SELECTION.excluded.clear();SAMPLE_SELECTION.draft.clear();SAMPLE_SELECTION.rows=[];SAMPLE_SELECTION.pending=false;SAMPLE_SELECTION.revision++;$("#ss-review").hidden=true;ssUpdateBadge();}

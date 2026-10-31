@@ -1,0 +1,1 @@
+function c(e,t){function r(r,a){return n.coerce(e,t,l,r,a)}if("skip"===e.method||Array.isArray(e.args)?r("visible"):t.visible=!1){r("method"),r("args");var a=r("label","step-"+t._index);r("value",a),r("execute")}}

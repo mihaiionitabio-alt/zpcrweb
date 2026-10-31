@@ -1,0 +1,1 @@
+function We(e,t,r){return isNaN(e)&&(e=0),isNaN(t)&&(t=0),new Je(r,Math.cos(e*=Ie)*t,Math.sin(e)*t)}

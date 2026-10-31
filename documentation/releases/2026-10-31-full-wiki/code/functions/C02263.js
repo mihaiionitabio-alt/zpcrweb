@@ -1,0 +1,1 @@
+function N(e,t){for(var r=0;r<e.length;r++){var n=e[r];if(!n.fixedrange){if(n.rangebreaks){var a=n._length,i=(n.p2l(0+t)-n.p2l(0)+(n.p2l(a+t)-n.p2l(a)))/2;n.range=[n.l2r(n._rl[0]-i),n.l2r(n._rl[1]-i)]}else n.range=[n.l2r(n._rl[0]-t/n._m),n.l2r(n._rl[1]-t/n._m)];n.limitRange&&n.limitRange()}}}

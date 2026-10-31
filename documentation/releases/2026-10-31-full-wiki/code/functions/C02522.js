@@ -1,0 +1,1 @@
+function(){var e,t,r=s.collectableSubplotTypes,n={};if(!r){r=[];var a=s.subplotsRegistry;for(var i in a){var o=a[i].attr;if(o&&(r.push(i),Array.isArray(o)))for(t=0;t<o.length;t++)f.pushUnique(r,o[t])}}for(e=0;e<r.length;e++)n[r[e]]=[];return n}

@@ -1,0 +1,1 @@
+function s(e,t,r,n){Object.keys(e).forEach((function(i){var o=e[i];if("_"!==i[0]){var l=r+(n>0?".":"")+i;a.isPlainObject(o)?s(o,t,l,n+1):t(l,i,o)}}))}

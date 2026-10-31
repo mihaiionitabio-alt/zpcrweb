@@ -1,0 +1,1 @@
+function zhReviewedWording(text){return String(text).replaceAll('均匀性','均一性').replaceAll('待审核','待复核').replaceAll('重新检测','复测').replaceAll('重复检测','复测').replaceAll('质控图','控制图').replaceAll('假名对照表','假名映射表').replaceAll('熔解温度调用','熔解温度判定');}

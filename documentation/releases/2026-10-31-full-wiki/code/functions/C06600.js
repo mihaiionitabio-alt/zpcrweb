@@ -1,0 +1,1 @@
+w=>({w,o:r.storedOutcome||r.outcome})

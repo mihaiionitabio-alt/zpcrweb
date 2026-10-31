@@ -1,0 +1,1 @@
+function(e,t){var r=(e.length-1)*t+1,n=Math.floor(r),a=+e[n-1],i=r-n;return i?a+i*(e[n]-a):a}

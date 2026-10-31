@@ -1,0 +1,1 @@
+function n(){for(var r,n=t,a=-1,i=n.length;++a<i;)(r=n[a].on)&&r.apply(this,arguments);return e}

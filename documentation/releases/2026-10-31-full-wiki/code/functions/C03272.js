@@ -1,0 +1,1 @@
+function(e,t){if(arguments.length<2){if("string"==typeof e){var r=this.node(),n=(e=ie(e)).length,a=-1;if(t=r.classList){for(;++a<n;)if(!t.contains(e[a]))return!1}else for(t=r.getAttribute("class");++a<n;)if(!ae(e[a]).test(t))return!1;return!0}for(t in e)this.each(oe(t,e[t]));return this}return this.each(oe(e,t))}

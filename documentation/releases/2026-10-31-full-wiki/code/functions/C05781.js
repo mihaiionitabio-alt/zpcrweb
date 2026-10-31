@@ -1,0 +1,1 @@
+function sopStdCurves(run){return MISSY_HOOKS.invoke('sopStdCurves',this,[run],sopStdCurvesBase);}

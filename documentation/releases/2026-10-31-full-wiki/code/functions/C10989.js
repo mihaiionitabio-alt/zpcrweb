@@ -1,0 +1,1 @@
+function CA(A){return 10===A||9===A||32===A}

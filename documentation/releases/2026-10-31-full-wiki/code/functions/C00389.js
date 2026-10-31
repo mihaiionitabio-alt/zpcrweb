@@ -1,0 +1,1 @@
+function(e){var t=(e[e.attr?"attr":"getAttribute"]("transform")||"").replace(/.*\bscale\((\d*\.?\d*)[^\d]*(\d*\.?\d*)[^\d].*/,(function(e,t,r){return[t,r].join(" ")})).split(" ");return{x:+t[0]||1,y:+t[1]||1}}

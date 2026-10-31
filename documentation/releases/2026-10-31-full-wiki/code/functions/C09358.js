@@ -1,0 +1,1 @@
+k=>Number.isFinite(pcrdCell(read,c,row,col,k))?pcrdCell(read,c,row,col,k):''

@@ -1,0 +1,1 @@
+function(e){return"left"===e.xanchor||"auto"===e.xanchor&&e.x<=1/3}

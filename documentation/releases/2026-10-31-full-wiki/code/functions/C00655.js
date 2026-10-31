@@ -1,0 +1,1 @@
+function(e){var t=e[0].height,r=M(e,a,g),n=Y?r:E;f||(n+=v),n+d+U-v>=a._maxWidth&&(N=Math.max(N,G),U=0,q+=V,a._height+=V,V=0),c.setTranslate(this,A[0]+d+U,A[1]+d+q+t/2+v),G=U+r+v,U+=n,V=Math.max(V,t)}

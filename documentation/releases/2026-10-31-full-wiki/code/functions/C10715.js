@@ -1,0 +1,1 @@
+async()=>{const el=document.getElementById('sop-targets');el?.closest('details')?.setAttribute('open','');focus('#sop-targets','DNA_TARGET and REF_GENE have explicit demonstration cutoffs. Scroll to the next section for the NTC.');}

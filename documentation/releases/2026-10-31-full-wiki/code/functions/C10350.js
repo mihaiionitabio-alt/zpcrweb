@@ -1,0 +1,1 @@
+id=>['summary','button','input','select','a[href]'].map(tag=>'#'+id+' '+tag+':focus-visible').join(',')

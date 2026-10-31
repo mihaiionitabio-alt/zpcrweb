@@ -1,0 +1,1 @@
+()=>{canvas.removeEventListener("mousemove",onMove);canvas.removeEventListener("mouseleave",onLeave);canvas.removeEventListener("pointerdown",onDown);canvas.removeEventListener("pointerup",onUp);canvas.removeEventListener("wheel",onWheel);}

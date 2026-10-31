@@ -1,0 +1,1 @@
+function(e){e=Math.floor(e+.5)-Math.floor(this.jdEpoch)-1;var t=Math.floor(e/400)+1;e-=400*(t-1),e+=e>15?16:0;var r=Math.floor(e/32)+1,n=e-32*(r-1)+1;return this.newDate(t<=0?t-1:t,r,n)}

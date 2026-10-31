@@ -1,0 +1,1 @@
+function(e){var t=n.instance().fromJD(e),r=t.year(),a=t.dayOfYear(),i=r+56;this._createMissingCalendarData(i);for(var o=9,l=this.NEPALI_CALENDAR_DATA[i][0],s=this.NEPALI_CALENDAR_DATA[i][o]-l+1;a>s;)++o>12&&(o=1,i++),s+=this.NEPALI_CALENDAR_DATA[i][o];var c=this.NEPALI_CALENDAR_DATA[i][o]-(s-a);return this.newDate(i,o,c)}

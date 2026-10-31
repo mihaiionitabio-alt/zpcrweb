@@ -1,0 +1,1 @@
+function(e){var t,r,n;for(r=[],(t=e._module._colorAttrs)||(e._module._colorAttrs=t=[],c.crawl(e._module.attributes,(function(e,n,a,i){r[i]=n,r.length=i+1,"color"===e.valType&&void 0===e.dflt&&t.push(r.join("."))}))),n=0;n<t.length;n++)f.nestedProperty(e,"_input."+t[n]).get()||f.nestedProperty(e,t[n]).set(null)}

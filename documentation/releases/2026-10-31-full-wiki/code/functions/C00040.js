@@ -1,0 +1,1 @@
+()=>{if(!enabled||!alive||document.hidden||focused()||alerting||window.MISSY_CONSOLE_VOICE?.listening){for(const n of ambienceNodes){try{n.stop();}catch{}}ambienceNodes.clear();return;}scheduleCue(c,cue,c.currentTime+.005,false,ambienceNodes,ambienceGain,'background');}

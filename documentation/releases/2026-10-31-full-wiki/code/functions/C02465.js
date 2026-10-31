@@ -1,0 +1,1 @@
+function o(e,t){var r=[],n=t[0],i={};if("string"==typeof n)i[n]=t[1];else{if(!a.isPlainObject(n))return r;i=n}return s(i,(function(e,t,n){r.push({type:"layout",prop:e,value:n})}),"",0),r}

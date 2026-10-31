@@ -1,0 +1,1 @@
+function(e){return r._length*(a?1-e:e)+r._offset}

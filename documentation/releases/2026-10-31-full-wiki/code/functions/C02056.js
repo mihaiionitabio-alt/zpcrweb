@@ -1,0 +1,1 @@
+function(e,t,r,i){var o=r?-1:1;if(a(t))return l.increment(e,o*t);var s=t.charAt(0),c=o*Number(t.substr(1));if("M"===s)return l.incrementMonth(e,c,i);if("L"===s)return Math.log(Math.pow(10,e)+c)/Math.LN10;if("D"===s){var u="D2"===t?pe:he,f=e+.01*o,d=l.roundUp(l.mod(f,1),u,r);return Math.floor(f)+Math.log(n.round(Math.pow(10,d),1))/Math.LN10}throw"unrecognized dtick "+String(t)}

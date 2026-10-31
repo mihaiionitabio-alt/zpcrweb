@@ -1,0 +1,1 @@
+(x,i)=>fields.forEach((f,c)=>add(labels[c],c,i,x.reads.map(r=>r.temps[f]?.c)))

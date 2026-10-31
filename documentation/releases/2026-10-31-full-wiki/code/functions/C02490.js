@@ -1,0 +1,1 @@
+function(e){"use strict";function t(e,t){var r,n,a=[0,0,0,0];for(r=0;r<4;++r)for(n=0;n<4;++n)a[n]+=e[4*r+n]*t[r];return a}e.exports=function(e,r){return t(e.projection,t(e.view,t(e.model,[r[0],r[1],r[2],1])))}}

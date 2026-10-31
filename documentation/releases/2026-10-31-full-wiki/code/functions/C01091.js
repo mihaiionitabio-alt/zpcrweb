@@ -1,0 +1,1 @@
+function(e){if(_(e)){u(e);var t=e._fullLayout._activeShapeIndex,r=(e.layout||{}).shapes||[];if(t<r.length){for(var n=[],i=0;i<r.length;i++)i!==t&&n.push(r[i]);return delete e._fullLayout._activeShapeIndex,a.call("_guiRelayout",e,{shapes:n})}}}

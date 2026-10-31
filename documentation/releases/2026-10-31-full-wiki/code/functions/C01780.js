@@ -1,0 +1,1 @@
+function v(e){return"data_array"===e.valType||e.arrayOk}

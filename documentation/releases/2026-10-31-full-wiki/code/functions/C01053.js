@@ -1,0 +1,1 @@
+function V(e){(C=+e.srcElement.getAttribute("data-i"))||(C=0),S[C].moveFn=Y}

@@ -1,0 +1,1 @@
+r=>`${r.protocol||"unknown protocol"} · ${r.firmware||"no firmware"} / ${r.software||"no software"}`

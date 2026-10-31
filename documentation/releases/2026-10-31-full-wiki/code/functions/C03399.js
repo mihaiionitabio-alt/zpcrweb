@@ -1,0 +1,1 @@
+function(){return We(this.h,this.c,this.l).rgb()}

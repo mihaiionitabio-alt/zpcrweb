@@ -1,0 +1,1 @@
+(x,i)=>{if(x.chartId||x.graphId)measurement.add(new Option(x.title,String(i)));}

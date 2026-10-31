@@ -1,0 +1,1 @@
+(_,d)=>Math.max(...points.map(p=>p[d]))

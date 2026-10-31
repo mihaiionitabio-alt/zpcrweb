@@ -1,0 +1,1 @@
+function(e){var t={left:0,top:0};e.exports=function(e,r,n){r=r||e.currentTarget||e.srcElement,Array.isArray(n)||(n=[0,0]);var a,i=e.clientX||0,o=e.clientY||0,l=(a=r)===window||a===document||a===document.body?t:a.getBoundingClientRect();return n[0]=i-l.left,n[1]=o-l.top,n}}

@@ -1,0 +1,1 @@
+function s(){a(),i.ts=Date.now(),i.onDone&&(i.onDone(),i.onDone=null)}

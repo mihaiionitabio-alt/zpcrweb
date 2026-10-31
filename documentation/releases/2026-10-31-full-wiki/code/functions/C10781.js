@@ -1,0 +1,1 @@
+(_,i)=>'<i data-demo-band="'+i+'"></i>'

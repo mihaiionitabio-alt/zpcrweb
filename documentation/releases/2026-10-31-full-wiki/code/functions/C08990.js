@@ -1,0 +1,1 @@
+(r,c,run)=>ZPCR.zpcrStats(Array.from({length:run.zpcr.grid.referenceRows*r.cols},(_,i)=>ZPCR.zpcrWellMean(r,c,run.zpcr.grid.sampleRows+Math.floor(i/r.cols),i%r.cols)))?.mean

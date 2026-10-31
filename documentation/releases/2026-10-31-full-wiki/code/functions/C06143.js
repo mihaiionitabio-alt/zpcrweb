@@ -1,0 +1,1 @@
+function ssManifest(){return SAMPLE_SELECTION.rows.map(r=>({date:r.date,experiment:r.experiment,sample:r.sample,roles:r.roles.join(" | "),wells:r.wells.join(" | "),targets:r.targets.join(" | "),selection:SAMPLE_SELECTION.excluded.has(r.key)?"excluded":"included"}));}

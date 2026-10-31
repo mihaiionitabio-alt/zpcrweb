@@ -1,0 +1,1 @@
+function(){var e=u.getTranslate(R);X=e.x,K=e.y,m&&m.autorange&&A(m._name+".autorange",!0),x&&x.autorange&&A(x._name+".autorange",!0)}

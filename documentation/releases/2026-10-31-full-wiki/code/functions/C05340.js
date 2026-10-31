@@ -1,0 +1,1 @@
+a=>a.kind==="relquant"&&a.relQuant

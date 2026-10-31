@@ -1,0 +1,1 @@
+function(e){if(e.size())if(s)l.fillGroupStyle(e,t,!0);else{var r="legendfill-"+b.uid;l.gradient(e,t,r,p(M),T,"fill")}}

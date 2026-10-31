@@ -1,0 +1,1 @@
+function(){return"#"+ct(this.r)+ct(this.g)+ct(this.b)}

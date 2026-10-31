@@ -1,0 +1,1 @@
+function(e,t,r,n){if(n=n||f.identity,f.isArrayOrTypedArray(e))for(var a=0;a<t.length;a++)t[a][r]=n(e[a])}

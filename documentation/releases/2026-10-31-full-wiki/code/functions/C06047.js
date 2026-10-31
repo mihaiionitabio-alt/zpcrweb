@@ -1,0 +1,1 @@
+([label,colour])=>({label,colour})

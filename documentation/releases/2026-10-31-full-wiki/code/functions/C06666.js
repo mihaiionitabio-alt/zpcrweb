@@ -1,0 +1,2 @@
+(b,i)=>{const ni=n[i],y=ni?b/ni:NaN,e=ni?3*Math.sqrt(p*(1-p)/ni):NaN;
+    return {y,cl:p,ucl:Math.min(1,p+e),lcl:Math.max(0,p-e),flags:Number.isFinite(y)&&ni>0&&(p===0?b>0:y>p+e)?[p===0?"event after zero-event baseline":"above p limit"]:[]};}

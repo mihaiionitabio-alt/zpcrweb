@@ -1,0 +1,1 @@
+e=>({kind:e.kind,time:e.time,message:`${e.area}: ${e.message}`})

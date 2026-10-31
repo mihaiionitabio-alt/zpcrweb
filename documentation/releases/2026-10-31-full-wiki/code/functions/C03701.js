@@ -1,0 +1,1 @@
+function(e){return arguments.length?(t="function"==typeof e?e:pn.get(e)||gn,l):t}

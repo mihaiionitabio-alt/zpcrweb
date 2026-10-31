@@ -1,0 +1,1 @@
+w=>`${w.well} ${w.sample} ${w.target}: ${w.call||"no call"}`

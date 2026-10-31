@@ -1,0 +1,1 @@
+function(e,t){var r,a=y(((e=o(e)).type="f",e)),i=3*Math.max(-8,Math.min(8,Math.floor((r=t,((r=n(Math.abs(r)))?r[1]:NaN)/3)))),l=Math.pow(10,-i),s=p[8+i/3];return function(e){return a(l*e)+s}}

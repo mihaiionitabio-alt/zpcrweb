@@ -1,0 +1,1 @@
+function(e,t){var r="log"===t,a="date"===t,i="category"===t,l=a?o:1;if(!e)return l;if(n(e))return(e=Number(e))<=0?l:i?Math.max(1,Math.round(e)):a?Math.max(.1,e):e;if("string"!=typeof e||!a&&!r)return l;var s=e.charAt(0),c=e.substr(1);return(c=n(c)?Number(c):0)<=0||!(a&&"M"===s&&c===Math.round(c)||r&&"L"===s||r&&"D"===s&&(1===c||2===c))?l:e}

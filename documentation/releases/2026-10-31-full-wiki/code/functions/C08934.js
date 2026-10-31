@@ -1,0 +1,1 @@
+next => function(){next();if(!RUNS.some(r=>r.zpcr))return;const notes=document.createElement('details');notes.innerHTML='<summary>Raw data · manual notes</summary><ul>'+ZPCR_MANUAL_NOTES.map(t=>'<li>'+esc(t)+'</li>').join('')+'</ul>';zpcrPanel.prepend(notes,zpcrEndpointControls());}

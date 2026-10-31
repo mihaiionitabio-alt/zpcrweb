@@ -1,0 +1,1 @@
+function(e,t,r){var n=this._validate(e,t,r,c.local.invalidDate||c.regionalOptions[""].invalidDate),a=new Date(n.year(),n.month()-1,n.day());return a.setHours(0),a.setMinutes(0),a.setSeconds(0),a.setMilliseconds(0),a.setHours(a.getHours()>12?a.getHours()+2:0),a}

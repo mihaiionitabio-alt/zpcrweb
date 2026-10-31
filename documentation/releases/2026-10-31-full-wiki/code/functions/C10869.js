@@ -1,0 +1,1 @@
+()=>MISSY_PUBLIC_SOURCE.replace('<meta charset="utf-8">','<meta charset="utf-8">'+seed)

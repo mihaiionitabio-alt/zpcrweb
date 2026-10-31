@@ -1,0 +1,1 @@
+function v(e,t){var r,n,a="",i="";"string"==typeof e&&(r=(a=e.match(/^[xy]*/)[0]).length,e=+e.substr(r)),"string"==typeof t&&(n=(i=t.match(/^[xy]*/)[0]).length,t=+t.substr(n));var o=e*t;return r||n?r&&n&&a.charAt(0)!==i.charAt(0)?r===n?o:(r>n?a.substr(n):i.substr(r))+o:a+i+e*t:o}

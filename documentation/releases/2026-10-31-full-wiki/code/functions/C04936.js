@@ -1,0 +1,1 @@
+function(e){if(e=this._validate(e,this.minMonth,this.minDay,n.local.invalidYear).year(),void 0===this.NEPALI_CALENDAR_DATA[e])return this.daysPerYear;for(var t=0,r=this.minMonth;r<=12;r++)t+=this.NEPALI_CALENDAR_DATA[e][r];return t}

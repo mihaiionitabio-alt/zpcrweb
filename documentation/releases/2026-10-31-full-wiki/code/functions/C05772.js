@@ -1,0 +1,1 @@
+(what,t,source,kind)=>{const v=sopTime(t);if(Number.isFinite(v))ev.push({what,time:v,source,kind:kind||"file"});}

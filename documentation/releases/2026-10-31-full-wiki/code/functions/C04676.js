@@ -1,0 +1,1 @@
+function(t,r,n){var a=t[0]-r[0],i=t[1]-r[1],o=r[0]-n[0],l=r[1]-n[1];return Math.abs(a*l-o*i)<e}

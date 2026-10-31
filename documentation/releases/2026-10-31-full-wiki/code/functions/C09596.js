@@ -1,0 +1,1 @@
+r=>({position:r.layout.position,well:r.layout.well,value:metric==='Cq'?r.cq.value:r.tm.value})

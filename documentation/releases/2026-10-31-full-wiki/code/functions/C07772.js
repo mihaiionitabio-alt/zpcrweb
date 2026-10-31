@@ -1,0 +1,1 @@
+w=>Object.assign({experiment:runName(run)},w)

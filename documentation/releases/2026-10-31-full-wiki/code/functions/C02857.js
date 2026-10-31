@@ -1,0 +1,1 @@
+function(e,t,r){"use strict";var n=r(4809),a=r(4031);e.exports=function(e,t){function r(r,i){return n.coerce(e,t,a,r,i)}r("hiddenlabels"),r("piecolorway",t.colorway),r("extendpiecolors")}}

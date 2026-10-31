@@ -1,0 +1,1 @@
+function $(e,t,r){for(var a=(r?n.difference:n.union)({regions:e},{regions:[t]}).regions.reverse(),i=0;i<a.length;i++){var o=a[i];o.subtract=le(o,a.slice(0,i))}return a}

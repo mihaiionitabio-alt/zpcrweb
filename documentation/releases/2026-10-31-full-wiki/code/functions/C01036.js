@@ -1,0 +1,1 @@
+function(t){return t.call(o.font,M).attr({}),i.convertToTspans(t,e),t}

@@ -1,0 +1,1 @@
+function(e,t,r,o,l,s){s||(s={});var c=(e.marker||{}).color;c&&c._inputArray&&(c=c._inputArray),l("line.color",r),a(e,"line")?i(e,t,o,l,{prefix:"line.",cLetter:"c"}):l("line.color",!n(c)&&c||r),l("line.width"),s.noDash||l("line.dash"),s.backoff&&l("line.backoff")}

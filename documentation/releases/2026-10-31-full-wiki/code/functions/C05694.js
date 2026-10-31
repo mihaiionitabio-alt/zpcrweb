@@ -1,0 +1,1 @@
+c=>r[c]===undefined?null:r[c]

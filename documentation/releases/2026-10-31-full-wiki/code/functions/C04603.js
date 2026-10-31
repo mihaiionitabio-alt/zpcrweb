@@ -1,0 +1,1 @@
+function(e){var t=this;return"[object Array]"!=n.call(e)?t.reject(TypeError("Not an array")):new t((function(r,n){if("function"!=typeof r||"function"!=typeof n)throw TypeError("Not a function");f(t,e,(function(e,t){r(t)}),n)}))}

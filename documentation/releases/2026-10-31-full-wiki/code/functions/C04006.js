@@ -1,0 +1,1 @@
+function(e){var t=Math.sqrt(e)/2;return"M"+-t+","+-t+"L"+t+","+-t+" "+t+","+t+" "+-t+","+t+"Z"}

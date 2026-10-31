@@ -1,0 +1,1 @@
+function ce(e,t){l.syncOrAsync([ue,fe],{title:e,subtitle:t})}

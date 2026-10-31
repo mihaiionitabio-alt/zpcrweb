@@ -1,0 +1,1 @@
+function(e,t,r){if(v(t))return c;var n=s(1.2*e,2),a=s(1.6*e,2),i=s(.8*e,2);return g(t,r,"M"+i+","+n+"L0,0M"+i+",-"+n+"L0,0M-"+a+",0L0,0")}

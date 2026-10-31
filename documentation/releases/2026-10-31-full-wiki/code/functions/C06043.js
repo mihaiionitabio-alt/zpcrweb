@@ -1,0 +1,1 @@
+l=>{s+=`<rect x="${L+pw+12}" y="${y}" width="11" height="11" rx="2" fill="${l.colour}"/><text x="${L+pw+28}" y="${y+9.5}" fill="#374151">${svgEsc(String(l.label).slice(0,o.legendChars||24))}</text>`;y+=16;}

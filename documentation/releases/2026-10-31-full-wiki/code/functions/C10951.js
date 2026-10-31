@@ -1,0 +1,1 @@
+function B(A){try{n(i.throw(A))}catch(A){e(A)}}

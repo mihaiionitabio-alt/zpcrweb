@@ -1,0 +1,2 @@
+t=>{const w=RUNS.flatMap(r=>r.wells).find(x=>x.target===t)||{};const s=sopTargetSpec(w);
+      return {match:t,kind:s.kind,cqMax:s.cqMax??40,cqLate:s.cqLate??"",quantMin:s.quantMin??"",lateOutcome:s.lateOutcome||"Inconclusive"};}

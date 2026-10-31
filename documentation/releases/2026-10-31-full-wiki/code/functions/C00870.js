@@ -1,0 +1,1 @@
+function(e,t,r){if("all"===t.step)return!0===e.autorange;var n=Object.keys(r);return e.range[0]===r[n[0]]&&e.range[1]===r[n[1]]}

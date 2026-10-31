@@ -1,0 +1,1 @@
+function(e,t,r,a){var i=n.baseCalendar.prototype._validate.apply(this,arguments);if(i.year<1276||i.year>1500)throw a.replace(/\{0\}/,this.local.name);return i}

@@ -1,0 +1,1 @@
+function(o){return arguments.length?(n=na(t=o),a=na(1/t),e.domain(r.map(n)),i):t}

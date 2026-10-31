@@ -1,0 +1,1 @@
+function h(e,t,r,a,i){var o,l;r=r||"",s(t)?(o=t[0],l=t[1]):(o=t,l=null);var c=function(e){if(!s(e))return String(e);for(var t="",r=0;r<e.length;r++){var n=e[r];"number"==typeof n?t=t.substr(0,t.length-1)+"["+n+"]":t+=n,r<e.length-1&&(t+=".")}return t}(r),u=f[e](t,c,a,i);return n.log(u),{code:e,container:o,trace:l,path:r,astr:c,msg:u}}

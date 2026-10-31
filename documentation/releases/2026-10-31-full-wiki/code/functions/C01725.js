@@ -1,0 +1,1 @@
+function C(e,t){try{e._fullLayout._paper.style("background",t)}catch(e){o.error(e)}}

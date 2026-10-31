@@ -1,0 +1,1 @@
+function(e){return e._fullLayout._activeSelectionIndex>=0}

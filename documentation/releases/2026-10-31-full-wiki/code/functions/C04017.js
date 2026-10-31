@@ -1,0 +1,1 @@
+function ai(e){return null==e&&(e=""),function(){this.textContent=e}}

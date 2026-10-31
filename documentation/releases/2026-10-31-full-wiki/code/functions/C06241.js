@@ -1,0 +1,1 @@
+s=>s.points.map(p=>({target:s.target,well:p.well,sample:p.sample,quantity:p.conc,log10_quantity:p.x,cq:p.y,fitted:s.intercept+s.slope*p.x,residual:p.residual,slope:s.slope,intercept:s.intercept,r2:s.r2,efficiency_percent:s.efficiency}))

@@ -1,0 +1,1 @@
+(x,i)=>i>1||Number.isFinite(x)

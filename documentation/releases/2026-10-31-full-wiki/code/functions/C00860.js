@@ -1,0 +1,1 @@
+function x(e,t,r){var n=s.ensureSingle(e,"rect","selector-rect",(function(e){e.attr("shape-rendering","crispEdges")}));n.attr({rx:g.rx,ry:g.ry}),n.call(o.stroke,t.bordercolor).call(o.fill,function(e,t){return t._isActive||t._isHovered?e.activecolor:e.bgcolor}(t,r)).style("stroke-width",t.borderwidth+"px")}

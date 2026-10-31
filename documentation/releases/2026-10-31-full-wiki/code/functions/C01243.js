@@ -1,0 +1,1 @@
+function p(e,t){return+e.attr(f.menuIndexAttrName)===t._index}

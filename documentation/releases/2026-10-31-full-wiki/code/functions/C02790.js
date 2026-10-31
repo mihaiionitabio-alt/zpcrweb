@@ -1,0 +1,1 @@
+function(e){return-1!==v.indexOf(e)}

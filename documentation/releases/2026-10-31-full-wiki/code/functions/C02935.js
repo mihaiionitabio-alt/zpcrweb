@@ -1,0 +1,1 @@
+function(e,t){for(var r=t.xaxis,n=t.yaxis,i=e._fullLayout,o=e._fullData,l=e.calcdata,s=[],c=[],u=0;u<o.length;u++){var f=o[u];!0===f.visible&&"scatter"===f.type&&f.xaxis===r._id&&f.yaxis===n._id&&("h"===f.orientation?s.push(l[u]):"v"===f.orientation&&c.push(l[u]))}var d={mode:i.scattermode,gap:i.scattergap};a(e,r,n,c,d),a(e,n,r,s,d)}

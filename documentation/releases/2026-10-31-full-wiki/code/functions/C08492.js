@@ -1,0 +1,1 @@
+(acc,v,j)=>acc+v*w[j]

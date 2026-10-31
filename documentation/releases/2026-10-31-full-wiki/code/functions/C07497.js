@@ -1,0 +1,1 @@
+r=>(r.wells||[]).filter(w=>stableKey(w)===key)

@@ -1,0 +1,1 @@
+function Yn(e){var t=e[0],r=e[e.length-1];return t<r?[t,r]:[r,t]}

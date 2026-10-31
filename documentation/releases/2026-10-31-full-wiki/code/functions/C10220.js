@@ -1,0 +1,1 @@
+x=>x.toLowerCase()===name.toLowerCase()

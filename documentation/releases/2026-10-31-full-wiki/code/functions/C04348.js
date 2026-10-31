@@ -1,0 +1,1 @@
+function(e){return e=Math.floor(e),isFinite(e)&&e>0?e>1?(0,n.A)((function(t){t.setTime(Math.floor(t/e)*e)}),(function(t,r){t.setTime(+t+r*e)}),(function(t,r){return(r-t)/e})):a:null}

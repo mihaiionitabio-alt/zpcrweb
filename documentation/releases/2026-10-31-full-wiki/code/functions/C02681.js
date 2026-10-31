@@ -1,0 +1,1 @@
+function(e){r.emit("error",e)}

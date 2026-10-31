@@ -1,0 +1,1 @@
+w=>w.eds&&w.eds.drn&&w.eds.drn.length

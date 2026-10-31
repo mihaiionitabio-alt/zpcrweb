@@ -1,0 +1,1 @@
+function Ln(e,t){var r=t.x-e.x,n=t.y-e.y,a=e.r+t.r;return.999*a*a>r*r+n*n}

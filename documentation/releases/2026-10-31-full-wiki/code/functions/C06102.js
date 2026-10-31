@@ -1,0 +1,1 @@
+function ssNameTemplate(name){return String(name).normalize("NFKC").toLocaleUpperCase().replace(/\p{N}+/gu,"#").replace(/\s+/g," ").trim();}

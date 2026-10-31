@@ -1,0 +1,1 @@
+()=>{clearInterval(poll);box.dataset.speaking='false';stamp(role+'-end',id);resolve();}

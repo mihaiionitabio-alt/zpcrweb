@@ -1,0 +1,1 @@
+function(e){var t={};function r(r,n){return f.coerce(e,t,y,r,n)}return r("group"),r("name"),r("traces"),r("baseframe"),r("data"),r("layout"),t}

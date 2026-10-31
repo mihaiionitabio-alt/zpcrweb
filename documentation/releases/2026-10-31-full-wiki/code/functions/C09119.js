@@ -1,0 +1,1 @@
+(s,i)=>{const p=s.points.find(v=>Number.isFinite(v[1]));svg+=`<text x="60" y="${320+i*30}" font-size="21" fill="${ZC_COLORS[s.channel]}">${E(runOnly?'R'+(s.run+1):labels[s.channel])}: ${Number(p[1].toPrecision(6))} ${E(panel.unit)}</text>`;}

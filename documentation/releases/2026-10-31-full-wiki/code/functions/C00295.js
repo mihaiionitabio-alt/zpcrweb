@@ -1,0 +1,1 @@
+function f(e){return n(e.changedTouches?e.changedTouches[0]:e,document.body)}

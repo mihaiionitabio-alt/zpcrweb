@@ -1,0 +1,1 @@
+r=>[r.file,r.status]

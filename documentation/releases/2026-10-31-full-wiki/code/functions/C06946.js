@@ -1,0 +1,1 @@
+()=>download(safeName(CC_STATE.instrument||"instrument")+"_history.json",ccHistoryJSON(true),"application/json")

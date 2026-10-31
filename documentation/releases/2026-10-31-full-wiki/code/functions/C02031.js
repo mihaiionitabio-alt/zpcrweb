@@ -1,0 +1,1 @@
+function(e,t){for(var r=G.list(e,"",!0),n=!1,a="on",i=0;i<r.length;i++){var o=r[i],l=void 0===o._showSpikeInitial,s=l||!(o.showspikes===o._showspikes);(l||t&&s)&&(o._showSpikeInitial=o.showspikes,n=!0),"on"!==a||o.showspikes||(a="off")}return e._fullLayout._cartesianSpikesEnabled=a,n}

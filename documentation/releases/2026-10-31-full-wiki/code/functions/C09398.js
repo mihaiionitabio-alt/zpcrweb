@@ -1,0 +1,1 @@
+(x,i)=>mgIt({kind:'graph',sev:'none',code:'PCRD '+(i+1),title:x.title,graphId:x.id.slice(4),runIndex:0,state:x.note,limits:'Stored acquisition QC; no vendor limits',rows:[],actions:[{key:'3',label:'Open graph',cmd:'chart'}]})

@@ -1,0 +1,1 @@
+function(e){return arguments.length?(d={x:d.x,y:d.y,k:null},M(+e),L(),w):d.k}

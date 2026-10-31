@@ -1,0 +1,1 @@
+function(){var e=n.select(this),t=this.style.fill;t&&-1!==t.indexOf("url(")&&e.style("fill",t.replace(s,c));var r=this.style.stroke;r&&-1!==r.indexOf("url(")&&e.style("stroke",r.replace(s,c))}

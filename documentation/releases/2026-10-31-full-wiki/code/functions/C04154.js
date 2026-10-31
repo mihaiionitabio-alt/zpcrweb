@@ -1,0 +1,1 @@
+function(e,t){var r=n(e,t);if(!r)return e+"";var i=r[0],o=r[1],l=o-(a=3*Math.max(-8,Math.min(8,Math.floor(o/3))))+1,s=i.length;return l===s?i:l>s?i+new Array(l-s+1).join("0"):l>0?i.slice(0,l)+"."+i.slice(l):"0."+new Array(1-l).join("0")+n(e,Math.max(0,t+l-1))[0]}

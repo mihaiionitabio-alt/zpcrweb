@@ -1,0 +1,1 @@
+function(e,t){var r=d(e),n=d(t);return(a.max(r.getLuminance(),n.getLuminance())+.05)/(a.min(r.getLuminance(),n.getLuminance())+.05)}

@@ -1,0 +1,1 @@
+function m(e,t){var r=e._inputDomain,n=u[e.constraintoward],a=r[0]+(r[1]-r[0])*n;e.domain=e._input.domain=[a+(r[0]-a)/t,a+(r[1]-a)/t],e.setScale()}

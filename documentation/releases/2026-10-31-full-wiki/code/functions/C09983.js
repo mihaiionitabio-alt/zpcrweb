@@ -1,0 +1,1 @@
+c=>/pos-quant/.test(c.id)?'quantitative':/pos-qual/.test(c.id)?'positive':/blank/.test(c.id)?'blank':/^neg/.test(c.id)?'negative':'unknown'

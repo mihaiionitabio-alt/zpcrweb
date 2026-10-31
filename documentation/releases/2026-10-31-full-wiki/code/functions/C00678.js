@@ -1,0 +1,1 @@
+function L(e,t){var r=Math.max(4,t);if(e&&e.trim().length>=r/2)return e;for(var n=r-(e=e||"").length;n>0;n--)e+=" ";return e}

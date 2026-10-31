@@ -1,0 +1,1 @@
+()=>short().baselineReady?(short().pts.some(p=>p.flags.length)?choices.baseline[2][0]:choices.baseline[1][0]):choices.baseline[0][0]

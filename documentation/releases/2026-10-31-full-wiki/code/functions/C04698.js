@@ -1,0 +1,1 @@
+function s(e,t){var n=a(t,e.seg.end,e.seg);return function(e,t){r&&r.segmentChop(e.seg,t),e.other.remove(),e.seg.end=t,e.other.pt=t,o(e.other,e.pt)}(e,t),l(n,e.primary)}

@@ -1,0 +1,1 @@
+n => /\.plateread$/i.test(n)

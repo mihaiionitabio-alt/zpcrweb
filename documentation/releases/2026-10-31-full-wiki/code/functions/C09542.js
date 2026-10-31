@@ -1,0 +1,1 @@
+(v,i)=>v-offset-slope*x[i]

@@ -1,0 +1,1 @@
+(record,field,v,path,state)=>add(record,field,scalar(v),state||(v==null||scalar(v)===null?'unavailable':v===''?'empty':typeof v==='number'&&!Number.isFinite(v)?'native_nonfinite':'provided'),path)

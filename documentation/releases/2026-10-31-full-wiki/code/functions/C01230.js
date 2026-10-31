@@ -1,0 +1,1 @@
+function(t){o.call("_guiRelayout",e,"title.subtitle.text",t)}

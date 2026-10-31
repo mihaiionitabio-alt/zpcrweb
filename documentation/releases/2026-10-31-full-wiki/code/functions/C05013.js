@@ -1,0 +1,1 @@
+function(e){if(this._calendar.name!==e._calendar.name)throw(c.local.differentCalendars||c.regionalOptions[""].differentCalendars).replace(/\{0\}/,this._calendar.local.name).replace(/\{1\}/,e._calendar.local.name);var t=this._year!==e._year?this._year-e._year:this._month!==e._month?this.monthOfYear()-e.monthOfYear():this._day-e._day;return 0===t?0:t<0?-1:1}

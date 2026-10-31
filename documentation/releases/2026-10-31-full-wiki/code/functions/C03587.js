@@ -1,0 +1,1 @@
+function(r){return Math.round(e+t*r)}

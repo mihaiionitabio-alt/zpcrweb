@@ -1,0 +1,1 @@
+nm=>meta.get(nm)

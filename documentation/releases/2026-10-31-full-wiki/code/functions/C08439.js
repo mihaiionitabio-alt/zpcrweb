@@ -1,0 +1,1 @@
+r=>r.map((v,j)=>(v-mean[j])/(sd[j]||1))

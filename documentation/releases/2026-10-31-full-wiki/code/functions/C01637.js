@@ -1,0 +1,1 @@
+function(){if("SVG"!==(i=MathJax.Hub.config.menuSettings.renderer))return MathJax.Hub.setRenderer("SVG")}

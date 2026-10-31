@@ -1,0 +1,1 @@
+r=>/Invalid$|Repeat|Inconclusive/.test(r.outcome)

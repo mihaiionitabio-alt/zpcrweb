@@ -1,0 +1,1 @@
+function(e){for(;o<e.minMonth;)i--,o+=e.monthsInYear(i);for(var t=e.monthsInYear(i);o>t-1+e.minMonth;)i++,o-=t,t=e.monthsInYear(i)}

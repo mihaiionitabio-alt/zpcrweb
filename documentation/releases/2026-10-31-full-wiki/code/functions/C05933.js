@@ -1,0 +1,1 @@
+c=>`<th>${esc(c.label)}</th>`

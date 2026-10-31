@@ -1,0 +1,1 @@
+function updateProgress(){if(!overlay)return;const score=overlay.querySelector('#game-score'),clock=overlay.querySelector('#game-clock');if(score)score.textContent=tr('Score: ','得分：')+awarded.size*100+' / '+(child?.list.length||24)*100;if(clock)clock.textContent=MISSY_LEARNING_REPORT.duration((finished||performance.now())-gameStarted);}

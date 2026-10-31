@@ -1,0 +1,1 @@
+function pe(e){return arguments.length||(e=g),function(t,r){return t&&r?e(t.__data__,r.__data__):!t-!r}}

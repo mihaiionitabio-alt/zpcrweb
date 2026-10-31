@@ -1,0 +1,1 @@
+function b(e,t,r,n){var a=l.ensureSingle(e,"text",f.itemTextClassName,(function(e){e.attr({"text-anchor":"start","data-notex":1})})),i=r.label,c=n._fullLayout._meta;c&&(i=l.templateString(i,c)),a.call(o.font,t.font).text(i).call(s.convertToTspans,n)}

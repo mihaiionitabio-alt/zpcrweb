@@ -1,0 +1,1 @@
+function pcrdDate(s){if(!s||/\b0001\b/.test(s))return null;const n=Date.parse(s);return Number.isFinite(n)&&n>Date.UTC(1900,0,1)?n:null;}

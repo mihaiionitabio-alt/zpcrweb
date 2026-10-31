@@ -1,0 +1,1 @@
+(kk,i)=>run.inst[kk]=v[i]

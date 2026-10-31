@@ -1,0 +1,1 @@
+()=>download(r.file+'.inventory.json',JSON.stringify({sourceSHA256:r.meta.sourceSHA256,meta:r.meta,eligibility:r.zpcr.evidence,contribution:zpcrContributions().get(r),archive:r.zpcr.archive,runInfo:r.zpcr.runInfo,protocol:r.zpcr.protocolText,issues:r.zpcr.issues},null,2),'application/json')

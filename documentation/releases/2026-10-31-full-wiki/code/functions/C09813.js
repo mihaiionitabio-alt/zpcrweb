@@ -1,0 +1,1 @@
+()=>{paint();if(dialog.open)choices();}

@@ -1,0 +1,1 @@
+(l,i)=>i===0||l.mean>=levels[i-1].mean-0.1

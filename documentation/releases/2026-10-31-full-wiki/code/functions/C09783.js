@@ -1,0 +1,1 @@
+([id,label])=>({id:'mode:'+id,label:ui(label)})

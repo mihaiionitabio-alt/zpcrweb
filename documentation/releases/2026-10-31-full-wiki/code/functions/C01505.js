@@ -1,0 +1,1 @@
+function(e){var t=e.noCenter,r=e.textX,n=e.textY,a=e.targetX,i=e.targetY,o=e.anchorX||0,l=e.anchorY||0,s=e.rotate,c=e.scale;return c?c>1&&(c=1):c=0,f.strTranslate(a-c*(r+o),i-c*(n+l))+f.strScale(c)+(s?"rotate("+s+(t?"":" "+r+" "+n)+")":"")}

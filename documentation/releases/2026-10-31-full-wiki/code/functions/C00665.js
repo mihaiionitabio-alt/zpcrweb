@@ -1,0 +1,1 @@
+function(){var e=n.event.sourceEvent;"touchmove"===e.type&&(R=e.changedTouches[0].clientY,J=function(e,t,r){var n=(t-r)/W+e;return a.constrain(n,0,Z)}(N,E,R),Q(J,F,W))}

@@ -1,0 +1,1 @@
+function(e,t){e=i.hcl(e),t=i.hcl(t);var r=e.h,n=e.c,a=e.l,o=t.h-r,l=t.c-n,s=t.l-a;return isNaN(l)&&(l=0,n=isNaN(n)?t.c:n),isNaN(o)?(o=0,r=isNaN(r)?t.h:r):o>180?o-=360:o<-180&&(o+=360),function(e){return We(r+o*e,n+l*e,a+s*e)+""}}

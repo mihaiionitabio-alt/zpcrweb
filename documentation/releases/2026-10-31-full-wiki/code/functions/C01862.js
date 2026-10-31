@@ -1,0 +1,1 @@
+function(t){var a=n.componentsRegistry[t];a.schema&&a.schema.transforms&&a.schema.transforms[e]&&Object.keys(a.schema.transforms[e]).forEach((function(t){k(r,a.schema.transforms[e][t],t)}))}

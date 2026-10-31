@@ -1,0 +1,1 @@
+function h(e,t){return e[t[t.length-1]]}

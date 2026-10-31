@@ -1,0 +1,1 @@
+function p(e,t){for(var r=t.traces,n=x(e),i=0;i<r.length;i++)for(var o=r[i],l=o[0].t,s=l.poffset,c=a(s),u=l.barwidth,f=a(u),d=0;d<o.length;d++){var h=o[d],p=h.w=f?u[d]:u;void 0===h.p&&(h.p=h[n],h["orig_"+n]=h[n]);var v=(c?s[d]:s)+p/2;h[n]=h.p+v}}

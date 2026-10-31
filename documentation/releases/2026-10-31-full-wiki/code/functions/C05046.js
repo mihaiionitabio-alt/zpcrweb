@@ -1,0 +1,1 @@
+function(e){var t=Math.floor(e+.5),r=Math.floor((t-1867216.25)/36524.25),n=1524+(r=t+1+r-Math.floor(r/4)),a=Math.floor((n-122.1)/365.25),i=Math.floor(365.25*a),o=Math.floor((n-i)/30.6001),l=n-i-Math.floor(30.6001*o),s=o-(o>13.5?13:1),c=a-(s>2.5?4716:4715);return c<=0&&c--,this.newDate(c,s,l)}

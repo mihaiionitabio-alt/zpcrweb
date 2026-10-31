@@ -1,0 +1,1 @@
+function re(A){return 1<A.length?[A[0],A[1]]:[A[0]]}

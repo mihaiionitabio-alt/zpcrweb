@@ -1,0 +1,1 @@
+m=>{const k={"load files":"load","load view":"load","sop view":"sop","results view":"results","panel view":"panel","charts view":"panel","review view":"review","formats view":"export","file integrity":"integrity","integrity view":"integrity"}[m[2]];if(k)mgScope(k);}

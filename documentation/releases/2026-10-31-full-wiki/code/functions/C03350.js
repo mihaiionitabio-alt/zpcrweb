@@ -1,0 +1,1 @@
+function(e){return(e-d.y)/d.k}

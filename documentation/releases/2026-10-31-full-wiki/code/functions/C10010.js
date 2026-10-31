@@ -1,0 +1,1 @@
+c=>c.code.endsWith(':'+r.assay)&&c.code.startsWith(r.role==='quantitative'?'quantitative':r.role)

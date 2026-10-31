@@ -1,0 +1,1 @@
+function(r){for(var n="",a=0;r>0;){var i=r%10;n=(0===i?"":e[i]+t[a])+n,a++,r=Math.floor(r/10)}return 0===n.indexOf(e[1]+t[1])&&(n=n.substr(1)),n||e[0]}

@@ -1,0 +1,1 @@
+function(t){return[t=(t=r.indexOf(t))<0?NaN:t/n+e,t+1/n]}

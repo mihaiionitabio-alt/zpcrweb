@@ -1,0 +1,1 @@
+function select(run,choice){if(snapshot(run,0,choice).status!=='provided')return false;selections.set(selectionKey(run),{read:choice.read,channel:choice.channel,row:choice.row,column:choice.column});return true;}

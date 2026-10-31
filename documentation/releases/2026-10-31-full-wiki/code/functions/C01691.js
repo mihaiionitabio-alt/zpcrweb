@@ -1,0 +1,1 @@
+function(e){for(var t,r,a=n.layoutArrayContainers,i=n.layoutArrayRegexes,o=e.split("[")[0],l=0;l<i.length;l++)if((r=e.match(i[l]))&&0===r.index){t=r[0];break}if(t||(t=a[a.indexOf(o)]),!t)return!1;var s=e.substr(t.length);return s?!!(r=s.match(/^\[(0|[1-9][0-9]*)\](\.(.+))?$/))&&{array:t,index:Number(r[1]),property:r[3]||""}:{array:t,index:"",property:""}}

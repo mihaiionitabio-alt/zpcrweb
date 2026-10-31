@@ -1,0 +1,1 @@
+function(r){var n,a,i,o=[],l=-1,s=0,c=e.length;for(r instanceof Date||(r=new Date(+r));++l<c;)37===e.charCodeAt(l)&&(o.push(e.slice(s,l)),null!=(a=g[n=e.charAt(++l)])?n=e.charAt(++l):a="e"===n?" ":"0",(i=t[n])&&(n=i(r,a)),o.push(n),s=l+1);return o.push(e.slice(s,l)),o.join("")}

@@ -1,0 +1,1 @@
+v=>{input.value='';d.close();d.remove();resolve(v);}

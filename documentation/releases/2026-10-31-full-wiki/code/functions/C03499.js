@@ -1,0 +1,1 @@
+function ir(e,t,r){var n=e.a,a=e.b;this.edge=e,this.site=t,this.angle=r?Math.atan2(r.y-t.y,r.x-t.x):e.l===t?Math.atan2(a.x-n.x,n.y-a.y):Math.atan2(n.x-a.x,a.y-n.y)}

@@ -1,0 +1,1 @@
+function e(t,r){for(var i in r){var o=r[i],l=t[i];if(l!==o)if("_"===i.charAt(0)||"function"==typeof o){if(i in t)continue;t[i]=o}else if(n(o)&&n(l)&&a(o[0])){if("customdata"===i||"ids"===i)continue;for(var s=Math.min(o.length,l.length),c=0;c<s;c++)l[c]!==o[c]&&a(o[c])&&a(l[c])&&e(l[c],o[c])}else a(o)&&a(l)&&(e(l,o),Object.keys(l).length||delete t[i])}}

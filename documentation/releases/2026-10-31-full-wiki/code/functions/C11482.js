@@ -1,0 +1,1 @@
+(frequency,i)=>{const o=context.createOscillator(),g=context.createGain();o.type='sine';o.frequency.value=frequency;g.gain.setValueAtTime(0,now+i*.09);g.gain.linearRampToValueAtTime(.045,now+i*.09+.012);g.gain.exponentialRampToValueAtTime(.0001,now+i*.09+.16);o.connect(g);g.connect(context.destination);o.start(now+i*.09);o.stop(now+i*.09+.18);}

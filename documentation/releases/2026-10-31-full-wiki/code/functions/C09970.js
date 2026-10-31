@@ -1,0 +1,1 @@
+()=>{for(const group of select.querySelectorAll('[data-mara-role]')){group.label=ui('MARA '+group.dataset.maraRole);for(const option of group.querySelectorAll('option')){option.setAttribute('data-i18n-skip','');option.textContent=ui(MARA_PROFILE_LIBRARY.find(x=>x.key===option.value).profile.name);}}}

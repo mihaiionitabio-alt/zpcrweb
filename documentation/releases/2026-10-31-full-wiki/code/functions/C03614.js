@@ -1,0 +1,1 @@
+function(e,t){if(e===t)return e;for(var r=Zr(e),n=Zr(t),a=r.pop(),i=n.pop(),o=null;a===i;)o=a,a=r.pop(),i=n.pop();return o}

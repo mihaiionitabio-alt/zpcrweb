@@ -1,0 +1,1 @@
+()=>focus('[data-review-sheet="compare"]','Keep sample identity and target identity together when comparing results.')

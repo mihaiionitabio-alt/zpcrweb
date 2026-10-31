@@ -1,0 +1,1 @@
+(x,k)=>({x,k,d:gRunDate(getRun(x))})

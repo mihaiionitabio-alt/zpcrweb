@@ -1,0 +1,1 @@
+function(e,t){var r=n(t);e.style({stroke:o.tinyRGB(r),"stroke-opacity":r.getAlpha()})}

@@ -1,0 +1,1 @@
+p=>[p.x,p.y,tip(p),colourOf(p)]

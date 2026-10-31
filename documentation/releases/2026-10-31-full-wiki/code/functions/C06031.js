@@ -1,0 +1,1 @@
+v=>{const x=Math.pow(10,v);return x>=1e4||x<0.01?x.toExponential(0).replace("+",""):fmtTick(+x.toPrecision(2));}

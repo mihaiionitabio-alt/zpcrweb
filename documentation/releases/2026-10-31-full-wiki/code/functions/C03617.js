@@ -1,0 +1,1 @@
+function Jr(e){e.fixed&=-7}

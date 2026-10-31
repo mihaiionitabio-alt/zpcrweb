@@ -1,0 +1,1 @@
+function(t){return Math.max(Number(e[t]||0),0)}

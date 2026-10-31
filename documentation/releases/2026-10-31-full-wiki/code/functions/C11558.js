@@ -1,0 +1,1 @@
+()=>final.wells.filter(w=>w.CpRaw===40&&!w.cqAtCycleCeiling).length

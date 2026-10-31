@@ -1,0 +1,1 @@
+([id,title,mode])=>({id,title,group:"Across runs",scope:"all",opts:["control","target"],note:"Descriptive association only. Separate material, extraction batch, dilution, target, instrument and protocol. Missing/invalid extraction dates are excluded from age plots.",render:c=>controlBatchGraph(c,mode)})

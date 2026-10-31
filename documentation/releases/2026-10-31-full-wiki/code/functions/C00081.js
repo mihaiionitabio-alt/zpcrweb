@@ -1,0 +1,1 @@
+()=>{labels();if(focused()){stopAmbience();speechSynthesisSafeCancel();}else if(ambienceId&&!ambienceTimer)void setAmbience(ambienceId);}

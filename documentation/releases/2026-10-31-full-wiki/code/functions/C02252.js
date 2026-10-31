@@ -1,0 +1,1 @@
+function x(e,r){for(a=0;a<e.length;a++)for(l in o=e[a])t[i(l)][r]=o}

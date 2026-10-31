@@ -1,0 +1,1 @@
+function z(e,t,r,n){var i=a.ensureSingle(e.draglayer,t,r,(function(t){t.classed("drag",!0).style({fill:"transparent","stroke-width":0}).attr("data-subplot",e.id)}));return i.call(v,n),i.node()}

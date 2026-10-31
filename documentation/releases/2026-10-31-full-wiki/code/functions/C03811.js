@@ -1,0 +1,1 @@
+function Wn(e,t,r,n){var a=[],o=[],l=0,s=Math.min(e.length,t.length)-1;for(e[s]<e[0]&&(e=e.slice().reverse(),t=t.slice().reverse());++l<=s;)a.push(r(e[l-1],e[l])),o.push(n(t[l-1],t[l]));return function(t){var r=i.bisect(e,t,1,s)-1;return o[r](a[r](t))}}

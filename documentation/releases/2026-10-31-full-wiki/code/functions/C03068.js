@@ -1,0 +1,1 @@
+function(e,t){var r=n(e[t[0]]),a=n(e[t[t.length-1]]);return r===l||a===l?l:i(a-r)}

@@ -1,0 +1,1 @@
+function(e){for(var t=0,r=1;r<=12;r++)t+=this.daysInMonth(e,r);return t}

@@ -1,0 +1,1 @@
+()=>{closeModes();astOpen()}

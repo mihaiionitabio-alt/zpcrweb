@@ -1,0 +1,1 @@
+function(){return d.empty()||(o=[0,0],l=[0,0],e=t=null),d}

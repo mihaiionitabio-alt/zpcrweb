@@ -1,0 +1,1 @@
+(a,v,j)=>a+v*full.w[j]

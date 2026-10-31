@@ -1,0 +1,1 @@
+el=>{el.classList.remove('game-evidence-menu');el.removeAttribute('data-game-step');}

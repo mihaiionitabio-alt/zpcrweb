@@ -1,0 +1,1 @@
+function(){return 0<this.display&&0<this.opacity&&0===this.visibility}

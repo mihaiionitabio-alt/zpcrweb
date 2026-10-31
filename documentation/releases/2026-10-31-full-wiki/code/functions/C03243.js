@@ -1,0 +1,1 @@
+function ne(e){return e.trim().replace(/\s+/g," ")}

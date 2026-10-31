@@ -1,0 +1,1 @@
+([ri,a])=>[ri,median(a.map(p=>p.value)),role+' median; R'+ri]

@@ -1,0 +1,1 @@
+()=>{SEL_STATE.title=ti.value.trim();}

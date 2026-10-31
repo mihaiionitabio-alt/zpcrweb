@@ -1,0 +1,1 @@
+(tag,t)=>{const e=document.createElement(tag);e.textContent=t;body.append(e);return e;}

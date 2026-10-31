@@ -1,0 +1,1 @@
+k=>!known.has(k)

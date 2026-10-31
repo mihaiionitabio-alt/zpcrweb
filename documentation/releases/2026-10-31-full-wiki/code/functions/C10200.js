@@ -1,0 +1,1 @@
+p=>Number.isFinite(p.ucl)||Number.isFinite(p.lcl)||Number.isFinite(p.u95)||Number.isFinite(p.u998)||Number.isFinite(res.spec?.lo)||Number.isFinite(res.spec?.hi)

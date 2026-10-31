@@ -1,0 +1,1 @@
+()=>{try{return zpcrChartContext(item.id).rows.length>0;}catch(e){return false;}}

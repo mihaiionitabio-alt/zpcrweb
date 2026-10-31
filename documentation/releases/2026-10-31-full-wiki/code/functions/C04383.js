@@ -1,0 +1,1 @@
+function l(t){return e(t=0===arguments.length?new Date:new Date(+t)),t}

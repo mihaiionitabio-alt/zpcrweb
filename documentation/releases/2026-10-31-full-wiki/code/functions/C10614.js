@@ -1,0 +1,1 @@
+()=>sound.setCue(cue.id,check.checked)

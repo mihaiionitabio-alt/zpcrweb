@@ -1,0 +1,1 @@
+function(e,t){t.coerceNumber&&(e=+e);for(var r=t.values,n=0;n<r.length;n++){var a=String(r[n]);if("/"===a.charAt(0)&&"/"===a.charAt(a.length-1)){if(new RegExp(a.substr(1,a.length-2)).test(e))return!0}else if(e===r[n])return!0}return!1}

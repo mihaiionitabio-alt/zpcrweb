@@ -1,0 +1,1 @@
+p=>p.flags.length&&Number.isFinite(p.y)

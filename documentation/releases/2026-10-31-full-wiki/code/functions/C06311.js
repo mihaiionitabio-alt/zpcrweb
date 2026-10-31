@@ -1,0 +1,1 @@
+x=>Number.isFinite(x.T.editDelayH)

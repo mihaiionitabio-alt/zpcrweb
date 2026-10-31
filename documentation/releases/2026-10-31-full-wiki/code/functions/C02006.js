@@ -1,0 +1,1 @@
+function(e){"use strict";e.exports=function(e,t,r){var n,a;if(r){var i="reversed"===t||"min reversed"===t||"max reversed"===t;n=r[i?1:0],a=r[i?0:1]}var o=e("autorangeoptions.minallowed",null===a?n:void 0),l=e("autorangeoptions.maxallowed",null===n?a:void 0);void 0===o&&e("autorangeoptions.clipmin"),void 0===l&&e("autorangeoptions.clipmax"),e("autorangeoptions.include")}}

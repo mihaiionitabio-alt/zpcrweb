@@ -1,0 +1,1 @@
+function(){var e,r,n;function a(e,t){this.fn=e,this.self=t,this.next=void 0}return{add:function(t,i){n=new a(t,i),r?r.next=n:e=n,r=n,n=void 0},drain:function(){var n=e;for(e=r=t=void 0;n;)n.fn.call(n.self),n=n.next}}}

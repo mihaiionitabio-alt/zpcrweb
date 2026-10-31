@@ -1,0 +1,1 @@
+function m(e,t,r,n){var a=o.ensureSingle(e,"rect",v.bgClassName,(function(e){e.attr({x:0,y:0,"shape-rendering":"crispEdges"})})),i=n.borderwidth%2==0?n.borderwidth:n.borderwidth-1,u=-n._offsetShift,f=s.crispRound(t,n.borderwidth);a.attr({width:n._width+i,height:n._height+i,transform:l(u,u),"stroke-width":f}).call(c.stroke,n.bordercolor).call(c.fill,n.bgcolor)}

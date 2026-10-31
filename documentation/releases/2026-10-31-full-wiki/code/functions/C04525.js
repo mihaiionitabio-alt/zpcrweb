@@ -1,0 +1,1 @@
+function(e){e.exports=function(e,t,r,n,a,i,o){var l=1/(r-t),s=1/(a-n),c=1/(i-o);return e[0]=2*i*l,e[1]=0,e[2]=0,e[3]=0,e[4]=0,e[5]=2*i*s,e[6]=0,e[7]=0,e[8]=(r+t)*l,e[9]=(a+n)*s,e[10]=(o+i)*c,e[11]=-1,e[12]=0,e[13]=0,e[14]=o*i*2*c,e[15]=0,e}}

@@ -1,0 +1,1 @@
+s=>({y:s,label:`${s} °C`,colour:"#6b7280",dash:"2 3"})

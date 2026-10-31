@@ -1,0 +1,1 @@
+()=>{legal.open=!legal.open;if(legal.open)legal.querySelector('summary').focus();}

@@ -1,0 +1,1 @@
+function l(e,t,r,n,a,i,o,l){var s=r-e,c=a-e,u=o-a,f=n-t,d=i-t,h=l-i,p=s*h-u*f;if(0===p)return null;var v=(c*h-u*d)/p,g=(c*f-s*d)/p;return g<0||g>1||v<0||v>1?null:{x:e+s*v,y:t+f*v}}

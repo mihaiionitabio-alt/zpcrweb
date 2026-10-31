@@ -1,0 +1,1 @@
+function SB(A){return"STYLE"===A.tagName}

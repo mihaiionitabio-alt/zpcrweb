@@ -1,0 +1,1 @@
+v=>v===""||v==null?NaN:Number(v)

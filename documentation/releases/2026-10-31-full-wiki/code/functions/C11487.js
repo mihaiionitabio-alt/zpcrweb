@@ -1,0 +1,1 @@
+()=>{play(kind);chooser.close();if(kind==='learning')void start();}

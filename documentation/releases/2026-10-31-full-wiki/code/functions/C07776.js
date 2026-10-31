@@ -1,0 +1,2 @@
+([k,c])=>
+      `<span><i style="background:${c}"></i>${esc(k)}</span>`

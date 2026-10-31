@@ -1,0 +1,1 @@
+function rows(runs){return snapshot(runs).map(({hash_available,...row})=>row);}

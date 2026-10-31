@@ -1,0 +1,1 @@
+function(e){Array.isArray(e._promises)&&e._promises.length>0&&o.log("Clearing previous rejected promises from queue."),e._promises=[]}

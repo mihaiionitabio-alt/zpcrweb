@@ -1,0 +1,1 @@
+function(e){"use strict";e.exports={YANGLE:60,HOVERARROWSIZE:6,HOVERTEXTPAD:3,HOVERFONTSIZE:13,HOVERFONT:"Arial, sans-serif",HOVERMINTIME:50,HOVERID:"-hover"}}

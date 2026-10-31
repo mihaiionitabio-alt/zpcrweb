@@ -1,0 +1,1 @@
+function I(){var e=i.mouse(this),t=Math.log(d.k)/Math.LN2;A(this,e,T(e),i.event.shiftKey?Math.ceil(t)-1:Math.floor(t)+1)}

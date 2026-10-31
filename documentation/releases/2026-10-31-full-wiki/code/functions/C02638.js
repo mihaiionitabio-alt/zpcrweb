@@ -1,0 +1,1 @@
+function _(e){return"object"==typeof e&&(e=e.type),e}

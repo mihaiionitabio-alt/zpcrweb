@@ -1,0 +1,1 @@
+s=>`${s.flag}×${s.reps}: `+s.steps.map(x=>`${x.temps[0]} °C ${x.hold} s${x.collect?" (read)":""}`).join(" / ")

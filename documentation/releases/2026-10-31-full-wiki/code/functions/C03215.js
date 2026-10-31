@@ -1,0 +1,1 @@
+function U(e){for(var t=new B,r=0,n=arguments.length;++r<n;)t[arguments[r]]=j(t);return t.of=function(r,n){return function(a){try{var o=a.sourceEvent=i.event;a.target=e,i.event=a,t[a.type].apply(r,n)}finally{i.event=o}}},t}

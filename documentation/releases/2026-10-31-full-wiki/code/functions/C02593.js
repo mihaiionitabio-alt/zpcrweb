@@ -1,0 +1,1 @@
+function h(){if(e._fullLayout)for(var t=0;t<c.length;t++)c[t].transitionAxes&&c[t].transitionAxes(e,l,n,r)}

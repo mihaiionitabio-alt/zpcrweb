@@ -1,0 +1,1 @@
+function(e){var t=[];return fr(l(e)).cells.forEach((function(r,n){for(var a,i,o,l,s=r.site,c=r.edges.sort(Kt),u=-1,f=c.length,d=c[f-1].edge,h=d.l===s?d.r:d.l;++u<f;)a=h,h=(d=c[u].edge).l===s?d.r:d.l,n<a.i&&n<h.i&&(o=a,l=h,((i=s).x-l.x)*(o.y-i.y)-(i.x-o.x)*(l.y-i.y)<0)&&t.push([e[n],e[a.i],e[h.i]])})),t}

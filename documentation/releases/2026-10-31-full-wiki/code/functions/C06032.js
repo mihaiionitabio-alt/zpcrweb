@@ -1,0 +1,1 @@
+v=>{const y=T+(1-(v-y0)/(y1-y0))*ph;if(y<T-0.5||y>T+ph+0.5)return;s+=`<line x1="${L}" x2="${L+pw}" y1="${y}" y2="${y}" stroke="#e5e7eb"/><text x="${L-6}" y="${y+3.5}" text-anchor="end" fill="#6b7280">${ylog?ylab10(v):fmtTick(v)}</text>`;}

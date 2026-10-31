@@ -1,0 +1,1 @@
+function(t){var i=t[0].trace,o=i.xcalendar,l=i.ycalendar,c=s.traceIs(i,"bar-like")?".bartext":".point,.textpoint";e.selectAll(c).each((function(e){x.hideOutsideRangePoint(e,n.select(this),r,a,o,l)}))}

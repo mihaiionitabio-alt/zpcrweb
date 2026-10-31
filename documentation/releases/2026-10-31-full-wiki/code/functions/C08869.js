@@ -1,0 +1,1 @@
+r=>r.loaded&&r.platform==='CFX'&&r.acquisitionSHA256===row.acquisitionSHA256

@@ -1,0 +1,1 @@
+()=>{ensure();sopSetPath(el.dataset.experimentPath,el.type==='checkbox'?el.checked:el.type==='number'?(el.value===''?'':Number(el.value)):el.value);sopProfileEdited();document.getElementById('sop-json').value=sopJSON();}

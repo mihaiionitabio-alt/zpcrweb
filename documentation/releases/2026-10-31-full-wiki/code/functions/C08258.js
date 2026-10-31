@@ -1,0 +1,1 @@
+(value,j)=>{doc.y=top-j*leading;doc.text(value,size,bold,x,undefined,true);}

@@ -1,0 +1,1 @@
+function q(e){var t=Math.floor(Math.min(e.b-e.t,e.r-e.l,D)/2);return"M"+(e.l-3.5)+","+(e.t-.5+t)+"h3v"+-t+"h"+t+"v-3h-"+(t+3)+"ZM"+(e.r+3.5)+","+(e.t-.5+t)+"h-3v"+-t+"h"+-t+"v-3h"+(t+3)+"ZM"+(e.r+3.5)+","+(e.b+.5-t)+"h-3v"+t+"h"+-t+"v3h"+(t+3)+"ZM"+(e.l-3.5)+","+(e.b+.5-t)+"h3v"+t+"h"+t+"v3h-"+(t+3)+"Z"}

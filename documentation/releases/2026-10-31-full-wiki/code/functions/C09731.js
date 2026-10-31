@@ -1,0 +1,1 @@
+()=>{SEL_STATE.figureScope='all';SEL_STATE.ids.add('data:loaded_overview');if(overviewData().stats.length)SEL_STATE.ids.add('data:cohort_statistics');for(const x of overviewImages())SEL_STATE.ids.add(x.id);astRender();}

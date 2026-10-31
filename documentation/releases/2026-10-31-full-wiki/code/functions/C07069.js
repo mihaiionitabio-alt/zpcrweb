@@ -1,0 +1,1 @@
+m=>mgSetChartAxis(m[1])

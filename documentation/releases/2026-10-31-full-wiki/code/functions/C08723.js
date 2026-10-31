@@ -1,0 +1,1 @@
+t=>t.trim().replace(/\s+/g,' ').toUpperCase()

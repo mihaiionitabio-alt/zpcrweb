@@ -1,0 +1,1 @@
+function(){return.5*(1-e._pdata[1]/e._pdata[3])*i.h*(r.y[1]-r.y[0])}

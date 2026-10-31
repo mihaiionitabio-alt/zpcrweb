@@ -1,0 +1,1 @@
+o=>Object.assign(o,{current:o.value===current})

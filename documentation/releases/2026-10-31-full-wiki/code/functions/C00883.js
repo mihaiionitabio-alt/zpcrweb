@@ -1,0 +1,1 @@
+function(e){for(var t=n(e,"x",!0),r=0;r<t.length;r++){var o=t[r],l=o[i.name];l&&l.visible&&l.autorange&&(l._input.autorange=!0,l._input.range=l.range=a(e,o))}}

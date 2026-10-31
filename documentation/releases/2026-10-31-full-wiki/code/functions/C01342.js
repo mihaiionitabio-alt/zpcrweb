@@ -1,0 +1,1 @@
+function(e){"use strict";e.exports=function(e){e._responsiveChartHandler&&(window.removeEventListener("resize",e._responsiveChartHandler),delete e._responsiveChartHandler)}}

@@ -1,0 +1,1 @@
+([ch,a])=>{(channels[ch]??={})[cyc]=a;}

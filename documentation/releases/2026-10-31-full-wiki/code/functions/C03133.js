@@ -1,0 +1,1 @@
+function c(e){return e&&(e.ownerDocument||e.document||e).documentElement}

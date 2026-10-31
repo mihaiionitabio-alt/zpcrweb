@@ -1,0 +1,1 @@
+function(e,t){for(var r=[],n=0,a=0;a<4;a++){var i=ce[a],o=u(e[0],e[1],t[0],t[1],i[0],i[1],i[2],i[3]);o&&(!n||Math.abs(o.x-r[0][0])>1||Math.abs(o.y-r[0][1])>1)&&(o=[o.x,o.y],n&&X(o,e)<X(r[0],e)?r.unshift(o):r.push(o),n++)}return r}

@@ -1,0 +1,1 @@
+()=>{if($("#ss-group").value==="namePattern")$("#ss-names-enable").checked=true;SAMPLE_SELECTION.page=0;ssRender();}

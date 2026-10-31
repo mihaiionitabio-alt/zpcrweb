@@ -1,0 +1,1 @@
+function s(e){return e||a(e)&&0===e}

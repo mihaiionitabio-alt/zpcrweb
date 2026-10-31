@@ -1,0 +1,1 @@
+function X(e){var t=e._fullLayout,r=t.width,n=t.height;return e.layout.autosize&&d.plotAutoSize(e,e.layout,t),t.width!==r||t.height!==n}

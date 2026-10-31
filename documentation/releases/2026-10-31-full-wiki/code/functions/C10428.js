@@ -1,0 +1,1 @@
+function scope(s,localized){if(s.status!=='provided')return reason(s.reason,localized);const p=(en,zh)=>localized?t(en,zh):en,c=s.selection;return p('Read ','读取序号 ')+(c.read+1)+' · '+s.read_name+p('; channel ','；通道 ')+(c.channel+1)+p('; physical row/column ','；实际行／列 ')+(c.row+1)+'/'+(c.column+1)+p('; step/cycle ','；步骤／循环 ')+s.step+'/'+s.cycle+' · '+role(s.role,localized);}

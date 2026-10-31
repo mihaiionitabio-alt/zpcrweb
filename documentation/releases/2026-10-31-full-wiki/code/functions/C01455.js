@@ -1,0 +1,1 @@
+function(e,t){e||(e={}),t||(t="opt");var r={optionList:[],_newoption:function(n){n[t]=e,r[n.name]=n,r.optionList.push(n)}};return r["_"+t]=e,r}

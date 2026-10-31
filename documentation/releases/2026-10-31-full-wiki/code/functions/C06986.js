@@ -1,0 +1,1 @@
+e=>e.severity==="error"&&String(e.area||"").toLowerCase()!=="integrity"&&!/^Control chart/i.test(String(e.area||""))

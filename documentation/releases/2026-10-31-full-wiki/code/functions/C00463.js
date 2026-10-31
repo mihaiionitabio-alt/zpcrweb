@@ -1,0 +1,1 @@
+function t(e,t){return"percent"===e?function(e){return Math.abs(e*t/100)}:"constant"===e?function(){return Math.abs(t)}:"sqrt"===e?function(e){return Math.sqrt(Math.abs(e))}:void 0}

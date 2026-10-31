@@ -1,0 +1,1 @@
+c=>[c.tagName,c.textContent]

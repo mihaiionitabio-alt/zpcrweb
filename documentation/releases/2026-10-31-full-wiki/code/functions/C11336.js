@@ -1,0 +1,1 @@
+function(A){return"svg"===A.substr(-3).toLowerCase()||kn.test(A)}

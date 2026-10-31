@@ -1,0 +1,1 @@
+function(e){e.setUTCDate(1),e.setUTCHours(0,0,0,0)}

@@ -1,0 +1,1 @@
+value=>({value,label:MG_TYPE_LABEL[value]||value,current:value===current})

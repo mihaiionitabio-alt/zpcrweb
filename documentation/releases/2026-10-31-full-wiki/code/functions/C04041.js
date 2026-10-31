@@ -1,0 +1,1 @@
+function(e){this.setAttribute(n,t(e))}

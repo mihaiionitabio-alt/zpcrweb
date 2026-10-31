@@ -1,0 +1,1 @@
+r=>r!==g&&r.spec.kind==="reference"&&r.det>0

@@ -1,0 +1,1 @@
+e=>{evidence.context[key]=e.target.checked;changed();}

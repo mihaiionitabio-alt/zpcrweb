@@ -1,0 +1,1 @@
+function(){return(this.year()<0?"-":"")+o(Math.abs(this.year()),4)+"-"+o(this.month(),2)+"-"+o(this.day(),2)}

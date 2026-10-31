@@ -1,0 +1,1 @@
+function(A,e){return e.filter(_A).map(function(A){return A.value})}

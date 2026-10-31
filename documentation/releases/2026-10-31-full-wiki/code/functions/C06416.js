@@ -1,0 +1,1 @@
+x=>x.s&&((/positive/i.test(String(x.w.call||"")))||Number(x.w.CpRaw)>0)

@@ -1,0 +1,1 @@
+function(e,t){return e=ue(e),t=Q(t),this.select((function(){return this.insertBefore(e.apply(this,arguments),t.apply(this,arguments)||null)}))}

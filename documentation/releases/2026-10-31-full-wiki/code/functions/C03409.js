@@ -1,0 +1,1 @@
+function(){return tt(this.l,this.a,this.b)}

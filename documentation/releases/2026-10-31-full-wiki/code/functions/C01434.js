@@ -1,0 +1,1 @@
+function(e,t,r,n){for(var a,i,o,l=(n=n||{}).pathLength||e.getTotalLength(),s=n.tolerance||.001,c=n.iterationLimit||30,u=e.getPointAtLength(0)[r]>e.getPointAtLength(l)[r]?-1:1,f=0,d=0,h=l;f<c;){if(a=(d+h)/2,o=(i=e.getPointAtLength(a))[r]-t,Math.abs(o)<s)return i;u*o>0?h=a:d=a,f++}return i}

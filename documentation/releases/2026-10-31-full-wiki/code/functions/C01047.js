@@ -1,0 +1,1 @@
+function H(e,r){if(t.length){var n=D[C][O][1],a=D[C][O][2],o=t[C],l=o.length;if(m(o)){var s=e,c=r;i.isActiveSelection&&(M(o,O)[1]===o[O][1]?c=0:s=0);for(var u=0;u<l;u++)if(u!==O){var f=o[u];f[1]===o[O][1]&&(f[1]=n+s),f[2]===o[O][2]&&(f[2]=a+c)}if(o[O][1]=n+s,o[O][2]=a+c,!m(o))for(var d=0;d<l;d++)for(var h=0;h<o[d].length;h++)o[d][h]=D[C][d][h]}else o[O][1]=n+e,o[O][2]=a+r;k()}}

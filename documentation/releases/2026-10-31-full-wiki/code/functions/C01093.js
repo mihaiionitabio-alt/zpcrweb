@@ -1,0 +1,1 @@
+function(e){"use strict";e.exports={CIRCLE_SIDES:32,i000:0,i090:8,i180:16,i270:24,cos45:Math.cos(Math.PI/4),sin45:Math.sin(Math.PI/4),SQRT2:Math.sqrt(2)}}

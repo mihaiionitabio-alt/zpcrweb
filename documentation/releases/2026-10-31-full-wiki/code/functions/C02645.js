@@ -1,0 +1,1 @@
+function(){var e=arguments[0],r=[].slice.call(arguments,1);return t.apiMethodRegistry[e].apply(null,r)}

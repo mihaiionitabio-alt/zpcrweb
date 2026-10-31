@@ -1,0 +1,1 @@
+function E(e){return parseInt(e,16)}

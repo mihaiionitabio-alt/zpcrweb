@@ -1,0 +1,1 @@
+function astToggle(){AST.open?astClose():astOpen();}

@@ -1,0 +1,1 @@
+function x(e){c=Math.min(e.x-e.r,c),u=Math.max(e.x+e.r,u),f=Math.min(e.y-e.r,f),d=Math.max(e.y+e.r,d)}

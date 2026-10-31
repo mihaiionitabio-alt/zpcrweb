@@ -1,0 +1,1 @@
+function runTyped(){const input=sidebar?.querySelector('#game-command');if(input)api.voice(input.value);}

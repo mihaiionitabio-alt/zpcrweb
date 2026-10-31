@@ -1,0 +1,1 @@
+function(e,t,r){"use strict";e.exports={moduleType:"component",name:"rangeselector",schema:{subplots:{xaxis:{rangeselector:r(1032)}}},layoutAttributes:r(1032),handleDefaults:r(6255),draw:r(5431)}}

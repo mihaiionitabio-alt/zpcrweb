@@ -1,0 +1,1 @@
+function(e){var t=(e=o.getGraphDiv(e))._fullLayout||{},r=e._fullData||[];return d.cleanPlot([],{},r,t),d.purge(e),s.purge(e),t._container&&t._container.remove(),delete e._context,e}

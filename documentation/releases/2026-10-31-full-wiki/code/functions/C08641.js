@@ -1,0 +1,1 @@
+(o,i)=>({px:200,y:w.length-i,text:o.k,size:10,anchor:"end",colour:"#374151"})

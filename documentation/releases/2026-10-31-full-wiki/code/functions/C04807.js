@@ -1,0 +1,1 @@
+function(e){var t={};for(var r in e)e.hasOwnProperty(r)&&(t[e[r]]=r);return t}

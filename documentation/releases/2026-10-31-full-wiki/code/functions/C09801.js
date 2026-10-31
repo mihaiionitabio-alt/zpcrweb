@@ -1,0 +1,1 @@
+(message='')=>{choices();dialog.querySelector('#mascot-message').textContent=ui(message);if(!dialog.open)dialog.showModal();}

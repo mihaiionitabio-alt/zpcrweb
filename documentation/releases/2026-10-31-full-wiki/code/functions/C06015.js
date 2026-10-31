@@ -1,0 +1,1 @@
+e=>{SOP.locked=e.target.checked;sopProfileEdited(true);}

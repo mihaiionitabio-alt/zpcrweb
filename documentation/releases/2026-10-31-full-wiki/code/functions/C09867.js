@@ -1,0 +1,1 @@
+r=>['sample','blank','negative','positive','quantitative','calibrator'].includes(r.role)

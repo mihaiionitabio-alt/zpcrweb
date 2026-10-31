@@ -1,0 +1,1 @@
+t=>!t||t.length!==4||t.some(v=>!Number.isFinite(v))||t[1]<0||t[2]>t[0]||t[0]>t[3]

@@ -1,0 +1,1 @@
+function _(){x.removeEventListener("mousemove",b),x.removeEventListener("mouseup",_),this.removeEventListener("touchmove",b),this.removeEventListener("touchend",_),o.removeElement(x)}

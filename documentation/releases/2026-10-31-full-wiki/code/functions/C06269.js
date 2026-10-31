@@ -1,0 +1,1 @@
+o=>({w:o,key:o.filterComb||o.filterName||String(o.channel),outside:true})

@@ -1,0 +1,1 @@
+()=>{if(time.isConnected)time.textContent=tr('Elapsed: ','已用时：')+Math.round(performance.now()-loadBegan)+' ms';}

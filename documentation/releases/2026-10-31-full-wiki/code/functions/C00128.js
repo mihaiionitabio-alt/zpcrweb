@@ -1,0 +1,1 @@
+function l(e,t){return"log"===t.type?t.l2r(e):t.d2r(e)}

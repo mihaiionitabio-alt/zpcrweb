@@ -1,0 +1,1 @@
+function(e){return new this((function(t,r){if("function"!=typeof t||"function"!=typeof r)throw TypeError("Not a function");r(e)}))}

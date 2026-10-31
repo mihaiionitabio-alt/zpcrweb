@@ -1,0 +1,1 @@
+function(e){return f[i]?e="pixel"===o?t(s)+Number(e):t(e):d[i]&&(e="pixel"===l?r(c)-Number(e):r(e)),++i>h&&(e="X"),e}

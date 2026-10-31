@@ -1,0 +1,1 @@
+function(){var e=n.select(this),t=e.select(".selector-rect"),a=e.select(".selector-text"),i=a.node()&&l.bBox(a.node()).width,o=r.font.size*h,s=u.lineCount(a),p=Math.max(i+10,g.minButtonWidth);e.attr("transform",c(m+f,m)),t.attr({x:0,y:0,width:p,height:d}),u.positionText(a,p/2,d/2-(s-1)*o/2+3),f+=p+5}

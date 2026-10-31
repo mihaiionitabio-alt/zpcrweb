@@ -1,0 +1,7 @@
+function(filterRun,forExport){
+ if(!maraProfileActive())return next(filterRun,forExport);
+ const rs=sopInterpretationRows(filterRun,forExport).filter(r=>r.kind==='target'),groups=byKey(rs,r=>r.experiment+'||'+r.sample);
+ const order=['Invalid run','Invalid','Repeat','Inconclusive','Positive','Negative','Not interpreted'];
+ const samples=[...groups.values()].map(a=>{const r=a[0],worst=a.slice().sort((x,y)=>order.indexOf(x.outcome)-order.indexOf(y.outcome))[0];return {experiment:r.experiment,run_status:r.run_status,sample:r.sample,summary:a.map(x=>x.target+': '+x.label).join('; '),sample_outcome:worst.outcome,action:a.filter(x=>/Invalid|Repeat|Inconclusive/.test(x.outcome)).map(x=>x.reason).join('; '),needs_action:a.some(x=>/Invalid|Repeat|Inconclusive/.test(x.outcome))?'yes':'',reference_outcomes:'',report:a.map(x=>x.target+': '+x.report).join('; '),...sopMeta()};});
+ const unmatched=sopEvaluateAll().filter(e=>(filterRun==null||filterRun===''||String(e.ri)===String(filterRun))&&e.applicability?.applicable===false).map(e=>({experiment:runName(e.run),run_status:e.status,sample:'',summary:ui('Profile selection required'),sample_outcome:'Not evaluated',action:ui('Select a profile matching the experiment'),needs_action:'',requires_profile_selection:'yes',reference_outcomes:'',report:e.applicability.reason+'; '+e.applicability.expected,...sopMeta()}));return [...samples,...unmatched];
+}

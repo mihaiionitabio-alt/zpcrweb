@@ -1,0 +1,1 @@
+function T(e){return[(e[0]-d.x)/d.k,(e[1]-d.y)/d.k]}

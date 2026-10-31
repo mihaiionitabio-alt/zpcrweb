@@ -1,0 +1,1 @@
+function(e,t,r){if(r||(r=!1),"string"!=typeof t||0===t.length)throw new Error("Separator string required for formatting!");"number"==typeof e&&(e=String(e));var n=/(\d+)(\d{3})/,a=t.charAt(0),i=t.charAt(1),o=e.split("."),l=o[0],s=o.length>1?a+o[1]:"";if(i&&(o.length>1||l.length>4||r))for(;n.test(l);)l=l.replace(n,"$1"+i+"$2");return l+s}

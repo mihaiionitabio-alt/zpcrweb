@@ -1,0 +1,1 @@
+function(e,t){return("layout"===e&&""===t?"The layout argument":"data"===e[0]&&""===t?"Trace "+e[1]+" in the data argument":d(e)+"key "+t)+" must be linked to an object container"}

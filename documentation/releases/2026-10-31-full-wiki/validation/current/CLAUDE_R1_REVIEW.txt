@@ -1,0 +1,310 @@
+# Review — MISSY_CLAUDE_MINIMAL_2026-10-31
+
+**Build under review:** `2026.10.31.demolabels1`, commit `e8d8198d62cc4ac1470a4a9d034c14ff1e2c7ac4`
+**Identity verified:** 28,081,180 bytes · SHA-256 `d2ed2467…b68b0c` — **matches START_HERE.md exactly.**
+**SHA256SUMS.txt:** 97 entries, **97 OK, 0 failures.**
+
+Reviewed against the frozen hashed build only. The live Pages URL you sent mid-review is a moving
+target with no declared hash; substituting it would break the pinning that makes this review
+checkable, in the same way substituting an older HTML would.
+
+## Files opened
+
+`START_HERE.md` · `WORKFLOW.md` · `CLEAN_CONFIRMATION.md` · `INDEX_SUMMARY.json` ·
+`VALIDATION_SUMMARY.json` · `FUNCTION_VALIDATION_INDEX.json` (11,732 records) ·
+`review/HARNESS_ADJUSTMENTS.json` (5 entries, all diffs) · `review/RETEST_RESULTS.json` ·
+`review/CLEAN_SUITE_RESULTS.json` · `review/SUITE_RESULTS.json` ·
+`review/clean_zip.log` · `review/clean_mara-definitions.log` · `review/run_*.log` ·
+`review/retest_*.log` · `wiki/Validation.md` · `wiki/VoiceAndAudio.md` · `wiki/Limitations.md` ·
+`wiki/VolumeChangeCrosswalk.md` · `SHA256SUMS.txt` · `Missy-public.html` (binary probes only) ·
+the separately attached `Missy_offline_2.html`.
+
+## Commands
+
+```bash
+sha256sum Missy-public.html                      # d2ed2467…b68b0c  ✓ matches declaration
+sha256sum -c SHA256SUMS.txt                      # 97 OK, 0 failed
+cmp Missy-public.html <attached Missy_offline_2.html>   # differ at byte 3
+python3 -I -c "<partition arithmetic over INDEX_SUMMARY.json>"
+python3 -I -c "<extract data:audio/mpeg URIs, decode, measure, read ID3/LAME tags>"
+ffprobe -show_streams clip0.mp3                  # 22050 Hz mono, 48 kbps, 4.26 s
+python3 -I -c "<coverageStatus / form / comparison tallies over FUNCTION_VALIDATION_INDEX.json>"
+```
+
+---
+
+# Findings
+
+## F1 · SEV-HIGH — the separately attached HTML is a browser DOM snapshot, not the build
+
+`Missy_offline_2.html` is **28,081,339 bytes**, SHA-256 `ef45631c…03fa08` — 159 bytes larger than
+the frozen build and a different hash. It is not a variant build; it is a **saved page**:
+
+| Marker | Packaged build | Attached file |
+|---|---:|---:|
+| `<script src="chrome-extension://ofaokhiedipichpaobibbnahnkdoiiah/…/frames_handler.js">` | 0 | **1** |
+| `<style id="plotly.js-style-global">` (injected at runtime by Plotly) | 0 | **1** |
+| `<head>` (the build has no `<html>`/`<head>`) | 0 | **1** |
+| `data-boot-step="1" class="is-loaded"` (runtime state) | — | present |
+
+Attributes are serializer-normalised (`disabled=""`, `<path/>` → `<path></path>`), a runtime
+`title=` is added, and `<html class="missy-starting">` is the boot class.
+
+**Consequence:** reviewing it would have measured a page that had already run, plus a third-party
+extension. It also contains executable script from that extension, which is not part of your
+product and whose behaviour you do not control.
+
+**Checked for disclosure:** 96,638 characters of visible text, **no `SC_` identifiers in rendered
+text**; the one `SC_` match is inside embedded script, and the nine `DEMO_SAMPLE` hits are
+synthetic. No laboratory identifier leaked. But a DOM snapshot of a *loaded* session could, so this
+should not become a habit for sending builds.
+
+**Action:** discard it for review purposes. Send `dist/Missy-public.html` with its hash.
+
+## F2 · SEV-HIGH — my earlier "zero embedded audio" statement is withdrawn; here is the measurement
+
+You are right, and the correction is larger than the wording suggests:
+
+- **221** `data:audio/mpeg;base64` URIs
+- **10,858,704 bytes** decoded (10.36 MiB)
+- **14,478,272 characters** of base64 in the file
+- → **51.6 % of the 28 MB build is embedded speech**
+
+Every clip: **22,050 Hz mono, 48 kbps, ~4.3 s**, encoder `Lavf61.7.100` / `Lavc61.19` / `LAME3.100`
+(FFmpeg). Largest single clip 481,089 bytes.
+
+**The licensing point the bytes can and cannot settle.** All 221 carry a `TSSE` encoder frame and
+**nothing else** — no `TIT2`, `TPE1`, `TENC` or `COMM`. The containers establish *how* they were
+encoded and are silent on *what produced the voice*. A re-encode through FFmpeg erases source
+metadata, so **provenance cannot be recovered from the artefact** and must be documented at
+creation time.
+
+`wiki/VoiceAndAudio.md` already says *"Per-asset audio licensing must be reviewed separately from
+the source-code licence."* That is correct but not sufficient for a 10 MiB redistributed asset set.
+See correction C1.
+
+## F3 · SEV-MEDIUM — `unchanged_ast` (3,440) exceeds `baselineFunctions` (3,423) by 17
+
+In `INDEX_SUMMARY.json` and `VALIDATION_SUMMARY.json`. The rest of the arithmetic is sound and I
+verified it:
+
+- first-party partition `1724 + 756 + 187 + 3440 + 73 = 6180` = `firstPartyFunctions` ✓
+- `6180 + 5552 = 11732` = `totalFunctions` ✓
+
+But a baseline of 3,423 functions cannot contain 3,440 unchanged ones. The only consistent reading
+is that `unchanged_ast` counts **current functions whose canonical AST matches some baseline AST**,
+with at least 17 current functions sharing an AST with an already-matched baseline function —
+duplicate bodies, which is normal. The *label* is wrong, not the number. A reader will read
+3,440 / 3,423 as impossible and distrust the whole index.
+
+## F4 · SEV-MEDIUM — a harness adjustment causes a coverage gap, and the two are reported apart
+
+`HARNESS_ADJUSTMENTS.json` entry 5, `tests/evidence_keyboard.cjs`:
+
+```diff
+- await load(page,files);
++ await load(page,files,{cancel:format==='PCRD'&&!process.env.MISSY_PCRD_PASSWORD_FILE});
+```
+
+Without the password file the PCRD batch is **cancelled**, not read. In
+`FUNCTION_VALIDATION_INDEX.json` the entire PCRD family is `not_observed_in_passing_scenario`:
+`pcrdDecryptContainer`, `pcrdCRC`, `pcrdArray`, `pcrdCSV`, `pcrdCell`, `pcrdCompact`, `pcrdDate`,
+`pcrdEndpoint`, `pcrdEndpointRows`, `pcrdNumber`, `pcrdLineFigure`, `pcrdLockedSummary`,
+`pcrdPanel`, `pcrdForgetPassword`.
+
+The adjustment is legitimate and honestly recorded. The defect is **presentational**: the
+adjustment is in one file, the coverage gap in another, and nothing links them. A reader sees
+`evidence-keyboard: Pass` and a PCRD reader with zero observations, and cannot tell that the first
+caused the second. `CLEAN_CONFIRMATION.md` says *"Native private-fixture coverage remains limited"*
+— true, but it does not name PCRD or connect it to the cancel flag.
+
+## F5 · SEV-MEDIUM — `readZip` is `ambiguous_name_match` **and** unobserved
+
+`FUNCTION_VALIDATION_INDEX.json`: `readZip`, `comparison: ambiguous_name_match`,
+`coverageStatus: not_observed_in_passing_scenario`, line 85.
+
+This is the exact function on which I previously reported a shadowing defect **"verified by
+execution"** that did not exist — my extraction created the collision. Your index now classifies it
+as *ambiguous* and *unobserved*, which is the correct and honest state, and it is the strongest
+single argument for item 3's "boot the complete HTML" instruction. It is also the **highest-value
+target for the next test**, because the archive intake path is the one place where a reader defect
+silently produces plausible output.
+
+The `zip` suite that would have covered it does not run — see F6.
+
+## F6 · SEV-HIGH (coverage) — `zip` suite never reaches the page
+
+`review/clean_zip.log`, identical in the instrumented run (940 bytes both):
+
+```
+Error: ENOENT: no such file or directory,
+  open 'D:\IXO\missy_modular\fixtures\archive_manifest.json'
+  at tests/zip_regression.cjs:3:30
+```
+
+It fails at **line 3, at require time**. No browser is launched, no assertion is evaluated. So the
+archive reader — stored, deflated, nested paths, CRC, member limits — has **no current evidence at
+all**, and `readZip` (F5) sits behind it. `CLEAN_CONFIRMATION.md` records it as
+"Failed / incomplete", which is accurate but understates it: this is not a flaky suite, it is an
+absent fixture producing zero coverage of the intake path.
+
+## F7 · SEV-MEDIUM — the MARA preset test is stale, and the fix is not to restore the preset
+
+`review/clean_mara-definitions.log`:
+
+```
+page.evaluate: TypeError: SOP_PRESETS.sc is not a function
+  at tests/mara_definitions.cjs:12:19
+```
+
+The harness adjustment for this file only re-pointed the Playwright module path — it did not touch
+the assertion. The test calls a removed SC preset accessor.
+
+**Current oracle, and you are right not to restore the preset.** The adjusted test already reads
+the right thing one line earlier:
+
+```js
+const library = await p.evaluate(() =>
+  MARA_PROFILE_LIBRARY.map(x => ({...x, hash: sopHash(x.profile)})));
+```
+
+`MARA_PROFILE_LIBRARY` is the shipped library and `sopHash` is the production hash. The oracle
+should be: **every entry in `MARA_PROFILE_LIBRARY` loads, produces a stable `sopHash`, and
+evaluates a fixed synthetic run to a recorded outcome** — asserting the *evaluation*, not a preset
+identifier. Pin the hashes in the test so a silent profile edit fails it. Delete the `SOP_PRESETS.sc`
+call; do not re-add a preset to satisfy a test.
+
+## F8 · SEV-LOW — instrumented and clean logs differ for five suites, with no stated reason
+
+| Suite | `run_` | `clean_` | |
+|---|---:|---:|---|
+| clarification | 347 | 116 | differs |
+| mara-definitions | 1093 | 296 | differs |
+| quantstudio | 1123 | 767 | differs |
+| evidence-keyboard | 5146 | 5589 | differs |
+| voice-state | 342 | 68 | differs |
+| zip | 940 | 940 | identical |
+
+Expected — the coverage preload emits output — but the documentation does not say so, and a reader
+comparing `run_mara-definitions.log` (1,093 B) with `clean_` (296 B) cannot tell whether the
+*failure* changed or only the noise. Both fail on the same `SOP_PRESETS.sc` TypeError; I checked.
+
+---
+
+# Answers to the eight questions
+
+**1 · Separation of historical, current, coverage and scientific validation — mostly yes.**
+`WORKFLOW.md` step 8 (*"Do not rewrite old results as current results"*) and the crosswalk's
+repeated "preserve as historical" are the right structure. `VALIDATION_SUMMARY.json` keeps
+`scope: "Function entry is execution evidence, not an individual correctness proof."` — exactly the
+distinction that matters. **Weakness:** `CLEAN_CONFIRMATION.md` leads with "22/24 passing suites",
+a number that averages a product result with two infrastructure failures. See C2.
+
+**2 · The function inventory distinguishes the three categories correctly.** `firstParty`
+true/false splits 6,180 / 5,552 cleanly; `form` separates `anonymous` 4,107 from `declared` 2,073;
+`comparison` keeps `ambiguous_name_match` (187) as its own class rather than folding it into
+matched or changed. The note *"Unique-name matches are candidates, not proof of semantic identity"*
+is the correct caveat and is stated in both summaries. The one defect is F3's label.
+
+**3 · Instrumentation is entry-counting only, and the clean rerun is the right control** —
+"Function entry only in a separate review artifact; no production file modified", and the HTML hash
+is unchanged after the clean run. The five harness diffs are all harness-side: four add a
+`chime(){}` stub or re-point a `require` path; the fifth is the PCRD cancel flag. **None alters
+application semantics.**
+**Checks still needing clean, uninstrumented confirmation:** the PCRD reader family (F4), the whole
+archive-intake path (F6), and anything whose verdict depends on a probe reading internal state
+rather than observable output. Also worth one explicit run: the four suites whose harness gained a
+`chime(){}` stub, confirming the stub is not masking a missing call the production code expects.
+
+**4 · Next targeted tests.** 2,492 first-party functions unobserved (847 declared, 1,645
+anonymous). Filtering to declared, reader/result-relevant, non-cosmetic gives **136**. Priority:
+
+1. **`readZip`** — ambiguous match *and* unobserved *and* the archive entry point (F5).
+2. **The PCRD family** — 14 functions, all unobserved, including `pcrdDecryptContainer` and
+   `pcrdCRC`. Needs a lawful fixture or a declared boundary-only test.
+3. **`integrityEvents`**, **`mgViewExport`**, **`selApplyCsv`**, **`selCsvTemplate`**,
+   **`selReadme`** — all `changed_same_unique_name`: the body changed under an unchanged name, so
+   the index cannot vouch for them and nothing executes them.
+4. **`exportRecord`**, **`maraExportSample`**, **`maraWellID`**, **`csvRows`** — export-path
+   integrity, `new_named`, unobserved.
+
+Deprioritise the 12 cosmetic unobserved (tooltip/animation/badge).
+
+**5 · Yes, stale.** See F7 for the current oracle.
+
+**6 · Synthetic ZIP fixture.** Generate deterministically from a committed script: stored member,
+deflated member, nested UTF-8 path, member exceeding the declared size limit, deliberate CRC
+mismatch, and a path-traversal attempt. Assert the reader's *rejections* as firmly as its successes.
+**Report its scope separately:** it exercises the container reader and the limit/CRC guards only. It
+does **not** reproduce real vendor archive quirks — the mixed-endianness ICFF payloads, the variable
+12/13-byte thermal headers, undeclared payload compression — and the documentation must list those
+as still untested rather than let the new fixture's pass rate stand in for the missing legacy one.
+
+**7 · Claims audit.**
+*Voice support* — `wiki/VoiceAndAudio.md` is accurate and appropriately hedged ("depends on browser
+capabilities", "headless emulation … does not prove recognition accuracy"). Good.
+*Recorded English speech* — "221 recorded English phrases" is **exact**; I counted 221. The
+different-units note (122 registry entries ≠ 221 phrases ≠ 515 catalogue entries) is well made. I
+could not verify 515 from the HTML — no `SOUND_CATALOGUE`/`RECORDED_PHRASES` identifier is present
+under those names, so the count is not independently checkable from the artefact; name the symbol.
+*Audio licensing* — understated. See F2 and C1.
+*Privacy* — `START_HERE.md` is right that download pseudonymisation ≠ speech pseudonymisation, and
+right that headphones are irrelevant to the technical distinction. **But neither `Limitations.md`
+nor `VoiceAndAudio.md` states it.** See C3.
+*Intended use* — `Limitations.md` is strong. The sentinel paragraph and the "missing evidence must
+not become an unsupported negative" sentence are the two best lines in the documentation set.
+
+**8 · Crosswalk.** Structurally sound; the per-volume "current update obligation" phrasing avoids
+restating old results as current, and volumes 9–11 and 14 correctly refuse to infer current
+correctness from static atlases. Three omissions: no volume carries the **embedded-audio asset
+register** (10.36 MiB, 221 files) — volume 17 is the natural home; volume 3 claims "narrow test
+scope" without naming the **two suites with no current evidence**; volume 15 says "locked-file
+cancellation is not decryption validation", which is right, but should add that the cancellation
+path is **why** the PCRD functions are unobserved.
+
+---
+
+# Proposed documentation corrections
+
+**C1 · `wiki/VoiceAndAudio.md`** — add:
+
+> The build embeds 221 MP3 clips, 10,858,704 bytes decoded, 22,050 Hz mono at 48 kbps, re-encoded
+> with FFmpeg (`Lavf61.7.100`). The containers retain only an encoder tag; they carry no title,
+> artist or source frame, so the origin of the speech cannot be recovered from the files. The
+> synthesis tool, its voice, and the redistribution terms of that voice must be recorded here before
+> publication. Re-encoding removes source metadata; provenance must be captured at creation.
+
+**C2 · `CLEAN_CONFIRMATION.md`** — replace "Result: 22/24 passing suites" with:
+
+> 22 of 24 suites pass. The two that do not are infrastructure failures, not product results:
+> `zip` aborts at require time on a missing fixture and evaluates no assertion; `mara-definitions`
+> calls a removed preset accessor. Neither reports on the current build's behaviour, and the archive
+> intake path therefore has no current coverage.
+
+**C3 · `wiki/Limitations.md`** — add to the privacy paragraph:
+
+> Pseudonymisation governs downloads. Spoken answers are a separate output channel: identifiers
+> read aloud leave the page regardless of the download setting, and are audible to anyone present or
+> recording. Headphones do not change this.
+
+**C4 · `INDEX_SUMMARY.json` / `VALIDATION_SUMMARY.json`** — rename `unchanged_ast` to
+`current_matching_baseline_ast` and add:
+`"note": "Counts current functions whose canonical AST matches a baseline AST. Exceeds baselineFunctions where distinct current functions share one baseline body."`
+
+**C5 · `HARNESS_ADJUSTMENTS.json`** — add a `coverageImpact` field. For the PCRD entry:
+`"coverageImpact": "PCRD batch cancelled without a password fixture; 14 pcrd* functions remain not_observed_in_passing_scenario."`
+
+---
+
+# Explicitly untested by me
+
+I did not boot the HTML, did not run any suite, and did not reproduce the AST index — the scripts
+carry absolute Windows paths and the fixtures, passwords and Playwright runtime are not in the
+package, exactly as declared. I verified **no** Zenodo record: the two DOIs were not resolved and no
+manual MD5 or SHA-256 was recomputed, so every statement in `WORKFLOW.md` steps 2–3 is unverified
+here. I did not open the 6,437 PDF pages, the 17 volumes, or any private fixture. The `515`
+sound-catalogue count is unverified. All audio findings rest on container metadata and byte
+measurement, not on listening.
+
+Nothing was published, written to your repository, or modified. The package was extracted to an
+isolated directory and every script I ran was my own, executed with `python3 -I`.

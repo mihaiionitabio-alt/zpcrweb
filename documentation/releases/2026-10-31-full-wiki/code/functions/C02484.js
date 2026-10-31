@@ -1,0 +1,1 @@
+function(e,t,r,n){var a=n&&n.x||[0,1],i=n&&n.y||[0,1],o=t.grid;if(o){var l=r("domain.column");void 0!==l&&(l<o.columns?a=o._domains.x[l]:delete e.domain.column);var s=r("domain.row");void 0!==s&&(s<o.rows?i=o._domains.y[s]:delete e.domain.row)}var c=r("domain.x",a),u=r("domain.y",i);c[0]<c[1]||(e.domain.x=a.slice()),u[0]<u[1]||(e.domain.y=i.slice())}

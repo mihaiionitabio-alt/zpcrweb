@@ -1,0 +1,1 @@
+r=>copies(r.cq,r.assay===a?ec:rc)

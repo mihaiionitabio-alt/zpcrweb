@@ -1,0 +1,1 @@
+function(){return this.getBrightness()<128}

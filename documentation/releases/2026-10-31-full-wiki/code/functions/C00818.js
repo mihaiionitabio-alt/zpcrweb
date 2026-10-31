@@ -1,0 +1,1 @@
+function(e,t,r){"use strict";e.exports={moduleType:"component",name:"modebar",layoutAttributes:r(308),supplyLayoutDefaults:r(64),manage:r(5442)}}

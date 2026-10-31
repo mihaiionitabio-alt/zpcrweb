@@ -1,0 +1,1 @@
+r=>r.file+' SHA-256 '+r.source_sha256

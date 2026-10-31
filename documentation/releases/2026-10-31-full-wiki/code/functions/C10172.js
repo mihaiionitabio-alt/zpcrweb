@@ -1,0 +1,1 @@
+x=>['no','not','never',"don't",'dont','cancel'].includes(x)

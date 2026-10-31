@@ -1,0 +1,1 @@
+x=>x.graphId===graph

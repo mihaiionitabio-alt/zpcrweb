@@ -1,0 +1,1 @@
+function g(e,t){e.appendChild(document.createTextNode(t))}

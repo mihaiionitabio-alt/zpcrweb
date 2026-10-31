@@ -1,0 +1,1 @@
+s=>{if(s.useAll)return;s.items.forEach(p=>{(subsetsOfPos[p]??=[]).push(s.name);});}

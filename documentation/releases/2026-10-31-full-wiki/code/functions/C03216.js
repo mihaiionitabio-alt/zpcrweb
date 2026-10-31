@@ -1,0 +1,1 @@
+function(r,n){return function(a){try{var o=a.sourceEvent=i.event;a.target=e,i.event=a,t[a.type].apply(r,n)}finally{i.event=o}}}

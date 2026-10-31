@@ -1,0 +1,1 @@
+function(e,t){for(var r=!1,n=0;n<t.length;n++){var a=t[n],o=a.cd;i.traceIs(o[0].trace,"regl")&&(r=!0);var l=a._module,s=l.styleOnSelect||l.style;s&&(s(e,o,o[0].node3),o[0].nodeRangePlot3&&s(e,o,o[0].nodeRangePlot3))}r&&(D(e),P(e))}

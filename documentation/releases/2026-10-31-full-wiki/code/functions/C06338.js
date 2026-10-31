@@ -1,0 +1,1 @@
+(e,i)=>{const n=e.rows.filter(r=>r.outcome===o).length;const p=[i,base[i]+n,base[i],`${runName(e.run)}: ${n} ${sopLabel(o)}`,sopColour(o)];base[i]+=n;if(n)rows.push({experiment:runName(e.run),outcome:o,count:n});return p;}

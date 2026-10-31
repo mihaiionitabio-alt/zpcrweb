@@ -1,0 +1,1 @@
+async function openEvidence(){if(busy||captureTasks.size||!child)return false;busy=true;status(['Opening the evidence…','正在打开证据…']);try{await child.open(current);opened=true;status(['Look at the highlighted evidence on the left.','请查看左侧高亮证据。']);return true;}catch(e){opened=false;status([e.message,'证据打开失败，请重试。']);return false;}finally{busy=false;}}

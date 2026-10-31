@@ -1,0 +1,1 @@
+function(e){return f.aggNums(Math.min,null,e)}

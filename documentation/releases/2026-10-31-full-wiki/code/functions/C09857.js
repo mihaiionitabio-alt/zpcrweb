@@ -1,0 +1,1 @@
+function rangeStats(a,f=1.693){const mean=avg(a),s=(Math.max(...a)-Math.min(...a))/f;return {mean,s,rsd:mean>0?100*s/mean:NaN,uMean:s/Math.sqrt(a.length)};}

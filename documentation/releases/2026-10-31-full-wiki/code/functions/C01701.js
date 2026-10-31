@@ -1,0 +1,1 @@
+function p(e){function t(t,r){var n=e[t],a=e.title&&e.title[r];n&&!a&&(e.title||(e.title={}),e.title[r]=e[t],delete e[t])}e&&("string"!=typeof e.title&&"number"!=typeof e.title||(e.title={text:e.title}),t("titlefont","font"),t("titleposition","position"),t("titleside","side"),t("titleoffset","offset"))}

@@ -1,0 +1,1 @@
+()=>focus('#missy-demo-hardware table','Read the model and block first. Maximum block ramp rate and measured/sample ramp rates are different quantities.')

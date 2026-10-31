@@ -1,0 +1,1 @@
+function(t){return null!==t&&t!==e.root}

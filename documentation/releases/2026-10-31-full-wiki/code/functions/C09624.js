@@ -1,0 +1,1 @@
+()=>download('PCRD_independent_Cq_Tm.csv',pcrdCSV(pcrdRuns().flatMap(r=>piResults(r).rows)),'text/csv')

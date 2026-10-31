@@ -1,0 +1,1 @@
+()=>pcrdSourceRows().map(r=>({file:r.file,SN:r.instrument_sn,wells:r.physical_wells,reads:r.reads,status:r.status}))

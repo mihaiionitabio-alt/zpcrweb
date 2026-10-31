@@ -1,0 +1,1 @@
+function x(e,t){l.ensureSingle(e,"rect",f.itemRectClassName,(function(e){e.attr({rx:f.rx,ry:f.ry,"shape-rendering":"crispEdges"})})).call(i.stroke,t.bordercolor).call(i.fill,t.bgcolor).style("stroke-width",t.borderwidth+"px")}

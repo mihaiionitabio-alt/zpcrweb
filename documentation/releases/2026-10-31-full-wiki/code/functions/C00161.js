@@ -1,0 +1,1 @@
+function(){h(R),a.call("_guiRelayout",e,S());var t=document.querySelector(".js-notes-box-panel");t&&t.redraw(t.selectedObj)}

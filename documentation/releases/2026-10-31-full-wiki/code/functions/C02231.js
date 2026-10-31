@@ -1,0 +1,1 @@
+function(e,r,a){var i=e._fullLayout,o=null;if(n.traceIs(r,"gl3d")){var l=r.scene;"scene"===l.substr(0,5)&&(o=i[l][a+"axis"])}else o=t.getFromId(e,r[a+"axis"]||a);return o}

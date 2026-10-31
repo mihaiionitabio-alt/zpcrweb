@@ -1,0 +1,1 @@
+code=>({hash_unavailable:t('Source hash unavailable; not compared','源文件哈希不可用；未比较'),single_view:t('No other decoded view shares this hash','没有其他解码视图共享此哈希'),shared_views:t('Source hash shared by decoded views','多个解码视图共享源文件哈希'),byte_count_conflict:t('Shared hash with inconsistent byte-count metadata; informational only','共享哈希的字节数元数据不一致；仅供参考')})[code]

@@ -1,0 +1,1 @@
+r=>({...r,wells:[...r.wells],targets:[...r.targets],roles:[...r.roles]})

@@ -1,0 +1,1 @@
+w=>w.pos===pos&&(!c.target||(w.target||w.analysis)===c.target)

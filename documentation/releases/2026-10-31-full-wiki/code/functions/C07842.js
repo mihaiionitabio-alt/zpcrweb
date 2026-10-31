@@ -1,0 +1,1 @@
+o=>(runValue===""||String(o.runIndex)===String(runValue))&&(lev==="all"||o.severity===lev)

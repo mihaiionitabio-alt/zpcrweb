@@ -1,0 +1,1 @@
+function(){var e;return"undefined"!=typeof navigator&&(e=navigator.userAgent),e&&e.headers&&"string"==typeof e.headers["user-agent"]&&(e=e.headers["user-agent"]),e}

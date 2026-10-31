@@ -1,0 +1,1 @@
+()=>RUNS.some(r=>(r.wells||[]).some(w=>w.curve&&w.curve.length))

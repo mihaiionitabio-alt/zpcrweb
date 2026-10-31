@@ -1,0 +1,1 @@
+function(e,t){var r=(t||{}).type;r||(r="pie");var n=e._fullLayout,a=e.calcdata,i=n[r+"colorway"],l=n["_"+r+"colormap"];n["extend"+r+"colors"]&&(i=s(i,o));for(var c=0,u=0;u<a.length;u++){var f=a[u];if(f[0].trace.type===r)for(var d=0;d<f.length;d++){var h=f[d];!1===h.color&&(l[h.label]?h.color=l[h.label]:(l[h.label]=h.color=i[c%i.length],c++))}}}

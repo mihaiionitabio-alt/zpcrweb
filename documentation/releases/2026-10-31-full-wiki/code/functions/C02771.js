@@ -1,0 +1,1 @@
+function S(e,t,r,n,a){return!(e<0||t<0)&&(r<=e&&n<=t||r<=t&&n<=e||(a?e>=r*(t/n):t>=n*(e/r)))}

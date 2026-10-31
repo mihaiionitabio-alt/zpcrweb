@@ -1,0 +1,1 @@
+()=>{++token;audio?.pause();api?.stop();overlay.remove();if(window.MISSY_VOICE_TOUR?.frame===frame)delete window.MISSY_VOICE_TOUR;button.focus();}

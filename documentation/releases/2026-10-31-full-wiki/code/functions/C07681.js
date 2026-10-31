@@ -1,0 +1,1 @@
+r=>{const k=[r.category,r.severity,r.experiment,r.well,r.finding,r.source].join("|");if(seen.has(k))return false;seen.add(k);return true;}

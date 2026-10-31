@@ -1,0 +1,1 @@
+r=>[r.filename,[r.inspection_scope,r.native_component,r.native_value,r.native_state,r.native_basis].filter(Boolean).join(' · ')]

@@ -1,0 +1,1 @@
+w=>w.analysisUid===a.uid

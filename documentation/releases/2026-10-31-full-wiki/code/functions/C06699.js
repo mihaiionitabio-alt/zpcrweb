@@ -1,0 +1,1 @@
+function ccRowsFromRuns(...args){return MISSY_HOOKS.invoke("ccRowsFromRuns",this,args,ccRowsFromRunsBase);}

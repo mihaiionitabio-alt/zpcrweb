@@ -1,0 +1,1 @@
+v=>`<option value="${v}"${r.curve===v?' selected':''}>${esc(ui(v))}</option>`

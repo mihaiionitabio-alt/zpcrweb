@@ -1,0 +1,1 @@
+function(){i.removeElement(this.container.querySelector(".modebar")),i.deleteRelatedStyleRule(this._uid)}

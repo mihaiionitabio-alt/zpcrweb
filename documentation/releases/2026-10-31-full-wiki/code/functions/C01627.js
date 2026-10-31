@@ -1,0 +1,1 @@
+function(e,r,n){return Math.sqrt(t.variance(e,r,n))}

@@ -1,0 +1,1 @@
+function M(){this._=Object.create(null)}

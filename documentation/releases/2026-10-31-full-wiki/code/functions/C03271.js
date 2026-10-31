@@ -1,0 +1,1 @@
+function(e,t){if(arguments.length<2){if("string"==typeof e){var r=this.node();return(e=i.ns.qualify(e)).local?r.getAttributeNS(e.space,e.local):r.getAttribute(e)}for(t in e)this.each(re(t,e[t]));return this}return this.each(re(e,t))}

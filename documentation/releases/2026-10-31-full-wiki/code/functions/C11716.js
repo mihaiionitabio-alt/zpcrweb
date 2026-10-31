@@ -1,0 +1,1 @@
+()=>{const zh=document.body.classList.contains('lang-zh');panel.textContent=(zh?'当前应用构建：':'Current application build: ')+version+(zh?'。下方修改日期属于保留的历史声明，不是当前构建日期。':'. Modification dates below belong to retained historical notices, not this build.');setup.textContent=(zh?'当前构建：':'Current build: ')+version;}

@@ -1,0 +1,1 @@
+()=>{MISSY_SHORTCUTS=[...dialog.querySelectorAll('select')].map(s=>s.value);try{localStorage.setItem(MISSY_SHORTCUT_KEY,JSON.stringify(MISSY_SHORTCUTS));}catch{}paint();dialog.close();}

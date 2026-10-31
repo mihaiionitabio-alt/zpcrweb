@@ -1,0 +1,1 @@
+(v,ci)=>xlsxCell(xlsxCol(ci)+(ri+1),v)

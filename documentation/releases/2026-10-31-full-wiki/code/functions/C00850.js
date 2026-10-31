@@ -1,0 +1,1 @@
+function(e){"use strict";e.exports={yPad:.02,minButtonWidth:30,rx:3,ry:3,lightAmount:25,darkAmount:10}}

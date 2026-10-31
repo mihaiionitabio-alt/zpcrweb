@@ -1,0 +1,1 @@
+()=>{tip.style.display="none";}

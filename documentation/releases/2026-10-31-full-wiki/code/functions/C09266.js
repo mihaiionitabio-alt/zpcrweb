@@ -1,0 +1,1 @@
+x=>x.position===p&&x.loaded

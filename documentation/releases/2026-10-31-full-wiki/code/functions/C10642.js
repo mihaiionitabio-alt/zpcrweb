@@ -1,0 +1,1 @@
+()=>{const zh=document.body.classList.contains('lang-zh'),name=zh?'动物快捷方式':'Animal shortcuts';toggle.textContent=(friends.hidden?'▸ ':'◂ ')+name;friends.setAttribute('aria-label',name);}

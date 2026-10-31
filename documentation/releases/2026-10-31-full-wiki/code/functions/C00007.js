@@ -1,0 +1,1 @@
+()=>{if(token!==epoch)return;active=null;kind='';const next=queued;queued=null;if(next){if(next.callback)next.callback();else play(next.text,next.nextKind);}}

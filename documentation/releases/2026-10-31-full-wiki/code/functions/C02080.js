@@ -1,0 +1,1 @@
+function ke(e){return void 0!==e.periodX?e.periodX:e.x}

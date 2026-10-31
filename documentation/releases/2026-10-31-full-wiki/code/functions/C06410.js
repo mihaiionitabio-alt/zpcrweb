@@ -1,0 +1,1 @@
+w=>{const k=String(Number(w.channel));if(!byChannel.has(k))byChannel.set(k,[]);byChannel.get(k).push({w,s:graphAnalysisStats(w.curve)});}

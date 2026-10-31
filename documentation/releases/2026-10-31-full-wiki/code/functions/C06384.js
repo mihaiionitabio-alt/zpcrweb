@@ -1,0 +1,1 @@
+(x,i)=>[i,x.T.durationMin,0,`${runName(x.r)}: ${num(x.T.durationMin,1)} min · ${x.r.meta.InstrumentID||x.r.meta.InstrumentName||""}`,catColour(cm,x.r.meta.InstrumentID||x.r.meta.InstrumentName||"instrument")]

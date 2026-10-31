@@ -1,0 +1,1 @@
+function(e){var t=0,r=0,n=e.title.side;return n&&(-1!==n.indexOf("left")&&(t=e._titleWidth),-1!==n.indexOf("top")&&(r=e._titleHeight)),[t,r]}

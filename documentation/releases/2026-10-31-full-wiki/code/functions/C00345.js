@@ -1,0 +1,1 @@
+function(e){var t={},r=e.marker;return t.markerScale=x.tryColorscale(r,""),t.lineScale=x.tryColorscale(r,"line"),s.traceIs(e,"symbols")&&(t.ms2mrc=g.isBubble(e)?m(e):function(){return(r.size||6)/2}),e.selectedpoints&&a.extendFlat(t,x.makeSelectedPointStyleFns(e)),t}

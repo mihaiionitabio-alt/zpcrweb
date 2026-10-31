@@ -1,0 +1,1 @@
+()=>{if(token!==epoch)return;done();if(nextKind==='voiceAnswer')document.dispatchEvent(new Event('missy-speech-error'));else document.dispatchEvent(new CustomEvent('missy-calm-playback-blocked',{detail:{kind:nextKind}}));}

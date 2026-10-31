@@ -1,0 +1,1 @@
+function(e,t,r){var a=n.node({isStart:!1,pt:t.end,seg:t,primary:r,other:e,status:null});e.other=a,o(a,e.pt)}

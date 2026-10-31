@@ -1,0 +1,1 @@
+w=>Math.abs(Number(w.CpRaw)-w.eds.ctRecalc)>0.2

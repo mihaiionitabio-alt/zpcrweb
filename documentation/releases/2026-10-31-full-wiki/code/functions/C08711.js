@@ -1,0 +1,1 @@
+n=>manifest.some(e=>e.name===n&&!e.encrypted)

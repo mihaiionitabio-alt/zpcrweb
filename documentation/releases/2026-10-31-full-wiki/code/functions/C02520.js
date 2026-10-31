@@ -1,0 +1,1 @@
+function(e,t){return e.decimal=t.charAt(0),e.thousands=t.charAt(1),{numberFormat:function(t){try{t=i(e).format(f.adjustFormat(t))}catch(e){return f.warnBadFormat(t),f.noFormat}return t},timeFormat:a(e).utcFormat}}

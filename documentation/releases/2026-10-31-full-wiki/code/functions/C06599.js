@@ -1,0 +1,1 @@
+r=>r.used.map(w=>({w,o:r.storedOutcome||r.outcome}))

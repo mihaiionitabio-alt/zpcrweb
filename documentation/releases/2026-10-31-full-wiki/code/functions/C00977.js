@@ -1,0 +1,1 @@
+function(t,r,n,a){var i=e.searchInfo.cd[0].trace._expandedIndex;return a.cd[0].trace._expandedIndex===i&&n===e.pointNumber}

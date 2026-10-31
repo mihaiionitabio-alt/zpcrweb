@@ -1,0 +1,1 @@
+function d(e){return e._context.editSelection}

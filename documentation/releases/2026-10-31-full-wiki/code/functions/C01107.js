@@ -1,0 +1,1 @@
+function(e,t,r){var n="date"===t.type,a="date"===r.type;if(!n&&!a)return e;for(var i=0;i<e.length;i++)for(var o=0;o<e[i].length;o++)for(var l=0;l+2<e[i][o].length;l+=2)n&&(e[i][o][l+1]=e[i][o][l+1].replace(" ","_")),a&&(e[i][o][l+2]=e[i][o][l+2].replace(" ","_"));return e}

@@ -1,0 +1,1 @@
+function(e,t){t=t||0;for(var r=(Math.round(100*e*Math.pow(10,t))*Math.pow(.1,t)).toFixed(t)+"%",n=0;n<t;n++)-1!==r.indexOf(".")&&(r=(r=r.replace("0%","%")).replace(".%","%"));return r}

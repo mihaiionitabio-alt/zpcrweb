@@ -1,0 +1,1 @@
+function(e,r){if(!e.length||!r.length||e.length!==r.length)return null;var n,a,i=e.length;if(e[0].length)for(n=new Array(i),a=0;a<i;a++)n[a]=t.dot(e[a],r);else if(r[0].length){var o=t.transposeRagged(r);for(n=new Array(o.length),a=0;a<o.length;a++)n[a]=t.dot(e,o[a])}else for(n=0,a=0;a<i;a++)n+=e[a]*r[a];return n}

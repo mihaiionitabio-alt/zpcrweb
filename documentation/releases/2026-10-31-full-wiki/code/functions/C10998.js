@@ -1,0 +1,1 @@
+function(){var A=this._value.shift();return void 0===A?-1:A}

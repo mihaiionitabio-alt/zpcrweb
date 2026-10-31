@@ -1,0 +1,1 @@
+g=>({type:txt(g,"Type"),name:txt(g,"Name"),part:txt(g,"PartNumber"),lot:txt(g,"LotNumber"),expiration:txt(g,"ExpirationDate")})

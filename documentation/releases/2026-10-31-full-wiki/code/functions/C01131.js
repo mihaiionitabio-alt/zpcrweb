@@ -1,0 +1,1 @@
+function(e,r,n,a){var i,o=e._fullLayout._size;if(r)if("domain"===a)i=function(e){var t=(e-r._offset)/r._length;return n?1-t:t};else{var l=t.rangeToShapePosition(r);i=function(e){return l(r.p2r(e-r._offset))}}else i=n?function(e){return 1-(e-o.t)/o.h}:function(e){return(e-o.l)/o.w};return i}

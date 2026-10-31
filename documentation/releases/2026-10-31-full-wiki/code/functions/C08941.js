@@ -1,0 +1,1 @@
+next => function(){next();const nav=document.getElementById('mg-nav');nav.querySelector('#zpcr-console-endpoint')?.remove();if(RUNS.some(r=>r.zpcr)){const c=zpcrEndpointControls();c.id='zpcr-console-endpoint';nav.append(c);}}

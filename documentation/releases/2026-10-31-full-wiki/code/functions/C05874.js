@@ -1,0 +1,1 @@
+r=>sopFmt((SOP.outcomes[r.outcome]||{}).text,{sample:P(s),target:sopTargetLabel(r),cq:num(r.cqMean,2),sd:num(r.cqSd,2),det:r.det,n:r.n,cutoff:r.cqMax,reason:r.reason,outcome:r.label,run:runName(e.run)})

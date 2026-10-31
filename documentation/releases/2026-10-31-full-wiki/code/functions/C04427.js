@@ -1,0 +1,1 @@
+function(e){return isFinite(e=Math.floor(e))&&e>0?(0,n.A)((function(t){t.setUTCFullYear(Math.floor(t.getUTCFullYear()/e)*e),t.setUTCMonth(0,1),t.setUTCHours(0,0,0,0)}),(function(t,r){t.setUTCFullYear(t.getUTCFullYear()+r*e)})):null}

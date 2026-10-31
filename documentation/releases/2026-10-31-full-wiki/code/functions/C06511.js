@@ -1,0 +1,1 @@
+s=>Number(s.target)

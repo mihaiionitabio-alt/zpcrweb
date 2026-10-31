@@ -1,0 +1,1 @@
+function(r){t.text=r,this.call(Z),L("text",r),m&&m.autorange&&A(m._name+".autorange",!0),x&&x.autorange&&A(x._name+".autorange",!0),a.call("_guiRelayout",e,S())}

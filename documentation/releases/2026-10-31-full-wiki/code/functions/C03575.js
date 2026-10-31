@@ -1,0 +1,1 @@
+function Sr(e){return function(t){return 1-e(1-t)}}

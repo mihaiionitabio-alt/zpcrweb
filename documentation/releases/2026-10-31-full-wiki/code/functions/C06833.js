@@ -1,0 +1,1 @@
+p=>[p.x,p.s,`${p.row.run}: S = ${fmtTick(+p.s.toPrecision(3))}`,p.flags.some(f=>/spread/.test(f))?CC_COL.bad:CC_COL.pt]

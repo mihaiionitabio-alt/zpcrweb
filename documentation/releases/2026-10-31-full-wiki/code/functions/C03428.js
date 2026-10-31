@@ -1,0 +1,1 @@
+function(e){var t=i.event;i.event=e;try{o.progress.call(a,c)}finally{i.event=t}}

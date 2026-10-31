@@ -1,0 +1,1 @@
+function(e){var r={};function i(a,i){return n.coerce(e,r,t.attributes,a,i)}if(i("enabled")){var o=i("target");if(n.isArrayOrTypedArray(o)&&0===o.length)return r.enabled=!1,r;i("preservegaps"),i("operation"),i("value");var l=a.getComponentMethod("calendars","handleDefaults");l(e,r,"valuecalendar",null),l(e,r,"targetcalendar",null)}return r}

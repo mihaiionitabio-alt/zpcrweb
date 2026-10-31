@@ -1,0 +1,1 @@
+x=>x.ctrl&&x.outcome==='Control fail'

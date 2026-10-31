@@ -1,0 +1,1 @@
+d=>{const i=dyes.indexOf(d);return i<0?null:i;}

@@ -1,0 +1,1 @@
+p=>p.every((x,i)=>i>1||Number.isFinite(x))

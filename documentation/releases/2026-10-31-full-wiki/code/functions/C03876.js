@@ -1,0 +1,1 @@
+function n(){var n=0,o=t.length;for(r=[];++n<o;)r[n-1]=i.quantile(e,n/o);return a}

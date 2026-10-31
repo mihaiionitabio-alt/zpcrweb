@@ -1,0 +1,1 @@
+function(e){var t=T[e],r=t.n;x.symbolList.push(r,String(r),e,r+100,String(r+100),e+"-open"),x.symbolNames[r]=e,x.symbolFuncs[r]=t.f,x.symbolBackOffs[r]=t.backoff||0,t.needLine&&(x.symbolNeedLines[r]=!0),t.noDot?x.symbolNoDot[r]=!0:x.symbolList.push(r+200,String(r+200),e+"-dot",r+300,String(r+300),e+"-open-dot"),t.noFill&&(x.symbolNoFill[r]=!0)}

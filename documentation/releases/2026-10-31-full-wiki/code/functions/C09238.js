@@ -1,0 +1,1 @@
+e=>{if(e.key==='Enter'){e.preventDefault();ok.click();}}

@@ -1,0 +1,1 @@
+function(e,t,r){"use strict";var n=r(1559);e.exports={moduleType:"component",name:n.name,layoutAttributes:r(5389),supplyLayoutDefaults:r(2746),draw:r(974)}}

@@ -1,0 +1,1 @@
+function(e){for(var t=n.list({_fullLayout:e},null,!0),r=0;r<t.length;r++)if(!t[r].fixedrange)return!1;return!0}

@@ -1,0 +1,1 @@
+function(e){if(e){var t=e.length;if(16===t)return e;if(6===t)return[e[0],e[1],0,0,e[2],e[3],0,0,0,0,1,0,e[4],e[5],0,1]}return[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]}

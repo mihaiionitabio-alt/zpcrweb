@@ -1,0 +1,1 @@
+function de(){return!1}

@@ -1,0 +1,1 @@
+()=>{demo.hardware();return{en:document.querySelector('#missy-demo-hardware h2').textContent,zh:'制造商规格仅作参考，模拟测量另行标记。'};}

@@ -1,0 +1,1 @@
+function astClose(){AST.open=false;document.getElementById("astm").classList.remove("on");}

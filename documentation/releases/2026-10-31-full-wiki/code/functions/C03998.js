@@ -1,0 +1,1 @@
+function(e){return function(){var t=e.apply(this,arguments),r=t[0],n=t[1]-ze;return[r*Math.cos(n),r*Math.sin(n)]}}

@@ -1,0 +1,1 @@
+function(){var e=n.select(this),t=h.tester.append("text").text(e.text()).call(h.font,y),a=G(r,t.node());Math.round(a.width)<Math.round(_.width)&&e.attr("x",Z-a.width),t.remove()}

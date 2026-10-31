@@ -1,0 +1,1 @@
+(e,i)=>{const option=document.createElement('option');option.value=String(i);option.textContent=e.filename;select.append(option);}

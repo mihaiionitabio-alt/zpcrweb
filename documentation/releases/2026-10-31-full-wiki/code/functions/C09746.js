@@ -1,0 +1,1 @@
+next=>function(value){const result=zhCoverageContext(value);return result===null?next(value):result;}

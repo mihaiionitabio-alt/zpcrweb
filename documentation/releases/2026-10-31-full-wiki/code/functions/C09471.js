@@ -1,0 +1,1 @@
+r=>({rdml_file:r.file,rdml_sha256:r.meta.sourceSHA256,source_pcrd:r.cfxRDML.source?.sourceFile||'Not supplied',pcrd_sha256:r.cfxRDML.source?.sourceSHA256||'Not supplied',instrument_sn:r.meta.SerialNumber,run_date:r.meta.StartTime||'Not supplied',protocol_sha256:r.cfxRDML.protocolSHA256,status:r.cfxRDML.provenanceStatus})

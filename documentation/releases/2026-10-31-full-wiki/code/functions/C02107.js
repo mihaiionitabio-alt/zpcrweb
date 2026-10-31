@@ -1,0 +1,1 @@
+function(e){n.select(this).select("rect").attr({x:e.x._offset||0,y:e.y._offset||0,width:e.x._length||1,height:e.y._length||1})}

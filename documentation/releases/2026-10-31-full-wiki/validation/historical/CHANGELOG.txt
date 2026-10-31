@@ -1,0 +1,11 @@
+Changes since September 2026 release
+
+- Added offline ML exploration and corrected cache, forecast, cohort and coefficient-plot behaviour.
+- Fixed LC480 detection-format selection and optical-channel attribution.
+- Added optional sample review with grouping, search and bulk inclusion/exclusion.
+- Added exploratory sample-name pattern grouping; exclusions remain manual.
+- Added temperature-log duration (A-H4a) and elapsed-minus-log difference (A-H4b).
+- Preserved raw data and hardware charts during sample filtering.
+- See patch supplement for impact, limitations, validation and upgrade instructions.
+
+- Made the latest application index.html and preserved the previous page as index_old.html.

@@ -1,0 +1,1 @@
+()=>{const s=$("#cc-chart svg");return s?s.outerHTML.replace("<svg ",`<svg data-sop="${esc(SOP.name)} v${esc(SOP.version)} sha256:${sopHash()}" `):"";}

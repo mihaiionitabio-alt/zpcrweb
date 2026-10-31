@@ -1,0 +1,1 @@
+r=>!onlyInstrument||r.instrument===CC_STATE.instrument

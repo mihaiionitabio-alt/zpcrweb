@@ -1,0 +1,1 @@
+x=>Math.abs(x.ctDelta)>0.2

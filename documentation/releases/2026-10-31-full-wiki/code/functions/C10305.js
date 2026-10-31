@@ -1,0 +1,1 @@
+()=>[APP_STATE.activeTab,MG.scope,MG.chart,MG.sheet,document.querySelector('#mg-actions')?.textContent,document.querySelector('#mg-sheet-list')?.textContent]

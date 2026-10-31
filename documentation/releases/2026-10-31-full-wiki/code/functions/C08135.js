@@ -1,0 +1,1 @@
+()=>reportGraphFigure(g,reportGraphRunIndexes(g).find(ri=>reportGraphAvailable(g,ri))??selRunIndex())

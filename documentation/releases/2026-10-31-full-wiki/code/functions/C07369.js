@@ -1,0 +1,1 @@
+r=>r.eds&&r.eds.results.length

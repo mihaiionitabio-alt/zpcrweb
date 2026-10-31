@@ -1,0 +1,1 @@
+function(e){return this._a=P(e),this._roundA=s(100*this._a)/100,this}

@@ -1,0 +1,1 @@
+x=>measurement.add(new Option(x.reportPanel.title,x.measurementKey))

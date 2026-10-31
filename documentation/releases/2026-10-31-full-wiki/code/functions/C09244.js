@@ -1,0 +1,1 @@
+function pcrdNumber(s,missing=NaN){if(s===null||s===undefined||String(s).trim()===''||/^nan$/i.test(String(s)))return missing;const n=Number(s);if(!Number.isFinite(n))throw Error('Invalid PCRD numeric value');return n;}

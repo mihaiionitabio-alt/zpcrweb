@@ -1,0 +1,1 @@
+()=>{if(token!==t||!overlay.isConnected){clearInterval(poll);audio?.pause();box.dataset.speaking='false';resolve();}}

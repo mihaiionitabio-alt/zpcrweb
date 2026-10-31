@@ -1,0 +1,1 @@
+()=>graph('amplification|curves')

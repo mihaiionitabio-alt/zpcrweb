@@ -1,0 +1,1 @@
+function u(e,t){return e>t}

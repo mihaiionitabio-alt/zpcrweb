@@ -1,0 +1,1 @@
+function(e){var a=e.getAttribute("data-val")||!0,o=e.getAttribute("data-attr"),l="true"===e.getAttribute("data-toggle"),s=n.select(e);if(l)o===r&&s.classed("active",!s.classed("active"));else{var c=null===o?o:i.nestedProperty(t,o).get();s.classed("active",c===a)}}

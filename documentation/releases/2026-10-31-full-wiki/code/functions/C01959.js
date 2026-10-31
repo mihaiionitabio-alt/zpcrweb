@@ -1,0 +1,1 @@
+function(e,t){for(var r=e.layout.layoutAttributes,a=0;a<t.length;a++){var i=t[a],o=e.traces[i.type],l=o.layoutAttributes;l&&(i.subplot?n.extendFlat(r[o.attributes.subplot.dflt],l):n.extendFlat(r,l))}return r}

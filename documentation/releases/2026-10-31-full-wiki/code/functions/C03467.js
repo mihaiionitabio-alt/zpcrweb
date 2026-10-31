@@ -1,0 +1,1 @@
+function Ot(e){for(var t,r,n,a=e.length,i=[0,1],o=2,l=2;l<a;l++){for(;o>1&&(t=e[i[o-2]],r=e[i[o-1]],n=e[l],(r[0]-t[0])*(n[1]-t[1])-(r[1]-t[1])*(n[0]-t[0])<=0);)--o;i[o++]=l}return i.slice(0,o)}

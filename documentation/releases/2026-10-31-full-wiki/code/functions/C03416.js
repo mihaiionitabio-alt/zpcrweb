@@ -1,0 +1,1 @@
+function(e){e=Math.pow(.7,arguments.length?e:1);var t=this.r,r=this.g,n=this.b,a=30;return t||r||n?(t&&t<a&&(t=a),r&&r<a&&(r=a),n&&n<a&&(n=a),new it(Math.min(255,t/e),Math.min(255,r/e),Math.min(255,n/e))):new it(a,a,a)}

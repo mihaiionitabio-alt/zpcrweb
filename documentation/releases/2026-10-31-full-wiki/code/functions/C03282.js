@@ -1,0 +1,1 @@
+function(){this.innerHTML=e}

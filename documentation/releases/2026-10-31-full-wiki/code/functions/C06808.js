@@ -1,0 +1,1 @@
+k=>sp.filter(p=>Number.isFinite(p[k])).map(p=>[p.x,p[k]])

@@ -1,0 +1,1 @@
+function(e){return(e.children||[]).map((function(t){return{source:e,target:t}}))}

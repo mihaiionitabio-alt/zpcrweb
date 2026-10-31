@@ -1,0 +1,1 @@
+function q(e){return e.offsetLeft+e.clientLeft}

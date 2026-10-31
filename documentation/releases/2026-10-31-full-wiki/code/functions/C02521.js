@@ -1,0 +1,1 @@
+function(t){try{t=i(e).format(f.adjustFormat(t))}catch(e){return f.warnBadFormat(t),f.noFormat}return t}

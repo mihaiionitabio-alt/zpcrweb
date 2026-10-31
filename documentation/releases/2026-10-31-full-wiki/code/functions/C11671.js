@@ -1,0 +1,1 @@
+()=>reward.classList.remove('on')

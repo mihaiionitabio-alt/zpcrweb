@@ -1,0 +1,1 @@
+r=>'• File: '+r.file+'\n• Source SHA-256: '+r.source_sha256+'\n• Acquisition SHA-256: '+r.acquisition_sha256+'\n• '+r.status

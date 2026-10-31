@@ -1,0 +1,1 @@
+function re(e,t){var r=l(t,e).get();if(void 0!==r)return r;var n=e.split(".");for(n.pop();n.length>1;)if(n.pop(),void 0!==(r=l(t,n.join(".")+".uirevision").get()))return r;return t.uirevision}

@@ -1,0 +1,1 @@
+r=>`<tr><td class="k">${r[0]}</td><td>${r[1]}</td></tr>`

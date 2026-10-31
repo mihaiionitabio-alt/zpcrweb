@@ -1,0 +1,1 @@
+function(){return delete t.coloraxis,delete r.coloraxis,e(t,r,u,f,d)}

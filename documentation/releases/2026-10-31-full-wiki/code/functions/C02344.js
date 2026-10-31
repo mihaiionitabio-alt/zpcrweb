@@ -1,0 +1,1 @@
+function(e){var t=e._fullLayout._glimages,r=n.select(e).selectAll(".svg-container");r.filter((function(e,t){return t===r.size()-1})).selectAll(".gl-canvas-context, .gl-canvas-focus").each((function(){var e=this,r=e.toDataURL("image/png");t.append("svg:image").attr({xmlns:f.svg,"xlink:href":r,preserveAspectRatio:"none",x:0,y:0,width:e.style.width,height:e.style.height})}))}

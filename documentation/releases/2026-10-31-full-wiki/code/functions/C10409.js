@@ -1,0 +1,1 @@
+next=>async function(raw){if(String(raw).trim().toLowerCase()==='provenance'){cmdTable(rows(true).map(r=>[r.provenance_view+' · '+r.filename,[r.provenance_item,r.provenance_state,r.provenance_value,r.provenance_method].filter(Boolean).join(' · ')]),true);return;}return next(raw);}

@@ -1,0 +1,1 @@
+function(e,t,r){r=0===r?0:r||50;var n=d(e).toRgb(),a=d(t).toRgb(),i=r/100;return d({r:(a.r-n.r)*i+n.r,g:(a.g-n.g)*i+n.g,b:(a.b-n.b)*i+n.b,a:(a.a-n.a)*i+n.a})}

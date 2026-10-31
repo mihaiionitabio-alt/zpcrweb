@@ -1,0 +1,4 @@
+next=>function(){
+ if(!maraProfileActive())return next();
+ return sopEvaluateAll().flatMap(e=>e.rows.filter(r=>!r.ctrl&&r.spec.kind==='target').map((r,i)=>mgIt({kind:'results',sev:/Invalid/.test(r.outcome)?'alarm':/Inconclusive|Repeat/.test(r.outcome)||SOP.reviewOnly?'watch':'ok',pict:MG_PICT.sample,kindWord:ui('Automatic results'),code:'MARA'+(i+1),title:r.sample+' · '+r.target,value:r.methodValues.text||r.label,unit:'',state:r.report,evidence:runName(e.run),rows:[[ui('Mean Cq'),Number.isFinite(r.cqMean)?r.cqMean.toFixed(3):'—'],[ui('Outcome'),r.label],[ui('Reason'),r.reason]],actions:[{key:'3',label:ui('Open the results view on the page'),cmd:'open page results'}]})));
+}

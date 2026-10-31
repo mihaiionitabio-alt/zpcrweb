@@ -1,0 +1,1 @@
+id=>Object.values(CC_BY_ID).findIndex(d=>d.id===id)+1

@@ -1,0 +1,1 @@
+function(A){return g(Math.floor(A%n)+e)}

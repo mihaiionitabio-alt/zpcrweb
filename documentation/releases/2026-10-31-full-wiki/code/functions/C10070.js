@@ -1,0 +1,1 @@
+([k,v])=>ui(k)+' = '+(typeof v==='number'?Number(v.toPrecision(8)):typeof v==='boolean'?ui(v?'pass':'fail'):String(v??'—'))

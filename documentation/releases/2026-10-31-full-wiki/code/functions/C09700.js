@@ -1,0 +1,1 @@
+g=>new Set(g.points.map(p=>p.run_index)).size>=2

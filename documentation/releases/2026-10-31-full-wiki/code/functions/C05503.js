@@ -1,0 +1,1 @@
+x=>x.studyStat&&x.studyStat[0]!=="-1.0"

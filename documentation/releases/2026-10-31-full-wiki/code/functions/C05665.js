@@ -1,0 +1,1 @@
+w=>Object.assign({},w,{sample:P(w.sample)})

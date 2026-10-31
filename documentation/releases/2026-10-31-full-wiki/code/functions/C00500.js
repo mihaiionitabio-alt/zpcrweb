@@ -1,0 +1,1 @@
+function(e){return e.subplot||e.xaxis+e.yaxis||e.geo}

@@ -1,0 +1,1 @@
+function oe(A){return 0==(255&A)}

@@ -1,0 +1,1 @@
+function(e,t){for(var r=e._fullData,n=t._mainSubplot,a=t._id.charAt(0),i=0;i<r.length;i++){var l=r[i];if(!0===l.visible&&l.xaxis+l.yaxis===n){if(o.traceIs(l,"bar-like")&&l.orientation==={x:"h",y:"v"}[a])return!0;if(l.fill&&l.fill.charAt(l.fill.length-1)===a)return!0}}return!1}

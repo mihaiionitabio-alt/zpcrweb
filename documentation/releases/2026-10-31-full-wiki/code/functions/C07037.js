@@ -1,0 +1,1 @@
+([value,en,zh])=>({value,label:UI_LANG==='zh'?zh:en})

@@ -1,0 +1,1 @@
+(){return 'Embedded generic synthetic speech; no cloned reference recording'}

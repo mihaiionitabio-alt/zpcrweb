@@ -1,0 +1,2 @@
+p=>{const base=p[2]??(ylog?Math.pow(10,y0):Math.max(y0,0));const ya=Y(p[1]),yb=Y(base);
+        s+=`<rect x="${X(p[0])-bw/2+(se.offset||0)}" y="${Math.min(ya,yb)}" width="${bw}" height="${Math.abs(yb-ya)}" fill="${p[4]||se.colour}"><title>${svgEsc(p[3]||"")}</title></rect>`;}

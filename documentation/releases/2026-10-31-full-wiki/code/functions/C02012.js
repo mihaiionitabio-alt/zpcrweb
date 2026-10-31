@@ -1,0 +1,1 @@
+function(e){return void 0===e?e:"paper"===e?"paper":"pixel"===e?"pixel":/( domain)$/.test(e)?"domain":"range"}

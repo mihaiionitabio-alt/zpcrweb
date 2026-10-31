@@ -1,0 +1,1 @@
+function(A,e){return"break-word"!==e?"normal":"break-word"}

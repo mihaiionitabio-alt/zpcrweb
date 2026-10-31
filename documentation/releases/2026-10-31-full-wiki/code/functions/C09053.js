@@ -1,0 +1,1 @@
+function zcSyncGraphs(){const items=zcModeItems();for(let i=GRAPHS.length-1;i>=0;i--)if(GRAPHS[i].id.startsWith('zc_compare_'))GRAPHS.splice(i,1);for(const item of items)GRAPHS.push({id:'zc_compare_'+item.id.slice(7),title:item.title,group:item.group,scope:'all',opts:[],note:item.note,render:()=>item.figure()});return items;}

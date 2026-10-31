@@ -1,0 +1,1 @@
+e=>/slope.*logs/.test(e.textContent)

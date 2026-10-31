@@ -1,0 +1,1 @@
+function(r,a){if(function(e,t){var r=e.startangle,n=e.stopangle;return r>t&&t>n||r<t&&t<n}(t,r)){var l=Math.abs(r-t.startangle),s=Math.abs(r-t.stopangle),c=l<s?l:s;(i="tan"===a?M(e,n,o,c,0):T(e,n,o,c,Math.PI/2)).textPosAngle=r,v.push(i)}}

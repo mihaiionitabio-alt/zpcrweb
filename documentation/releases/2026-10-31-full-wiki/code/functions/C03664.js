@@ -1,0 +1,1 @@
+function cn(e){return i.merge(e.map((function(e){return(e.children||[]).map((function(t){return{source:e,target:t}}))})))}

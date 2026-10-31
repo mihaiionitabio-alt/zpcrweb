@@ -1,0 +1,1 @@
+(){return SEL_STATE.lastReport?.bytes||0}

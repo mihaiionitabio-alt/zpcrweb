@@ -1,0 +1,1 @@
+(r,i)=>[`${i+1}. ${r.file}`,`${r.type}: ${r.actual}`]

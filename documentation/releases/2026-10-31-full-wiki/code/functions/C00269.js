@@ -1,0 +1,1 @@
+function(e,t,r){var n=t?o.nestedProperty(e,t).get()||{}:e,a=n[r||"color"];a&&a._inputArray&&(a=a._inputArray);var l=!1;if(o.isArrayOrTypedArray(a))for(var c=0;c<a.length;c++)if(i(a[c])){l=!0;break}return o.isPlainObject(n)&&(l||!0===n.showscale||i(n.cmin)&&i(n.cmax)||s(n.colorscale)||o.isPlainObject(n.colorbar))}

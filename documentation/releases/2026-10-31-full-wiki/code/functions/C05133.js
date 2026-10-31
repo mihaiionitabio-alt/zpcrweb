@@ -1,0 +1,1 @@
+function(...a){if(called)throw Error('Hook called next twice: '+entry.id);called=true;return next.apply(context,a);}

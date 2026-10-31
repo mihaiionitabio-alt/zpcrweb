@@ -1,0 +1,1 @@
+function(){if("SVG"!==i)return MathJax.Hub.setRenderer(i)}

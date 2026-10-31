@@ -1,0 +1,1 @@
+function Z(e,t){if(l){var r=void 0!==e.onwheel?"wheel":"mousewheel";e._onwheel&&e.removeEventListener(r,e._onwheel),e._onwheel=t,e.addEventListener(r,t,{passive:!1})}else void 0!==e.onwheel?e.onwheel=t:void 0!==e.onmousewheel?e.onmousewheel=t:e.isAddedWheelEvent||(e.isAddedWheelEvent=!0,e.addEventListener("wheel",t,{passive:!1}))}

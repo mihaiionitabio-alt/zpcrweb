@@ -1,0 +1,1 @@
+()=>chart('heat_rate')

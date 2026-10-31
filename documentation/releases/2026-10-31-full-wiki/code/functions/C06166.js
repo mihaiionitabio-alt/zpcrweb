@@ -1,0 +1,1 @@
+function gTargets(run){return uniq(ssWells(run).map(w=>w.target||w.analysis).filter(Boolean));}

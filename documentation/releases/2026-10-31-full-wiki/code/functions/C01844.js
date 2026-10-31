@@ -1,0 +1,1 @@
+function _(e){return e===Math.round(e)&&e>=0}

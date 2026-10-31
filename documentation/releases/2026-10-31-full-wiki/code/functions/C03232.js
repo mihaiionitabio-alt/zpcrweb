@@ -1,0 +1,1 @@
+function $(e){return"function"==typeof e?e:function(){return J(e,this)}}

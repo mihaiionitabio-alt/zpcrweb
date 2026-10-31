@@ -1,0 +1,1 @@
+s=>{let x=0;for(const ch of s)x=(Math.imul(31,x)+ch.charCodeAt(0))|0;return x>>>0;}

@@ -1,0 +1,8 @@
+next=>function(){
+ next();const select=astEl('ast-run'),label=select.closest('label');label.firstChild.textContent=ui('Runs for standard figures');
+ document.getElementById('ast-coverage-help')?.remove();
+ let tools=document.getElementById('ast-available-tools');if(!tools){tools=document.createElement('div');tools.id='ast-available-tools';const all=document.createElement('button'),none=document.createElement('button');all.type=none.type='button';all.textContent=ui('Select all available');none.textContent=ui('Clear selection');all.onclick=()=>{for(const x of selCatalogue().filter(reportItemVisible))SEL_STATE.ids.add(x.id);astRender();};none.onclick=()=>{SEL_STATE.ids.clear();astRender();};tools.append(all,none);astEl('ast-list').prepend(tools);}
+ const manifestInput=astEl('ast-list').querySelector('input[data-id="data:source_manifest"]');if(manifestInput){const required=selSelected().some(item=>item.id!=='data:source_manifest');manifestInput.checked=required||SEL_STATE.ids.has('data:source_manifest');manifestInput.disabled=required;manifestInput.closest('label').removeAttribute('title');}
+ const empty=astEl('ast-list').querySelector('.ast-empty');empty?.remove();if(!astEl('ast-list').querySelector('.ast-group')){const p=document.createElement('p');p.className='ast-empty';p.textContent=ui('No report items are available for this selection. Choose another run or load decoded data.');astEl('ast-list').append(p);}
+ const endpoint=document.getElementById('assisted-endpoint');if(endpoint)endpoint.hidden=!RUNS.some(r=>r.zpcr||r.pcrd||r.cfxRDML);
+}

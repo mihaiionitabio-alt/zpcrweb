@@ -1,0 +1,1 @@
+p=>names.some(n=>sopMatcher(p)(n))

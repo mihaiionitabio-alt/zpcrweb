@@ -1,0 +1,10 @@
+g=>({
+    experiment:g.experiment,analysis:g.analysis,target:g.target,results:g.rows.length,
+    amplified:g.cq.length,uncertain:g.rows.filter(w=>w.call==="Uncertain").length,
+    missing_curves:g.rows.filter(w=>!w.curve).length,
+    mean:mean(g.cq),sd:sd(g.cq),cv:cv(g.cq),min:g.cq.length?Math.min(...g.cq):NaN,
+    q1:percentile(g.cq,.25),median:median(g.cq),q3:percentile(g.cq,.75),
+    max:g.cq.length?Math.max(...g.cq):NaN,
+    concentration_n:g.conc.length,concentration_mean:mean(g.conc),
+    concentration_sd:sd(g.conc),concentration_cv:cv(g.conc)
+  })

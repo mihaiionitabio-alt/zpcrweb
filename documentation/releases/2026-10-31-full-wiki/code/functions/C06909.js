@@ -1,0 +1,1 @@
+r=>r.instrument===inst.key&&r.protocol===proto

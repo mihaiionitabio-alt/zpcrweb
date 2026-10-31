@@ -1,0 +1,1 @@
+function(e){return e.reduce((function(e,t){return e+t.x}),0)/e.length}

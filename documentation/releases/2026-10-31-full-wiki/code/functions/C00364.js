@@ -1,0 +1,1 @@
+function N(e,t,r,n){var a=e[0]-t[0],i=e[1]-t[1],o=r[0]-t[0],l=r[1]-t[1],s=Math.pow(a*a+i*i,.25),c=Math.pow(o*o+l*l,.25),u=(c*c*a-s*s*o)*n,f=(c*c*i-s*s*l)*n,d=3*c*(s+c),h=3*s*(s+c);return[[E(t[0]+(d&&u/d)),R(t[1]+(d&&f/d))],[E(t[0]-(h&&u/h)),R(t[1]-(h&&f/h))]]}

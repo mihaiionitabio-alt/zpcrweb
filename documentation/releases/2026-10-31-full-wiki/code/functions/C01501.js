@@ -1,0 +1,1 @@
+function(e){var t=window.getComputedStyle(e).display;return!t||"none"===t}

@@ -1,0 +1,1 @@
+e=>e.rows.filter(r=>r.ctrl).map(r=>({e,r}))

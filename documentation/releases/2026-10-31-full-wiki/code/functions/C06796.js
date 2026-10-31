@@ -1,0 +1,1 @@
+p=>({x:p.n,y:p.y,text:"  "+p.operator,size:10})

@@ -1,0 +1,1 @@
+(a,b)=>order.indexOf(a)-order.indexOf(b)

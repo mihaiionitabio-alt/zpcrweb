@@ -1,0 +1,2 @@
+()=>{const only=mv.holdout.keys.filter(k=>keys.indexOf(k)<0);
+          return only.length?` ${only.length} of those metric(s) are not in the cohort-wide set above, because they are recorded often enough inside the training period but not across the whole cohort: ${only.join(", ")}.`:"";}

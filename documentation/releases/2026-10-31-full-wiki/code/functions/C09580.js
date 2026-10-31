@@ -1,0 +1,1 @@
+r=>r.layout.position===w.pos

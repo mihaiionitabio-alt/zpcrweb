@@ -1,0 +1,1 @@
+function(){32==i.event.keyCode&&(M||(f=null,A[0]-=o[1],A[1]-=l[1],M=2),Y())}

@@ -1,0 +1,1 @@
+()=>cfxFigure(r,metric)

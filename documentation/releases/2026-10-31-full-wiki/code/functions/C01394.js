@@ -1,0 +1,1 @@
+function l(e){var t=e&&e.parentNode;t&&t.removeChild(e)}

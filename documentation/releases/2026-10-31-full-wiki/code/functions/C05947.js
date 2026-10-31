@@ -1,0 +1,1 @@
+v=>Array.isArray(v)?v:[]

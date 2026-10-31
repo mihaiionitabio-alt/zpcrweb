@@ -1,0 +1,1 @@
+r=>r._group===g&&r.metric===metric&&Number.isFinite(r.delta)

@@ -1,0 +1,1 @@
+function pdfUnicodeWidth(s,size){let n=0;for(const ch of String(s))n+=MISSY_PDF_FONT.widths[ch.codePointAt(0)]??1000;return n*size/1000;}

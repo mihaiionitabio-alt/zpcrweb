@@ -1,0 +1,1 @@
+function(e,r){return r||(r=t.len(e)),Math.pow(t.aggNums((function(e,t){return e*t}),1,e),1/r)}

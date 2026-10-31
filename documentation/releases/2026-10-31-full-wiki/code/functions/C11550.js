@@ -1,0 +1,1 @@
+()=>resultView(()=>failed()[0])

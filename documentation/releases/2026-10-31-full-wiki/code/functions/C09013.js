@@ -1,0 +1,1 @@
+(x,i)=>Array.from({length:x.reads[0].channels},(_,c)=>({run:i,channel:c,points:[[c+1,fn(x,c)]]}))

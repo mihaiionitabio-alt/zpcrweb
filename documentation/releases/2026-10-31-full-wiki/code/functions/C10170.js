@@ -1,0 +1,1 @@
+d=>String.fromCharCode(d.charCodeAt(0)-0xfee0)

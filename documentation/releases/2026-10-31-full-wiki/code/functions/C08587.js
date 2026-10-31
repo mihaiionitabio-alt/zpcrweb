@@ -1,0 +1,1 @@
+nm=>{const f=list.find(q=>q.name===nm);return f?f.value:NaN;}

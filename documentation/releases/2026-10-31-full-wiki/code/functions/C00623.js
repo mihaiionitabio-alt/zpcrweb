@@ -1,0 +1,1 @@
+function(){var t=document.createElement("canvas");t.width=this.width,t.height=this.height,t.getContext("2d",{willReadFrequently:!0}).drawImage(this,0,0);var n=t.toDataURL("image/png");r.attr("xlink:href",n),e()}

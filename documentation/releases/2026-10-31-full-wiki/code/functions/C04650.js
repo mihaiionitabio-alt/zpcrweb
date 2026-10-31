@@ -1,0 +1,1 @@
+function(e,t,r){return n("status",{seg:e,above:t,below:r})}

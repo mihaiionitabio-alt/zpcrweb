@@ -1,0 +1,1 @@
+c=>({x:S.x[c.index],label:ui("level change"),colour:"#7c3aed",dash:"3 3",row:0})

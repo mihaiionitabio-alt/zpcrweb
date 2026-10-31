@@ -1,0 +1,1 @@
+()=>{const r=L.g.render(Object.assign({},L.c,{run:RUNS[L.c.ri]}));download(graphFileBase()+".csv",csvOf(r.rows),"text/csv");}

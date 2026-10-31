@@ -1,0 +1,1 @@
+function(e,t,r){"use strict";var n=r(4809);e.exports=function(e){return n.isPlainObject(e.colorbar)}}

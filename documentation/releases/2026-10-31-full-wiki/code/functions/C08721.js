@@ -1,0 +1,1 @@
+r=>r.serials.base!==first?.serials.base||r.serials.head!==first?.serials.head||r.rows!==first?.rows||r.cols!==first?.cols||r.channels!==first?.channels

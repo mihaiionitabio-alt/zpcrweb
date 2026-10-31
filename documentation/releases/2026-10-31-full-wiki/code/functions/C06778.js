@@ -1,0 +1,1 @@
+p=>[p.y,p.ucl,p.lcl]

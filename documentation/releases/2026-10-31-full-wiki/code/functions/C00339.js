@@ -1,0 +1,1 @@
+function(e){var t=e._fullLayout;a.ensureSingle(t._defs,"g","gradients").selectAll("linearGradient,radialGradient").remove(),n.select(e).selectAll(".gradient_filled").classed("gradient_filled",!1)}

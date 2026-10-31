@@ -1,0 +1,1 @@
+function(e,t){return n("chain_new",{pt1:e,pt2:t})}

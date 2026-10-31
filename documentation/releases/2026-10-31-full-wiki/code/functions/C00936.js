@@ -1,0 +1,1 @@
+function(e,t){var r=e._fullLayout,n=t[l],s=t._id.charAt(0),c=0,u=0;return"bottom"===t.side&&(c=t._depth,t.title.text!==r._dfltTitle[s]&&(u=1.5*t.title.font.size+10+n._offsetShift,u+=(t.title.text.match(a.BR_TAG_ALL)||[]).length*t.title.font.size*o)),{x:0,y:t._counterDomainMin,l:0,r:0,t:0,b:n._height+c+Math.max(r.margin.b,u),pad:i.extraPad+2*n._offsetShift}}

@@ -1,0 +1,1 @@
+(){return window.speechSynthesis?.getVoices().filter(v=>v.localService)||[];}

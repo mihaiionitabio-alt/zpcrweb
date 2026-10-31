@@ -1,0 +1,1 @@
+function X(e,t){var r=e[0]-t[0],n=e[1]-t[1];return Math.sqrt(r*r+n*n)}

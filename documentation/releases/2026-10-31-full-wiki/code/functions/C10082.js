@@ -1,0 +1,1 @@
+x=>`<option value="${esc(x)}"${(SOP.method.selected_assays||[]).includes(x)?' selected':''} data-i18n-skip>${esc(x)}</option>`

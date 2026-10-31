@@ -1,0 +1,1 @@
+function ct(e){return e<16?"0"+Math.max(0,e).toString(16):Math.min(255,e).toString(16)}

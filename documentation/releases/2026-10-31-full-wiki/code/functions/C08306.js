@@ -1,0 +1,1 @@
+()=>{const box=cmdEl("cmd-script");cmdRunScript(box.value||box.getAttribute("placeholder")||"");}

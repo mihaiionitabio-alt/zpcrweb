@@ -1,0 +1,1 @@
+s=>!s.zipNames&&/<experimentalData2\b/.test(new TextDecoder().decode(s.bytes.subarray(0,2048)))

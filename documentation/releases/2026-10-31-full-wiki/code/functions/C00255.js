@@ -1,0 +1,1 @@
+function c(e,t){var r=t.slice(0,t.length-1);return t?a.nestedProperty(e,r).get()||{}:e}

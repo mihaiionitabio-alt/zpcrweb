@@ -1,0 +1,1 @@
+w=>i<w.curve.length?w.curve[i]:""

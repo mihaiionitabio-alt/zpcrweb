@@ -1,0 +1,1 @@
+function(r){return t[r].anchor===e._id}

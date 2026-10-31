@@ -1,0 +1,1 @@
+(v,i)=>({robust:rob[i],local:local[i],novelty:nov[i],score:own[i]})

@@ -1,0 +1,1 @@
+function(e){return arguments.length?a.response(null==(r=e)?i:o(e)):r}

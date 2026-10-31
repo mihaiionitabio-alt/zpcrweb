@@ -1,0 +1,1 @@
+function qe(e,t,r){var n,a;function i(e){return Math.round(255*function(e){return e>360?e-=360:e<0&&(e+=360),e<60?n+(a-n)*e/60:e<180?a:e<240?n+(a-n)*(240-e)/60:n}(e))}return e=isNaN(e)?0:(e%=360)<0?e+360:e,t=isNaN(t)||t<0?0:t>1?1:t,n=2*(r=r<0?0:r>1?1:r)-(a=r<=.5?r*(1+t):r+t-r*t),new it(i(e+120),i(e),i(e-120))}

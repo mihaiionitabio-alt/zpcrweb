@@ -1,0 +1,1 @@
+p=>p.pre?"#cbd5e1":ccSignal(p)==="limit"?CC_COL.bad:ccSignal(p)==="rule"?CC_COL.rule:byOp?catColour(opCol,p.row.operator):bySeg?segColour(segCol,p.segment):CC_COL.pt

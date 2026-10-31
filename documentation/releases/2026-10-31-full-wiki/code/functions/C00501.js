@@ -1,0 +1,1 @@
+function(e,r){if("splom"===e.type){for(var n=e.xaxes||[],a=e.yaxes||[],i=0;i<n.length;i++)for(var o=0;o<a.length;o++)if(-1!==r.indexOf(n[i]+a[o]))return!0;return!1}return-1!==r.indexOf(t.getSubplot(e))}

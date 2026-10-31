@@ -1,0 +1,1 @@
+(r,i)=>!Number.isInteger(r.scanIndex)||r.scanIndex!==i+1

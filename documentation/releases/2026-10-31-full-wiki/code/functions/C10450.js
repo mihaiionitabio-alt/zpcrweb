@@ -1,0 +1,1 @@
+next=>function(){return next().concat({title:'Native reading excerpt (CSV)',note:'',ready:()=>RUNS.length>0,run:()=>download('native_reading_excerpt.csv',csvOf(rows(false)),'text/csv')});}

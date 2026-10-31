@@ -1,0 +1,1 @@
+function Ct(e){return e[1]}

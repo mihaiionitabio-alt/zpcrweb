@@ -1,0 +1,1 @@
+()=>downloadCanvas(drawPlateMapImage(),safeName(runName(runAt("#plate-run",0)))+"_plate_map.png")

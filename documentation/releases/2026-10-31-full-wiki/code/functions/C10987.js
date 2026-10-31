@@ -1,0 +1,1 @@
+function UA(A){return 48<=A&&A<=57}

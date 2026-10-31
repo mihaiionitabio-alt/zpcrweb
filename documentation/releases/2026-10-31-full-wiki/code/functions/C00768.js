@@ -1,0 +1,1 @@
+function(e){return c(e,"Draw closed freeform")}

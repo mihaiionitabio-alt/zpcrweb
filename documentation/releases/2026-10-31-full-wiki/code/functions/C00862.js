@@ -1,0 +1,1 @@
+function(e,t){return t._isActive||t._isHovered?e.activecolor:e.bgcolor}

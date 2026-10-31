@@ -1,0 +1,1 @@
+image=>{if(overlay===ownedOverlay)screenshots[id]=image;}

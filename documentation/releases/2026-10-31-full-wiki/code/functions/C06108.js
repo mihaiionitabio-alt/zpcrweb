@@ -1,0 +1,1 @@
+r=>!ssNameControl(r)&&r.targets.length&&!/^\(unnamed well /.test(r.sample)

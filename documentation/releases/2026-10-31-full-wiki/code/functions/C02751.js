@@ -1,0 +1,1 @@
+function(e){return Math.min(k(e),e.p-y.bargroupwidth/2)}

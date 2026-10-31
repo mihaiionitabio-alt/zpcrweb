@@ -1,0 +1,1 @@
+ab=>res(new Uint8Array(ab))

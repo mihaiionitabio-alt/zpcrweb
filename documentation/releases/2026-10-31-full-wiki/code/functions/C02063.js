@@ -1,0 +1,1 @@
+function(e,t){var r=e._categories[Math.round(t.x)];void 0===r&&(r=""),t.text=String(r)}

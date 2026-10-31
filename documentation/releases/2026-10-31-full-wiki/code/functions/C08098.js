@@ -1,0 +1,1 @@
+(s,dy,fs,ls,fill)=>`<text x="${x}" y="${(y+dy).toFixed(2)}" text-anchor="${anchor}" font-family='${MISSY_FACE}' font-size="${fs.toFixed(2)}" font-weight="700" letter-spacing="${ls.toFixed(2)}" fill="${fill}">${s}</text>`

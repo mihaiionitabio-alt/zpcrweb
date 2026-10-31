@@ -1,0 +1,2 @@
+c=>({file:c.file,calibration:c.name,id:c.id,performed:EDS.dt(c.ts),expires:EDS.dt(c.exp),
+      status_on_run_date:c.exp&&p.exp.runStart&&c.exp<p.exp.runStart?"expired":"valid",operator:c.operator,version:c.version})

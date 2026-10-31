@@ -1,0 +1,1 @@
+(code,status,detail)=>facts.push({code,status_code:status,detail:String(detail??'')})

@@ -1,0 +1,1 @@
+function zhPhrase(value){return MISSY_HOOKS.invoke('i18n.phrase',this,[value],zhPhraseBase);}

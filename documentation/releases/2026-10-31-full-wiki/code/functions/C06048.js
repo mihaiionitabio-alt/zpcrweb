@@ -1,0 +1,1 @@
+function plotArm(){PLOT_CAPTURE=[];return PLOT_CAPTURE;}

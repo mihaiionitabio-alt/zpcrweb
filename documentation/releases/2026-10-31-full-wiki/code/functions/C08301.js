@@ -1,0 +1,1 @@
+function cmdClose(){CMD.open=false;document.getElementById("cmdm").classList.remove("on");}

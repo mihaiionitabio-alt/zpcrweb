@@ -1,0 +1,1 @@
+s=>({name:txt(s,"Name"),color:argb(txt(s,"Color")),conc:txt(s,"Concentration")})

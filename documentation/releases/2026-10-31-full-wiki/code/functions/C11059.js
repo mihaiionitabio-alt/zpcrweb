@@ -1,0 +1,1 @@
+function Ie(A,e){return Math.sqrt(A*A+e*e)}

@@ -1,0 +1,1 @@
+function A(e){var t={};void 0!==i.isActiveShape&&(i.isActiveShape=!1,t=b(r,i)),void 0!==i.isActiveSelection&&(i.isActiveSelection=!1,t=w(r,i),g._fullLayout._reselect=!0),Object.keys(t).length&&s.call((e||{}).redrawing?"relayout":"_guiRelayout",g,t)}

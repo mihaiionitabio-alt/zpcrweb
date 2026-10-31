@@ -1,0 +1,1 @@
+function(e,t,r,a,i){i=i||{},a("textposition"),n.coerceFont(a,"textfont",i.font||r.font,i),i.noSelect||(a("selected.textfont.color"),a("unselected.textfont.color"))}

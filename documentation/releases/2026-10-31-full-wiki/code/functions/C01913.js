@@ -1,0 +1,1 @@
+function(e,t,r,n,a){var i="paper"===t.yref?e._fullLayout._size.h:e._fullLayout.height,l=o.isTopAnchor(t)?n:n-a,s="b"===r?i-l:l;return!(o.isTopAnchor(t)&&"t"===r||o.isBottomAnchor(t)&&"b"===r)&&s<a}

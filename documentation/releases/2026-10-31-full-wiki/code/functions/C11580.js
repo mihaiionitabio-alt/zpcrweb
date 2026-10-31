@@ -1,0 +1,1 @@
+()=>orphanCurveCandidates(final).filter(w=>!w.sample).length

@@ -1,0 +1,1 @@
+x=>[x.measurementKey,x.reportPanel.title]

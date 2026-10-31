@@ -1,0 +1,1 @@
+function a(e){e.clearCalc(),"multicategory"===e.type&&e.setupMultiCategory(t),n[e._id]=1}

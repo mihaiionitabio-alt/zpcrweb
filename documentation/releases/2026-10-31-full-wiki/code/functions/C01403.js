@@ -1,0 +1,1 @@
+function(e){var t="plotly.js-style-"+e,r=document.getElementById(t);r&&l(r)}

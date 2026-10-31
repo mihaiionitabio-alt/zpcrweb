@@ -1,0 +1,1 @@
+b=>b.onclick=()=>mgScope(b.dataset.tab)

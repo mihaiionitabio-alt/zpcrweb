@@ -1,0 +1,1 @@
+function l(){return i++,function(){var t;o++,n||o!==i||(t=a,e._transitionData&&(function(e){if(e)for(;e.length;)e.shift()}(e._transitionData._interruptCallbacks),Promise.resolve().then((function(){if(r.redraw)return s.call("redraw",e)})).then((function(){e._transitioning=!1,e._transitioningWithDuration=!1,e.emit("plotly_transitioned",[])})).then(t)))}}

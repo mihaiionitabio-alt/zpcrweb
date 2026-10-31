@@ -1,0 +1,1 @@
+function(e){return!e||/^\d[.]\df/.test(e)||/[.]\d%/.test(e)?e:"0.f"===e?"~f":/^\d%/.test(e)?"~%":/^\ds/.test(e)?"~s":!/^[~,.0$]/.test(e)&&/[&fps]/.test(e)?"~"+e:e}

@@ -1,0 +1,1 @@
+function(){r=1,k(i.mouse(e),a),C(t)}

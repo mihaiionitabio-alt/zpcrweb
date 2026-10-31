@@ -1,0 +1,1 @@
+()=>{URL.revokeObjectURL(a.href);a.remove()}

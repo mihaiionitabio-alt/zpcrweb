@@ -1,0 +1,1 @@
+function A(e){var t=d(e).toHsl(),r=t.h;return[d(e),d({h:(r+90)%360,s:t.s,l:t.l}),d({h:(r+180)%360,s:t.s,l:t.l}),d({h:(r+270)%360,s:t.s,l:t.l})]}

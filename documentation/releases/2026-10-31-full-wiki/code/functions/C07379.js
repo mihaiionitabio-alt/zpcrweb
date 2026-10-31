@@ -1,0 +1,1 @@
+()=>{const rows=rqRows();download(baseName()+"_relative_quantification.csv",toCSV(Object.keys(rows[0]).map(k=>({key:k,label:k})),rows),"text/csv");}

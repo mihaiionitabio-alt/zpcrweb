@@ -1,0 +1,1 @@
+function(e){t.isValObject(e)&&"anim"in e&&delete e.anim}

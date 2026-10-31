@@ -1,0 +1,1 @@
+()=>rows().length>0

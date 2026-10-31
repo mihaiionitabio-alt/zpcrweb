@@ -1,0 +1,1 @@
+function F(e){return a.round(255*parseFloat(e)).toString(16)}

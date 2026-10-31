@@ -1,0 +1,1 @@
+r=>{const o=SOP.outcomes[r.sample_outcome]||SOP_OUTCOME_DEFAULTS[r.sample_outcome]||{},hideInformational=r.sample_outcome==="Negative"&&!r.action;return Object.assign({},r,{sample_outcome:hideInformational?"":`<span class="sop-pill" style="background:${esc(o.colour||"#94a3b8")}">${esc(o.label||r.sample_outcome)}</span>`});}

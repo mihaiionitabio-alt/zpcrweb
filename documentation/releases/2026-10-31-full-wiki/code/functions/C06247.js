@@ -1,0 +1,1 @@
+t=>({type:"points",colour:catColour(cm,t),r:4.5,data:rs.filter(r=>r.target===t).map(r=>[samples.indexOf(r.sample),Number.isFinite(r.cqMean)?r.cqMean:NaN,graphHoverLabel(c.run,{well:r.wells&&r.wells[0]&&r.wells[0].well,sample:r.sample},`${t} · ${num(r.cqMean,2)} · ${r.label}`)])})

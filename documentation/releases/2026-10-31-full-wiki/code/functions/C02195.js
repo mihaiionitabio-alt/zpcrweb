@@ -1,0 +1,1 @@
+function(e,t){var r,n=e._fullLayout._size,a=t._id.charAt(0),i=t.side;return"free"!==t.anchor?r=t._anchorAxis:"x"===a?r={_offset:n.t+(1-(t.position||0))*n.h,_length:0}:"y"===a&&(r={_offset:n.l+(t.position||0)*n.w+t._shift,_length:0}),"top"===i||"left"===i?r._offset:"bottom"===i||"right"===i?r._offset+r._length:void 0}

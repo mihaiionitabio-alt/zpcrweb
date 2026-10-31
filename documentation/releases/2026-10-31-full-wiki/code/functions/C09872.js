@@ -1,0 +1,1 @@
+r=>r.role==='calibrator'&&r.assay===a

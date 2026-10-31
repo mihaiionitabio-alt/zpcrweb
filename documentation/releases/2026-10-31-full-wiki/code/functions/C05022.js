@@ -1,0 +1,1 @@
+function(e){return this._validate(e,this.minMonth,this.minDay,c.local.invalidYear||c.regionalOptions[""].invalidYear).year()<0?this.local.epochs[0]:this.local.epochs[1]}

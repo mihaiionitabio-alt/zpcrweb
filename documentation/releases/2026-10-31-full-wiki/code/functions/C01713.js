@@ -1,0 +1,1 @@
+function(e,t,r){var a=e.obj,i=e.parts,l=i.length,s=i[l-1],c=n(s);if(c&&null===t){var u=i.slice(0,l-1).join(".");o.nestedProperty(a,u).get().splice(s,1)}else c&&void 0===e.get()?(void 0===e.get()&&(r[e.astr]=null),e.set(t)):e.set(t)}

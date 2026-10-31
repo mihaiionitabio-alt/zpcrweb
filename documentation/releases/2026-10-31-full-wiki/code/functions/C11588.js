@@ -1,0 +1,1 @@
+()=>{SOP.method={...(SOP.method||{}),applies_when:{run_name_pattern:'^NOT_THIS_TRAINING_RUN$'}};sopChanged();refreshAll();page('results');focus(document.getElementById('sop-results'));}

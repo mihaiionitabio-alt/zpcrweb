@@ -1,0 +1,1 @@
+r=>r?r[pos]:NaN

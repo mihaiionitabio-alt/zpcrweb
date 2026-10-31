@@ -1,0 +1,1 @@
+function Me(e){var t=".dragsuppress-"+ ++Te,r="click"+t,n=i.select(u(e)).on("touchmove"+t,Y).on("dragstart"+t,Y).on("selectstart"+t,Y);if(null==we&&(we=!("onselectstart"in e)&&N(e.style,"userSelect")),we){var a=c(e).style,o=a[we];a[we]="none"}return function(e){if(n.on(t,null),we&&(a[we]=o),e){var i=function(){n.on(r,null)};n.on(r,(function(){Y(),i()}),!0),setTimeout(i,0)}}}

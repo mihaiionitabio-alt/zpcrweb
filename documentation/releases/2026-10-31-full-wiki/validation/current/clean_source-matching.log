@@ -1,0 +1,1 @@
+PASS frozen metadata only; original hashes/names, case comparison, zero bytes, missing/invalid hashes, count conflicts, detached output; no rehash/analysis/selection/reader access

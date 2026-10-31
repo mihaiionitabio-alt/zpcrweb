@@ -1,0 +1,1 @@
+e=>/^Profile not applicable/.test(e.status)

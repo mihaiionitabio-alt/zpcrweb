@@ -1,0 +1,1 @@
+(x,i)=>Array.from({length:x.reads[0].channels},(_,c)=>{const first=fn(x.reads[0],c,x.run);return {run:i,channel:c,points:x.reads.map((r,j)=>[j+1,first===0?NaN:100*(fn(r,c,x.run)/first-1)])};})

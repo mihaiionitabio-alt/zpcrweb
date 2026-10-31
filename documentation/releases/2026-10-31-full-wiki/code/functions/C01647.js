@@ -1,0 +1,1 @@
+function L(e){if(1!==s.length){var n=s.pop();e!==n.type&&a.log("Start tag <"+n.type+"> doesnt match end tag <"+e+">. Pretending it did match.",t),r=s[s.length-1].node}else a.log("Ignoring unexpected end tag </"+e+">.",t)}

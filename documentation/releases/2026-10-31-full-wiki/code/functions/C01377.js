@@ -1,0 +1,1 @@
+function(e,t){return _(e)?t?g.getComponentMethod("calendars","CANONICAL_SUNDAY")[e]:g.getComponentMethod("calendars","CANONICAL_TICK")[e]:t?"2000-01-02":"2000-01-01"}

@@ -1,0 +1,1 @@
+function(e,t,r){var a=this._validate(e,t,r,n.local.invalidDate).toJD(),i=this._toHaab(a),o=this._toTzolkin(a);return{haabMonthName:this.local.haabMonths[i[0]-1],haabMonth:i[0],haabDay:i[1],tzolkinDayName:this.local.tzolkinMonths[o[0]-1],tzolkinDay:o[0],tzolkinTrecena:o[1]}}

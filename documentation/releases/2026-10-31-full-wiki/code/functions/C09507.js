@@ -1,0 +1,1 @@
+()=>{if(cfxRuns().length){cmdScriptToggle(true);cmdEl('cmd-script').value=cfxReportScript();}else next();}

@@ -1,0 +1,1 @@
+function(e,t){for(var r=e.traces,n=0;n<r.length;n++){var a=r[n];if(void 0===a[0].trace.base)for(var o=new c([a],{posAxis:t,sepNegVal:!0,overlapNoMerge:!0}),l=0;l<a.length;l++){var s=a[l];if(s.p!==i){var u=o.put(s.p,s.b+s.s);u&&(s.b=u)}}}}

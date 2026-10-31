@@ -1,0 +1,1 @@
+e=>/\/quant\/[^/]+\.xml$/.test(e.name)

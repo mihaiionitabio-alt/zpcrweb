@@ -1,0 +1,1 @@
+function bB(A,e){A=mB.call(this,A,e)||this;return A.value=e.value,A}

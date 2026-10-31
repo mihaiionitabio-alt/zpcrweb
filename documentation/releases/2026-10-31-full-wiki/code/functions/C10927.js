@@ -1,0 +1,1 @@
+(c,s){const st=find(c,s),k=c+'/'+s,n=Math.min(3,(usedHints.get(k)||0)+1);usedHints.set(k,n);return st.hints[n-1];}

@@ -1,0 +1,1 @@
+function parse(text){const s=String(text).trim().toLowerCase().replace(/^number\s+/,'').replace(/[.!?。！？]+$/,'').trim().replace(/[\uff10-\uff19]/g,d=>String.fromCharCode(d.charCodeAt(0)-0xfee0));if(/^(?:[0-9]|1[0-5])$/.test(s))return Number(s);const i=words.indexOf(s);return i<0?null:i;}

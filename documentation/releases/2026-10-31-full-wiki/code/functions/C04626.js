@@ -1,0 +1,1 @@
+function(e){return{segments:s.intersect(e.combined,u),inverted:e.inverted1&&e.inverted2}}

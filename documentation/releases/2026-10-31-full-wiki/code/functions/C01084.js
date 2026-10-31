@@ -1,0 +1,1 @@
+function(){return function(e,t){if(_(e)){var r=+t.node().getAttribute("data-index");if(r>=0){if(r===e._fullLayout._activeShapeIndex)return void k(e);e._fullLayout._activeShapeIndex=r,e._fullLayout._deactivateShape=k,x(e)}}}(e,N)}

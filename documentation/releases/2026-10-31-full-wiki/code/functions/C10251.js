@@ -1,0 +1,1 @@
+w=>w.role==='Standard'

@@ -1,0 +1,1 @@
+k=>({key:k,label:k,n:typeof tableRows[0][k]==="number"})

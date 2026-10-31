@@ -1,0 +1,1 @@
+w=>`${w.well} ${w.sample} ${w.target} Ct ${num(w.CpRaw,2)} conf ${num(Number(w.eds.cqConf),3)}`

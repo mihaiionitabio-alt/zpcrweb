@@ -1,0 +1,1 @@
+function w(n){n.preventDefault();var a=f(n),i=e.minDrag||l.MINDRAG,o=b(a[0]-t,a[1]-r,i),c=o[0],u=o[1];(c||u)&&(g._dragged=!0,s.unhover(g,n)),g._dragged&&e.moveFn&&!v&&(g._dragdata={element:x,dx:c,dy:u},e.moveFn(c,u))}

@@ -1,0 +1,1 @@
+function D(e,t){var r=e.trace,n=t.h*(r.domain.y[1]-r.domain.y[0]);return Math.min(e.titleBox.height,n/2)}

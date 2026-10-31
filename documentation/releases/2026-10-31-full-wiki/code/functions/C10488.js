@@ -1,0 +1,1 @@
+next=>async function(raw){if(String(raw).trim().toLowerCase()==='context'){cmdTable(rows(true).map(r=>[r.filename,[r.context_field,r.context_value,r.context_state,r.context_scope,r.context_basis].filter(Boolean).join(' · ')]),true);return;}return next(raw);}

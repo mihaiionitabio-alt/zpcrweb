@@ -1,0 +1,1 @@
+(v,i)=>Number(v)-Number(e.curve[Math.max(0,e.curve.length-tailK)-1+i])

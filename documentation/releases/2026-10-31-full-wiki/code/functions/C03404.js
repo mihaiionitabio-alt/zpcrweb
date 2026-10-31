@@ -1,0 +1,1 @@
+function it(e,t,r){return this instanceof it?(this.r=~~e,this.g=~~t,void(this.b=~~r)):arguments.length<2?e instanceof it?new it(e.r,e.g,e.b):ut(""+e,it,qe):new it(e,t,r)}

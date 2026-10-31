@@ -1,0 +1,1 @@
+z=>grid.map(n=>[n,Math.min(1,p0+z*Math.sqrt(p0*(1-p0)/n))])

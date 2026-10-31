@@ -1,0 +1,1 @@
+function(e){return e.visible&&e.mode&&-1!==e.mode.indexOf("text")}

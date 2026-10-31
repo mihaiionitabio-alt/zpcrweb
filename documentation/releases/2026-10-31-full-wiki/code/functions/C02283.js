@@ -1,0 +1,1 @@
+function l(){Le="",Te.r=Te.l,Te.t=Te.b,Ce.attr("d","M0,0Z")}

@@ -1,0 +1,1 @@
+function(A){return Math.PI*A/180}

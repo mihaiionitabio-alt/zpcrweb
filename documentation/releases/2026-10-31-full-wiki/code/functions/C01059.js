@@ -1,0 +1,1 @@
+function b(e){return!!e._fullLayout._outlining}

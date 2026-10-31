@@ -1,0 +1,1 @@
+r=>{const k=scope==="all"?"All experiments":r.experiment+"\u0000"+r.ri;if(!groups.has(k))groups.set(k,[]);groups.get(k).push(r);}

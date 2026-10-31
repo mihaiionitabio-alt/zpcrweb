@@ -1,0 +1,1 @@
+function Kr(e){e.fixed&=-5}

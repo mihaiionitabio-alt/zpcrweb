@@ -1,0 +1,1 @@
+function re(e,t){return void 0!==e&&void 0!==t&&e.replace(p," % ")===t.replace(p," % ")}

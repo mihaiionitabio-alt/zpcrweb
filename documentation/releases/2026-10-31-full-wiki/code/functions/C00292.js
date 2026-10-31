@@ -1,0 +1,1 @@
+function(e){return t.freeMode(e)||t.rectMode(e)}

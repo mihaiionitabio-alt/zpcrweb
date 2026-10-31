@@ -1,0 +1,1 @@
+function(){var e=this.namespace;return this.each("end.transition",(function(){var t;this[e].count<2&&(t=this.parentNode)&&t.removeChild(this)}))}

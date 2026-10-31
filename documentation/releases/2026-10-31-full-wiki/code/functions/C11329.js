@@ -1,0 +1,1 @@
+function(A){return t(A)}

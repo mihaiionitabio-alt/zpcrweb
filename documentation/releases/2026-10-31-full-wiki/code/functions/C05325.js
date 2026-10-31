@@ -1,0 +1,1 @@
+p=>({temp:p.temp,fluor:p.values[pos],scalingFactor:p.scalingFactor})

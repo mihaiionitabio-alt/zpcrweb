@@ -1,0 +1,1 @@
+function(e,t){return(100*e).toFixed(t)}

@@ -1,0 +1,1 @@
+r=>r.spec.kind==="ic"&&Number.isFinite(icMedian)&&Number.isFinite(r.cqMean)&&r.cqMean-icMedian>sopNum(SOP.ic.maxShift)

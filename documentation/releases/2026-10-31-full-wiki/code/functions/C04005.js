@@ -1,0 +1,1 @@
+function(e){var t=Math.sqrt(e/(2*Ja)),r=t*Ja;return"M0,"+-t+"L"+r+",0 0,"+t+" "+-r+",0Z"}

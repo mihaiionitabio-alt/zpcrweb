@@ -1,0 +1,1 @@
+function l(e,t){return void 0===e||null===e&&!t.match(o)}

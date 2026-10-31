@@ -1,0 +1,1 @@
+function(e,t,r){if(n(t.start))return r?Math.ceil((e-t.start)/t.size-l)-1:Math.floor((e-t.start)/t.size+l);var i,o,d=0,h=t.length,p=0,v=h>1?(t[h-1]-t[0])/(h-1):1;for(o=v>=0?r?s:c:r?f:u,e+=v*l*(r?-1:1)*(v>=0?1:-1);d<h&&p++<100;)o(t[i=Math.floor((d+h)/2)],e)?d=i+1:h=i;return p>90&&a.log("Long binary search..."),d-1}

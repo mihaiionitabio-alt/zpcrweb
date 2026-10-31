@@ -1,0 +1,1 @@
+function(e,t,r){return"line"!==e.type?void 0:Math.sqrt(Math.pow(l(e,t),2)+Math.pow(s(e,0,r),2))}

@@ -1,0 +1,1 @@
+function(e){var t=e.toRgb();return"rgb("+Math.round(t.r)+", "+Math.round(t.g)+", "+Math.round(t.b)+")"}

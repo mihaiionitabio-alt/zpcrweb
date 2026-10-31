@@ -1,0 +1,1 @@
+function(e){"use strict";e.exports={BENDPX:1.5,MINSELECT:12,SELECTDELAY:100,SELECTID:"-select"}}

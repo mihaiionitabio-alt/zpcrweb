@@ -1,0 +1,1 @@
+function(e){for(var t=e._transitionData._frameHash={},r=e._transitionData._frames,n=0;n<r.length;n++){var a=r[n];a&&a.name&&(t[a.name]=a)}}

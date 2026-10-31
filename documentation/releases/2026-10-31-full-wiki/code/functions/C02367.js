@@ -1,0 +1,1 @@
+function(e,t,r){"use strict";var n=r(7703);e.exports=function(e,t,r,a,i){i||(i={});var o=i.tickSuffixDflt,l=n(e);r("tickprefix")&&r("showtickprefix",l),r("ticksuffix",o)&&r("showticksuffix",l)}}

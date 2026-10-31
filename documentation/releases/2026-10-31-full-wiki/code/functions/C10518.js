@@ -1,0 +1,1 @@
+r=>[r.filename||r.scope_item,[r.scope_item,r.scope_value,r.scope_state,r.scope_basis].filter(Boolean).join(' · ')]

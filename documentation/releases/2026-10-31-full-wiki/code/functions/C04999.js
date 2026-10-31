@@ -1,0 +1,1 @@
+function(e,t,r){if(!this._calendar.isValid(e,t,r))throw(c.local.invalidDate||c.regionalOptions[""].invalidDate).replace(/\{0\}/,this._calendar.local.name);return this._year=e,this._month=t,this._day=r,this}

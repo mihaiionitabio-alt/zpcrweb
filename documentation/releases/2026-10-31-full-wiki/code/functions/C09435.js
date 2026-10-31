@@ -1,0 +1,1 @@
+next => function(){return RUNS.length&&RUNS.every(r=>r.pcrdLocked)?pcrdLockedSummary():next();}

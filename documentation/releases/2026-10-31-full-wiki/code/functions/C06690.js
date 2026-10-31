@@ -1,0 +1,1 @@
+x=>CC_LIMIT_FLAG.test(x)

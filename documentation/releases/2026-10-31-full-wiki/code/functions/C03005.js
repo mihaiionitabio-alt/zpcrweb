@@ -1,0 +1,1 @@
+function(e){var t=e[e.length-1];return e.length>1&&e[0][0]===t[0]&&e[0][1]===t[1]?s.smoothclosed(e.slice(1),T.smoothing):s.smoothopen(e,T.smoothing)}

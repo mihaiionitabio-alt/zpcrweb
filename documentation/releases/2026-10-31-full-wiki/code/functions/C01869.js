@@ -1,0 +1,1 @@
+function c(e,t,r){var i=e[o[t]],s=r+o[t];if(t===o.length-1)h(i)&&a.push(n+s);else if(l[t]){if(Array.isArray(i))for(var u=0;u<i.length;u++)d(i[u])&&c(i[u],t+1,s+"["+u+"].")}else d(i)&&c(i,t+1,s+".")}

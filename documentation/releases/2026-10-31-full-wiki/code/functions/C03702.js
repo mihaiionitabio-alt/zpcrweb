@@ -1,0 +1,1 @@
+function(e){return arguments.length?(r="function"==typeof e?e:vn.get(e)||mn,l):r}

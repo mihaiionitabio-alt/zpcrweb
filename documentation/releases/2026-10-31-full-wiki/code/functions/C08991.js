@@ -1,0 +1,1 @@
+(_,i)=>ZPCR.zpcrWellMean(r,c,run.zpcr.grid.sampleRows+Math.floor(i/r.cols),i%r.cols)

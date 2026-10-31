@@ -1,0 +1,1 @@
+function(e,t,r){"use strict";var n=r(4122);t.name="pie",t.plot=function(e,r,a,i){n.plotBasePlot(t.name,e,r,a,i)},t.clean=function(e,r,a,i){n.cleanBasePlot(t.name,e,r,a,i)}}

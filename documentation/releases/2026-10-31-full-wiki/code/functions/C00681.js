@@ -1,0 +1,1 @@
+function(){(i=(new Date).getTime())-t._legendMouseDownTime<o?l+=1:(l=1,t._legendMouseDownTime=i)}

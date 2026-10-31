@@ -1,0 +1,1 @@
+function c(e){return o.constrain(e,0,n._width)}

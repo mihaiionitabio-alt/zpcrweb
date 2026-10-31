@@ -1,0 +1,1 @@
+x=>typeof x==='string'&&x.trim()

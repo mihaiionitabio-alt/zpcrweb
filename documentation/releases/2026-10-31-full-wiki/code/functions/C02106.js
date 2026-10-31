@@ -1,0 +1,1 @@
+function(e){return"clip"+t._uid+e.x._id+e.y._id}

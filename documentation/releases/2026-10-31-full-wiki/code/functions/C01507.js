@@ -1,0 +1,1 @@
+function(e,t){var r=f.extendFlat({},t);return r.size=Math.max(t.size,e._fullLayout.uniformtext.minsize||0),r}

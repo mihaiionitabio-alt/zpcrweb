@@ -1,0 +1,1 @@
+c=>c.ex===a.numeratorXWL&&(a.numeratorEWL==null||c.em===Number(a.numeratorEWL))

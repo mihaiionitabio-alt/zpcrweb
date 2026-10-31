@@ -1,0 +1,1 @@
+e=>{const k=e.area||"other";const l=by.get(k)||[];l.push(e);by.set(k,l);}

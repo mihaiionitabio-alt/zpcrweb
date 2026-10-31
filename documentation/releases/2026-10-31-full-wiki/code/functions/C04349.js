@@ -1,0 +1,1 @@
+function(t){t.setTime(Math.floor(t/e)*e)}

@@ -1,0 +1,1 @@
+function Z(r){var n=e[r];if(!n)return!1;var a=t.linearized?C.l2p(n.x):C.c2p(n.x),o=t.linearized?O.l2p(n.y):O.c2p(n.y);if(a===i){if(D&&(a=C.c2p(n.x,!0)),a===i)return!1;P&&o===i&&(a*=Math.abs(C._m*I*(C._m>0?l:s)/(O._m*z*(O._m>0?l:s)))),a*=1e3}if(o===i){if(P&&(o=O.c2p(n.y,!0)),o===i)return!1;o*=1e3}return[a,o]}

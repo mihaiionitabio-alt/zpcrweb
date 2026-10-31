@@ -1,0 +1,1 @@
+function I(t,r,n){return i.ensureSingle(t,"text").text(r).attr({class:"bartext bartext-"+M,"text-anchor":"middle","data-notex":1}).call(s.font,n).call(o.convertToTspans,e)}

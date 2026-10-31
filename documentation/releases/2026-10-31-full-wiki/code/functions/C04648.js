@@ -1,0 +1,1 @@
+function(e,t,r){return n("temp_status",{seg:e,above:t,below:r})}

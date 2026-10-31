@@ -1,0 +1,1 @@
+b=>b.onclick=()=>{CC_STATE.open=b.dataset.cc;CC_STATE.variant="";renderCcDetail();$("#cc-detail").scrollIntoView({behavior:"smooth"});}

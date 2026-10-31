@@ -1,0 +1,1 @@
+()=>sound.setVoice(voice.value)

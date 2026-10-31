@@ -1,0 +1,2 @@
+([k,c])=>{ctx.strokeStyle=c;ctx.lineWidth=1.3;ctx.beginPath();
+    L.temps.forEach((t,i)=>{const v=t[k];if(!Number.isFinite(v))return;const x=X(xs[i]),y=Y(v);i?ctx.lineTo(x,y):ctx.moveTo(x,y);});ctx.stroke();}

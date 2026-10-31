@@ -1,0 +1,1 @@
+(r,i)=>({v:i,label:runName(r).slice(0,16),rotate:-40,anchor:"end"})

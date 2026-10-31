@@ -1,0 +1,1 @@
+id=>o[id]=x.flags.some(c=>flagName(c)===id)?"Y":"N"

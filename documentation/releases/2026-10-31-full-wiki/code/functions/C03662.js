@@ -1,0 +1,1 @@
+function ln(e){return e.value}

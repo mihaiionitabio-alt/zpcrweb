@@ -1,0 +1,1 @@
+function Ye(e,t){for(var r=ne.isSubplotConstrained?{x:K,y:X}[e]:ne[e+"axes"],n=ne.isSubplotConstrained?{x:X,y:K}[e]:[],a=0;a<r.length;a++){var i=r[a],o=i._id,l=ne.xLinks[o]||ne.yLinks[o],s=n[0]||Y[l]||J[l];s&&(t?(t[i._name+".range[0]"]=t[s._name+".range[0]"],t[i._name+".range[1]"]=t[s._name+".range[1]"]):i.range=s.range.slice())}}

@@ -1,0 +1,1 @@
+function L(e,t){var r=e._context.locale;r||(r="en-US");var n=!1,a={};function i(e){for(var r=!0,i=0;i<t.length;i++){var o=t[i];a[o]||(e[o]?a[o]=e[o]:r=!1)}r&&(n=!0)}for(var o=0;o<2;o++){for(var l=e._context.locales,c=0;c<2;c++){var u=(l[r]||{}).format;if(u&&(i(u),n))break;l=s.localeRegistry}var f=r.split("-")[0];if(n||f===r)break;r=f}return n||i(s.localeRegistry.en.format),a}

@@ -1,0 +1,1 @@
+()=>!!document.querySelector('#mg.mg-focus')

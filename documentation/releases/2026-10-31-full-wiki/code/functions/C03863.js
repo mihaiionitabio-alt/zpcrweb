@@ -1,0 +1,1 @@
+function(r,i,s){arguments.length<2&&(i=0),arguments.length<3&&(s=i);var c=r[1]<r[0],u=r[c-0],f=(r[1-c]-u)/(e.length-i+2*s);return n=l(u+f*s,f),c&&n.reverse(),a=f*(1-i),t={t:"rangeBands",a:arguments},o}

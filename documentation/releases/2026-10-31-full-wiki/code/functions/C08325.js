@@ -1,0 +1,1 @@
+x=>SEL_STATE.ids.delete(x.id)

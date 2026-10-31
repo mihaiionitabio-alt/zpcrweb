@@ -1,0 +1,1 @@
+function f(e,t){l?n.nestedProperty(s[c],e).set(t):s[c+"."+e]=t}

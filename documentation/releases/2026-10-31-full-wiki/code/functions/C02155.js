@@ -1,0 +1,1 @@
+function(t,r,n){return"right"===e.side&&(r*=-1),r<-30?-n:r<30?-.5*n:0}

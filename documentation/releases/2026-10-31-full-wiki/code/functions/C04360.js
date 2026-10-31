@@ -1,0 +1,1 @@
+function(e){e.setTime(e-e.getMilliseconds()-e.getSeconds()*l.Tt-e.getMinutes()*l.rR)}

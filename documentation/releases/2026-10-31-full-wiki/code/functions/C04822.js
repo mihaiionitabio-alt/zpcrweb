@@ -1,0 +1,1 @@
+function(e,t){if("string"==typeof e){var r=e.match(s);return r?r[0]:""}var n=this._validateYear(e),a=e.month(),i=""+this.toChineseMonth(n,a);return t&&i.length<2&&(i="0"+i),this.isIntercalaryMonth(n,a)&&(i+="i"),i}

@@ -1,0 +1,1 @@
+function G(e,t){var r;return e&&(r=e.mf),void 0===r&&(r=t.marker&&t.marker.standoff||0),t._geo||t._xA?r:-r}

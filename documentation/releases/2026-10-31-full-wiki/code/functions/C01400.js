@@ -1,0 +1,1 @@
+function(e){var t;if("string"==typeof e){if(null===(t=document.getElementById(e)))throw new Error("No DOM element with id '"+e+"' exists on the page.");return t}if(null==e)throw new Error("DOM element provided is null or undefined");return e}

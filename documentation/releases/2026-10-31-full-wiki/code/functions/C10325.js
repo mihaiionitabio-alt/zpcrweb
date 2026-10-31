@@ -1,0 +1,1 @@
+()=>{labels();controls();keys();}

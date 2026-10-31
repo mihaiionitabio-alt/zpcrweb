@@ -1,0 +1,1 @@
+st=>/melt|dissoc/i.test(`${st.flag||""} ${st.mode||""}`)

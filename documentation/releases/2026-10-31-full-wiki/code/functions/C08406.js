@@ -1,0 +1,1 @@
+f=>`${name(f)} AICc ${f.aicc.toFixed(3)} R² ${Number.isFinite(f.r2)?f.r2.toFixed(4):"—"}`

@@ -1,0 +1,1 @@
+k=>!draft.has(k)

@@ -1,0 +1,1 @@
+function(){var e=Ba,t=ja,r=Va;function n(n,a){var i=e.call(this,n,a),o=t.call(this,n,a),l=(i.y+o.y)/2,s=[i,{x:i.x,y:l},{x:o.x,y:l},o];return"M"+(s=s.map(r))[0]+"C"+s[1]+" "+s[2]+" "+s[3]}return n.source=function(t){return arguments.length?(e=gt(t),n):e},n.target=function(e){return arguments.length?(t=gt(e),n):t},n.projection=function(e){return arguments.length?(r=e,n):r},n}

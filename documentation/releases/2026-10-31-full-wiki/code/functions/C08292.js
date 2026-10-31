@@ -1,0 +1,1 @@
+([k,v])=>[k,`${v.n} finding(s) · ${v.e} error · ${v.r} review · ${v.runs.size} experiment(s)` ]

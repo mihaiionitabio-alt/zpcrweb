@@ -1,0 +1,1 @@
+(x,c,spread)=>{if(x.reads.length<ZPCR_ENDPOINT_N)return NaN;const v=x.reads.slice(-ZPCR_ENDPOINT_N).map(r=>ZPCR.zpcrWellMean(r,c,0,0));return v.every(Number.isFinite)?spread?Math.max(...v)-Math.min(...v):v.reduce((a,b)=>a+b,0)/v.length:NaN;}

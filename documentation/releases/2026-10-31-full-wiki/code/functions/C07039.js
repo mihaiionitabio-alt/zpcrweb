@@ -1,0 +1,1 @@
+b=>b.onclick=()=>mgSheetPick(+b.dataset.i)

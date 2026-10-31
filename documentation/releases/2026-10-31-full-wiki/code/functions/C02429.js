@@ -1,0 +1,1 @@
+function(){var t=e.autorange;return"reversed"===t||"min reversed"===t||"max reversed"===t}

@@ -1,0 +1,1 @@
+function(e){return e=Math.pow(.7,arguments.length?e:1),new Ve(this.h,this.s,this.l/e)}

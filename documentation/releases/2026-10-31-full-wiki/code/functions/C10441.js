@@ -1,0 +1,1 @@
+e=>{e.preventDefault();const choice=Object.fromEntries(Object.entries(inputs).map(([k,v])=>[k,v.value.trim()===''?NaN:Number(v.value)-1]));if(!select(run,choice)){error.textContent=reason('invalid_selection',true);return;}render();}

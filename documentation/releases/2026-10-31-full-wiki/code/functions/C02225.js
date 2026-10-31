@@ -1,0 +1,1 @@
+function(e){if("string"==typeof e&&e.match(a.AX_ID_PATTERN)){var t=e.split(" ")[0].substr(1);return"1"===t&&(t=""),e.charAt(0)+"axis"+t}}

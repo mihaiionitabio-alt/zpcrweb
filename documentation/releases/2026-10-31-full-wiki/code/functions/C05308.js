@@ -1,0 +1,1 @@
+k=>identities[k]=uniq(propValues(dom,k))

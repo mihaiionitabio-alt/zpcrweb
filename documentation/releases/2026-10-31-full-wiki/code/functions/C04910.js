@@ -1,0 +1,1 @@
+function(e){e=this._validate(e,this.minMonth,this.minDay,n.local.invalidYear).year();var t=Math.floor(e/400);return e%=400,e+=e<0?400:0,t+"."+Math.floor(e/20)+"."+e%20}

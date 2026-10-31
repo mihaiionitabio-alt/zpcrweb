@@ -1,0 +1,1 @@
+function(e){return n("chain_start",{seg:e})}

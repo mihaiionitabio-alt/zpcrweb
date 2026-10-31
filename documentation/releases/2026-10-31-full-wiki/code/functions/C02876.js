@@ -1,0 +1,1 @@
+function C(e,t){var r=t.pxmid[0],n=t.pxmid[1],a=e.width/2,i=e.height/2;return r<0&&(a*=-1),n<0&&(i*=-1),{scale:1,rCenter:1,rotate:0,x:a+Math.abs(i)*(a>0?1:-1)/2,y:i/(1+r*r/(n*n)),outside:!0}}

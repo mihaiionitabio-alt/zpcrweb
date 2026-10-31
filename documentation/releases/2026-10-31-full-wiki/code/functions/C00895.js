@@ -1,0 +1,1 @@
+function y(e,t,r,n){var a=t._fullLayout;o.ensureSingleById(a._topdefs,"clipPath",n._clipId,(function(e){e.append("rect").attr({x:0,y:0})})).select("rect").attr({width:n._width,height:n._height})}

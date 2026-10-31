@@ -1,0 +1,1 @@
+function(e,t){var r,n,a=t.length,i=[];for(r=0;r<e.length;r++){var o=e[r]._fullInput;o!==n&&i.push(o),n=o}var l=i.length,s=new Array(a),c={};function u(e,t){s[t]=e,c[e]=1}function d(e,t){if(e&&"string"==typeof e&&!c[e])return u(e,t),!0}for(r=0;r<a;r++){var h=t[r].uid;"number"==typeof h&&(h=String(h)),d(h,r)||r<l&&d(i[r].uid,r)||u(f.randstr(c),r)}return s}

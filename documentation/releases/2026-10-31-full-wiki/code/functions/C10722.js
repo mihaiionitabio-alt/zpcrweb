@@ -1,0 +1,1 @@
+()=>{const e=document.getElementById('sop-search');e.value='DEMO_SAMPLE_0';e.dispatchEvent(new Event('input',{bubbles:true}));}

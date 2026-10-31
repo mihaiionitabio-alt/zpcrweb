@@ -1,0 +1,1 @@
+function(e,t,r){var n=e.attr?"attr":"getAttribute",a=e.attr?"attr":"setAttribute",i=e[n]("transform")||"";return t=t||1,r=r||1,i=i.replace(/(\bscale\(.*?\);?)/,"").trim(),i=(i+="scale("+t+","+r+")").trim(),e[a]("transform",i),i}

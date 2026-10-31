@@ -1,0 +1,1 @@
+function(e){var t=e.selectedpoints,r=e._indexToPoints;if(r){for(var n=S(r),a=[],i=0;i<t.length;i++){var o=t[i];if(f.isIndex(o)){var l=n[o];f.isIndex(l)&&a.push(l)}}return a}return t}

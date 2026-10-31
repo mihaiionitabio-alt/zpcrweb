@@ -1,0 +1,1 @@
+function(A,e){return A&&19968<=t[e]&&t[e]<=40959}

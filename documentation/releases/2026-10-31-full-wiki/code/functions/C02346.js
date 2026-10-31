@@ -1,0 +1,1 @@
+function(){var e=this,r=e.toDataURL("image/png");t.append("svg:image").attr({xmlns:f.svg,"xlink:href":r,preserveAspectRatio:"none",x:0,y:0,width:e.style.width,height:e.style.height})}

@@ -1,0 +1,1 @@
+(a,y,i)=>a+(y-(ym+slope*(xs[i]-xm)))**2

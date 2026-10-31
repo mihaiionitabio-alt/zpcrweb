@@ -1,0 +1,1 @@
+function(e,t){var r=e._fullLayout;if(!r)return[];var n=r._subplots;return t?n[t+"axis"]:n.xaxis.concat(n.yaxis)}

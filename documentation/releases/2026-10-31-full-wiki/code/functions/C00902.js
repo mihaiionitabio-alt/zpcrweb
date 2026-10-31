@@ -1,0 +1,1 @@
+function(e){e.attr({x:0,y:0,"shape-rendering":"crispEdges"})}

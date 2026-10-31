@@ -1,0 +1,1 @@
+p=>!p.pre&&Number.isFinite(p.y)&&Number.isFinite(p.cl)

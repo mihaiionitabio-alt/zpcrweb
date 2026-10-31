@@ -1,0 +1,1 @@
+(v,i)=>Number.isFinite(v)&&v===i+1

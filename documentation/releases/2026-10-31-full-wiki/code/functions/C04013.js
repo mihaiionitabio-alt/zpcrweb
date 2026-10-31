@@ -1,0 +1,1 @@
+function Qa(e,t,r){return G(e,ti),e.namespace=t,e.id=r,e}

@@ -1,0 +1,1 @@
+a=>a.map(t=>t.temps.BLOCKTEMP?.c)

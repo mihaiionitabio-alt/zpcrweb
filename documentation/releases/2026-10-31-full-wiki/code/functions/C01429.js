@@ -1,0 +1,1 @@
+function(e,t,r,n,a,i,o,c){if(l(e,t,r,n,a,i,o,c))return 0;var u=r-e,f=n-t,d=o-a,h=c-i,p=u*u+f*f,v=d*d+h*h,g=Math.min(s(u,f,p,a-e,i-t),s(u,f,p,o-e,c-t),s(d,h,v,e-a,t-i),s(d,h,v,r-a,n-i));return Math.sqrt(g)}

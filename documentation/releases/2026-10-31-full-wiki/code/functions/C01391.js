@@ -1,0 +1,1 @@
+function(e,t,r){r=_(r)&&r;var n=s(e,f);if(e=Math.round(e-n),r)try{var a=Math.round(e/f)+v,i=g.getComponentMethod("calendars","getCal")(r),o=i.fromJD(a);return t%12?i.add(o,t,"m"):i.add(o,t/12,"y"),(o.toJD()-v)*f+n}catch(t){l.error("invalid ms "+e+" in calendar "+r)}var c=new Date(e+P);return c.setUTCMonth(c.getUTCMonth()+t)+n-P}

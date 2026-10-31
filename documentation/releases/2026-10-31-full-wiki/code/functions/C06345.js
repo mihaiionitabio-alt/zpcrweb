@@ -1,0 +1,1 @@
+(e,i)=>e.rows.filter(r=>r.ctrl===ctrl&&(!c.target||r.target===c.target)).forEach(r=>pts.push({i,e,r}))

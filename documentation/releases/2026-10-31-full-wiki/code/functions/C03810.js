@@ -1,0 +1,1 @@
+function(){for(var t=0,r=0;r<e;r++)t+=Math.random();return t}

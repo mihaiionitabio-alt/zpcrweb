@@ -1,0 +1,1 @@
+function b(t){if(r=l[t],n=r._module,!0===r.visible&&r.transforms){if(n&&n.calc){var a=n.calc(e,r);a[0]&&a[0].t&&a[0].t._scene&&delete a[0].t._scene.dirty}for(i=0;i<r.transforms.length;i++){var o=r.transforms[i];(n=T[o.type])&&n.calcTransform&&(r._hasCalcTransform=!0,x=!0,n.calcTransform(e,r,o))}}}

@@ -1,0 +1,1 @@
+function(){var r=e._matchGroup;if(r){var n=null,a=null;for(var i in r){var o=t[w.id2name(i)];if(o._categories){n=o._categories,a=o._categoriesMap;break}}n&&a?(e._categories=n,e._categoriesMap=a):e._emptyCategories()}else e._emptyCategories();if(e._initialCategories)for(var l=0;l<e._initialCategories.length;l++)P(e._initialCategories[l])}

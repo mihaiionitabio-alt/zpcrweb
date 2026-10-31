@@ -1,0 +1,1 @@
+r=>!r.ctrl&&r.det>=2&&r.cqMean<30&&Number.isFinite(r.cqSd)

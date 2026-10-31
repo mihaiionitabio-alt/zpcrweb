@@ -1,0 +1,1 @@
+(v,i)=>{const x=X(i),y=Y(v);if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);}

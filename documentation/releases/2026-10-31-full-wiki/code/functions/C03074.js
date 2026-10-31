@@ -1,0 +1,1 @@
+function d(e,t){return e[t[0]]}

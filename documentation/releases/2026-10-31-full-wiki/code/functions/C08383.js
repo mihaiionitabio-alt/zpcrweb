@@ -1,0 +1,1 @@
+(s,xv)=>s+Math.pow(xv,i+j)

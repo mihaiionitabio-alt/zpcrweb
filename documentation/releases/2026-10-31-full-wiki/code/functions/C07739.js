@@ -1,0 +1,1 @@
+i=>L+(s.points.length<=1?.5:i/(s.points.length-1))*(W-L-R)

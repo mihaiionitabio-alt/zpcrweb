@@ -1,0 +1,1 @@
+function Ve(e,t,r){return this instanceof Ve?(this.h=+e,this.s=+t,void(this.l=+r)):arguments.length<2?e instanceof Ve?new Ve(e.h,e.s,e.l):ut(""+e,ft,Ve):new Ve(e,t,r)}

@@ -1,0 +1,1 @@
+function(t,r){return+e.call(o,t,r)}

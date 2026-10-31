@@ -1,0 +1,1 @@
+r => (r.darkData && r.darkData.length > c * 4 ? r.darkData[c * 4] : NaN)

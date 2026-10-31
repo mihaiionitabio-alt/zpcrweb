@@ -1,0 +1,1 @@
+function(e){var r=e.children;r&&r.length?(e.x=function(e){return e.reduce((function(e,t){return e+t.x}),0)/e.length}(r),e.y=function(e){return 1+i.max(e,(function(e){return e.y}))}(r)):(e.x=l?u+=t(e,l):0,e.y=0,l=e)}

@@ -1,0 +1,1 @@
+x=>typeof x!=='string'||/\b(?:undefined|null|NaN)\b|\[object Object\]/i.test(x)

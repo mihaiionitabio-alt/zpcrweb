@@ -1,0 +1,1 @@
+function(A){return A.nodeType===Node.ELEMENT_NODE}

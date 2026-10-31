@@ -1,0 +1,1 @@
+el=>{const c=el.querySelector('obj[name="ChannelProp"] > prop[name="ChannelIdx"]');return c?parseInt(c.textContent,10):null;}

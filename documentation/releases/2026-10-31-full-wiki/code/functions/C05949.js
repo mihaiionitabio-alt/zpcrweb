@@ -1,0 +1,1 @@
+x=>`<li><b>${esc(x.id||"")} ${esc(x.title||"")}</b><br>${esc(x.instruction||"")}<br><span class="hint">Acceptance: ${esc(x.acceptance||"")}</span></li>`

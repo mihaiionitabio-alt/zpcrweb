@@ -1,0 +1,1 @@
+(b,s)=>Math.abs(s-ccMedian(acq.map(a=>a.temp)))<Math.abs(b-ccMedian(acq.map(a=>a.temp)))?s:b

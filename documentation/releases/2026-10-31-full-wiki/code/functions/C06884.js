@@ -1,0 +1,1 @@
+()=>{if(SOP.locked)return;if(SOP.controlCharts)delete SOP.controlCharts[def.id];sopChanged();re();}

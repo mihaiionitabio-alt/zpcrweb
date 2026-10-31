@@ -1,0 +1,1 @@
+w=>w.rdml.amplification.length>=ZPCR_ENDPOINT_N

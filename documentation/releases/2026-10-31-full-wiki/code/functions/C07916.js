@@ -1,0 +1,1 @@
+function readerAccept(){return readerExtensions().concat('.zip').join(',');}

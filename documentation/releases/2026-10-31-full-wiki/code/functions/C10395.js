@@ -1,0 +1,7 @@
+function renderContent(){
+  const host=document.getElementById('loadedcard');if(!host)return;
+  let box=document.getElementById('missy-provenance-details');if(!box){box=document.createElement('details');box.id='missy-provenance-details';box.setAttribute('data-i18n-skip','');host.append(box);box.addEventListener('toggle',render);}
+  box.hidden=!RUNS.length;const open=box.open;const title=document.createElement('summary');title.textContent=t('Source identity and provenance (read only)','源文件标识与来源记录（只读）');MISSY_EVIDENCE_A11Y.reset(box,title);if(!open)return;
+  const note=document.createElement('p');note.textContent=t('Fingerprints with different methods are not comparable. Equal content does not establish one acquisition or justify suppressing a run.','不同方法的指纹不能直接比较。内容相同不能证明属于同一次采集，也不能作为隐藏运行记录的依据。');box.append(note);
+  const all=rows(true);RUNS.forEach((r,i)=>{const card=document.createElement('div'),h=document.createElement('h4'),dl=document.createElement('dl');h.textContent=(i+1)+' · '+r.file;card.append(h,dl);for(const row of all.filter(x=>x.provenance_view===i+1)){const dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=row.provenance_item;dd.textContent=[row.provenance_state,row.provenance_value,row.provenance_method].filter(Boolean).join(' · ');dl.append(dt,dd);}box.append(card);});
+ }

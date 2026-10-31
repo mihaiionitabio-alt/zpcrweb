@@ -1,0 +1,1 @@
+(p,j)=>{p.segment=g.key;res.pts[g.idx[j]]=p;}

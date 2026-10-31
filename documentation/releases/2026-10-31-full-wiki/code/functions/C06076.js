@@ -1,0 +1,1 @@
+function ixPurge(){while(IX_MOUNTED.length){const el=IX_MOUNTED.pop();try{Plotly.purge(el);}catch(e){}}}

@@ -1,0 +1,1 @@
+s=>Number.isFinite(n)&&(s.program===n||s.program+1===n)

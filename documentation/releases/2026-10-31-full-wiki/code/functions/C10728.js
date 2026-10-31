@@ -1,0 +1,1 @@
+()=>chart('cool_rate','light')

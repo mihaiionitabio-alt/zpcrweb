@@ -1,0 +1,1 @@
+function(){for(;CA(this.peekCodePoint(0));)this.consumeCodePoint()}

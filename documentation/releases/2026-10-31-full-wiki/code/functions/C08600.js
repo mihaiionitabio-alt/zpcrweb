@@ -1,0 +1,1 @@
+d=>`${d.run} (${d.missing.slice(0,3).join(", ")}${d.missing.length>3?", …":""})`

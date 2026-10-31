@@ -1,0 +1,1 @@
+function(){n.event.sourceEvent.preventDefault(),n.event.sourceEvent.stopPropagation()}

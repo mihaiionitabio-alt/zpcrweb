@@ -1,0 +1,1 @@
+e=>{e.preventDefault();if(api?.reportURL){previewDialog.querySelector('iframe').src=api.reportURL;previewDialog.showModal();}}

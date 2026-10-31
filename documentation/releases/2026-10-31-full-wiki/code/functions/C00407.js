@@ -1,0 +1,1 @@
+function(e,t,r){if(v(t))return c;var n=s(.8*e/u,2),a="l"+n+","+n,i="l"+n+",-"+n,o="l-"+n+",-"+n,l="l-"+n+","+n;return g(t,r,"M0,"+n+a+i+o+i+o+l+o+l+a+l+a+"Z")}

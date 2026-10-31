@@ -1,0 +1,1 @@
+function(e){return e.substr(e.indexOf("y"),e.length)}

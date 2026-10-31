@@ -1,0 +1,1 @@
+function ssWells(run){return ((run&&run.wells)||[]).filter(w=>ssIncluded(run,w));}

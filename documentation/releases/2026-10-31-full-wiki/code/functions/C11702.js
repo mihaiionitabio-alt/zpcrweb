@@ -1,0 +1,1 @@
+function filled(){for(const input of form.querySelectorAll('input'))input.classList.toggle('has-value',!!input.value.trim());}

@@ -1,0 +1,1 @@
+function zn(e,t){return e.parent==t.parent?1:2}

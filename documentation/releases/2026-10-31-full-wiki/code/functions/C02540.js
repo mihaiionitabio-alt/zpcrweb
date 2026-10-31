@@ -1,0 +1,1 @@
+function(e){var t={};function r(r,n){return f.coerce(e||{},t,m.transition,r,n)}return r("duration"),r("easing"),t}

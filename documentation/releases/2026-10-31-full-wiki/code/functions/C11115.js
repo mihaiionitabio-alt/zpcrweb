@@ -1,0 +1,1 @@
+function(A){return{name:"padding-"+A,initialValue:"0",prefix:!1,type:3,format:"length-percentage"}}

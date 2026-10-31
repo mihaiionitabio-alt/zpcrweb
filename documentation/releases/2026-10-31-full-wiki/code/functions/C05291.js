@@ -1,0 +1,1 @@
+e=>ownedBy(e,root)

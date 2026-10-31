@@ -1,0 +1,1 @@
+function he(e){var t=e[0],r=e[1],n=t===q[G-1][0],a=r===q[G-1][1];if(!n||!a)if(G>1){var i=t===q[G-2][0],o=r===q[G-2][1];n&&(t===ie||t===oe)&&i?o?G--:q[G-1]=e:a&&(r===le||r===se)&&o?i?G--:q[G-1]=e:q[G++]=e}else q[G++]=e}

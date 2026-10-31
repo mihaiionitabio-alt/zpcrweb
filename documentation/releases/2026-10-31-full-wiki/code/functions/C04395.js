@@ -1,0 +1,1 @@
+function(t){return l.count(0,t)%e==0}

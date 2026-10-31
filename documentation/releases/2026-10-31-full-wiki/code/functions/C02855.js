@@ -1,0 +1,1 @@
+function(e,t,r){"use strict";e.exports={attributes:r(3031),supplyDefaults:r(6979).supplyDefaults,supplyLayoutDefaults:r(3464),layoutAttributes:r(4031),calc:r(4148).calc,crossTraceCalc:r(4148).crossTraceCalc,plot:r(5734).plot,style:r(140),styleOne:r(2891),moduleType:"trace",name:"pie",basePlotModule:r(6052),categories:["pie-like","pie","showLegend"],meta:{}}}

@@ -1,0 +1,1 @@
+sev=>new Set(ev.filter(e=>e.severity===sev).map(findingKey)).size

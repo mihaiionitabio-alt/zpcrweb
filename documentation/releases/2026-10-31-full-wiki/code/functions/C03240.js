@@ -1,0 +1,1 @@
+function(){var r=t.apply(this,arguments);null==r?this.removeAttribute(e):this.setAttribute(e,r)}

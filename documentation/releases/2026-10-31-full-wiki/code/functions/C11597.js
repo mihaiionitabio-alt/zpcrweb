@@ -1,0 +1,1 @@
+()=>{page('sop');focus(document.getElementById('sop-head')||document.getElementById('tab-sop'));}

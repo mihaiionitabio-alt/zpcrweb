@@ -1,0 +1,1 @@
+o=>`${o.name}${o.target?" "+o.target:""}${o.cq!==null?" Cq "+o.cq:""}`

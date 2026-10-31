@@ -1,0 +1,1 @@
+function Ne(e,t,r,n){for(var a,i,o=0,l=t.length,s=r.length;o<l;){if(n>=s)return-1;if(37===(a=t.charCodeAt(o++))){if(a=t.charAt(o++),!(i=Ie[a in g?t.charAt(o++):a])||(n=i(e,r,n))<0)return-1}else if(a!=r.charCodeAt(n++))return-1}return n}

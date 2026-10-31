@@ -1,0 +1,1 @@
+function(t){return.5*(t<.5?e(2*t):2-e(2-2*t))}

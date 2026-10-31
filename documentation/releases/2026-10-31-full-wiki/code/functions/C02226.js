@@ -1,0 +1,1 @@
+function(e){if(e.match(a.AX_NAME_PATTERN)){var t=e.substr(5);return"1"===t&&(t=""),e.charAt(0)+t}}

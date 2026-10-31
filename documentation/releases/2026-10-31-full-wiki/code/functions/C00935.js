@@ -1,0 +1,1 @@
+function(e){var t=n.list({_fullLayout:e},"x",!0),r=e.margin,a=[];if(!e._has("gl2d"))for(var i=0;i<t.length;i++){var o=t[i];if(s(o)){a.push(o);var c=o[l];c._id=l+o._id,c._height=(e.height-r.b-r.t)*c.thickness,c._offsetShift=Math.floor(c.borderwidth/2)}}e._rangeSliderData=a}

@@ -1,0 +1,1 @@
+function(e,t,r,n){var a,i=t.traceHash,o={};for(a=0;a<r.length;a++){var l=r[a],s=l[0].trace;s.visible&&(o[s.type]=o[s.type]||[],o[s.type].push(l))}for(var c in i)if(!o[c]){var u=i[c][0];u[0].trace.visible=!1,o[c]=[u]}for(var d in o){var h=o[d];h[0][0].trace._module.plot(e,t,f.filterVisible(h),n)}t.traceHash=o}

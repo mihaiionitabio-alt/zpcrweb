@@ -1,0 +1,1 @@
+c=>({id:txt(c,"Id"),order:+txt(c,"Order"),inc:txt(c,"Included")==="true"})

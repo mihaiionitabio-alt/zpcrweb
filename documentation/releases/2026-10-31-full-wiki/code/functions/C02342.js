@@ -1,0 +1,1 @@
+function(t){var a=t[0],o=a.indexOf(p),l=-1!==o,s=l?a.slice(0,o):a,c=r._plots[a];c||(c=i.extendFlat({},r._plots[s]))&&(c.id=a,r._plots[a]=c,r._subplots.cartesian.push(a)),c&&(c.plotgroup=n.select(this),g(e,c),l||(c.draglayer=d(r._draggers,"g",a)))}

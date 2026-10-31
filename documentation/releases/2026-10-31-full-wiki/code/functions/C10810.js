@@ -1,0 +1,1 @@
+()=>{document.querySelectorAll('dialog[open]').forEach(d=>d.close());document.activeElement?.blur?.();}

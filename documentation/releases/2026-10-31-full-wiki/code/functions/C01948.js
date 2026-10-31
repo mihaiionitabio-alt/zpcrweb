@@ -1,0 +1,1 @@
+function(e){setTimeout(e,l.getDelay(M._fullLayout))}

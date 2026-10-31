@@ -1,0 +1,1 @@
+b=>b.onclick=()=>mgCommand(b.dataset.cmd,"button")

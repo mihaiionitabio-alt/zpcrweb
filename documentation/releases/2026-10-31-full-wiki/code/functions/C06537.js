@@ -1,0 +1,1 @@
+w=>!seen.has(w.pos)&&seen.add(w.pos)

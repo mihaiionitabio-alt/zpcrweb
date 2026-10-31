@@ -1,0 +1,1 @@
+function(t){var n,a,o=e._fullLayout._basePlotModules,c=s.length;if(r)for(a=0;a<o.length;a++)o[a].transitionAxes&&o[a].transitionAxes(e,s,i,t);for(var u in c?((n=f.extendFlat({},i)).duration=0,delete l.cartesian):n=i,l){var d=l[u];e._fullData[d[0]]._module.basePlotModule.plot(e,d,n,t)}}

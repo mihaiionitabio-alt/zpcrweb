@@ -1,0 +1,1 @@
+function _(e,t){for(var r,n,a=0;a<e.length;a++)if((n=(r=e[a][0]).trace).title.text){var i=n.title.text;n._meta&&(i=s.templateString(i,n._meta));var o=l.tester.append("text").attr("data-notex",1).text(i).call(l.font,n.title.font).call(f.convertToTspans,t),c=l.bBox(o.node(),!0);r.titleBox={width:c.width,height:c.height},o.remove()}}

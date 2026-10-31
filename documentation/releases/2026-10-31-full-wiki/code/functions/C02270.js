@@ -1,0 +1,1 @@
+function U(e){P&&e.data&&e._context.showTips&&(a.notifier(a._(e,"Double-click to zoom back out"),"long"),P=!1)}

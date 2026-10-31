@@ -1,0 +1,1 @@
+function(e){("stack"===a.barmode&&r>1||0===a.bargap&&0===a.bargroupgap&&!e[0].trace.marker.line.width)&&n.select(this).attr("shape-rendering","crispEdges")}

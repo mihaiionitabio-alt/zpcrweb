@@ -1,0 +1,1 @@
+function X(e,t,r,n){return{_module:e,cd:t,xaxis:r,yaxis:n}}

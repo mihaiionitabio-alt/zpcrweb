@@ -1,0 +1,1 @@
+function(e){return e&&"object"==typeof e&&1===e.__NPO__?e:new this((function(t,r){if("function"!=typeof t||"function"!=typeof r)throw TypeError("Not a function");t(e)}))}

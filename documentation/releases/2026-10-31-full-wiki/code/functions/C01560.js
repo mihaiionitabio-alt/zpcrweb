@@ -1,0 +1,1 @@
+function f(e,t,r,n){if(void 0===e[t]){if(n)return!1;e[t]="number"==typeof r?[]:{}}return!0}

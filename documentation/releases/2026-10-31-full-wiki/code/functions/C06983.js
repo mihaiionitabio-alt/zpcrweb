@@ -1,0 +1,1 @@
+m=>new Error(`${source||"history"}: ${m}`)

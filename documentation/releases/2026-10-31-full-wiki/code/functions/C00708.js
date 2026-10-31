@@ -1,0 +1,1 @@
+function(e,t,r){"use strict";e.exports={moduleType:"component",name:"legend",layoutAttributes:r(6405),supplyLayoutDefaults:r(3970),draw:r(6134),style:r(4375)}}

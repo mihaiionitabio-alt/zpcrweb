@@ -1,0 +1,1 @@
+function gr(e,t,r,n,a,i){if(!e(t,r,n,a,i)){var o=.5*(r+a),l=.5*(n+i),s=t.nodes;s[0]&&gr(e,s[0],r,n,o,l),s[1]&&gr(e,s[1],o,n,a,l),s[2]&&gr(e,s[2],r,l,o,i),s[3]&&gr(e,s[3],o,l,a,i)}}

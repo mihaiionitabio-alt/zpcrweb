@@ -1,0 +1,1 @@
+w=>w.tasks.map(t=>t.reporter)

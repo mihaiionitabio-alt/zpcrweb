@@ -1,0 +1,1 @@
+c=>c&&Number.isFinite(c.ex)&&Number.isFinite(c.em)?`${c.ex}-${c.em}`:""

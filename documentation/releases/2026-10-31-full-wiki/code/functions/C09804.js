@@ -1,0 +1,1 @@
+()=>{[...dialog.querySelectorAll('select')].forEach((s,i)=>s.value=MISSY_SHORTCUT_DEFAULTS[i]);}

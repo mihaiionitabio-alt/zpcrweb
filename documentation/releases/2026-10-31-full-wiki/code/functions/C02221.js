@@ -1,0 +1,1 @@
+function l(e,t){return o(e,t)+[" And for dates see: "+i+".","We add two items to d3's date formatter:","*%h* for half of the year as a decimal number as well as","*%{n}f* for fractional seconds","with n digits. For example, *2016-10-13 09:15:23.456* with tickformat","*%H~%M~%S.%2f* would display *09~15~23.46*"].join(" ")}

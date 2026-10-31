@@ -1,0 +1,1 @@
+function(e,t,r){return"line"!==e.type?void 0:s(e,0,r)/l(e,t)}

@@ -1,0 +1,1 @@
+function(A){return XB(A)&&void 0!==A.style&&!YB(A)}

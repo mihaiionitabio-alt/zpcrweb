@@ -1,0 +1,1 @@
+function(e){"use strict";function t(e){return!0===e.visible}function r(e){var t=e[0].trace;return!0===t.visible&&0!==t._length}e.exports=function(e){for(var n,a=(n=e,Array.isArray(n)&&Array.isArray(n[0])&&n[0][0]&&n[0][0].trace?r:t),i=[],o=0;o<e.length;o++){var l=e[o];a(l)&&i.push(l)}return i}}

@@ -1,0 +1,1 @@
+g=>g.isMelt&&g.dye===dye&&piEqualAxis(g.axis.values,w.rdml.melt.map(p=>p[0]))

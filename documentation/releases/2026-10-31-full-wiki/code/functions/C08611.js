@@ -1,0 +1,1 @@
+(k,j)=>({k,z:Math.abs((mv.F.X[o.i][j]-p.mean[j])/(p.sd[j]||1))})

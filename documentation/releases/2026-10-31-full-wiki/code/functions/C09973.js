@@ -1,0 +1,1 @@
+function maraWellID(w,i){return JSON.stringify([w.analysisUid||w.analysis||'',w.target||'',w.pos??w.well??i,w.channel||'']);}

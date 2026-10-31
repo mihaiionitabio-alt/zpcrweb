@@ -1,0 +1,1 @@
+function(e){var t=Math.floor((235*e-234)/19),r=12084+13753*t,n=29*t+Math.floor(r/25920);return o(3*(n+1),7)<3&&n++,n}

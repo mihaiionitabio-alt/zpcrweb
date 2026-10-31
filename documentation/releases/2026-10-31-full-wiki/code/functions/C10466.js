@@ -1,0 +1,1 @@
+(r,i,path)=>{for(const [field,k]of [['time',0],['led_temperature',1],['led_current',2],['led_voltage',3],['junction',4]])add(field,r?.[k],path+'['+k+']',{record:i+1},'eds_led');}

@@ -1,0 +1,1 @@
+r=>[r.file,'Source SHA-256 '+r.meta.sourceSHA256]

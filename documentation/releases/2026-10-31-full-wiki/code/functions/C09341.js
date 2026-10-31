@@ -1,0 +1,1 @@
+function pcrdCSV(rows){return toCSV(uniq(rows.flatMap(Object.keys)).map(k=>({key:k,label:k})),rows);}

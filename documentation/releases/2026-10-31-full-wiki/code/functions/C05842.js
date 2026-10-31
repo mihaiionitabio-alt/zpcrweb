@@ -1,0 +1,1 @@
+r=>{if(!r.ctrl&&r.outcome!=="Standard"&&r.outcome!=="Not interpreted"){r.storedOutcome=r.outcome;r.outcome="Invalid run";r.reason=rejected.map(c=>c.criterion).join("; ");}}

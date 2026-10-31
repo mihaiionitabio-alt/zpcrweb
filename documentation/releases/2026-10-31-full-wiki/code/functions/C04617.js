@@ -1,0 +1,1 @@
+function(e){e.exports=function(e,t,r,n){var a=e[0],i=e[1],o=!1;void 0===r&&(r=0),void 0===n&&(n=t.length);for(var l=n-r,s=0,c=l-1;s<l;c=s++){var u=t[s+r][0],f=t[s+r][1],d=t[c+r][0],h=t[c+r][1];f>i!=h>i&&a<(d-u)*(i-f)/(h-f)+u&&(o=!o)}return o}}

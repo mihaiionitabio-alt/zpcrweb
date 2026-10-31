@@ -1,0 +1,1 @@
+g=>g.cq.length>1&&range(g.cq)>=limit

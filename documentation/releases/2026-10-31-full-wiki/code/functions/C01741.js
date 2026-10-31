@@ -1,0 +1,1 @@
+function B(e,t,r,n){if(Array.isArray(t)||Array.isArray(r))for(var a=Array.isArray(t)?t:[],i=Array.isArray(r)?r:[],l=Math.max(a.length,i.length),s=0;s<l;s++)B(e+"["+s+"]",a[s],i[s],n);else if(o.isPlainObject(t)||o.isPlainObject(r)){var c=o.isPlainObject(t)?t:{},u=o.isPlainObject(r)?r:{},f=o.extendFlat({},c,u);for(var d in f)B(e+"."+d,c[d],u[d],n)}else void 0===n[e]&&(n[e]=F(t))}

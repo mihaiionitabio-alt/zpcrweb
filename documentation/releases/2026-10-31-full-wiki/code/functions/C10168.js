@@ -1,0 +1,1 @@
+function clearListenTimer(){if(listenTimer!==null){clearTimeout(listenTimer);listenTimer=null;}}

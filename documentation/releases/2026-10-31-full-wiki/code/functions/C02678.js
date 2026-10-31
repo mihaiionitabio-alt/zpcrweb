@@ -1,0 +1,1 @@
+function(){var e=o.getDelay(f._fullLayout);setTimeout((function(){var e=s(f),n=document.createElement("canvas");n.id=i.randstr(),(r=c({format:t.format,width:f._fullLayout.width,height:f._fullLayout.height,canvas:n,emitter:r,svg:e})).clean=function(){f&&document.body.removeChild(f)}}),e)}

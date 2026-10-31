@@ -1,0 +1,1 @@
+function(){n.getComponentMethod("colorbar","draw")(e)}

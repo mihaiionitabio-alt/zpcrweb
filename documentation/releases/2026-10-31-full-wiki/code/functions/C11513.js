@@ -1,0 +1,1 @@
+()=>ccCompute(CC_BY_ID.heat_rate,ccRowsFor(ccInstrumentKey(RUNS[31])),'')

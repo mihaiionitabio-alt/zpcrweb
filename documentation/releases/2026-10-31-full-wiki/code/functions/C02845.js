@@ -1,0 +1,1 @@
+function(e,t){var r={curveNumber:t.index,pointNumbers:e.pts,data:t._input,fullData:t,label:e.label,color:e.color,value:e.v,percent:e.percent,text:e.text,bbox:e.bbox,v:e.v};return 1===e.pts.length&&(r.pointNumber=r.i=e.pts[0]),n(r,t,e.pts),"funnelarea"===t.type&&(delete r.v,delete r.i),r}

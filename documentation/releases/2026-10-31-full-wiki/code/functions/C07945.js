@@ -1,0 +1,1 @@
+c=>SAMPLE_HEADERS.test(c)

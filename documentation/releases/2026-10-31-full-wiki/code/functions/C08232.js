@@ -1,0 +1,1 @@
+h=>h.trim().toLowerCase()

@@ -1,0 +1,1 @@
+function(e){for(var t=0,r=e.length-1,n=e[0],a=new Array(r<0?0:r);t<r;)a[t]=[n,n=e[++t]];return a}

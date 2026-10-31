@@ -1,0 +1,1 @@
+a=>Number(a.well_position)===w.pos&&(a.fluor===dye)

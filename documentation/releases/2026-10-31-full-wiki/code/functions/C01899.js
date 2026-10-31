@@ -1,0 +1,1 @@
+function ne(e,t,r){if(!e.showline||a!==e._mainSubplot)return"";if(!e._anchorAxis)return r(e._mainLinePosition);var n=t(e._mainLinePosition);return e.mirror&&(n+=t(e._mainMirrorPosition)),n}

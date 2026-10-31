@@ -1,0 +1,1 @@
+function P(e,t,r,a,i){var o=n.select(e.node().parentNode),l=-1!==t.indexOf("top")?"top":-1!==t.indexOf("bottom")?"bottom":"middle",s=-1!==t.indexOf("left")?"end":-1!==t.indexOf("right")?"start":"middle",c=a?a/.8+1:0,u=(d.lineCount(e)-1)*p+1,h=D[s]*c,v=.75*r+D[l]*c+(D[l]-1)*u*r/2;e.attr("text-anchor",s),i||o.attr("transform",f(h,v))}

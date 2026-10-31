@@ -1,0 +1,1 @@
+function mlFinite(a){return a.filter(Number.isFinite);}

@@ -1,0 +1,1 @@
+e=>e&&!e.disabled&&e.getClientRects().length>0

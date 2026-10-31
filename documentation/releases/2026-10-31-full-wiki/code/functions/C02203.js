@@ -1,0 +1,1 @@
+function(e){for(var t=G.list(e,"",!0),r=0;r<t.length;r++){var n=t[r];n.automargin&&(i.allowAutoMargin(e,Oe(n)),n.mirror&&i.allowAutoMargin(e,De(n))),o.getComponentMethod("rangeslider","isVisible")(n)&&i.allowAutoMargin(e,Pe(n))}}

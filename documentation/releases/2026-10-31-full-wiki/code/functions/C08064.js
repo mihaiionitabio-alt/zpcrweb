@@ -1,0 +1,1 @@
+m=>[rdmlNum(m,"tmp"),rdmlNum(m,"fluor")]

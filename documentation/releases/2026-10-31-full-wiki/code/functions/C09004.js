@@ -1,0 +1,1 @@
+(r,c)=>(r.darkData?.[c*4+3]??NaN)-(r.darkData?.[c*4+2]??NaN)

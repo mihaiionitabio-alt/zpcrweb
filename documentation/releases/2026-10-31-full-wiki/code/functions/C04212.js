@@ -1,0 +1,1 @@
+function w(e){return new RegExp("^(?:"+e.map(_).join("|")+")","i")}

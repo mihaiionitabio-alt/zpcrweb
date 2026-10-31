@@ -1,0 +1,1 @@
+x=>{if(!doc.room(line)){doc.text(k+" (continued)",size,true);doc.y+=line;}doc.text(x,size,false,labelW,undefined,true);}

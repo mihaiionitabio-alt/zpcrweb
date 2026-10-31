@@ -1,0 +1,1 @@
+function(e,r,n,a){return"closest"===e?a||t.quadrature(r,n):"x"===e.charAt(0)?r:n}

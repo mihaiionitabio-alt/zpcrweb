@@ -1,0 +1,1 @@
+function l(){return r.data()[0]}

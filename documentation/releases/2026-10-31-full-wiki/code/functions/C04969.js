@@ -1,0 +1,1 @@
+function(e){return e-this.yearsOffset-(e>=1&&e<=this.yearsOffset?1:0)}

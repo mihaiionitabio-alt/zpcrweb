@@ -1,0 +1,1 @@
+function(A,e){return e.filter(_A).reduce(function(A,e){return A|Ct(e.value)},0)}

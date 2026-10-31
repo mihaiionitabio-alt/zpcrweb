@@ -1,0 +1,1 @@
+function(e){return[a+e*u,i+e*f,o*Math.exp(Fe*e*n)]}

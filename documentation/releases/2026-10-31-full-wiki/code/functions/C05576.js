@@ -1,0 +1,1 @@
+w=>Number.isFinite(w.CpRaw)&&w.eds.flags.includes("CC")

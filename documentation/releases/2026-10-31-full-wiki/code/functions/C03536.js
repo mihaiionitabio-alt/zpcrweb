@@ -1,0 +1,1 @@
+function(e){for(r in n)a[r]=n[r](e);return a}

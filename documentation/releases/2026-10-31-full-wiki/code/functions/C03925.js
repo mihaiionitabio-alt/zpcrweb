@@ -1,0 +1,1 @@
+function wa(){return!0}

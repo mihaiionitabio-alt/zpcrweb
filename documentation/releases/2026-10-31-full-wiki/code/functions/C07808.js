@@ -1,0 +1,1 @@
+x=>L+(x-view.x0)/Math.max(1e-9,view.x1-view.x0)*(W-L-R)

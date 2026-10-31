@@ -1,0 +1,1 @@
+function(e,t,r){t.each((function(t){var a=o(n.select(this),"g","fills");s.setClipUrl(a,r.layerClipId,e);var i=t[0].trace,c=[];i._ownfill&&c.push("_ownFill"),i._nexttrace&&c.push("_nextFill");var u=a.selectAll("g").data(c,l);u.enter().append("g"),u.exit().each((function(e){i[e]=null})).remove(),u.order().each((function(e){i[e]=o(n.select(this),"path","js-fill")}))}))}

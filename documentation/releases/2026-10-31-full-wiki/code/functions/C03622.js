@@ -1,0 +1,1 @@
+function(e){for(var t=[],r=-1,n=e.length;++r<n;)t.push(Gr(e[r]));return t}

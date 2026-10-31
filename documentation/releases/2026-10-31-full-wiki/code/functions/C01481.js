@@ -1,0 +1,1 @@
+function(e,t){for(var r,n=e.split("."),a=r={},i=0;i<n.length;i++){var o=n[i],l=null,s=n[i].match(/(.*)\[([0-9]+)\]/);s?(o=s[1],l=s[2],r=r[o]=[],i===n.length-1?r[l]=t:r[l]={},r=r[l]):(i===n.length-1?r[o]=t:r[o]={},r=r[o])}return a}

@@ -1,0 +1,1 @@
+function gn(e){return i.range(e.length)}

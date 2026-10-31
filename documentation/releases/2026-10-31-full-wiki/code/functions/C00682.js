@@ -1,0 +1,1 @@
+function(){if(!t._dragged&&!t._editing){var a=t._fullLayout[r];(new Date).getTime()-t._legendMouseDownTime>o&&(l=Math.max(l-1,1)),k(t,a,e,l,n.event)}}

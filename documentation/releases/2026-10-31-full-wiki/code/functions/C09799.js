@@ -1,0 +1,1 @@
+()=>{b.classList.remove('is-playing');void b.offsetWidth;b.classList.add('is-playing');mascotGo(MISSY_SHORTCUTS[i]);}

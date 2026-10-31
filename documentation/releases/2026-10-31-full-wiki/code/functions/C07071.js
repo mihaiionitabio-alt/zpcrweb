@@ -1,0 +1,1 @@
+()=>{MG.theme="dark";}

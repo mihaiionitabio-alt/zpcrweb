@@ -1,0 +1,1 @@
+x=>!x.id.startsWith('img:zc_compare_')

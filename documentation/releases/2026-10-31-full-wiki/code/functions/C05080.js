@@ -1,0 +1,1 @@
+function(e){var t=r.nc;t&&e.setAttribute("nonce",t)}

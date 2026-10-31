@@ -1,0 +1,1 @@
+g=>g.isAmp&&g.dye===dye&&g.step===step&&piEqualAxis(g.reads.map(r=>r.cycle),w.rdml.amplification.map(p=>p[0]))

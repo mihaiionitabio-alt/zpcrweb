@@ -1,0 +1,1 @@
+function f(e,t){var r=null===t[0],n=null===t[1],a=u(e,t[0])>=0,i=u(e,t[1])<=0;return(r||a)&&(n||i)}

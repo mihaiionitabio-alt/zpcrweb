@@ -1,0 +1,1 @@
+(_,c)=>({run:i,channel:c,points:(q?.byChannel?.[c]||[]).map((v,j)=>[j+1,v.deviationPct??NaN])})

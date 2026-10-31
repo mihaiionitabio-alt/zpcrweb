@@ -1,0 +1,1 @@
+function mlDist(a,b){let s=0;for(let i=0;i<a.length;i++)s+=(a[i]-b[i])*(a[i]-b[i]);return Math.sqrt(s);}

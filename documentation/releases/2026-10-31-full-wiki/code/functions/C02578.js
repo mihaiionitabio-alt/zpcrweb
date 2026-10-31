@@ -1,0 +1,1 @@
+function(i){if(-1===["_","["].indexOf(i.charAt(0)))if("function"!=typeof e[i]){if("keepdata"===r){if("src"===i.substr(i.length-3))return}else if("keepstream"===r){if("string"==typeof(n=e[i+"src"])&&n.indexOf(":")>0&&!f.isPlainObject(e.stream))return}else if("keepall"!==r&&"string"==typeof(n=e[i+"src"])&&n.indexOf(":")>0)return;a[i]=u(e[i],t)}else t&&(a[i]="_function")}

@@ -1,0 +1,1 @@
+function(){return i.scale.pow().exponent(.5)}

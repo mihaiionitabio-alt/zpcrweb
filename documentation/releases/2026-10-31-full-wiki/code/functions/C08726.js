@@ -1,0 +1,1 @@
+g=>({step:g.step,reads:g.reads.length})

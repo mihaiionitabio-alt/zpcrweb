@@ -1,0 +1,1 @@
+function _a(e,t,r,n,a){var i=e[0]-t[0],o=e[1]-t[1],l=(a?n:-n)/Math.sqrt(i*i+o*o),s=l*o,c=-l*i,u=e[0]+s,f=e[1]+c,d=t[0]+s,h=t[1]+c,p=(u+d)/2,v=(f+h)/2,g=d-u,m=h-f,y=g*g+m*m,x=r-n,b=u*h-d*f,_=(m<0?-1:1)*Math.sqrt(Math.max(0,x*x*y-b*b)),w=(b*m-g*_)/y,T=(-b*g-m*_)/y,M=(b*m+g*_)/y,k=(-b*g+m*_)/y,A=w-p,L=T-v,S=M-p,C=k-v;return A*A+L*L>S*S+C*C&&(w=M,T=k),[[w-s,T-c],[w*r/x,T*r/x]]}

@@ -1,0 +1,1 @@
+e=>Math.abs(e.time-ref)<7*864e5

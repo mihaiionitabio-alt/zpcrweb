@@ -1,0 +1,1 @@
+(a,r)=>a+mgSafe(()=>uniqueCurveCount(r),0)

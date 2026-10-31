@@ -1,0 +1,1 @@
+function(e,t){for(var r=[],n=0;n<e.length;n++){var a=e[n],i=a[0].trace;i.xaxis+i.yaxis===t&&r.push(a)}return r}

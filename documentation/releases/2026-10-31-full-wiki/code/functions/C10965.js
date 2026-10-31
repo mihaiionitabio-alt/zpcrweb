@@ -1,0 +1,1 @@
+function B(A,e,t,r){this.left=A,this.top=e,this.width=t,this.height=r}

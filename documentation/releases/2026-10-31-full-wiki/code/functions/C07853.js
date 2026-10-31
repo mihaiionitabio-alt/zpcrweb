@@ -1,0 +1,2 @@
+(title,cols,rows)=>`<div class="record-block"><h3>${esc(title)} <span class="tag">${rows.length} row(s)</span></h3>
+    ${rows.length?`<div class="scroll">${table(cols,rows)}</div>`:`<div class="notice">No record of this type.</div>`}</div>`

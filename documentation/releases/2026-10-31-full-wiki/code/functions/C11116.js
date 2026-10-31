@@ -1,0 +1,1 @@
+function(A,e){switch(e){case"right":return 2;case"center":case"justify":return 1;default:return 0}}

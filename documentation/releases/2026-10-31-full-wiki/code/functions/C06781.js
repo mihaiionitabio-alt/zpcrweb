@@ -1,0 +1,1 @@
+k=>pts.every(p=>Number.isFinite(p[k]))?`<polyline fill="none" stroke="#cbd5e1" stroke-dasharray="3 2" points="${pts.map((p,i)=>`${X(i).toFixed(1)},${Y(p[k]).toFixed(1)}`).join(" ")}"/>`:""

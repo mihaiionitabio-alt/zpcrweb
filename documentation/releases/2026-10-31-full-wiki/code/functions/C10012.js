@@ -1,0 +1,1 @@
+c=>({criterion:checkLabels[c.code]?.[UI_LANG==='zh'?1:0]||maraMessage(c.code),action:'reject',status:c.pass?'pass':'fail',evidence:maraEvidenceDetail(c.detail)})

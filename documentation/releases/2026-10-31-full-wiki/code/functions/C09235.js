@@ -1,0 +1,1 @@
+c=>c.charCodeAt(0)>255

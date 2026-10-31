@@ -1,0 +1,1 @@
+function readerExtensions(){return [...new Set(MISSY_READERS.flatMap(r=>r.extensions||[]))];}

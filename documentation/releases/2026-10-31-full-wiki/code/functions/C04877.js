@@ -1,0 +1,1 @@
+function(e){return o(7*(e=e<0?e+1:e)+1,19)<7}

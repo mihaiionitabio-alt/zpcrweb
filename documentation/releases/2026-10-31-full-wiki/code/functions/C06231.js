@@ -1,0 +1,1 @@
+r=>({sample:r.sample,target:r.target,n:r.n,detected:r.det,cq_mean:r.cqMean,cq_sd:r.cqSd,outcome:r.outcome})

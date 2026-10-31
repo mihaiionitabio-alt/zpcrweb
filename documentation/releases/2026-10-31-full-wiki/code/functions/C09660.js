@@ -1,0 +1,1 @@
+next=>function(...args){const out=next(...args);reportRestorePreview();return out;}

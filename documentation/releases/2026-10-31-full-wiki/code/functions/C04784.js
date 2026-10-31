@@ -1,0 +1,1 @@
+function(){return d(this.toString())}

@@ -1,0 +1,1 @@
+function(e){var t,r;if(!(void 0===e.undoQueue||isNaN(e.undoQueue.index)||e.undoQueue.index>=e.undoQueue.queue.length)){for(t=e.undoQueue.queue[e.undoQueue.index],e.undoQueue.inSequence=!0,r=0;r<t.redo.calls.length;r++)i.plotDo(e,t.redo.calls[r],t.redo.args[r]);e.undoQueue.inSequence=!1,e.autoplay=!1,e.undoQueue.index++}}

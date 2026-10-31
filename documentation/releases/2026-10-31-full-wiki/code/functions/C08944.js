@@ -1,0 +1,1 @@
+next => async function(raw){const match=String(raw).trim().match(/^zpcr endpoint (\d+)$/i);if(match){zpcrSetEndpointN(match[1]);cmdPrint('• Endpoint window: last '+ZPCR_ENDPOINT_N+' reads.','ok');return;}if(/^zpcr notes$/i.test(String(raw).trim())){ZPCR_MANUAL_NOTES.forEach(t=>cmdPrint('• '+t));return;}return next(raw);}

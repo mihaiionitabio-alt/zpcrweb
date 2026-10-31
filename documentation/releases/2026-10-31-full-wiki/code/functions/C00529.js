@@ -1,0 +1,1 @@
+function Se(e){return e?{xa:e.xa,ya:e.ya,x:void 0!==e.xSpike?e.xSpike:(e.x0+e.x1)/2,y:void 0!==e.ySpike?e.ySpike:(e.y0+e.y1)/2,distance:e.distance,spikeDistance:e.spikeDistance,curveNumber:e.trace.index,color:e.color,pointNumber:e.index}:null}

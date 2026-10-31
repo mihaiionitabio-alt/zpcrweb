@@ -1,0 +1,1 @@
+function(e){var t=O[e.trace.type]?z(e):e.trace.index;if(Ye[t]){var r=Ye[t]-1,n=je[r];r>0&&Math.abs(e.distance)<Math.abs(n.distance)&&(je[r]=e)}else Ve++,Ye[t]=Ve,je.push(e)}

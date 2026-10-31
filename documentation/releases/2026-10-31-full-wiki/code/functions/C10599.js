@@ -1,0 +1,1 @@
+id=>{const e=document.getElementById(id),sheet=e?.closest('.review-sheet');return sheet&&!sheet.classList.contains('on')?'':selected(id);}

@@ -1,0 +1,1 @@
+()=>{if(pendingConfirmation&&(Date.now()-pendingConfirmation.at>30000||pendingConfirmation.context!==confirmationContext()))pendingConfirmation=null;return pendingConfirmation;}

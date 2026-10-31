@@ -1,0 +1,1 @@
+function(e,t){var r=t.target;if("string"==typeof r&&r){var n=f.nestedProperty(e,r).get();return!!f.isArrayOrTypedArray(n)&&n}return!!f.isArrayOrTypedArray(r)&&r}

@@ -1,0 +1,2 @@
+p=>res.type==="funnel"?{operator:p.operator,n:p.n,rate:(100*p.y).toFixed(1)+" %",flags:p.flags.join(", ")}
+        :{run:p.row.run,date:sopFmtTime(p.row.date),operator:p.row.operator,value:fmtTick(+Number(p.raw!==undefined?p.raw:p.y).toPrecision(4)),dir:ui(ccAlarmDir(p,res)==="lo"?"▼ below":"▲ above"),flags:p.flags.join(", ")}

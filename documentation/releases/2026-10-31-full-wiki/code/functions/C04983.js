@@ -1,0 +1,1 @@
+function a(){this.regionalOptions=[],this.regionalOptions[""]={invalidCalendar:"Calendar {0} not found",invalidDate:"Invalid {0} date",invalidMonth:"Invalid {0} month",invalidYear:"Invalid {0} year",differentCalendars:"Cannot mix {0} and {1} dates"},this.local=this.regionalOptions[""],this.calendars={},this._localCals={}}

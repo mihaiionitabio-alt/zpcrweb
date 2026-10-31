@@ -1,0 +1,1 @@
+function(A,e){e=e.filter(te);return 2!==e.length?kt:[e[0],e[1]]}

@@ -1,0 +1,1 @@
+function(){return G.drawLabels(e,t,{vals:k,layer:_,plotinfo:s,transFn:D,labelFns:G.makeLabelFns(t,T)})}

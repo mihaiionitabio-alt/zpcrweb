@@ -1,0 +1,1 @@
+next=>function(){const items=next(),rank=x=>x.id==='data:loaded_overview'?0:x.id==='data:cohort_statistics'?1:x.id.startsWith('img:overview_')?2:3;return items.sort((a,b)=>rank(a)-rank(b));}

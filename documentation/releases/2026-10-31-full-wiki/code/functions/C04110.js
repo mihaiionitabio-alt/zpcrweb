@@ -1,0 +1,1 @@
+function(){e=a.i,t=a.j,n({type:"brush",mode:"resize"}),n({type:"brushend"})}

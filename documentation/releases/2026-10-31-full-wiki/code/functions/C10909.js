@@ -1,0 +1,1 @@
+function rulesFor(step){return [...new Set([step.evaluate().rule,...Object.keys(RULES)])].filter(Boolean);}

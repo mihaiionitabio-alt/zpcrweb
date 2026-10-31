@@ -1,0 +1,1 @@
+function D(r,n,a){var i,u,d=Vn(n),h=d[0],p=d[1],v=A[a],g=a?l:o,m=g[1]-g[0];if(M&&(h-=v,p-=m+v),i=(a?c:s)?Math.max(h,Math.min(p,r[a])):r[a],M?u=(i+=v)+m:(f&&(v=Math.max(h,Math.min(p,2*f[a]-i))),v<i?(u=i,i=v):u=v),g[0]!=i||g[1]!=u)return a?t=null:e=null,g[0]=i,g[1]=u,!0}

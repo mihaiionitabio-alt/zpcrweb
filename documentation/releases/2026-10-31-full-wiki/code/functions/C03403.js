@@ -1,0 +1,1 @@
+function at(e){return Math.round(255*(e<=.00304?12.92*e:1.055*Math.pow(e,1/2.4)-.055))}

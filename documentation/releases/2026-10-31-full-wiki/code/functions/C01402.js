@@ -1,0 +1,1 @@
+function(e,t){s("global",e,t)}

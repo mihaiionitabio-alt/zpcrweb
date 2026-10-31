@@ -1,0 +1,1 @@
+function piSG(y){const a=y.slice(),weights=[-3,12,17,12,-3];for(let i=2;i<y.length-2;i++)a[i]=weights.reduce((s,v,k)=>s+v*y[i+k-2],0)/35;return a;}

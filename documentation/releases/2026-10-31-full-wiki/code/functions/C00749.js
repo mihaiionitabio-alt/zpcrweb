@@ -1,0 +1,1 @@
+function g(e){var t=e._fullLayout;return!t.hovermode&&(t._has("cartesian")?t._isHoriz?"y":"x":"closest")}

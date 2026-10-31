@@ -1,0 +1,1 @@
+function(n){return(n=t.indexOf(n))<0?[NaN,NaN]:[n>0?r[n-1]:e[0],n<r.length?r[n]:e[e.length-1]]}

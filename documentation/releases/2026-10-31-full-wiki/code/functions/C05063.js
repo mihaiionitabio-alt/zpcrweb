@@ -1,0 +1,1 @@
+function(){if(t.charAt(k)!==e.charAt(A))throw(a.local.unexpectedLiteralAt||a.regionalOptions[""].unexpectedLiteralAt).replace(/\{0\}/,k);k++}

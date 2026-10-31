@@ -1,0 +1,1 @@
+function A(e){for(var t=e;t<i.length;t++)if(i[t]._input===s[e])return i[t]}

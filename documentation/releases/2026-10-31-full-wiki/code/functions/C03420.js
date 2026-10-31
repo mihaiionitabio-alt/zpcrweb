@@ -1,0 +1,1 @@
+function gt(e){return"function"==typeof e?e:function(){return e}}

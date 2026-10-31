@@ -1,0 +1,1 @@
+()=>{if(token!==generation)return;clearListenTimer();closeMicrophone();recognizer=null;listening=false;busy=false;controls();say('Off','已关闭');}

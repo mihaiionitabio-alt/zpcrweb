@@ -1,0 +1,1 @@
+v=>Math.abs(v-m)

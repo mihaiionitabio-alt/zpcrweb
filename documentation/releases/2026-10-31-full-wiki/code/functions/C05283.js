@@ -1,0 +1,1 @@
+p=>named.has(p.name)

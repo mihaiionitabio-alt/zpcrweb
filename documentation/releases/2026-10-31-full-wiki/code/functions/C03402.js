@@ -1,0 +1,1 @@
+function nt(e){return e>.008856?Math.pow(e,1/3):7.787037*e+4/29}

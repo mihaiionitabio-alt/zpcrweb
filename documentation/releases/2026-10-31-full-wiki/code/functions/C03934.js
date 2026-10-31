@@ -1,0 +1,1 @@
+function(){return Ta(E)}

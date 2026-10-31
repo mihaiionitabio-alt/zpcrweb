@@ -1,0 +1,1 @@
+function(e){L(e,i,o)}

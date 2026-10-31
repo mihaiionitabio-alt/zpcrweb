@@ -1,0 +1,1 @@
+function r(t){var r=t.slice(0,t.length-1);return e.segments({inverted:!1,regions:[r]})}

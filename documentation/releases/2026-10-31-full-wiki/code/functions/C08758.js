@@ -1,0 +1,1 @@
+(v,i)=>[65+800*i/Math.max(1,vals.length-1),215-180*(v-lo)/(hi-lo)]

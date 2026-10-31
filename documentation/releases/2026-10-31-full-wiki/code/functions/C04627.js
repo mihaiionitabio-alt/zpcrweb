@@ -1,0 +1,1 @@
+function(e){return{segments:s.difference(e.combined,u),inverted:e.inverted1&&!e.inverted2}}

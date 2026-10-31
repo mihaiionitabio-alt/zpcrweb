@@ -1,0 +1,1 @@
+(s,xv,k)=>s+Math.pow(xv,i)*y[k]

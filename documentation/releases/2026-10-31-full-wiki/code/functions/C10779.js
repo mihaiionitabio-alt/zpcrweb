@@ -1,0 +1,1 @@
+()=>{button.textContent=tr('▶ Guided demo · artificial data','▶ 导览演示 · 模拟数据');demoNote.textContent=tr('Explore MISSY with artificial data','使用模拟数据体验 MISSY');}

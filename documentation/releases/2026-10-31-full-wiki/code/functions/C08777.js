@@ -1,0 +1,1 @@
+function(run){return run.zpcr?(run.zpcr.protocolText?'ZPCR protocol SHA-256 '+run.meta.ZPCRProtocolSHA256:'Unknown protocol; source '+run.meta.sourceSHA256):next(run);}

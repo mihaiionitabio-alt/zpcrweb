@@ -1,0 +1,1 @@
+r => r.temps[k] && r.temps[k].kind

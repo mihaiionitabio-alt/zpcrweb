@@ -1,0 +1,1 @@
+a=>Object.assign({},a)

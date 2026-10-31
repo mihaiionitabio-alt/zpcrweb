@@ -1,0 +1,1 @@
+function cmdToggle(){CMD.open?cmdClose():cmdOpen();}

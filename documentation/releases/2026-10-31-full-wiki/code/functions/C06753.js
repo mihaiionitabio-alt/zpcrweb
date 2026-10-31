@@ -1,0 +1,1 @@
+r=>`${r.instrument}|${r.protocol||"unknown"}|${r.firmware||""}`

@@ -1,0 +1,1 @@
+function(e){return arguments.length?(g=e*e,l):Math.sqrt(g)}

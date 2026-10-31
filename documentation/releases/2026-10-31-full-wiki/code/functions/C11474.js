@@ -1,0 +1,1 @@
+(s,bold=false,size=10)=>doc.para(String(s),size,bold)

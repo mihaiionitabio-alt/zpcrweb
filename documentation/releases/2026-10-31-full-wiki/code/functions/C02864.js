@@ -1,0 +1,1 @@
+function(e){var r=t._fullLayout,a=t._fullData[c.index];t._dragging||!1===r.hovermode||(t._hoverdata=[m(e,a)],i.click(t,n.event))}

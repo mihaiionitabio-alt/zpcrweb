@@ -1,0 +1,1 @@
+()=>acceptPasted($("#csvin").value,"pasted text")

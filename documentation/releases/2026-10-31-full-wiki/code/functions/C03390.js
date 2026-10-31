@@ -1,0 +1,1 @@
+function Ge(e,t,r){return this instanceof Ge?(this.h=+e,this.c=+t,void(this.l=+r)):arguments.length<2?e instanceof Ge?new Ge(e.h,e.c,e.l):function(e,t,r){return e>0?new Ge(Math.atan2(r,t)*Ee,Math.sqrt(t*t+r*r),e):new Ge(NaN,NaN,e)}(e instanceof Je?e.l:(e=dt((e=i.rgb(e)).r,e.g,e.b)).l,e.a,e.b):new Ge(e,t,r)}

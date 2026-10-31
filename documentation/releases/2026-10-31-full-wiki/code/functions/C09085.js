@@ -1,0 +1,1 @@
+next => async function(raw){if(/^zpcr\s+(compare|console)$/i.test(String(raw).trim())){zcBrowse();return;}return next(raw);}

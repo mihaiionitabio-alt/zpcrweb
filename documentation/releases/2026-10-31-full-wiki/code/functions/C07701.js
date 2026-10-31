@@ -1,0 +1,1 @@
+()=>{REVIEW_STATE.issueRuns=[];REVIEW_STATE.issueCategory="all";renderIssueOverview();}

@@ -1,0 +1,1 @@
+function(e,t){var r=1===Math.round(t%2),n=Math.round(e);return r?n+.5:n}

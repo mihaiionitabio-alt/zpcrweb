@@ -1,0 +1,1 @@
+function y(e,t){t._draggers.selectAll("g."+e).remove(),t._defs.select("#clip"+t._uid+e+"plot").remove()}

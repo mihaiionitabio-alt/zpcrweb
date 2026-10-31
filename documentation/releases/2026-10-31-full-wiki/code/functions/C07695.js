@@ -1,0 +1,1 @@
+([name,c])=>`<div class="issue-category ${c.error?"bad":""}"><b>${c.n}</b> ${esc(name)}<small>${c.error} error · ${c.review} review · ${c.runs.size} experiment(s)</small></div>`

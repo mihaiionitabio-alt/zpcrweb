@@ -1,0 +1,1 @@
+function(){var e=n.select(this).select(".selector-text"),t=r.font.size*h,a=Math.max(t*u.lineCount(e),16)+3;d=Math.max(d,a)}

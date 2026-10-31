@@ -1,0 +1,1 @@
+async()=>{await press('#mg-sheet-list button:nth-child(1)','ONE → Zoom.',()=>MISSY_CONSOLE_VOICE.command('one'));await press('#mg-sheet-list button:nth-child(2)','TWO → Zoom in.',()=>MISSY_CONSOLE_VOICE.command('two'));focus('#mg-chart','The plot is now enlarged. Zoom and pan alter the view only.')}

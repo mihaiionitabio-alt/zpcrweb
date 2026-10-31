@@ -1,0 +1,1 @@
+function(e,t){return e[0]._groupMinRank-t[0]._groupMinRank||e[0]._preGroupSort-t[0]._preGroupSort}

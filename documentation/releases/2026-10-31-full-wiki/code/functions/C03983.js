@@ -1,0 +1,1 @@
+function o(e,t,i,o){var l=t.call(e,i,o),s=r.call(e,l,o),c=n.call(e,l,o)-ze,u=a.call(e,l,o)-ze;return{r:s,a0:c,a1:u,p0:[s*Math.cos(c),s*Math.sin(c)],p1:[s*Math.cos(u),s*Math.sin(u)]}}

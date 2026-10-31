@@ -1,0 +1,1 @@
+function(e){e.undoQueue=e.undoQueue||{index:0,queue:[],sequence:!1},e.undoQueue.sequence=!1,e.undoQueue.beginSequence=!1}

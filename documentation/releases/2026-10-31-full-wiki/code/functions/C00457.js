@@ -1,0 +1,1 @@
+function(e,t,r){if(v(t))return c;var n=d/4,a=2*e*h(n),i=2*e*p(n);return g(t,r,"M0,0L"+-a+","+i+"A "+2*e+","+2*e+" 0 0 1 "+a+","+i+"Z")}

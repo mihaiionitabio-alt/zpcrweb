@@ -1,0 +1,1 @@
+function He(e,t){Fe(e._anchorAxis||{})&&e._hideCounterAxisInsideTickLabels&&e._hideCounterAxisInsideTickLabels(t)}

@@ -1,0 +1,1 @@
+()=>{for(const x of state.scroll){x.el.scrollTop=x.top;x.el.scrollLeft=x.left;}if(state.focus?.isConnected)state.focus.focus({preventScroll:true});}

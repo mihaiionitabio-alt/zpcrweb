@@ -1,0 +1,1 @@
+async function(raw){const s=String(raw).trim(),endpoint=s.match(/^cfx\s+endpoint\s+(\d+)$/i);if(endpoint){zpcrSetEndpointN(endpoint[1]);return;}if(/^cfx\s+graphs$/i.test(s)){unifiedBrowse(CFX_ITEMS[0]?.id);return;}if(/^cfx\s+script$/i.test(s)){cmdScriptToggle(true);cmdEl('cmd-script').value=cfxReportScript();return;}return next(raw);}

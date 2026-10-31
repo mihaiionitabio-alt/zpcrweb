@@ -1,0 +1,1 @@
+i=>L+i/Math.max(1,cycles-1)*(W-L-R)

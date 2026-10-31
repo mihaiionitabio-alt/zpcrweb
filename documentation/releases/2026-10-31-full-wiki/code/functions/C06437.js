@@ -1,0 +1,1 @@
+r=>{const o={};for(const k in r)o[k]=typeof r[k]==="number"?+r[k].toPrecision(6):r[k];return o;}

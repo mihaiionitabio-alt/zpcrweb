@@ -1,0 +1,1 @@
+r=>r.darkData?.[c*4]

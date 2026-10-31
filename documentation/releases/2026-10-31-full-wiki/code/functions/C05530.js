@@ -1,0 +1,1 @@
+t=>(p.exp.detectors.find(d=>d.name===t)||{}).reporter||""

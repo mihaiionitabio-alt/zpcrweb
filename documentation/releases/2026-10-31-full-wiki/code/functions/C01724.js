@@ -1,0 +1,1 @@
+function S(e){var t=e._fullLayout;t._redrawFromAutoMarginCount?t._redrawFromAutoMarginCount--:e.emit("plotly_afterplot")}

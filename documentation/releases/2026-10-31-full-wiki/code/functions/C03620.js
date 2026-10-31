@@ -1,0 +1,1 @@
+function Qr(e,t,r){var n=0,a=0;if(e.charge=0,!e.leaf)for(var i,o=e.nodes,l=o.length,s=-1;++s<l;)null!=(i=o[s])&&(Qr(i,t,r),e.charge+=i.charge,n+=i.charge*i.cx,a+=i.charge*i.cy);if(e.point){e.leaf||(e.point.x+=Math.random()-.5,e.point.y+=Math.random()-.5);var c=t*r[e.point.index];e.charge+=e.pointCharge=c,n+=c*e.point.x,a+=c*e.point.y}e.cx=n/e.charge,e.cy=a/e.charge}

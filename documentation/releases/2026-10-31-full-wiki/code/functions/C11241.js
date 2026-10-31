@@ -1,0 +1,1 @@
+function(A){return A.isPositioned()||A.isFloating()}

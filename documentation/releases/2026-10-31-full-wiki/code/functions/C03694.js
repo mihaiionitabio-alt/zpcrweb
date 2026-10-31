@@ -1,0 +1,1 @@
+function hn(e,t,r){e.y0=t,e.y=r}

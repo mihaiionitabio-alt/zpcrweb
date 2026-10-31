@@ -1,0 +1,1 @@
+function(e){return"string"==typeof e&&(e=e.replace(i,"")),n(e)?Number(e):a}

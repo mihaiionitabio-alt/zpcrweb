@@ -1,0 +1,1 @@
+g=>g.some(r=>visible.has(r.key))

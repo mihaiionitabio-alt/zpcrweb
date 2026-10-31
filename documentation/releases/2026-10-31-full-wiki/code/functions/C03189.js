@@ -1,0 +1,1 @@
+function(){var e=[];for(var t in this._)e.push({key:S(t),value:this._[t]});return e}

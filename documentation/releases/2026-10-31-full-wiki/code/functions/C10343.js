@@ -1,0 +1,1 @@
+node=>{if(!node)return;node.classList.remove('missy-selected-feedback');void node.offsetWidth;node.classList.add('missy-selected-feedback');setTimeout(()=>node.classList.remove('missy-selected-feedback'),300);}

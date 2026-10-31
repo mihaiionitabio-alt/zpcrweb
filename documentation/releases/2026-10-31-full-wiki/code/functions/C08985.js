@@ -1,0 +1,1 @@
+(title,unit,series,opts={})=>panels.push({title,unit,series,...opts})

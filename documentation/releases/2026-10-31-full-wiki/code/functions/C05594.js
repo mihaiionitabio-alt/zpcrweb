@@ -1,0 +1,1 @@
+x=>x.ctDelta!=null

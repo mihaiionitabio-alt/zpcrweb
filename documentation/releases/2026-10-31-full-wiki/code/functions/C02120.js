@@ -1,0 +1,1 @@
+function(e,t){var r,n,a=[],i=t.length&&t[t.length-1].x<t[0].x,o=function(e,t){var r=e.xbnd[t];null!==r&&a.push(l.extendFlat({},e,{x:r}))};if(e.showdividers&&t.length){for(r=0;r<t.length;r++){var s=t[r];s.text2!==n&&o(s,i?1:0),n=s.text2}o(t[r-1],i?0:1)}return a}

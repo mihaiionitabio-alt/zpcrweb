@@ -1,0 +1,1 @@
+function le(e){var t=ae(e);return function(r,n){if(a=r.classList)return n?a.add(e):a.remove(e);var a=r.getAttribute("class")||"";n?(t.lastIndex=0,t.test(a)||r.setAttribute("class",ne(a+" "+e))):r.setAttribute("class",ne(a.replace(t," ")))}}

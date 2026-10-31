@@ -1,0 +1,1 @@
+r=>r.curve==='typical'&&N(r.cq)>0&&N(r.copies)>0

@@ -1,0 +1,1 @@
+function(e){for(var t=0;t<e.length;t++)if(!i.traceIs(e[t],"noHover"))return!1;return!0}

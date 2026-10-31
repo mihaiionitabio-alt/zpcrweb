@@ -1,0 +1,1 @@
+function(){return e.emit("plotly_redraw"),e}

@@ -1,0 +1,1 @@
+x=>`<option value="${esc(x)}"${String(v)===String(x)?' selected':''}>${esc(ui(EXPERIMENT_OPTION_LABELS[x]||x))}</option>`

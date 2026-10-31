@@ -1,0 +1,1 @@
+function ssIncluded(run,w){return !SAMPLE_SELECTION.pending&&!SAMPLE_SELECTION.excluded.has(ssKey(run,w));}

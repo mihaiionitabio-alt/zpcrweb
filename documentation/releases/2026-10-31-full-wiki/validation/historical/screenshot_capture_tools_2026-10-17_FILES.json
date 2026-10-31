@@ -1,0 +1,18 @@
+[
+  {
+    "file": "capture_4000_original.js",
+    "bytes": 10533
+  },
+  {
+    "file": "capture_4000_portable.js",
+    "bytes": 10515
+  },
+  {
+    "file": "package.json",
+    "bytes": 73
+  },
+  {
+    "file": "README.txt",
+    "bytes": 768
+  }
+]

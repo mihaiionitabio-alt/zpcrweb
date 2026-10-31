@@ -1,0 +1,1 @@
+r=>Object.values(r.plate||{}).some(x=>Number.isFinite(x.replicateOf))

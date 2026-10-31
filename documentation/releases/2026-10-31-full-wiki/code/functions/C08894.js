@@ -1,0 +1,1 @@
+r=>r.file+' source SHA-256 '+r.source_sha256+' acquisition SHA-256 '+r.acquisition_sha256+' '+r.status

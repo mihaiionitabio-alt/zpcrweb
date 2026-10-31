@@ -1,0 +1,1 @@
+function(e,t,r){var n=this._validate(e,t,r,c.local.invalidDate||c.regionalOptions[""].invalidDate);return n.toJD()-this.newDate(n.year(),this.fromMonthOfYear(n.year(),this.minMonth),this.minDay).toJD()+1}

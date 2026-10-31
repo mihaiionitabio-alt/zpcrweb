@@ -1,0 +1,1 @@
+(a,b)=>(b.v/p.t2Ucl+b.q/p.speUcl)-(a.v/p.t2Ucl+a.q/p.speUcl)

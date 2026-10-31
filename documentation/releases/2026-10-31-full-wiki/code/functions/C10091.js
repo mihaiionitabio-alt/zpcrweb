@@ -1,0 +1,1 @@
+()=>{SOP.interpretation.rules[Number(area.dataset.i)][area.dataset.k]=area.value;sopProfileEdited();}

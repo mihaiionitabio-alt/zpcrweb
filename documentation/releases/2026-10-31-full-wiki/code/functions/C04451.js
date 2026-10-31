@@ -1,0 +1,1 @@
+function(e){e.setMonth(0,1),e.setHours(0,0,0,0)}

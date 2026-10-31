@@ -1,0 +1,1 @@
+function(e,n){if(r)return r(e,n-1);var a=function(t){for(var r={},n=e.length,a=0;a<n;++a)r[e[a]]=t[a];return r};r=t?function(e,r){return t(a(e),r)}:a}

@@ -1,0 +1,1 @@
+()=>focus('#cmd-tools','Commands are explicit and reviewable. This is the real Command mode, not a screenshot.')

@@ -1,0 +1,1 @@
+(a, b) => a + (b - mean) * (b - mean)

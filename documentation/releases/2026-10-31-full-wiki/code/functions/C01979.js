@@ -1,0 +1,1 @@
+function(e){"use strict";e.exports={xaxis:{valType:"subplotid",dflt:"x",editType:"calc+clearAxisTypes"},yaxis:{valType:"subplotid",dflt:"y",editType:"calc+clearAxisTypes"}}}

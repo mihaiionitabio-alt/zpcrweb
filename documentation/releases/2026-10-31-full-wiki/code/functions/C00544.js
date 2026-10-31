@@ -1,0 +1,1 @@
+function(e,t,r){if(!r||r.length!==e._hoverdata.length)return!0;for(var n=r.length-1;n>=0;n--){var a=r[n],i=e._hoverdata[n];if(a.curveNumber!==i.curveNumber||String(a.pointNumber)!==String(i.pointNumber)||String(a.pointNumbers)!==String(i.pointNumbers))return!0}return!1}

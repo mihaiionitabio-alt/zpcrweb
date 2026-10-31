@@ -1,0 +1,1 @@
+next=>function(){const chosen=next();if(chosen.length&&!chosen.some(x=>x.id==='data:source_manifest'))chosen.push(selItem('data:source_manifest'));return chosen;}

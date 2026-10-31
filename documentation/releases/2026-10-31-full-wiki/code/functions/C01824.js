@@ -1,0 +1,1 @@
+function(){h.saveRangeInitial(e,!0)}

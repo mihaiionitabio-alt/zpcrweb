@@ -1,0 +1,1 @@
+()=>localizeDOM(document.body)

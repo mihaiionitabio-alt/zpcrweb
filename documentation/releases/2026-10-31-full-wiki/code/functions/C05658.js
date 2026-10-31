@@ -1,0 +1,1 @@
+r=>Object.values(r.plate||{}).forEach(x=>{const s=x.name;if(s&&!m.has(s))m.set(s,roleFromName(s)!=="Unknown"?s:`S${String(++k).padStart(2,"0")}`);})

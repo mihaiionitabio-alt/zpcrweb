@@ -1,0 +1,1 @@
+function(){return e(A.result)}

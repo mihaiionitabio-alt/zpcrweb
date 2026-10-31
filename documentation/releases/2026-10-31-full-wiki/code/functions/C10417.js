@@ -1,0 +1,1 @@
+a=>Array.isArray(a)||(ArrayBuffer.isView(a)&&typeof a.length==='number')

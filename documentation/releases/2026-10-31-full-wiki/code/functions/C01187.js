@@ -1,0 +1,1 @@
+function _(e,t,r){var n=l.ensureSingle(e,"text",f.labelClass,(function(e){e.attr({"text-anchor":"middle","data-notex":1})})),a=t.step.label,i=r._gd._fullLayout._meta;return i&&(a=l.templateString(a,i)),n.call(o.font,r.font).text(a).call(c.convertToTspans,r._gd),n}

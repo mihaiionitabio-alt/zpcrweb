@@ -1,0 +1,1 @@
+w=>sopControlSpec(w)===c

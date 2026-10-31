@@ -1,0 +1,1 @@
+x=>place<0?x.toFixed(Math.min(15,-place)):x.toFixed(0)

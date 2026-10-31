@@ -1,0 +1,1 @@
+()=> 'Computer show chart '+graphNumber('plate')

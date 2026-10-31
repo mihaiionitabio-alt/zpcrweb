@@ -1,0 +1,1 @@
+function M(e,t){var r,n,a,i=e[t][1],o=e[t][2],l=e.length;return n=e[r=(t+1)%l][1],a=e[r][2],n===i&&a===o&&(n=e[r=(t+2)%l][1],a=e[r][2]),[r,n,a]}

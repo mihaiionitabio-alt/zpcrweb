@@ -1,0 +1,1 @@
+w=>!w||typeof w!=="object"||Array.isArray(w)

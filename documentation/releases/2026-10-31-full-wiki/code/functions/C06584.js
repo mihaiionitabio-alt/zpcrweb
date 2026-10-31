@@ -1,0 +1,1 @@
+r=>r.used.filter(w=>w.curve&&w.curve.length).map(w=>wellSignal(w.curve).amplitude)

@@ -1,0 +1,1 @@
+async function cfxBindStaged(staged,manifests){for(const s of staged.filter(s=>s.kind==="rdml")){const hash=await sourceSha256(s.bytes),matches=manifests.filter(e=>e.rdmlFile===s.name&&e.rdmlSHA256===hash);if(matches.length>1)throw Error("Conflicting CFX provenance entries");CFX_RDML_BINDINGS.set(s.bytes,{sha256:hash,entry:matches[0]||null});}}

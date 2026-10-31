@@ -1,0 +1,1 @@
+e=>{if(e.target.id==='missy-setup-form')queueMicrotask(()=>sound.notify('workspaceEnter'));}

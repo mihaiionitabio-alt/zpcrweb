@@ -1,0 +1,1 @@
+function O(){var e=i.mouse(m),t=!1;g&&(e[0]+=g[0],e[1]+=g[1]),M||(i.event.altKey?(f||(f=[(o[0]+o[1])/2,(l[0]+l[1])/2]),A[0]=o[+(e[0]<f[0])],A[1]=l[+(e[1]<f[1])]):f=null),w&&D(e,n,0)&&(p(b),t=!0),T&&D(e,a,1)&&(v(b),t=!0),t&&(h(b),x({type:"brush",mode:M?"move":"resize"}))}

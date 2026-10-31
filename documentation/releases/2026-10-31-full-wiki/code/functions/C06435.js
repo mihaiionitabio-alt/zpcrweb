@@ -1,0 +1,1 @@
+(id,on)=>{$(id).style.display=on?"":"none";}

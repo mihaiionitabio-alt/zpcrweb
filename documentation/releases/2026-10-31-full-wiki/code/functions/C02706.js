@@ -1,0 +1,1 @@
+function(e){return String(Math.round(d*(e-c)))}

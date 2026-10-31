@@ -1,0 +1,1 @@
+function hi(e){return JSON.parse(e.responseText)}

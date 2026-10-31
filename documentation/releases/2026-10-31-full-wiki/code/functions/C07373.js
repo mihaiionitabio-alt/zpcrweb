@@ -1,0 +1,1 @@
+()=>RUNS.some(r=>r.eds&&r.eds.results.length)

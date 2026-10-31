@@ -1,0 +1,1 @@
+function(e,t,r,n,a){"never"===a?a="":"all"===e.showexponent&&Math.abs(t.x/e.dtick)<1e-6&&(a="hide"),t.text=we(t.x,e,a,n)}

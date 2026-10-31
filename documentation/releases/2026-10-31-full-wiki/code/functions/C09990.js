@@ -1,0 +1,1 @@
+target=>specs.some(x=>x.name===target||x.spec&&sopMatcher(x.spec.match)(target))

@@ -1,0 +1,1 @@
+r=>Number.isFinite(r.block_cycles)

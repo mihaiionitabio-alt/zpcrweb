@@ -1,0 +1,1 @@
+g=>`<option value="${g.id}">${esc(ui(g.title))}</option>`

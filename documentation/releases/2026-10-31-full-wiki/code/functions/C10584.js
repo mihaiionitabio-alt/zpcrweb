@@ -1,0 +1,1 @@
+e=>{if(e.target.closest?.('#drop')&&!e.relatedTarget?.closest?.('#drop'))dragInside=false;}

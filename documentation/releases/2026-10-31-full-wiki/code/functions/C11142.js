@@ -1,0 +1,1 @@
+function(A,e){return ZA(e)?e.number:!_A(e)||"bold"!==e.value?400:700}

@@ -1,0 +1,1 @@
+e=>drop.addEventListener(e,ev=>{ev.preventDefault();drop.classList.remove("hot");})

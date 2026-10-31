@@ -1,0 +1,1 @@
+function(e,t,r){"use strict";var n=r(4530).FROM_BL;e.exports=function(e,t,r){void 0===r&&(r=n[e.constraintoward||"center"]);var a=[e.r2l(e.range[0]),e.r2l(e.range[1])],i=a[0]+(a[1]-a[0])*r;e.range=e._input.range=[e.l2r(i+(a[0]-i)*t),e.l2r(i+(a[1]-i)*t)],e.setScale()}}

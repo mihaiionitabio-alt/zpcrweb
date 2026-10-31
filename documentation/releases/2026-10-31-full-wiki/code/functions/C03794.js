@@ -1,0 +1,1 @@
+function v(r){var a=e||t(r),i=a[0];return i.x=i.y=0,i.value?(i.dx=n[0],i.dy=n[1]):i.dx=i.dy=0,e&&t.revalue(i),u([i],i.dx*i.dy/i.value),(e?d:f)(i),l&&(e=a),a}

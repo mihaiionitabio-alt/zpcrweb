@@ -1,0 +1,1 @@
+(s,i)=>svg+=`<text x="28" y="${66+i*23}" font-size="19">${E(s)}</text>`

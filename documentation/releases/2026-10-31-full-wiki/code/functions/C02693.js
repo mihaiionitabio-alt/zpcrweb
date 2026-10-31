@@ -1,0 +1,1 @@
+function(e){"use strict";e.exports={TEXTPAD:3,eventDataKeys:["value","label"]}}

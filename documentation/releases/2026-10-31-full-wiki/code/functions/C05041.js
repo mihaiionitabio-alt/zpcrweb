@@ -1,0 +1,1 @@
+function(e){var t=this._validate(e,this.minMonth,this.minDay,c.local.invalidYear||c.regionalOptions[""].invalidYear);return(e=t.year()+(t.year()<0?1:0))%4==0&&(e%100!=0||e%400==0)}

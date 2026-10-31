@@ -1,0 +1,1 @@
+r => [r.rows, r.cols, r.channels]

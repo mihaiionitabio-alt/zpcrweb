@@ -1,0 +1,1 @@
+(id,label,items)=>{const l=document.createElement('label');l.textContent=label+' ';const el=document.createElement('select');el.id=id;el.setAttribute('aria-label',label);items.forEach(([v,t])=>el.add(new Option(t,String(v))));l.append(el);controls.append(l);return el;}

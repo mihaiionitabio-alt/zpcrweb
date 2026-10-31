@@ -1,0 +1,1 @@
+q=>Number.isFinite(q)&&q>0

@@ -1,0 +1,1 @@
+e=>/\/quant\/[^/]+\.quant$/.test(e.name)

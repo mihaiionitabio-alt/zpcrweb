@@ -1,0 +1,1 @@
+w=>w.loaded&&w.channelPosition===channel

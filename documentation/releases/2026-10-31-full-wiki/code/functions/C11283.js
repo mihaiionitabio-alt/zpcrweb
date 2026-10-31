@@ -1,0 +1,1 @@
+function(A,e){return e&&"string"==typeof e.cssText?A+e.cssText:A}

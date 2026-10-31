@@ -1,0 +1,1 @@
+function(e,t){var r,n;function i(e,t){return a.coerce(n._input,n,f,e,t)}for(var o=0;o<e.length;o++)if("bar"===(n=e[o]).type){r=n._input;var l=i("marker.cornerradius",t.barcornerradius);n.marker&&(n.marker.cornerradius=h(l)),"group"===t.barmode&&u(r,n,t,i)}}

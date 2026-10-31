@@ -1,0 +1,1 @@
+function cfxContext(r){return [r.meta.SerialNumber||'Unknown SN',r.rows+'×'+r.cols,r.cfxRDML.dye||'Unknown dye','P '+r.cfxRDML.protocolSHA256.slice(0,10),r.runId].join(' | ');}

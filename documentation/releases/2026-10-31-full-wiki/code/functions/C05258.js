@@ -1,0 +1,1 @@
+t=>{const v=propText(dom,t);return v===""?null:Number(v);}

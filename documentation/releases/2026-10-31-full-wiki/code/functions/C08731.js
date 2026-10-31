@@ -1,0 +1,1 @@
+step=>({name:'Read step '+step,cycles:z.reads.filter(r=>r.step===step).length,mode:'Raw acquisition',segments:[]})

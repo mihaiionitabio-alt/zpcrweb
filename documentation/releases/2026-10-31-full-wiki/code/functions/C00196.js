@@ -1,0 +1,1 @@
+function(e){return e?n(e).getAlpha():0}

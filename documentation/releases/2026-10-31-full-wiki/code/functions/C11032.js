@@ -1,0 +1,1 @@
+function zA(A){return 31!==A.type}

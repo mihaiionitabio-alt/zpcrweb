@@ -1,0 +1,1 @@
+r=>{const c=counts.get(r.category)||{n:0,error:0,review:0,runs:new Set()};c.n++;if(r.severity==="error")c.error++;else if(r.severity==="review")c.review++;c.runs.add(r.experiment);counts.set(r.category,c);}

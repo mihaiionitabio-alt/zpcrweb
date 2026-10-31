@@ -1,0 +1,1 @@
+function A(e){return Math.pow(10,e)}

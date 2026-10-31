@@ -1,0 +1,1 @@
+function(e){var t=o(8+(e-=this.jdEpoch)+340,365);return[Math.floor(t/20)+1,o(t,20)]}

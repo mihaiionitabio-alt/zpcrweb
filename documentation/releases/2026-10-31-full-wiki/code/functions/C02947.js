@@ -1,0 +1,1 @@
+function(e,t,r){"use strict";var n=r(9714);e.exports=function(e,t,r){var a={},i={_fullLayout:r},o=n.getFromTrace(i,t,"x"),l=n.getFromTrace(i,t,"y"),s=e.orig_x;void 0===s&&(s=e.x);var c=e.orig_y;return void 0===c&&(c=e.y),a.xLabel=n.tickText(o,o.c2l(s),!0).text,a.yLabel=n.tickText(l,l.c2l(c),!0).text,a}}

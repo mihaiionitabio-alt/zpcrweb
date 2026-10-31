@@ -1,0 +1,1 @@
+function(e,t){var r,n=0,a=e.length,i=-1;if(1===arguments.length)for(;++i<a;)y(r=+e[i])&&(n+=r);else for(;++i<a;)y(r=+t.call(e,e[i],i))&&(n+=r);return n}

@@ -1,0 +1,1 @@
+function stopPreview(){if(previewTimer!==null)clearTimeout(previewTimer);previewTimer=null;previewGeneration++;previewState('stopped');for(const n of previewNodes){try{n.stop();}catch{}}previewNodes.clear();speechSynthesisSafeCancel();}

@@ -1,0 +1,1 @@
+function(e,t){for(var r=1/0,a=-1/0,o=0;o<t.length;o++){var s=n(e[t[o]]);s!==l&&(r=Math.min(r,s),a=Math.max(a,s))}return a===-1/0||r===1/0?l:i(a-r)}

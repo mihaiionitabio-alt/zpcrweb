@@ -1,0 +1,1 @@
+(r,i)=>r.forEach((v,j)=>((i===0||j===0||i===g.length-1||j===r.length-1)?edge:centre).push(v))

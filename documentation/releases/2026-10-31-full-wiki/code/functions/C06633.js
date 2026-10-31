@@ -1,0 +1,1 @@
+(v,i)=>Math.abs(v-base[i])

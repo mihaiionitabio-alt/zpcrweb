@@ -1,0 +1,1 @@
+function(e){return this.fromJD(c.instance().fromJSDate(e).toJD())}

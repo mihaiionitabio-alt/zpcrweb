@@ -1,0 +1,1 @@
+r=>r.id===reader.id

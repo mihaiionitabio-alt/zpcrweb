@@ -1,0 +1,1 @@
+function m(e,t){var r=e._fullLayout.annotations[t]||{},n=s.getFromId(e,r.xref),a=s.getFromId(e,r.yref);n&&n.setScale(),a&&a.setScale(),x(e,r,t,!1,n,a)}

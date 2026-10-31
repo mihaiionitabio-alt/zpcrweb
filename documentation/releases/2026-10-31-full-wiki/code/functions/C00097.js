@@ -1,0 +1,1 @@
+(name,i)=>{const done=completed[i];lines.push((done?'[OK]   ':'[LOAD] ')+name);if(done)lines.push('       '+ms(done.end)+' elapsed | '+ms(done.duration)+' stage interval  -  '+details[i]);}

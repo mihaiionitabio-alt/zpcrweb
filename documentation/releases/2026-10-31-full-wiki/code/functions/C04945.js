@@ -1,0 +1,1 @@
+function(e){var t=this._validate(e,this.minMonth,this.minDay,n.local.invalidYear);return 682*((t.year()-(t.year()>0?474:473))%2820+474+38)%2816<682}

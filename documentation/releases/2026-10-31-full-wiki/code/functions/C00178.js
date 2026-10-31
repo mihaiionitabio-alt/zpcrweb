@@ -1,0 +1,1 @@
+function(e,t,r){i(e,t,{name:"annotations",handleItemDefaults:s,fullLayout:r.fullLayout})}

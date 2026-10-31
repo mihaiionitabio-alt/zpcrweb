@@ -1,0 +1,1 @@
+function(e,t){return s(100*e,t)}

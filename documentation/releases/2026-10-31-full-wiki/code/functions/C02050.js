@@ -1,0 +1,1 @@
+function we(e,t){var r=G.tickText(e,t.value,!1,t.simpleLabel),n=t.periodX;return void 0!==n&&(r.periodX=n,(n>E||n<z)&&(n>E&&(r.periodX=E),n<z&&(r.periodX=z),_e(r))),r}

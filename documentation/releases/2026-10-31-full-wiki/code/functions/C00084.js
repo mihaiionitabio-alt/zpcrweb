@@ -1,0 +1,1 @@
+()=>{if(document.hidden){stopEvents();stopPreview();stopAmbience();speechSynthesisSafeCancel();}else if(ambienceId)void setAmbience(ambienceId);}

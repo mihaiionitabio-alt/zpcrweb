@@ -1,0 +1,1 @@
+x=>x.kind==='image'&&reportItemVisible(x)

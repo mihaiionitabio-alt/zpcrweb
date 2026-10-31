@@ -1,0 +1,1 @@
+role=>/control|calibrat|standard|blank|\bNTC\b/i.test(role)

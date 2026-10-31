@@ -1,0 +1,1 @@
+()=>downloadCanvas($("#rising-chart"),baseName()+"_rising_curves.png")

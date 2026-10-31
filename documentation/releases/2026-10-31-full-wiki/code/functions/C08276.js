@@ -1,0 +1,1 @@
+function selOptionRule(...args){return MISSY_HOOKS.invoke("selOptionRule",this,args,selOptionRuleBase);}

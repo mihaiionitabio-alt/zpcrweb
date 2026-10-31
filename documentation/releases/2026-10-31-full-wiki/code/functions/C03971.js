@@ -1,0 +1,1 @@
+function Ba(e){return e.source}

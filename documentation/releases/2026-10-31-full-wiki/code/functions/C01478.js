@@ -1,0 +1,1 @@
+function(e){return e instanceof n.selection}

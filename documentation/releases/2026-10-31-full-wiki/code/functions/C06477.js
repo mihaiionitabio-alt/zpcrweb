@@ -1,0 +1,2 @@
+u=>{const dv=new DataView(u.buffer,u.byteOffset,u.byteLength),n=Math.floor(u.length/size),o=new Float64Array(n);
+    for(let k=0;k<n;k++)o[k]=isD?dv.getFloat64(k*size,true):dv.getUint32(k*size,true);return o;}

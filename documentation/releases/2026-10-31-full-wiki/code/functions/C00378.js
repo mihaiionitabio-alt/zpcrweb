@@ -1,0 +1,1 @@
+function(e){for(var r="M"+E(e[0][0])+","+R(e[0][1]),n=e.length,a=1;a<n;a++)r+=t(e[a-1],e[a],a===n-1);return r}

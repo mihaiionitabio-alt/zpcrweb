@@ -1,0 +1,1 @@
+next => function(step){next(step);if(String(mgItem()?.graphId||'').startsWith('zc_compare_'))MG.chart=true;}

@@ -1,0 +1,1 @@
+function(e){if(!(a=e.length))return[];for(var t=-1,r=i.min(e,_),n=new Array(r);++t<r;)for(var a,o=-1,l=n[t]=new Array(a);++o<a;)l[o]=e[o][t];return n}

@@ -1,0 +1,1 @@
+s=>(s.points||[]).some(p=>p.channel===chanIdx)

@@ -1,0 +1,1 @@
+function(e,t,r){"use strict";var n=r(4809),a=r(6667);e.exports=function(e,t){var r,i="group"===t.barmode;"group"===t.scattermode&&("scattergap",r=i?t.bargap:.2,n.coerce(e,t,a,"scattergap",r))}}

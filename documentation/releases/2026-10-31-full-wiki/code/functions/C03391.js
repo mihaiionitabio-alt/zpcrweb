@@ -1,0 +1,1 @@
+function(e,t,r){return e>0?new Ge(Math.atan2(r,t)*Ee,Math.sqrt(t*t+r*r),e):new Ge(NaN,NaN,e)}

@@ -1,0 +1,1 @@
+function c(){"function"==typeof a.calc?a.calc(e,n,t):(t._fillgradient=r.reversescale?m(r.colorscale):r.colorscale,t._zrange=[r[a.min],r[a.max]])}

@@ -1,0 +1,1 @@
+r=>r.instrument===CC_STATE.instrument

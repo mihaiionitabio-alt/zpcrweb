@@ -1,0 +1,1 @@
+(s,i)=>({title:s[0],text:narrate(s[1]),chapter:Math.floor(i/10)})

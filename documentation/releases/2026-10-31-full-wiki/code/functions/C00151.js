@@ -1,0 +1,1 @@
+function U(e,t){return"auto"===t&&(t=e<1/3?"left":e>2/3?"right":"center"),{center:0,middle:0,left:.5,bottom:-.5,right:-.5,top:.5}[t]}

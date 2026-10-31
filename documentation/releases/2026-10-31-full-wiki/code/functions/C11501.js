@@ -1,0 +1,1 @@
+r=>r.file==='ARTIFICIAL_FINAL_CYCLE.rdml'

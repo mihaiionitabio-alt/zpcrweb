@@ -1,0 +1,1 @@
+r=>(r.extensions||[]).some(e=>source.name.toLowerCase().endsWith(e))

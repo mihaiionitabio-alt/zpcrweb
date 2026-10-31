@@ -1,0 +1,1 @@
+(v,i)=>[i+1,c.log?Math.max(v,1e-6):v]

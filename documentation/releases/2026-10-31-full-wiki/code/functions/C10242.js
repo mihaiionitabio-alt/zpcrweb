@@ -1,0 +1,1 @@
+t=>'Target '+text(t.name||t.match)+'; kind '+text(t.kind)+'; match '+text(t.match)+'; declared cqMax '+label(t.cqMax,'unset')+' cycles; declared cqLate '+label(t.cqLate,'unset')+' cycles'

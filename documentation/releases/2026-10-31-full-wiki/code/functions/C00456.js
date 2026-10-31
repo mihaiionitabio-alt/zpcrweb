@@ -1,0 +1,1 @@
+function(e,t,r){if(v(t))return c;var n=d/2.5,a=2*e*h(n),i=2*e*p(n);return g(t,r,"M0,0L"+-a+","+i+"L"+a+","+i+"Z")}

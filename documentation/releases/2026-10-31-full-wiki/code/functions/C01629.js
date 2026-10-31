@@ -1,0 +1,1 @@
+function(e,t){if(!n(t))throw"n should be a finite number";if((t=t*e.length-.5)<0)return e[0];if(t>e.length-1)return e[e.length-1];var r=t%1;return r*e[Math.ceil(t)]+(1-r)*e[Math.floor(t)]}

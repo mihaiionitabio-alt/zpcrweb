@@ -1,0 +1,1 @@
+function(e,t,r){return{set:function(){throw"bad container"},get:function(){},astr:t,parts:r,obj:e}}

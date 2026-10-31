@@ -1,0 +1,1 @@
+function s(e,t,n,a){o=o.slice(0,a).concat([t]),l=l.slice(0,a).concat([e&&e._isLinkedToArray]),e&&("data_array"===e.valType||!0===e.arrayOk)&&("colorbar"!==o[a-1]||"ticktext"!==t&&"tickvals"!==t)&&c(r,0,"")}

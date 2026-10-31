@@ -1,0 +1,1 @@
+r=>{const c=r.assay===a?ec:rc,x=evalCopies(r);return c&&x>=c.min*(1-1e-10)&&x<=c.max*(1+1e-10);}

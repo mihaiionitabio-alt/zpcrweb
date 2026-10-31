@@ -1,0 +1,1 @@
+p=>!(raw(p)<sp.lo)&&!(raw(p)>sp.hi)

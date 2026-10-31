@@ -1,0 +1,1 @@
+()=>{document.getElementById('ss-cancel')?.click();profile();page('sop');}

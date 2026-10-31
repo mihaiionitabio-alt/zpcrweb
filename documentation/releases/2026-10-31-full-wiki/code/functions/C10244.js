@@ -1,0 +1,1 @@
+r=>{const m=r.meta||{};return m.InstrumentID||m.SerialNumber||m.InstrumentName;}

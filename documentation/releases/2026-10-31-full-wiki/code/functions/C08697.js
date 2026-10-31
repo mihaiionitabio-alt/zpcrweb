@@ -1,0 +1,1 @@
+r => Number.isInteger(r.temps[k].c)

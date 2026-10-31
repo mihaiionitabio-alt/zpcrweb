@@ -1,0 +1,1 @@
+function(e,r){if("various"===(e=_(e)))return!1;var a=t.modules[e];return a||(e&&n.log("Unrecognized trace type "+e+"."),a=t.modules[c.type.dflt]),!!a.categories[r]}

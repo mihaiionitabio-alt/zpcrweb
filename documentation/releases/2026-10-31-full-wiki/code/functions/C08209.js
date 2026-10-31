@@ -1,0 +1,1 @@
+x=>x.group.toLowerCase().endsWith(p.slice(3).toLowerCase())

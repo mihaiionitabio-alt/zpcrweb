@@ -1,0 +1,1 @@
+function(e){var t=e.transform;if(t){t.scale=s&&t.hide?0:o/t.fontSize;var r=n.select(this).select("text");a.setTransormAndDisplay(r,t)}}

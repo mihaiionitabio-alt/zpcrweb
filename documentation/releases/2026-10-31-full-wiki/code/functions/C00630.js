@@ -1,0 +1,1 @@
+function(e){"use strict";e.exports={scrollBarWidth:6,scrollBarMinHeight:20,scrollBarColor:"#808BA4",scrollBarMargin:4,scrollBarEnterAttrs:{rx:20,ry:3,width:0,height:0},titlePad:2,itemGap:5}}

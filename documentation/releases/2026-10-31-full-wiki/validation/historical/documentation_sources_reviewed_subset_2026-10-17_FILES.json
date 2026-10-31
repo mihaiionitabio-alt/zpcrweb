@@ -1,0 +1,106 @@
+[
+  {
+    "file": ".latexmkrc",
+    "bytes": 1303
+  },
+  {
+    "file": "appD_design_views.tex",
+    "bytes": 5316
+  },
+  {
+    "file": "build_complete_reference.sh",
+    "bytes": 834
+  },
+  {
+    "file": "ch01_intro.tex",
+    "bytes": 1710
+  },
+  {
+    "file": "ch02_data.tex",
+    "bytes": 6222
+  },
+  {
+    "file": "ch03_arch.tex",
+    "bytes": 6666
+  },
+  {
+    "file": "ch04_load.tex",
+    "bytes": 5275
+  },
+  {
+    "file": "ch05_panel.tex",
+    "bytes": 22160
+  },
+  {
+    "file": "ch06_sop.tex",
+    "bytes": 8555
+  },
+  {
+    "file": "ch07_graphs.tex",
+    "bytes": 8579
+  },
+  {
+    "file": "ch08_review.tex",
+    "bytes": 4212
+  },
+  {
+    "file": "ch09_values_exports.tex",
+    "bytes": 3197
+  },
+  {
+    "file": "ch10_compare.tex",
+    "bytes": 3893
+  },
+  {
+    "file": "ch11_validation.tex",
+    "bytes": 2270
+  },
+  {
+    "file": "ch12_controls_correlations.tex",
+    "bytes": 7238
+  },
+  {
+    "file": "ch14_chart_atlases.tex",
+    "bytes": 3504
+  },
+  {
+    "file": "ch15_rdml.tex",
+    "bytes": 5204
+  },
+  {
+    "file": "ch16_console.tex",
+    "bytes": 17453
+  },
+  {
+    "file": "ch17_modes.tex",
+    "bytes": 20550
+  },
+  {
+    "file": "ch18_structure.tex",
+    "bytes": 4579
+  },
+  {
+    "file": "ch19_missy.tex",
+    "bytes": 3643
+  },
+  {
+    "file": "ch20_synthetic_demo_set.tex",
+    "bytes": 8410
+  },
+  {
+    "file": "INCLUDED_FILES.txt",
+    "bytes": 473
+  },
+  {
+    "file": "main_reference.tex",
+    "bytes": 8707
+  },
+  {
+    "file": "README.txt",
+    "bytes": 954
+  },
+  {
+    "file": "val_preamble.tex",
+    "bytes": 5722
+  }
+]

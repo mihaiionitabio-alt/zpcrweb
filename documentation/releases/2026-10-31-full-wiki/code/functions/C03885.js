@@ -1,0 +1,1 @@
+function o(){return n=r.length/(t-e),a=r.length-1,i}

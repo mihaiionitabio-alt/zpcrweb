@@ -1,0 +1,1 @@
+function zpcrIcffText(u8, f)      { return zpcrAsciiZ(u8, f.offset, f.length); }

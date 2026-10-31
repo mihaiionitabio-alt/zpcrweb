@@ -1,0 +1,1 @@
+function detail(text){const el=cue.querySelector('.demo-cue-note small');el.textContent=text;el.hidden=!text;}

@@ -1,0 +1,1 @@
+function u(e,t,r,n,a,i){var o=t(e+"gap",r),l=t("domain."+e);t(e+"side",n);for(var s=new Array(a),c=l[0],u=(l[1]-c)/(a-o),f=u*(1-o),d=0;d<a;d++){var h=c+u*d;s[i?a-1-d:d]=[h,h+f]}return s}

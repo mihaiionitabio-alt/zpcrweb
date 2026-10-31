@@ -1,0 +1,1 @@
+()=>launcher.setAttribute('aria-expanded',String(legal.open))

@@ -1,0 +1,1 @@
+function b(e){e.px=i.event.x,e.py=i.event.y,l.resume()}

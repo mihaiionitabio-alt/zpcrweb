@@ -1,0 +1,1 @@
+function(e,t,r,n){var a=e[t-1],i=e[t+1];return i?a?a.s+(i.s-a.s)*(r-a[n])/(i[n]-a[n]):i.s:a.s}

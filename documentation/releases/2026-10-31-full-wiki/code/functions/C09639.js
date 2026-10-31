@@ -1,0 +1,1 @@
+function reportGraphRunIndexes(g){return g.scope==='run'&&SEL_STATE.figureScope==='all'?RUNS.map((_,i)=>i):[selRunIndex()];}

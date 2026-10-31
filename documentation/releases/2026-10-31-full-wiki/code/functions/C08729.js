@@ -1,0 +1,1 @@
+r=>r.rows!==first.rows||r.cols!==first.cols||r.channels!==first.channels

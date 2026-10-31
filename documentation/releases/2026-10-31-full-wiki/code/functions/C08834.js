@@ -1,0 +1,1 @@
+function zpcrReportScript(...args){return MISSY_HOOKS.invoke('zpcrReportScript',this,args,zpcrReportScriptBase);}

@@ -1,0 +1,1 @@
+function b(e,r){var n=t.componentsRegistry[e].schema;if(n&&n.subplots){var a=t.subplotsRegistry[r],i=a.layoutAttributes,o="subplot"===a.attr?a.name:a.attr;Array.isArray(o)&&(o=o[0]);var l=n.subplots[o];i&&l&&d(i,l)}}

@@ -1,0 +1,1 @@
+function(e,t,r){"use strict";var n=r(4809),a=r(3626);e.exports=function(e,t,r,i){var o,l=i("x"),s=i("y");if(a.getComponentMethod("calendars","handleTraceDefaults")(e,t,["x","y"],r),l){var c=n.minRowLength(l);s?o=Math.min(c,n.minRowLength(s)):(o=c,i("y0"),i("dy"))}else{if(!s)return 0;o=n.minRowLength(s),i("x0"),i("dx")}return t._length=o,o}}

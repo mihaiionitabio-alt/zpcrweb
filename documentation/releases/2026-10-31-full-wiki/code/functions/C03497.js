@@ -1,0 +1,1 @@
+function nr(e,t,r,n){var a=new rr(e,t);return Rt.push(a),r&&ar(a,e,t,r),n&&ar(a,t,e,n),Nt[e.i].edges.push(new ir(a,e,t)),Nt[t.i].edges.push(new ir(a,t,e)),a}

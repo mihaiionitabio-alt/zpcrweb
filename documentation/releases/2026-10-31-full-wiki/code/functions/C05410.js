@@ -1,0 +1,1 @@
+async n=>{const u=await get(n);return u?new TextDecoder().decode(u):null}

@@ -1,0 +1,1 @@
+function ae(e){return new RegExp("(?:^|\\s+)"+i.requote(e)+"(?:\\s+|$)","g")}

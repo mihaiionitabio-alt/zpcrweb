@@ -1,0 +1,1 @@
+()=>RUNS.some(r=>r.zpcr)||CC_STATE.imported.some(r=>r.platform==='CFX')

@@ -1,0 +1,1 @@
+function(r){return r.cfxRDML?r.cfxRDML.protocolSHA256+' '+r.rows+'x'+r.cols:next(r);}

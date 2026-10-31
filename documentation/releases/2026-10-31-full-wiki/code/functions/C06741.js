@@ -1,0 +1,1 @@
+r=>{const v=ccValue(def,r,variant);return typeof v==="object"&&v?v.mean:Number(v);}

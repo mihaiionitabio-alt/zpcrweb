@@ -1,0 +1,1 @@
+function(e,t,r){"use strict";var n=r(4809);e.exports=function(e,t){for(var r=0;r<e.length;r++)e[r].i=r;n.mergeArray(t.text,e,"tx"),n.mergeArray(t.hovertext,e,"htx");var a=t.marker;if(a){n.mergeArray(a.opacity,e,"mo",!0),n.mergeArray(a.color,e,"mc");var i=a.line;i&&(n.mergeArray(i.color,e,"mlc"),n.mergeArrayCastPositive(i.width,e,"mlw"))}}}

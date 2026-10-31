@@ -1,0 +1,1 @@
+function(e,t,r){var n,a,i,o=r[0],l=r[1],s=r[2],c=Math.sqrt(o*o+l*l+s*s);return Math.abs(c)<1e-6?null:(o*=c=1/c,l*=c,s*=c,n=Math.sin(t),i=1-(a=Math.cos(t)),e[0]=o*o*i+a,e[1]=l*o*i+s*n,e[2]=s*o*i-l*n,e[3]=0,e[4]=o*l*i-s*n,e[5]=l*l*i+a,e[6]=s*l*i+o*n,e[7]=0,e[8]=o*s*i+l*n,e[9]=l*s*i-o*n,e[10]=s*s*i+a,e[11]=0,e[12]=0,e[13]=0,e[14]=0,e[15]=1,e)}

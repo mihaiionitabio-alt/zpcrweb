@@ -1,0 +1,1 @@
+function(r){return Math.max(0,Math.min(1,(r-e)/t))}

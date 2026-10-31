@@ -1,0 +1,1 @@
+()=>{clearTimeout(timer);if(overlay.isConnected&&!paused&&at<api.steps.length-1)timer=setTimeout(()=>go(at+1),Number(footer.querySelector('#demo-delay').value));}

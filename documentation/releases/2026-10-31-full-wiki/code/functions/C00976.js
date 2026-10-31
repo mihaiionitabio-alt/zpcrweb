@@ -1,0 +1,1 @@
+function U(e){return{xmin:0,xmax:0,ymin:0,ymax:0,pts:[],contains:function(t,r,n,a){var i=e.searchInfo.cd[0].trace._expandedIndex;return a.cd[0].trace._expandedIndex===i&&n===e.pointNumber},isRect:!1,degenerate:!1,subtract:!!e.subtract}}

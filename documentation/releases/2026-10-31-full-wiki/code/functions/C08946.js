@@ -1,0 +1,1 @@
+t=>cmdPrint('• '+t)

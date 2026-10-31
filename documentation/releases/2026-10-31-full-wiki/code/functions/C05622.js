@@ -1,0 +1,1 @@
+w=>w.flags.some(f=>f.code===r.code)

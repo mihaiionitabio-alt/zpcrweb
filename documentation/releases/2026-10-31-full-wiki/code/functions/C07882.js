@@ -1,0 +1,1 @@
+()=>{setSelectItems($("#plate-target"),analysisChoices(runAt("#plate-run",0)),"");renderReviewPlate();}

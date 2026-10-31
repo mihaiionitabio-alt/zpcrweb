@@ -1,0 +1,1 @@
+function(){if(e._transitionData)return e._transitioning=!1,function(e){var t=Promise.resolve();if(!e)return t;for(;e.length;)t=t.then(e.shift());return t}(e._transitionData._interruptCallbacks)}

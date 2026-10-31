@@ -1,0 +1,1 @@
+()=>download('current_scope_snapshot.csv',csvOf(rows(false)),'text/csv')

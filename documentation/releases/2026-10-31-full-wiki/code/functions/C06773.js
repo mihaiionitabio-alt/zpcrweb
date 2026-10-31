@@ -1,0 +1,1 @@
+p=>ccSignal(p)==="limit"

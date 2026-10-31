@@ -1,0 +1,1 @@
+function(e,t){var r=i.ns.qualify(e);return this.tween("attr."+e,r.local?function(e,n){var a=t.call(this,e,n,this.getAttributeNS(r.space,r.local));return a&&function(e){this.setAttributeNS(r.space,r.local,a(e))}}:function(e,n){var a=t.call(this,e,n,this.getAttribute(r));return a&&function(e){this.setAttribute(r,a(e))}})}

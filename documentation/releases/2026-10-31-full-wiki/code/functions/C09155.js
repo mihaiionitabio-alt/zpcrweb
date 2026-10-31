@@ -1,0 +1,1 @@
+(label,values,currentValue,fn)=>{const l=document.createElement('label');l.textContent=label+' ';const s=document.createElement('select');s.setAttribute('aria-label',label);values.forEach(([v,t])=>s.add(new Option(t,v)));s.value=currentValue;s.onchange=()=>fn(s.value);l.append(s);bar.append(l);}

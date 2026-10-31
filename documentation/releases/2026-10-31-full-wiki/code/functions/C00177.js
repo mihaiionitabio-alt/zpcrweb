@@ -1,0 +1,1 @@
+function c(e){var n=e+"axis",i={_fullLayout:{}};return i._fullLayout[n]=r[n],a.coercePosition(t,i,s,e,e,.5)}

@@ -1,0 +1,1 @@
+function(e){return this.then(void 0,e)}

@@ -1,0 +1,1 @@
+e=>({record_type:"forensic_event",experiment:e.experiment,severity:e.severity,area:e.area,finding:e.finding,evidence:e.evidence})

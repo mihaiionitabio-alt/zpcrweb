@@ -1,0 +1,1 @@
+r=>!r.rawOnly&&!r.pcrdLocked

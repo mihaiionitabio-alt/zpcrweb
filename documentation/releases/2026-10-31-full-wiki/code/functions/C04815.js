@@ -1,0 +1,1 @@
+function N(e){return e<=1&&(e=100*e+"%"),e}

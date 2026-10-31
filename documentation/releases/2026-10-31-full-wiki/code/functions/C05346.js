@@ -1,0 +1,1 @@
+pr=>d[pr.getAttribute("name")]=(pr.textContent||"").trim()

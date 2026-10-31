@@ -1,0 +1,1 @@
+function(){return null===e.root.next}

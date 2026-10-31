@@ -1,0 +1,1 @@
+r=>[r.file,r.type,r.expected,r.actual,r.detail].map(csvq).join(",")

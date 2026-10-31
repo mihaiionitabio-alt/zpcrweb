@@ -1,0 +1,1 @@
+([name,entries])=>({name,extensions:entries.map(({id,order})=>({id,order}))})

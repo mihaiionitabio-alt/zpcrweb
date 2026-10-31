@@ -1,0 +1,1 @@
+function(e){return-1===f.indexOf(h(e))}

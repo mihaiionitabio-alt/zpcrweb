@@ -1,0 +1,1 @@
+(sum,r)=>sum+(Array.isArray(r?.wells)?r.wells.length:0)

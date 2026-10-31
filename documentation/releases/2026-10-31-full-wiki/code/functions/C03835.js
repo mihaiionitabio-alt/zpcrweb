@@ -1,0 +1,1 @@
+function(t){return arguments.length?(r=t[0]>=0,e.domain((n=t.map(Number)).map(a)),o):n}

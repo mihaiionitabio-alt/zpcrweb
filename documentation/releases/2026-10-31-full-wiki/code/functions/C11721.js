@@ -1,0 +1,1 @@
+async s=>{const r=await decodeEds(s);await ccExtractOnLoad(r,s);return r;}

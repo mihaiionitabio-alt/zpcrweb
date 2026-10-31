@@ -1,0 +1,1 @@
+()=>mgCommand(b.dataset.cmd,"button")

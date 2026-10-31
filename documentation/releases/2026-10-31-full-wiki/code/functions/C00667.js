@@ -1,0 +1,1 @@
+function Q(t,r,n){d._scrollY=e._fullLayout[w]._scrollY=t,c.setTranslate(V,0,-t),c.setRect(q,d._width,h.scrollBarMargin+t*n,h.scrollBarWidth,r),B.select("rect").attr("y",_+t)}

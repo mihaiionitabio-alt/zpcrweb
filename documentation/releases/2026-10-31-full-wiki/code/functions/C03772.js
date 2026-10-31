@@ -1,0 +1,1 @@
+function s(e){e.x*=r[0],e.y=e.depth*r[1]}

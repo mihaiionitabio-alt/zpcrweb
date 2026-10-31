@@ -1,0 +1,1 @@
+()=>ccCompute(CC_BY_ID.bg_median,ccRowsFor(ccInstrumentKey(RUNS[0])),'DNA_TARGET')

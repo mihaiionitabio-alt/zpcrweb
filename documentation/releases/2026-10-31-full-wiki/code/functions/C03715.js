@@ -1,0 +1,1 @@
+function xn(e){return e.reduce(bn,0)}

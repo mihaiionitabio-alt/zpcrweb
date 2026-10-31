@@ -1,0 +1,1 @@
+function(){for(var e,t=-1,r=this.length,n=this[r-1],a=0;++t<r;)e=n,n=this[t],a+=e[1]*n[0]-e[0]*n[1];return.5*a}

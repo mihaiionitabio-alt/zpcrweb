@@ -1,0 +1,1 @@
+()=>document.getElementById('missy-startup-enter')?.click()

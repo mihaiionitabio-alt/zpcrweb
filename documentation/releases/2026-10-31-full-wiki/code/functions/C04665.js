@@ -1,0 +1,1 @@
+function(e,t){return n("chain_join",{index1:e,index2:t})}

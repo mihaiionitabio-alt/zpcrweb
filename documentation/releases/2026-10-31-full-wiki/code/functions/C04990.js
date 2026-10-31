@@ -1,0 +1,1 @@
+function(e){return function(t){return(t+"").replace(/[0-9]/g,(function(t){return e[t]}))}}

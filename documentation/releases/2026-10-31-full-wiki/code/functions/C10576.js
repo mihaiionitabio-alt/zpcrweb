@@ -1,0 +1,1 @@
+(value,j)=>{const td=document.createElement('td');td.setAttribute('data-label',titles[j]);td.textContent=value;tr.append(td);}

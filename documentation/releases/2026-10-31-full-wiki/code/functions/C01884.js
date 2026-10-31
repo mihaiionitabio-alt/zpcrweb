@@ -1,0 +1,1 @@
+function u(){s={},l&&(s[c]={},s[c][i]=l)}

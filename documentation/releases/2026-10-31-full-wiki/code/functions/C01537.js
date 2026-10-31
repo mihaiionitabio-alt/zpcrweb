@@ -1,0 +1,1 @@
+function(e){return function(){var r=arguments,n=1===arguments.length?r[0]:[r[0],r[1],r[2]||0];return t.dot(e,[n[0],n[1],n[2],1]).slice(0,3)}}

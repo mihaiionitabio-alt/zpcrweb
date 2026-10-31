@@ -1,0 +1,1 @@
+function(e,t){return n("chain_add_head",{index:e,pt:t})}

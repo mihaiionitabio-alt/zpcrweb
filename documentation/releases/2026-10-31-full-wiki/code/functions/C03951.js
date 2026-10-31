@@ -1,0 +1,1 @@
+function Da(e){if(e.length<3)return ka(e);var t=1,r=e.length,n=e[0],a=n[0],i=n[1],o=[a,a,a,(n=e[1])[0]],l=[i,i,i,n[1]],s=[a,",",i,"L",Pa(Ea,o),",",Pa(Ea,l)];for(e.push(e[r-1]);++t<=r;)n=e[t],o.shift(),o.push(n[0]),l.shift(),l.push(n[1]),Ra(s,o,l);return e.pop(),s.push("L",n),s.join("")}

@@ -1,0 +1,1 @@
+r=>`<b>${esc(r.rule)}</b><span>${esc(ui(r.value))}</span>`

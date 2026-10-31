@@ -1,0 +1,1 @@
+function Le(){return i.event.changedTouches[0].identifier}

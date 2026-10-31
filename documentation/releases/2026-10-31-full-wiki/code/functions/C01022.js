@@ -1,0 +1,1 @@
+function c(e,t,r,a,l,s){var c=e/2,u=s;if("pixel"===t){var f=l?o.extractPathCoords(l,s?i.paramIsY:i.paramIsX):[r,a],d=n.aggNums(Math.max,null,f),h=n.aggNums(Math.min,null,f),p=h<0?Math.abs(h)+c:c,v=d>0?d+c:c;return{ppad:c,ppadplus:u?p:v,ppadminus:u?v:p}}return{ppad:c}}

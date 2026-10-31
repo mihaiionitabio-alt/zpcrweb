@@ -1,0 +1,1 @@
+x=>x.toString(16).padStart(2,'0')

@@ -1,0 +1,1 @@
+function(e,t){return{valType:"string",dflt:"",editType:"none",description:(t?o:l)("hover text",e)+["By default the values are formatted using "+(t?"generic number format":"`"+e+"axis.hoverformat`")+"."].join(" ")}}

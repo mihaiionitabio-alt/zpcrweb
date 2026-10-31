@@ -1,0 +1,1 @@
+r=>{const a=r.zpcr.reads.filter(t=>t.step===step);return a.length>=ZPCR_ENDPOINT_N||[[2,6],[2,10]].some(([lo,hi])=>{const w=a.filter(t=>t.cycle>=lo&&t.cycle<=hi);return w.length===hi-lo+1&&w.every((t,i)=>t.cycle===lo+i);});}

@@ -1,0 +1,1 @@
+function(r){return r.pcrd?'PCRD protocol SHA-256 '+r.pcrd.protocolSHA256:next(r);}

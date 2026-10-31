@@ -1,0 +1,1 @@
+i=>{if(wid[i]<=share){widths[i]=wid[i];left-=wid[i];done.push(i);}}

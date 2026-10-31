@@ -1,0 +1,1 @@
+function(e){return[l(e),o(e)]}

@@ -1,0 +1,1 @@
+s=>parts.some(re=>re.test(String(s||"").trim()))

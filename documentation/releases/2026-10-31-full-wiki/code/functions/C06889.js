@@ -1,0 +1,1 @@
+()=>ccPng(svgText(),base()+".png")

@@ -1,0 +1,1 @@
+()=>{rows.splice(Number(b.dataset.i),1);sopProfileEdited(true);}

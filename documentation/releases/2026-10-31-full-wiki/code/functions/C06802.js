@@ -1,0 +1,1 @@
+(m,k)=>{k=String(k||"—");if(!m.has(k))m.set(k,CC_SEG_PALETTE[m.size%CC_SEG_PALETTE.length]);return m.get(k);}

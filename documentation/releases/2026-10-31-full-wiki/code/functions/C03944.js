@@ -1,0 +1,1 @@
+function(e){for(var t=0,r=e.length-1,n=[],a=e[0],i=e[1],o=n[0]=Na(a,i);++t<r;)n[t]=(o+(o=Na(a=i,i=e[t+1])))/2;return n[t]=o,n}

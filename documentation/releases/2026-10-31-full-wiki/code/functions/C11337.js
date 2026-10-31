@@ -1,0 +1,1 @@
+function(A,e){return new _n(this.x+A,this.y+e)}

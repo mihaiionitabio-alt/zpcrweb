@@ -1,0 +1,1 @@
+function ccPlatformBase(run){return run.platform==="QuantStudio"?"QS":"LC";}

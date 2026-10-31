@@ -1,0 +1,1 @@
+()=>{render();new MutationObserver(render).observe(document.body,{attributes:true,attributeFilter:['class']});}

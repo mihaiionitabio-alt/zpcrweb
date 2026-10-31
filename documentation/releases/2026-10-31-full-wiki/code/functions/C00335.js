@@ -1,0 +1,1 @@
+function(e){var t=l(e[1]);n.select(this).attr({offset:e[0]+"%","stop-color":c.tinyRGB(t),"stop-opacity":t.getAlpha()})}

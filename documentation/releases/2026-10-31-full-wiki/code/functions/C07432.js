@@ -1,0 +1,1 @@
+t=>entries.push({name:`${s}/${t.file}`,data:t.data})

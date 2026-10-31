@@ -1,0 +1,1 @@
+d=>{items+=2;if(d.autoCt===false)man++;if(d.autoBaseline===false)man++;}

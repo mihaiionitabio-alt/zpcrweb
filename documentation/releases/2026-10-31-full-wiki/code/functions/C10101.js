@@ -1,0 +1,1 @@
+()=>({schema:'missy-mara-inputs/1',source_sha256:run.meta?.sourceSHA256||'',sop_sha256:sopHash()})

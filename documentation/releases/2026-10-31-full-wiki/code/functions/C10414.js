@@ -1,0 +1,1 @@
+()=>({read:0,channel:0,row:0,column:0})

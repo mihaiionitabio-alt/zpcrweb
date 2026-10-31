@@ -1,0 +1,1 @@
+function(e){return n("seg_update",{seg:e})}

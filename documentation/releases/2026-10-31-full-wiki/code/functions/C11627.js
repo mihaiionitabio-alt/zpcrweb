@@ -1,0 +1,1 @@
+(a,r)=>{a[r.rule]??={attempts:0,misses:0};a[r.rule].attempts++;if(r.score.points<100)a[r.rule].misses++;return a;}

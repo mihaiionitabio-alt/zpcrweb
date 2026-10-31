@@ -1,0 +1,1 @@
+function(e,t){for(var r=0,n=0,a=1;a<e.length;a++){var i=t(e[a],e[a-1]);if(i<0?r=1:i>0&&(n=1),r&&n)return e.sort(t)}return n?e:e.reverse()}

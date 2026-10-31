@@ -1,0 +1,1 @@
+(x,i)=>{svg+=x.figure().svg.replace(/^<svg\b[^>]*>/,head=>head.replace(/\s(?:x|y|width|height)="[^"]*"/g,'')).replace('<svg ',`<svg x="${(i%2)*550}" y="${Math.floor(i/2)*390}" width="545" height="385" `);}

@@ -1,0 +1,1 @@
+()=>({value:profile.baselineMinimum,rule:'chart.baseline'})

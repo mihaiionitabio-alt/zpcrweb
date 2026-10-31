@@ -1,0 +1,1 @@
+function b(e){var t={valType:"number",min:0,editType:"ticks"};return e||(t.dflt=5),t}

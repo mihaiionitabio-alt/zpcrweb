@@ -1,0 +1,1 @@
+function(e){"use strict";e.exports=function(e){var t=["showexponent","showtickprefix","showticksuffix"].filter((function(t){return void 0!==e[t]}));if(t.every((function(r){return e[r]===e[t[0]]}))||1===t.length)return e[t[0]]}}

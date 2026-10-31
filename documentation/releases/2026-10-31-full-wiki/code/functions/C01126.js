@@ -1,0 +1,1 @@
+function(e,r,n,a,i){var l,s=e._fullLayout._size;if(r)if("domain"===i)l=function(e){return r._length*(a?1-e:e)+r._offset};else{var c=t.shapePositionToRange(r);l=function(e){var t=o(r,n);return r._offset+r.r2p(c(e,!0))+t},"date"===r.type&&(l=t.decodeDate(l))}else l=a?function(e){return s.t+s.h*(1-e)}:function(e){return s.l+s.w*e};return l}

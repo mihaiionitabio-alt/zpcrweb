@@ -1,0 +1,1 @@
+function(){h(),p(),"svg"!==i&&(MathJax.config.startup.output=i),MathJax.config=o}

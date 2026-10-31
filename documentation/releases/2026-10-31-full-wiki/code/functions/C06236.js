@@ -1,0 +1,1 @@
+p=>[p.x,p.y,graphHoverLabel(c.run,{well:p.well,sample:p.sample},`${sc.target} · ${p.conc} · Cq ${num(p.y,2)} · residual ${num(p.residual,3)}`)]

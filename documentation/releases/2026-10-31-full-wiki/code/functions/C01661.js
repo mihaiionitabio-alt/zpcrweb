@@ -1,0 +1,1 @@
+function(){n=this.node().getBoundingClientRect();var e=o()-u.left,t=i()-u.top,l=r.gd||{};if(r.gd){l._fullLayout._calcInverseTransform(l);var s=a.apply3DTransform(l._fullLayout._invTransform)(e,t);e=s[0],t=s[1]}return this.style({top:t+"px",left:e+"px","z-index":1e3}),this}

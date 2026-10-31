@@ -1,0 +1,1 @@
+()=>go(Number(select.value))

@@ -1,0 +1,1 @@
+function(e){var t=e._fullLayout;a.ensureSingle(t._defs,"g","patterns").selectAll("pattern").remove(),n.select(e).selectAll(".pattern_filled").classed("pattern_filled",!1)}

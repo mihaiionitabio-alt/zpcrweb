@@ -1,0 +1,1 @@
+xs=>'<ul>'+xs.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>'

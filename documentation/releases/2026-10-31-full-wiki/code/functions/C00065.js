@@ -1,0 +1,1 @@
+function chime(id){if(enabled&&cueEnabled(id)&&alive&&!alerting&&!document.hidden)effect(id,false,true);}

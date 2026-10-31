@@ -1,0 +1,1 @@
+function Y(e){var t=e.getAttribute("data-unformatted");if(null!==t)return t+e.getAttribute("data-math")+e.getAttribute("text-anchor")+e.getAttribute("style")}

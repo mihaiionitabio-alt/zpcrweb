@@ -1,0 +1,1 @@
+()=>chartView('bg_median',RUNS[0])

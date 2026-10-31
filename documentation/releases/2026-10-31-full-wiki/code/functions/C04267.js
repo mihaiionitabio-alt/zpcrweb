@@ -1,0 +1,1 @@
+function Te(){return"+0000"}

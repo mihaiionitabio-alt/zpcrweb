@@ -1,0 +1,1 @@
+e=>e.classList.toggle('is-loaded',Number(e.dataset.bootStep)<=current)

@@ -1,0 +1,1 @@
+function(e,t,r,a){var i,o,l,s=e[t],c=[e[r][0]-s[0],e[r][1]-s[1]],u=n(c,c),f=Math.sqrt(u),d=[-c[1]/f,c[0]/f];for(i=t+1;i<r;i++)if(o=[e[i][0]-s[0],e[i][1]-s[1]],(l=n(o,c))<0||l>u||Math.abs(n(o,d))>a)return!0;return!1}

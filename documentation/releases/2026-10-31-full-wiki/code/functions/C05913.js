@@ -1,0 +1,1 @@
+e=>e.kind==="edit"||e.kind==="analysis"

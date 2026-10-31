@@ -1,0 +1,1 @@
+function(){var e=h(this._r,this._g,this._b);return{h:360*e.h,s:e.s,l:e.l,a:this._a}}

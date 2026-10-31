@@ -1,0 +1,1 @@
+function(e,t,r){var n,a;"undefined"!=typeof jQuery&&(n=jQuery(e).triggerHandler(t,r));var i=e._ev;if(!i)return n;var o,l=i._events[t];if(!l)return n;function s(e){return e.listener?(i.removeListener(t,e.listener),e.fired?void 0:(e.fired=!0,e.listener.apply(i,[r]))):e.apply(i,[r])}for(l=Array.isArray(l)?l:[l],o=0;o<l.length-1;o++)s(l[o]);return a=s(l[o]),void 0!==n?n:a}

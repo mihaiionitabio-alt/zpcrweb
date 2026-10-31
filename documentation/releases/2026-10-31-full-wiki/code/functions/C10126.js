@@ -1,0 +1,1 @@
+()=>{const select=document.getElementById('sop-preset'),group=document.createElement('optgroup');group.label=ui('Other experiment configurations');for(const kind of ['absolute','relative','melting'])group.append(new Option(ui(experimentSopTemplate(kind).name),'experiment_'+kind));select?.append(group);}

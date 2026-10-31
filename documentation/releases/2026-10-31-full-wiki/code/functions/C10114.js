@@ -1,0 +1,1 @@
+fields=>'<div class="sop-grid">'+fields.join('')+'</div>'

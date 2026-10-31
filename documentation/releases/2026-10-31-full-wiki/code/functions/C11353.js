@@ -1,0 +1,1 @@
+function(A,e){this.path=A,this.target=e,this.type=1}

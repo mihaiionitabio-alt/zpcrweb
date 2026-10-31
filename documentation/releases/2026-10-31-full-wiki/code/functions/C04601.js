@@ -1,0 +1,1 @@
+function(r,n){if("function"!=typeof r||"function"!=typeof n)throw TypeError("Not a function");var a=e.length,i=Array(a),o=0;f(t,e,(function(e,t){i[e]=t,++o===a&&r(i)}),n)}

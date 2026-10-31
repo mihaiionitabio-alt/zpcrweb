@@ -1,0 +1,1 @@
+r=>ssWells(r).map(w=>w.target||w.analysis)

@@ -1,0 +1,1 @@
+(v,i)=>rows.push({well:w.well,sample:w.sample,target:w.target,outcome:o,cycle:i+1,fluorescence:v})

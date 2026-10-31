@@ -1,0 +1,1 @@
+()=>focus('#read','The ARTIFICIAL file is staged. Click Read files in the next lesson.')

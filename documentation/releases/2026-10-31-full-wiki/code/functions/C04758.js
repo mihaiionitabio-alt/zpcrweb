@@ -1,0 +1,1 @@
+function C(e,t){t=t||6;for(var r=d(e).toHsv(),n=r.h,a=r.s,i=r.v,o=[],l=1/t;t--;)o.push(d({h:n,s:a,v:i})),i=(i+l)%1;return o}

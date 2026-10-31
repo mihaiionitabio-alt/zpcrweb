@@ -1,0 +1,1 @@
+function(e,t){var s=e[0],c=e[1];if(s===a||s<n||s>i||c===a||c<o||c>l)return!1;var u,f,d,h,p,v=r.length,g=r[0][0],m=r[0][1],y=0;for(u=1;u<v;u++)if(f=g,d=m,g=r[u][0],m=r[u][1],!(s<(h=Math.min(f,g))||s>Math.max(f,g)||c>Math.max(d,m)))if(c<Math.min(d,m))s!==h&&y++;else{if(c===(p=g===f?c:d+(s-f)*(m-d)/(g-f)))return 1!==u||!t;c<=p&&s!==h&&y++}return y%2==1}

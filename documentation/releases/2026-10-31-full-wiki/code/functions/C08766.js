@@ -1,0 +1,1 @@
+()=>download(run.file+'.'+kind+'.csv',zpcrRawCSV(run,kind),'text/csv')

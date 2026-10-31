@@ -1,0 +1,1 @@
+function(A){return Gn.getOrigin(A)===Gn._origin}

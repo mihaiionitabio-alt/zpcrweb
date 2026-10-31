@@ -1,0 +1,1 @@
+function(e,t){if(e.length<3)return"M"+e.join("L");var r,n="M"+e[0],a=[];for(r=1;r<e.length-1;r++)a.push(N(e[r-1],e[r],e[r+1],t));for(n+="Q"+a[0][0]+" "+e[1],r=2;r<e.length-1;r++)n+="C"+a[r-2][1]+" "+a[r-1][0]+" "+e[r];return n+"Q"+a[e.length-3][1]+" "+e[e.length-1]}

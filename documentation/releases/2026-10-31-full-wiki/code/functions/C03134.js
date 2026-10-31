@@ -1,0 +1,1 @@
+function u(e){return e&&(e.ownerDocument&&e.ownerDocument.defaultView||e.document&&e||e.defaultView)}

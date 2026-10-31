@@ -1,0 +1,1 @@
+function Sa(e){for(var t=0,r=e.length,n=e[0],a=[n[0],",",n[1]];++t<r;)a.push("H",(n=e[t])[0],"V",n[1]);return a.join("")}

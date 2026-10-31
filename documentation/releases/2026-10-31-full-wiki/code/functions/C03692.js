@@ -1,0 +1,1 @@
+function fn(e){return e.x}

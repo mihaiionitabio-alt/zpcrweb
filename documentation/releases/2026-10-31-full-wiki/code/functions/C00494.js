@@ -1,0 +1,1 @@
+function o(){e.emit("plotly_click",{points:e._hoverdata,event:t})}

@@ -1,0 +1,1 @@
+function(e,t){var r=e._fullLayout.shapes[t]||{},n=e._fullLayout._plots[r.xref+r.yref];return n?n._hadPlotinfo=!0:(n={},r.xref&&"paper"!==r.xref&&(n.xaxis=e._fullLayout[r.xref+"axis"]),r.yref&&"paper"!==r.yref&&(n.yaxis=e._fullLayout[r.yref+"axis"])),n.xsizemode=r.xsizemode,n.ysizemode=r.ysizemode,n.xanchor=r.xanchor,n.yanchor=r.yanchor,{options:r,plotinfo:n}}

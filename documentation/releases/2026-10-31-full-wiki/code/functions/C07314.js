@@ -1,0 +1,1 @@
+w=>{roleOf[w.sample||w.well]=w.role;}

@@ -1,0 +1,1 @@
+()=>{SOP=sopNormalise(SOP_PRESETS[presetSel.value]());sopProfileEdited(true);}

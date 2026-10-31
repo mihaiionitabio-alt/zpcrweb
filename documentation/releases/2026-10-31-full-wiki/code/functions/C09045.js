@@ -1,0 +1,1 @@
+function(){next();if(RUNS.some(r=>r.zpcr)){const p=document.createElement('p');p.className='notice';p.textContent='• PDF: comparative raw channels per SN / protocol / step. • Endpoint N=7 by default. • A1 for per-well panels. • No single-point control charts.';astEl('ast-list').prepend(p);}}

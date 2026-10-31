@@ -1,0 +1,1 @@
+c=>`${c.name||"channel"} ${c.ex}-${c.em}`

@@ -1,0 +1,2 @@
+x=>({id:x.id,kind:x.kind,group:x.group,title:x.title,
+    available:x.ready()?"yes":"no",include:SEL_STATE.ids.has(x.id)?"yes":"no",figure_scope:SEL_STATE.figureScope||"selected",figure_run:String(selRunIndex())})

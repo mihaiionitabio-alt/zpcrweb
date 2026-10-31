@@ -1,0 +1,1 @@
+function(e){e.attr(h.scrollBarEnterAttrs).call(u.fill,h.scrollBarColor)}

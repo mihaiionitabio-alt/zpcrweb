@@ -1,0 +1,1 @@
+e=>{if(e.detail?.kind==='ready'){announced=false;pending=true;labels();}}

@@ -1,0 +1,1 @@
+function O(e){return a.isRightAnchor(e)?"right":a.isCenterAnchor(e)?"center":"left"}

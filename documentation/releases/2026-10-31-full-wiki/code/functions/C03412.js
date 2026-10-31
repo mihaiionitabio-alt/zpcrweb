@@ -1,0 +1,1 @@
+function ft(e,t,r){var n,a,i=Math.min(e/=255,t/=255,r/=255),o=Math.max(e,t,r),l=o-i,s=(o+i)/2;return l?(a=s<.5?l/(o+i):l/(2-o-i),n=e==o?(t-r)/l+(t<r?6:0):t==o?(r-e)/l+2:(e-t)/l+4,n*=60):(n=NaN,a=s>0&&s<1?0:n),new Ve(n,a,s)}

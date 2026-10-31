@@ -1,0 +1,1 @@
+()=>{let svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 780"><rect width="1100" height="780" fill="white"/>';items.forEach((x,i)=>{svg+=x.figure().svg.replace(/^<svg\b[^>]*>/,head=>head.replace(/\s(?:x|y|width|height)="[^"]*"/g,'')).replace('<svg ',`<svg x="${(i%2)*550}" y="${Math.floor(i/2)*390}" width="545" height="385" `);});return {svg:svg+'</svg>',rows:[]};}

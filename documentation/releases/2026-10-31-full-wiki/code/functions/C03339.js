@@ -1,0 +1,1 @@
+function(e){var t,r=e*n,l=Ne(g),s=o/(2*h)*(l*(t=Fe*r+g,((t=Math.exp(2*t))-1)/(t+1))-function(e){return((e=Math.exp(e))-1/e)/2}(g));return[a+s*u,i+s*f,o*l/Ne(Fe*r+g)]}

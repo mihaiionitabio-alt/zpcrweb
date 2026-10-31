@@ -1,0 +1,1 @@
+x=>!object(x)||!Number.isInteger(x.position)||x.position<0||x.position>=size

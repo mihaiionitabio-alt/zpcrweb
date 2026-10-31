@@ -1,0 +1,1 @@
+function a(e,t){this.fn=e,this.self=t,this.next=void 0}

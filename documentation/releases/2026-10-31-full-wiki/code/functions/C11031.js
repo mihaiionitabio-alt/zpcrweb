@@ -1,0 +1,1 @@
+function jA(A,e){return _A(A)&&A.value===e}

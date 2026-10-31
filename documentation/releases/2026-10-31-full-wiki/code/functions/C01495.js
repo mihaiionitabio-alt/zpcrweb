@@ -1,0 +1,1 @@
+function(){var e=Y;return Y=(69069*Y+1)%4294967296,Math.abs(Y-e)<429496729?f.pseudoRandom():Y/4294967296}

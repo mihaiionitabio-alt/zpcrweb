@@ -1,0 +1,1 @@
+function(){var r=Mr(o,a.x),i=Mr(l,a.y);return e=t=null,function(e){o=a.x=r(e),l=a.y=i(e),n({type:"brush",mode:"resize"})}}

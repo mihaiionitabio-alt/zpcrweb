@@ -1,0 +1,1 @@
+()=>mgLeaveTo("review")

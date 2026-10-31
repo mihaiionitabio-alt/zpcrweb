@@ -1,0 +1,1 @@
+function(e){var t=e.length;if(!t)return"M0,0Z";for(var r="",n=0;n<t;n++)for(var a=e[n].length,i=0;i<a;i++){var o=e[n][i][0];if("Z"===o)r+="Z";else for(var l=e[n][i].length,s=0;s<l;s++){var c=s;"Q"===o||"S"===o?c=f[s]:"C"===o&&(c=u[s]),r+=e[n][i][c],s>0&&s<l-1&&(r+=",")}}return r}

@@ -1,0 +1,1 @@
+(){MISSY_CONSOLE_VOICE.stop();MISSY_COMPUTER_SOUND.stopAlert();window.MISSY_DEMO_CHILD.stop();}

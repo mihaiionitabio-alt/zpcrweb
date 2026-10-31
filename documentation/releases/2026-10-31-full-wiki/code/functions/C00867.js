@@ -1,0 +1,1 @@
+function(e){for(var t=f.list(e,"x",!0),r=[],n=0;n<t.length;n++){var a=t[n];a.rangeselector&&a.rangeselector.visible&&r.push(a)}return r}

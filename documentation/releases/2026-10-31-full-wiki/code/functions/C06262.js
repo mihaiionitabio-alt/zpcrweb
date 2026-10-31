@@ -1,0 +1,3 @@
+w=>{const s=wellSignal(w.curve),r=sopOutcomeFor(c.run,w),o=r?r.outcome:"Not interpreted",q=sopCq(w);cm.set(sopLabel(o),sopColour(o));
+      const y=c.level==="amplitude"?s.amplitude:s.end;rows.push({well:w.well,sample:w.sample,target:w.target,cq:Number.isFinite(q)?q:"",end_fluorescence:s.end,background:s.background,amplitude:s.amplitude,outcome:o});
+      return [Number.isFinite(q)?q:n+1,y,graphHoverLabel(c.run,w,`Cq ${num(q,2)} · ${num(y,1)} · ${sopLabel(o)}`),sopColour(o)];}

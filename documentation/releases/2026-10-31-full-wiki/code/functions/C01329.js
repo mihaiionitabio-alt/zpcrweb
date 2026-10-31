@@ -1,0 +1,1 @@
+function f(e){return e.constructor===ArrayBuffer}

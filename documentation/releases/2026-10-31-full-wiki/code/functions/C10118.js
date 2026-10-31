@@ -1,0 +1,1 @@
+()=>({target:'',tm_c:'',tolerance_c:'',peak_count:'',height_min:'',area_min:'',width_max:'',control_pattern:'',genotype:''})

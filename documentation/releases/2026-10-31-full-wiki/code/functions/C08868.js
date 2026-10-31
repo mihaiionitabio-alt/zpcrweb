@@ -1,0 +1,1 @@
+row=>{if(row.platform!=='CFX')return true;if(!row.loaded&&rows.some(r=>r.loaded&&r.platform==='CFX'&&r.acquisitionSHA256===row.acquisitionSHA256))return false;if(row.zpcrGateVersion!==1||!row.completionSupported||!/^[a-f0-9]{64}$/.test(row.acquisitionSHA256||'')||seen.has(row.acquisitionSHA256))return false;seen.add(row.acquisitionSHA256);return true;}

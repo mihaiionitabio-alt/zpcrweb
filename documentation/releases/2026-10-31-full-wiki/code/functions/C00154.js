@@ -1,0 +1,1 @@
+function(e){var t=o.segmentsIntersect(d,h,s,f,e[0],e[1],e[2],e[3]);t&&(d=t.x,h=t.y)}

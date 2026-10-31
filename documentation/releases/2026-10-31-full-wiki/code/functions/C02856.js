@@ -1,0 +1,1 @@
+function(e){"use strict";e.exports={hiddenlabels:{valType:"data_array",editType:"calc"},piecolorway:{valType:"colorlist",editType:"calc"},extendpiecolors:{valType:"boolean",dflt:!0,editType:"calc"}}}

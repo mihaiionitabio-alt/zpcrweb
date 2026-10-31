@@ -1,0 +1,1 @@
+function f(e){var t=[c(e.region,!1)];u.push(t);for(var r=0;r<e.children.length;r++)t.push(d(e.children[r]))}

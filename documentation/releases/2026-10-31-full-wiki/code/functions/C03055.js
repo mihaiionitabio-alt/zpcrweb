@@ -1,0 +1,1 @@
+function(e){var t=e.marker;return n.isPlainObject(t)&&(n.isArrayOrTypedArray(t.size)||a(t.size))}

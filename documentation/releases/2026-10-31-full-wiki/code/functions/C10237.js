@@ -1,0 +1,1 @@
+(en,zh,values)=>{factPage={values,at:0};const part=factAnswer('f:more');return pair(en+' '+part.en,zh+' '+part.zh);}

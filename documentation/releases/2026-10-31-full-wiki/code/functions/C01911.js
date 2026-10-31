@@ -1,0 +1,1 @@
+function(e,t,r,n,a){var i=0;return"middle"===r&&(i+=a/2),"t"===e?("top"===r&&(i+=a),i+=n-t*n):("bottom"===r&&(i+=a),i+=t*n),i}

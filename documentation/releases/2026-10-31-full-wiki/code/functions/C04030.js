@@ -1,0 +1,1 @@
+function(e,t){var r=this.id,n=this.namespace;return arguments.length<2?this.node()[n][r].tween.get(e):ve(this,null==t?function(t){t[n][r].tween.remove(e)}:function(a){a[n][r].tween.set(e,t)})}

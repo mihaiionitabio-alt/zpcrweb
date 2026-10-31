@@ -1,0 +1,1 @@
+(v,i)=>{if(Number.isFinite(v)&&Math.abs(v)>=3)flags[i].push("1-3s");}

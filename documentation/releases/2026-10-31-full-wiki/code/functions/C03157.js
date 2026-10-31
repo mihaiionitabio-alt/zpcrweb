@@ -1,0 +1,1 @@
+function(e){return x(1===e.length?function(t,r){return g(e(t),r)}:e)}

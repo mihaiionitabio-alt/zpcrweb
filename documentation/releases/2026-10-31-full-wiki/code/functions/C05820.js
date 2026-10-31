@@ -1,0 +1,1 @@
+(criterion,action,pass,evidence)=>{if(action==="off")return;crit.push({criterion,action,status:pass===null?"n/a":pass?"pass":action==="reject"?"fail":"review",evidence:evidence||""});}

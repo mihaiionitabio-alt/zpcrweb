@@ -1,0 +1,1 @@
+function Ae(e){return[e.text,e.x,e.axInfo,e.font,e.fontSize,e.fontColor].join("_")}

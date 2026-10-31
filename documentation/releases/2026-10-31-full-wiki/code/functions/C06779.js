@@ -1,0 +1,1 @@
+i=>4+i*(W-8)/Math.max(1,pts.length-1)

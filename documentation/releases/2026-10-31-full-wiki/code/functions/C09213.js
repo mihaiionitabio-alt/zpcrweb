@@ -1,0 +1,1 @@
+next => function(){next();unifiedRemoveOldControls();if(MG.scope==='zpcrcharts'){MG.scope='panel';mgRefresh();}mgRender();}

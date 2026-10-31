@@ -1,0 +1,1 @@
+()=>download('registered_readers.csv',csvOf(csvRows()),'text/csv')

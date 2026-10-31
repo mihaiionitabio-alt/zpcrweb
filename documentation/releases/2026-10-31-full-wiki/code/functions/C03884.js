@@ -1,0 +1,1 @@
+function i(t){return r[Math.max(0,Math.min(a,Math.floor(n*(t-e))))]}

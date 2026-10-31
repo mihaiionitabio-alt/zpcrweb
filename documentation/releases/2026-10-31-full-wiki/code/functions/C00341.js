@@ -1,0 +1,1 @@
+function(e,t,r){return e&&a.isArrayOrTypedArray(e)?t<e.length?e[t]:r:e}

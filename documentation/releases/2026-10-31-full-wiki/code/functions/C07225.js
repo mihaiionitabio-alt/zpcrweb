@@ -1,0 +1,1 @@
+x=>{const k=x.querySelector(".k");return k&&k.textContent.trim().split(/\s/)[0]===key;}

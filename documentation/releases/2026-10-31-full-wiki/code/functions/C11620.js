@@ -1,0 +1,1 @@
+()=>launch.textContent=tr('Learning game','学习游戏')

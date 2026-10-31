@@ -1,0 +1,1 @@
+()=> 'Computer show chart '+chartNumber('heat_rate')

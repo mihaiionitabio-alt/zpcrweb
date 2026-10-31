@@ -1,0 +1,1 @@
+function s(e,t,r,n,a){var i=n*e+a*t;if(i<0)return n*n+a*a;if(i>r){var o=n-e,l=a-t;return o*o+l*l}var s=n*t-a*e;return s*s/r}

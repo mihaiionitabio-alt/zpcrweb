@@ -1,0 +1,1 @@
+(text,fn,parent,command)=>{const b=el('button',text,parent);b.type='button';if(command)b.dataset.gameCommand=command;b.onclick=fn;return b;}

@@ -1,0 +1,1 @@
+function(e,t){if(e.marker){var r,n,a=e.marker.opacity;void 0!==a&&(h(a)||e.selected||e.unselected||(r=a,n=c*a),t("selected.marker.opacity",r),t("unselected.marker.opacity",n))}}

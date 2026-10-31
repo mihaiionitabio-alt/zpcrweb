@@ -1,0 +1,1 @@
+function(e){return i.domain(Kn(r,e))}

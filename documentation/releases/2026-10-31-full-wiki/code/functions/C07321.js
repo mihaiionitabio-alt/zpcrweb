@@ -1,0 +1,1 @@
+(v,i)=>{x+=`<adp><cyc>${i+1}</cyc><fluor>${v}</fluor></adp>`;}

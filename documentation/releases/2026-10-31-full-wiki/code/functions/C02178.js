@@ -1,0 +1,1 @@
+function(e){var r=n.select(this);if(r.select(".text-math-group").empty()){var i=d.bBox(r.node()),l=0;o?(i.right>h||i.left<f)&&(l=1):(i.bottom>h||i.top+(t.tickangle?0:e.fontSize/4)<f)&&(l=1);var s=r.select("text");l?a&&s.style("opacity",0):(s.style("opacity",1),v="bottom"===p||"right"===p?Math.min(v,o?i.top:i.left):-1/0,m="top"===p||"left"===p?Math.max(m,o?i.bottom:i.right):1/0)}}

@@ -1,0 +1,1 @@
+function(e){return a.getComponentMethod("colorbar","draw")(e),i.previousPromises(e)}

@@ -1,0 +1,1 @@
+id=>id.startsWith('img:pcrd_calc_')&&id.endsWith('_compare')

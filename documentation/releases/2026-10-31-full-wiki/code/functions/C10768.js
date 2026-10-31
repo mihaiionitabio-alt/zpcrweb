@@ -1,0 +1,1 @@
+(){return window.__MISSY_GAME_FRAME?files.slice():[]}

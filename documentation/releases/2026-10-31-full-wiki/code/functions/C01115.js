@@ -1,0 +1,1 @@
+function o(e,t){var r=0;return(t=t||0)&&e&&("category"===e.type||"multicategory"===e.type)&&(r=(e.r2p(1)-e.r2p(0))*t),r}

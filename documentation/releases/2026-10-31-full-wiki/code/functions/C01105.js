@@ -1,0 +1,1 @@
+function(e,r,n){if(!e)return[r,n];var a=t.ellipseOver({x0:r[0],y0:r[1],x1:n[0],y1:n[1]}),l=(a.x1+a.x0)/2,s=(a.y1+a.y0)/2,c=(a.x1-a.x0)/2,u=(a.y1-a.y0)/2;c||(c=u/=o),u||(u=c/=o);for(var f=[],d=0;d<i;d++){var h=2*d*Math.PI/i;f.push([l+c*Math.cos(h),s+u*Math.sin(h)])}return f}

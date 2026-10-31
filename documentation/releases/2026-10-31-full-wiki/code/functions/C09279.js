@@ -1,0 +1,1 @@
+(_,pos)=>{const a=reads.slice(-ZPCR_ENDPOINT_N).map(r=>pcrdCell(r,c,Math.floor(pos/p.grid.cols),pos%p.grid.cols));return a.every(Number.isFinite)?a.reduce((x,y)=>x+y,0)/a.length:NaN;}

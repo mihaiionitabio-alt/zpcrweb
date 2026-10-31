@@ -1,0 +1,1 @@
+function ue(e){return"function"==typeof e?e:(e=i.ns.qualify(e)).local?function(){return this.ownerDocument.createElementNS(e.space,e.local)}:function(){var t=this.ownerDocument,r=this.namespaceURI;return r===ee&&t.documentElement.namespaceURI===ee?t.createElement(e):t.createElementNS(r,e)}}

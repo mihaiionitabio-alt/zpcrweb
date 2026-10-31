@@ -1,0 +1,1 @@
+function(t,r){var a,i=0,o=0,s=1,c=l;for(a=0;a<r.length&&c===l;a++)c=n(t[r[a]]);if(c===l)return l;for(;a<r.length;a++){var u=n(t[r[a]]);if(u!==l){var f=u-c;i+=f,o+=f*f,s++}}var d="sample"===e.funcmode?s-1:s;return d?Math.sqrt((o-i*i/s)/d):0}

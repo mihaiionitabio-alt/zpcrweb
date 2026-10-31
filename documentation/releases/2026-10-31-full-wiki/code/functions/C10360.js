@@ -1,0 +1,3 @@
+function rows(localized=false){
+  return RUNS.flatMap((run,i)=>snapshot(run,i).facts.map(f=>({evidence_view:i+1,filename:run.file||'',evidence_item:localized?text(...words[f.code]):words[f.code][0],evidence_state:localized?text(...statuses[f.status_code]):statuses[f.status_code][0],evidence_detail:detail(f,localized),evidence_code:f.code,status_code:f.status_code})));
+ }

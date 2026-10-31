@@ -1,0 +1,1 @@
+r=>Object.assign({},r,{status:tag(r.status==="fail"?"bad":r.status==="review"?"warn":"ok",r.status),sop_action:SOP_ACTION_LABEL[r.sop_action]||r.sop_action})

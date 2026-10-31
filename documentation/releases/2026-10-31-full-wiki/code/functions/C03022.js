@@ -1,0 +1,1 @@
+function ce(e){return e.filter((function(e){return!e.gap}))}

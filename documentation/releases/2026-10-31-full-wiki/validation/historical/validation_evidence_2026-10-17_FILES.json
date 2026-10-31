@@ -1,0 +1,46 @@
+[
+  {
+    "file": "drift_import_smoke.json",
+    "bytes": 35372
+  },
+  {
+    "file": "environment.json",
+    "bytes": 481
+  },
+  {
+    "file": "main_demo_import_smoke.json",
+    "bytes": 16427
+  },
+  {
+    "file": "name_pattern_results.json",
+    "bytes": 1359
+  },
+  {
+    "file": "README.txt",
+    "bytes": 623
+  },
+  {
+    "file": "regression_results.json",
+    "bytes": 1780
+  },
+  {
+    "file": "release_verifier_selftest.json",
+    "bytes": 120
+  },
+  {
+    "file": "selection_edge_results.json",
+    "bytes": 1135
+  },
+  {
+    "file": "selection_integration_results.json",
+    "bytes": 546
+  },
+  {
+    "file": "test_ml.js.log",
+    "bytes": 8465
+  },
+  {
+    "file": "test_panel.js.log",
+    "bytes": 3365
+  }
+]

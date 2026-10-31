@@ -1,0 +1,1 @@
+function(e){n=Math.max(n,e.fontSize);var r=t.l2p(e.x),o=Ce(this),l=d.bBox(o.node());i=Math.max(i,c.lineCount(o)),a.push({top:0,bottom:10,height:10,left:r-l.width/2,right:r+l.width/2+2,width:l.width+2})}

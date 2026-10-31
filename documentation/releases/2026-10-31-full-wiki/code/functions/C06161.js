@@ -1,0 +1,1 @@
+()=>{$("#ss-review").hidden=true;SAMPLE_SELECTION.draft=new Set(SAMPLE_SELECTION.excluded);ssUpdateBadge();}

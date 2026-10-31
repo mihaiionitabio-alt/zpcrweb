@@ -1,0 +1,1 @@
+function(e,t){return t._isLinkedToArray=e,t.name=o.name,t[i]=o[i],t}

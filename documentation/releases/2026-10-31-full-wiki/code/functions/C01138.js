@@ -1,0 +1,1 @@
+function(e,t){var r=e._fullLayout.selections[t]||{},n=e._fullLayout._plots[r.xref+r.yref];return n?n._hadPlotinfo=!0:(n={},r.xref&&(n.xaxis=e._fullLayout[r.xref+"axis"]),r.yref&&(n.yaxis=e._fullLayout[r.yref+"axis"])),{options:r,plotinfo:n}}

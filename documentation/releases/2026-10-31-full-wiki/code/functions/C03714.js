@@ -1,0 +1,1 @@
+function yn(e){for(var t,r=1,n=0,a=e[0][1],i=e.length;r<i;++r)(t=e[r][1])>a&&(n=r,a=t);return n}

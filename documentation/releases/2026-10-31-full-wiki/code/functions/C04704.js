@@ -1,0 +1,1 @@
+function g(){if(p){var e=u(d,p);if(e)return e}return!!v&&u(d,v)}

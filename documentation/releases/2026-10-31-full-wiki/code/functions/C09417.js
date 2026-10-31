@@ -1,0 +1,1 @@
+next => function(){const a=next();return RUNS.length&&RUNS.every(r=>r.pcrd||r.pcrdLocked)?a.map(x=>x.id.startsWith('img:pcrd_')?x:{...x,ready:()=>false}):a;}

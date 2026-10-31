@@ -1,0 +1,1 @@
+function(e){var t=n.select(this),a=x(t.select("text"));s.translatePoint(e,a,b,_)?r.layerClipId&&s.hideOutsideRangePoint(e,t,b,_,u.xcalendar,u.ycalendar):t.remove()}

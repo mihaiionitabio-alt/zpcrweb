@@ -1,0 +1,1 @@
+x=>[x.contextKey,x.reportAcquisition.instrument+' · group '+x.reportAcquisition.step+' · P '+x.reportAcquisition.protocol.slice(-64,-52)+' · '+x.acquisitionLabel]

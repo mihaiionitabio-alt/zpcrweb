@@ -1,0 +1,1 @@
+function T(e,t){for(var r in t)Object.defineProperty(e.prototype,r,{value:t[r],enumerable:!1})}

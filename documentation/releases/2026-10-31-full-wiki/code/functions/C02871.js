@@ -1,0 +1,1 @@
+function M(e,t,r,n,a){t=Math.max(0,t-2*v);var i=e.height/e.width,o=L(i,n,t,r);return{scale:2*o/e.width,rCenter:k(i,o/t),rotate:A(a+Math.PI/2)}}

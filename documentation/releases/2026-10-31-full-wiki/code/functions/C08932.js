@@ -1,0 +1,1 @@
+()=>{try{zpcrSetEndpointN(input.value);if(typeof astRender==='function'&&document.getElementById('ast-list')?.offsetParent)astRender();if(typeof mgRefresh==='function')mgRefresh();}catch(e){input.setCustomValidity(e.message);input.reportValidity();}}

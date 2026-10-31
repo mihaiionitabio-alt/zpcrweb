@@ -1,0 +1,1 @@
+function piEqualAxis(a,b){return a.length===b.length&&a.every((v,i)=>Number.isFinite(v)&&Number.isFinite(b[i])&&Math.abs(v-b[i])<1e-5);}

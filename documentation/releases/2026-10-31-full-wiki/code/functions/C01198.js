@@ -1,0 +1,1 @@
+function d(){var e=l();e._dragging=!1,s.call(i.fill,e.bgcolor),o.on("mouseup",null),o.on("mousemove",null),o.on("touchend",null),o.on("touchmove",null),t.emit("plotly_sliderend",{slider:e,step:e.steps[e.active]})}

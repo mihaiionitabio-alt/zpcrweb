@@ -1,0 +1,1 @@
+function sopEvaluateRun(run,ri){return MISSY_HOOKS.invoke('sopEvaluateRun',this,[run,ri],sopEvaluateRunBase);}

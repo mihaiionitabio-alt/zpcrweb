@@ -1,0 +1,1 @@
+p=>[p.n,p.y,`${p.operator}: ${p.bad}/${p.n} = ${(100*p.y).toFixed(1)} %`,p.flags.length?CC_COL.bad:CC_COL.pt]

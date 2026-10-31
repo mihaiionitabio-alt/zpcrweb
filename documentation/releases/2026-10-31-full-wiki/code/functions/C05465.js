@@ -1,0 +1,1 @@
+()=>{let c=16;while(names.length>c*0.75)c*=2;return c;}

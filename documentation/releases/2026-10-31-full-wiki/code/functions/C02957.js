@@ -1,0 +1,1 @@
+function(e){if(b){var t=h.c2p(e.yStart),r=h.c2p(e.yEnd);return v>=Math.min(t,r)&&v<=Math.max(t,r)?0:1/0}var n=Math.max(3,e.mrc||0),a=1-1/n,i=Math.abs(h.c2p(e.y)-v);return i<n?a*i/n:i-n+a}

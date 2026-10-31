@@ -1,0 +1,7 @@
+function renderContent(){
+  const host=document.getElementById('loadedcard');if(!host)return;let box=document.getElementById('missy-scope-snapshot');if(!box){box=document.createElement('details');box.id='missy-scope-snapshot';box.setAttribute('data-i18n-skip','');box.addEventListener('toggle',render);host.append(box);}
+  box.hidden=!RUNS.length;const open=box.open;const title=document.createElement('summary');title.textContent=t('Current report and sample scope (read only)','当前报告与样本范围（只读）');MISSY_EVIDENCE_A11Y.reset(box,title);if(!open)return;
+  const note=document.createElement('p');note.textContent=t('Current state only, not authenticated audit history. Refresh after changing selections. Included here means included by the applied user mask, not a valid/released sample result.','仅为当前状态，不是经过身份认证的审计历史。更改选择后请刷新。此处纳入仅表示被已应用的用户掩码纳入，不表示样本结果有效或已发布。');box.append(note);
+  const button=document.createElement('button');button.type='button';button.textContent=t('Refresh snapshot','刷新快照');button.onclick=render;box.append(button);
+  const dl=document.createElement('dl');for(const r of rows(true)){const dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=(r.filename?r.scope_view+' · '+r.filename+' · ':'')+r.scope_item;dd.textContent=[r.scope_value,r.scope_state,r.scope_basis].filter(Boolean).join(' · ');dl.append(dt,dd);}box.append(dl);
+ }

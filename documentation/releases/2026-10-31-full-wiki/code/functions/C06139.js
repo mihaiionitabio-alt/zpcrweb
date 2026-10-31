@@ -1,0 +1,1 @@
+function ssUpdateBadge(){const n=SAMPLE_SELECTION.excluded.size;$("#ss-applied").textContent=SAMPLE_SELECTION.pending?"Sample review pending":n?`${n} sample(s) excluded from analysis`:'All samples included';$("#ss-edit").hidden=!RUNS.length;}

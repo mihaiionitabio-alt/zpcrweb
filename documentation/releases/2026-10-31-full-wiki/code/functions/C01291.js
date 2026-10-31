@@ -1,0 +1,1 @@
+function(){var e=this.translateX,t=this.translateY;if(this.hbar){var r=e+this._hbarXMin,a=r+this._hbarTranslateMax;e=(o.constrain(n.event.x,r,a)-r)/(a-r)*(this.position.w-this._box.w)}if(this.vbar){var i=t+this._vbarYMin,l=i+this._vbarTranslateMax;t=(o.constrain(n.event.y,i,l)-i)/(l-i)*(this.position.h-this._box.h)}this.setTranslate(e,t)}

@@ -1,0 +1,1 @@
+function h(e){if(n(e)){if((e=+e)>=0)return e}else if("string"==typeof e&&"%"===(e=e.trim()).slice(-1)&&n(e.slice(0,-1))&&(e=+e.slice(0,-1))>=0)return e+"%"}

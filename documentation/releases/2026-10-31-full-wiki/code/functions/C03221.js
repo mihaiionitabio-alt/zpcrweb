@@ -1,0 +1,1 @@
+function(e,t){e.__proto__=t}

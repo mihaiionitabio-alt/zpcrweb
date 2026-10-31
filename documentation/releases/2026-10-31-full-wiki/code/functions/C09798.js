@@ -1,0 +1,1 @@
+(animal,i)=>{const b=document.createElement('button');b.type='button';b.textContent=animal;b.dataset.animal=String(i);b.setAttribute('data-i18n-skip','');b.onclick=()=>{b.classList.remove('is-playing');void b.offsetWidth;b.classList.add('is-playing');mascotGo(MISSY_SHORTCUTS[i]);};b.onanimationend=()=>b.classList.remove('is-playing');return b;}

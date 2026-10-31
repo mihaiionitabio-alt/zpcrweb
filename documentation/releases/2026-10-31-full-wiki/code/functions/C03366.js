@@ -1,0 +1,1 @@
+function(){return-i.event.deltaY*(i.event.deltaMode?120:1)}

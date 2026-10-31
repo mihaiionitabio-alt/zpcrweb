@@ -1,0 +1,1 @@
+function(){Me.remove(),C.done(Ae).then((function(){C.clear(Ae),!L&&X&&n.selectionDefs&&(X.subtract=xe,n.selectionDefs.push(X),n.mergedPolygons.length=0,[].push.apply(n.mergedPolygons,W)),(L||x)&&Z(n,L),n.doneFnCompleted&&n.doneFnCompleted(Le),b&&fe(M,ie)})).catch(A.error)}

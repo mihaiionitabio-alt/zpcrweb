@@ -1,0 +1,1 @@
+function(e,r){var n={success:"function"!=typeof e||e,failure:"function"==typeof r&&r};return n.promise=new this.constructor((function(e,t){if("function"!=typeof e||"function"!=typeof t)throw TypeError("Not a function");n.resolve=e,n.reject=t})),t.chain.push(n),0!==t.state&&i(l,t),n.promise}

@@ -1,0 +1,1 @@
+([k,v])=>({label:{file:"file",run:"run",analysis:"analysis",edit:"change / save",calibration:"calibration"}[k],colour:v})

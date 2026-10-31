@@ -1,0 +1,1 @@
+function(e,t,r){return(this.dayOfWeek(e,t,r)||7)<6}

@@ -1,0 +1,1 @@
+function(){c.apply(n,arguments)}

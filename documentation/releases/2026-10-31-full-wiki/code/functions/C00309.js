@@ -1,0 +1,1 @@
+function(e){return e.replace("under","underline").replace("over","overline").replace("through","line-through").split("+").join(" ")}

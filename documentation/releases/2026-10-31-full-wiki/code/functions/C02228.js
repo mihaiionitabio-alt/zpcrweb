@@ -1,0 +1,1 @@
+function(e,r,n){var a=e._fullLayout;if(!a)return[];var i,o=t.listIds(e,r),l=new Array(o.length);for(i=0;i<o.length;i++){var s=o[i];l[i]=a[s.charAt(0)+"axis"+s.substr(1)]}if(!n){var c=a._subplots.gl3d||[];for(i=0;i<c.length;i++){var u=a[c[i]];r?l.push(u[r+"axis"]):l.push(u.xaxis,u.yaxis,u.zaxis)}}return l}

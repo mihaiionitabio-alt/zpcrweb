@@ -1,0 +1,1 @@
+w=>`channel ${w.channel}: analysis ${w.filterComb}; acquisition ${pair(acquired[w.channel])}`

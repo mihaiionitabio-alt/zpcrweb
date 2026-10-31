@@ -1,0 +1,1 @@
+function O(e,t,r){var n=r._dims,a=l.ensureSingle(e,"rect",f.railTouchRectClass,(function(n){n.call(k,t,e,r).style("pointer-events","all")}));a.attr({width:n.inputAreaLength,height:Math.max(n.inputAreaWidth,f.tickOffset+r.ticklen+n.labelHeight)}).call(i.fill,r.bgcolor).attr("opacity",0),o.setTranslate(a,0,n.currentValueTotalHeight)}

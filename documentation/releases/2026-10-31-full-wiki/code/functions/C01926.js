@@ -1,0 +1,1 @@
+function(e){a.getComponentMethod("legend","draw")(e),a.getComponentMethod("rangeselector","draw")(e),a.getComponentMethod("sliders","draw")(e),a.getComponentMethod("updatemenus","draw")(e),a.getComponentMethod("colorbar","draw")(e)}

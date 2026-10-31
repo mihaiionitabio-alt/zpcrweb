@@ -1,0 +1,1 @@
+function(){return '# Raw endpoint window\nzpcr endpoint '+ZPCR_ENDPOINT_N+'\n'+next();}

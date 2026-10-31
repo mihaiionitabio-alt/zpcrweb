@@ -1,0 +1,1 @@
+e=>e.classList.contains('on')

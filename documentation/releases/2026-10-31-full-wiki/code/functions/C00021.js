@@ -1,0 +1,1 @@
+async function engine(){const C=window.AudioContext||window.webkitAudioContext;if(!C)return null;if(!context)context=new C();if(!masterGain){masterGain=context.createGain();masterGain.gain.value=1;masterGain.connect(context.destination);}if(context.state==='suspended')await context.resume();return context.state==='running'?context:null;}

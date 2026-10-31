@@ -1,0 +1,1 @@
+function i(r,n){var a,i,c=o(this,e,r,n),u=o(this,t,r,n);return"M"+c.p0+l(c.r,c.p1,c.a1-c.a0)+(i=u,((a=c).a0==i.a0&&a.a1==i.a1?s(c.r,c.p1,c.r,c.p0):s(c.r,c.p1,u.r,u.p0)+l(u.r,u.p1,u.a1-u.a0)+s(u.r,u.p1,c.r,c.p0))+"Z")}

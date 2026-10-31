@@ -1,0 +1,1 @@
+function(e,t){n.isArrayOrTypedArray(t.selectedpoints)&&n.tagSelected(e,t)}

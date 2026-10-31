@@ -1,0 +1,1 @@
+()=>{REVIEW_STATE.issueRuns=$$("#issue-overview input[data-issue-run]:checked").map(x=>Number(x.dataset.issueRun));renderIssueOverview();}

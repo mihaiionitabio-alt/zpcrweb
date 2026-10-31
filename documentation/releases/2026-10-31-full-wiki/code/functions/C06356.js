@@ -1,0 +1,1 @@
+(ps,t)=>series.push({type:"line",colour:cm.get(t),width:1,opacity:0.5,data:ps.map(p=>[p.i,p.r.cqMean])})

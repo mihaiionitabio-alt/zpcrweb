@@ -1,0 +1,1 @@
+r=>N(r.copies)===curve?.min

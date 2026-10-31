@@ -1,0 +1,1 @@
+a=>a.shortName===target

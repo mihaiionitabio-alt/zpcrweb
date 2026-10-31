@@ -1,0 +1,1 @@
+e=>{ccSetCfg(def.id,{type:e.target.value===def.type?"":e.target.value});re();}

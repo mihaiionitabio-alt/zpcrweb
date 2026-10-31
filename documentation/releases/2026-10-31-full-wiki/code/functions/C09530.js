@@ -1,0 +1,1 @@
+function piMedian(a){const b=a.filter(Number.isFinite).sort((x,y)=>x-y);return b.length?(b[Math.floor((b.length-1)/2)]+b[Math.floor(b.length/2)])/2:NaN;}

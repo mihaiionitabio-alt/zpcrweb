@@ -1,0 +1,1 @@
+(_,i)=>Math.pow(xv,i)

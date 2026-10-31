@@ -1,0 +1,1 @@
+r=>{r.nameReview=learned.out.get(r.key);r.namePattern=r.nameReview.group;}

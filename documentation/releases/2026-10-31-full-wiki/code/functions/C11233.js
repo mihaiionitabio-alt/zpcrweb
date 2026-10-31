@@ -1,0 +1,1 @@
+function MB(A){return"VIDEO"===A.tagName}

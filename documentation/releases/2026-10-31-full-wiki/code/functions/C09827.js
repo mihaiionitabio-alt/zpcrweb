@@ -1,0 +1,1 @@
+next=>function(value){const s=String(value??'');let m;if((m=s.match(/^(Calibration performed|Calibration expires)( — .+)$/)))return zhPhrase(m[1])+m[2];return next(value);}

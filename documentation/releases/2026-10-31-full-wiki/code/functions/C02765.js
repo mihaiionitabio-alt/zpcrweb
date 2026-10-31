@@ -1,0 +1,1 @@
+function M(e){return(e>0)-(e<0)}

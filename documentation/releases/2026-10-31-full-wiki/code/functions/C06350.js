@@ -1,0 +1,1 @@
+p=>({experiment:runName(p.e.run),sample:p.r.sample,target:p.r.target,cq_mean:p.r.cqMean,detected:p.r.det,n:p.r.n,outcome:p.r.outcome})

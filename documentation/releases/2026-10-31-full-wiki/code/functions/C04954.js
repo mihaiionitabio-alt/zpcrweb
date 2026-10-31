@@ -1,0 +1,1 @@
+function(e,t,r){var a=this._validate(e,this.minMonth,this.minDay,n.local.invalidYear);return e=this._t2gYear(a.year()),i.weekOfYear(e,a.month(),a.day())}

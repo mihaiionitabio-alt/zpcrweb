@@ -1,0 +1,1 @@
+function le(e){var t=e._mainAxis,r=[];if(t._vals)for(var n=0;n<t._vals.length;n++)if(!t._vals[n].noTick){var a=t.l2p(t._vals[n].x),i=e.p2l(a),o=G.tickText(e,i);t._vals[n].minor&&(o.minor=!0,o.text=""),r.push(o)}return oe(e,r)}

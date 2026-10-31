@@ -1,0 +1,1 @@
+function g(e,t,r,n){var a=n._fullLayout.font,i=r.textfont;if(e.classed("bartext-inside")){var o=_(t,r);i=y(r,t.i,a,o)}else e.classed("bartext-outside")&&(i=x(r,t.i,a));return i}

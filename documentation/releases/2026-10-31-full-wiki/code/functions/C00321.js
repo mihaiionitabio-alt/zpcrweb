@@ -1,0 +1,1 @@
+function(e,t,r){return t&&o(t)?e._context.staticPlot?t:t<1?1:Math.round(t):r||0}

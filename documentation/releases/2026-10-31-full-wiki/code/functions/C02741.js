@@ -1,0 +1,1 @@
+function S(e){return e[f+"End"]-e[f+"Start"]}

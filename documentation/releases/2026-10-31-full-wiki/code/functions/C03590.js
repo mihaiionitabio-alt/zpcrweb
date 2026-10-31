@@ -1,0 +1,1 @@
+function Br(e){var t=Math.sqrt(Hr(e,e));return t&&(e[0]/=t,e[1]/=t),t}

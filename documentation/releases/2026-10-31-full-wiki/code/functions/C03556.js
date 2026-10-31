@@ -1,0 +1,1 @@
+function(e){return arguments.length?(null==e?t=r=n=a=null:(t=r=0,n=+e[0],a=+e[1]),s):null==t?null:[n-t,a-r]}

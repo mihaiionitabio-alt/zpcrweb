@@ -1,0 +1,1 @@
+()=>{const list=mascotDestinations();for(const [i,b] of [...friends.querySelectorAll('[data-animal]')].entries()){const label=list.find(x=>x.id===MISSY_SHORTCUTS[i])?.label||ui('Unavailable graph');b.title=label;b.setAttribute('aria-label',MISSY_ANIMALS[i]+' '+label);}}

@@ -1,0 +1,1 @@
+function h(e,t){var r=t[1]-e[1],n=t[2]-e[2];return Math.sqrt(r*r+n*n)}

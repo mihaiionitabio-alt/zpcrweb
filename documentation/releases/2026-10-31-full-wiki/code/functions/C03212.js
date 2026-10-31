@@ -1,0 +1,1 @@
+function(n,a){var i,o=r.get(n);return arguments.length<2?o&&o.on:(o&&(o.on=null,t=t.slice(0,i=t.indexOf(o)).concat(t.slice(i+1)),r.remove(n)),a&&t.push(r.set(n,{on:a})),e)}

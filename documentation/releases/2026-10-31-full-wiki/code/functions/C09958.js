@@ -1,0 +1,1 @@
+([rule,value])=>({rule:ui(rule),value:String(value??'')})

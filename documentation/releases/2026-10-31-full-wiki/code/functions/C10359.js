@@ -1,0 +1,1 @@
+(en,zh)=>localized?text(en,zh):en

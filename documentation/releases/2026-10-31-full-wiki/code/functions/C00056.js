@@ -1,0 +1,1 @@
+()=>{if(token===previewGeneration)previewState('complete',kind);}

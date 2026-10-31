@@ -1,0 +1,1 @@
+async()=>{focus('#missy-animal-menu-items','All 12 shortcuts expand in the footer, away from the data.');await wait(1000);await press('#mascot-config','Open the shortcut settings.');focus('#mascot-form select','Select a page or an individual chart. This demo uses temporary settings only.')}

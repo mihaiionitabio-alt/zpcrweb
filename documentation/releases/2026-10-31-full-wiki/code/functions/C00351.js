@@ -1,0 +1,1 @@
+function(e){var t={},r=e.selected||{},n=e.unselected||{},a=e.textfont||{},i=r.textfont||{},o=n.textfont||{},l=a.color,s=i.color,u=o.color;return t.selectedTextColorFn=function(e){var t=e.tc||l;return e.selected?s||t:u||(s?t:c.addOpacity(t,v))},t}

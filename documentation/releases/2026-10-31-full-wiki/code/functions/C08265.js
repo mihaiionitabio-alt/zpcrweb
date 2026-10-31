@@ -1,0 +1,1 @@
+(x,i)=>doc.para((i+1)+".  "+x.title+"   ["+x.id+"]",9.5,false)

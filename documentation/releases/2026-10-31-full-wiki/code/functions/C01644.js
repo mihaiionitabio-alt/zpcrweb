@@ -1,0 +1,1 @@
+function u(){c++;var t=document.createElementNS(o.svg,"tspan");n.select(t).attr({class:"line",dy:c*l+"em"}),e.appendChild(t),r=t;var a=s;if(s=[{node:t}],a.length>1)for(var i=1;i<a.length;i++)f(a[i])}

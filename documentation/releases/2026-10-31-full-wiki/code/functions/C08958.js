@@ -1,0 +1,1 @@
+x=>x.kind==='chart'?{...x,state:'• '+ZPCR_MANUAL_NOTES.slice(0,7).join('\n• ')}:x

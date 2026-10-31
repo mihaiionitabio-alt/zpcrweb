@@ -1,0 +1,1 @@
+function(e){for(var t=1;e*t%1;)t*=10;return t}

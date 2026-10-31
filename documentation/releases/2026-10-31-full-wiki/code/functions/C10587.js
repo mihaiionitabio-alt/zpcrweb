@@ -1,0 +1,1 @@
+()=>{if(!['staging','reading'].includes(APP_STATE.phase)){readPulseAt=0;return;}const now=Date.now();if(!readPulseAt||now-readPulseAt>=1000){readPulseAt=now;sound.notify('loadingTick');}}

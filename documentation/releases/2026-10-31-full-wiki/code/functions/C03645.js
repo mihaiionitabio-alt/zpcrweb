@@ -1,0 +1,1 @@
+function(e){return arguments.length?(f="function"==typeof e?e:+e,l):f}

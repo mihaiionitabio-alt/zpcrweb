@@ -1,0 +1,1 @@
+async()=>{await press('#mg-actions [data-cmd="view menu"]','Emulated voice: FOUR → View menu.',()=>MISSY_CONSOLE_VOICE.command('four'));focus('#mg-sheet-list button','The first choice is Zoom. The menu itself shows its current number mapping.')}

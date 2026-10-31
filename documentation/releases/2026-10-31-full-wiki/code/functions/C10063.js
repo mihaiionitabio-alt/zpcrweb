@@ -1,0 +1,1 @@
+p=>[p.x,p.y,`${p.sample} · ${p.well} · ${p.conc} · Cq ${p.y}`]

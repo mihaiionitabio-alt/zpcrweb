@@ -1,0 +1,1 @@
+function(e,t,r){"use strict";var n=r(337),a=r(6811).hoverlabel,i=r(3049).extendFlat;e.exports={hoverlabel:{bgcolor:i({},a.bgcolor,{arrayOk:!0}),bordercolor:i({},a.bordercolor,{arrayOk:!0}),font:n({arrayOk:!0,editType:"none"}),align:i({},a.align,{arrayOk:!0}),namelength:i({},a.namelength,{arrayOk:!0}),editType:"none"}}}

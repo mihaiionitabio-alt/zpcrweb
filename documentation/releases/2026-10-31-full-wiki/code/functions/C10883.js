@@ -1,0 +1,1 @@
+()=>{paused=true;overlay.querySelector('[data-vd=pause]').textContent='Play / 播放';answerBox.textContent=T('Press Play to allow the recorded audio.','请点击播放以允许录制音频。');}

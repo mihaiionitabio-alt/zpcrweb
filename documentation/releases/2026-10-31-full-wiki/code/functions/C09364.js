@@ -1,0 +1,1 @@
+()=>download(r.file+'.metadata.json',JSON.stringify({source:r.meta,container:r.pcrd.container,grid:r.pcrd.grid,tupleWidth:r.pcrd.tupleWidth,protocol:r.pcrd.protocolText,layout:r.pcrd.layout,logs:r.pcrd.logs,analysisSettings:r.pcrd.analysisSettings,issues:r.pcrd.issues},null,2),'application/json')

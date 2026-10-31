@@ -1,0 +1,1 @@
+function maraMessage(code){const [key,...tail]=String(code).split(':'),pair=MARA_MESSAGES[key];return (pair?pair[UI_LANG==='zh'?1:0]:key)+(tail.length?' · '+tail.join(':'):'');}

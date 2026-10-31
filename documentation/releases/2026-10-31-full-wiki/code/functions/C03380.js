@@ -1,0 +1,1 @@
+function(e){return arguments.length?(h=e&&[+e[0],+e[1]],w):h}

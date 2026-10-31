@@ -1,0 +1,1 @@
+function pcrdForgetPassword(){pcrdSessionPassword=null;}

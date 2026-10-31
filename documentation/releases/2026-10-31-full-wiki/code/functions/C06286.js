@@ -1,0 +1,1 @@
+o=>({label:sopLabel(o),colour:sopColour(o)})

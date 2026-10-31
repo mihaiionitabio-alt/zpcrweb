@@ -1,0 +1,1 @@
+c=>c.criterion!=="Container integrity"&&(c.status==="fail"||c.status==="review")

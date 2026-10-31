@@ -1,0 +1,1 @@
+function(e){return arguments.length?(null==e?t=r=n=a=null:(t=+e[0][0],r=+e[0][1],n=+e[1][0],a=+e[1][1]),s):null==t?null:[[t,r],[n,a]]}

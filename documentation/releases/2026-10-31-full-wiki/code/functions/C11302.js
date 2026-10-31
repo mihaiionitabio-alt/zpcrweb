@@ -1,0 +1,1 @@
+function(){0<r.body.childNodes.length&&"complete"===r.readyState&&(clearInterval(A),e(B))}

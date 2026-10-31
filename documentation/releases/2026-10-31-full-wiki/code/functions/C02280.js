@@ -1,0 +1,1 @@
+function(e,t){var r,n=e.range[t],a=Math.abs(n-e.range[1-t]);return"date"===e.type?n:"log"===e.type?(r=Math.ceil(Math.max(0,-Math.log(a)/Math.LN10))+3,i("."+r+"g")(Math.pow(10,n))):(r=Math.floor(Math.log(Math.abs(n))/Math.LN10)-Math.floor(Math.log(a)/Math.LN10)+4,i("."+String(r)+"g")(n))}

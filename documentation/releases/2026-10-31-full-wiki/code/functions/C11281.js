@@ -1,0 +1,1 @@
+function(A){var e=document.createElement("html2canvascustomelement");return Kn(A.style,e),e}

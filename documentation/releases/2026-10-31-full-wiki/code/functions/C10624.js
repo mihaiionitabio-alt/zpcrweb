@@ -1,0 +1,1 @@
+()=>sound.setGroup(select.value,false)

@@ -1,0 +1,1 @@
+function(e){if(e)for(;e.length;)e.shift()}

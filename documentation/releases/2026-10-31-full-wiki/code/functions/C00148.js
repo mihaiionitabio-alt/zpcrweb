@@ -1,0 +1,1 @@
+function G(e){var n={index:r,annotation:t._input,fullAnnotation:t,event:e};return i&&(n.subplotId=i),n}

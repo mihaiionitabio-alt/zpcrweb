@@ -1,0 +1,1 @@
+function(e){return Math.sqrt(e/a)}

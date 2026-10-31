@@ -1,0 +1,1 @@
+g=>/amplification|curves/i.test(g.id+' '+g.title)

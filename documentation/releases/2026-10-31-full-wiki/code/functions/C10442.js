@@ -1,0 +1,1 @@
+([k,v])=>[k,v.value.trim()===''?NaN:Number(v.value)-1]

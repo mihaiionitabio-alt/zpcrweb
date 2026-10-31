@@ -1,0 +1,1 @@
+(a,x)=>{const rule=x.truth.rule;a[rule]??={attempts:0,misses:0};a[rule].attempts++;if(Object.values(x.score.parts).some(p=>!p.correct)||x.score.unsafe)a[rule].misses++;return a;}

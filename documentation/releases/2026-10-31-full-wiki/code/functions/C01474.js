@@ -1,0 +1,1 @@
+function(){return void 0!==window.navigator.msSaveBlob}

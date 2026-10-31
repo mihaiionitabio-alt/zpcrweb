@@ -1,0 +1,1 @@
+function k(e,t){return Math.cos(t)-e*t}

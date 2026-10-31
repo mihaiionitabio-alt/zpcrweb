@@ -1,0 +1,1 @@
+e=>{if(e.composedPath().some(n=>n.id==='missy-native-inspector'))render();}

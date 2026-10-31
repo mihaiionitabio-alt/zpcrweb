@@ -1,0 +1,1 @@
+function(e){return"lasso"===e||"select"===e}

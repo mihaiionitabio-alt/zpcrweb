@@ -1,0 +1,1 @@
+function(e,t){var r;return arguments.length<2&&(t=.45),arguments.length?r=t/De*Math.asin(1/e):(e=1,r=t/4),function(n){return 1+e*Math.pow(2,-10*n)*Math.sin((n-r)*De/t)}}

@@ -1,0 +1,1 @@
+()=>{page('load');if(document.getElementById('missy-command-menu-items').hidden)click('missy-command-menu-toggle')}

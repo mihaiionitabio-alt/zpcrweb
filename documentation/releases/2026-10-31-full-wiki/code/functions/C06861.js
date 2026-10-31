@@ -1,0 +1,1 @@
+function renderPanel(...args){return MISSY_HOOKS.invoke("renderPanel",this,args,renderPanelBase);}

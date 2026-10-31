@@ -1,0 +1,1 @@
+function(e,t,r){var n,a,i;function o(e,t,r){return r<0&&(r+=1),r>1&&(r-=1),r<1/6?e+6*(t-e)*r:r<.5?t:r<2/3?e+(t-e)*(2/3-r)*6:e}if(e=z(e,360),t=z(t,100),r=z(r,100),0===t)n=a=i=r;else{var l=r<.5?r*(1+t):r+t-r*t,s=2*r-l;n=o(s,l,e+1/3),a=o(s,l,e),i=o(s,l,e-1/3)}return{r:255*n,g:255*a,b:255*i}}

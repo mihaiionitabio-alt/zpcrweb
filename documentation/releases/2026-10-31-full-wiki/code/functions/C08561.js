@@ -1,0 +1,1 @@
+l=>l.some(f=>f.name===nm)

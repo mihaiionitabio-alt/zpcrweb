@@ -1,0 +1,1 @@
+function Lt(){for(var e,t=xt,r=1/0;t;)t.c?(t.t<r&&(r=t.t),t=(e=t).n):t=e?e.n=t.n:xt=t.n;return bt=e,r}

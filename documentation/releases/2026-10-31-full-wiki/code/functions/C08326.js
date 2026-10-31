@@ -1,0 +1,1 @@
+(r,i)=>`<option value="${i}">${esc(r.file||runName(r))}</option>`

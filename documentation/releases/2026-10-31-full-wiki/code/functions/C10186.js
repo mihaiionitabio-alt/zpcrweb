@@ -1,0 +1,1 @@
+function label(value,fallback){if(!['string','number'].includes(typeof value)||(typeof value==='number'&&!Number.isFinite(value)))return fallback;const text=String(value).trim();return !text||/^(?:undefined|null|nan|\[object object\])$/i.test(text)?fallback:text.slice(0,240);}

@@ -1,0 +1,1 @@
+(p,side)=>p.pre?"#cbd5e1":(side==="lo"?p.sigLo:p.sigHi)?CC_COL.bad:(side==="lo"?"#0891b2":CC_COL.pt)

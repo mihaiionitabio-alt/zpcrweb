@@ -1,0 +1,1 @@
+(_,i)=>Object.freeze({run:'ARTIFICIAL-SC_02',well:'A'+String(i+1).padStart(2,'0'),cq:40,nativeStatus:i<19?'Undetermined':'Detected',fieldId:'nativeStatus'})

@@ -1,0 +1,1 @@
+x=>({section:x.title,type:x.type,omitted:x.omit,skip_empty_wells:x.skipEmpty,columns:x.cols.join(" | ")})

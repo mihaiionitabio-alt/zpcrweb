@@ -1,0 +1,1 @@
+r=>r.meta.sourceSHA256+':'+r.zpcr.evidence?.completionSupported

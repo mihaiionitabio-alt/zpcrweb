@@ -1,0 +1,1 @@
+x=>{if(x.sample)Object.freeze(x.sample);x.pattern.forEach(Object.freeze);Object.freeze(x.pattern);Object.freeze(x);}

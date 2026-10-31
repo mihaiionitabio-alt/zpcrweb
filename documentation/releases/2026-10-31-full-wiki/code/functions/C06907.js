@@ -1,0 +1,1 @@
+(n,i)=>n+CC_CHARTS.filter(d=>d.inst.includes(i.platform)).length

@@ -1,0 +1,1 @@
+function(e){"use strict";e.exports={_isLinkedToArray:"frames_entry",group:{valType:"string"},name:{valType:"string"},traces:{valType:"any"},baseframe:{valType:"string"},data:{valType:"any"},layout:{valType:"any"}}}

@@ -1,0 +1,1 @@
+function(A){return e.applyEffect(A)}

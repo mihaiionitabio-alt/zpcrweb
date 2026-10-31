@@ -1,0 +1,1 @@
+function ve(e,t){for(var r=0,n=e.length;r<n;r++)for(var a,i=e[r],o=0,l=i.length;o<l;o++)(a=i[o])&&t(a,o,r);return e}

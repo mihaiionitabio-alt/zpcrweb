@@ -1,0 +1,1 @@
+w=>w.eds&&w.eds.ctRecalc!=null&&Number.isFinite(Number(w.CpRaw))&&Number(w.CpRaw)>0

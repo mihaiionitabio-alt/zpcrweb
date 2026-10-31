@@ -1,0 +1,1 @@
+function(e){var t=e[0].trace;return"marker"in t&&t.marker.cornerradius}

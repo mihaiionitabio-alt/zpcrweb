@@ -1,0 +1,1 @@
+function hA(A,e){return 92===A&&10!==e}

@@ -1,0 +1,1 @@
+function c(e,t){for(var r=0,n=e[e.length-1][0],a=e[e.length-1][1],i=[],o=0;o<e.length;o++){var l=e[o][0],s=e[o][1];i.push([l,s]),r+=s*n-l*a,n=l,a=s}return r<0!==t&&i.reverse(),i.push([i[0][0],i[0][1]]),i}

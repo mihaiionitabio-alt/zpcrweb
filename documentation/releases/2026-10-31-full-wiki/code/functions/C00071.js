@@ -1,0 +1,1 @@
+c=>{if(c&&enabled){announced=true;pending=false;}else if(enabled)pending=true;labels();}

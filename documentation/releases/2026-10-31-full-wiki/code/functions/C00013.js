@@ -1,0 +1,1 @@
+(){return Object.keys(bank).length}

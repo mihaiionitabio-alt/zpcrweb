@@ -1,0 +1,1 @@
+function(e){if("string"==typeof e){var t=e.match(u);return t?t[0]:""}var r=this._validateYear(e),n=e.month(),a=["一","二","三","四","五","六","七","八","九","十","十一","十二"][this.toChineseMonth(r,n)-1];return this.isIntercalaryMonth(r,n)&&(a="闰"+a),a}

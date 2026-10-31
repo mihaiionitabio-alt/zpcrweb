@@ -1,0 +1,1 @@
+function(e){var t=this.id,r=this.namespace;return arguments.length<1?this.node()[r][t].ease:("function"!=typeof e&&(e=i.ease.apply(i,arguments)),ve(this,(function(n){n[r][t].ease=e})))}

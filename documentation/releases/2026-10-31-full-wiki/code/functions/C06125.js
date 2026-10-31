@@ -1,0 +1,1 @@
+r=>{const k=r[group];if(!groups.has(k))groups.set(k,[]);groups.get(k).push(r);}

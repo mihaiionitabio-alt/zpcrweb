@@ -1,0 +1,1 @@
+()=>({evidence:{kind:'report',ready:true}})

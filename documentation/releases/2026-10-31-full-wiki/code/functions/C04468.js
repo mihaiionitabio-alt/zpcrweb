@@ -1,0 +1,1 @@
+function(e,t,r){"function"==typeof e.on&&v(e,"error",t,{once:!0})}

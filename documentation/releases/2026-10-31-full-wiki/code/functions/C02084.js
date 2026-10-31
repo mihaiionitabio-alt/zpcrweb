@@ -1,0 +1,1 @@
+function Ce(e){var t=n.select(e),r=t.select(".text-math-group");return r.empty()?t.select("text"):r}

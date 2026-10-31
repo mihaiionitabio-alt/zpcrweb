@@ -1,0 +1,1 @@
+function(){return d.fromRatio({r:f(),g:f(),b:f()})}

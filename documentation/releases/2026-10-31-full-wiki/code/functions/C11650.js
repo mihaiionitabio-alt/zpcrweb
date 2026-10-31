@@ -1,0 +1,1 @@
+resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))

@@ -1,0 +1,1 @@
+e=>e.at+'; '+e.action+'; '+(e.drill?'drill':'not drill')+'; '+e.detail

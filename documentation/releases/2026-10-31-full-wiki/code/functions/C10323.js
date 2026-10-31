@@ -1,0 +1,1 @@
+()=>{if(detail.querySelector('[data-voice-chart-number]'))return;const n=chartList().findIndex(c=>c.control&&c.id===CC_STATE.open)+1;if(!n||detail.hidden)return;const label=document.createElement('p');label.dataset.voiceChartNumber='';label.textContent=t('Voice: Computer, show chart ','语音：Computer, show chart ')+n;detail.prepend(label);}

@@ -1,0 +1,1 @@
+(run,severity,area,finding,evidence)=>out.push({experiment:run?runName(run):"(all loaded runs)",severity,area,finding,evidence:evidence||""})

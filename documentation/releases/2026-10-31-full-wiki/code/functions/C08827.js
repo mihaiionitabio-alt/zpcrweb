@@ -1,0 +1,1 @@
+()=>zpcrChooseInstrument()?mgPanelItems(true):[]

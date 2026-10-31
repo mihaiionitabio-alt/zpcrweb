@@ -1,0 +1,1 @@
+g=>g.reads.some((r,i)=>r.cycle!==i+1)

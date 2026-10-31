@@ -1,0 +1,1 @@
+function(e,t,r){"use strict";var n=r(3377),a=r(6035);e.exports={moduleType:"component",name:"annotations",layoutAttributes:r(222),supplyLayoutDefaults:r(6118),includeBasePlot:r(706)("annotations"),calcAutorange:r(317),draw:n.draw,drawOne:n.drawOne,drawRaw:n.drawRaw,hasClickToShow:a.hasClickToShow,onClick:a.onClick,convertCoords:r(9741)}}

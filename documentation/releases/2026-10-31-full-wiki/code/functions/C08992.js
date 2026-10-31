@@ -1,0 +1,1 @@
+(r,c)=>ZPCR.zpcrWellMean(r,c,0,0)

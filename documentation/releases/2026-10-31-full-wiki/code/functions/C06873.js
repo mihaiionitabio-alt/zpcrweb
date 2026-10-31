@@ -1,0 +1,1 @@
+([k,l])=>`<label style="margin:0"><span><input type="checkbox" data-cc-rule="${k}" style="width:auto"${cfg.rules[k]?" checked":""}> ${esc(ui(l))}</span></label>`

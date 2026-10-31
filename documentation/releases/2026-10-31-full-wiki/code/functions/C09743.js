@@ -1,0 +1,1 @@
+(cell,i)=>{let original='';const walker=document.createTreeWalker(cell,NodeFilter.SHOW_TEXT);let n;while((n=walker.nextNode()))original+=I18N_ORIGINAL_TEXT.get(n)??n.nodeValue;return headings.has(original.trim())?i:-1;}

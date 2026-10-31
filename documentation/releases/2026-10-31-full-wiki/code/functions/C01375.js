@@ -1,0 +1,1 @@
+function w(e,t){return String(e+Math.pow(10,t)).substr(1)}

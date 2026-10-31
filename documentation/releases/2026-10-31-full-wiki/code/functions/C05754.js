@@ -1,0 +1,1 @@
+r=>mode==="age"?r.age_days:mode==="thermal"?r.cooling:r.date/864e5

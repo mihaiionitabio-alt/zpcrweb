@@ -1,0 +1,1 @@
+x=>{if(!byWell.has(x.well))byWell.set(x.well,[]);byWell.get(x.well).push(x);}

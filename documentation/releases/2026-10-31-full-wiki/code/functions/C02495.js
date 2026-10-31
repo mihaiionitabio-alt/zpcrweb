@@ -1,0 +1,1 @@
+function(e){var t=e.editType;return{t:{valType:"number",dflt:0,editType:t},r:{valType:"number",dflt:0,editType:t},b:{valType:"number",dflt:0,editType:t},l:{valType:"number",dflt:0,editType:t},editType:t}}

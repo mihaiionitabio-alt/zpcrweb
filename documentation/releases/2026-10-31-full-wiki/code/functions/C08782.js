@@ -1,0 +1,1 @@
+(key,variant,value)=>{if(Number.isFinite(value))(m[key]||(m[key]={}))[variant]=value;}

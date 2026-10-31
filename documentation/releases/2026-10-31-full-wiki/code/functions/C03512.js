@@ -1,0 +1,1 @@
+function(){return this.edge.l===this.site?this.edge.b:this.edge.a}

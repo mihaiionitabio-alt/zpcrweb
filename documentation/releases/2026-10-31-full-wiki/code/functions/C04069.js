@@ -1,0 +1,1 @@
+function(){for(var e,t,r,n=this.id,a=++ri,i=this.namespace,o=[],l=0,s=this.length;l<s;l++){o.push(e=[]);for(var c,u=0,f=(c=this[l]).length;u<f;u++)(t=c[u])&&oi(t,u,i,a,{time:(r=t[i][n]).time,ease:r.ease,delay:r.delay+r.duration,duration:r.duration}),e.push(t)}return Qa(o,i,a)}

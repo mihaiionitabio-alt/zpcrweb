@@ -1,0 +1,1 @@
+p=>(p.segments||[]).map(s=>`${+s.target}/${+s.hold||0}s${s.slope?"@"+(+s.slope):""}`)

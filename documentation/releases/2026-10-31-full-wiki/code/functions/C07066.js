@@ -1,0 +1,1 @@
+m=>mgLeaveTo(m[1])

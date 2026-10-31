@@ -1,0 +1,1 @@
+c=>{const ch=active[c];return ch?(ch.ex&&ch.em?`${ch.ex}-${ch.em}`:ch.name):"channel "+c;}

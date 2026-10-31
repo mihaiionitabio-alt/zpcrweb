@@ -1,0 +1,5 @@
+function highlightEvidence(){clearTimeout(highlightTimer);for(const el of highlighted)el.classList.remove('missy-interest','missy-interest-point');highlighted=[];const host=MG.open&&MG.chart?document.getElementById('mg-chart'):APP_STATE.activeTab==='graphs'?document.getElementById('g-chart'):APP_STATE.activeTab==='panel'?document.getElementById('cc-chart'):null;if(!host||!host.getClientRects().length)return;host.classList.add('missy-interest');highlighted.push(host);
+ // Existing renderer tooltips bind these marker shapes to recorded chart flags.
+ for(const marker of host.querySelectorAll('svg circle')){const text=marker.querySelector('title')?.textContent||'';if(/(?:outside the limits:|pattern inside the limits:)/.test(text)){marker.classList.add('missy-interest-point');highlighted.push(marker);}}
+ host.scrollIntoView({block:'nearest',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});highlightTimer=setTimeout(()=>{for(const el of highlighted)el.classList.remove('missy-interest','missy-interest-point');highlighted=[];},5000);
+ }

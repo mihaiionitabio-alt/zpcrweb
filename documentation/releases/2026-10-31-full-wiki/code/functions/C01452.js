@@ -1,0 +1,1 @@
+function(e,t,r){return r=r||0,e.left<=t.right+r&&t.left<=e.right+r&&e.top<=t.bottom+r&&t.top<=e.bottom+r}

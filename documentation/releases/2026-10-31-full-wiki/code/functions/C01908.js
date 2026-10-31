@@ -1,0 +1,1 @@
+function(e,t){var r=e.title,n=e._size,a=0;return"0em"!==t&&t?t===p.CAP_SHIFT+"em"&&(a=r.pad.t):a=-r.pad.b,"auto"===r.y?n.t/2:"paper"===r.yref?n.t+n.h-n.h*r.y+a:e.height-e.height*r.y+a}

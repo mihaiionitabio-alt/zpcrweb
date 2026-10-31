@@ -1,0 +1,1 @@
+function resultView(which){page('results');const result=which(),ri=RUNS.indexOf(result.run);document.getElementById('sop-view').value='targets';document.getElementById('sop-run').value=String(ri);document.getElementById('sop-search').value=result.row.sample;renderResults();focus(document.getElementById('sop-results'));}

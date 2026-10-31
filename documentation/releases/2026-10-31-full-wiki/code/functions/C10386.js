@@ -1,0 +1,1 @@
+(code,value,method='')=>facts.push({code,value,method,status:value===null?'not_exposed':'provided'})

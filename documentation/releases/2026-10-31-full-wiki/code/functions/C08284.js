@@ -1,0 +1,1 @@
+x=>[x.id,(x.ready()?"":"(not available yet) ")+x.title]

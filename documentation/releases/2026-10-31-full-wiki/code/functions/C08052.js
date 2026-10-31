@@ -1,0 +1,1 @@
+(t,k)=>{if(!t.dye){t.dye="dye";t.channel=0;}}

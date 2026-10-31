@@ -1,0 +1,1 @@
+function(){return U?[n.event.layerX,n.event.layerY]:[n.event.offsetX,n.event.offsetY]}

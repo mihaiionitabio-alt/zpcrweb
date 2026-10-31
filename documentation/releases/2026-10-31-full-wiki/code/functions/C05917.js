@@ -1,0 +1,1 @@
+ws=>{const pos=uniq(ws.map(w=>w.pos));if(pos.length>1)push(run,"review","Copied data","Different wells share a Cq identical to six or more decimals",ws.map(w=>`${w.well} ${w.sample}`).join(", ")+` = ${ws[0].CpRaw}`);}

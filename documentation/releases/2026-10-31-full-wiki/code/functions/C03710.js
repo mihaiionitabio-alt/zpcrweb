@@ -1,0 +1,1 @@
+function(e){var t,r,n,a,i,o,l,s,c,u=e.length,f=e[0],d=f.length,h=[];for(h[0]=s=c=0,r=1;r<d;++r){for(t=0,a=0;t<u;++t)a+=e[t][r][1];for(t=0,i=0,l=f[r][0]-f[r-1][0];t<u;++t){for(n=0,o=(e[t][r][1]-e[t][r-1][1])/(2*l);n<t;++n)o+=(e[n][r][1]-e[n][r-1][1])/l;i+=o*e[t][r][1]}h[r]=s-=a?i/a*l:0,s<c&&(c=s)}for(r=0;r<d;++r)h[r]-=c;return h}

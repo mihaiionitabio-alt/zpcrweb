@@ -1,0 +1,1 @@
+function speechSynthesisSafeCancel(){window.MISSY_CALM_VOICE?.stop();clearAck();try{window.speechSynthesis?.cancel();}catch{}}

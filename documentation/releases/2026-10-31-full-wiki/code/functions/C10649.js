@@ -1,0 +1,1 @@
+()=>{const zh=document.body.classList.contains('lang-zh'),name=zh?'声音':'Sounds';toggle.textContent=(dock.hidden?'▸ ':'◂ ')+name;dock.setAttribute('aria-label',name);stop.textContent=zh?'■ 停止警报':'■ Stop alert';stop.hidden=!sound.alerting;}

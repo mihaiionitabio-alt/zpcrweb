@@ -1,0 +1,1 @@
+function S(t,r){if(t>0)return Math.log(t)/Math.LN10;if(t<=0&&r&&e.range&&2===e.range.length){var n=e.range[0],a=e.range[1];return.5*(n+a-2*g*Math.abs(n-a))}return v}

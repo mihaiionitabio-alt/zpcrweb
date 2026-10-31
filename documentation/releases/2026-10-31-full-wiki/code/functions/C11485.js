@@ -1,0 +1,1 @@
+(tag,text,parent)=>{const e=document.createElement(tag);if(text)e.textContent=text;parent.append(e);return e;}

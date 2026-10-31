@@ -1,0 +1,1 @@
+function(e){return"string"==typeof e&&-1!=e.indexOf("%")}

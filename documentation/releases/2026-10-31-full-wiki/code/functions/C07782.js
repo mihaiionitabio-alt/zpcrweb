@@ -1,0 +1,1 @@
+w=>w.curve.filter(Number.isFinite)

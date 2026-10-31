@@ -1,0 +1,1 @@
+r=>({experiment:runName(run),source_sha256:run.meta?.sourceSHA256||'',sample:exportName(r.sample),target:r.assay,well:r.source.well,role:r.role,cq:Number.isFinite(r.cq)?r.cq:'',curve_evidence:r.curve,assigned_copies:r.copies??'',level:r.level,qc_pair:r.pair,omitted:r.omitted,method_verified:context.methodVerified===true,...sopMeta()})

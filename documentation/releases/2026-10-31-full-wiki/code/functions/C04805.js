@@ -1,0 +1,1 @@
+function(e,t,r){var n,a,i,o,l,s=d.readability(e,t);switch(a=!1,(i=r,"AA"!==(o=((i=i||{level:"AA",size:"small"}).level||"AA").toUpperCase())&&"AAA"!==o&&(o="AA"),"small"!==(l=(i.size||"small").toLowerCase())&&"large"!==l&&(l="small"),n={level:o,size:l}).level+n.size){case"AAsmall":case"AAAlarge":a=s>=4.5;break;case"AAlarge":a=s>=3;break;case"AAAsmall":a=s>=7}return a}

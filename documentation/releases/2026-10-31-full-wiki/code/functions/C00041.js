@@ -1,0 +1,1 @@
+function clearAck(){ackSpeechPending=false;if(ackTimer!==null)clearTimeout(ackTimer);ackTimer=null;}

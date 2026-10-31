@@ -1,0 +1,1 @@
+(t,i)=>{const v=t[k];if(!Number.isFinite(v))return;const x=X(xs[i]),y=Y(v);i?ctx.lineTo(x,y):ctx.moveTo(x,y);}

@@ -1,0 +1,1 @@
+function y(e,t){return t in e&&"object"==typeof e[t]&&0===Object.keys(e[t]).length}

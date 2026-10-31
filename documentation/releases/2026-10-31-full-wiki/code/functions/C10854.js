@@ -1,0 +1,1 @@
+()=>{const c=MISSY_VOICE_DEMO_AUDIO.steps.find(x=>x.id===i);return c?atob(c.operator||'').length+atob(c.missy||'').length:0;}

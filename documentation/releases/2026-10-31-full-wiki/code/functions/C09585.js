@@ -1,0 +1,1 @@
+g=>g.isAmp||g.isMelt

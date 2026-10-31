@@ -1,0 +1,1 @@
+function showTab(...args){return MISSY_HOOKS.invoke("showTab",this,args,showTabBase);}

@@ -1,0 +1,1 @@
+function g(e,t){for(var r=t._size,n=r.h/r.w,a={},i=Object.keys(e),o=0;o<i.length;o++){var l=i[o],s=e[l];if("string"==typeof s){var c=s.match(/^[xy]*/)[0],u=c.length;s=+s.substr(u);for(var f="y"===c.charAt(0)?n:1/n,d=0;d<u;d++)s*=f}a[l]=s}return a}

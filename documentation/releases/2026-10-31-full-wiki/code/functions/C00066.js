@@ -1,0 +1,1 @@
+function reply(en,cn){if([en,cn].some(x=>typeof x!=='string'||/\b(?:undefined|null|NaN)\b|\[object Object\]/i.test(x)))return false;if(!enabled||!cueEnabled('voiceAnswer')||!alive||alerting||document.hidden)return false;effect('voiceAnswer',false,true);return speak('voiceAnswer',false,{en,zh:cn});}

@@ -1,0 +1,1 @@
+function s(e){var t=e.length-1;return"s"!==e.charAt(t)&&n.warn("bad argument to arrayDefaultKey: "+e),e.substr(0,e.length-1)+"defaults"}

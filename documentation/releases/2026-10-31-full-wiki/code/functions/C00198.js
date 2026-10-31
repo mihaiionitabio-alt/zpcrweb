@@ -1,0 +1,1 @@
+function(e,t){var r=n(e).toRgb();if(1===r.a)return n(e).toRgbString();var a=n(t||c).toRgb(),i=1===a.a?a:{r:255*(1-a.a)+a.r*a.a,g:255*(1-a.a)+a.g*a.a,b:255*(1-a.a)+a.b*a.a},o={r:i.r*(1-r.a)+r.r*r.a,g:i.g*(1-r.a)+r.g*r.a,b:i.b*(1-r.a)+r.b*r.a};return n(o).toRgbString()}

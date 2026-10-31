@@ -1,0 +1,1 @@
+function lA(A){return UA(A)||65<=A&&A<=70||97<=A&&A<=102}

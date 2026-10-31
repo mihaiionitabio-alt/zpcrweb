@@ -1,0 +1,1 @@
+s=>[s,'Step '+s+' · '+z.reads.filter(r=>r.step===s).length+' reads']

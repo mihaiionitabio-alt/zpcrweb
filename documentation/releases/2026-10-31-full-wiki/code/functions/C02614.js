@@ -1,0 +1,1 @@
+function R(e,t,r){var n={};function a(e){e.clearCalc(),"multicategory"===e.type&&e.setupMultiCategory(t),n[e._id]=1}f.simpleMap(e,a);for(var i=r._axisMatchGroups||[],o=0;o<i.length;o++)for(var l in i[o])n[l]||a(r[p.id2name(l)])}

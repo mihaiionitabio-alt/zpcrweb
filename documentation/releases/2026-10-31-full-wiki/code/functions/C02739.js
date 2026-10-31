@@ -1,0 +1,1 @@
+function A(e){return L(e,1)}

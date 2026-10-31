@@ -1,0 +1,1 @@
+()=>{if(!zpcrChooseInstrument())return;MG.scope='zpcrcharts';MG.filter='';mgRefresh();MG.at=0;MG.chart=false;mgRender();}

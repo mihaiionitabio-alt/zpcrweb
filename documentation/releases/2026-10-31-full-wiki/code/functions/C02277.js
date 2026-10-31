@@ -1,0 +1,1 @@
+function(e,t,r){return e?"nsew"===e?r?"":"pan"===t?"move":"crosshair":e.toLowerCase()+"-resize":"pointer"}

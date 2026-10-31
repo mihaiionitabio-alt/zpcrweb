@@ -1,0 +1,1 @@
+l=>/run completed normally/i.test(l.msg||'')

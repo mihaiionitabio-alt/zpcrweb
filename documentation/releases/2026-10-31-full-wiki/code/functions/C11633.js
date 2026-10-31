@@ -1,0 +1,1 @@
+()=>{current=Number(pick.value);draw();}

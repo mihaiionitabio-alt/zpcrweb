@@ -1,0 +1,1 @@
+function v(e,t,r){e.selectAll("text").each((function(e){var a=n.select(this),l=o.ensureUniformFontSize(r,g(a,e,t,r));i.font(a,l)}))}

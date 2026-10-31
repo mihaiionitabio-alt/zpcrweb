@@ -1,0 +1,1 @@
+()=>{demo.closeModes();SEL_STATE.ids=new Set(['cc:bg_median','cc:heat_rate']);SEL_STATE.run=0;SEL_STATE.figureScope='selected';astOpen();return ask('Computer where am I').answer;}

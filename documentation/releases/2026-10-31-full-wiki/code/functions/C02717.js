@@ -1,0 +1,1 @@
+function d(t){return n(e.c2l(t))&&(t<u-c||t>f+c||!n(u))}

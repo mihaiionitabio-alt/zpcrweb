@@ -1,0 +1,1 @@
+box=>box.onchange=()=>{const r=SAMPLE_SELECTION.rows[Number(box.dataset.ssRow)];box.checked?SAMPLE_SELECTION.draft.delete(r.key):SAMPLE_SELECTION.draft.add(r.key);ssRender();}

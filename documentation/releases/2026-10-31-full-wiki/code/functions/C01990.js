@@ -1,0 +1,1 @@
+function k(e){if(Array.isArray(e))return T=!0,function(t){return Math.max(Number(e[t]||0),0)};var t=Math.max(Number(e||0),0);return function(){return t}}

@@ -1,0 +1,1 @@
+function c(e){return i(e)||s(e)}

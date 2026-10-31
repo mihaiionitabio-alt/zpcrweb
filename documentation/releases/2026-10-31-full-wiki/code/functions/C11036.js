@@ -1,0 +1,1 @@
+function ee(A){return 17===A.type||15===A.type}

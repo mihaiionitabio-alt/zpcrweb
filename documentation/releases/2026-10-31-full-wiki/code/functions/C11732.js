@@ -1,0 +1,1 @@
+()=>download("index.html",MISSY_PUBLIC_SOURCE,"text/html")

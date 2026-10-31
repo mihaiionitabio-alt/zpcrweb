@@ -1,0 +1,1 @@
+w=>!w.cqAtCycleCeiling&&w.CpRaw===40

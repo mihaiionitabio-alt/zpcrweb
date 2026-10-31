@@ -1,0 +1,1 @@
+(_,p)=>[p,String.fromCharCode(65+Math.floor(p/12))+(p%12+1)]

@@ -1,0 +1,22 @@
+{
+  "build": "2026.10.31.demolabels1",
+  "buildSHA256": "d2ed246783339c8153db567872cc5baafbcde9e7be477db5981ea22521b68b0c",
+  "archivedBuildSHA256": "e2e4b58082386e77e1c125e962e426439fdb0bddbbc5378e34b15e5c956b67fc",
+  "parser": "Node bundled Acorn 8.18.0",
+  "manifestModules": 135,
+  "totalFunctions": 11732,
+  "firstPartyFunctions": 6180,
+  "dependencyFunctions": 5552,
+  "baselineFunctions": 3423,
+  "counts": {
+    "new_or_changed_anonymous": 1724,
+    "new_named": 756,
+    "ambiguous_name_match": 187,
+    "dependency": 5552,
+    "changed_same_unique_name": 73,
+    "current_matching_baseline_ast": 3440
+  },
+  "instrumentation": "Function entry only in a separate review artifact; no production file modified",
+  "comparison": "AST-equivalent bodies match independent of whitespace. Unique-name matches are candidates, not proof of semantic identity. Anonymous additions and changes are kept separate.",
+  "baselineASTMatchNote": "Counts current functions whose canonical AST matches at least one baseline AST. Multiple current functions may share the same baseline body; this is not a one-to-one unchanged-function count."
+}

@@ -1,0 +1,1 @@
+function k(e,t){t=function(e){return[e[0]*d.k+d.x,e[1]*d.k+d.y]}(t),d.x+=e[0]-t[0],d.y+=e[1]-t[1]}

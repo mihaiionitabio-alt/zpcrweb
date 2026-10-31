@@ -1,0 +1,1 @@
+function de(e,t,r){return function(n,a){var i=ue(n),o=ue(a),l=[];if(i&&o&&fe(i,o))return l;i&&l.push(i),o&&l.push(o);var s=2*c.constrain((n[e]+a[e])/2,t,r)-((i||n)[e]+(o||a)[e]);return s&&((i&&o?s>0==i[e]>o[e]?i:o:i||o)[e]+=s),l}}

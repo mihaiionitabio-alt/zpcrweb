@@ -1,0 +1,1 @@
+e=>{if(kind==='voiceAcknowledge')clearAck();if(kind==='voiceAnswer'&&!['canceled','interrupted'].includes(e?.error))document.dispatchEvent(new Event('missy-speech-error'));if(kind==='ready'&&!announced){pending=true;labels();}}

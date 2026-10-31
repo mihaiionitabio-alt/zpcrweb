@@ -1,0 +1,1 @@
+p=>Number.isFinite(p.raw!==undefined?p.raw:p.y)

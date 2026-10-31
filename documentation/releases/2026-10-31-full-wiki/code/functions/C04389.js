@@ -1,0 +1,1 @@
+function(r){return i((function(t){if(t>=t)for(;e(t),!r(t);)t.setTime(t-1)}),(function(e,n){if(e>=e)if(n<0)for(;++n<=0;)for(;t(e,-1),!r(e););else for(;--n>=0;)for(;t(e,1),!r(e););}))}

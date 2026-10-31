@@ -1,0 +1,1 @@
+function(){var e=n.select(this);e.append("tspan").classed("js-link-to-tool",!0),e.append("tspan").classed("js-link-spacer",!0),e.append("tspan").classed("js-sourcelinks",!0)}

@@ -1,0 +1,1 @@
+function(t,i){n=new a(t,i),r?r.next=n:e=n,r=n,n=void 0}

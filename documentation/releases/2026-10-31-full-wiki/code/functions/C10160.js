@@ -1,0 +1,1 @@
+function setLevel(value){if(!level)return;const n=Math.round(Math.max(0,Math.min(1,value))*100);level.setAttribute('aria-valuenow',String(n));level.firstElementChild.style.width=n+'%';}

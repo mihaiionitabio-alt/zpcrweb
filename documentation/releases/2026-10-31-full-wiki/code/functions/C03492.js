@@ -1,0 +1,1 @@
+function Qt(){lr(this),this.x=this.y=this.arc=this.site=this.cy=null}

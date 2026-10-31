@@ -1,0 +1,1 @@
+function $(e){var t=e.getDay();return 0===t?7:t}

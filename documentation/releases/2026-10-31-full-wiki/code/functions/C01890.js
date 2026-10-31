@@ -1,0 +1,1 @@
+function _(e,t,r){for(var n=0;n<r.length;n++){var a=r[n][0],i=r[n][1];if(!(a[0]>=e[1]||a[1]<=e[0])&&i[0]<t[1]&&i[1]>t[0])return!0}return!1}

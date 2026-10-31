@@ -1,0 +1,1 @@
+function(e){return ni(this,"text",e,ai)}

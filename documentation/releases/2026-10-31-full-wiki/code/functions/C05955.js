@@ -1,0 +1,4 @@
+el=>{
+    if(L)el.disabled=true;
+    el.onchange=()=>{const t=el.type;sopSetPath(el.dataset.sopPath,t==="checkbox"?el.checked:t==="number"?(el.value===""?"":Number(el.value)):el.value);sopProfileEdited();};
+  }

@@ -1,0 +1,1 @@
+function(e){for(var n,a,i,o=e[e.length-1],s=0;s<e.length;s++){n=o,o=e[s];var c=t.pointsCompare(n,o);0!==c&&l((a=c<0?n:o,i=c<0?o:n,{id:r?r.segmentId():-1,start:a,end:i,myFill:{above:null,below:null},otherFill:null}),!0)}}

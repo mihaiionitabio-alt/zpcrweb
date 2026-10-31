@@ -1,0 +1,1 @@
+function(e,t){for(var r=this._validate(e,t,this.minDay,n.local.invalidMonth).toJD()-24e5+.5,a=0,i=0;i<o.length;i++){if(o[i]>r)return o[a]-o[a-1];a++}return 30}

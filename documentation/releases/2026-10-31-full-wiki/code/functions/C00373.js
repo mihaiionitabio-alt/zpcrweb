@@ -1,0 +1,1 @@
+function(e,t,r){return"H"+E((e[0]+t[0])/2)+"V"+R(t[1])+"H"+I(t,0,r)}

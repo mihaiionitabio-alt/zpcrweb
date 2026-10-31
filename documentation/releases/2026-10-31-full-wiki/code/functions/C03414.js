@@ -1,0 +1,1 @@
+function ht(e){return(e/=255)<=.04045?e/12.92:Math.pow((e+.055)/1.055,2.4)}

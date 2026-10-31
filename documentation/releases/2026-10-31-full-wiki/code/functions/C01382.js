@@ -1,0 +1,1 @@
+function A(e,t,r,n,a){if((t||r||n||a)&&(e+=" "+w(t,2)+":"+w(r,2),(n||a)&&(e+=":"+w(n,2),a))){for(var i=4;a%10==0;)i-=1,a/=10;e+="."+w(a,i)}return e}

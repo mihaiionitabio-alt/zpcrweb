@@ -1,0 +1,1 @@
+(k,i)=>{let g=groups.find(q=>q.key===k);if(!g){g={key:k,idx:[]};groups.push(g);}g.idx.push(i);}

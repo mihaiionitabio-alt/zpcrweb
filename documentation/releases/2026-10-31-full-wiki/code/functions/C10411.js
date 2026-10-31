@@ -1,0 +1,1 @@
+r=>[r.provenance_view+' · '+r.filename,[r.provenance_item,r.provenance_state,r.provenance_value,r.provenance_method].filter(Boolean).join(' · ')]

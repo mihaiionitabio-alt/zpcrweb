@@ -1,0 +1,1 @@
+(k,obj)=>{const o={};for(const [a,b] of Object.entries(obj))if(Number.isFinite(b))o[a]=b;if(Object.keys(o).length)m[k]=o;}

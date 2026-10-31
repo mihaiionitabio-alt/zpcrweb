@@ -1,0 +1,1 @@
+()=>{ssBuildRows();download("sample_selection.csv",csvOf(ssManifest()),"text/csv");}

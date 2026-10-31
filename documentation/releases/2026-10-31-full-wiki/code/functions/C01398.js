@@ -1,0 +1,1 @@
+function u(e){for(var t=[];f(e);)t.push(e),e=e.parentNode,"function"==typeof ShadowRoot&&e instanceof ShadowRoot&&(e=e.host);return t}

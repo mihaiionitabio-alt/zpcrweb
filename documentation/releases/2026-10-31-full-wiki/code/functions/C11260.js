@@ -1,0 +1,1 @@
+function(A){return e.counters[A].pop()}

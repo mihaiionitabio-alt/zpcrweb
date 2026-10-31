@@ -1,0 +1,1 @@
+function(e,t){c.fill(e,r.selectedColorFn(t))}

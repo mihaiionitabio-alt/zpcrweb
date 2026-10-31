@@ -1,0 +1,1 @@
+function(e,t){var r,n,a,i=t.dataAttr||e._id.charAt(0),o={};if(t.axData)r=t.axData;else for(r=[],n=0;n<t.data.length;n++){var l=t.data[n];l[i+"axis"]===e._id&&r.push(l)}for(n=0;n<r.length;n++){var s=r[n][i];for(a=0;a<s.length;a++){var c=s[a];null!=c&&(o[c]=1)}}return Object.keys(o)}

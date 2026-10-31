@@ -1,0 +1,5 @@
+function finalCycleXML(){
+ let xml='<rdml version="1.4"><dye id="FAM"/><sample id="DEMO_FINAL"><type>unkn</type><description>ARTIFICIAL TRAINING</description></sample><target id="FINAL_TARGET"><type>toi</type><dyeId id="FAM"/></target><experiment id="ARTIFICIAL_TRAINING"><run id="FINAL_CYCLE"><pcrFormat><rows>8</rows><columns>12</columns></pcrFormat><instrument>ARTIFICIAL FINAL-CYCLE EXHIBIT</instrument>';
+ for(let i=0;i<21;i++){xml+='<react id="'+(i+1)+'"><sample id="DEMO_FINAL"/><data><tar id="FINAL_TARGET"/><cq>40</cq>'+(i>=19?'<N0>1</N0><ampEff>1.9</ampEff>':'')+'<note>ARTIFICIAL '+(i<19?'CYCLE-LIMIT TOKEN':'FINAL-CYCLE MEASURED CROSSING')+'</note>';for(let c=1;c<=40;c++)xml+='<adp><cyc>'+c+'</cyc><fluor>'+(i<19?100:100+1200/(1+Math.exp(-(c-40))))+'</fluor></adp>';xml+='</data></react>';}
+ return xml+'</run></experiment></rdml>';
+}

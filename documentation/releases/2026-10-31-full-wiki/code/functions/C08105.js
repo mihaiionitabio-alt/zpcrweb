@@ -1,0 +1,1 @@
+(h){if(!cur)d.page();if(d.y-h<PDF_PAGE.margin+24){d.page();return false;}return true;}

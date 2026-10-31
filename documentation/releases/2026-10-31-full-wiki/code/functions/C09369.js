@@ -1,0 +1,1 @@
+()=>{try{zpcrSetEndpointN(input.value);}catch(e){input.setCustomValidity(e.message);input.reportValidity();}}

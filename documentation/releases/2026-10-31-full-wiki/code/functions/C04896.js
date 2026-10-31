@@ -1,0 +1,1 @@
+function(e){e=Math.floor(e)+.5;var t=Math.floor((30*(e-this.jdEpoch)+10646)/10631);t=t<=0?t-1:t;var r=Math.min(12,Math.ceil((e-29-this.toJD(t,1,1))/29.5)+1),n=e-this.toJD(t,r,1)+1;return this.newDate(t,r,n)}

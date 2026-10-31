@@ -1,0 +1,1 @@
+function(t){var a=n.select(this),i=x(a);s.translatePoint(t,i,b,_)?(s.singlePointStyle(t,i,u,T,e),r.layerClipId&&s.hideOutsideRangePoint(t,i,b,_,u.xcalendar,u.ycalendar),u.customdata&&a.classed("plotly-customdata",null!==t.data&&void 0!==t.data)):i.remove()}

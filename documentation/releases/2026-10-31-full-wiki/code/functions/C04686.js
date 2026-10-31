@@ -1,0 +1,1 @@
+function o(e,t){for(var r=0;r<e.children.length;r++)if(n(t,(l=e.children[r]).region))return void o(l,t);var i=a(t);for(r=0;r<e.children.length;r++){var l;n((l=e.children[r]).region,t)&&(i.children.push(l),e.children.splice(r,1),r--)}e.children.push(i)}

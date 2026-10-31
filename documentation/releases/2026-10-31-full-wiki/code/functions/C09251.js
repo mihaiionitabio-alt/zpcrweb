@@ -1,0 +1,1 @@
+n=>[n.querySelector('Key')?.textContent||'',n.querySelector('Value')?.textContent||'']

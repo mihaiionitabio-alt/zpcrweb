@@ -1,0 +1,1 @@
+function M(e,t,r){if(!r.showline||!r._lw)return!1;if("all"===r.mirror||"allticks"===r.mirror)return!0;var n=r._anchorAxis;if(!n)return!1;var a=p.FROM_BL[t];return r.side===t?n.domain[a]===e.domain[a]:r.mirror&&n.domain[1-a]===e.domain[1-a]}

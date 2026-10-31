@@ -1,0 +1,1 @@
+()=>chartView('heat_rate',RUNS[31])

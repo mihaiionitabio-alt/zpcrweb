@@ -1,0 +1,1 @@
+()=>({evidence:{kind:'point',chart:'bg_median',index:primary().pts.findIndex(p=>p.flags.length)}})

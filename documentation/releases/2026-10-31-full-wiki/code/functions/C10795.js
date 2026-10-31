@@ -1,0 +1,1 @@
+()=>{paused=!paused;footer.querySelector('#demo-pause').textContent=paused?'Play / 播放':'Pause / 暂停';if(paused)clearTimeout(timer);else schedule();}

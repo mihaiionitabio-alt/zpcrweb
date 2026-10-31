@@ -1,0 +1,1 @@
+function(e,n,a){return r((t(e.y1,a)+o(e)+t(e.y0,a)+i(e))/2,a)}

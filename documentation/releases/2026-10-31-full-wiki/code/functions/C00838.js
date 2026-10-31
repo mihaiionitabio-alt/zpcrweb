@@ -1,0 +1,1 @@
+function(){var e=document.createElement("div");return e.className="modebar-group",e}

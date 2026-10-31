@@ -1,0 +1,1 @@
+function(e,t){var r=s(e+.05,f),n=w(Math.floor(r/d),2)+":"+w(s(Math.floor(r/h),60),2);if("M"!==t){o(t)||(t=0);var a=(100+Math.min(s(e/p,60),D[t])).toFixed(t).substr(1);t>0&&(a=a.replace(/0+$/,"").replace(/[\.]$/,"")),n+=":"+a}return n}

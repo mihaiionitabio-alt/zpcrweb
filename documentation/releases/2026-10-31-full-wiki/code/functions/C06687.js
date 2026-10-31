@@ -1,0 +1,1 @@
+d=>Object.freeze({code:d.code,id:d.id,name:d.title,unit:d.unit||"",group:d.group||"",type:d.type||"",instrumentFamilies:d.inst||[],limits:d.spec||null,lowMeaning:(CC_LIMIT_TEXT[d.id]||{}).lo||"",highMeaning:(CC_LIMIT_TEXT[d.id]||{}).hi||""})

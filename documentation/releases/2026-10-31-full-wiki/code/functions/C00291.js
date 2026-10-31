@@ -1,0 +1,1 @@
+function(e){return"lasso"===e||"drawclosedpath"===e||"drawopenpath"===e}

@@ -1,0 +1,1 @@
+w=>stableKey(w)===key

@@ -1,0 +1,1 @@
+function(e,t){if(e>0)return Math.log(e)/Math.LN10;var r=Math.log(Math.min(t[0],t[1]))/Math.LN10;return n(r)||(r=Math.log(Math.max(t[0],t[1]))/Math.LN10-6),r}

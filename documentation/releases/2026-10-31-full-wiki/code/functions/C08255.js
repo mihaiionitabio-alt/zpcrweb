@@ -1,0 +1,1 @@
+(v,i)=>pdfWrap(String(v),widths[i],size,bold)

@@ -1,0 +1,1 @@
+function astEl(id){return document.getElementById(id);}

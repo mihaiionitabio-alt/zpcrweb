@@ -1,0 +1,1 @@
+()=>{page('review');showReviewSheet('rising');document.getElementById('rising-run').value=String(RUNS.indexOf(final));renderReviewRising();markMenus('review','rising');focus(document.getElementById('review-tabs'));document.getElementById('review-rising').classList.add('game-evidence-focus');}

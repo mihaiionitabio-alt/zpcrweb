@@ -1,0 +1,1 @@
+c=>`${c.name} expired ${sopFmtTime(c.exp)}`

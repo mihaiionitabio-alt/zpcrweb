@@ -1,0 +1,1 @@
+(p,i)=>{const x=i%2*550,y=65+Math.floor(i/2)*265,temp=p.title==='Temperature fields at reads';svg+=zcPlot(temp?{...p,unit:''}:p,x,y);if(temp)ZS_FIELDS.forEach((s,k)=>svg+=`<text x="${x+12+k*99}" y="${y+43}" fill="${ZC_COLORS[k]}" font-size="13">${s}</text>`);}

@@ -1,0 +1,1 @@
+c=>'Control '+text(c.name)+'; expectation '+text(c.expect)+'; match '+text(c.match)+'; declared cqLo '+label(c.cqLo,'unset')+' cycles; declared cqHi '+label(c.cqHi,'unset')+' cycles; minimum wells per run '+label(c.minPerRun,'unset')

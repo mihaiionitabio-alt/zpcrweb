@@ -1,0 +1,1 @@
+r=>MARA_ENGINE.signal(r)===true

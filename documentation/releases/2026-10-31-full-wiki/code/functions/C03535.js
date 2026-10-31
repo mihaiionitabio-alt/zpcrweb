@@ -1,0 +1,1 @@
+function yr(e,t){var r,n={},a={};for(r in e)r in t?n[r]=Tr(e[r],t[r]):a[r]=e[r];for(r in t)r in e||(a[r]=t[r]);return function(e){for(r in n)a[r]=n[r](e);return a}}

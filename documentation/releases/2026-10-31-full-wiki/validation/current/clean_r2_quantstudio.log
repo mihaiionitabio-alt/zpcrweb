@@ -1,0 +1,8 @@
+PASS QS5_384W_RNaseP_Fast_MMx_10uL.eds 35024 vendor-export comparisons
+PASS GeneExpression_ddCt_Fast_Adv_MMx_10uL.eds 6552 vendor-export comparisons
+PASS 4Plex_Multiplex_MMx_10uL.eds 34944 vendor-export comparisons
+PASS 2026-06-15_RAS_FFPE.eds 17472 vendor-export comparisons
+PASS 9_log_Fast_Adv_MMx_20uL.eds 8088 vendor-export comparisons
+PASS QS5_96_0.1mL_Melt_Only.eds 36096 fresh melt-export checks; extra vendor peaks: 0 stored/export derivative differences: 0
+PASS PCR_w_Melt_SYBR_Select_MMx_10uL.eds 22752 fresh melt-export checks; extra vendor peaks: 288 stored/export derivative differences: 11328
+PASS stored Tm with real temperature axes, PCR/melt separation, template without fabricated results, Cq boundary/sentinel and missing-point alignment fixtures.

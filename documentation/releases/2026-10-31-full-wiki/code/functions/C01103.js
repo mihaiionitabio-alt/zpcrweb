@@ -1,0 +1,1 @@
+function(e){if(5!==e.length)return!1;for(var t=1;t<3;t++){if(!d(e[0][t]-e[1][t],e[3][t]-e[2][t]))return!1;if(!d(e[0][t]-e[3][t],e[1][t]-e[2][t]))return!1}return!(!d(e[0][1],e[1][1])&&!d(e[0][1],e[3][1])||!(h(e[0],e[1])*h(e[0],e[3])))}

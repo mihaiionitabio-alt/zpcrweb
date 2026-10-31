@@ -1,0 +1,1 @@
+function x(e){return function(t,r,n,a){if(t.point!==e){var i=t.cx-e.x,o=t.cy-e.y,l=a-r,s=i*i+o*o;if(l*l/g<s){if(s<p){var c=t.charge/s;e.px-=i*c,e.py-=o*c}return!0}t.point&&s&&s<p&&(c=t.pointCharge/s,e.px-=i*c,e.py-=o*c)}return!t.charge}}

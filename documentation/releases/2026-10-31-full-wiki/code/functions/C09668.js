@@ -1,0 +1,1 @@
+item=>item.id!=='data:source_manifest'

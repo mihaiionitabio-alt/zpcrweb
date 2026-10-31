@@ -1,0 +1,1 @@
+function g(e){var r=e.name,n=r.split("-")[0],a=e.dictionary,i=e.format,o=a&&Object.keys(a).length,l=i&&Object.keys(i).length,s=t.localeRegistry,c=s[r];if(c||(s[r]=c={}),n!==r){var u=s[n];u||(s[n]=u={}),o&&u.dictionary===c.dictionary&&(u.dictionary=a),l&&u.format===c.format&&(u.format=i)}o&&(c.dictionary=a),l&&(c.format=i)}

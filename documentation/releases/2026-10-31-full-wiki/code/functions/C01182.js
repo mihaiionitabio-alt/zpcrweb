@@ -1,0 +1,1 @@
+function(e){var r=x(y,t,e.label),n=r.node()&&o.bBox(r.node())||{width:0,height:0},a=c.lineCount(r);u.currentValueMaxWidth=Math.max(u.currentValueMaxWidth,Math.ceil(n.width)),u.currentValueHeight=Math.max(u.currentValueHeight,Math.ceil(n.height)),u.currentValueMaxLines=Math.max(u.currentValueMaxLines,a)}

@@ -1,0 +1,1 @@
+c=>c.status==='fail'||c.status==='review'||c.status==='n/a'

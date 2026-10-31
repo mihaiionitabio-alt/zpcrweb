@@ -1,0 +1,1 @@
+function o(e){var t,r=typeof e;return null==e||"object"!=r&&"function"!=r||(t=e.then),"function"==typeof t&&t}

@@ -1,0 +1,2 @@
+r=>{const o=SOP.outcomes[r.outcome]||{};return Object.assign({},r,{cq_mean:r.cq_mean===""?"":num(r.cq_mean,2),cq_sd:r.cq_sd===""?"":num(r.cq_sd,2),
+      outcome:`<span class="sop-pill" style="background:${esc(o.colour||"#94a3b8")}">${esc(r.label)}</span>`});}

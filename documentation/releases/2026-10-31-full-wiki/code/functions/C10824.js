@@ -1,0 +1,1 @@
+()=>{document.getElementById('missy-startup-enter').click();return{en:document.getElementById('missy-setup').querySelector('[data-setup-text=heading]')?.textContent||'Session setup is open.',zh:'会话设置已打开。'};}

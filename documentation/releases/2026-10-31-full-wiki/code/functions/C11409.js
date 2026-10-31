@@ -1,0 +1,1 @@
+function(A){this.ctx.beginPath(),this.formatPath(A),this.ctx.closePath()}

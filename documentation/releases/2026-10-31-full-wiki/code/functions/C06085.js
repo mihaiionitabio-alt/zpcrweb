@@ -1,0 +1,1 @@
+function ssName(run,w){return String(w.sample||((run.plate||{})[w.pos]||{}).name||"").trim()||"(unnamed well "+(w.well||w.pos)+")";}

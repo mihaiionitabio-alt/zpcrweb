@@ -1,0 +1,1 @@
+function S(e){return function(t){return i[t][e]}}

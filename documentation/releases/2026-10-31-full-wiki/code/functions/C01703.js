@@ -1,0 +1,1 @@
+function v(e){if(!o.isPlainObject(e))return!1;var t=e.name;return delete e.name,delete e.showlegend,("string"==typeof t||"number"==typeof t)&&String(t)}

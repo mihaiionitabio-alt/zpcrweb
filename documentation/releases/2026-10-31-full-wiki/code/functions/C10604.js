@@ -1,0 +1,1 @@
+()=>{last=signature();document.addEventListener('click',queue,true);document.addEventListener('change',queue,true);document.addEventListener('keydown',queue,true);}

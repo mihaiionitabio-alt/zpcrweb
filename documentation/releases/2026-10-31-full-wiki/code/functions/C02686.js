@@ -1,0 +1,1 @@
+function(e){var t=n.select("body").append("div").style({display:"none"}).html(""),r=e.replace(/(&[^;]*;)/gi,(function(e){return"&lt;"===e?"&#60;":"&rt;"===e?"&#62;":-1!==e.indexOf("<")||-1!==e.indexOf(">")?"":t.html(e).text()}));return t.remove(),r}

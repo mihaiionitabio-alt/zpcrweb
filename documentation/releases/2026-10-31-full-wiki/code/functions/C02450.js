@@ -1,0 +1,1 @@
+function(){for(var r={},n=0;n<t.length;n++){var i=t[n],o=i.plotinfo.xaxis,l=i.plotinfo.yaxis;i.xr0&&(r[o._name+".range"]=i.xr0.slice()),i.yr0&&(r[l._name+".range"]=i.yr0.slice())}return a.call("relayout",e,r).then((function(){for(var e=0;e<t.length;e++)v(t[e].plotinfo)}))}

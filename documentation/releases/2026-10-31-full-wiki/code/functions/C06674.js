@@ -1,0 +1,1 @@
+g=>g&&Number.isFinite(g.mean)

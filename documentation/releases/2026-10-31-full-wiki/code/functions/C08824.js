@@ -1,0 +1,1 @@
+function zpcrChooseInstrument(){const insts=ccInstruments().filter(i=>i.platform==='CFX');if(!insts.length)return false;if(!insts.some(i=>i.key===CC_STATE.instrument)){CC_STATE.instrument=insts[0].key;CC_STATE.protocol='';}return true;}

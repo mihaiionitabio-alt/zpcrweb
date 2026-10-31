@@ -1,0 +1,1 @@
+next=>function(...args){const result=next(...args);queue();return result;}

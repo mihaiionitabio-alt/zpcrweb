@@ -1,0 +1,1 @@
+(id,title,guide,question,answer,open,options=null,rule='training.observation',mode='quiz')=>({id,title,guide,question,answer,open,options,rule,mode})

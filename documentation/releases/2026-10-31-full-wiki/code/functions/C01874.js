@@ -1,0 +1,1 @@
+function l(e){return e&&"string"==typeof e}

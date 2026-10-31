@@ -1,0 +1,1 @@
+([n,b])=>{const copy=b.cloneNode(true);copy.querySelector('.k')?.remove();return n+': '+copy.textContent.trim();}

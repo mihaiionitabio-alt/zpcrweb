@@ -1,0 +1,1 @@
+w=>`${w.well} ${w.sample} ${w.target}: Cq ${Number(w.CpRaw).toFixed(3)}`

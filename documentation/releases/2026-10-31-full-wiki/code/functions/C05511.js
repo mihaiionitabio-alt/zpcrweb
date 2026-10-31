@@ -1,0 +1,1 @@
+c=>flagName(c)===id

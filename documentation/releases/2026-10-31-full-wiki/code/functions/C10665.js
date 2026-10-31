@@ -1,0 +1,1 @@
+function setPointerMotion(on){pointerMotion=Boolean(on);cue.classList.toggle('demo-pointer-motion',pointerMotion);}

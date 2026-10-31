@@ -1,0 +1,1 @@
+function(){var t,r,n;(t=this[e])&&(n=t[r=t.active])&&(n.timer.c=null,n.timer.t=NaN,--t.count?delete t[r]:delete this[e],t.active+=.5,n.event&&n.event.interrupt.call(this,this.__data__,n.index))}

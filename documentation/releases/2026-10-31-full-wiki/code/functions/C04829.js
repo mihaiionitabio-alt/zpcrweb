@@ -1,0 +1,1 @@
+function(e){return e=this._validateYear(e),f[e-f[0]]>>13}

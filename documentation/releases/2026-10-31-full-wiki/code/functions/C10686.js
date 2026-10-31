@@ -1,0 +1,1 @@
+async function stage(){if(!STAGED.length)await intake(files);}

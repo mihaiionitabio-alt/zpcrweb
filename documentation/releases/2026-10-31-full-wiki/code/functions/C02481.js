@@ -1,0 +1,1 @@
+function(e,t){return Array.isArray(t[0])&&1===t[0].length&&-1!==["string","number"].indexOf(typeof t[0][0])?[{type:"layout",prop:"_currentFrame",value:t[0][0].toString()}]:[]}

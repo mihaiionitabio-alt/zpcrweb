@@ -1,0 +1,1 @@
+function(e){var t=e._fullLayout;t._infolayer.selectAll(".annotation").remove();for(var r=0;r<t.annotations.length;r++)t.annotations[r].visible&&m(e,r);return i.previousPromises(e)}

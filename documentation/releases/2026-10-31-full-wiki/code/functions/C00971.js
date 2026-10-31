@@ -1,0 +1,1 @@
+function(e,t){var r,n,a=e[0],i=-1,o=[];for(n=0;n<t.length;n++)if(r=t[n],a.fullData._expandedIndex===r.cd[0].trace._expandedIndex){if(!0===a.hoverOnBox)break;void 0!==a.pointNumber?i=a.pointNumber:void 0!==a.binNumber&&(i=a.binNumber,o=a.pointNumbers);break}return{pointNumber:i,pointNumbers:o,searchInfo:r}}

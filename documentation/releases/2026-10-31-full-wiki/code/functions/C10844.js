@@ -1,0 +1,1 @@
+()=>{demo.page('load');document.getElementById('missy-animal-menu-toggle')?.click();return ask('Computer what can I do here').answer;}

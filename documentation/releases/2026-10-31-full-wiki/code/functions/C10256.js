@@ -1,0 +1,1 @@
+x=>'Run '+(x.ri+1)+'; '+runName(x.run)+'; '+new Date(x.time).toISOString()+'; '+x.basis

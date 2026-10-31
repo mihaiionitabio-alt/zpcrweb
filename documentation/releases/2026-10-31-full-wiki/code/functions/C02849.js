@@ -1,0 +1,1 @@
+function a(e){return-1!==e.indexOf("e")?e.replace(/[.]?0+e/,"e"):-1!==e.indexOf(".")?e.replace(/[.]?0+$/,""):e}

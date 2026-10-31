@@ -1,0 +1,1 @@
+(_,d)=>Math.min(...points.map(p=>p[d]))

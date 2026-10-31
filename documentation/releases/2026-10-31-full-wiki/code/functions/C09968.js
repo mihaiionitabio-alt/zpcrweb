@@ -1,0 +1,1 @@
+x=>({name:x.key+'.json',data:JSON.stringify(x.profile,null,2)+'\n'})

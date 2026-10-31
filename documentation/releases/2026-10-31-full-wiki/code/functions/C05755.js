@@ -1,0 +1,1 @@
+r=>Number.isFinite(xval(r))&&Number.isFinite(r.cq)

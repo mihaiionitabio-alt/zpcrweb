@@ -1,0 +1,1 @@
+r=>/late-signal|stochastic/.test(r.reason||"")

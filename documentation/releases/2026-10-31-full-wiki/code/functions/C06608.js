@@ -1,0 +1,1 @@
+w=>{const q=Number(w.CpRaw);if(q>0)res.push({row:w.row,col:w.col,e:q-r.cqMean});}

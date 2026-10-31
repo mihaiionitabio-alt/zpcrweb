@@ -1,0 +1,1 @@
+function(e){return h.draw(e,"redraw"),e._fullLayout._hasOnlyLargeSploms&&(a.subplotsRegistry.splom.updateGrid(e),s(e),t.redrawReglTraces(e)),t.drawMainTitle(e),i.previousPromises(e)}

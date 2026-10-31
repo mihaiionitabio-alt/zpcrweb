@@ -1,0 +1,1 @@
+function g(){var l,s,c,u,f=i.touches(t);Xa.call(t);for(var d=0,h=f.length;d<h;++d,u=null)if(c=f[d],u=n[c.identifier]){if(s)break;l=c,s=u}if(u){var p=(p=c[0]-l[0])*p+(p=c[1]-l[1])*p,v=o&&Math.sqrt(p/o);l=[(l[0]+c[0])/2,(l[1]+c[1])/2],s=[(s[0]+u[0])/2,(s[1]+u[1])/2],M(v*e)}a=null,k(l,s),C(r)}

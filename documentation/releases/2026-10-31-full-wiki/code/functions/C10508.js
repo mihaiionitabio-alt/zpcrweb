@@ -1,0 +1,1 @@
+function(){return next().concat({id:'data:scope_snapshot',kind:'data',group:'Source provenance',title:'Current report and sample scope',note:'',ready:()=>RUNS.length>0,rows:()=>rows(true),file:'current_scope_snapshot.csv',tableOptions:{full:true,columns:['filename','scope_item','scope_value','scope_state','scope_basis']},text:()=>csvOf(rows(false))});}

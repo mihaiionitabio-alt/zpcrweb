@@ -1,0 +1,1 @@
+function(e,t,r){"use strict";var n=r(9914);e.exports=function(e){var t=typeof e;if("string"===t){var r=e;if(0==(e=+e)&&n(r))return!1}else if("number"!==t)return!1;return e-e<1}}

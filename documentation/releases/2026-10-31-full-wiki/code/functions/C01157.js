@@ -1,0 +1,1 @@
+function l(e,r){return t(e.x1,r)+a(e)-t(e.x0,r)-n(e)}

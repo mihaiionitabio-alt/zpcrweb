@@ -1,0 +1,1 @@
+s=>{const e=s.event.map(r=>copies(r.cq,ec)),r=s.ref.map(r=>copies(r.cq,rc));return 100*avg(e)/avg(r);}

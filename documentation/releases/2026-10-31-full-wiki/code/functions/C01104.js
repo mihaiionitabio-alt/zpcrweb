@@ -1,0 +1,1 @@
+function(e){var t=e.length;if(t!==i+1)return!1;t=i;for(var r=0;r<t;r++){var n=(2*t-r)%t,a=(t/2+n)%t,o=(t/2+r)%t;if(!d(h(e[r],e[o]),h(e[n],e[a])))return!1}return!0}

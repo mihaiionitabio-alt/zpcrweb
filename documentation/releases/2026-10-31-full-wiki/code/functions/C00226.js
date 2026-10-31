@@ -1,0 +1,1 @@
+function _e(n,a){var i={propContainer:se,propName:t._propPrefix+"title",traceIndex:t._traceIndex,_meta:t._meta,placeholder:N._dfltTitle.colorbar,containerGroup:e.select("."+k.cbtitle)},o="h"===n.charAt(0)?n.substr(1):"h"+n;e.selectAll("."+o+",."+o+"-math-group").remove(),v.draw(r,n,f(i,a||{}))}

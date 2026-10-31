@@ -1,0 +1,1 @@
+next=>function(){const result=next();if(UI_LANG==='zh')localizeDOM(document.getElementById('mg'),true);return result;}

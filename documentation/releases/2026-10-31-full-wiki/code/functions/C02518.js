@@ -1,0 +1,1 @@
+function P(e){var t=e.margin;if(!e._size){var r=e._size={l:Math.round(t.l),r:Math.round(t.r),t:Math.round(t.t),b:Math.round(t.b),p:Math.round(t.pad)};r.w=Math.round(e.width)-r.l-r.r,r.h=Math.round(e.height)-r.t-r.b}e._pushmargin||(e._pushmargin={}),e._pushmarginIds||(e._pushmarginIds={}),e._reservedMargin||(e._reservedMargin={})}

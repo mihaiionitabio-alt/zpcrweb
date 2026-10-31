@@ -1,0 +1,1 @@
+function(e,t){var r=this.getLabel(e,t),n=this.bins[r]||0;return this.bins[r]=n+t,n}

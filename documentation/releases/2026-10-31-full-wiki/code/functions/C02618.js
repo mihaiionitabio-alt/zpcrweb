@@ -1,0 +1,1 @@
+function(e){e._fullLayout._redrag&&e._fullLayout._redrag()}

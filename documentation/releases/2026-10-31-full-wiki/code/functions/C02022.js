@@ -1,0 +1,1 @@
+function ie(e){return+e.substring(1)}

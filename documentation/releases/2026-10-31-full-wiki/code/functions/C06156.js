@@ -1,0 +1,1 @@
+r=>SAMPLE_SELECTION.draft.delete(r.key)

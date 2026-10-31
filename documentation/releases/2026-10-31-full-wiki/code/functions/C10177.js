@@ -1,0 +1,1 @@
+b=>b.querySelectorAll('.missy-voice-key').forEach(e=>e.remove())

@@ -1,0 +1,1 @@
+d=>({name:txt(d,"Name"),reporter:txt(d,"Reporter"),quencher:txt(d,"Quencher"),color:argb(txt(d,"Color"))})

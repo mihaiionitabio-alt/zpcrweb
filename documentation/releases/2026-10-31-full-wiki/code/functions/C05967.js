@@ -1,0 +1,1 @@
+t=>!have.has(t)

@@ -1,0 +1,1 @@
+function(e){return b.t+b.h*(1-e)}

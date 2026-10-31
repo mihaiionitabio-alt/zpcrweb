@@ -1,0 +1,1 @@
+a=>Number(a.stdCurve.efficiency)

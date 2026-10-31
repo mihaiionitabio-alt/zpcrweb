@@ -1,0 +1,1 @@
+re=>re.test(String(s||"").trim())

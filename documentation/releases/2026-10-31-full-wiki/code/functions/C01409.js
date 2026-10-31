@@ -1,0 +1,1 @@
+function(n,a){"undefined"!=typeof jQuery&&jQuery(e).trigger(n,a),t.emit(n,a),r.emit(n,a)}

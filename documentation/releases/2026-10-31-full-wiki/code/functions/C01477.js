@@ -1,0 +1,1 @@
+function(){var e=D.exec(window.navigator.userAgent);if(e&&2===e.length){var t=parseInt(e[1]);if(!isNaN(t))return t}return null}

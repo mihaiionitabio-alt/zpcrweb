@@ -1,0 +1,1 @@
+function(e,t,r){"use strict";e.exports={moduleType:"component",name:"colorbar",attributes:r(5158),supplyDefaults:r(2097),draw:r(5881).draw,hasColorbar:r(1362)}}

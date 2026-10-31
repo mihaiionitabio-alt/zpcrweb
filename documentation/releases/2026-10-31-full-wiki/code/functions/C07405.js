@@ -1,0 +1,1 @@
+()=>downloadExportFiles("rdml",RUNS.map(r=>({name:safeName(r.meta.name||r.file)+".rdml",data:makeRDML(r),mime:"application/zip"})))

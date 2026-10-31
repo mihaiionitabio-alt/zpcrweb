@@ -1,0 +1,1 @@
+function(e,t,r){this._validate(e,this.minMonth,this.minDay,c.local.invalidDate||c.regionalOptions[""].invalidDate);var n="y"===r?t:e.year(),a="m"===r?t:e.month(),i="d"===r?t:e.day();return"y"!==r&&"m"!==r||(i=Math.min(i,this.daysInMonth(n,a))),e.date(n,a,i)}

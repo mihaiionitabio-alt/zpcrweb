@@ -1,0 +1,1 @@
+(stage,source)=>{if(frame?.contentWindow===source&&Number.isInteger(stage)&&stage>=1&&stage<=5)setLoading(stage);}

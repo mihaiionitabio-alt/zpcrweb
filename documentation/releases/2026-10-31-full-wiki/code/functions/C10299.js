@@ -1,0 +1,1 @@
+function localAPI(){const C=window.SpeechRecognition||window.webkitSpeechRecognition;if(!C||typeof C.available!=='function')throw Error('local-unavailable');const r=new C();if(!('processLocally'in r))throw Error('local-unavailable');r.processLocally=true;if(r.processLocally!==true)throw Error('local-unavailable');return {C,r};}

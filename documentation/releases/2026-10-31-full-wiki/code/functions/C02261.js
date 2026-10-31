@@ -1,0 +1,1 @@
+function E(e,t){for(var r=0;r<e.length;r++)if(!e[r].fixedrange)return t;return""}

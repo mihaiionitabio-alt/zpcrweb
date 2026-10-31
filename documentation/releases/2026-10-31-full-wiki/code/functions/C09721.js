@@ -1,0 +1,1 @@
+()=>d.stats.length>0

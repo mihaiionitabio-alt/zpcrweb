@@ -1,0 +1,1 @@
+v=>Array.isArray(v)?v[document.body.classList.contains('lang-zh')?1:0]:String(v)

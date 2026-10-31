@@ -1,0 +1,1 @@
+p=>p.channel===chanIdx

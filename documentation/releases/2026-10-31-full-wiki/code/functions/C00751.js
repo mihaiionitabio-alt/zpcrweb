@@ -1,0 +1,1 @@
+function y(e,t){b(e,t,"mapbox")}

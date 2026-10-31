@@ -1,0 +1,1 @@
+function s(e,t,r,n){return"Q 0,0 "+n}

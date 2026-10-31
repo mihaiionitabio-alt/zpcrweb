@@ -1,0 +1,1 @@
+n=>Number.isSafeInteger(n)&&n>0

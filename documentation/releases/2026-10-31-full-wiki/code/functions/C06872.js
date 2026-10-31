@@ -1,0 +1,1 @@
+([v,l])=>`<option value="${v}"${cfg.trendFit===v?" selected":""}>${esc(ui(l))}</option>`

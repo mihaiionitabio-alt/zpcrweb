@@ -1,0 +1,1 @@
+function(){for(;this.element.firstChild;)this.element.removeChild(this.element.firstChild);this.hasLogo=!1}

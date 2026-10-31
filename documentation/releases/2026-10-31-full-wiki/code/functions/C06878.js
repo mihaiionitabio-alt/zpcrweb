@@ -1,0 +1,1 @@
+e=>{ccSetCfg(def.id,{x:e.target.value});re();}

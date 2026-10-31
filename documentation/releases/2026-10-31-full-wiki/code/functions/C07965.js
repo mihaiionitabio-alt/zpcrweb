@@ -1,0 +1,1 @@
+ev=>{if(ev.dataTransfer&&ev.dataTransfer.files.length)intake([...ev.dataTransfer.files]);}

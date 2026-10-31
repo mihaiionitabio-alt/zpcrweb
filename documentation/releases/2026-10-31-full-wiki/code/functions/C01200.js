@@ -1,0 +1,1 @@
+function(e,r){var l=r%a.labelStride==0,s=n.select(this);s.attr({height:l?t.ticklen:t.minorticklen}).call(i.fill,t.tickcolor),o.setTranslate(s,S(t,r/(t._stepCount-1))-.5*t.tickwidth,(l?f.tickOffset:f.minorTickOffset)+a.currentValueTotalHeight)}

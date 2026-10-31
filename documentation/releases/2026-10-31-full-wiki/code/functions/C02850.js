@@ -1,0 +1,1 @@
+function(e,t){var r=a((100*e).toPrecision(3));return n.numSeparate(r,t)+"%"}

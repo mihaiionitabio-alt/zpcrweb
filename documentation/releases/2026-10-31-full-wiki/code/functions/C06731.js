@@ -1,0 +1,1 @@
+r=>({...r,m:{...r.m,[def.metric||def.id]:ccValue(def,r,variant)}})

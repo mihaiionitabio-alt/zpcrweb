@@ -1,0 +1,1 @@
+()=>download(run.file+'.inventory.json',JSON.stringify({sourceSHA256:run.meta.sourceSHA256,meta:run.meta,eligibility:z.evidence,contribution:zpcrContributions().get(run),archive:z.archive,runInfo:z.runInfo,protocol:z.protocolText,issues:z.issues,status:'REVIEW; raw import only'},null,2),'application/json')

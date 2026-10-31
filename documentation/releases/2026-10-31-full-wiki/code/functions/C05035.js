@@ -1,0 +1,1 @@
+function(e,t,r,n){if(!(this.hasYearZero||"y"!==n&&"m"!==n||0!==t[0]&&e.year()>0==t[0]>0)){var a={y:[1,1,"y"],m:[1,this.monthsInYear(-1),"m"],w:[this.daysInWeek(),this.daysInYear(-1),"d"],d:[1,this.daysInYear(-1),"d"]}[n],i=r<0?-1:1;t=this._add(e,r*a[0]+i*a[1],a[2])}return e.date(t[0],t[1],t[2])}

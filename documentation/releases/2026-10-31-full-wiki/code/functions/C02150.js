@@ -1,0 +1,1 @@
+function(e,t){if(u){if(s)return"end";if(c)return"start"}return a(t)&&0!==t&&180!==t?t*b<0!==f?"end":"start":"middle"}

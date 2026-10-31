@@ -1,0 +1,1 @@
+x=>x.id===MISSY_SHORTCUTS[i]

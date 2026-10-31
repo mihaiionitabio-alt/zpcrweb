@@ -1,0 +1,1 @@
+function(e,t){if((t=Math.round(t)||0)<2)return e;var r,n,a,i,o=e.length,l=2*o,s=2*t-1,c=new Array(s),u=new Array(o);for(r=0;r<s;r++)c[r]=(1-Math.cos(Math.PI*(r+1)/t))/(2*t);for(r=0;r<o;r++){for(i=0,n=0;n<s;n++)(a=r+n+1-t)<-o?a-=l*Math.round(a/l):a>=l&&(a-=l*Math.floor(a/l)),a<0?a=-1-a:a>=o&&(a=l-1-a),i+=e[a]*c[n];u[r]=i}return u}

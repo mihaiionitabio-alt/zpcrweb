@@ -1,0 +1,1 @@
+l=>({metric:l.k,w:mlNum(l.v,3),dir:ui(l.v>0?"rises with the component":"falls with the component")})

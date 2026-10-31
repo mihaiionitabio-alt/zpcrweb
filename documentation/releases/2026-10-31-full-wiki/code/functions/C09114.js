@@ -1,0 +1,1 @@
+(n,i)=>svg+=`<text x="60" y="${365+i*32}" font-size="21">R${i+1}: ${n} readings in this acquisition group</text>`

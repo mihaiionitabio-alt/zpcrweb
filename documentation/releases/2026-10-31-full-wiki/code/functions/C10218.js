@@ -1,0 +1,1 @@
+r=>r.cells.length===headers.length

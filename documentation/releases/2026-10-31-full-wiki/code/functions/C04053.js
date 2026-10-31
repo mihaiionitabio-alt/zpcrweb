@@ -1,0 +1,1 @@
+function(n,a){var i=t.call(this,n,a,u(this).getComputedStyle(this,null).getPropertyValue(e));return i&&function(t){this.style.setProperty(e,i(t),r)}}

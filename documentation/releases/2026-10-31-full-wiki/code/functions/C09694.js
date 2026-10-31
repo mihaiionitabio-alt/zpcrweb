@@ -1,0 +1,1 @@
+(p,i)=>[p.run_index+((i%13)-6)*.024,p.value,p.filename+' | '+p.well+' | '+p.sample+' | '+role]

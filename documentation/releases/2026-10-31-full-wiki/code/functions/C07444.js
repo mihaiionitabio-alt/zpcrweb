@@ -1,0 +1,1 @@
+()=>{LOADED_LIMIT=1e9;renderLoaded();localizeDOM($("#loadedcard"));}

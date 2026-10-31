@@ -1,0 +1,1 @@
+function(A,e,t){for(;e<=r;)r-=e,A+=B.values[t];return A}

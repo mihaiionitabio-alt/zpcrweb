@@ -1,0 +1,1 @@
+r=>r.cfxRDML.source?.sourceSHA256===raw.meta.sourceSHA256&&r.rows===raw.rows&&r.cols===raw.cols&&r.meta.SerialNumber===raw.meta.InstrumentID

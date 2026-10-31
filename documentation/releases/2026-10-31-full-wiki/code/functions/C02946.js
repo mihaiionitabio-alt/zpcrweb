@@ -1,0 +1,1 @@
+function(e){for(var t=n.interpolate(e[0][1],e[1][1],.5),r=2;r<e.length;r++){var a=n.interpolate(e[r-1][1],e[r][1],.5);t=n.interpolate(t,a,e[r-1][0]/e[r][0])}return t}

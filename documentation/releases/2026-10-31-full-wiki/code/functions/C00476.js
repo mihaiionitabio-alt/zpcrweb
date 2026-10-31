@@ -1,0 +1,1 @@
+function(e,t,r){(t.error_y||{}).visible&&(r.yerr=e.yh-e.y,t.error_y.symmetric||(r.yerrneg=e.y-e.ys)),(t.error_x||{}).visible&&(r.xerr=e.xh-e.x,t.error_x.symmetric||(r.xerrneg=e.x-e.xs))}

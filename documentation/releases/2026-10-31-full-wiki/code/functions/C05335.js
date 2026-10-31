@@ -1,0 +1,1 @@
+c=>channels[chanIdx][c][pos]

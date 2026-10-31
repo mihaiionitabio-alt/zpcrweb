@@ -1,0 +1,1 @@
+function maraExportSample(sample,wells){if(!pseudoOn())return sample;const known=pseudonymMap().get(sample);return known||'G-'+exportName(wells[0]?.sample||'');}

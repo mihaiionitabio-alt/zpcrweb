@@ -1,0 +1,1 @@
+()=>{const b=document.getElementById('missy-sound-settings-open');b.title=t('Sound settings','声音设置');b.setAttribute('aria-label',b.title);if(dialog.open)render();}

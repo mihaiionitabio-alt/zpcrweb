@@ -1,0 +1,1 @@
+function(e,n){return o(r[t][e],r[t][n])}

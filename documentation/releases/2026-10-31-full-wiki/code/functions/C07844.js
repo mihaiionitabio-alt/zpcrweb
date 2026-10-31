@@ -1,0 +1,1 @@
+o=>{const k=`${o.experiment} · ${o.filterName||"channel "+o.channel}`;if(!legend.has(k))legend.set(k,hashColour(k));}

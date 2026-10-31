@@ -1,0 +1,1 @@
+async function(raw){if(/^pcrd\s+(calculations|compare)$/i.test(String(raw).trim())){pcrdSync();unifiedBrowse(piItems()[0]?.id);return;}return next(raw);}

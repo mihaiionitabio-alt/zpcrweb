@@ -1,0 +1,1 @@
+k=>keys.indexOf(k)<0

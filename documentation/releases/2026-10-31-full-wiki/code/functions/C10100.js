@@ -1,0 +1,1 @@
+()=>{e[el.dataset.key]=el.type==='number'?(el.value===''?'':Number(el.value)):el.value;changed();}

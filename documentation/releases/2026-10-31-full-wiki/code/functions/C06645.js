@@ -1,0 +1,1 @@
+q=>Math.sign(q)===Math.sign(z[i])

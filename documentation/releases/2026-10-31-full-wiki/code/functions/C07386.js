@@ -1,0 +1,1 @@
+it=>Object.assign({},it,{run:()=>withExportNames(it.run)})

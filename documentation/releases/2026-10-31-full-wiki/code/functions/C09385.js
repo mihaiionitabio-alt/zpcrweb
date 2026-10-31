@@ -1,0 +1,1 @@
+x=>x.querySelector('summary')?.textContent===r.file

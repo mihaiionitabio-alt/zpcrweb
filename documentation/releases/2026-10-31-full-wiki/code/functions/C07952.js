@@ -1,0 +1,1 @@
+s=>s.classList.toggle("on",s.id==="tab-"+name)

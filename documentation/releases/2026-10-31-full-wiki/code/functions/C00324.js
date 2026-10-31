@@ -1,0 +1,1 @@
+function(e){var i=(((e||[])[0]||{}).trace||{}).line||{},o=t||i.width||0,l=a||i.dash||"";n.select(this).call(c.stroke,r||i.color).call(x.dashLine,l,o)}

@@ -1,0 +1,1 @@
+function(e,t,r){if(r.uniformtext.mode){var n=i(e),a=r.uniformtext.minsize,o=t.scale*t.fontSize;t.hide=o<a,r[n]=r[n]||1/0,t.hide||(r[n]=Math.min(r[n],Math.max(o,a)))}}

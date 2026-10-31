@@ -1,0 +1,1 @@
+function pr(e){return e.x}

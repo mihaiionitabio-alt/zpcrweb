@@ -1,0 +1,1 @@
+c=>/^(blank|negative|positive:|quantitative|calibration_|lowest_|matched_|shared_|qc_)/.test(c.code)

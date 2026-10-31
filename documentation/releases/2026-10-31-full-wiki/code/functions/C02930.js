@@ -1,0 +1,1 @@
+function(e){"use strict";e.exports={PTS_LINESONLY:20,minTolerance:.2,toleranceGrowth:10,maxScreensAway:20,eventDataKeys:[]}}

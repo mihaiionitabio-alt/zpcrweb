@@ -1,0 +1,1 @@
+e=>{e.stopPropagation();o[key]=encodeURIComponent(s.value);if(key==='instrument'||key==='protocol'){delete o.variant;astRender();}}

@@ -1,0 +1,1 @@
+function $n(A){return 1===A.type}

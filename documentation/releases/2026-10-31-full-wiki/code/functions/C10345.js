@@ -1,0 +1,1 @@
+()=>{if(!button.isConnected){const replacement=[...document.querySelectorAll('#mg-actions button')].find(b=>b.dataset.cmd===group);pulse(replacement);}if(MG.sheet)pulse(document.querySelector('#mg-sheet .mg-sheet-box'));}

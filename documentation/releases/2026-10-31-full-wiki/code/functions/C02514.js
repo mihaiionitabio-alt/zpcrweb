@@ -1,0 +1,1 @@
+function S(e,t){var r={_fullLayout:t},n="x"===e._id.charAt(0),a=e._mainAxis._anchorAxis,i="",o="",l="";if(a&&(l=a._mainAxis._id,i=n?e._id+l:l+e._id),!i||!t._plots[i]){i="";for(var s=e._counterAxes,c=0;c<s.length;c++){var u=s[c],f=n?e._id+u:u+e._id;o||(o=f);var d=p.getFromId(r,u);if(l&&d.overlaying===l){i=f;break}}}return i||o}

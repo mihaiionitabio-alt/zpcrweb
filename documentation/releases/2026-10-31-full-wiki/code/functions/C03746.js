@@ -1,0 +1,1 @@
+function(t){return Math.ceil(t/e)*e}

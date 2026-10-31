@@ -1,0 +1,1 @@
+function(e,t,r){"use strict";var n=r(4809),a=[["sw-resize","s-resize","se-resize"],["w-resize","move","e-resize"],["nw-resize","n-resize","ne-resize"]];e.exports=function(e,t,r,i){return e="left"===r?0:"center"===r?1:"right"===r?2:n.constrain(Math.floor(3*e),0,2),t="bottom"===i?0:"middle"===i?1:"top"===i?2:n.constrain(Math.floor(3*t),0,2),a[t][e]}}

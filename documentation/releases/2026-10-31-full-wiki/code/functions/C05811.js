@@ -1,0 +1,1 @@
+(g,outcome,reason,rule)=>{g.outcome=outcome;g.reason=reason||"";g.rule=rule||"";rows.push(g);}

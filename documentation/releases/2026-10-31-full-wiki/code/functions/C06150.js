@@ -1,0 +1,1 @@
+e=>{if(e.target.checked&&RUNS.length)ssOpen(false);else if(!e.target.checked){ssReset();SOP_CACHE=null;invalidateAnalysisCaches();refreshAll();}}

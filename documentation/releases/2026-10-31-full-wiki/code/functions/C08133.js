@@ -1,0 +1,1 @@
+()=>reportGraphRunIndexes(g).some(ri=>reportGraphAvailable(g,ri))

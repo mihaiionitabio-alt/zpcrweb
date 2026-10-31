@@ -1,0 +1,1 @@
+function Pn(e,t,r){var n=e.r+r.r,a=t.x-e.x,i=t.y-e.y;if(n&&(a||i)){var o=t.r+r.r,l=a*a+i*i,s=.5+((n*=n)-(o*=o))/(2*l),c=Math.sqrt(Math.max(0,2*o*(n+l)-(n-=l)*n-o*o))/(2*l);r.x=e.x+s*a+c*i,r.y=e.y+s*i-c*a}else r.x=e.x+n,r.y=e.y}

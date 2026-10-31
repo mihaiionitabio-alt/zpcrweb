@@ -1,0 +1,1 @@
+function(r){return arguments.length?(e=+r[0],t=+r[r.length-1],o()):[e,t]}

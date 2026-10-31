@@ -1,0 +1,1 @@
+function p(e,t){return(t?"radial":"horizontal")+(e?"":"reversed")}

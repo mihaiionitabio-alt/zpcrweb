@@ -1,0 +1,1 @@
+function v(e,t,r,n){if("function"==typeof e.on)n.once?e.once(t,r):e.on(t,r);else{if("function"!=typeof e.addEventListener)throw new TypeError('The "emitter" argument must be of type EventEmitter. Received type '+typeof e);e.addEventListener(t,(function a(i){n.once&&e.removeEventListener(t,a),r(i)}))}}

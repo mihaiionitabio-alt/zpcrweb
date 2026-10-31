@@ -1,0 +1,1 @@
+function ge(e){var t=e.getUTCDay();return 0===t?7:t}

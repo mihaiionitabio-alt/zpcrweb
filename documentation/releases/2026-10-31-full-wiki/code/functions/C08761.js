@@ -1,0 +1,1 @@
+r=>t.startsWith('temp:')?(r.temps[t.slice(5)]?.c??NaN):t==='dark'?(r.darkData?.[c*4]??NaN):t==='led'?(r.leds[c]??NaN):ZPCR.zpcrStats(Array.from({length:z.grid.referenceRows*r.cols},(_,i)=>ZPCR.zpcrWellMean(r,c,z.grid.sampleRows+Math.floor(i/r.cols),i%r.cols)))?.mean??NaN

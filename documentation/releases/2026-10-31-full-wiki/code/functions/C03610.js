@@ -1,0 +1,1 @@
+function(r){return(r-e)/t}

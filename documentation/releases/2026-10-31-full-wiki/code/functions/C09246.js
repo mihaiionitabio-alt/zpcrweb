@@ -1,0 +1,1 @@
+function pcrdArray(el){if(!el||!el.textContent.trim())return [];const parts=el.textContent.split(';');if(parts.length>50000)throw Error('PCRD array limit');return parts.map(x=>pcrdNumber(x));}

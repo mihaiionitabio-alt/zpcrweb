@@ -1,0 +1,1 @@
+()=>box.classList.remove("show")

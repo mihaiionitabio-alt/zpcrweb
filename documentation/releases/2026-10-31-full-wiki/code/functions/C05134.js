@@ -1,0 +1,1 @@
+function slot(name,base){define(name);return function(...args){return invoke(name,this,args,base);};}

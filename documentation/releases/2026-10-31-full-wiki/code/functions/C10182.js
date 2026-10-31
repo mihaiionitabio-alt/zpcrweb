@@ -1,0 +1,1 @@
+()=>[APP_STATE.activeTab,!!MG.open,MG.scope,MG.chart,MG.sheet?.kind,RUNS.length,!!window.MISSY_LEARNING?.active,!!window.MISSY_SETUP?.isOpen].join('|')

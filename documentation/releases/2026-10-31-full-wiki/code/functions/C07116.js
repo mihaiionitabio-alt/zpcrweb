@@ -1,0 +1,1 @@
+c=>{const l=by.get(c.criterion)||[];l.push(c);by.set(c.criterion,l);}

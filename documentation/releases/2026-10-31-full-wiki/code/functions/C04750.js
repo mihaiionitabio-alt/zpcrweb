@@ -1,0 +1,1 @@
+function _(e,t){t=0===t?0:t||10;var r=d(e).toRgb();return r.r=u(0,c(255,r.r-s(-t/100*255))),r.g=u(0,c(255,r.g-s(-t/100*255))),r.b=u(0,c(255,r.b-s(-t/100*255))),d(r)}

@@ -1,0 +1,1 @@
+function ne(e,t){return Math.abs((e/t+.5)%1-.5)<.001}

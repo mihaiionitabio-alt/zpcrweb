@@ -1,0 +1,1 @@
+function(e,t,r){"use strict";var n=r(8231);e.exports={moduleType:"component",name:"shapes",layoutAttributes:r(3144),supplyLayoutDefaults:r(4367),supplyDrawNewShapeDefaults:r(5522),includeBasePlot:r(706)("shapes"),calcAutorange:r(4959),draw:n.draw,drawOne:n.drawOne}}

@@ -1,0 +1,1 @@
+()=>download((RUNS.length?baseName():"lightcycler480")+"_metadata.jsonld",machineMetadataJSON(),"application/ld+json")

@@ -1,0 +1,1 @@
+x=>({...x,label:x.label.split(" | ").slice(0,3).join(" | ")})

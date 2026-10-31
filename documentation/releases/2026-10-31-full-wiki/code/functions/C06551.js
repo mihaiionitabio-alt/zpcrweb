@@ -1,0 +1,1 @@
+(name,i)=>names.indexOf(name)===i&&names.lastIndexOf(name)===i

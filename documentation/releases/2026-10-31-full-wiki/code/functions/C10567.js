@@ -1,0 +1,1 @@
+(record,field,value,state,path)=>out.push({view:index+1,filename:run.file||'',scope,record,field,value,state,source_path:path})

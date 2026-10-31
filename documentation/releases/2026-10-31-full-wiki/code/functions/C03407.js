@@ -1,0 +1,1 @@
+function(e){return new Je(Math.min(100,this.l+Xe*(arguments.length?e:1)),this.a,this.b)}

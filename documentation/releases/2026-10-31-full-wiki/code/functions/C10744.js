@@ -1,0 +1,1 @@
+()=>focus('#mg-chart svg','Look for the rising curves versus the flat negative control. These are generated traces, not laboratory reactions.')

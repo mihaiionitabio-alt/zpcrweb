@@ -1,0 +1,1 @@
+e=>{if(e.target.closest?.('#drop')&&!dragInside){dragInside=true;sound.notify('map069');}}

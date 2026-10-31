@@ -1,0 +1,1 @@
+function(e){var t=e.indexOf(":"),r=e;return t>=0&&"xmlns"!==(r=e.slice(0,t))&&(e=e.slice(t+1)),te.hasOwnProperty(r)?{space:te[r],local:e}:e}

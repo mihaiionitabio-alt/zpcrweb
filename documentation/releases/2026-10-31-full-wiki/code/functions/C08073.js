@@ -1,0 +1,1 @@
+w=>resultCq(w)!==null

@@ -1,0 +1,1 @@
+r=>[runName(r.run),((r.accept&&r.accept.reasons)||[]).join("; ").slice(0,70)||"rejected"]

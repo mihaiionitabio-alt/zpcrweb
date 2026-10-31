@@ -1,0 +1,30 @@
+[
+  {
+    "file": "SCREENSHOT_INDEX.html",
+    "bytes": 2080023
+  },
+  {
+    "file": "README_SCREENSHOTS.txt",
+    "bytes": 1661
+  },
+  {
+    "file": "screenshots_manifest.jsonl",
+    "bytes": 1781075
+  },
+  {
+    "file": "CAPTURE_REPORT.json",
+    "bytes": 33004
+  },
+  {
+    "file": "SKIPPED_STATES.json",
+    "bytes": 101240
+  },
+  {
+    "file": "MANUAL_VOLUMES.json",
+    "bytes": 5970
+  },
+  {
+    "file": "README_MANUAL_VOLUMES.txt",
+    "bytes": 2556
+  }
+]

@@ -1,0 +1,1 @@
+(v){SOP=sopNormalise(v);sopChanged();}

@@ -1,0 +1,1 @@
+i=>{widths[i]=left/open.length;}

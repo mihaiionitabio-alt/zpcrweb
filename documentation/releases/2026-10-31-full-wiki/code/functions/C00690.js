@@ -1,0 +1,1 @@
+function(){var e=n.select(this),t=e.attr("class").split(" ")[0];t.match(w)&&-1===a.indexOf(t)&&e.remove()}

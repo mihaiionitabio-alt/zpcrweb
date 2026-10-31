@@ -1,0 +1,1 @@
+function ms(A){this._data={},this._document=A}

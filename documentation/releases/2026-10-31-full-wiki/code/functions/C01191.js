@@ -1,0 +1,1 @@
+function T(e,t,r,n,a){var i=Math.round(n*(r._stepCount-1)),o=r._visibleSteps[i]._index;o!==r.active&&M(e,t,r,o,!0,a)}

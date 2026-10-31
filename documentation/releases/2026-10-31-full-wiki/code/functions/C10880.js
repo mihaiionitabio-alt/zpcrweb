@@ -1,0 +1,1 @@
+()=>{box.dataset.speaking='true';stamp(role+'-start',id);}

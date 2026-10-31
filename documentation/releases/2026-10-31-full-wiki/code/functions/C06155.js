@@ -1,0 +1,1 @@
+()=>{ssFiltered().forEach(r=>SAMPLE_SELECTION.draft.delete(r.key));ssRender();}

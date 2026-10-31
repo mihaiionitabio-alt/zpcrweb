@@ -1,0 +1,1 @@
+function H(e){return E(e)/255}

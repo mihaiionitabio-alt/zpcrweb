@@ -1,0 +1,1 @@
+rows=>toCSV(uniq(rows.flatMap(Object.keys)).map(k=>({key:k,label:k})),rows)

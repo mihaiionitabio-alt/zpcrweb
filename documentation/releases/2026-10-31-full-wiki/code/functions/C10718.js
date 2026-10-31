@@ -1,0 +1,1 @@
+r=>r.textContent.includes('DEMO_SAMPLE_0')

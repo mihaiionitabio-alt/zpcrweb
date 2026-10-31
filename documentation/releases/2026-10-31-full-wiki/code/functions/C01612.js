@@ -1,0 +1,1 @@
+function(e,t){(e.attr("class")||"").split(" ").forEach((function(t){0===t.indexOf("cursor-")&&e.classed(t,!1)})),t&&e.classed("cursor-"+t,!0)}

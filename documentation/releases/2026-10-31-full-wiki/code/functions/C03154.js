@@ -1,0 +1,1 @@
+function(e,t){var r,n,a=e.length,i=0,o=0,l=-1,s=0;if(1===arguments.length)for(;++l<a;)y(r=m(e[l]))&&(o+=(n=r-i)*(r-(i+=n/++s)));else for(;++l<a;)y(r=m(t.call(e,e[l],l)))&&(o+=(n=r-i)*(r-(i+=n/++s)));if(s>1)return o/(s-1)}

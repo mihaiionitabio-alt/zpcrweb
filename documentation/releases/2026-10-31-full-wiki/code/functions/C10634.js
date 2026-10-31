@@ -1,0 +1,1 @@
+id=>document.getElementById(id)

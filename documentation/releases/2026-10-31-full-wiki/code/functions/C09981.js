@@ -1,0 +1,1 @@
+x=>x.name===t||x.spec&&sopMatcher(x.spec.match)(t)

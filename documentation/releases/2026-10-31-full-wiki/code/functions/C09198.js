@@ -1,0 +1,1 @@
+x=>'zc_compare_'+x.id.slice(7)===current.graphId

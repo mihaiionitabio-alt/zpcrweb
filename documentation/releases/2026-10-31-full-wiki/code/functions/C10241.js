@@ -1,0 +1,1 @@
+t=>text(t.name||t.match)+'; match: '+text(t.match)

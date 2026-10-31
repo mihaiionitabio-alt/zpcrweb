@@ -1,0 +1,1 @@
+function(){return ea(i.scale.linear().domain([0,1]),10,!0,[1,10])}

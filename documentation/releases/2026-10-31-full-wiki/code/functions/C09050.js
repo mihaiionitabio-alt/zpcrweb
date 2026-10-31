@@ -1,0 +1,1 @@
+(item,i)=>{const hash=(item.note.match(/Protocol SHA-256: ([a-f0-9]+)/)||[])[1]||'unknown';return {...item,id:'img:zc_'+i,kind:'image',group:'ZPCR comparative channels',title:item.title+' | P '+hash.slice(0,12),file:'zpcr_comparison_'+i+'.svg',note:item.note+'\n• Channels combined; protocols separate. • Endpoint N='+ZPCR_ENDPOINT_N+'.',ready:()=>true};}

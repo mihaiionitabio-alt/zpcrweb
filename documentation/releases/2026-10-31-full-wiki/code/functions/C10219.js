@@ -1,0 +1,1 @@
+(h,i)=>h+': '+label(r.cells[i]?.textContent,'not recorded')

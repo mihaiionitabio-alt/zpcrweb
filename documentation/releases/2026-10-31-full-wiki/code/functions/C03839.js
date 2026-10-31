@@ -1,0 +1,1 @@
+function(){return ea(e.copy(),t,r,n)}

@@ -1,0 +1,1 @@
+([id,s])=>{const e=s.filter(r=>r.assay===a),r=s.filter(r=>r.assay===ctx.reference);return {id,event:e,ref:r,detected:e.every(w=>signal(w,cut)===true)};}

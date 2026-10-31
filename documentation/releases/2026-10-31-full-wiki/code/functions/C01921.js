@@ -1,0 +1,1 @@
+function(e){for(var t=e._fullLayout,r=t._subplots.gl3d,n=0;n<r.length;n++){var a=t[r[n]];a._scene.setViewport(a)}}

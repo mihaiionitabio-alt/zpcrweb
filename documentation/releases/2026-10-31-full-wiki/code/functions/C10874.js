@@ -1,0 +1,1 @@
+resolve=>{let elapsed=0,last=performance.now();const timer=setInterval(()=>{const now=performance.now();if(!paused)elapsed+=now-last;last=now;if(token!==t||!overlay.isConnected||elapsed>=ms){clearInterval(timer);resolve(token===t&&overlay.isConnected);}},40);}

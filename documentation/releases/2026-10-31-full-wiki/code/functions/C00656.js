@@ -1,0 +1,1 @@
+function(e){var t=n.select(this).select("."+o+"toggle"),r=e[0].height,i=e[0].trace.legendgroup,l=M(e,a,g);u&&""!==i&&(l=T[i]);var d=W?g:k||l;s||f||(d+=v/2),c.setRect(t,0,-r/2,d,r)}

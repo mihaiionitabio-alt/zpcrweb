@@ -1,0 +1,1 @@
+function t(e,t,r){var n=[];return e.forEach((function(e){var a=(e.myFill.above?8:0)+(e.myFill.below?4:0)+(e.otherFill&&e.otherFill.above?2:0)+(e.otherFill&&e.otherFill.below?1:0);0!==t[a]&&n.push({id:r?r.segmentId():-1,start:e.start,end:e.end,myFill:{above:1===t[a],below:2===t[a]},otherFill:null})})),r&&r.selected(n),n}

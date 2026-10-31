@@ -1,0 +1,1 @@
+function(r){return arguments.length?(t=+r,e.domain(n.map(a)),o):t}

@@ -1,0 +1,1 @@
+x=>[x.id,!disabled.has(x.id)]

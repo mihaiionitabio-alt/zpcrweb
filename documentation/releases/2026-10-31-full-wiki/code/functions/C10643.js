@@ -1,0 +1,1 @@
+value=>{friends.hidden=!value;toggle.setAttribute('aria-expanded',String(value));label();}

@@ -1,0 +1,1 @@
+a=>{const v=a.filter(Number.isFinite).sort((p,q)=>p-q);return v.length?v[Math.floor(v.length/2)]:NaN;}

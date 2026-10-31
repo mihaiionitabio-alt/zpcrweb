@@ -1,0 +1,1 @@
+x=>typeof x==='string'&&/^(page|mode|graph|section):/.test(x)

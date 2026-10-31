@@ -1,0 +1,1 @@
+function s(e,r,n){return t(e.y1,n)+o(e)-t(e.y0,n)-i(e)}

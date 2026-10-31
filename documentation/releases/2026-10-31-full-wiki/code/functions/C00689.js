@@ -1,0 +1,1 @@
+function(e,t){if(t)T(e,t);else{var r=e._fullLayout,a=r._legends;r._infolayer.selectAll('[class^="legend"]').each((function(){var e=n.select(this),t=e.attr("class").split(" ")[0];t.match(w)&&-1===a.indexOf(t)&&e.remove()}));for(var i=0;i<a.length;i++){var o=a[i];T(e,e._fullLayout[o])}}}

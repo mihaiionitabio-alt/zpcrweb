@@ -1,0 +1,1 @@
+function(e,t,r){return("paper"===r||"pixel"===r?l.ensureNumber:G.getFromId(t,r).cleanPos)(e)}

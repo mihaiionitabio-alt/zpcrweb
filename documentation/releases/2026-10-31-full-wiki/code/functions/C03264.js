@@ -1,0 +1,1 @@
+function he(e){return function(){return X(this,e)}}

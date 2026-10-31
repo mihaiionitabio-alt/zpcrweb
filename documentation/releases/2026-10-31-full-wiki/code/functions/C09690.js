@@ -1,0 +1,1 @@
+function overviewCohortNote(g){return g.id+': '+g.target+' | '+g.basis+' | SN '+g.instrument+' | channel '+g.channel+' | analysis '+(g.analysis||'not recorded')+'\nProtocol fingerprint: '+g.protocol;}

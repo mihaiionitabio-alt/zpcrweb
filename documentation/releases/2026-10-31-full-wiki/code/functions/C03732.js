@@ -1,0 +1,1 @@
+function En(e){var t,r=e.children;return(t=r.length)?r[t-1]:e.t}

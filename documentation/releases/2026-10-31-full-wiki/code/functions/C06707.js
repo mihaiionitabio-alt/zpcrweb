@@ -1,0 +1,1 @@
+([k,v])=>({key:k,n:v.length,platform:v[0].platform})

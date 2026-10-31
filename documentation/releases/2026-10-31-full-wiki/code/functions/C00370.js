@@ -1,0 +1,1 @@
+function(e,t){if(e.length<3)return"M"+e.join("L")+"Z";var r,n="M"+e[0],a=e.length-1,i=[N(e[a],e[0],e[1],t)];for(r=1;r<a;r++)i.push(N(e[r-1],e[r],e[r+1],t));for(i.push(N(e[a-1],e[a],e[0],t)),r=1;r<=a;r++)n+="C"+i[r-1][1]+" "+i[r][0]+" "+e[r];return n+"C"+i[a][1]+" "+i[0][0]+" "+e[0]+"Z"}

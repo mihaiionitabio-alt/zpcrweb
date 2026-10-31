@@ -1,0 +1,1 @@
+function(e,t,r){"use strict";var n=r(4809),a=r(192),i=r(6430);e.exports=function(e,t,r,o){var l=n.extendFlat({},o.hoverlabel);t.hovertemplate&&(l.namelength=-1),i(e,t,(function(r,i){return n.coerce(e,t,a,r,i)}),l)}}

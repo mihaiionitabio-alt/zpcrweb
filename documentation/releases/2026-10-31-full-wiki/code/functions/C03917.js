@@ -1,0 +1,1 @@
+function(){var r=(+e.apply(this,arguments)+ +t.apply(this,arguments))/2,n=(+a.apply(this,arguments)+ +i.apply(this,arguments))/2-ze;return[Math.cos(n)*r,Math.sin(n)*r]}

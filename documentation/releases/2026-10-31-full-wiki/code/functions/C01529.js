@@ -1,0 +1,1 @@
+function(e){e[0][i]=n.select(this)}

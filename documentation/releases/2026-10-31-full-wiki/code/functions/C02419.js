@@ -1,0 +1,1 @@
+function(t){return t.enabled&&t.bounds?i.simpleMap(t.bounds,t.pattern?s:e.d2c):null}

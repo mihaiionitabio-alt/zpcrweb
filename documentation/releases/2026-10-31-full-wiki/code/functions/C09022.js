@@ -1,0 +1,1 @@
+(p,i)=>svg+=zcPlot(p,(i%2)*550,65+Math.floor(i/2)*265)

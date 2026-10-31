@@ -1,0 +1,1 @@
+function fa(e,t){function r(r){if(r<=r)return t[i.bisect(e,r)]}return r.domain=function(t){return arguments.length?(e=t,r):e},r.range=function(e){return arguments.length?(t=e,r):t},r.invertExtent=function(r){return r=t.indexOf(r),[e[r-1],e[r]]},r.copy=function(){return fa(e,t)},r}

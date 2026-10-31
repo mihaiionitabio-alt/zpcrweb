@@ -1,0 +1,1 @@
+function(e){return e&&Array.isArray(e)&&!0!==e[0].hoverOnBox}

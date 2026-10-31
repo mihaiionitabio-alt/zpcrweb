@@ -1,0 +1,1 @@
+function a(a,i){var o=t.call(this,a,i),l=o[0],s=n[0],c=n[1],u=null==e?Math.sqrt:"function"==typeof e?e:function(){return e};if(l.x=l.y=0,an(l,(function(e){e.r=+u(e.value)})),an(l,Sn),r){var f=r*(e?1:Math.max(2*l.r/s,2*l.r/c))/2;an(l,(function(e){e.r+=f})),an(l,Sn),an(l,(function(e){e.r-=f}))}return Dn(l,s/2,c/2,e?1:1/Math.max(2*l.r/s,2*l.r/c)),o}

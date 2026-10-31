@@ -1,0 +1,1 @@
+i=>copy(lessons[i].answer())

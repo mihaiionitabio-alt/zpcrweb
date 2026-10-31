@@ -1,0 +1,1 @@
+function(e,t,r){return this._validate(e,this.minMonth,this.minDay,c.local.invalidDate||c.regionalOptions[""].invalidDate),this._correctAdd(e,this._add(e,t,r),t,r)}

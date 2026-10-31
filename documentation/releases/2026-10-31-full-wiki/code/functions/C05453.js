@@ -1,0 +1,1 @@
+k=>{const x=rest.match(new RegExp(k+":([\\d.\\-]+)"));return x?+x[1]:null}

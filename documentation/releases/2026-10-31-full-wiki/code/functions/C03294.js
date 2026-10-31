@@ -1,0 +1,1 @@
+function(){for(var e=-1,t=this.length;++e<t;)for(var r,n=this[e],a=n.length-1,i=n[a];--a>=0;)(r=n[a])&&(i&&i!==r.nextSibling&&i.parentNode.insertBefore(r,i),i=r);return this}

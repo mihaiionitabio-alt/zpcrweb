@@ -1,0 +1,1 @@
+r=>[xval(r),r.cq,graphHoverLabel(r.experiment,r,`${r.raw_name} · ${r.target} · ${r.detected}/${r.replicates} detected · ${r.date_state}`)]

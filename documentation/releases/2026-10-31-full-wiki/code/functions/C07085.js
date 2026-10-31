@@ -1,0 +1,1 @@
+function mgGo(...args){return MISSY_HOOKS.invoke("mgGo",this,args,mgGoBase);}

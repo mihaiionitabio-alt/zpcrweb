@@ -1,0 +1,1 @@
+function(e){return Math.max(A(e),e.p+y.bardelta/2)}

@@ -1,0 +1,1 @@
+function(e){var t=Math.sqrt(e.titleBox.width*e.titleBox.width+e.titleBox.height*e.titleBox.height);return{x:e.cx,y:e.cy,scale:e.trace.hole*e.r*2/t,tx:0,ty:-e.titleBox.height/2+e.trace.title.font.size}}

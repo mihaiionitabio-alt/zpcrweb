@@ -1,0 +1,1 @@
+el=>el.getClientRects().length&&(!MG.open||el.closest('#mg'))

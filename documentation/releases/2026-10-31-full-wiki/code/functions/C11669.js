@@ -1,0 +1,1 @@
+function rewardSound(){if(!soundOn)return;try{audioContext??=new(window.AudioContext||window.webkitAudioContext)();void audioContext.resume();scheduleReward(audioContext);}catch{}}

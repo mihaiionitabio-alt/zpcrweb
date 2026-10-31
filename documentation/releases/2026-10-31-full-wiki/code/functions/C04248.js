@@ -1,0 +1,1 @@
+function ae(e,t){return b(e.getFullYear()%100,t,2)}

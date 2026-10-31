@@ -1,0 +1,1 @@
+(rs,n)=>{if(rs.length>1&&new Set(rs.map(r=>r.meta.sourceSHA256)).size>1)push(null,"review","Duplicate name","Different files carry the same experiment name",`${n}: ${rs.map(r=>r.file).join(", ")}`);}

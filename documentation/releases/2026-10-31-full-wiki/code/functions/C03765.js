@@ -1,0 +1,1 @@
+function(e){for(var t,r={A:null,children:[e]},n=[r];null!=(t=n.pop());)for(var a,i=t.children,o=0,l=i.length;o<l;++o)n.push((i[o]=a={_:i[o],parent:t,children:(a=i[o].children)&&a.slice()||[],A:null,a:null,z:0,m:0,c:0,s:0,t:null,i:o}).a=a);return r.children[0]}

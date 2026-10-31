@@ -1,0 +1,1 @@
+function ixDash(d){const p=String(d||"").trim().split(/[\s,]+/).filter(Boolean);return p.length>1?p.map(v=>v+"px").join(","):undefined;}

@@ -1,0 +1,1 @@
+function(){return!!n&&o[0]==o[1]||!!a&&l[0]==l[1]}

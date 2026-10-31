@@ -1,0 +1,1 @@
+function(e,r,n){return t.dot(t.dot(t.translationMatrix(r,n),t.rotationMatrix(e)),t.translationMatrix(-r,-n))}

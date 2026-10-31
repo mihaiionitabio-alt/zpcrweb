@@ -1,0 +1,1 @@
+function le(e,t){for(var r=!1,n=0;n<t.length;n++)for(var i=t[n],o=0;o<e.length;o++)if(a(e[o],i)){r=!r;break}return r}

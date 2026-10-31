@@ -1,0 +1,1 @@
+e=>`${e.what} ${sopFmtTime(e.time)}`

@@ -1,0 +1,1 @@
+(v,i)=>{if(!Number.isFinite(v))return;const x=X(i),y=Y((v-mn)/span);if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);}

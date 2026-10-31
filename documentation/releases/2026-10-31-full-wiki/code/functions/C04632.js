@@ -1,0 +1,1 @@
+function(e){return c.fromPolygon(n,f,e)}

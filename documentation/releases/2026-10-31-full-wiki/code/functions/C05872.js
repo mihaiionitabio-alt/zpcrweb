@@ -1,0 +1,1 @@
+r=>`${sopTargetLabel(r)}: ${r.label}`

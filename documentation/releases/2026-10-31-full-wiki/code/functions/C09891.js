@@ -1,0 +1,1 @@
+rs=>{const e=rs.find(r=>r.assay===a),r=rs.find(r=>r.assay===ctx.reference);return e&&r?100*evalCopies(e)/evalCopies(r):NaN;}

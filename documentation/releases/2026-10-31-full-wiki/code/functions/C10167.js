@@ -1,0 +1,1 @@
+()=>{analyser.getFloatTimeDomainData(samples);let sum=0;for(const x of samples)sum+=x*x;const rms=Math.sqrt(sum/samples.length);setLevel(rms>0?Math.max(0,(20*Math.log10(rms)+60)/54):0);}

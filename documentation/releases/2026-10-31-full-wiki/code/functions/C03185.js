@@ -1,0 +1,1 @@
+function N(e,t){if(t in e)return t;t=t.charAt(0).toUpperCase()+t.slice(1);for(var r=0,n=F.length;r<n;++r){var a=F[r]+t;if(a in e)return a}}

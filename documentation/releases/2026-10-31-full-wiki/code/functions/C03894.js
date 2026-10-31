@@ -1,0 +1,1 @@
+function(r){return r=t.indexOf(r),[e[r-1],e[r]]}

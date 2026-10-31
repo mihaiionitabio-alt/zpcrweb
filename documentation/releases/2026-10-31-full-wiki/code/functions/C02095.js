@@ -1,0 +1,1 @@
+function Be(e,t,r,n){var a,i="free"===e.anchor||void 0!==e.overlaying&&!1!==e.overlaying?e.overlaying:e._id;a=n?"right"===e.side?t:-t:t,i in r||(r[i]={}),e.side in r[i]||(r[i][e.side]=0),r[i][e.side]+=a}

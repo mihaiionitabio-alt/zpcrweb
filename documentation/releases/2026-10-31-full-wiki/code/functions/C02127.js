@@ -1,0 +1,1 @@
+function(e,t,r){var n=t._id+"divider",a=r.vals,i=r.layer.selectAll("path."+n).data(a,Ae);i.exit().remove(),i.enter().insert("path",":first-child").classed(n,1).classed("crisp",1).call(f.stroke,t.dividercolor).style("stroke-width",d.crispRound(e,t.dividerwidth,1)+"px"),i.attr("transform",r.transFn).attr("d",r.path)}

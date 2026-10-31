@@ -1,0 +1,1 @@
+function pcrdSync(){for(let i=GRAPHS.length-1;i>=0;i--)if(GRAPHS[i].id.startsWith('pcrd_'))GRAPHS.splice(i,1);for(const x of pcrdItems())GRAPHS.push({id:x.id.slice(4),title:x.title,group:x.group,scope:'all',opts:[],note:x.note,render:x.figure});}

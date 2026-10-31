@@ -1,0 +1,1 @@
+function s(e,r){var n=h(e),a=p(e),i=r[0],o=r[1]+(t||0);return[i*n-o*a,i*a+o*n]}

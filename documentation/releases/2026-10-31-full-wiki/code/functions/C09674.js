@@ -1,0 +1,1 @@
+()=>RUNS.map(r=>({filename:r.file,sha256:r.meta.sourceSHA256||'',bytes:r.meta.sourceBytes??'',format:r.reader?.id||''}))

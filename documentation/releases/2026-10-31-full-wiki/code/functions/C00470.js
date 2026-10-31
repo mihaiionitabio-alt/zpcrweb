@@ -1,0 +1,1 @@
+function(e){var t=o(e);return[t,t]}

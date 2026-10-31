@@ -1,0 +1,1 @@
+function(A){return B.appendChildNode(e,A,t)}

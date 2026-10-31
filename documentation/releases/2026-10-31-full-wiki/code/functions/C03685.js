@@ -1,0 +1,1 @@
+function(e,r){return t(l[e],l[r])}

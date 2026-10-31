@@ -1,0 +1,1 @@
+function(e,t,r,n,i){var o=0,l=0,s=0,c=0;function u(t){return(1+100*(t-e)/r.dtick)%100<2}for(var f=0;f<t.length;f++)t[f]%1==0?s++:a(t[f])||c++,u(t[f])&&o++,u(t[f]+r.dtick/2)&&l++;var d=t.length-c;if(s===d&&"date"!==r.type)r.dtick<1?e=n-.5*r.dtick:(e-=.5)+r.dtick<n&&(e+=r.dtick);else if(l<.1*d&&(o>.3*d||u(n)||u(i))){var h=r.dtick/2;e+=e+h<n?h:-h}return e}

@@ -1,0 +1,1 @@
+function(){this.text(this.attr("data-unformatted")).call(ce)}

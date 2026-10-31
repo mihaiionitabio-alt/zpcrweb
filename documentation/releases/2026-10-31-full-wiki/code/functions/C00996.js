@@ -1,0 +1,1 @@
+function(e){var t=e.calcdata;if(t)for(var r=0;r<t.length;r++){var n=t[r][0].trace,a=e._fullLayout._splomScenes;if(a){var i=a[n.uid];i&&(i.selectBatch=[])}}}

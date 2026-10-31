@@ -1,0 +1,1 @@
+()=>allResults().flatMap(e=>e.rows.filter(x=>x.ctrl&&x.outcome==='Control fail').map(x=>({row:x,run:e.run})))

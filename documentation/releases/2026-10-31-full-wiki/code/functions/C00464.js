@@ -1,0 +1,1 @@
+function(e){return Math.abs(e*t/100)}

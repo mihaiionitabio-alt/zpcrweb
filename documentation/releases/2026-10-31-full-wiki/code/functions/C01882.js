@@ -1,0 +1,1 @@
+function(){for(var e=[],t=0;t<o.length;t++){var r=o[t],n=r.name;if(l(n)&&!c[n]){var a={_template:r,name:n,_input:{_templateitemname:n}};a[i]=r[i],e.push(a),c[n]=1}}return e}

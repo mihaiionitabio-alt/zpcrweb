@@ -1,0 +1,1 @@
+r=>g.isAmp?r.cq.value:r.tm.value

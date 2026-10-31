@@ -1,0 +1,1 @@
+function M(e,t,r){var n=e[0],a=n.width,i=t.entrywidthmode,o=n.trace.legendwidth||t.entrywidth;return"fraction"===i?t._maxWidth*o:r+(o||a)}

@@ -1,0 +1,1 @@
+function Y(e,t){return f.plainText(e||"",{len:t,allowedTags:["br","sub","sup","b","i","em","s","u"]})}

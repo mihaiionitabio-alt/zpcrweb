@@ -1,0 +1,1 @@
+function u(){var e=document.createElement("div");e.className="dragcover";var t=e.style;return t.position="fixed",t.left=0,t.right=0,t.top=0,t.bottom=0,t.zIndex=999999999,t.background="none",document.body.appendChild(e),e}

@@ -1,0 +1,1 @@
+q=>Number.isFinite(q)&&Number.isFinite(cqMax)&&q>cqMax

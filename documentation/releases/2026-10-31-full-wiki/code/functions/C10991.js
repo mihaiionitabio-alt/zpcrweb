@@ -1,0 +1,1 @@
+function FA(A){return uA(A)||UA(A)||45===A}

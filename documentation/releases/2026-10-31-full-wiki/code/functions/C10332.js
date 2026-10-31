@@ -1,0 +1,1 @@
+(){return shipEvents.map(e=>({...e}))}

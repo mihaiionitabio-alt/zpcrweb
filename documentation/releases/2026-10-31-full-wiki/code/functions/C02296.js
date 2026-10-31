@@ -1,0 +1,1 @@
+function i(e,t){for(r=0;r<e.length;r++){var a=e[r],i=a[t];a.fixedrange||"sync"!==i.tickmode||n.push(i._id)}}

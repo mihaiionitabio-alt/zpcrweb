@@ -1,0 +1,1 @@
+function(){if(m)return o.syncOrAsync([u.getComponentMethod("shapes","calcAutorange"),u.getComponentMethod("annotations","calcAutorange"),A],e);A()}

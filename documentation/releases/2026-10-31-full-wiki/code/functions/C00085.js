@@ -1,0 +1,1 @@
+()=>{alive=false;stopAmbience(true);if(queueTimer!==null)clearTimeout(queueTimer);stopAlert();speechSynthesisSafeCancel();context?.close().catch(()=>{});}

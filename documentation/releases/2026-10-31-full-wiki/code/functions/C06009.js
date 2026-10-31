@@ -1,0 +1,1 @@
+e=>`${sha256Hex(typeof e.data==="string"?new TextEncoder().encode(e.data):e.data)}  ${e.name}`

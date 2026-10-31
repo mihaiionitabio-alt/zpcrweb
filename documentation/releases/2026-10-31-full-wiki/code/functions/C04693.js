@@ -1,0 +1,1 @@
+function o(e,r){i.insertBefore(e,(function(n){return a=e.isStart,i=e.pt,o=r,l=n.isStart,s=n.pt,c=n.other.pt,(0!==(u=t.pointsCompare(i,s))?u:t.pointsSame(o,c)?0:a!==l?a?1:-1:t.pointAboveOrOnLine(o,l?s:c,l?c:s)?1:-1)<0;var a,i,o,l,s,c,u}))}

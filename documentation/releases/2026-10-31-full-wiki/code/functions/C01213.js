@@ -1,0 +1,1 @@
+function(t){var n=r.data()[0];n.active!==t.index&&(n._dragging||M(e,r,n,t.index,!1,!0))}

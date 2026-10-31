@@ -1,0 +1,1 @@
+()=>MASCOT_OPEN_SETTINGS()

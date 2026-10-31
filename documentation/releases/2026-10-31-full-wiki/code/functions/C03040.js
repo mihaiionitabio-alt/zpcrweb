@@ -1,0 +1,1 @@
+function(e,t){var r,a,i,o,l=e.cd,s=e.xaxis,c=e.yaxis,u=[],f=l[0].trace;if(!n.hasMarkers(f)&&!n.hasText(f))return[];if(!1===t)for(r=0;r<l.length;r++)l[r].selected=0;else for(r=0;r<l.length;r++)a=l[r],i=s.c2p(a.x),o=c.c2p(a.y),null!==a.i&&t.contains([i,o],!1,r,e)?(u.push({pointNumber:a.i,x:s.c2d(a.x),y:c.c2d(a.y)}),a.selected=1):a.selected=0;return u}

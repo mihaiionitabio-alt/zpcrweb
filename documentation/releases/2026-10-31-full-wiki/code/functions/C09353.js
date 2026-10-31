@@ -1,0 +1,1 @@
+next => function(){const a=next();if(a.some(x=>x.id.startsWith('img:pcrd_'))&&!a.some(x=>x.id==='data:pcrd_sources'))a.push(selItem('data:pcrd_sources'));return a;}

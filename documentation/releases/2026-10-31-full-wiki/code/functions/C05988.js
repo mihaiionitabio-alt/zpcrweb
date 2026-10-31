@@ -1,0 +1,1 @@
+r=>r.needs_action||/Invalid run/.test(r.summary)

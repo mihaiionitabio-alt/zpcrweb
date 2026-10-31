@@ -1,0 +1,1 @@
+function L(e){return(e+="")===k||e[0]===A?A+e:e}

@@ -1,0 +1,1 @@
+e=>{if(CMD.open&&e.key==="Escape"&&e.target!==i)cmdClose();}

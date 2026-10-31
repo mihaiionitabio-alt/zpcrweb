@@ -1,0 +1,1 @@
+function(e,r){var n=t.componentsRegistry[e];return n&&n[r]||a}

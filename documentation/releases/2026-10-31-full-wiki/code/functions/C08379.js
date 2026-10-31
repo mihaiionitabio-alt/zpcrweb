@@ -1,0 +1,1 @@
+xv=>Array.from({length:p},(_,i)=>Math.pow(xv,i))

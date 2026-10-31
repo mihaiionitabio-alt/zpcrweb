@@ -1,0 +1,1 @@
+o=>o.value.toLowerCase()===q||o.textContent.replace(/^\d+\. /,'').toLowerCase()===q

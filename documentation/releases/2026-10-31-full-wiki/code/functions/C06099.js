@@ -1,0 +1,1 @@
+([pos,rec])=>{if(rec.name&&!((run.wells||[]).some(w=>Number(w.pos)===Number(pos))))add({pos:Number(pos),sample:rec.name});}

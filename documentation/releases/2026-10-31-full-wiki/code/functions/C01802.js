@@ -1,0 +1,1 @@
+function e(r,n){r=o.getGraphDiv(r);var a,i,l=[],s=t.addTraces,u=e,f=[r,l,n],d=[r,n];if(void 0===n)throw new Error("indices must be an integer or array of integers.");for(Array.isArray(n)||(n=[n]),z(r,n,"indices"),(n=P(n,r.data.length-1)).sort(o.sorterDes),a=0;a<n.length;a+=1)i=r.data.splice(n[a],1)[0],l.push(i);var h=t.redraw(r);return c.add(r,s,f,u,d),h}

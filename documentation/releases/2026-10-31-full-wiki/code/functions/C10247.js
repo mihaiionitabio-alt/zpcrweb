@@ -1,0 +1,1 @@
+r=>(r.wells||[]).map(w=>w.target).filter(v=>typeof v==='string'&&v.trim())

@@ -1,0 +1,1 @@
+x=>({experiment:runName(x.r),run_end:sopFmtTime(x.T.end),last_change:sopFmtTime(x.T.lastEdit),hours:x.T.editDelayH})

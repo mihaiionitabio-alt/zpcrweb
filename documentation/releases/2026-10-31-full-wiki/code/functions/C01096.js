@@ -1,0 +1,1 @@
+function(e,t){return e?"bottom":-1!==t.indexOf("top")?"top":-1!==t.indexOf("bottom")?"bottom":"middle"}

@@ -1,0 +1,1 @@
+function v(e){var t=e.stackgroup;return e.xaxis+e.yaxis+e.type+(t?"-"+t:"")}

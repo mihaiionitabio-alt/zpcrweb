@@ -1,0 +1,1 @@
+function ccAllRows(...args){return MISSY_HOOKS.invoke("ccAllRows",this,args,ccAllRowsBase);}

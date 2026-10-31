@@ -1,0 +1,1 @@
+s=>`<span>${esc(s.name)}</span> <span class="tag">${(s.bytes.length/1048576).toFixed(1)} MB</span>`

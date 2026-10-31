@@ -1,0 +1,1 @@
+function(e,t){return t?"M-15,0H0M-8,-6V0":"M15,0H0M8,6V0"}

@@ -1,0 +1,1 @@
+()=>{hit({kind:'well',run:run.file,pos:w.pos,target:w.target});document.querySelectorAll('.game-evidence-selected').forEach(e=>e.classList.remove('game-evidence-selected'));cell.classList.add('game-evidence-selected');}

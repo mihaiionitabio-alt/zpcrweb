@@ -1,0 +1,5 @@
+()=>{
+  const rules=SOP.experiment_analysis?.melting?.peak_rules||[];
+  sopTableEditor(section.querySelector('#experiment-melting-rules'),rules,[{key:'target',label:'Target'},{key:'tm_c',label:'Expected Tm (°C)',type:'number'},{key:'tolerance_c',label:'Tm tolerance (°C)',type:'number'},{key:'peak_count',label:'Expected peak count',type:'number'},{key:'height_min',label:'Minimum peak height',type:'number'},{key:'area_min',label:'Minimum peak area',type:'number'},{key:'width_max',label:'Maximum peak width',type:'number'},{key:'control_pattern',label:'Control pattern'},{key:'genotype',label:'Genotype label'}],'Add melting rule',()=>({target:'',tm_c:'',tolerance_c:'',peak_count:'',height_min:'',area_min:'',width_max:'',control_pattern:'',genotype:''}));
+  if(!SOP.experiment_analysis){const add=section.querySelector('#experiment-melting-rules button');if(add)add.onclick=()=>{ensure();SOP.experiment_analysis.melting.peak_rules.push({target:'',tm_c:'',tolerance_c:'',peak_count:'',height_min:'',area_min:'',width_max:'',control_pattern:'',genotype:''});sopProfileEdited();renderRules();};}
+ }

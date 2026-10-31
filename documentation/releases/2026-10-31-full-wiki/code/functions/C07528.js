@@ -1,0 +1,1 @@
+([ch,a])=>[ch,median(a.sort((x,y)=>x-y))]

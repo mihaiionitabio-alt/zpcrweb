@@ -1,0 +1,1 @@
+()=>{showTab("graphs");$("#g-graph").value=b.dataset.gotoGraph;renderGraphs();}

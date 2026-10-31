@@ -1,0 +1,74 @@
+run_name	scenario	check
+SC_SYNTH_LC96_001	normal	status=Accepted with review
+SC_SYNTH_LC96_001	normal	no_error_finding
+SC_SYNTH_LC96_002	normal	status=Accepted with review
+SC_SYNTH_LC96_002	normal	no_error_finding
+SC_SYNTH_LC96_003	controls_only	status=Accepted
+SC_SYNTH_LC96_004	ntc_contam	criterion~^Control result — NTC$:review
+SC_SYNTH_LC96_004	ntc_contam	finding~Control result — NTC
+SC_SYNTH_LC96_005	sd_fail	outcome=Repeat
+SC_SYNTH_LC96_005	sd_fail	finding~Replicate
+SC_SYNTH_LC96_006	late_signal	outcome=Repeat
+SC_SYNTH_LC96_007	ref_missing	outcome=Invalid
+SC_SYNTH_LC96_008	eff_bad	criterion~^Standard curve:review
+SC_SYNTH_LC96_008	eff_bad	finding~Standard curve
+SC_SYNTH_LC96_009	call_disagree	finding~Stored call|crosses the threshold
+SC_SYNTH_LC96_010	orphan	orphans>0
+SC_SYNTH_LC96_010	orphan	finding~not in any analysis|Analysis membership
+SC_SYNTH_LC96_011	omitted	outcome=Not interpreted
+SC_SYNTH_LC96_012	manual	finding~Stored call|uncertain|CQCONF|Ct traceability
+SC_SYNTH_LC96_013	partial	outcome=Repeat
+SC_SYNTH_LC96_014	late_ref	finding~Inconclusive|late
+SC_SYNTH_LC96_015	normal	status=Accepted with review
+SC_SYNTH_LC96_015	normal	no_error_finding
+SC_SYNTH_LC96_016	pc_drift	status=Accepted with review
+SC_SYNTH_LC96_017	normal	status=Accepted with review
+SC_SYNTH_LC96_017	normal	no_error_finding
+SC_SYNTH_LC96_018	normal	status=Accepted with review
+SC_SYNTH_LC96_018	normal	no_error_finding
+SC_SYNTH_LC96_019	normal	status=Accepted with review
+SC_SYNTH_LC96_019	normal	no_error_finding
+SC_SYNTH_LC96_020	normal	status=Accepted with review
+SC_SYNTH_LC96_020	normal	no_error_finding
+SC_SYNTH_LC96_021	normal	status=Accepted with review
+SC_SYNTH_LC96_021	normal	no_error_finding
+SC_SYNTH_LC96_022	undetermined	status=Accepted with review
+SC_SYNTH_LC96_023	normal	status=Accepted with review
+SC_SYNTH_LC96_023	normal	no_error_finding
+SC_SYNTH_LC96_024	normal	status=Accepted with review
+SC_SYNTH_LC96_024	normal	no_error_finding
+SC_SYNTH_QS96_001	normal	status=Accepted with review
+SC_SYNTH_QS96_001	normal	no_error_finding
+SC_SYNTH_QS96_002	normal	status=Accepted with review
+SC_SYNTH_QS96_002	normal	no_error_finding
+SC_SYNTH_QS96_003	controls_only	status=Accepted
+SC_SYNTH_QS96_004	ntc_contam	criterion~^Control result — NTC$:review
+SC_SYNTH_QS96_004	ntc_contam	finding~Control result — NTC
+SC_SYNTH_QS96_005	sd_fail	outcome=Repeat
+SC_SYNTH_QS96_005	sd_fail	finding~Replicate
+SC_SYNTH_QS96_006	late_signal	outcome=Repeat
+SC_SYNTH_QS96_007	ref_missing	outcome=Invalid
+SC_SYNTH_QS96_008	eff_bad	criterion~^Standard curve:review
+SC_SYNTH_QS96_008	eff_bad	finding~Standard curve
+SC_SYNTH_QS96_009	call_disagree	finding~Stored call|crosses the threshold
+SC_SYNTH_QS96_010	orphan	orphans>0
+SC_SYNTH_QS96_010	orphan	finding~not in any analysis|Analysis membership
+SC_SYNTH_QS96_011	omitted	outcome=Not interpreted
+SC_SYNTH_QS96_012	manual	finding~Stored call|uncertain|CQCONF|Ct traceability
+SC_SYNTH_QS96_013	cal_expired	criterion~Calibrations valid:review
+SC_SYNTH_QS96_013	cal_expired	finding~Calibration
+SC_SYNTH_QS96_014	passive_mismatch	finding~Passive reference|Plate setup
+SC_SYNTH_QS96_015	ct_mismatch	finding~Ct traceability|re-derived
+SC_SYNTH_QS96_016	saturation	status=Accepted with review
+SC_SYNTH_QS96_017	log_errors	status=Accepted with review
+SC_SYNTH_QS96_018	sched_catchup	status=Accepted with review
+SC_SYNTH_QS96_019	normal	status=Accepted with review
+SC_SYNTH_QS96_019	normal	no_error_finding
+SC_SYNTH_QS96_020	runstate_aborted	status=Rejected
+SC_SYNTH_QS96_020	runstate_aborted	criterion~Run completed:fail
+SC_SYNTH_QS96_021	tamper_break	integrity=false
+SC_SYNTH_QS96_022	undetermined	status=Accepted with review
+SC_SYNTH_QS96_023	normal	status=Accepted with review
+SC_SYNTH_QS96_023	normal	no_error_finding
+SC_SYNTH_QS96_024	normal	status=Accepted with review
+SC_SYNTH_QS96_024	normal	no_error_finding

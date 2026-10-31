@@ -1,0 +1,1 @@
+function(){c.readyState>3&&f()}

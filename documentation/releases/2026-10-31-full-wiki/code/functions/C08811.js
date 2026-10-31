@@ -1,0 +1,1 @@
+function zpcrInventoryRowsBase(){return ccAllRows().filter(r=>r.platform==='CFX').map(r=>({file:r.file,instrument:r.instrument,date:Number.isFinite(r.date)?new Date(r.date).toISOString():'Unknown',source_sha256:r.key,protocol:r.protocol,firmware:r.firmware,status:'Raw hardware monitoring; not vendor QC certification'}));}

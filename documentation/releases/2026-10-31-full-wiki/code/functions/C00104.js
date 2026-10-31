@@ -1,0 +1,1 @@
+()=>{if(failed||ready)return;ready=true;document.documentElement.classList.remove('missy-starting');if(window.MISSY_SETUP&&!window.__MISSY_DEMO_FRAME){window.MISSY_SETUP.open();return;}performance.mark('missy-page-ready');document.dispatchEvent(new Event('missy-ready'));}

@@ -1,0 +1,1 @@
+([value,en,zh])=>({value,label:tr(en,zh)})

@@ -1,0 +1,1 @@
+function Fs(A){return"number"==typeof A}

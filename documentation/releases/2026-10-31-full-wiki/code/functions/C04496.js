@@ -1,0 +1,1 @@
+function(){return this._eventsCount>0?t(this._events):[]}

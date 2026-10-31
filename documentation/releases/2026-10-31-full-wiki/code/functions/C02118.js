@@ -1,0 +1,1 @@
+function(e,t){var r,n=[],a=function(e,t){var r=e.xbnd[t];null!==r&&n.push(l.extendFlat({},e,{x:r}))};if(t.length){for(r=0;r<t.length;r++)a(t[r],0);a(t[r-1],1)}return n}

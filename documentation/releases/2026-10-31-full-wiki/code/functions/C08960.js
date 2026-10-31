@@ -1,0 +1,1 @@
+async function(){zpcrReportLogo=await svgToJpeg(missySvg(true),3);return next();}

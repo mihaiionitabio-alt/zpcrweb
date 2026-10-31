@@ -1,0 +1,1 @@
+function pi(e){var t=s.createRange();return t.selectNode(s.body),t.createContextualFragment(e.responseText)}

@@ -1,0 +1,1 @@
+c=>CQ_HEADERS.test(c)

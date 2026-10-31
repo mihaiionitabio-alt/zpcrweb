@@ -1,0 +1,1 @@
+function(e,t){return(t<0&&this.sepNegVal?"v":"^")+(this.overlapNoMerge?e:Math.round(e/this.binWidth))}

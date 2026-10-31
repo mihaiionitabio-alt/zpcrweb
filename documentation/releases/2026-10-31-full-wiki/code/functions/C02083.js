@@ -1,0 +1,1 @@
+function Se(e,t){var r=e.l2p(t);return r>1&&r<e._length-1}

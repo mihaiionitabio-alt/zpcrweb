@@ -1,0 +1,1 @@
+e=>{CC_STATE.instrument=e.target.value;CC_STATE.protocol="";CC_STATE.open=null;$("#cc-detail").hidden=true;renderPanel();}

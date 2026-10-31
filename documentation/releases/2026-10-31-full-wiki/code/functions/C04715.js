@@ -1,0 +1,1 @@
+function(t,r){for(var n=e.root,a=e.root.next;null!==a;){if(r(a))return t.prev=a.prev,t.next=a,a.prev.next=t,void(a.prev=t);n=a,a=a.next}n.next=t,t.prev=n,t.next=null}

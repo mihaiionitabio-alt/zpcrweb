@@ -1,0 +1,1 @@
+function(t){if(Array.isArray(t[0]))return a.formatRows(t);var r=new I,n=[];return t.forEach((function(e){for(var t in e)r.has(t)||n.push(r.add(t))})),[n.map(s).join(e)].concat(t.map((function(t){return n.map((function(e){return s(t[e])})).join(e)}))).join("\n")}

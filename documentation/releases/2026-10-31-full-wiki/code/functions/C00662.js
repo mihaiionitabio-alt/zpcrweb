@@ -1,0 +1,1 @@
+function(){var e=n.event.sourceEvent;2===e.buttons||e.ctrlKey||(R="touchmove"===e.type?e.changedTouches[0].clientY:e.clientY,J=function(e,t,r){var n=(r-t)/W+e;return a.constrain(n,0,Z)}(N,E,R),Q(J,F,W))}

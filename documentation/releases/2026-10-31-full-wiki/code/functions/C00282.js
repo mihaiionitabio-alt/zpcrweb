@@ -1,0 +1,1 @@
+function(e){"use strict";e.exports=function(e,t,r,n,a){var i=(e-r)/(n-r),o=i+t/(n-r),l=(i+o)/2;return"left"===a||"bottom"===a?i:"center"===a||"middle"===a?l:"right"===a||"top"===a?o:i<2/3-l?i:o>4/3-l?o:l}}

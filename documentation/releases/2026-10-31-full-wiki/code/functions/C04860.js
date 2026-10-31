@@ -1,0 +1,1 @@
+function(e,t,r){var n=this.dayOfWeek(e,t,r);return n>=2&&n<=6}

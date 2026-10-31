@@ -1,0 +1,1 @@
+(k,v,t)=>out.push([run.meta.sourceSHA256,r.name,r.scanIndex,r.step,r.cycle,r.dateText,k,v,t])

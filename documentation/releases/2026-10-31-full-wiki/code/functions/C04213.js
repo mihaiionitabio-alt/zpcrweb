@@ -1,0 +1,1 @@
+function T(e){for(var t={},r=-1,n=e.length;++r<n;)t[e[r].toLowerCase()]=r;return t}

@@ -1,0 +1,1 @@
+function r(r,a){return n.coerce(e,t,i.tickformatstops,r,a)}

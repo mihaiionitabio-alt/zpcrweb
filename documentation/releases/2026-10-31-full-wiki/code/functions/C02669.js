@@ -1,0 +1,1 @@
+function(e){document.location.href="data:application/octet-stream"+e}

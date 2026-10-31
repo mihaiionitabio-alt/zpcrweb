@@ -1,0 +1,1 @@
+next => function(){const a=next();if([...SEL_STATE.ids].some(id=>id.startsWith('img:pcrd_calc_'))&&!a.some(x=>x.id==='data:pcrd_independent_methods'))a.push(selItem('data:pcrd_independent_methods'));if([...SEL_STATE.ids].some(id=>id.startsWith('img:pcrd_calc_')&&id.endsWith('_compare'))&&!a.some(x=>x.id==='data:cfxrdml_sources'))a.push(selItem('data:cfxrdml_sources'));return a;}

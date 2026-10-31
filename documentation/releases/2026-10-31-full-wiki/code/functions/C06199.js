@@ -1,0 +1,1 @@
+w=>(w.target||w.analysis)===c.target

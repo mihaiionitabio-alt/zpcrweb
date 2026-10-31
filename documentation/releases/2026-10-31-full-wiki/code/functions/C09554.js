@@ -1,0 +1,1 @@
+function piAxis(reads){for(const key of ['SAMPLETEMP','BLOCKTEMP']){const x=reads.map(r=>r.temps[key]?.c);if(x.every(Number.isFinite))return {values:x,source:key};}return {values:[],source:'Unavailable'};}

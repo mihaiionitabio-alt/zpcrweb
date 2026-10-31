@@ -1,0 +1,1 @@
+function mgOpen(...args){return MISSY_HOOKS.invoke('mgOpen',this,args,mgOpenBase);}

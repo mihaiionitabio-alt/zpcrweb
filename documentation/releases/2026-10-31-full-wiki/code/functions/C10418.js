@@ -1,0 +1,1 @@
+(n,max)=>Number.isSafeInteger(n)&&n>=0&&n<max

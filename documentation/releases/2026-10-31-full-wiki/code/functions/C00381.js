@@ -1,0 +1,1 @@
+function(e){e.attr("d","M0,0H1V1H0Z").style({"stroke-width":0,fill:"black"})}

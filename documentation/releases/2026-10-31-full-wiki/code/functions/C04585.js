@@ -1,0 +1,1 @@
+function h(e){this.promise=e,this.state=0,this.triggered=!1,this.chain=[],this.msg=void 0}

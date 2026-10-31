@@ -1,0 +1,1 @@
+()=>{page('load');if(document.getElementById('missy-animal-menu-items').hidden)click('missy-animal-menu-toggle')}

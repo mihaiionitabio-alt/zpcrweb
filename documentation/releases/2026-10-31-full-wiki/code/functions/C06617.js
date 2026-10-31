@@ -1,0 +1,1 @@
+function ccDynamic(...args){return MISSY_HOOKS.invoke("ccDynamic",this,args,ccDynamicBase);}

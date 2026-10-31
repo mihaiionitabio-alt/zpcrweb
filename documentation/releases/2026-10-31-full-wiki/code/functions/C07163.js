@@ -1,0 +1,1 @@
+t=>items.filter(x=>x.sev===t).length

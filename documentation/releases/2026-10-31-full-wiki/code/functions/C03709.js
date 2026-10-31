@@ -1,0 +1,1 @@
+function(e){var t,r,n,a=e.length,i=e[0].length,o=[],l=0,s=[];for(r=0;r<i;++r){for(t=0,n=0;t<a;t++)n+=e[t][r][1];n>l&&(l=n),o.push(n)}for(r=0;r<i;++r)s[r]=(l-o[r])/2;return s}

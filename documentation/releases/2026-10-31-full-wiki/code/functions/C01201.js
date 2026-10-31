@@ -1,0 +1,1 @@
+function L(e,t,r){for(var n=e.select("rect."+f.gripRectClass),a=0,i=0;i<t._stepCount;i++)if(t._visibleSteps[i]._index===t.active){a=i;break}var o=S(t,a/(t._stepCount-1));if(!t._invokingCommand){var l=n;r&&t.transition.duration>0&&(l=l.transition().duration(t.transition.duration).ease(t.transition.easing)),l.attr("transform",s(o-.5*f.gripWidth,t._dims.currentValueTotalHeight))}}

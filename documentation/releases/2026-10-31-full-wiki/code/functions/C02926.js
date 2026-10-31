@@ -1,0 +1,1 @@
+function(e,t,r){"use strict";var n=r(4809);e.exports=function(e,t){n.isArrayOrTypedArray(t.selectedpoints)&&n.tagSelected(e,t)}}

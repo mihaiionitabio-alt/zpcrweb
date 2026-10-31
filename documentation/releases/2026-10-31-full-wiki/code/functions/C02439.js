@@ -1,0 +1,1 @@
+function s(e,t){function r(r,a){return n.coerce(e,t,i.tickformatstops,r,a)}r("enabled")&&(r("dtickrange"),r("value"))}

@@ -1,0 +1,1 @@
+c=>`${c.name} ${EDS.dt(c.ts)} → ${EDS.dt(c.exp)}`

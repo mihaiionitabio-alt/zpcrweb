@@ -1,0 +1,1 @@
+function(A){A=A.filter(function(A){return 17===A.type}).map(function(A){return A.number});return 6===A.length?A:null}

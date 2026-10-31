@@ -1,0 +1,1 @@
+(_,c)=>({run:i,channel:c,points:[[c+1,fn(x,c)]]})

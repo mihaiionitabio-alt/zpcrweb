@@ -1,0 +1,1 @@
+function(e,t,r){if(e){var n,a=!1,i=!0;for(n=0;n<r.length;n++)null!=e[r[n]]?a=!0:i=!1;if(a&&!i)for(n=0;n<r.length;n++)e[r[n]]=t[r[n]]}}

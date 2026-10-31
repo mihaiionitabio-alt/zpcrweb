@@ -1,0 +1,1 @@
+function(e){if(null===e.parentNode)return!1;e.parentNode.removeChild(e)}

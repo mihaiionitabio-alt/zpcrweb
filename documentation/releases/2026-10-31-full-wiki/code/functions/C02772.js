@@ -1,0 +1,1 @@
+function C(e){return"auto"===e?0:e}

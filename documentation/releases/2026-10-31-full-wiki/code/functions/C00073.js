@@ -1,0 +1,1 @@
+function stopAlert(){alarmGeneration++;alerting=false;if(alarmTimer!==null)clearInterval(alarmTimer);alarmTimer=null;for(const n of alarmNodes){try{n.stop();}catch{}}alarmNodes.clear();labels();}

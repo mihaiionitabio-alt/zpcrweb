@@ -1,0 +1,1 @@
+(c,j)=>j!==iCq&&j!==iWell&&c

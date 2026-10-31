@@ -1,0 +1,1 @@
+function m(e,t){if(e){var r={};for(var a in e.each((function(e){var a=e[0];n.select(this).remove(),y(a,t),r[a]=!0})),t._plots)for(var i=t._plots[a].overlays||[],o=0;o<i.length;o++){var l=i[o];r[l.id]&&l.plot.selectAll(".trace").remove()}}}

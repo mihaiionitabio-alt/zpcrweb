@@ -1,0 +1,1 @@
+function Ur(e,t){return t=(t-=e=+e)||1/t,function(r){return(r-e)/t}}

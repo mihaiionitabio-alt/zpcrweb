@@ -1,0 +1,5 @@
+function overviewImages(){return overviewData().cohorts.filter(g=>new Set(g.points.map(p=>p.run_index)).size>=2).map(g=>({
+ id:'img:overview_'+g.id,kind:'image',group:'Overall summary and comparisons',scope:'all',title:'Across-run Cq comparison - '+g.id+' - '+g.target,uiNote:g.target+' | SN '+g.instrument+' | '+g.channel+' | '+new Set(g.points.map(p=>p.run_index)).size+' runs; '+g.points.length+' valid selected Cq results. Protocol, acquisition and role separation is retained. Full cohort/source identities appear in the report.',
+ note:overviewCohortNote(g)+'\nAll selected valid Cq results in this cohort are plotted. Small dots: wells; large dots: per-run/role median. Horizontal jitter only separates overlapping dots. Roles remain separate. No control limits or vendor acceptance are inferred. Biological sample composition can differ; this is descriptive comparison, not proof of QC drift.\n'+[...new Set(g.points.map(p=>p.run_index))].map(i=>'R'+i+': '+RUNS[i-1].file).join('\n'),
+ ready:()=>g.points.length>0,figure:()=>overviewPlot(g)
+}));}

@@ -1,0 +1,1 @@
+function f(e,t,r,a){if(e.valType){var i=n({},e);if(i.editType=t,Array.isArray(e.items)){i.items=new Array(e.items.length);for(var o=0;o<e.items.length;o++)i.items[o]=f(e.items[o],t)}return i}return u(e,t,"_"===a.charAt(0)?"nested":"from-root")}

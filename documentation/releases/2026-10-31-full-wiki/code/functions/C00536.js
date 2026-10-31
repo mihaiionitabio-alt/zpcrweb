@@ -1,0 +1,1 @@
+function(e){return e.trace.index===Fe.trace.index}

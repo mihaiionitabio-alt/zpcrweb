@@ -1,0 +1,1 @@
+function u(e,t){return n.coerce(l,s,i.coloraxis,e,t)}

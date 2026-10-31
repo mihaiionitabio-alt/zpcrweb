@@ -1,0 +1,1 @@
+function metaRows(...args){return MISSY_HOOKS.invoke("metaRows",this,args,metaRowsBase);}

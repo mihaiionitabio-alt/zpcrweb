@@ -1,0 +1,1 @@
+([k,v])=>{const c=conv(k);if(!c){out[k]=v;return;}let t=c.series,i=1;while(t in out&&bat[t]!==c.extract)t=`${c.series} · additional extract ${i++}`;out[t]=v;bat[t]=c.extract;}

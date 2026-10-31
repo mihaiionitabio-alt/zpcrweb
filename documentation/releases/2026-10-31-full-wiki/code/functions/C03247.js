@@ -1,0 +1,1 @@
+function(){for(var n=-1,a=t.apply(this,arguments);++n<r;)e[n](this,a)}

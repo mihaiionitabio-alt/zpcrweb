@@ -1,0 +1,1 @@
+function(e){return fr(l(e)).edges.filter((function(e){return e.l&&e.r})).map((function(t){return{source:e[t.l.i],target:e[t.r.i]}}))}

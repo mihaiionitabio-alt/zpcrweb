@@ -1,0 +1,1 @@
+function s(t){t._commandObserver&&(t._commandObserver.remove(),delete t._commandObserver),a.autoMargin(e,g(t))}

@@ -1,0 +1,1 @@
+function(e){var t=(e=Math.floor(e)+.5)-this.toJD(475,1,1),r=Math.floor(t/1029983),n=o(t,1029983),a=2820;if(1029982!==n){var i=Math.floor(n/366),l=o(n,366);a=Math.floor((2134*i+2816*l+2815)/1028522)+i+1}var s=a+2820*r+474;s=s<=0?s-1:s;var c=e-this.toJD(s,1,1)+1,u=c<=186?Math.ceil(c/31):Math.ceil((c-6)/30),f=e-this.toJD(s,u,1)+1;return this.newDate(s,u,f)}

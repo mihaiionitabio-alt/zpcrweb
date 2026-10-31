@@ -1,0 +1,1 @@
+p=>Math.log10(N(p.copies))

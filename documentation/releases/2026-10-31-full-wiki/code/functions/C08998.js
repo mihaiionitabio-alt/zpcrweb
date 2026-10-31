@@ -1,0 +1,1 @@
+(r,j)=>[j+1,first===0?NaN:100*(fn(r,c,x.run)/first-1)]

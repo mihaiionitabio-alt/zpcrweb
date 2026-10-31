@@ -1,0 +1,1 @@
+r=>r.d.group===g.id&&(!onlyAttention||r.st.level==="warn"||r.st.level==="bad")

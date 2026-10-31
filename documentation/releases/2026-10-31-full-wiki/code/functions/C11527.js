@@ -1,0 +1,1 @@
+function chartView(id,run){CC_STATE.instrument=ccInstrumentKey(run);demo.chart(id);mgRender();focus(document.getElementById('mg-chart'));}

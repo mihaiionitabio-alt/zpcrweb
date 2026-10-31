@@ -1,0 +1,1 @@
+function csvRows(){const s=snapshot();return s.readers.map(r=>({display_build:s.build,decoded_model_version:s.model,...r}));}

@@ -1,0 +1,1 @@
+function(e,t,r){r&&(e=l.extendFlat({},e,{hoverformat:r}));var n=l.isArrayOrTypedArray(t)?t[0]:t,a=l.isArrayOrTypedArray(t)?t[1]:void 0;if(void 0!==a&&a!==n)return G.hoverLabelText(e,n,r)+" - "+G.hoverLabelText(e,a,r);var i="log"===e.type&&n<=0,o=G.tickText(e,e.c2l(i?-n:n),"hover").text;return i?0===n?"0":z+o:o}

@@ -1,0 +1,1 @@
+(b,i)=>b.style.visibility=(i+tick)%3===0?'hidden':'visible'

@@ -1,0 +1,1 @@
+next => function(){const items=next();return items.map(x=>x.kind==='chart'?{...x,state:'• '+ZPCR_MANUAL_NOTES.slice(0,7).join('\n• ')}:x);}

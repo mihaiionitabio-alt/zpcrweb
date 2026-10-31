@@ -1,0 +1,1 @@
+function(t){var r=s(t),a=n/r[2];this.__chart__=d={x:o-r[0]*a,y:l-r[1]*a,k:a},C(e)}

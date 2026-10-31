@@ -1,0 +1,1 @@
+(k,v)=>{if(v!==undefined&&v!==null&&!(typeof v==="number"&&!Number.isFinite(v)))m[k]=v;}

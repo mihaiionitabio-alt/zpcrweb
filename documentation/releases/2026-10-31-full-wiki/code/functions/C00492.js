@@ -1,0 +1,1 @@
+function(e,t,r){"use strict";var n=r(3626),a=r(8103).hover;e.exports=function(e,t,r){var i=n.getComponentMethod("annotations","onClick")(e,e._hoverdata);function o(){e.emit("plotly_click",{points:e._hoverdata,event:t})}void 0!==r&&a(e,t,r,!0),e._hoverdata&&t&&t.target&&(i&&i.then?i.then(o):o(),t.stopImmediatePropagation&&t.stopImmediatePropagation())}}

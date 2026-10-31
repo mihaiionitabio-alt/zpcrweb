@@ -1,0 +1,1 @@
+function h(e,t){return i.getLayoutValObject(e,n.nestedProperty({},t).parts)}

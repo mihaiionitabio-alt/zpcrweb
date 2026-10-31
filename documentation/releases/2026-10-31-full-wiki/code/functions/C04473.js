@@ -1,0 +1,1 @@
+function f(e,t,r){var n={fired:!1,wrapFn:void 0,target:e,type:t,listener:r},a=u.bind(n);return a.listener=r,n.wrapFn=a,a}

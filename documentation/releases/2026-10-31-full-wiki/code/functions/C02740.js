@@ -1,0 +1,1 @@
+function L(e,t){var r=e.w;return e[f]+t*r/2}

@@ -1,0 +1,1 @@
+function(e){var t,r,n,a=this.id,i=this.namespace,o=[];e=Q(e);for(var l=-1,s=this.length;++l<s;){o.push(t=[]);for(var c=this[l],u=-1,f=c.length;++u<f;)(n=c[u])&&(r=e.call(n,n.__data__,u,l))?("__data__"in n&&(r.__data__=n.__data__),oi(r,u,i,a,n[i][a]),t.push(r)):t.push(null)}return Qa(o,i,a)}

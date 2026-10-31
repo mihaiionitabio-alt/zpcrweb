@@ -1,0 +1,1 @@
+m=>new Error(`${source||"run"}: ${m}`)

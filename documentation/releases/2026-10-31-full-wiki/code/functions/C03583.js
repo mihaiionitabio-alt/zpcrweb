@@ -1,0 +1,1 @@
+function Ir(e){return Math.pow(2,10*(e-1))}

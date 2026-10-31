@@ -1,0 +1,1 @@
+function(e){return(e-O)/P*s._width}

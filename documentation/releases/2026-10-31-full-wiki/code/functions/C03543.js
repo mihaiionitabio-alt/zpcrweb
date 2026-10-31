@@ -1,0 +1,1 @@
+function(e){return i.geom.voronoi().triangles(e)}

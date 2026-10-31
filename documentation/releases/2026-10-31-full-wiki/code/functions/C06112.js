@@ -1,0 +1,1 @@
+([,count])=>count>=Math.max(3,Math.ceil(n*minShare))

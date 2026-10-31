@@ -1,0 +1,1 @@
+s=>re.test(String(s||""))

@@ -1,0 +1,1 @@
+()=>section.querySelector('#mara-input-file').click()

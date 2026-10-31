@@ -1,0 +1,218 @@
+[
+  {
+    "id": "voice-demo",
+    "file": "tests/voice_demo_preflight.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 27.969,
+    "passed": true
+  },
+  {
+    "id": "formats",
+    "file": "tests/learning/formats_calm.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 43.993,
+    "passed": true
+  },
+  {
+    "id": "training",
+    "file": "tests/learning/training_report.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 116.754,
+    "passed": true
+  },
+  {
+    "id": "voice-routing",
+    "file": "tests/voice_122_pairs.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 3.619,
+    "passed": true
+  },
+  {
+    "id": "voice-state",
+    "file": "tests/voice_stable.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 7.773,
+    "passed": true
+  },
+  {
+    "id": "ack-queue",
+    "file": "tests/response_patterns.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 3.405,
+    "passed": true
+  },
+  {
+    "id": "clarification",
+    "file": "tests/yes_no_responses.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 3.689,
+    "passed": true
+  },
+  {
+    "id": "voice-bargein",
+    "file": "tests/voice_barge_in.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 4.765,
+    "passed": true
+  },
+  {
+    "id": "command-finish",
+    "file": "tests/command_finish.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 8.572,
+    "passed": true
+  },
+  {
+    "id": "chart-focus",
+    "file": "tests/chart_focus.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 13.152,
+    "passed": true
+  },
+  {
+    "id": "guided-tour",
+    "file": "tests/guided_demo_30.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 218.371,
+    "passed": true
+  },
+  {
+    "id": "readonly-evidence",
+    "file": "tests/evidence_readonly.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 0.121,
+    "passed": true
+  },
+  {
+    "id": "scope-snapshot",
+    "file": "tests/scope_snapshot_readonly.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 0.125,
+    "passed": true
+  },
+  {
+    "id": "source-matching",
+    "file": "tests/source_matches_readonly.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 0.142,
+    "passed": true
+  },
+  {
+    "id": "reader-inventory",
+    "file": "tests/reader_inventory_readonly.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 0.135,
+    "passed": true
+  },
+  {
+    "id": "calibration",
+    "file": "tests/calibration_metadata_readonly.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 0.144,
+    "passed": true
+  },
+  {
+    "id": "precision",
+    "file": "tests/precision_disclosure.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 6.275,
+    "passed": true
+  },
+  {
+    "id": "zip",
+    "file": "tests/zip_regression.cjs",
+    "code": 1,
+    "signal": null,
+    "timeout": false,
+    "seconds": 0.619,
+    "passed": false
+  },
+  {
+    "id": "model-contracts",
+    "file": "tests/hooks_and_models.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 0.145,
+    "passed": true
+  },
+  {
+    "id": "mara-math",
+    "file": "tests/mara_math.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 0.178,
+    "passed": true
+  },
+  {
+    "id": "mara-definitions",
+    "file": "tests/mara_definitions.cjs",
+    "code": 1,
+    "signal": null,
+    "timeout": false,
+    "seconds": 2.929,
+    "passed": false
+  },
+  {
+    "id": "game-mechanics",
+    "file": "tests/learning/mechanics.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 0.125,
+    "passed": true
+  },
+  {
+    "id": "evidence-keyboard",
+    "file": "tests/evidence_keyboard.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 92.934,
+    "passed": true
+  },
+  {
+    "id": "quantstudio",
+    "file": "tests/quantstudio_reader_exports.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 137.441,
+    "passed": true
+  }
+]

@@ -1,0 +1,1 @@
+s=>{let acc=0;for(let k=m;k<p;k++)acc+=s[k]*s[k];return acc;}

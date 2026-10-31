@@ -1,0 +1,1 @@
+()=>{chart('heat_rate');MISSY_CONSOLE_VOICE.command('four')}

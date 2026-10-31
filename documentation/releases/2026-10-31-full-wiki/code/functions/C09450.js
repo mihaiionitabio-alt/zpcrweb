@@ -1,0 +1,1 @@
+r=>/BioRadCFXManager|Bio-Rad.*CFX/i.test(r.meta.SWVersion)

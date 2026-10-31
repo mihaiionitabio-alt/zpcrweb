@@ -1,0 +1,1 @@
+function(e,t,r){return null==e?this.today():(e.year&&(this._validate(e,t,r,c.local.invalidDate||c.regionalOptions[""].invalidDate),r=e.day(),t=e.month(),e=e.year()),new i(this,e,t,r))}

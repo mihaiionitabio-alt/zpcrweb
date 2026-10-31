@@ -1,0 +1,1 @@
+function(){var e,t,r=n(f,p);r&&(e=r[0]-y[0],t=r[1]-y[1],h|=e|t,y=r,d({type:"drag",x:r[0]+s[0],y:r[1]+s[1],dx:e,dy:t}))}

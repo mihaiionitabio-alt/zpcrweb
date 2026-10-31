@@ -1,0 +1,1 @@
+function(){var e=i.random.normal.apply(i,arguments);return function(){return Math.exp(e())}}

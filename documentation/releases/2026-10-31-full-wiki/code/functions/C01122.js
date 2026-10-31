@@ -1,0 +1,1 @@
+function(e){return function(t){return e(t).replace(" ","_")}}

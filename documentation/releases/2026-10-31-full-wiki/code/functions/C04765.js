@@ -1,0 +1,1 @@
+function(){var e=this.toRgb();return(299*e.r+587*e.g+114*e.b)/1e3}

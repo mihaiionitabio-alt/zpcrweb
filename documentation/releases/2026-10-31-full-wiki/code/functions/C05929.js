@@ -1,0 +1,1 @@
+o=>`<option value="${esc(o)}"${String(v)===String(o)?" selected":""}>${esc(SOP_ACTION_LABEL[o]||o)}</option>`

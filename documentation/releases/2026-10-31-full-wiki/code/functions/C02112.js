@@ -1,0 +1,1 @@
+function(t){var r=G.getFromId(e,t);if("sync"===r.tickmode&&r.overlaying){var n=a.findIndex((function(e){return e===r.overlaying}));n>=0&&a.unshift(a.splice(n,1).shift())}}

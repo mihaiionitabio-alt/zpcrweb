@@ -1,0 +1,1 @@
+function te(e,t){for(var r=0;r<t.length;r++){var n=t[r],a=e.match(n.pattern);if(a){var i=a[1]||"";return{head:i,tail:e.substr(i.length+1),attr:n.attr}}}}

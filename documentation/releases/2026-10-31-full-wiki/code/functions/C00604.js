@@ -1,0 +1,1 @@
+function c(e,t,r){var n=t[r+"axes"],a=Object.keys((e._splomAxes||{})[r]||{});return Array.isArray(n)?n:a.length?a:void 0}

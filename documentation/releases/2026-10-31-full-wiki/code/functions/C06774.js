@@ -1,0 +1,1 @@
+v=>fmtTick(+Number(v).toPrecision(4))

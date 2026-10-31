@@ -1,0 +1,1 @@
+function fe(e,t){t&&(t.selections=(e.layout||{}).selections||[]),e.emit("plotly_selected",t)}

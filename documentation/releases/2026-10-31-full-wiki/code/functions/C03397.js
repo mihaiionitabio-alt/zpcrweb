@@ -1,0 +1,1 @@
+function(e){return new Ge(this.h,this.c,Math.min(100,this.l+Xe*(arguments.length?e:1)))}

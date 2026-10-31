@@ -1,0 +1,1 @@
+()=>{const state=!!window.MISSY_COMPUTER_SOUND?.alerting;if(state!==lastManualState){lastManualState=state;shipRecord('manual-alert-state',state?'active':'stopped',pendingAlertDrill===null?drillMode:pendingAlertDrill);pendingAlertDrill=null;}shipLabels();}

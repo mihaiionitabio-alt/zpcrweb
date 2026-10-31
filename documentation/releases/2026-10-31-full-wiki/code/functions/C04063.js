@@ -1,0 +1,1 @@
+function(e){var t=this.id,r=this.namespace;return arguments.length<1?this.node()[r][t].duration:ve(this,"function"==typeof e?function(n,a,i){n[r][t].duration=Math.max(1,e.call(n,n.__data__,a,i))}:(e=Math.max(1,e),function(n){n[r][t].duration=e}))}

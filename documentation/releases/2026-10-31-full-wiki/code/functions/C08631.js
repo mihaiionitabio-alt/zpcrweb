@@ -1,0 +1,1 @@
+r=>(((r.m||{}).findings||{}).count>0)

@@ -1,0 +1,1 @@
+function(){return fa([.5],[0,1])}

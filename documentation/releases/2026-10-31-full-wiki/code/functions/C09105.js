@@ -1,0 +1,1 @@
+function zsWrap(s,n=100){const lines=[];let line='';for(const w of String(s).split(/\s+/)){if((line+' '+w).trim().length>n&&line){lines.push(line);line=w;}else line=(line+' '+w).trim();}if(line)lines.push(line);return lines;}

@@ -1,0 +1,2 @@
+(id,name,match,targets,expect,purpose,material,lo="",hi="",reps=1)=>
+    ({id,name,matchBy:"name",match,targets,expect,purpose,material,cqLo:lo,cqHi:hi,minReplicates:reps,minPerRun:0,onFail:"review"})

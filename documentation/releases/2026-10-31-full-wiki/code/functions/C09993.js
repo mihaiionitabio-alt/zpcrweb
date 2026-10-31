@@ -1,0 +1,6 @@
+(rs,sample,target,outcome,reason,values={},ctrl=null)=>{
+  const exporting=!!SS_EXPORT_CONTEXT.get(run);if(exporting)sample=ctrl?exportName(sample):maraExportSample(sample,rs.map(r=>r.originalSource||r.source));
+  const ws=rs.map(r=>r.source),used=rs.filter(r=>!r.omitted),qs=used.map(r=>Number(r.cq)).filter(Number.isFinite),det=used.filter(r=>MARA_ENGINE.signal(r)===true);
+  const spec={kind:ctrl?'control':'target',match:target,cqMax:36},o=SOP.outcomes[outcome]||{};
+  return {run,ri,key:sample+'||'+target,sample,target,exporting,originalWells:rs.map(r=>r.originalSource||r.source),role:ctrl?'Control':'Sample',wells:ws,used:used.map(r=>r.source),spec,ctrl,n:used.length,omitted:rs.length-used.length,det:det.length,above:qs.filter(x=>x>36).length,cqMax:36,cqMean:mean(qs),cqSd:sd(qs),conc:values.content_percent??NaN,outcome,label:ui(o.label||outcome),colour:o.colour||'#94a3b8',reason,report:reason+(SOP.reviewOnly?'; '+ui('Review only — no release decision'):''),rule:SOP.method.id,methodValues:values,methodCalculated:true};
+ }

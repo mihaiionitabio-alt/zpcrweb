@@ -1,0 +1,1 @@
+xv=>c.reduce((s,ci,i)=>s+ci*Math.pow(xv,i),0)

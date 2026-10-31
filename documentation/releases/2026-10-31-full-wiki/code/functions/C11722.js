@@ -1,0 +1,1 @@
+s=>s.zipNames?.some(n=>/^rdml_data\.xml$/i.test(n))||!s.zipNames&&/<(?:\w+:)?rdml\b/.test(new TextDecoder().decode(s.bytes.subarray(0,4096)))

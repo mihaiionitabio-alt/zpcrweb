@@ -1,0 +1,1 @@
+x=>`<li><b>${x.id} ${esc(x.title)}</b><br>${esc(x.instruction)}<br><b>${t('Acceptance','合格判定')}:</b> ${esc(x.acceptance)}</li>`

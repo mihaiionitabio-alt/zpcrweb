@@ -1,0 +1,1 @@
+function(e,t){return e.year&&(t=e.month(),e=e.year()),this._validate(e,t,this.minDay,n.local.invalidMonth),12===t&&this.leapYear(e)||8===t&&5===o(this.daysInYear(e),10)?30:9===t&&3===o(this.daysInYear(e),10)?29:this.daysPerMonth[t-1]}

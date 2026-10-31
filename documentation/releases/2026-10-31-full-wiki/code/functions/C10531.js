@@ -1,0 +1,1 @@
+r=>({display_build:s.build,decoded_model_version:s.model,...r})

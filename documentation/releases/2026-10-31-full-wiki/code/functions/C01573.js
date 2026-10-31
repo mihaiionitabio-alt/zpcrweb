@@ -1,0 +1,1 @@
+function(e){return e[0]===r[0][0]}

@@ -1,0 +1,1 @@
+function(r,n){t.captureevents&&e.emit("plotly_clickannotation",G(n))}

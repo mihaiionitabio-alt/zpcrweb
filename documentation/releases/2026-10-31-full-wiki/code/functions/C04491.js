@@ -1,0 +1,1 @@
+function(e,t){for(;t+1<e.length;t++)e[t]=e[t+1];e.pop()}

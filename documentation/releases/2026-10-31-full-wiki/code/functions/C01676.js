@@ -1,0 +1,1 @@
+function s(e){var t=e.node(),r=document.createRange();r.selectNodeContents(t);var n=window.getSelection();n.removeAllRanges(),n.addRange(r),t.focus()}

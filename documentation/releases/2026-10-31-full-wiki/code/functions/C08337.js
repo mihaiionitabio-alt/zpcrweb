@@ -1,0 +1,1 @@
+()=>download("selection_template.csv",selCsvTemplate(),"text/csv")

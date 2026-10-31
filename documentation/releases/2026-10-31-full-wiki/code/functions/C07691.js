@@ -1,0 +1,1 @@
+(a,b)=>ISSUE_CATEGORY_ORDER.indexOf(a[0])-ISSUE_CATEGORY_ORDER.indexOf(b[0])

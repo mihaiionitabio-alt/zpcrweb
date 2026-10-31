@@ -1,0 +1,1 @@
+function(){return next().filter(x=>!x.id.startsWith('img:pcrd_')).concat(pcrdItems());}

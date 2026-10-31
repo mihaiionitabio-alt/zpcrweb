@@ -1,0 +1,1 @@
+function(e){var t=(e._context.toImageButtonOptions||{}).format||"png";return c(e,"png"===t?"Download plot as a png":"Download plot")}

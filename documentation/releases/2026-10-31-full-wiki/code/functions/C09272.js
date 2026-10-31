@@ -1,0 +1,1 @@
+function pcrdRuns(){return RUNS.filter(r=>r.pcrd);}

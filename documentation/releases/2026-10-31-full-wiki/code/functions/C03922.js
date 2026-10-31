@@ -1,0 +1,1 @@
+function xa(e){return e&&e.padAngle}

@@ -1,0 +1,1 @@
+function(e){return s(t[e])}

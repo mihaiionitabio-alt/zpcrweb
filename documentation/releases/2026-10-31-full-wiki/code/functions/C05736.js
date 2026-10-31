@@ -1,0 +1,1 @@
+n=>sopMatcher(p)(n)

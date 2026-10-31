@@ -1,0 +1,1 @@
+r=>`<div class="r"><b>${esc(String(r[0]))}</b><span>${esc(String(r[1]))}</span></div>`

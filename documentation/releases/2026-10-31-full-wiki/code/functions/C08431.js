@@ -1,0 +1,1 @@
+p=>p.every(Number.isFinite)

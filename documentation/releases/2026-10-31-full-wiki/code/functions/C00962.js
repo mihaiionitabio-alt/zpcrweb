@@ -1,0 +1,1 @@
+function(e,t){switch(e.type){case"log":return e.d2p(t);case"date":return e.r2p(t,0,e.calendar);default:return e.r2p(t)}}

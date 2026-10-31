@@ -1,0 +1,1 @@
+w=>signal(w,cut)===true

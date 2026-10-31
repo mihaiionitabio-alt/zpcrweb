@@ -1,0 +1,1 @@
+function(A,e){e=A[e];return void 0===e?A[0]:e}

@@ -1,0 +1,1 @@
+()=>{sopSetPath(el.dataset.sopPath,el.type==='checkbox'?el.checked:el.type==='number'?(el.value===''?'':Number(el.value)):el.value);refresh();}

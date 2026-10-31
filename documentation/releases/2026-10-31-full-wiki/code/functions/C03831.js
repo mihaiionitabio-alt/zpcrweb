@@ -1,0 +1,1 @@
+function a(e){return(r?Math.log(e<0?0:e):-Math.log(e>0?0:-e))/Math.log(t)}

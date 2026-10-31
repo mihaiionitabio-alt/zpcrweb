@@ -1,0 +1,1 @@
+(v,s)=>Math.abs(v-s)<=band

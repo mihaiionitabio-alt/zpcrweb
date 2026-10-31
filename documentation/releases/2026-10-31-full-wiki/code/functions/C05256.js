@@ -1,0 +1,1 @@
+c=>[pv(c,"ExcitationWL"),pv(c,"EmissionWL")]

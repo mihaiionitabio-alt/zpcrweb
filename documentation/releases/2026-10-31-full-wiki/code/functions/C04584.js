@@ -1,0 +1,1 @@
+function d(e){this.def=e,this.triggered=!1}

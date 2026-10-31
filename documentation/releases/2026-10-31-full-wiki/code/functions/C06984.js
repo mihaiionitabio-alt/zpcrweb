@@ -1,0 +1,1 @@
+r=>!r||typeof r!=="object"||Array.isArray(r)||typeof r.key!=="string"||!r.key||!r.m||typeof r.m!=="object"||Array.isArray(r.m)

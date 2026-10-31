@@ -1,0 +1,1 @@
+(_,d)=>mlMean(mem.map(m=>m[d]))

@@ -1,0 +1,1 @@
+async()=>{focus('[data-review-sheet="instrument"]','Available instrument records are shown; absent native fields remain unavailable.');await wait(1100);page('integrity');focus('#tab-integrity','Follow the source identity and SHA-256. This source is explicitly artificial.')}

@@ -1,0 +1,1 @@
+function(e,t,r,n){var a,i="x"===r||"y"===r||"z"===r?r:n;if(l.isArrayOrTypedArray(i)){if(a={type:Z(n,void 0,{autotypenumbers:e._fullLayout.autotypenumbers}),_categories:[]},G.setConvert(a),"category"===a.type)for(var o=0;o<n.length;o++)a.d2c(n[o])}else a=G.getFromTrace(e,t,i);return a?{d2c:a.d2c,c2d:a.c2d}:"ids"===i?{d2c:re,c2d:re}:{d2c:te,c2d:te}}

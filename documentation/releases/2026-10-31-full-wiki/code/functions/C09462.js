@@ -1,0 +1,1 @@
+t=>({name:'CFX RDML · '+t,shortName:t,uid:'cfx:'+t,kind:'absquant',kindLabel:'Vendor RDML export',channelIdx:channel,channelName:dye,filterName:dye,calcState:'exported',settings:{},quantStats:[],stdCurve:null})

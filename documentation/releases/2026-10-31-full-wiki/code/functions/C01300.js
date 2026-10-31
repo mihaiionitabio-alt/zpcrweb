@@ -1,0 +1,1 @@
+function(e,t){"use strict";t.xmlns="http://www.w3.org/2000/xmlns/",t.svg="http://www.w3.org/2000/svg",t.xlink="http://www.w3.org/1999/xlink",t.svgAttrs={xmlns:t.svg,"xmlns:xlink":t.xlink}}

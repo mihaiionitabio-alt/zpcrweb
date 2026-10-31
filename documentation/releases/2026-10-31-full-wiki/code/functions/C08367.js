@@ -1,0 +1,1 @@
+(r,i)=>r.concat(Array.from({length:n},(_,j)=>i===j?1:0))

@@ -1,0 +1,1 @@
+function(e,t){t.key=e,t.closed=/-closed$/.test(e)}

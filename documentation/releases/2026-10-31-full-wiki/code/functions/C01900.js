@@ -1,0 +1,1 @@
+function T(e,t){return(e.ticks||e.showline)&&(t===e._mainSubplot||"all"===e.mirror||"allticks"===e.mirror)}

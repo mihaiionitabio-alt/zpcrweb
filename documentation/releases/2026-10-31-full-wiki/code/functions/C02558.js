@@ -1,0 +1,1 @@
+function(e){if("_redrawFromAutoMarginCount"in e._fullLayout)return!1;var t=p.list(e,"",!0);for(var r in t)if(t[r].autoshift||t[r].shift)return!0;return!1}

@@ -1,0 +1,1 @@
+x=>[x.T.start,x.T.end,x.T.created,x.T.lastEdit]

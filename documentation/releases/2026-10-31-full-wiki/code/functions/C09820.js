@@ -1,0 +1,1 @@
+function reportTableValue(column,value){const s=String(value??'');return (REPORT_LITERAL_COLUMNS.has(String(column))||REPORT_LITERAL_COLUMNS.has(String(column).toLowerCase()))||/(?:sha256|checksum|filename|sample.?name|serial.?number|protocol.?hash)/i.test(column)?s:reportDisplay(s);}

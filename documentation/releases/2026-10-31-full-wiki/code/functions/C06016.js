@@ -1,0 +1,1 @@
+id=>$(id).onchange=()=>{SOP_VIEW.page=0;renderSopResults();}

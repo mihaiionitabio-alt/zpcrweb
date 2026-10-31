@@ -1,0 +1,1 @@
+function(e){var t=r[e];return t&&t.timer?new Promise((function(e){var r=t.onDone;t.onDone=function(){r&&r(),e(),t.onDone=null}})):Promise.resolve()}

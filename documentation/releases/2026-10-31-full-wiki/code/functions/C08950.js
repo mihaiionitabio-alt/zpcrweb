@@ -1,0 +1,1 @@
+function(){return next().map(x=>x.id.startsWith('cc:z_')?{...x,note:'• '+ZPCR_MANUAL_NOTES.slice(0,8).join('\n• ')+'\n• '+CC_BY_ID[x.id.slice(3)].code+' · '+CC_BY_ID[x.id.slice(3)].title+'\n• Matching protocol / firmware / window required.\n• Descriptive values; no vendor acceptance limits.'}:x);}

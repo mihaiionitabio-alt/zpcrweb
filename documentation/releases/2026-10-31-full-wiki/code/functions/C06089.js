@@ -1,0 +1,1 @@
+function ssKey(run,w){const ctx=SS_EXPORT_CONTEXT.get(run);return JSON.stringify(ctx?[ctx.ri,ssName(ctx.original,ctx.rows.get(w)||w)]:[RUNS.indexOf(run),ssName(run,w)]);}

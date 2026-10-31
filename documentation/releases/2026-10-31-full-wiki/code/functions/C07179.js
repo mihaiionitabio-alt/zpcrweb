@@ -1,0 +1,1 @@
+e=>{const k=e.category||"Other";const l=issueBy.get(k)||[];l.push(e);issueBy.set(k,l);}

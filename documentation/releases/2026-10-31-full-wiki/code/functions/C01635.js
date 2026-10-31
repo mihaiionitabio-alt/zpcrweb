@@ -1,0 +1,1 @@
+function(){var t=s.select(2===d?".MathJax_SVG":".MathJax"),i=!t.empty()&&s.select("svg").node();if(i){var o,l=i.getBoundingClientRect();o=2===d?n.select("body").select("#MathJax_SVG_glyphs"):t.select("defs"),r(t,o,l)}else a.log("There was an error in the tex syntax.",e),r();s.remove()}

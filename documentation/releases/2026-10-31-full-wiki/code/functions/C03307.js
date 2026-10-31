@@ -1,0 +1,1 @@
+function(e){for(var t,r,n,a,i,o=[],l=-1,s=this.length;++l<s;){n=(a=this[l]).update,o.push(t=[]),t.parentNode=a.parentNode;for(var c=-1,u=a.length;++c<u;)(i=a[c])?(t.push(n[c]=r=e.call(a.parentNode,i.__data__,c,l)),r.__data__=i.__data__):t.push(null)}return Z(o)}

@@ -1,0 +1,1 @@
+function(A){return{name:"margin-"+A,initialValue:"0",prefix:!1,type:4}}

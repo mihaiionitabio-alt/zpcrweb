@@ -1,0 +1,1 @@
+()=>{nodes?.delete(o);o.disconnect();fil?.disconnect();g.disconnect();}

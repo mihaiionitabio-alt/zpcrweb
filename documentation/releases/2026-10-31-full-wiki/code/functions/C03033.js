@@ -1,0 +1,1 @@
+function(e){i[e]=o(n.select(this),"path","js-fill")}

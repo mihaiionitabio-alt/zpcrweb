@@ -1,0 +1,1 @@
+function(e,t,r){if(!1!==r.index)r.index>=0&&r.index<e.length?r.distance=0:r.index=!1;else for(var n=0;n<e.length;n++){var a=t(e[n]);a<=r.distance&&(r.index=n,r.distance=a)}return r}

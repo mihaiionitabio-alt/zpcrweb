@@ -1,0 +1,1 @@
+function zpcrRawCSV(run,kind){return zpcrRows(run,kind).map(row=>row.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(',')).join('\r\n');}

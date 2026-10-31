@@ -1,0 +1,1 @@
+e=>{CC_STATE.variant=e.target.value;renderCcDetail();}

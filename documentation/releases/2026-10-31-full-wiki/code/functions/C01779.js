@@ -1,0 +1,1 @@
+function p(){var e=a.editType;d&&-1!==e.indexOf("arraydraw")?o.pushUnique(u.arrays[d],h):(k.update(u,a),"none"!==e&&u.nChanges++,n.transition&&a.anim&&u.nChangesAnim++,(G.test(s)||Z.test(s))&&(u.rangesAltered[r[0]]=1),W.test(s)&&l(t,"_inputDomain").set(null),"datarevision"===i&&(u.newDataRevision=1))}

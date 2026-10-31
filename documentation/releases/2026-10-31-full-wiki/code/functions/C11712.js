@@ -1,0 +1,1 @@
+el=>!el.disabled&&el.getClientRects().length

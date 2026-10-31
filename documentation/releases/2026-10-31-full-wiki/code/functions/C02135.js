@@ -1,0 +1,1 @@
+function(e,t){var r=e._id.charAt(0),n={x:"top",y:"right"}[r],a=e.side===n?1:-1,i=[-1,1,a,-a];return"inside"!==(t?(e.minor||{}).ticks:e.ticks)==("x"===r)&&(i=i.map((function(e){return-e}))),e.side&&i.push({l:-1,t:-1,r:1,b:1}[e.side.charAt(0)]),i}

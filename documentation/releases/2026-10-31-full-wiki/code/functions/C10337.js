@@ -1,0 +1,1 @@
+(){return statusFindings().map(f=>({...f}))}

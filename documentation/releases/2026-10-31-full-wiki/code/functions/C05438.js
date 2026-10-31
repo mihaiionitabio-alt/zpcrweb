@@ -1,0 +1,1 @@
+e=>/\.quant$/.test(e.name)

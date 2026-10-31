@@ -1,0 +1,1 @@
+function(e){return 0===arguments.length?this._day:this.set(e,"d")}

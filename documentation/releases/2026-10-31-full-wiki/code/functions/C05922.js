@@ -1,0 +1,2 @@
+(key,label)=>{const vals=uniq(RUNS.map(r=>String((r.meta||{})[key]||"")).filter(Boolean));
+    if(vals.length>1)push(null,"info","Batch consistency",`${vals.length} different ${label} across the loaded runs`,vals.slice(0,8).join(" | "));}

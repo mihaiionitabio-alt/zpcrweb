@@ -1,0 +1,1 @@
+function u(e,t,r,n,a){n("marker.line.width")&&n("marker.line.color",a?void 0:r.paper_bgcolor);var i=n("marker.colors");s(n,"marker.pattern",i),e.marker&&!t.marker.pattern.fgcolor&&(t.marker.pattern.fgcolor=e.marker.colors),t.marker.pattern.bgcolor||(t.marker.pattern.bgcolor=r.paper_bgcolor)}

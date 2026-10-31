@@ -1,0 +1,1 @@
+function(t){t.classed("drag",!0).style({fill:"transparent","stroke-width":0}).attr("data-subplot",e.id)}

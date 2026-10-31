@@ -1,0 +1,1 @@
+r=>cols.map(c=>csvq(r[c.key])).join(",")

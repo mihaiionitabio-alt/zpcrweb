@@ -1,0 +1,1 @@
+function dr(e,t){return t.y-e.y||t.x-e.x}

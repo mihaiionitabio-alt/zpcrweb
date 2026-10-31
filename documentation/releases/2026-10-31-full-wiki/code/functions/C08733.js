@@ -1,0 +1,1 @@
+(_,i)=>({name:'Raw channel '+(i+1),active:true,ex:'',em:'',filterSet:'',activityBasis:'Stored channel; mask uninterpreted'})

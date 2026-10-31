@@ -1,0 +1,1 @@
+function(){return o=a.extendDeepAll({},MathJax.Hub.config),l=MathJax.Hub.processSectionDelay,void 0!==MathJax.Hub.processSectionDelay&&(MathJax.Hub.processSectionDelay=0),MathJax.Hub.Config({messageStyle:"none",tex2jax:{inlineMath:f},displayAlign:"left"})}

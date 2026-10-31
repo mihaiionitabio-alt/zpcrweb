@@ -1,0 +1,1 @@
+r=>!r.error&&!r.eds

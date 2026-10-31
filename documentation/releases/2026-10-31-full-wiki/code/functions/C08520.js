@@ -1,0 +1,1 @@
+a=>a.length?Math.max(...a)-Math.min(...a):0

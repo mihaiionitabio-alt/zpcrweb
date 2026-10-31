@@ -1,0 +1,1 @@
+function ye(e,t,r){var n=e.tickfont||{};return{x:t,dx:0,dy:0,text:r||"",fontSize:n.size,font:n.family,fontWeight:n.weight,fontStyle:n.style,fontVariant:n.variant,fontTextcase:n.textcase,fontLineposition:n.lineposition,fontShadow:n.shadow,fontColor:n.color}}

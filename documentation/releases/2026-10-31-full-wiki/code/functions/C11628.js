@@ -1,0 +1,1 @@
+text=>{const e=sidebar?.querySelector('[role=status]');if(e)e.textContent=txt(text);}

@@ -1,0 +1,1 @@
+r=>`${runName(r)} (source SHA-256 ${(r.meta||{}).sourceSHA256||"-"})`

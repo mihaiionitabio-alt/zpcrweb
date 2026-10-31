@@ -1,0 +1,1 @@
+function Nr(e,t){return t-=e,function(r){return Math.round(e+t*r)}}

@@ -1,0 +1,1 @@
+function(e){return arguments.length?(p=e*e,l):Math.sqrt(p)}

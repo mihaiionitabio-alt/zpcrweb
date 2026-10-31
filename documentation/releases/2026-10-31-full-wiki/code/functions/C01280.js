@@ -1,0 +1,1 @@
+function(t){var r=n.select(this),i="dropdown"===t.type?c:null;a.manageCommandObserver(e,t,t.buttons,(function(n){v(e,t,t.buttons[n.index],r,i,b,n.index,!0)})),"dropdown"===t.type?(g(e,r,c,b,t),p(c,t)&&m(e,r,c,b,t)):m(e,r,null,null,t)}

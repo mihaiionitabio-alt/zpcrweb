@@ -1,0 +1,2 @@
+x=>{for(let c=0;c<x.rn.length;c++)ampRows.push({"Well":w.i+1,"Well Position":w.pos,"Cycle":c+1,"Target Name":x.target,
+      "Rn":x.rnS?x.rnS[c]:x.rn[c],"Delta Rn":x.drnS?(x.drnS[c]??""):(x.drn[c]??"")});}

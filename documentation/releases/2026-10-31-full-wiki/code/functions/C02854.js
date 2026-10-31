@@ -1,0 +1,1 @@
+function(e){return("auto"===e?0:e)*Math.PI/180}

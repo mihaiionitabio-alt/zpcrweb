@@ -1,0 +1,1 @@
+function(e,t){var r=e.attr(a);if(t){if(!r){for(var i=(e.attr("class")||"").split(" "),o=0;o<i.length;o++){var l=i[o];0===l.indexOf("cursor-")&&e.attr(a,l.substr(7)).classed(l,!1)}e.attr(a)||e.attr(a,"!!")}n(e,t)}else r&&(e.attr(a,null),"!!"===r?n(e):n(e,r))}

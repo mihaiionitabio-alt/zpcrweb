@@ -1,0 +1,1 @@
+function(){return qe(this.h,this.s,this.l)}

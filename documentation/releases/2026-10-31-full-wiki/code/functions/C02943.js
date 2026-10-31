@@ -1,0 +1,1 @@
+function(e){return{valType:"color",editType:"style",anim:!0}}

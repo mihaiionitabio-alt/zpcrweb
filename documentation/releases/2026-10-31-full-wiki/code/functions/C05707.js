@@ -1,0 +1,1 @@
+k=>o.outcomes[k]=Object.assign({},SOP_OUTCOME_DEFAULTS[k],(p.outcomes||{})[k]||{})

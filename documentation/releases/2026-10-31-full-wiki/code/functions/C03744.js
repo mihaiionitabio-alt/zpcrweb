@@ -1,0 +1,1 @@
+function Gn(e){return e?{floor:function(t){return Math.floor(t/e)*e},ceil:function(t){return Math.ceil(t/e)*e}}:Zn}

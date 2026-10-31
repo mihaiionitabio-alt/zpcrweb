@@ -1,0 +1,1 @@
+function(e){return e.map((function(e,t){return[a.call(l,e,t),o.call(l,e,t)]}))}

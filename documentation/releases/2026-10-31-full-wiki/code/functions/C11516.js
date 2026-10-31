@@ -1,0 +1,1 @@
+function focus(el){document.querySelectorAll('.game-evidence-focus').forEach(x=>x.classList.remove('game-evidence-focus'));if(!el)return;el.classList.add('game-evidence-focus');el.scrollIntoView({block:'center',behavior:'instant'});}

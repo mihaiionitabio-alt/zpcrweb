@@ -1,0 +1,1 @@
+()=>reportGraphFigure(g,ri)

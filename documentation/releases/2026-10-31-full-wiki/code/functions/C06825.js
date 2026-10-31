@@ -1,0 +1,1 @@
+(sg,i)=>vl.push({x:sg.x-0.5*(res.X.kind==="order"?1:0),label:"",colour:segColour(segCol,sg.key),dash:"2 4"})

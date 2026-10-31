@@ -1,0 +1,1 @@
+function(e,t){function r(r,i){return void 0!==t[r]?t[r]:n.coerce(e,t,a,r,i)}return r("clickmode"),r("hoversubplots"),r("hovermode")}

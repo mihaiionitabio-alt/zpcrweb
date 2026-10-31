@@ -1,0 +1,1 @@
+()=>({value:chart.points.length,rule:'chart.baseline'})

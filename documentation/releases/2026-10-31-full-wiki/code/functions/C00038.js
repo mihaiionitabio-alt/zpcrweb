@@ -1,0 +1,1 @@
+function stopAmbience(clear=false){ambienceGeneration++;if(ambienceTimer!==null){clearInterval(ambienceTimer);ambienceTimer=null;}for(const n of ambienceNodes){try{n.stop();}catch{}}ambienceNodes.clear();if(clear)ambienceId='';}

@@ -1,0 +1,1 @@
+function(e){return delete e._ev,delete e.on,delete e.once,delete e.removeListener,delete e.removeAllListeners,delete e.emit,delete e._ev,delete e._internalEv,delete e._internalOn,delete e._internalOnce,delete e._removeInternalListener,delete e._removeAllInternalListeners,e}

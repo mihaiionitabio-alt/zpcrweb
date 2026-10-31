@@ -1,0 +1,1 @@
+(s,x,i)=>s+(ys[i]-intercept-slope*x)**2

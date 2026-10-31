@@ -1,0 +1,1 @@
+function ja(e){return e.target}

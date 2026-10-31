@@ -1,0 +1,1 @@
+function(t,r){t.setTime(+t+r*e)}

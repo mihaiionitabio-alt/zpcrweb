@@ -1,0 +1,1 @@
+(s,pt,i)=>s+Math.pow(mlDist(pt,centres[assign[i]]),2)

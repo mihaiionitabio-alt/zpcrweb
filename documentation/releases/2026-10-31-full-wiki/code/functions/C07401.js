@@ -1,0 +1,1 @@
+t=>({name:t.file,data:t.data,mime:"text/tab-separated-values"})

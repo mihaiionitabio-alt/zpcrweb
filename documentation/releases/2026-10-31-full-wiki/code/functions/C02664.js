@@ -1,0 +1,1 @@
+function(e){return"data:application/json,"+encodeURIComponent(e)}

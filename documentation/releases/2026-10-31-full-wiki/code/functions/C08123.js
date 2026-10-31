@@ -1,0 +1,1 @@
+c=>{out.set(c,at);at+=c.length;}

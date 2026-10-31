@@ -1,0 +1,1 @@
+function(e){var t=e._fullLayout;if(n.filterVisible(t.annotations).length&&e._fullData.length)return n.syncOrAsync([i,o],e)}

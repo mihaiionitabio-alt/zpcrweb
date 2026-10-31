@@ -1,0 +1,1 @@
+function k(e){_(e)&&e._fullLayout._activeShapeIndex>=0&&(u(e),delete e._fullLayout._activeShapeIndex,x(e))}

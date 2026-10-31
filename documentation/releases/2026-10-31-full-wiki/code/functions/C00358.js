@@ -1,0 +1,1 @@
+function(e,t){var r=t?a.nestedProperty(e,t).get():e;if(r){var n=r.color;if((r.colorscale||r._colorAx)&&a.isArrayOrTypedArray(n))return u.makeColorScaleFuncFromTrace(r)}return a.identity}

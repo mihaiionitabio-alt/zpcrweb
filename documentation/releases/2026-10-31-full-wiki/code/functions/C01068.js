@@ -1,0 +1,1 @@
+function(e,t,r){var n=t.xref,a=t.yref,i=o.getFromId(r,n),l=o.getFromId(r,a),s="";"paper"===n||i.autorange||(s+=n),"paper"===a||l.autorange||(s+=a),d.setClipUrl(e,s?"clip"+r._fullLayout._uid+s:null,r)}

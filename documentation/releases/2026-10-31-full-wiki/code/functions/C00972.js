@@ -1,0 +1,1 @@
+function(e,t){var r,n,a,i=[];for(a=0;a<e.length;a++)(r=e[a]).cd[0].trace.selectedpoints&&r.cd[0].trace.selectedpoints.length>0&&i.push(r);if(1===i.length&&i[0]===t.searchInfo&&(n=t.searchInfo.cd[0].trace).selectedpoints.length===t.pointNumbers.length){for(a=0;a<t.pointNumbers.length;a++)if(n.selectedpoints.indexOf(t.pointNumbers[a])<0)return!1;return!0}return!1}

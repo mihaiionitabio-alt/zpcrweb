@@ -1,0 +1,1 @@
+function(A){A=this.counters[A];return A&&A.length?A[A.length-1]:1}

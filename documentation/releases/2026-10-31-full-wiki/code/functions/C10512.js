@@ -1,0 +1,1 @@
+next=>function(){return next().concat({title:'Current report and sample scope (CSV)',note:'',ready:()=>RUNS.length>0,run:()=>download('current_scope_snapshot.csv',csvOf(rows(false)),'text/csv')});}

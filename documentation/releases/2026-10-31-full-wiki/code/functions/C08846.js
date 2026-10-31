@@ -1,0 +1,1 @@
+i=>i.platform==='CFX'

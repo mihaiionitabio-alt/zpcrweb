@@ -1,0 +1,1 @@
+function ue(e){if(e[0]<ie||e[0]>oe||e[1]<le||e[1]>se)return[f(e[0],ie,oe),f(e[1],le,se)]}

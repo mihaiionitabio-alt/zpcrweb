@@ -1,0 +1,1 @@
+function $(e){var t=(e[1]-e[0])*Q;return[e[0]-t,e[1]+t]}

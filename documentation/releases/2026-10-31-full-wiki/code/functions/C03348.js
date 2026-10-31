@@ -1,0 +1,1 @@
+function L(){l&&l.domain(o.range().map((function(e){return(e-d.x)/d.k})).map(o.invert)),f&&f.domain(c.range().map((function(e){return(e-d.y)/d.k})).map(c.invert))}

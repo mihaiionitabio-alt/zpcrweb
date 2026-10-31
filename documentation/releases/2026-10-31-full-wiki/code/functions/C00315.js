@@ -1,0 +1,1 @@
+function(e,t,r){e.each((function(e){var a=n.select(this);x.translatePoint(e,a,t,r)}))}

@@ -1,0 +1,1 @@
+function(){var r={x:"height",y:"width"}[m],n=de()[r]+ue+(t._tickAngles[g+"tick"]?t.tickfont.size*U:0);return G.drawLabels(e,t,{vals:Me(t,k),layer:_,cls:g+"tick2",repositionOnUpdate:!0,secondary:!0,transFn:O,labelFns:G.makeLabelFns(t,T+n*W[4])})}

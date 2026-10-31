@@ -1,0 +1,1 @@
+a=>Object.assign({},a,{quantStats:(a.quantStats||[]).map(q=>Object.assign({},q,{master:P(q.master)}))})

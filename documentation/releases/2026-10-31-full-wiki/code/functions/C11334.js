@@ -1,0 +1,1 @@
+function(A){return Rn.test(A)}

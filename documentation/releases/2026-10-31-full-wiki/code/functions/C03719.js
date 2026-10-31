@@ -1,0 +1,1 @@
+function Tn(e){return[i.min(e),i.max(e)]}

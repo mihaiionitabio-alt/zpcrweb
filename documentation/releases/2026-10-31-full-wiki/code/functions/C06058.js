@@ -1,0 +1,1 @@
+p=>Number.isFinite(p[2])?p[2]:0

@@ -1,0 +1,1 @@
+function(e,t){if(t._inputDomain){for(var r=!1,n=t._id,a=e._fullLayout._axisConstraintGroups,i=0;i<a.length;i++)if(a[i][n]){r=!0;break}r&&"domain"===t.constrain||(t._input.domain=t.domain=t._inputDomain,delete t._inputDomain)}}

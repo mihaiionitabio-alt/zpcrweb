@@ -1,0 +1,1 @@
+function pt(e){var t=parseFloat(e);return"%"===e.charAt(e.length-1)?Math.round(2.55*t):t}

@@ -1,0 +1,2 @@
+c=>out.push({experiment:exp,severity:c.status==="fail"?"error":"review",
+      area:"SOP: "+SOP.name,finding:`${c.criterion} — ${c.status==="fail"?"not met (run rejected)":"not met (review)"}`,evidence:c.evidence})

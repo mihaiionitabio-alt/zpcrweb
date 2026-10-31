@@ -1,0 +1,1 @@
+function(e){if(d(e)){var t=e._fullLayout.selections.length-1;e._fullLayout._activeSelectionIndex=t,e._fullLayout._deactivateSelection=v,f(e)}}

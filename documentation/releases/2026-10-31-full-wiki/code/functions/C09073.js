@@ -1,0 +1,1 @@
+next => function(){next();if(String(mgItem()?.graphId||'').startsWith('zc_compare_'))document.querySelector('#mg-actions [data-cmd="next run"]')?.remove();}

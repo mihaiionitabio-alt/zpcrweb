@@ -1,0 +1,1 @@
+e=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();const list=[...choices.querySelectorAll('button')];list[e.key==='ArrowRight'||e.key==='End'?1:0].focus();}}

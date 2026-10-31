@@ -1,0 +1,1 @@
+r=>r.d.group===g.id&&!shown.includes(r)

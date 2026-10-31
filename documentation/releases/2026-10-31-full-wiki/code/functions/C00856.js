@@ -1,0 +1,1 @@
+function(e,t,r){for(var n=r.filter((function(r){return t[r].anchor===e._id})),a=0,i=0;i<n.length;i++){var o=t[n[i]].domain;o&&(a=Math.max(o[1],a))}return[e.domain[0],a+s.yPad]}

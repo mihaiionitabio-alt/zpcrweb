@@ -1,0 +1,1 @@
+function(e,t,r,n,a){return(n=(null!=e&&e.year?e.calendar():"string"==typeof n?this.instance(n,a):n)||this.instance()).newDate(e,t,r)}

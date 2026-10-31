@@ -1,0 +1,1 @@
+d=>row["multicomponent_"+d]=(mc[d]||[])[c]??""

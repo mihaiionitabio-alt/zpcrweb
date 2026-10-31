@@ -1,0 +1,1 @@
+function Wt(e,t){var r=e.site,n=r.x,a=r.y,i=a-t;if(!i)return n;var o=e.P;if(!o)return-1/0;var l=(r=o.site).x,s=r.y,c=s-t;if(!c)return l;var u=l-n,f=1/i-1/c,d=u/c;return f?(-d+Math.sqrt(d*d-2*f*(u*u/(-2*c)-s+c/2+a-i/2)))/f+n:(n+l)/2}

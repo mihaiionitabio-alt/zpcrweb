@@ -1,0 +1,1 @@
+v=>Number(v).toPrecision(Math.abs(v)>=100?6:5)

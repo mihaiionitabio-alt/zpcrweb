@@ -1,0 +1,1 @@
+function s(e){return c(e.line.width,e.ysizemode,e.y0,e.y1,e.path,!0)}

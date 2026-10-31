@@ -1,0 +1,1 @@
+function(t,r){for(var n=1;_+n<e.length&&e.charAt(_+n)===t;)n++;return _+=n-1,Math.floor(n/(r||1))>1}

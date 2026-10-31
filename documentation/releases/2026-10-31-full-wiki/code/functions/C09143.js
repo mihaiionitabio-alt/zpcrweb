@@ -1,0 +1,1 @@
+(s,k)=>svg+=`<text x="${x+12+k*99}" y="${y+43}" fill="${ZC_COLORS[k]}" font-size="13">${s}</text>`

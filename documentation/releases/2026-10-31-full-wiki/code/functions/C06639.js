@@ -1,0 +1,1 @@
+(q,j,a)=>j?Math.sign(q-a[j-1]):0

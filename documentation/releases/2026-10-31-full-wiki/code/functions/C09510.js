@@ -1,0 +1,1 @@
+next => function(n){next(n);cfxSync();if(MG.open){mgRefresh();mgRender();}}

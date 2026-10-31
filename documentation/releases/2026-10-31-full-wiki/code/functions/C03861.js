@@ -1,0 +1,1 @@
+function(r,i){arguments.length<2&&(i=0);var s=r[0],c=r[1],u=e.length<2?(s=(s+c)/2,0):(c-s)/(e.length-1+i);return n=l(s+u*i/2,u),a=0,t={t:"rangePoints",a:arguments},o}

@@ -1,0 +1,1 @@
+function(e,t){e.year&&(t=(e=e.year()).month());var r=this.intercalaryMonth(e);if(t<0||t>(r?12:11))throw n.local.invalidMonth.replace(/\{0\}/,this.local.name);return r?t<r?t+1:t:t+1}

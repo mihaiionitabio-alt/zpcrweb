@@ -1,0 +1,1 @@
+function(A,e){return new B(e.left+A.windowBounds.left,e.top+A.windowBounds.top,e.width,e.height)}

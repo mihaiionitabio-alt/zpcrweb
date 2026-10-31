@@ -1,0 +1,1 @@
+()=>play.getAttribute('aria-pressed')==='true'?sound.stopPreview():sound.preview(cue.id)

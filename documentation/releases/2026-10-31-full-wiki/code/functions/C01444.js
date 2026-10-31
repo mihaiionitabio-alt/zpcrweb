@@ -1,0 +1,1 @@
+function S(e){var t={};for(var r in e)for(var n=e[r],a=0;a<n.length;a++)t[n[a]]=+r;return t}

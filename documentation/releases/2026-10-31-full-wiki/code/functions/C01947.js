@@ -1,0 +1,1 @@
+function S(){return new Promise((function(e){setTimeout(e,l.getDelay(M._fullLayout))}))}

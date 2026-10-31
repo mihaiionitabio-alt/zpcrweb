@@ -1,0 +1,1 @@
+function p(e,t){var r=t.currentTarget,n=r._previousVal,a=e._fullLayout,i=a._subplots.gl3d||[],o=["xaxis","yaxis","zaxis"],l={},s={};if(n)s=n,r._previousVal=null;else{for(var c=0;c<i.length;c++){var u=i[c],f=a[u],d=u+".hovermode";l[d]=f.hovermode,s[d]=!1;for(var h=0;h<3;h++){var p=o[h],v=u+"."+p+".showspikes";s[v]=!1,l[v]=f[p].showspikes}}r._previousVal=l}return s}

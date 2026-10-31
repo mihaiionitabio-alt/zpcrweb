@@ -1,0 +1,1 @@
+e=>{selected=e;status(['Evidence selected. Confirm when ready.','已选择证据，准备好后请确认。']);}

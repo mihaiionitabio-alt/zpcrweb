@@ -1,0 +1,1 @@
+r=>r.res.n>0||(r.d.type==="funnel"&&r.res.nRows>0)

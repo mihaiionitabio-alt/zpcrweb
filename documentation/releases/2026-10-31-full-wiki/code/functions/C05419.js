@@ -1,0 +1,1 @@
+f=>{const [code,...t]=f.textContent.trim().split("-");return{code,target:t.join("-")}}

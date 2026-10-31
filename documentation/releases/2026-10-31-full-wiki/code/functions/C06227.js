@@ -1,0 +1,1 @@
+r=>r.det>=2&&Number.isFinite(r.cqSd)

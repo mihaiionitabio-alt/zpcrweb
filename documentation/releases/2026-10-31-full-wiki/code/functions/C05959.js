@@ -1,0 +1,1 @@
+k=>Object.assign({outcome:k},SOP.outcomes[k])

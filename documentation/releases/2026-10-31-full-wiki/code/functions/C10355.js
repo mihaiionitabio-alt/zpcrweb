@@ -1,0 +1,1 @@
+(r,c)=>Number.isInteger(r)&&r>0&&Number.isInteger(c)&&c>0?r+' × '+c:null

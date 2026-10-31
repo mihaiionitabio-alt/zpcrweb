@@ -1,0 +1,1 @@
+()=>({id:'',when:'',action:'',outcome:'Inconclusive'})

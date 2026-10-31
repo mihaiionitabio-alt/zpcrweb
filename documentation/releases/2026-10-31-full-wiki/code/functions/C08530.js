@@ -1,0 +1,1 @@
+p=>reliable?[p.lo,p.hi]:[p.y]

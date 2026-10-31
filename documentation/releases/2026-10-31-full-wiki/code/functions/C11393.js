@@ -1,0 +1,1 @@
+function(A){return"normal"===A||"small-caps"===A}

@@ -1,0 +1,1 @@
+v=>v.trim().split(/\s+/).map(Number)

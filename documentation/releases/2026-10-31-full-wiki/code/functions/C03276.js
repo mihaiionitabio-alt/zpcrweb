@@ -1,0 +1,1 @@
+function(){var t=e.apply(this,arguments);this.textContent=null==t?"":t}

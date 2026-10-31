@@ -1,0 +1,1 @@
+function(){return next().concat({title:'Thermal and optical context excerpt (CSV)',note:'',ready:()=>RUNS.length>0,run:()=>download('instrument_context_excerpt.csv',csvOf(rows(false)),'text/csv')});}

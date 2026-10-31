@@ -1,0 +1,1 @@
+e=>{e.preventDefault();const rc=canvas.getBoundingClientRect(),sx=W/rc.width,sy=H/rc.height,mx=(e.clientX-rc.left)*sx,my=(e.clientY-rc.top)*sy,fac=e.deltaY<0?.85:1.18,cx=xVal(mx),cy=yVal(my);view.x0=cx+(view.x0-cx)*fac;view.x1=cx+(view.x1-cx)*fac;view.y0=cy+(view.y0-cy)*fac;view.y1=cy+(view.y1-cy)*fac;draw();}

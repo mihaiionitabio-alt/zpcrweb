@@ -1,0 +1,1 @@
+function r(e){var t=e[0].trace;return!0===t.visible&&0!==t._length}

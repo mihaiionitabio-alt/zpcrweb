@@ -1,0 +1,1 @@
+function Bn(e){return{x:e.x,y:e.y,dx:e.dx,dy:e.dy}}

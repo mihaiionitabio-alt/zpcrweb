@@ -1,0 +1,1 @@
+function oe(e,t){var r=(e=ie(e).map(le)).length;return"function"==typeof t?function(){for(var n=-1,a=t.apply(this,arguments);++n<r;)e[n](this,a)}:function(){for(var n=-1;++n<r;)e[n](this,t)}}

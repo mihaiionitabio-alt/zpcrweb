@@ -1,0 +1,1 @@
+()=>{installChild().catch(e=>{window.MISSY_GAME_ERROR=e.message;});}

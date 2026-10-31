@@ -1,0 +1,1 @@
+function(){return void 0!==l&&(MathJax.Hub.processSectionDelay=l),MathJax.Hub.Config(o)}

@@ -1,0 +1,1 @@
+function(e,t,r){var n=/( domain)$/.test(e);if("string"==typeof e&&e.match(a.AX_ID_PATTERN)&&(!t||e.charAt(0)===t)&&(!n||r)){var i=e.split(" ")[0].substr(1).replace(/^0+/,"");return"1"===i&&(i=""),e.charAt(0)+i+(n&&r?" domain":"")}}

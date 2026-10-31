@@ -1,0 +1,1 @@
+function(e){var t,r=this._basePlotModules||[];for(t=0;t<r.length;t++)if(r[t].name===e)return!0;var n=this._modules||[];for(t=0;t<n.length;t++){var a=n[t].name;if(a===e)return!0;var i=s.modules[a];if(i&&i.categories[e])return!0}return!1}

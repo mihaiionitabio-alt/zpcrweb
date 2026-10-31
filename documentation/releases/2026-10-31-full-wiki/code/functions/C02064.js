@@ -1,0 +1,1 @@
+function(e,t,r){var n=Math.round(t.x),a=e._categories[n]||[],i=void 0===a[1]?"":String(a[1]),o=void 0===a[0]?"":String(a[0]);r?t.text=o+" - "+i:(t.text=i,t.text2=o)}

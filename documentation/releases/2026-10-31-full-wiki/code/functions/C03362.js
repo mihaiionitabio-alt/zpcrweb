@@ -1,0 +1,1 @@
+function y(){if(i.event.touches.length){for(var e=i.event.changedTouches,t=0,a=e.length;t<a;++t)delete n[e[t].identifier];for(var o in n)return void p()}i.selectAll(u).on(l,null),f.on(m,D).on(b,P),h(),O(r)}

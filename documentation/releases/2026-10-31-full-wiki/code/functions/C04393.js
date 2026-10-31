@@ -1,0 +1,1 @@
+function(e){return e=Math.floor(e),isFinite(e)&&e>0?e>1?l.filter(o?function(t){return o(t)%e==0}:function(t){return l.count(0,t)%e==0}):l:null}

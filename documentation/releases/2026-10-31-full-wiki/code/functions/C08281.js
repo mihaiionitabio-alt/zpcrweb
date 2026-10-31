@@ -1,0 +1,1 @@
+id=>{SEL_STATE.options[id]=Object.assign({},SEL_STATE.options[id]||{},opts);}

@@ -1,0 +1,1 @@
+function afterAcknowledgement(callback){if(active&&kind==='voiceAcknowledge'){queued={callback};return true;}return false;}

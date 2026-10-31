@@ -1,0 +1,1 @@
+function(e){T||e.attr("pointer-events","all")}

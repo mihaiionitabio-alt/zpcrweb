@@ -1,0 +1,1 @@
+function r(){return!(a(e.dtick)||"M"!==e.dtick.charAt(0))}

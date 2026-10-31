@@ -1,0 +1,1 @@
+function(e,t,r){for(var n in r)B(n,l(e,n).get(),r[n],t)}

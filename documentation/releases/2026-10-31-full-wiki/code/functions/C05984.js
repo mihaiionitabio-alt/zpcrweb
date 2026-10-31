@@ -1,0 +1,1 @@
+r=>Object.assign({},r,{status:tag(r.status==="Rejected"?"bad":r.status==="Accepted"?"ok":"warn",r.status)})

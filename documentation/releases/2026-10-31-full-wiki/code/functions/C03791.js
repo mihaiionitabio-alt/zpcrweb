@@ -1,0 +1,1 @@
+function d(e){var t=e.children;if(t&&t.length){var r,n=o(e),a=t.slice(),i=[];for(u(a,n.dx*n.dy/e.value),i.area=0;r=a.pop();)i.push(r),i.area+=r.area,null!=r.z&&(p(i,r.z?n.dx:n.dy,n,!a.length),i.length=i.area=0);t.forEach(d)}}

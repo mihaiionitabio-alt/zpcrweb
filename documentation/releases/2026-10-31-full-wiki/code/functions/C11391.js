@@ -1,0 +1,1 @@
+function(A,e){return B.ctx.fillText(e,A,t.bounds.top+r),A+B.ctx.measureText(e).width}

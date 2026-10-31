@@ -1,0 +1,1 @@
+function(e,t,r){return Math.abs(e)<r&&(e=0),Math.abs(t)<r&&(t=0),[e,t]}

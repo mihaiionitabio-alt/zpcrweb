@@ -1,0 +1,1 @@
+(chapter,title,say,run,target)=>({chapter,title,say,run,target,tier:'standard',type:'action'})

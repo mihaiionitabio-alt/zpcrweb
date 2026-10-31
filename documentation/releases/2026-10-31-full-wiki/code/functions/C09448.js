@@ -1,0 +1,1 @@
+x=>Number.isFinite(x.Cq_independent)||Number.isFinite(x.Tm_independent_C)

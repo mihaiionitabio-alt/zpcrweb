@@ -1,0 +1,1 @@
+function(e,t){return Math.abs(Math.cos(e))<Math.abs(Math.cos(t))?e:t}

@@ -1,0 +1,1 @@
+function(){return 0===this._a?"transparent":!(this._a<1)&&(D[v(this._r,this._g,this._b,!0)]||!1)}

@@ -1,0 +1,1 @@
+function(A){return Xr.SUPPORT_SVG_DRAWING||!Wn(A)}

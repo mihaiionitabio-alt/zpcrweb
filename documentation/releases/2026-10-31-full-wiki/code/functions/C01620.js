@@ -1,0 +1,1 @@
+function(e,r){return r||(r=t.len(e)),t.aggNums((function(e,t){return e+t}),0,e)/r}

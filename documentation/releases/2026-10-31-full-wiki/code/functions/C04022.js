@@ -1,0 +1,1 @@
+function(){return o.c&&h(r||1)&&(o.c=null,o.t=NaN),1}

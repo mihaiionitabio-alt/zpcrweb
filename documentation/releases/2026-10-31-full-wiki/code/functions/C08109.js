@@ -1,0 +1,1 @@
+l=>{d.room(size*1.4);d.text(l,size,bold,0,undefined,true);}

@@ -1,0 +1,1 @@
+function o(e){return function(t){return a.parse(t.responseText,e)}}

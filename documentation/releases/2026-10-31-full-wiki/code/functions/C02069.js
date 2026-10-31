@@ -1,0 +1,1 @@
+function e(r,n){return t(n,0)?r:e(n,r%n)}

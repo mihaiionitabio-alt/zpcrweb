@@ -1,0 +1,1 @@
+r=>Number.isFinite(r[0])&&Number.isFinite(r[1])

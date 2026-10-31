@@ -1,0 +1,1 @@
+function zcBrowse(id){zcSyncGraphs();cmdClose();astClose();mgOpen();MG.scope='zpcrcharts';mgRefresh();const n=id?MG.queue.findIndex(x=>x.graphId==='zc_compare_'+id.slice(7)):0;MG.at=Math.max(0,n);MG.chart=true;MG.zoom=1;MG.panX=0;MG.panY=0;mgRender();}

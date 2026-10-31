@@ -1,0 +1,1 @@
+function(e){for(var r=1;!t(Math.round(e*r)/r,e);)r*=10;return r}

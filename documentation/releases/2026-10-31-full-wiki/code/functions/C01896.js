@@ -1,0 +1,1 @@
+function ee(e){return"M"+f._offset+","+e+"h"+f._length}

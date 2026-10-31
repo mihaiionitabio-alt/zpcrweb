@@ -1,0 +1,1 @@
+function(e,t){if(!e)return 0;var r,n=j?Math.abs(Z-G):Math.abs(q-U),a=j?Math.abs(q-U):Math.abs(Z-G),i=K(Math.abs($(Q,!0)-$(0,!0))),o=c.hasB?Math.min(n/2,a/2):Math.min(n/2,i);return r="%"===t?n*(Math.min(50,e)/100):e,K(Math.max(Math.min(r,o),0))}

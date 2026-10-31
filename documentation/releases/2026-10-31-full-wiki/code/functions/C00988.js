@@ -1,0 +1,1 @@
+function K(e){var t=e.searchInfo.cd[0].trace,r=e.pointNumber,n=e.pointNumbers,a=n.length>0?n[0]:r;return!!t.selectedpoints&&t.selectedpoints.indexOf(a)>-1}

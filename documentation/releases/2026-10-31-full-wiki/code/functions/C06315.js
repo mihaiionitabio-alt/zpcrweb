@@ -1,0 +1,1 @@
+(x,i)=>[i,Math.max(0.01,x.T.editDelayH),0.01,`${runName(x.r)}: ${num(x.T.editDelayH,1)} h`,x.T.editDelayH>lim?"#dc2626":"#60a5fa"]

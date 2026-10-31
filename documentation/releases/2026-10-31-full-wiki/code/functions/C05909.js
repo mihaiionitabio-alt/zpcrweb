@@ -1,0 +1,1 @@
+w=>{if(w.curve&&w.curve.length>5&&Math.max(...w.curve)>Math.min(...w.curve))phys.set(`${w.channel}|${w.pos}`,{w,h:curveHash(w.curve)});}

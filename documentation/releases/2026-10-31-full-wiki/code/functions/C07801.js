@@ -1,0 +1,1 @@
+(w)=>curveColour(w,opts.mode||"outcome")

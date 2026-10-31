@@ -1,0 +1,1 @@
+r=>r.source==="curve"&&Array.isArray(r.curve)&&r.curve.length>4

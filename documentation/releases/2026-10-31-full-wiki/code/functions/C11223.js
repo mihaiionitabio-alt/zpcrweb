@@ -1,0 +1,1 @@
+function(A,e,t){return 0<A.length?e+t.toUpperCase():A}

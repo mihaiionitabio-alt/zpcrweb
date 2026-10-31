@@ -1,0 +1,1 @@
+n=>/^rdml_data\.xml$/i.test(n)

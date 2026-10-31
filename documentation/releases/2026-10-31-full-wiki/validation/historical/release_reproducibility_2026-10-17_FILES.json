@@ -1,0 +1,26 @@
+[
+  {
+    "file": "CITATION.cff",
+    "bytes": 495
+  },
+  {
+    "file": "DATA_PROVENANCE.txt",
+    "bytes": 909
+  },
+  {
+    "file": "LICENSE_NOTES.txt",
+    "bytes": 320
+  },
+  {
+    "file": "README.txt",
+    "bytes": 413
+  },
+  {
+    "file": "RELEASE_IDENTITY.json",
+    "bytes": 389
+  },
+  {
+    "file": "verify_release.py",
+    "bytes": 785
+  }
+]

@@ -1,0 +1,1 @@
+pos=>((plate[pos]||{}).name)||""

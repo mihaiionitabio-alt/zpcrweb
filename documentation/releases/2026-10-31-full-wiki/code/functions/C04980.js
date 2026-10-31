@@ -1,0 +1,1 @@
+function(e,t,r){var a=n.baseCalendar.prototype.isValid.apply(this,arguments);return a&&(a=(e=null!=e.year?e.year:e)>=1276&&e<=1500),a}

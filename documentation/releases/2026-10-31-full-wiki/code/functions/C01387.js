@@ -1,0 +1,1 @@
+function(e){var r=Math.min(+e.charAt(1)||6,6);return(t/1e3%1+2).toFixed(r).substr(2).replace(/0+$/,"")||"0"}

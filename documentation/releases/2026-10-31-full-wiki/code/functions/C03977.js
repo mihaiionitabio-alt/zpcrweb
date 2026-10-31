@@ -1,0 +1,1 @@
+function Ga(e){var t=Math.sqrt(e/Oe);return"M0,"+t+"A"+t+","+t+" 0 1,1 0,"+-t+"A"+t+","+t+" 0 1,1 0,"+t+"Z"}

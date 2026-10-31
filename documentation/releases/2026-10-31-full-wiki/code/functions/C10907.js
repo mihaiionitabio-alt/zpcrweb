@@ -1,0 +1,1 @@
+x=>JSON.stringify(x)

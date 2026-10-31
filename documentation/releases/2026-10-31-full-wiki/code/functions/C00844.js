@@ -1,0 +1,1 @@
+function(e){var t=this.buttons;if(!t)return!1;if(e.length!==t.length)return!1;for(var r=0;r<e.length;++r){if(e[r].length!==t[r].length)return!1;for(var n=0;n<e[r].length;n++)if(e[r][n].name!==t[r][n].name)return!1}return!0}

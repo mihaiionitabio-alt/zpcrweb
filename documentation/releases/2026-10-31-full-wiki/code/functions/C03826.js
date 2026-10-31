@@ -1,0 +1,1 @@
+function Xn(e,t){return i.rebind(e,t,"range","rangeRound","interpolate","clamp")}

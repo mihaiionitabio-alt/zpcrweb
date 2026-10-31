@@ -1,0 +1,1 @@
+r=>pts.push({i,e,r})

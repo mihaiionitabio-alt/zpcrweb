@@ -1,0 +1,1 @@
+function(e,t,r){if(n(t)){t=+t;var a=e.min,i=e.max;if(!(void 0!==a&&t<a||void 0!==i&&t>i))return t}return void 0!==r?r:e.dflt}

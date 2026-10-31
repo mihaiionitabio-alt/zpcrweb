@@ -1,0 +1,1 @@
+w=>{items++;if(sopOmitted(w)||String(w.manual||"")==="1")man++;}

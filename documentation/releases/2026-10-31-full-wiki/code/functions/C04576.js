@@ -1,0 +1,1 @@
+function c(e){var t,r=this;if(!r.triggered){r.triggered=!0,r.def&&(r=r.def);try{(t=o(e))?i((function(){var n=new d(r);try{t.call(e,(function(){c.apply(n,arguments)}),(function(){u.apply(n,arguments)}))}catch(e){u.call(n,e)}})):(r.msg=e,r.state=1,r.chain.length>0&&i(l,r))}catch(e){u.call(new d(r),e)}}}

@@ -1,0 +1,1 @@
+w=>Number.isFinite(Number(w.CpRaw))&&Number(w.CpRaw)>0

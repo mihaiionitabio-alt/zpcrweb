@@ -1,0 +1,1 @@
+function(e,t){var r=e[0].trace,n=t[0].trace;return r._groupIndex-n._groupIndex||r.index-n.index}

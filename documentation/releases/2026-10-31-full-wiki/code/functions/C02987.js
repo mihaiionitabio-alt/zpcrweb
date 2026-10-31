@@ -1,0 +1,1 @@
+function(e,t){t||(t=2);var r=e.marker,a=r.sizeref||1,i=r.sizemin||0,o="area"===r.sizemode?function(e){return Math.sqrt(e/a)}:function(e){return e/a};return function(e){var r=o(e/t);return n(r)&&r>0?Math.max(r,i):0}}

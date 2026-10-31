@@ -1,0 +1,1 @@
+id=>[id,document.getElementById(id)?.value]

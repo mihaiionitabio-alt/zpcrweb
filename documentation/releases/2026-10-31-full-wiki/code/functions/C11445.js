@@ -1,0 +1,1 @@
+function(A){switch(A){case 1:return"center";case 2:return"right";default:return"left"}}

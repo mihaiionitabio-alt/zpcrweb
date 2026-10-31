@@ -1,0 +1,1 @@
+k=>(clone[k]||[]).forEach((w,i)=>{if((original[k]||[])[i])rows.set(w,original[k][i]);})

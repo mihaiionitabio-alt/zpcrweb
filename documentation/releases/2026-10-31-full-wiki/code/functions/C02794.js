@@ -1,0 +1,1 @@
+function t(e,t,r,n,a){var i=t.c2p(n?e.s0:e.p0,!0),o=t.c2p(n?e.s1:e.p1,!0),l=r.c2p(n?e.p0:e.s0,!0),s=r.c2p(n?e.p1:e.s1,!0);return a?[(i+o)/2,(l+s)/2]:n?[o,(l+s)/2]:[(i+o)/2,s]}

@@ -1,0 +1,1 @@
+s=>({temps:kids(s,"Temperature").map(t=>+t.textContent),hold:+txt(s,"HoldTime"),ramp:num(txt(s,"RampRate")),collect:(+txt(s,"CollectionFlag")||0)>0,collectMode:txt(s,"CollectionMode")||((+txt(s,"CollectionFlag"))===1?"Step":"")})

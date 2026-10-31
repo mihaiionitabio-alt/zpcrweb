@@ -1,0 +1,1 @@
+function I(e){return"__"===e.slice(0,2)}

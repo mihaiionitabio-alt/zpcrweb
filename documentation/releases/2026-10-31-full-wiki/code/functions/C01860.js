@@ -1,0 +1,1 @@
+function(e){a[e]=function(e){var t=n.transformsRegistry[e],r=f({},t.attributes);return Object.keys(n.componentsRegistry).forEach((function(t){var a=n.componentsRegistry[t];a.schema&&a.schema.transforms&&a.schema.transforms[e]&&Object.keys(a.schema.transforms[e]).forEach((function(t){k(r,a.schema.transforms[e][t],t)}))})),{attributes:T(r)}}(e)}

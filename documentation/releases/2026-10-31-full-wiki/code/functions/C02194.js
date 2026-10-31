@@ -1,0 +1,1 @@
+function(n,a){var i,o=Ce(this);o.select(".text-math-group").empty()&&(t._vals[a]&&(i=t._vals[a].bb||d.bBox(o.node()),t._vals[a].bb=i),e=Math.max(e,i.width),r=Math.max(r,i.height))}

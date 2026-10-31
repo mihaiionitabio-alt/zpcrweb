@@ -1,0 +1,1 @@
+function Ee(e,t,r,n,a){var i,o=l.nestedProperty,s=o(e[r[0]._name],t).get(),c=o(e[n[0]._name],t).get();for("title"===t&&(s&&s.text===a.x&&(s.text=a.y),c&&c.text===a.y&&(c.text=a.x)),i=0;i<r.length;i++)o(e,r[i]._name+"."+t).set(c);for(i=0;i<n.length;i++)o(e,n[i]._name+"."+t).set(s)}

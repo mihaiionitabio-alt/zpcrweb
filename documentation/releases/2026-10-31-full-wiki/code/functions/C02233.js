@@ -1,0 +1,1 @@
+function(e){return!!/^[xyz]/.test(e)&&e.split(" ")[0]}

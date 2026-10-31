@@ -1,0 +1,1 @@
+x=>`<li><b>${x.id}</b> — ${esc(x.when)}; <b>${t('action','处理')}:</b> ${esc(x.action)}; <b>${t('outcome','结果')}:</b> ${esc(x.outcome)}</li>`

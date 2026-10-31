@@ -1,0 +1,1 @@
+function(e){g.bind(this)(e),m.bind(this)(e)}

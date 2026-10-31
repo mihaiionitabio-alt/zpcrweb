@@ -1,0 +1,1 @@
+(c,i)=>{const y=c/expo[i],e=3*Math.sqrt(u/expo[i]);return {y,cl:u,ucl:u+e,lcl:Math.max(0,u-e),flags:y>u+e?["above u limit"]:[]};}

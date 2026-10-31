@@ -1,0 +1,1 @@
+function(e,t){return e.year&&(t=e.month(),e=e.year()),this._validate(e,t,this.minDay,n.local.invalidMonth),void 0===this.NEPALI_CALENDAR_DATA[e]?this.daysPerMonth[t-1]:this.NEPALI_CALENDAR_DATA[e][t]}

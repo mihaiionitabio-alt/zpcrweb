@@ -1,0 +1,23 @@
+<!-- Kept ES5-compatible so IE can explain why the application cannot start. -->
+<style id="missy-browser-guard-style">
+html.missy-unsupported{background:#000!important}
+html.missy-unsupported body>*{display:none!important;visibility:hidden!important}
+html.missy-unsupported body>div#missy-browser-unsupported{display:block!important;visibility:visible!important;position:fixed;top:15%;left:12%;right:12%;padding:32px;border-left:20px solid #cc99cc;border-top:12px solid #ff9966;background:#100c15;color:#e5c8eb;font:18px/1.6 Arial,sans-serif;z-index:2147483647}
+#missy-browser-unsupported h1{font-size:26px;color:#ff9966}
+</style>
+<script id="missy-browser-guard">
+(function () {
+  if (!document.documentMode) return;
+  document.documentElement.className += ' missy-unsupported';
+  function showUnsupported() {
+    if (document.getElementById('missy-browser-unsupported')) return;
+    var panel = document.createElement('div');
+    panel.id = 'missy-browser-unsupported';
+    panel.setAttribute('role', 'alert');
+    panel.innerHTML = '<h1>Internet Explorer is not supported</h1><p>MISSY cannot run in Internet Explorer or Edge IE mode. Open this same HTML file or website in current Google Chrome or Microsoft Edge, with IE mode turned off.</p><p>Internet Explorer 无法运行 MISSY。请使用新版 Google Chrome 或 Microsoft Edge，并关闭 IE 模式，打开同一 HTML 文件或网址。</p>';
+    document.body.appendChild(panel);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', showUnsupported);
+  else showUnsupported();
+}());
+</script>

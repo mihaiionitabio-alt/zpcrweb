@@ -1,0 +1,1 @@
+()=>table(['Click a well row','点击孔位记录'],final.wells)

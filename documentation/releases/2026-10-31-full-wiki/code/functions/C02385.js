@@ -1,0 +1,1 @@
+function R(e,t,r){return n.round(r+t*e,2)}

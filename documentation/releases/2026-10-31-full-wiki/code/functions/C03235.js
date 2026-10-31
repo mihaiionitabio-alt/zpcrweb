@@ -1,0 +1,1 @@
+function(e){var t,r,n=[];e=$(e);for(var a=-1,i=this.length;++a<i;)for(var o=this[a],s=-1,c=o.length;++s<c;)(r=o[s])&&(n.push(t=l(e.call(r,r.__data__,s,a))),t.parentNode=r);return Z(n)}

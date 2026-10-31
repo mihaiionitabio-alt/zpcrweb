@@ -1,0 +1,1 @@
+function(e,t,r,n){if(e(t+".shape")){e(t+".solidity"),e(t+".size");var a="overlay"===e(t+".fillmode");if(!n){var i=e(t+".bgcolor",a?r:void 0);e(t+".fgcolor",a?s.contrast(i):r)}e(t+".fgopacity",a?.5:1)}}

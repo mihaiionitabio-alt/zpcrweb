@@ -1,0 +1,1 @@
+k=>{if(o[k]===null||typeof o[k]!=="object")o[k]={};o=o[k];}

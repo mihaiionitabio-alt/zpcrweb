@@ -1,0 +1,1 @@
+(title,en,zh,accept,acceptZh)=>n.steps.push({id:'P'+String(n.steps.length+1).padStart(2,'0'),title,instruction:t(en,zh),acceptance:t(accept,acceptZh)})

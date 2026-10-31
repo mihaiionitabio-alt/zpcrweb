@@ -1,0 +1,1 @@
+function(){n(f,p)&&(g.on(o+v,null).on(l+v,null),m(h),d({type:"dragend"}))}

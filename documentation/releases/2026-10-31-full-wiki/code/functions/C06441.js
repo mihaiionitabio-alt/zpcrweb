@@ -1,0 +1,2 @@
+()=>{const cv=document.createElement("canvas");cv.width=W*scale;cv.height=H*scale;const ctx=cv.getContext("2d");ctx.fillStyle="#fff";ctx.fillRect(0,0,cv.width,cv.height);ctx.drawImage(img,0,0,cv.width,cv.height);
+    cv.toBlob(b=>b.arrayBuffer().then(ab=>download(graphFileBase()+".png",new Uint8Array(ab),"image/png")),"image/png");}

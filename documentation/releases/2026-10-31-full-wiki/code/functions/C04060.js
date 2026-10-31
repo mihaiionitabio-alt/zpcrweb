@@ -1,0 +1,1 @@
+function(e){var t=this.id,r=this.namespace;return arguments.length<1?this.node()[r][t].delay:ve(this,"function"==typeof e?function(n,a,i){n[r][t].delay=+e.call(n,n.__data__,a,i)}:(e=+e,function(n){n[r][t].delay=e}))}

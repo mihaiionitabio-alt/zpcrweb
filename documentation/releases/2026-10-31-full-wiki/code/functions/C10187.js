@@ -1,0 +1,1 @@
+function chartList(){return [...Object.values(CC_BY_ID).map(d=>({id:d.id,control:true,title:d.code+' '+d.title})),...GRAPHS.map(g=>({id:g.id,control:false,title:g.title}))];}

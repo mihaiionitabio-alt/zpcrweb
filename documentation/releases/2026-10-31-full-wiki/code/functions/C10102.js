@@ -1,0 +1,1 @@
+()=>{if(!stamp().source_sha256){section.querySelector('#mara-input-message').textContent=ui('Source checksum required');return;}download(safeName(runName(run))+'_method_inputs.json',JSON.stringify({...stamp(),evidence},null,2),'application/json');}

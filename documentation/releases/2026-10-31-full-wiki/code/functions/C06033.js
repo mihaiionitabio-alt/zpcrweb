@@ -1,0 +1,1 @@
+v=>({v,label:fmtTick(v)})

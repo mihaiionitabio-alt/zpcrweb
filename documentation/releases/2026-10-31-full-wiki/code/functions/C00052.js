@@ -1,0 +1,1 @@
+()=>{queueTimer=null;const id=pendingCue;pendingCue=null;if(id==='loadingTick'&&(!['staging','reading'].includes(APP_STATE.phase)||document.querySelector('dialog[open]')))return;if(!enabled||!cueEnabled(id)||!alive||alerting||document.hidden||focused())return;lastCueAt=Date.now();effect(id);speak(id);}

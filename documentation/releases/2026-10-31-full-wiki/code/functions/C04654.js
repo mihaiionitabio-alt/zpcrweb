@@ -1,0 +1,1 @@
+function(e){return n("selected",{segs:e})}

@@ -1,0 +1,1 @@
+v=>resid.push(Math.abs(v-med))

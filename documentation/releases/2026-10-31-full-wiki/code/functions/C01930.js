@@ -1,0 +1,1 @@
+function f(e){return e.replace(/[0-9]+$/,"")}

@@ -1,0 +1,1 @@
+function(){if(c){var e=ve._id,t=ge._id;ae(M,e,t,Se);for(var r=(M.layout||{}).selections||[],n=[],a=!1,o=0;o<r.length;o++){var l=k.selections[o];l.xref!==e||l.yref!==t?n.push(r[o]):a=!0}a&&(M._fullLayout._noEmitSelectedAtStart=!0,i.call("_guiRelayout",M,{selections:n}))}}

@@ -1,0 +1,1 @@
+i=>h.slice(i,i+8).match(/../g).reverse().join("").toUpperCase()

@@ -1,0 +1,1 @@
+function(e,t){var r=e._fullLayout._subplots,n=r.cartesian.concat(r.gl2d||[]),a=t?G.findSubplotsWithAxis(n,t):n;return a.sort((function(e,t){var r=e.substr(1).split("y"),n=t.substr(1).split("y");return r[0]===n[0]?+r[1]-+n[1]:+r[0]-+n[0]})),a}

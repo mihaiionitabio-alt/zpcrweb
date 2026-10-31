@@ -1,0 +1,1 @@
+e=>{const k=e.area||"other";byArea.set(k,(byArea.get(k)||[]).concat(e));}

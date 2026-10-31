@@ -1,0 +1,1 @@
+t=>String(t||'').split(';').map(t=>t.trim().replace(/\s+/g,' ').toUpperCase()).filter(Boolean).join(';')

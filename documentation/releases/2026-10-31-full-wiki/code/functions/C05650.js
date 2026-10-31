@@ -1,0 +1,1 @@
+x=>`${x.temps[0]} °C ${x.hold} s${x.collect?" (read)":""}`

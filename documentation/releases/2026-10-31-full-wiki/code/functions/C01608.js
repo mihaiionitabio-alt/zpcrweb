@@ -1,0 +1,1 @@
+function(e,t,r){for(var n,a=0,i=t.length-1,o=0,l=r?0:1,s=r?1:0,c=r?Math.ceil:Math.floor;a<i&&o++<100;)t[n=c((a+i)/2)]<=e?a=n+l:i=n-s;return t[a]}

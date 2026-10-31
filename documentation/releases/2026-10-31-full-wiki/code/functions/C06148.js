@@ -1,0 +1,1 @@
+()=>{$("#ss-names-enable").checked=true;$("#ss-group").value="namePattern";$("#ss-names-filter").value="unusual";$("#ss-view").value="all";SAMPLE_SELECTION.page=0;ssRender();}

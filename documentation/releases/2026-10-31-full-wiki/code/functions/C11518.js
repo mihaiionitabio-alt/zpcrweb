@@ -1,0 +1,1 @@
+function page(tab){demo.page(tab);document.getElementById('game-evidence-card')?.remove();markMenus(tab);}

@@ -1,0 +1,1 @@
+(a,n=10)=>a.slice(0,n).join(", ")+(a.length>n?` … (+${a.length-n})`:"")

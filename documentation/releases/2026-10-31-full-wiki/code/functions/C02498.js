@@ -1,0 +1,1 @@
+function(t){setTimeout((function(){e._fullLayout&&(s.getComponentMethod("annotations","draw")(e),s.getComponentMethod("legend","draw")(e),s.getComponentMethod("colorbar","draw")(e),t(w.previousPromises(e)))}),300)}

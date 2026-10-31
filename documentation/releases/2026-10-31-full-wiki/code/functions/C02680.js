@@ -1,0 +1,1 @@
+function(){f&&document.body.removeChild(f)}

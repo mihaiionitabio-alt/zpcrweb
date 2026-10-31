@@ -1,0 +1,1 @@
+function P(e){return e=parseFloat(e),(isNaN(e)||e<0||e>1)&&(e=1),e}

@@ -1,0 +1,1 @@
+(label,c,ri,values)=>series.push({label,channel:c,run:ri,points:values.map((y,i)=>[i+1,y])})

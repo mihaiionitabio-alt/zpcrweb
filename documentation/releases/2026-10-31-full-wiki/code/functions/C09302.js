@@ -1,0 +1,1 @@
+(l,i)=>{const x=30+i*170;svg+=`<path d="M${x} 118h20" stroke="${ZC_COLORS[panel.metric==='interval'?0:i]}" stroke-width="4"/><text x="${x+25}" y="124" font-size="16">${E(l)}</text>`;}

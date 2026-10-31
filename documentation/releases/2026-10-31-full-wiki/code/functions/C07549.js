@@ -1,0 +1,1 @@
+()=>String((SOP&&SOP.run&&SOP.run.colourCompensation)||"review")

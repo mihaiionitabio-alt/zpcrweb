@@ -1,0 +1,1 @@
+function(e){if(e&&e.margin){var t,r=e.width,n=e.height,a=e.margin,i=r-(a.l+a.r),o=n-(a.t+a.b);i<0&&(t=(r-1)/(a.l+a.r),a.l=Math.floor(t*a.l),a.r=Math.floor(t*a.r)),o<0&&(t=(n-1)/(a.t+a.b),a.t=Math.floor(t*a.t),a.b=Math.floor(t*a.b))}}

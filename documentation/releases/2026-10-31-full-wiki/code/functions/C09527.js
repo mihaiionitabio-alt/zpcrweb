@@ -1,0 +1,1 @@
+function(){return next().concat(cfxRuns().length?[{title:'CFX RDML / original PCRD provenance',note:'Full filenames and SHA-256 checksums; source linkage is local manifest evidence, not vendor authentication.',ready:()=>true,run:()=>download('CFX_RDML_provenance.json',JSON.stringify(cfxSourceRows(),null,2),'application/json')}]:[]);}

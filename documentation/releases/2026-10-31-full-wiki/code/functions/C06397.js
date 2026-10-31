@@ -1,0 +1,1 @@
+(x,i)=>[i,x.errors+x.reviews,x.errors,`${x.area}: ${x.reviews} review item(s)`]

@@ -1,0 +1,1 @@
+()=>{if(!input.value){input.focus();return;}if([...input.value].some(c=>c.charCodeAt(0)>255)){input.setCustomValidity('Password must use Latin-1 characters');input.reportValidity();return;}pcrdSessionPassword=input.value;finish(pcrdSessionPassword);}

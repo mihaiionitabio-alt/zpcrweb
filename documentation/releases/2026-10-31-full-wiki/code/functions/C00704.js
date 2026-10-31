@@ -1,0 +1,1 @@
+function(e,t){"use strict";t.isGrouped=function(e){return-1!==(e.traceorder||"").indexOf("grouped")},t.isVertical=function(e){return"h"!==e.orientation},t.isReversed=function(e){return-1!==(e.traceorder||"").indexOf("reversed")}}

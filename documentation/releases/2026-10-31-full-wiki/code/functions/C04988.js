@@ -1,0 +1,1 @@
+function(e,t){e=(e||"gregorian").toLowerCase(),t=t||"";var r=this._localCals[e+"-"+t];if(!r&&this.calendars[e]&&(r=new this.calendars[e](t),this._localCals[e+"-"+t]=r),!r)throw(this.local.invalidCalendar||this.regionalOptions[""].invalidCalendar).replace(/\{0\}/,e);return r}

@@ -1,0 +1,1 @@
+o=>`${o.experiment} · ${o.well}${o.sample?" · "+o.sample:""} · ${o.filterName||"channel "+o.channel}`

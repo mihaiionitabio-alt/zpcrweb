@@ -1,0 +1,1 @@
+(key,field)=>{if(!info[key]){reasons.push('Missing RunInfo '+key);return;}if(reads.some(r=>r.serials[field]!==info[key]))reasons.push('RunInfo '+key+' conflicts with acquisition serials');}

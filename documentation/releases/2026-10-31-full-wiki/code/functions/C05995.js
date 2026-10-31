@@ -1,0 +1,1 @@
+v=>String(v).toLowerCase().includes(q)

@@ -1,0 +1,1 @@
+function(e){return e.ya.showspikes&&"hovered data"!==e.ya.spikesnap}

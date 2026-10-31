@@ -1,0 +1,1 @@
+function sopLabName(){return String(sopLab().name||"").trim();}

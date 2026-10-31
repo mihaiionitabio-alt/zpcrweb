@@ -1,0 +1,1 @@
+function(e,t){var r=new M;if(e instanceof M)e.forEach((function(e,t){r.set(e,t)}));else if(Array.isArray(e)){var n,a=-1,i=e.length;if(1===arguments.length)for(;++a<i;)r.set(a,e[a]);else for(;++a<i;)r.set(t.call(e,n=e[a],a),n)}else for(var o in e)r.set(o,e[o]);return r}

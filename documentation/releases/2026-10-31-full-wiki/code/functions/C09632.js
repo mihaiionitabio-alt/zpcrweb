@@ -1,0 +1,1 @@
+()=>{if(pcrdRuns().length){cmdScriptToggle(true);cmdEl('cmd-script').value=pcrdReportScript();}else next();}

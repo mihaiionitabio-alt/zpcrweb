@@ -1,0 +1,1 @@
+()=>{if(questionAudio)questionAudio.textContent=t('Speech unavailable. The answer is displayed.','语音不可用，回答已显示。');if(questionDialog&&!questionDialog.open&&!document.querySelector('dialog[open]'))questionDialog.showModal();}

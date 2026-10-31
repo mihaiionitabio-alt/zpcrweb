@@ -1,0 +1,1 @@
+function x(e,t,r,n,a){for(var i=n.tozero,o=n.extrapad,l=!0,s=0;s<e.length&&l;s++){var c=e[s];if(a(c.val,t)&&c.pad>=r&&(c.extrapad||!o)){l=!1;break}a(t,c.val)&&c.pad<=r&&(o||!c.extrapad)&&(e.splice(s,1),s--)}if(l){var u=i&&0===t;e.push({val:t,pad:u?0:r,extrapad:!u&&o})}}

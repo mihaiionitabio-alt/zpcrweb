@@ -1,0 +1,1 @@
+p=>`${p.r.target}|${p.r.sample}|${ccInstrumentKey(p.e.run)}|${ccProtocolKey(p.e.run)}`

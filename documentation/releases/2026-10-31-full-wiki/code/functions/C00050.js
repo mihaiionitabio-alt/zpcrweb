@@ -1,0 +1,1 @@
+()=>{if(kind==='ready'&&!preview){announced=true;pending=false;labels();}}

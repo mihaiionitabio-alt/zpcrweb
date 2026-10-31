@@ -1,0 +1,1 @@
+function maraGraphNote(g){return g.id==='stdcurve'?'':g.note||'';}

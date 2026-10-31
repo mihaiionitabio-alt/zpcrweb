@@ -1,0 +1,1 @@
+function p(e,t,n,a){var i,o=-1,l=e.length,s=n.x,c=n.y,u=t?r(e.area/t):0;if(t==n.dx){for((a||u>n.dy)&&(u=n.dy);++o<l;)(i=e[o]).x=s,i.y=c,i.dy=u,s+=i.dx=Math.min(n.x+n.dx-s,u?r(i.area/u):0);i.z=!0,i.dx+=n.x+n.dx-s,n.y+=u,n.dy-=u}else{for((a||u>n.dx)&&(u=n.dx);++o<l;)(i=e[o]).x=s,i.y=c,i.dx=u,c+=i.dy=Math.min(n.y+n.dy-c,u?r(i.area/u):0);i.z=!1,i.dy+=n.y+n.dy-c,n.x+=u,n.dx-=u}}

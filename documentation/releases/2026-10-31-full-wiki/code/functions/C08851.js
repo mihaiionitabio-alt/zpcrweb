@@ -1,0 +1,1 @@
+r=>!proto.value||r.protocol===proto.value

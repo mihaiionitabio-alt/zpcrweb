@@ -1,0 +1,1 @@
+function(e,t){return e.length<3?Aa(e):e[0]+Ca((e.push(e[0]),e),Oa([e[e.length-2]].concat(e,[e[1]]),t))}

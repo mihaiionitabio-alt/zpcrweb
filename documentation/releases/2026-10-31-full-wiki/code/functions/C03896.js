@@ -1,0 +1,1 @@
+function da(e){function t(e){return+e}return t.invert=t,t.domain=t.range=function(r){return arguments.length?(e=r.map(t),t):e},t.ticks=function(t){return $n(e,t)},t.tickFormat=function(t,r){return d3_scale_linearTickFormat(e,t,r)},t.copy=function(){return da(e)},t}

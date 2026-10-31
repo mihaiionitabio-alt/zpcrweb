@@ -1,0 +1,1 @@
+function Vt(){lr(this),this.edge=this.site=this.circle=null}

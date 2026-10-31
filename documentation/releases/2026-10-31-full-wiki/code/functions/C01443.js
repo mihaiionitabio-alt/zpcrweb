@@ -1,0 +1,1 @@
+function(e){var t;try{t=i(f.adjustFormat(e))}catch(t){return f.warnBadFormat(e),f.noFormat}return t}

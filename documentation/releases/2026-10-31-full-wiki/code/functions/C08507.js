@@ -1,0 +1,1 @@
+function mlNote(t){return `<p class="hint">${esc(ui(t))}</p>`;}

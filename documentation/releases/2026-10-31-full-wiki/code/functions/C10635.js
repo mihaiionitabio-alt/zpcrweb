@@ -1,0 +1,1 @@
+()=>{const name=document.body.classList.contains('lang-zh')?'命令':'Commands';toggle.textContent=(items.hidden?'▸ ':'◂ ')+name;items.setAttribute('aria-label',name);}

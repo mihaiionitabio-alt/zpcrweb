@@ -1,0 +1,1 @@
+(t,i)=>Number.isFinite(t)&&Number.isFinite(L.temp[i])

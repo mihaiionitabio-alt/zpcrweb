@@ -1,0 +1,1 @@
+function a(e,t,n){return{id:r?r.segmentId():-1,start:e,end:t,myFill:{above:n.myFill.above,below:n.myFill.below},otherFill:null}}

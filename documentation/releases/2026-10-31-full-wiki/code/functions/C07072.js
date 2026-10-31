@@ -1,0 +1,1 @@
+()=>{MG.chart=!MG.chart;}

@@ -1,0 +1,1 @@
+()=>final.wells.filter(w=>w.cqAtCycleCeiling).length

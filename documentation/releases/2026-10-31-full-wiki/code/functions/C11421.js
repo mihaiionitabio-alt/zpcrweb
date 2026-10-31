@@ -1,0 +1,1 @@
+function(A){return U.addColorStop(A.stop,ie(A.color))}

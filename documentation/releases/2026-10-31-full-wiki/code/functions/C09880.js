@@ -1,0 +1,1 @@
+([k,rs])=>N(rs[0]?.copies)/N(rLevels.get(k)?.[0]?.copies)

@@ -1,0 +1,1 @@
+v=>T+(hi-v)/span*(H-T-B)

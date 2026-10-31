@@ -1,0 +1,1 @@
+function(){next();if(RUNS.some(r=>r.zpcr))zpcrPanel.prepend(zpcrCCLink);}

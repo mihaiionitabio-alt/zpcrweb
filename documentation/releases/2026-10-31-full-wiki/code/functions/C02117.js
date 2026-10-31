@@ -1,0 +1,1 @@
+function(e,t){return e.autoshift?t[e.overlaying][e.side]:e.shift||0}

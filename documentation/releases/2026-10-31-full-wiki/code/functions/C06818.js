@@ -1,0 +1,1 @@
+v=>Number.isFinite(v)&&v>=cLo-0.6*cSpan&&v<=cHi+0.6*cSpan

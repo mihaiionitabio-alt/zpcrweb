@@ -1,0 +1,1 @@
+function s(e){o.font[e]||(o.font[e]=l?t.legend.font[e]:t.font[e])}

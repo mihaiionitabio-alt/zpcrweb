@@ -1,0 +1,1 @@
+n=>r.results.some(x=>x.target===n)

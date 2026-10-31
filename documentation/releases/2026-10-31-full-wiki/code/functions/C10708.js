@@ -1,0 +1,1 @@
+async()=>{await press('#read','Click Read files to decode the embedded demonstration.',loadDemo);page('load');focus('#readmsg','32 runs and 768 records are now available. This is the real read summary.')}

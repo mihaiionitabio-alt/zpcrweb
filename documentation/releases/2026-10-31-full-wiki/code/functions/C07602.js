@@ -1,0 +1,1 @@
+p=>Number.isFinite(p.cq)?(p.cq-m)/d:null

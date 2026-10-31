@@ -1,0 +1,1 @@
+(e,i)=>({type:"points",r:5,colour:cols[e.kind],data:[[toH(e.time),ev.length-i,`${e.what}: ${sopFmtTime(e.time)}`,cols[e.kind]]]})

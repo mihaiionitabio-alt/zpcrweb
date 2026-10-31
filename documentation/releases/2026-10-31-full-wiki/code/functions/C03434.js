@@ -1,0 +1,1 @@
+function(){return a.send.apply(a,[e].concat(l(arguments)))}

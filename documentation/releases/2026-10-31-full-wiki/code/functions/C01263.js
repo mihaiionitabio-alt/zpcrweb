@@ -1,0 +1,1 @@
+function(e){e.attr({rx:f.rx,ry:f.ry,"shape-rendering":"crispEdges"})}

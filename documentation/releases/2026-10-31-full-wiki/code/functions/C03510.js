@@ -1,0 +1,1 @@
+function(){for(var e,t=this.edges,r=t.length;r--;)(e=t[r].edge).b&&e.a||t.splice(r,1);return t.sort(Kt),t.length}

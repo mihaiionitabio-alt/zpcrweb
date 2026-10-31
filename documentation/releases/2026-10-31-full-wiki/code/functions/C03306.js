@@ -1,0 +1,1 @@
+function(){var t,r=new RegExp("^__on([^.]+)"+i.requote(e)+"$");for(var n in this)if(t=n.match(r)){var a=this[n];this.removeEventListener(t[1],a,a.$),delete this[n]}}

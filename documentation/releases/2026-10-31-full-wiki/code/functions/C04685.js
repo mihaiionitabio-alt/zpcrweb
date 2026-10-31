@@ -1,0 +1,1 @@
+function a(e){return{region:e,children:[]}}

@@ -1,0 +1,1 @@
+w=>`${w.analysis||"analysis"}=${w.CpRaw}`

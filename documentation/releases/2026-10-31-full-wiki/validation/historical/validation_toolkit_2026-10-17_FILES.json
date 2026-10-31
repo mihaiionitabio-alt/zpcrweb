@@ -1,0 +1,106 @@
+[
+  {
+    "file": "arz.py",
+    "bytes": 1274
+  },
+  {
+    "file": "curves.py",
+    "bytes": 1594
+  },
+  {
+    "file": "edge_results.json",
+    "bytes": 1079
+  },
+  {
+    "file": "eds.py",
+    "bytes": 35113
+  },
+  {
+    "file": "generate.py",
+    "bytes": 30610
+  },
+  {
+    "file": "ixo.py",
+    "bytes": 21890
+  },
+  {
+    "file": "layout.py",
+    "bytes": 14742
+  },
+  {
+    "file": "make_subset.py",
+    "bytes": 2614
+  },
+  {
+    "file": "ml_advisory.js",
+    "bytes": 38205
+  },
+  {
+    "file": "ml_panel.js",
+    "bytes": 49166
+  },
+  {
+    "file": "name_pattern_results.json",
+    "bytes": 1299
+  },
+  {
+    "file": "name_pattern_review.png",
+    "bytes": 114237
+  },
+  {
+    "file": "package.json",
+    "bytes": 81
+  },
+  {
+    "file": "rdml.py",
+    "bytes": 7868
+  },
+  {
+    "file": "README.txt",
+    "bytes": 1117
+  },
+  {
+    "file": "requirements.txt",
+    "bytes": 12
+  },
+  {
+    "file": "sample_selection.png",
+    "bytes": 99747
+  },
+  {
+    "file": "selection_preview.png",
+    "bytes": 95708
+  },
+  {
+    "file": "test_edges.js",
+    "bytes": 2823
+  },
+  {
+    "file": "test_ml.js",
+    "bytes": 23947
+  },
+  {
+    "file": "test_names.js",
+    "bytes": 3745
+  },
+  {
+    "file": "test_panel.js",
+    "bytes": 18247
+  },
+  {
+    "file": "test_results.json",
+    "bytes": 702
+  },
+  {
+    "file": "test_selection.js",
+    "bytes": 4655
+  },
+  {
+    "file": "verify.py",
+    "bytes": 39716
+  },
+  {
+    "file": "verify_drift.py",
+    "bytes": 6529
+  }
+]

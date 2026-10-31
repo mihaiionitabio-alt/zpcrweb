@@ -1,0 +1,1 @@
+v=>Math.round(Number(v)*10)/10

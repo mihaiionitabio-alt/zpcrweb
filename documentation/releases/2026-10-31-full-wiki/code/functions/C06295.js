@@ -1,0 +1,1 @@
+w=>w.eds&&Number.isFinite(w.eds.ctRecalc)&&Number.isFinite(sopCq(w))

@@ -1,0 +1,1 @@
+()=>primary().pts.filter(p=>p.flags.length).length

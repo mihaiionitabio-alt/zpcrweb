@@ -1,0 +1,1 @@
+()=>{sound.stopPreview();render();}

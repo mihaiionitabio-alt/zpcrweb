@@ -1,0 +1,1 @@
+()=>{cmdEl("cmd-out").innerHTML="";}

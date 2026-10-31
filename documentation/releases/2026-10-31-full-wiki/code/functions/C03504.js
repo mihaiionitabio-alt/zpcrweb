@@ -1,0 +1,1 @@
+function ur(e){for(;e.L;)e=e.L;return e}

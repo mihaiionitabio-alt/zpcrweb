@@ -1,0 +1,1 @@
+function f(e,t,r){return{y:e,m:t,d:r,H:0,M:0,S:0,L:0}}

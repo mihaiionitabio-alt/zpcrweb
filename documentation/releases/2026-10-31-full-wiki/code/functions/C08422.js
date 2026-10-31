@@ -1,0 +1,1 @@
+(c,i)=>mlTrace(`  candidate ${i+1} · index ${c.index} · gain ${c.gain.toExponential(3)}`)

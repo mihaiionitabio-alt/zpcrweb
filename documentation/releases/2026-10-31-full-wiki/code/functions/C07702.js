@@ -1,0 +1,1 @@
+()=>{if(tableRows.length)download(baseName()+"_grouped_problem_overview.csv",toCSV(Object.keys(tableRows[0]).map(k=>({key:k,label:k})),tableRows),"text/csv");}

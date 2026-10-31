@@ -1,0 +1,1 @@
+function(t){return t===r?e:(r=t,n("vert",{x:t}))}

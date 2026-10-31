@@ -1,0 +1,1 @@
+()=>{play('back');chooser.close();window.MISSY_SETUP.open();}

@@ -1,0 +1,1 @@
+function us(A){return _A(A)&&A.value===Ve.AUTO}

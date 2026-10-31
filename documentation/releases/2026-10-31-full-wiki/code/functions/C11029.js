@@ -1,0 +1,1 @@
+function _A(A){return 20===A.type}

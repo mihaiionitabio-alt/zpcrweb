@@ -1,0 +1,1 @@
+()=>safeName(`${CC_STATE.instrument}_${def.code}_${def.id}${CC_STATE.variant?"_"+CC_STATE.variant:""}`)

@@ -1,0 +1,1 @@
+e=>{const stage=e.detail?.stage;const cue=({checking:'packChecking',installing:'packInstalling',installed:'packReady','already-installed':'packReady',failed:'packFailed',unsupported:'packFailed',unavailable:'packFailed'})[stage];if(cue)sound.notify(cue);}

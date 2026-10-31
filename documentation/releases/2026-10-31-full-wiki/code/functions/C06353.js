@@ -1,0 +1,1 @@
+(ps,t)=>series.push({type:"points",colour:catColour(cm,t),r:4.5,data:ps.map(p=>[p.i,Number.isFinite(p.r.cqMean)?p.r.cqMean:NaN,graphHoverLabel(p.e.run,{well:p.r.wells&&p.r.wells[0]&&p.r.wells[0].well,sample:p.r.sample},`${t} · ${num(p.r.cqMean,2)} · ${p.r.label}`)])})

@@ -1,0 +1,1 @@
+x=>{if(x.textContent.includes('• PDF:'))x.remove();}

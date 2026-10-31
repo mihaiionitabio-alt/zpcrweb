@@ -1,0 +1,1 @@
+function Ae(e){return Math.floor(+e/1e3)}

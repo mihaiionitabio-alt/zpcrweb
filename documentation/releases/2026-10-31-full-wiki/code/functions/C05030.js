@@ -1,0 +1,1 @@
+function(e,t,r){var n=this._validate(e,t,r,c.local.invalidDate||c.regionalOptions[""].invalidDate);return(Math.floor(this.toJD(n))+2)%this.daysInWeek()}

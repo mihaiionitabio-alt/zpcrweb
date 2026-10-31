@@ -1,0 +1,1 @@
+()=>{previewDialog.close();previewDialog.querySelector('iframe').src='about:blank';}

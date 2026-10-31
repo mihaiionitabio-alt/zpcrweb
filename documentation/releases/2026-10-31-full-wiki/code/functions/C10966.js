@@ -1,0 +1,1 @@
+function(A,e){return d.fromClientRect(A,e.getBoundingClientRect())}

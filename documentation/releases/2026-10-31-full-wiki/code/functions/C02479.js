@@ -1,0 +1,1 @@
+function(e){return a.warn("API call to Plotly."+t+" rejected.",e),Promise.reject(e)}

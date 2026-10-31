@@ -1,0 +1,1 @@
+r=>[r.position+1,compare?r.delta:r.value,r.well]

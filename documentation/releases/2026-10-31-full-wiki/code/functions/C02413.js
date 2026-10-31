@@ -1,0 +1,1 @@
+function(t){var r=e.r2l(e.range[0]),n=e.r2l(e.range[1]);return(e.r2l(t)-r)/(n-r)}

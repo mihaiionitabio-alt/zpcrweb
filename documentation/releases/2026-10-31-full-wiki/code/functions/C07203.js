@@ -1,0 +1,1 @@
+it=>!mgSafe(()=>it.ready(),false)

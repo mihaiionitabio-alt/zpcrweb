@@ -1,0 +1,1 @@
+()=>{demo.closeModes();astOpen();focus(document.getElementById('astm'));}

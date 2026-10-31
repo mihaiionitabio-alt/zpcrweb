@@ -1,0 +1,1 @@
+function(r){var n,a,i,o,l,s;return n=e,a=r.ev,i=n.seg.start,o=n.seg.end,l=a.seg.start,s=a.seg.end,(t.pointsCollinear(i,l,s)?t.pointsCollinear(o,l,s)||t.pointAboveOrOnLine(o,l,s)?1:-1:t.pointAboveOrOnLine(i,l,s)?1:-1)>0}

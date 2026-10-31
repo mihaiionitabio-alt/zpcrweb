@@ -1,0 +1,1 @@
+(m,r)=>(m[r.outcome]=(m[r.outcome]||0)+1,m)

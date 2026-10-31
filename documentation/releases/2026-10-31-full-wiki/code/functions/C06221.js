@@ -1,0 +1,1 @@
+l=>series.push({type:"line",colour:l.colour,dash:"5 4",width:1.2,data:[[ti-0.4,l.y],[ti+0.4,l.y]],tip:l.label})

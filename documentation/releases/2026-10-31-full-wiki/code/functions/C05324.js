@@ -1,0 +1,1 @@
+p=>p.channel===chanIdx&&Number.isFinite(p.temp)&&p.values&&Number.isFinite(p.values[pos])

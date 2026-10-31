@@ -1,0 +1,1 @@
+()=>{const text=[...document.querySelectorAll('#mg-chart svg text')].find(e=>/slope.*logs/.test(e.textContent));focus(text||'#mg-chart','The red annotation states the issue: good fit, insufficient demonstration calibration range. This is not a validated assay.','problem')}

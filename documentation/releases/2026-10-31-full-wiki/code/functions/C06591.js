@@ -1,0 +1,1 @@
+(rs,k)=>{m.ntc_rate[k]={bad:rs.reduce((s,r)=>s+r.det,0),n:rs.reduce((s,r)=>s+r.n,0)};}

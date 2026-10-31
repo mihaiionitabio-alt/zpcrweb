@@ -1,0 +1,1 @@
+function exportRecord(){const blob=new Blob([JSON.stringify({disclaimer:txt(disclaimer),summary:summary(),records},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='MISSY-learning-record.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}

@@ -1,0 +1,1 @@
+function(e,t,r){return a.castOption(e,t,"hoverlabel."+r)}

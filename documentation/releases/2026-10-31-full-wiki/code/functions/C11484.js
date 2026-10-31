@@ -1,0 +1,1 @@
+kind=>{if(!sound)return;try{context??=new(window.AudioContext||window.webkitAudioContext)();void context.resume();cue(context,kind);}catch{}}

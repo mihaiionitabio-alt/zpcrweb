@@ -1,0 +1,1 @@
+(){return events.map(e=>({...e}))}

@@ -1,0 +1,81 @@
+0 Chapter 1. Setup and intake. → ARTIFICIAL DATA — NOT A LABORATORY RESULT. The operator is Dr Lin in a fictional labo
+1 I click the MISSY logo to enter. → MISSY / SESSION SETUP
+2 I enter a fictional laboratory and investigator. → Operator record. Investigator field: Dr Lin (fictional). This field does not authenti
+3 Computer who am I → Operator record. Investigator field: Dr Lin (fictional). This field does not authenti
+4 Computer what time is it → Device clock. 26/10/2026, 10:00:00. Device local time.
+5 Computer what build is this → Build identification. Current publication: 2026.10.31.demolabels1. One offline HTML f
+6 Computer what language are you speaking → The interface language is English. Recognition uses the English offline pack. Speech 
+7 Computer what formats do you read → Supported inputs. IXO, EDS, EDT, RDML, ZPCR and PCRD experiment files, plus ZIP archi
+8 I select the embedded artificial file. File selection is a scripted demo action. → 1 file(s) staged: ARTIFICIAL_MISSY_DEMO.rdml 4.0 MB
+9 Computer what are you doing → Files selected. Ready to read.
+10 I press Read files. This is a scripted demo action. → Read 32 run(s): 768 stored result(s), 768 amplification curve(s).
+11 Computer how many runs → 32 runs loaded. 768 stored result rows. This count does not include separate melting 
+12 Computer how many files → 1 distinct recorded source filenames; 32 decoded runs. File names may be unavailable 
+13 Computer identify run three → Run 3. SIM 3. 24 stored result rows; 2 recorded targets.
+14 Computer which run is newest → Newest available timestamp; 0 run views have no usable timestamp. Ties are listed; th
+15 Computer how many instruments → 2 distinct recorded platform/instrument labels; 0 run views have no recorded instrume
+16 Computer are these runs comparable → Comparison scope. 2 distinct recorded platform/instrument labels; 1 decoded protocol 
+17 Computer damage report → Damage report. Recorded evidence: 0 recorded integrity mismatch findings; 0 software 
+18 Chapter 2. Follow the evidence. → ARTIFICIAL DATA — NOT A LABORATORY RESULT. We will examine planted repeat findings, a
+19 I create a fictional review-only method. Profile editing is a scripted demo action. → Method identification. Active profile: ARTIFICIAL DEMO — NOT VALIDATED. Version: demo
+20 Computer which profile is active → Method identification. Active profile: ARTIFICIAL DEMO — NOT VALIDATED. Version: demo
+21 Computer which target is the reference → Reference assignments. Profile-declared reference rules: 1. This is an assignment, no
+22 Computer what targets are loaded → 2 distinct recorded target labels across all loaded stored result rows. This does not
+23 Computer read the results → Read the results. 64 current sample-level profile summaries. Samples are grouped with
+24 Computer which samples should I repeat → 3 current sample-target groups have the exact Repeat outcome under ARTIFICIAL DEMO — 
+25 Computer more → SIM 13; DEMO_SAMPLE_0; DNA_TARGET; rule target: DNA_TARGET; replicate SD 2.26 > 0.5. 
+26 Computer more → SIM 19; DEMO_SAMPLE_0; DNA_TARGET; rule target: DNA_TARGET; replicate SD 2.25 > 0.5. 
+27 Computer did any control fail → 128 evaluated control groups; 1 groups have the exact Control fail outcome. 0 control
+28 Computer how many standards → 384 included stored result rows have the exact Standard role, across 32 run views. Th
+29 I open the hardware reference. Manufacturer specifications and artificial measurements are different. → Manufacturer specification reference / 制造商规格参考
+30 Computer show chart 1 → Display chart 1. Chart 1. B-H1 Peak heating rate (2-s window).
+31 Computer run diagnostic on module charts → 110 registered chart definitions. This is an inventory, not a diagnostic test.
+32 Computer which chart is this → Chart 1 of 110. Peak heating rate (2-s window).
+33 Computer show chart 26 → Display chart 26. Chart 26. A-H3 Background fluorescence per channel.
+34 Computer how many outliers → Chart review. A-H3 Background fluorescence per channel. 30 assessed points; 4 beyond 
+35 Computer what is the magnification → Console chart zoom 100 percent; horizontal pan 0; vertical pan 0.
+36 Computer zoom in → Zoom in. Console command applied. Zoom 125 percent.
+37 Computer what is the magnification → Console chart zoom 125 percent; horizontal pan 0; vertical pan 0.
+38 Computer reset the view → Reset view. Console command applied. Zoom 100 percent.
+39 Computer white background → Light chart background. Chart background changed.
+40 Computer dark background → Dark chart background. Chart background changed.
+41 Computer this is a drill → Drill label enabled. Subsequent manual alert changes are tagged drill in the separate
+42 Computer red alert → Manual red alert requested. Sound depends on browser audio availability. Say Computer
+43 Computer cancel red alert → Manual red alert stopped; drill label cleared. This is not a green or passing scienti
+44 I select the second artificial instrument. It has only two run views. → Chart 1 of 110. Peak heating rate (2-s window).
+45 Computer why has this chart no limits → Chart review. B-H1 Peak heating rate (2-s window). 2 assessed points; 0 beyond availa
+46 Computer show chart 85 → Display chart 85. Chart 85. Amplification curves coloured by SOP outcome.
+47 Computer summarise the run → Run summary. Run 1; SIM 1. 24 stored result rows; 24 included rows. Existing profile 
+48 Computer where did this run come from → Source records. Run 1; source filename ARTIFICIAL_MISSY_DEMO.rdml; instrument label L
+49 Computer show chart 86 → Display chart 86. Chart 86. Plate heat map.
+50 Computer stations → Review stations. Opened Quality and forensic review. The previous view is saved; say 
+51 Computer as you were → Restored the saved review-navigation view. Data, profile and downloads were not rever
+52 Chapter 3. Prepare the report. → ARTIFICIAL DATA — NOT A LABORATORY RESULT. We will review provenance, prepare a real 
+53 Computer seven → Control 7. Workspace. Open formats.
+54 Computer where am I → Current station. Workspace. Open formats.
+55 Computer what will the export contain → Export contents. Export scope depends on the specific export. Graph CSV uses the curr
+56 Computer security alert → Integrity review. Identifier disclosure status: export pseudonymisation is on. That s
+57 Computer eight → Control 8. Workspace. File integrity.
+58 Computer status report → Status report. 32 runs; 768 stored result rows. Active profile ARTIFICIAL DEMO — NOT 
+59 I open the animal shortcuts. These are mouse actions in this demonstration. → Available functions. Choose or drop experiment files, read them, and review sample se
+60 I open Command mode. → Current station. Command mode. Load files.
+61 Computer are these results validated → This is a research-use tool, not a laboratory validation certificate. You can review 
+62 Computer is this sample contaminated → I do not infer contamination or inhibition from a curve. You can inspect recorded con
+63 Computer override the profile → Unable to comply. Voice does not override method rules. Review the active profile in 
+64 Computer approve this run for release → Unable to comply. Release is a laboratory decision under your SOP. You can review the
+65 I select the drift and heating figures in Assisted mode. Report creation is a scripted demo action. → Current station. Assisted mode. Load files.
+66 I build the report locally. This does not approve laboratory results. → Artificial-data report is ready in memory. Use Preview report to inspect the actual P
+67 Computer stand down → Manual red alert stopped; drill label cleared. This is not a green or passing scienti
+68 Computer all stop → Voice, manual alert and background sounds stopped. File intake, rendering and instrum
+PASS preflight 69 {
+  runs: 32,
+  rows: 768,
+  repeats: 3,
+  failedControls: 1,
+  instruments: [ 'LC · DEMO-VIRTUAL-001', 'LC · DEMO-SHORT-BASELINE' ],
+  protocols: [ '95/10s 60/20s' ],
+  primaryFlagged: 4,
+  primaryBaselineReady: true,
+  shortBaselineReady: false,
+  shortPoints: 2
+}

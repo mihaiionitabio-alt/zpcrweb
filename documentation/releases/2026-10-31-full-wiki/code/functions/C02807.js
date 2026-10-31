@@ -1,0 +1,1 @@
+function y(e,t,r,n){var i=m(e,t,r);return(void 0===e._input.textfont||void 0===e._input.textfont.color||Array.isArray(e.textfont.color)&&void 0===e.textfont.color[t])&&(i={color:a.contrast(n),family:i.family,size:i.size,weight:i.weight,style:i.style,variant:i.variant,textcase:i.textcase,lineposition:i.lineposition,shadow:i.shadow}),b(f,e.insidetextfont,t,i)}

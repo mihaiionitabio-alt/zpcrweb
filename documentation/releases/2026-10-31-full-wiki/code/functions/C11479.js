@@ -1,0 +1,1 @@
+(en,zh)=>document.body.classList.contains('lang-zh')?zh:en

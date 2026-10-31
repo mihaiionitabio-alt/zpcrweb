@@ -1,0 +1,1 @@
+function(e,t){if(!h(e))return!1;var r=t.items,n=Array.isArray(r),a=2===t.dimensions;if(!t.freeLength&&e.length!==r.length)return!1;for(var i=0;i<e.length;i++)if(a){if(!h(e[i])||!t.freeLength&&e[i].length!==r[i].length)return!1;for(var o=0;o<e[i].length;o++)if(!g(e[i][o],n?r[i][o]:r))return!1}else if(!g(e[i],n?r[i]:r))return!1;return!0}

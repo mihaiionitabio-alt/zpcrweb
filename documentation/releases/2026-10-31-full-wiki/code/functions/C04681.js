@@ -1,0 +1,1 @@
+function r(t){if(t.length<=0)return e.segments({inverted:!1,regions:[]});function r(t){var r=t.slice(0,t.length-1);return e.segments({inverted:!1,regions:[r]})}for(var n=r(t[0]),a=1;a<t.length;a++)n=e.selectDifference(e.combine(n,r(t[a])));return n}

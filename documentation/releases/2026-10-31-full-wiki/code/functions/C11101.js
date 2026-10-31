@@ -1,0 +1,1 @@
+function(A,e){return"rtl"!==e?0:1}

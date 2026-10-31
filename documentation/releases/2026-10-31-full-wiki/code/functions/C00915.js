@@ -1,0 +1,1 @@
+function(e){var r=e[v.name];t._topdefs.select("#"+r._clipId).remove()}

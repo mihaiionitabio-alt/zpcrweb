@@ -1,0 +1,1 @@
+async function(raw){if(String(raw).trim().toLowerCase()==='native'){cmdTable(rows(true).map(r=>[r.filename,[r.inspection_scope,r.native_component,r.native_value,r.native_state,r.native_basis].filter(Boolean).join(' · ')]),true);return;}return next(raw);}

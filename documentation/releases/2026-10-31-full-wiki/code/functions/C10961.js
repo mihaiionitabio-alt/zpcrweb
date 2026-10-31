@@ -1,0 +1,1 @@
+function(A,e,t,r){return new B(this.left+A,this.top+e,this.width+t,this.height+r)}

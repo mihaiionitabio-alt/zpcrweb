@@ -1,0 +1,1 @@
+function t(e,t){return Math.abs(e-t)<=1e-6}

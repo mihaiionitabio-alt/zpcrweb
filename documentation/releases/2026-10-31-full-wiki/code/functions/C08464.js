@@ -1,0 +1,1 @@
+p=>Math.pow(Math.min(...centres.map(c=>mlDist(p,c))),2)

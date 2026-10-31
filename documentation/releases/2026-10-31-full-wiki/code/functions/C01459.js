@@ -1,0 +1,1 @@
+function a(){return f.syncOrAsync(e,t,r)}

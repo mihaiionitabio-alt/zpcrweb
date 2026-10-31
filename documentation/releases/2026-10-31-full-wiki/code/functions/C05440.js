@@ -1,0 +1,1 @@
+e=>/calibrations\/[^/]+\.ini$/.test(e.name)

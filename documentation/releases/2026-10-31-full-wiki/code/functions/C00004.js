@@ -1,0 +1,1 @@
+function stop(){epoch++;queued=null;const old=active;active=null;kind='';if(old){old.onended=null;old.onerror=null;old.pause();old.removeAttribute('src');old.load();}}

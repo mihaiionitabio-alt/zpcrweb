@@ -1,0 +1,1 @@
+function G(e,t){var r=e._fullLayout,n=t.getBoundingClientRect(),a=n.left,i=n.top,l=a+n.width,s=i+n.height,c=o.apply3DTransform(r._invTransform)(a,i),u=o.apply3DTransform(r._invTransform)(l,s),f=c[0],d=c[1],h=u[0],p=u[1];return{x:f,y:d,width:h-f,height:p-d,top:Math.min(d,p),left:Math.min(f,h),right:Math.max(f,h),bottom:Math.max(d,p)}}

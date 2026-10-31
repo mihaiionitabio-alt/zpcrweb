@@ -1,0 +1,1 @@
+()=>{ensure();SOP.experiment_analysis.melting.peak_rules.push({target:'',tm_c:'',tolerance_c:'',peak_count:'',height_min:'',area_min:'',width_max:'',control_pattern:'',genotype:''});sopProfileEdited();renderRules();}

@@ -1,0 +1,1 @@
+function D(e){if(!e)return!1;var t=e.node();try{var r=new DOMPoint(g[0],g[1]);return t.isPointInFill(r)}catch(e){var n=t.ownerSVGElement.createSVGPoint();return n.x=g[0],n.y=g[1],t.isPointInFill(n)}}

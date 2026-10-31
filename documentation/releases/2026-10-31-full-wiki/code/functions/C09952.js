@@ -1,0 +1,1 @@
+function maraRoleLabel(p=SOP){return ({screening:'Screening',identification:'Identification',quantification:'Quantification'})[p.analyticalRole]||'Screening';}

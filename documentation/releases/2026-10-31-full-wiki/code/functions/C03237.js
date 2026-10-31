@@ -1,0 +1,1 @@
+function(){this.removeAttributeNS(e.space,e.local)}

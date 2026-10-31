@@ -1,0 +1,1 @@
+o=>({name:o.name,why:o.why})

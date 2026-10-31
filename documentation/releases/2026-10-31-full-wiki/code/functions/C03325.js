@@ -1,0 +1,1 @@
+function(e,t,r){if(arguments.length<3&&(r=t,t=V().changedTouches),t)for(var n,a=0,i=t.length;a<i;++a)if((n=t[a]).identifier===r)return Ae(e,n)}

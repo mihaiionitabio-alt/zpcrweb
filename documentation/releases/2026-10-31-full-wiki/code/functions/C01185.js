@@ -1,0 +1,1 @@
+function b(e,t,r){l.ensureSingle(e,"rect",f.gripRectClass,(function(n){n.call(k,t,e,r).style("pointer-events","all")})).attr({width:f.gripWidth,height:f.gripHeight,rx:f.gripRadius,ry:f.gripRadius}).call(i.stroke,r.bordercolor).call(i.fill,r.bgcolor).style("stroke-width",r.borderwidth+"px")}

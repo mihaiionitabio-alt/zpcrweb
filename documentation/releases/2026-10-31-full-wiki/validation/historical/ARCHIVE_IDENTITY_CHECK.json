@@ -1,0 +1,51 @@
+[
+  {
+    "file": "README.md",
+    "bytes": 2452,
+    "zenodoMD5": "md5:6988a95792f5520edf93792f7905c76e",
+    "matchesZenodo": true,
+    "sha256": "c269758a69974e45de4711ca92cad571f11f3f56c3b2e0697b68f0faf8a6d64e"
+  },
+  {
+    "file": "SHA256SUMS.txt",
+    "bytes": 689,
+    "zenodoMD5": "md5:67696e71bf42de199e72879dbff4b9fe",
+    "matchesZenodo": true,
+    "sha256": "7fdeacdb0111eb7fc2bb006854d7075002751ce4a22db4b893734d03c00dbb43"
+  },
+  {
+    "file": "MISSY_USER_GUIDE_2026-10-24.md",
+    "bytes": 11077,
+    "zenodoMD5": "md5:d425ec8425487ac7991311f1508ad3cb",
+    "matchesZenodo": true,
+    "sha256": "a4b77938ba941e60edd80599ff5d145d6cbd082c52000944e51541e363c6a6bc"
+  },
+  {
+    "file": "RELEASE_NOTES_2026-10-24.md",
+    "bytes": 3072,
+    "zenodoMD5": "md5:fa8c3e718f0a91c820f4d9160ec2de63",
+    "matchesZenodo": true,
+    "sha256": "b5f02a003b40ac6165a839605e8e003b14bf3c723326b8c25d193d878a0c22b1"
+  },
+  {
+    "file": "MISSY_VALIDATION_2026-10-24.zip",
+    "bytes": 1107789,
+    "zenodoMD5": "md5:b505f8618aeab4f508788f9a4826a910",
+    "matchesZenodo": true,
+    "sha256": "089d7a86504273ac7f82e317e6ae1b04972fe1a63324648e4f0f009bb67c5e6b"
+  },
+  {
+    "file": "MISSY_SOURCE_2026-10-24.zip",
+    "bytes": 7636961,
+    "zenodoMD5": "md5:43f9730ccc254e8d1b166994e8e8371e",
+    "matchesZenodo": true,
+    "sha256": "5983f0ca0d02bd9402fab57953237e2f332c754336a274ce9cad580f08d9e18f"
+  },
+  {
+    "file": "index.html",
+    "bytes": 11690690,
+    "zenodoMD5": "md5:e3c06d2c5d4778c764a6f6063676dac8",
+    "matchesZenodo": true,
+    "sha256": "72dfbb407f4ef9467a0a4d4b642529da633ebd47666350fa2e145a572ab24bd7"
+  }
+]

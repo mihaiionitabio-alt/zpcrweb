@@ -1,0 +1,1 @@
+function(A,e){this.content=lr(A,tr,e.content),this.quotes=lr(A,sr,e.quotes)}

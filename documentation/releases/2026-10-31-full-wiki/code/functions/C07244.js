@@ -1,0 +1,1 @@
+(a,r)=>a+(r.wells?r.wells.length:0)

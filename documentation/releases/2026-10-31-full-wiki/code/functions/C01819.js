@@ -1,0 +1,1 @@
+function(e){return"gl-canvas gl-canvas-"+e.key.replace("Layer","")}

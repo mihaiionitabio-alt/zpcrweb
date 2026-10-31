@@ -1,0 +1,1 @@
+(x,i)=>x&&x.chartId?i:-1

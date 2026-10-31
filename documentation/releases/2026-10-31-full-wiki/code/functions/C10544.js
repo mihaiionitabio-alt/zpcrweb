@@ -1,0 +1,1 @@
+()=>{selected=Number(select.value);render();}

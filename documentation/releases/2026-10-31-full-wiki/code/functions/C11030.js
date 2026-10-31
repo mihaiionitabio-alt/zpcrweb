@@ -1,0 +1,1 @@
+function qA(A){return 0===A.type}

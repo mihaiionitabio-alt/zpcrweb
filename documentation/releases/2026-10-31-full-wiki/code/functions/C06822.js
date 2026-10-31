@@ -1,0 +1,1 @@
+v=>({v,label:sopFmtTime(v*864e5).slice(0,10)})

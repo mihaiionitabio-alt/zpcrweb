@@ -1,0 +1,1 @@
+function(e,t,r,n){-1===["log","category","multicategory"].indexOf(e.type)&&n?void 0===e._minDtick?(e._minDtick=t,e._forceTick0=r):e._minDtick&&((e._minDtick/t+1e-6)%1<2e-6&&((r-e._forceTick0)/t%1+1.000001)%1<2e-6?(e._minDtick=t,e._forceTick0=r):((t/e._minDtick+1e-6)%1>2e-6||((r-e._forceTick0)/e._minDtick%1+1.000001)%1>2e-6)&&(e._minDtick=0)):e._minDtick=0}

@@ -1,0 +1,1 @@
+function(t,r){return Math.abs(t[1]-r[1])<e}

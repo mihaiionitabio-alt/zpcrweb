@@ -1,0 +1,1 @@
+(t,i)=>({v:i,label:t.slice(0,18)})

@@ -1,0 +1,1 @@
+function(e){return arguments.length?this.property("__data__",e):this.property("__data__")}

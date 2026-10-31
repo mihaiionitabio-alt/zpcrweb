@@ -1,0 +1,1 @@
+function o(o){e.push(o);var l=r.length,s=n;r.splice(a+1);for(var c=s+1;c<e.length;c++)(c===e.length-1||i.isSegmentBent(e,s,c+1,t))&&(r.push(e[c]),r.length<l-2&&(n=c,a=r.length-1),s=c)}

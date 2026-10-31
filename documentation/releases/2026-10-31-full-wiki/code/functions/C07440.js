@@ -1,0 +1,1 @@
+(s,r)=>s+r.wells.filter(w=>!w.curve).length

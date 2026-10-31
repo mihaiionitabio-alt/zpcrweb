@@ -1,0 +1,1 @@
+t=>t.kind==='reference'&&t.match&&sopMatcher(t.match)(refName)

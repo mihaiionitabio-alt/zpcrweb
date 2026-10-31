@@ -1,0 +1,1 @@
+x=>x.key===$("#lj-series").value

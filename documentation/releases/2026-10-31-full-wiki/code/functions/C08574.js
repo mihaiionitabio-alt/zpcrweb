@@ -1,0 +1,1 @@
+nm=>Object.assign({},meta.get(nm),{coverage:coverage.get(nm)})

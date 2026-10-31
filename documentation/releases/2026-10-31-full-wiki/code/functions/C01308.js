@@ -1,0 +1,1 @@
+function(e){return"middle"===e.yanchor||"auto"===e.yanchor&&e.y>1/3&&e.y<2/3}

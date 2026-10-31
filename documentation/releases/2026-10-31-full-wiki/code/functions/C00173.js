@@ -1,0 +1,1 @@
+function(e){for(var t=e.fullSceneLayout.annotations,r=0;r<t.length;r++)i(t[r],e);e.fullLayout._infolayer.selectAll(".annotation-"+e.id).remove()}

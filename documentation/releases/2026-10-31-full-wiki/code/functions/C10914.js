@@ -1,0 +1,1 @@
+(x)=>({...x,hints:x.hints||['Inspect the displayed evidence.','Compare it with the training profile.','Use '+(x.rule||'the declared native-status rule')+'.']})

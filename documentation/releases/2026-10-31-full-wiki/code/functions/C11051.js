@@ -1,0 +1,1 @@
+function(A,e,t,r){return(A<<24|e<<16|t<<8|Math.round(255*r)<<0)>>>0}

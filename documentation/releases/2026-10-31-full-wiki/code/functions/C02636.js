@@ -1,0 +1,1 @@
+function x(e,r){var n=t.componentsRegistry[e].schema;if(n&&n.transforms){var a=n.transforms[r];a&&d(t.transformsRegistry[r].attributes,a)}}

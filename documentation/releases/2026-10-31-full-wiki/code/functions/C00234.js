@@ -1,0 +1,1 @@
+function(e,t){var r=W-1;if(0===t||t===r){var n,a=h.bBox(this),i=h.getTranslate(this);if(t===r){var o=a.right+i.x;(n=K.right+$.x+le-L-2+z-o)>0&&(n=0)}else if(0===t){var l=a.left+i.x;(n=K.left+$.x+le+L+2-l)<0&&(n=0)}n&&(W<3?this.setAttribute("transform","translate("+n+",0) "+this.getAttribute("transform")):this.setAttribute("visibility","hidden"))}}

@@ -1,0 +1,1 @@
+function(e){return e.map(l).join("\n")}

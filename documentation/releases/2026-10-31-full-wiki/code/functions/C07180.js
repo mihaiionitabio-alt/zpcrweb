@@ -1,0 +1,1 @@
+([a,l])=>[a,`${l.filter(e=>e.severity==="error").length} error · ${l.filter(e=>e.severity==="review").length} review`]

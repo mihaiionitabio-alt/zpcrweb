@@ -1,0 +1,1 @@
+function(e){return arguments.length?(n=e,a=0,t={t:"range",a:arguments},o):n}

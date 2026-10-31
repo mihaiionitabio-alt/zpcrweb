@@ -1,0 +1,1 @@
+e=>{drag={x:e.offsetX,y:e.offsetY,v:Object.assign({},view)};canvas.setPointerCapture(e.pointerId);}

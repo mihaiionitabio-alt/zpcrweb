@@ -1,0 +1,1 @@
+()=>{SEL_STATE.figureScope=rs.value==="all"?"all":"selected";if(rs.value!=="all")SEL_STATE.run=Number(rs.value)||0;astRender();}

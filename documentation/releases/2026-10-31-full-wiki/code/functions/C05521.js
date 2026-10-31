@@ -1,0 +1,1 @@
+t=>{out+=t.join(TAB)+NL;}

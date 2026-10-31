@@ -1,0 +1,1 @@
+function(e,t){var r=t.currentTarget;r.setAttribute("data-attr","zoom"),r.setAttribute("data-val","reset"),f(e,t),r.setAttribute("data-attr","resetLastSave"),h(e,t),_(e,"geo"),_(e,"mapbox"),_(e,"map")}

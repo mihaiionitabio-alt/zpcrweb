@@ -1,0 +1,1 @@
+function k(e,t){return e<t?1:-1}

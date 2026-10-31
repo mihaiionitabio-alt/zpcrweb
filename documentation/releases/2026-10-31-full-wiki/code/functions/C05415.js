@@ -1,0 +1,1 @@
+h=>parseInt(h,16).toString(16).toUpperCase()

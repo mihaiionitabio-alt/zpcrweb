@@ -1,0 +1,1 @@
+function(A,e){this.text=A,this.bounds=e}

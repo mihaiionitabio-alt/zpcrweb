@@ -1,0 +1,1 @@
+function(e,t){e=i.lab(e),t=i.lab(t);var r=e.l,n=e.a,a=e.b,o=t.l-r,l=t.a-n,s=t.b-a;return function(e){return tt(r+o*e,n+l*e,a+s*e)+""}}

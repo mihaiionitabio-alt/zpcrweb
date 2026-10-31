@@ -1,0 +1,1 @@
+h=>/^[0-9A-Fa-f]{16}$/.test(h)?hexBEToDouble(h):Number(h)

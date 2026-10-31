@@ -1,0 +1,1 @@
+function(value){const s=String(value??'');let m;if((m=s.match(/^Decoded plate layout: (\d+) wells; (\d+) rows x (\d+) columns\.$/)))return `解码的板规格：${m[1]} 孔，${m[2]} 行 × ${m[3]} 列。`;if((m=s.match(/^Plate row ([A-P])$/)))return '板行 '+m[1];return next(value);}

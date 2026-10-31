@@ -1,0 +1,7 @@
+Current application SHA-256: e2e4b58082386e77e1c125e962e426439fdb0bddbbc5378e34b15e5c956b67fc
+
+Recorded release checks: 105 engine, 50 panel, 55 timing, 14 name-pattern checks passed; sample-selection regression passed. The private integration fixtures are not distributed.
+
+New synthetic import smoke check: 24 IXO + 24 EDS + 48 RDML files loaded with nonempty wells and zero browser errors. This checks import only. It does not establish full scenario coverage or statistical/clinical validity.
+
+Generator flattening check: downloaded-style Python files in one folder generated a small IXO/EDS/RDML set successfully. Full scenario verifier has not been rerun against every current feature.

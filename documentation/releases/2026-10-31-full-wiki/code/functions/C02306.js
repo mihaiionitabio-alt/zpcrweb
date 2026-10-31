@@ -1,0 +1,1 @@
+function c(e,t,r){if(!e.fixedrange){var n=a.simpleMap(e.range,e.r2l),i=n[0]+(n[1]-n[0])*t;e.range=n.map((function(t){return e.l2r(i+(t-i)*r)}))}}

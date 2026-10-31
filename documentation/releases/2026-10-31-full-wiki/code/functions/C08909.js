@@ -1,0 +1,1 @@
+r=>r.cycle>=lo&&r.cycle<=hi

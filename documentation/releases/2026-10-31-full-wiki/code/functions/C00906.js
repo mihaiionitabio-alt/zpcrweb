@@ -1,0 +1,1 @@
+function _(e,t,r,n){t._context.staticPlot||o.ensureSingle(e,"rect",v.slideBoxClassName,(function(e){e.attr({y:0,cursor:v.slideBoxCursor,"shape-rendering":"crispEdges"})})).attr({height:n._height,fill:v.slideBoxFill})}

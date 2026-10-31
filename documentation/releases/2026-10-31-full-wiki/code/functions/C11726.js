@@ -1,0 +1,1 @@
+e=>{const d=new DOMParser().parseFromString(registeredXML(e.bytes),'application/xml');return !d.querySelector('parsererror')&&d.documentElement.localName==='rdml';}

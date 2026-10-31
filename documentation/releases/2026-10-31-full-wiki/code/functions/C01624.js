@@ -1,0 +1,1 @@
+function(e){if(void 0!==e&&0!==e.length)return(t.aggNums(Math.max,null,e)+t.aggNums(Math.min,null,e))/2}

@@ -1,0 +1,1 @@
+function _(e){return e&&g.componentsRegistry.calendars&&"string"==typeof e&&"gregorian"!==e}

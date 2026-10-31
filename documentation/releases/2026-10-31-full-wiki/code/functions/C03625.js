@@ -1,0 +1,1 @@
+function(e,t){return a(g[e],g[t])}

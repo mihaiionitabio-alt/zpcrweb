@@ -1,0 +1,1 @@
+(id,i)=>'<option value="'+id+'">'+['Idle / 待机','Workspace / 工作区','Graphs / 图表','Control panel / 控制面板','Working / 处理','Scanning / 扫描'][i]+'</option>'

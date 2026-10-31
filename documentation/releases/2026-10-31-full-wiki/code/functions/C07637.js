@@ -1,0 +1,1 @@
+r=>(r.wells||[]).map(w=>w.sample).filter(Boolean)

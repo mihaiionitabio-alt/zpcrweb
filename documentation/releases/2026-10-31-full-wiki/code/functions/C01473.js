@@ -1,0 +1,1 @@
+function(e,t){for(var r=0;r<t.length;r++)if(-1!==e.indexOf(t[r]))return!0;return!1}

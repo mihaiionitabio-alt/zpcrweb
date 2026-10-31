@@ -1,0 +1,1 @@
+function(e){if(!(e.length<2)){var t,r,a,i,o,l;for(t=0;t<e.length&&void 0===(i=(r=e[t][0].trace).marker?r.marker.cornerradius:void 0);t++);if(void 0!==i)for(o=n(i)?+i:+i.slice(0,-1),l=n(i)?"px":"%",t=0;t<e.length;t++)(a=e[t][0].t).cornerradiusvalue=o,a.cornerradiusform=l}}

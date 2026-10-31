@@ -1,0 +1,1 @@
+function(e){return arguments.length?this.each("function"==typeof e?function(){var t=e.apply(this,arguments);this.innerHTML=null==t?"":t}:null==e?function(){this.innerHTML=""}:function(){this.innerHTML=e}):this.node().innerHTML}

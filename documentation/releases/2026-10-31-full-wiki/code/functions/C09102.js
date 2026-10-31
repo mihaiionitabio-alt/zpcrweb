@@ -1,0 +1,1 @@
+(t,i)=>t.temps.BLOCKTEMP?.c-a[i].temps.BLOCKTEMP?.c

@@ -1,0 +1,1 @@
+(i){if(captureTasks.size||!child||i<0||i>=child.list.length)return false;current=i;draw();return true;}

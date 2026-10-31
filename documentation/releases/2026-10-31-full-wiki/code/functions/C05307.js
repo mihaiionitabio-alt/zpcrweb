@@ -1,0 +1,1 @@
+(el,k)=>pv(el,k)||propText(dom,k)

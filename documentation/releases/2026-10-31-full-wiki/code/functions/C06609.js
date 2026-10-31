@@ -1,0 +1,1 @@
+k=>[...byKey(res,x=>x[k]).values()].filter(g=>g.length>=2).map(g=>Math.abs(mean(g.map(x=>x.e))))

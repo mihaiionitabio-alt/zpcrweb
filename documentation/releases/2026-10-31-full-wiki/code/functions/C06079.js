@@ -1,0 +1,1 @@
+o=>ixTraces(o).length

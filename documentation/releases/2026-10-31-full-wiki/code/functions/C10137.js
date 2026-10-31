@@ -1,0 +1,3 @@
+()=>{
+  step(t('Sample identity and subsample linkage','样品及平行子样关联'),'Keep the original sample identity, independent subsample identity and technical replicate mapping. Use the configured sample-name captures; do not infer independent subsamples from the number of wells.','保留原始样品、独立平行子样及PCR扩增重复的对应关系。使用配置的样品名称捕获规则；不得按孔数推断独立子样数量。','Each included reaction belongs to a declared sample, subsample and assay.','每个纳入的反应均对应已声明的样品、子样和检测体系。');
+ }

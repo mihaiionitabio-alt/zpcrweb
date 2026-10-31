@@ -1,0 +1,1 @@
+r=>`${r.instrument} | ${r.target} | ${r.batch} | ${r.protocol}`

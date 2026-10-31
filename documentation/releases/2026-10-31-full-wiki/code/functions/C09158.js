@@ -1,0 +1,1 @@
+item=>{const i=MG.queue.findIndex(x=>x.graphId==='zc_compare_'+item.id.slice(7));if(i>=0){MG.at=i;MG.zoom=1;MG.panX=0;MG.panY=0;mgRender();}}

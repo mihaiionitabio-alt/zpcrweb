@@ -1,0 +1,1 @@
+function fe(A,e){return ue(A,JA.create(e).parseComponentValue())}

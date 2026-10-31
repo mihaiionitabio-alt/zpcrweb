@@ -1,0 +1,1 @@
+function(e){var r=e._fullLayout;s(e);for(var n=r._basePlotModules,o=0;o<n.length;o++)n[o].plot(e);return t.redrawReglTraces(e),i.style(e),a.getComponentMethod("selections","draw")(e),a.getComponentMethod("shapes","draw")(e),a.getComponentMethod("annotations","draw")(e),a.getComponentMethod("images","draw")(e),r._replotting=!1,i.previousPromises(e)}

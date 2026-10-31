@@ -1,0 +1,1 @@
+function h(e,t,r){var n=0;if(e.rangebreaks)for(var a=e.locateBreaks(t,r),i=0;i<a.length;i++){var o=a[i];n+=o.max-o.min}return n}

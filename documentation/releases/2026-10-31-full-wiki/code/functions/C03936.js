@@ -1,0 +1,1 @@
+function(e){if(e.length<4)return ka(e);for(var t,r=[],n=-1,a=e.length,i=[0],o=[0];++n<3;)t=e[n],i.push(t[0]),o.push(t[1]);for(r.push(Pa(Ea,i)+","+Pa(Ea,o)),--n;++n<a;)t=e[n],i.shift(),i.push(t[0]),o.shift(),o.push(t[1]),Ra(r,i,o);return r.join("")}

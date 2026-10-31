@@ -1,0 +1,1 @@
+c=>{add(`Calibration performed — ${c.name}`,c.ts,c.file,"calibration");add(`Calibration expires — ${c.name}`,c.exp,c.file,"calibration");}

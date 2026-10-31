@@ -1,0 +1,1 @@
+g=>g[0]===rows&&g[1]===cols&&g[2]===channels

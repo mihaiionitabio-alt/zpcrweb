@@ -1,0 +1,1 @@
+function(e){e=Math.floor(e)+.5-this.jdEpoch;var t=Math.floor(e/360);e%=360,e+=e<0?360:0;var r=Math.floor(e/20),n=e%20;return this.newDate(t,r,n)}

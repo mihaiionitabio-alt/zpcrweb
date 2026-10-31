@@ -1,0 +1,1 @@
+row=>({...row,log_insight:'Unavailable: log event semantics not independently verified',calibration_insight:'Unavailable: calibration binary interpretation not independently verified'})

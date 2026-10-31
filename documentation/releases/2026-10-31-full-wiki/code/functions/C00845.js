@@ -1,0 +1,1 @@
+function(){var e=this.createGroup(),t=document.createElement("a");return t.href="https://plotly.com/",t.target="_blank",t.setAttribute("data-title",i._(this.graphInfo,"Produced with Plotly.js")+" (v"+l+")"),t.className="modebar-btn plotlyjsicon modebar-btn--logo",t.appendChild(this.createIcon(o.newplotlylogo)),e.appendChild(t),e}

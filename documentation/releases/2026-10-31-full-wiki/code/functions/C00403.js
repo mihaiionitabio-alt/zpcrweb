@@ -1,0 +1,1 @@
+function(e,t,r){if(v(t))return c;var n=s(e,2),a="M"+n+",0A"+n+","+n+" 0 1,1 0,-"+n+"A"+n+","+n+" 0 0,1 "+n+",0Z";return r?g(t,r,a):a}

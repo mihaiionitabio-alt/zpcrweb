@@ -1,0 +1,1 @@
+v=>Number.isFinite(v)?(!normalize&&opts.log&&v>0?Math.log10(v):v):null

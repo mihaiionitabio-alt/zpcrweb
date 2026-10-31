@@ -1,0 +1,1 @@
+e=>{muted=!muted;if(audio)audio.muted=muted;e.target.textContent=muted?'Dialogue off / 对话关':'Dialogue on / 对话开';}

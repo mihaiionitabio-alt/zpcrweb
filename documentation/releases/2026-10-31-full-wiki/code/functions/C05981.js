@@ -1,0 +1,1 @@
+([k,v])=>`${v} ${(SOP.outcomes[k]||{}).label||k}`

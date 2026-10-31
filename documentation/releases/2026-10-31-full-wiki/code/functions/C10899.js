@@ -1,0 +1,1 @@
+(){return performance.timeOrigin+started}

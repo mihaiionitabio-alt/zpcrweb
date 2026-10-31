@@ -1,0 +1,1 @@
+function astOpen(){AST.open=true;document.getElementById("astm").classList.add("on");astRender();}

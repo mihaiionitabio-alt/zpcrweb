@@ -1,0 +1,1 @@
+function(t){return t*t*((e+1)*t-e)}

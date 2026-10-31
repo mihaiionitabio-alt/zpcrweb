@@ -1,0 +1,1 @@
+function(t,r,n){var a=r[0],i=r[1],o=n[0],l=n[1],s=t[0];return(o-a)*(t[1]-i)-(l-i)*(s-a)>=-e}

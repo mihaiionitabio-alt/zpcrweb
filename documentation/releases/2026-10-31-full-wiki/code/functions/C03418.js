@@ -1,0 +1,1 @@
+function(){return ft(this.r,this.g,this.b)}

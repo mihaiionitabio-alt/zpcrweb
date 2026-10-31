@@ -1,0 +1,1 @@
+function(e){e._transitionData||(e._transitionData={}),e._transitionData._frames||(e._transitionData._frames=[]),e._transitionData._frameHash||(e._transitionData._frameHash={}),e._transitionData._counter||(e._transitionData._counter=0),e._transitionData._interruptCallbacks||(e._transitionData._interruptCallbacks=[])}

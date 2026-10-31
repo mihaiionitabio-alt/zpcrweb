@@ -1,0 +1,1 @@
+()=>{tasks.delete(id);if(overlay===ownedOverlay){ownedFrame.style.pointerEvents='';ownedFrame.removeAttribute('aria-busy');const picker=sidebar.querySelector('#game-lesson');if(picker)picker.disabled=false;status(['Correct. You can continue.','正确，可以继续。']);if(summary().passed)complete();}}

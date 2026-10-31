@@ -1,0 +1,1 @@
+function(){return ['# Comparative channels: SN / protocol / step stay separate','zpcr endpoint '+ZPCR_ENDPOINT_N,'lab '+(sopLabName()||'Laboratory name'),'analyst '+(sopAnalystName()||'Analyst name'),'title MISSY ZPCR comparative channels','clear','run all',...zcModeItems().map(x=>'select '+x.id),'select data:zpcr_sources','# Preview: zpcr compare','selection'].join('\n');}

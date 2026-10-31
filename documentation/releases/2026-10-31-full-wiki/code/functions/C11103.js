@@ -1,0 +1,1 @@
+function(A,e){return A|Ct(e.value)}

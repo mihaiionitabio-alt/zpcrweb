@@ -1,0 +1,1 @@
+function(e,t,r){var n=t.y,a=t.yanchor,i=n>.5?"t":"b",o=e._fullLayout.margin[i],l=0;return"paper"===t.yref?l=r+t.pad.t+t.pad.b:"container"===t.yref&&(l=function(e,t,r,n,a){var i=0;return"middle"===r&&(i+=a/2),"t"===e?("top"===r&&(i+=a),i+=n-t*n):("bottom"===r&&(i+=a),i+=t*n),i}(i,n,a,e._fullLayout.height,r)+t.pad.t+t.pad.b),l>o?l:0}

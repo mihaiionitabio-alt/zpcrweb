@@ -1,0 +1,1 @@
+function lt(e){return ot(e)+""}

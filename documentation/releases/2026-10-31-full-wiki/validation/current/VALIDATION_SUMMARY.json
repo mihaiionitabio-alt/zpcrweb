@@ -1,0 +1,247 @@
+{
+  "identity": {
+    "build": "2026.10.31.demolabels1",
+    "buildSHA256": "d2ed246783339c8153db567872cc5baafbcde9e7be477db5981ea22521b68b0c",
+    "archivedBuildSHA256": "e2e4b58082386e77e1c125e962e426439fdb0bddbbc5378e34b15e5c956b67fc",
+    "parser": "Node bundled Acorn 8.18.0",
+    "manifestModules": 135,
+    "totalFunctions": 11732,
+    "firstPartyFunctions": 6180,
+    "dependencyFunctions": 5552,
+    "baselineFunctions": 3423,
+    "counts": {
+      "new_or_changed_anonymous": 1724,
+      "new_named": 756,
+      "ambiguous_name_match": 187,
+      "dependency": 5552,
+      "changed_same_unique_name": 73,
+      "current_matching_baseline_ast": 3440
+    },
+    "instrumentation": "Function entry only in a separate review artifact; no production file modified",
+    "comparison": "AST-equivalent bodies match independent of whitespace. Unique-name matches are candidates, not proof of semantic identity. Anonymous additions and changes are kept separate.",
+    "baselineASTMatchNote": "Counts current functions whose canonical AST matches at least one baseline AST. Multiple current functions may share the same baseline body; this is not a one-to-one unchanged-function count."
+  },
+  "latestSuites": [
+    {
+      "id": "voice-demo",
+      "file": "tests/voice_demo_preflight.cjs",
+      "code": 0,
+      "signal": null,
+      "timeout": false,
+      "seconds": 44.783,
+      "passed": true
+    },
+    {
+      "id": "formats",
+      "file": "tests/learning/formats_calm.cjs",
+      "code": 0,
+      "signal": null,
+      "timeout": false,
+      "seconds": 71.466,
+      "passed": true
+    },
+    {
+      "id": "guided-tour",
+      "file": "tests/guided_demo_30.cjs",
+      "code": 0,
+      "signal": null,
+      "timeout": false,
+      "seconds": 235.051,
+      "passed": true
+    },
+    {
+      "id": "voice-routing",
+      "file": "tests/voice_122_pairs.cjs",
+      "code": 0,
+      "signal": null,
+      "timeout": false,
+      "seconds": 5.938,
+      "passed": true
+    },
+    {
+      "id": "voice-state",
+      "file": "tests/voice_stable.cjs",
+      "code": 0,
+      "signal": null,
+      "timeout": false,
+      "seconds": 10.316,
+      "passed": true
+    },
+    {
+      "id": "ack-queue",
+      "file": "tests/response_patterns.cjs",
+      "code": 0,
+      "signal": null,
+      "timeout": false,
+      "seconds": 5.359,
+      "passed": true
+    },
+    {
+      "id": "clarification",
+      "file": "tests/yes_no_responses.cjs",
+      "code": 0,
+      "signal": null,
+      "timeout": false,
+      "seconds": 6.274,
+      "passed": true
+    },
+    {
+      "id": "voice-bargein",
+      "file": "tests/voice_barge_in.cjs",
+      "code": 0,
+      "signal": null,
+      "timeout": false,
+      "seconds": 7.278,
+      "passed": true
+    },
+    {
+      "id": "command-finish",
+      "file": "tests/command_finish.cjs",
+      "code": 0,
+      "signal": null,
+      "timeout": false,
+      "seconds": 11.069,
+      "passed": true
+    },
+    {
+      "id": "chart-focus",
+      "file": "tests/chart_focus.cjs",
+      "code": 0,
+      "signal": null,
+      "timeout": false,
+      "seconds": 30.413,
+      "passed": true
+    },
+    {
+      "id": "evidence-keyboard",
+      "file": "tests/evidence_keyboard.cjs",
+      "code": 0,
+      "signal": null,
+      "timeout": false,
+      "seconds": 83.467,
+      "passed": true
+    },
+    {
+      "id": "readonly-evidence",
+      "file": "tests/evidence_readonly.cjs",
+      "code": 0,
+      "signal": null,
+      "timeout": false,
+      "seconds": 0.223,
+      "passed": true
+    },
+    {
+      "id": "scope-snapshot",
+      "file": "tests/scope_snapshot_readonly.cjs",
+      "code": 0,
+      "signal": null,
+      "timeout": false,
+      "seconds": 0.174,
+      "passed": true
+    },
+    {
+      "id": "source-matching",
+      "file": "tests/source_matches_readonly.cjs",
+      "code": 0,
+      "signal": null,
+      "timeout": false,
+      "seconds": 0.197,
+      "passed": true
+    },
+    {
+      "id": "reader-inventory",
+      "file": "tests/reader_inventory_readonly.cjs",
+      "code": 0,
+      "signal": null,
+      "timeout": false,
+      "seconds": 0.19,
+      "passed": true
+    },
+    {
+      "id": "calibration",
+      "file": "tests/calibration_metadata_readonly.cjs",
+      "code": 0,
+      "signal": null,
+      "timeout": false,
+      "seconds": 0.184,
+      "passed": true
+    },
+    {
+      "id": "precision",
+      "file": "tests/precision_disclosure.cjs",
+      "code": 0,
+      "signal": null,
+      "timeout": false,
+      "seconds": 11.941,
+      "passed": true
+    },
+    {
+      "id": "zip",
+      "file": "tests/zip_regression.cjs",
+      "code": 0,
+      "signal": null,
+      "timeout": false,
+      "seconds": 4.881,
+      "passed": true
+    },
+    {
+      "id": "model-contracts",
+      "file": "tests/hooks_and_models.cjs",
+      "code": 0,
+      "signal": null,
+      "timeout": false,
+      "seconds": 0.216,
+      "passed": true
+    },
+    {
+      "id": "mara-math",
+      "file": "tests/mara_math.cjs",
+      "code": 0,
+      "signal": null,
+      "timeout": false,
+      "seconds": 0.272,
+      "passed": true
+    },
+    {
+      "id": "mara-definitions",
+      "file": "tests/mara_definitions.cjs",
+      "code": 0,
+      "signal": null,
+      "timeout": false,
+      "seconds": 32.591,
+      "passed": true
+    },
+    {
+      "id": "game-mechanics",
+      "file": "tests/learning/mechanics.cjs",
+      "code": 0,
+      "signal": null,
+      "timeout": false,
+      "seconds": 0.221,
+      "passed": true
+    },
+    {
+      "id": "training",
+      "file": "tests/learning/training_report.cjs",
+      "code": 0,
+      "signal": null,
+      "timeout": false,
+      "seconds": 571.946,
+      "passed": true
+    },
+    {
+      "id": "quantstudio",
+      "file": "tests/quantstudio_reader_exports.cjs",
+      "code": 0,
+      "signal": null,
+      "timeout": false,
+      "seconds": 222.714,
+      "passed": true
+    }
+  ],
+  "firstPartyObserved": 3688,
+  "firstPartyTotal": 6180,
+  "scope": "Passing suites establish their asserted contracts on supplied fixtures, not scientific validation. Entry counts are not correctness proofs.",
+  "latestRun": "clean_r2",
+  "coverageRun": "Historical R1 instrumented entry counts; R2 clean assertions are recorded separately, without manufactured hit counts."
+}

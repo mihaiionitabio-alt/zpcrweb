@@ -1,0 +1,1 @@
+c=>c.hasAttribute('cx')&&Number(c.getAttribute('r'))>=2

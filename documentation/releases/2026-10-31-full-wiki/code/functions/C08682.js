@@ -1,0 +1,1 @@
+r => JSON.stringify(k(r))

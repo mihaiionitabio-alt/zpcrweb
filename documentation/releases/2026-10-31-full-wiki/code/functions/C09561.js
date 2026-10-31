@@ -1,0 +1,1 @@
+r=>pcrdCell(r,channel,Math.floor(w.position/run.cols),w.position%run.cols)

@@ -1,0 +1,1 @@
+function(t){this.style.setProperty(e,n(t),r)}

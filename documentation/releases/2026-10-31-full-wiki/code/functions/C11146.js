@@ -1,0 +1,1 @@
+function(A,e){if(0===e.length)return[];var t=e[0];return 20===t.type&&"none"===t.value?[]:e}

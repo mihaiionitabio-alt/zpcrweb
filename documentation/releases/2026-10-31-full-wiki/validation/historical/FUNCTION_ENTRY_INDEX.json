@@ -1,0 +1,4937 @@
+[
+  {
+    "symbol": "selectedWells",
+    "record": "HTML lines 8927\u20138931 (5) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 2,
+    "sequencePage": 170
+  },
+  {
+    "symbol": "PDF_PAGE",
+    "record": "HTML lines 10939\u201310939 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 3,
+    "sequencePage": 171
+  },
+  {
+    "symbol": "PDF_WINANSI",
+    "record": "HTML lines 10942\u201310945 (4) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 3,
+    "sequencePage": 171
+  },
+  {
+    "symbol": "PDF_SPELL",
+    "record": "HTML lines 10946\u201310949 (4) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 4,
+    "sequencePage": 172
+  },
+  {
+    "symbol": "pdfStr",
+    "record": "HTML lines 10950\u201310965 (16) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 4,
+    "sequencePage": 172
+  },
+  {
+    "symbol": "pdfWidth",
+    "record": "HTML lines 10966\u201310983 (18) \u2219 arity 3 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 5,
+    "sequencePage": 173
+  },
+  {
+    "symbol": "pdfFit",
+    "record": "HTML lines 10984\u201310989 (6) \u2219 arity 4 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 6,
+    "sequencePage": 174
+  },
+  {
+    "symbol": "pdfWrap",
+    "record": "HTML lines 10990\u201310999 (10) \u2219 arity 4 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 7,
+    "sequencePage": 175
+  },
+  {
+    "symbol": "pdfDoc",
+    "record": "HTML lines 11000\u201311069 (70) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 8,
+    "sequencePage": 176
+  },
+  {
+    "symbol": "svgToJpeg",
+    "record": "HTML lines 11072\u201311088 (17) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 10,
+    "sequencePage": 178
+  },
+  {
+    "symbol": "SEL_STATE",
+    "record": "HTML lines 11094\u201311094 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 11,
+    "sequencePage": 179
+  },
+  {
+    "symbol": "selRunIndex",
+    "record": "HTML lines 11095\u201311098 (4) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 11,
+    "sequencePage": 179
+  },
+  {
+    "symbol": "selGraphContext",
+    "record": "HTML lines 11099\u201311103 (5) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 12,
+    "sequencePage": 180
+  },
+  {
+    "symbol": "selImageItems",
+    "record": "HTML lines 11104\u201311111 (8) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 13,
+    "sequencePage": 181
+  },
+  {
+    "symbol": "selDataItems",
+    "record": "HTML lines 11112\u201311150 (39) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 14,
+    "sequencePage": 182
+  },
+  {
+    "symbol": "selCatalogue",
+    "record": "HTML lines 11151\u201311151 (1) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 16,
+    "sequencePage": 184
+  },
+  {
+    "symbol": "selItem",
+    "record": "HTML lines 11152\u201311152 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 17,
+    "sequencePage": 185
+  },
+  {
+    "symbol": "selMatch",
+    "record": "HTML lines 11153\u201311161 (9) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 18,
+    "sequencePage": 186
+  },
+  {
+    "symbol": "selSelected",
+    "record": "HTML lines 11162\u201311165 (4) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 18,
+    "sequencePage": 186
+  },
+  {
+    "symbol": "selMatchAll",
+    "record": "HTML lines 11167\u201311171 (5) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 19,
+    "sequencePage": 187
+  },
+  {
+    "symbol": "selAdd",
+    "record": "HTML lines 11172\u201311172 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 20,
+    "sequencePage": 188
+  },
+  {
+    "symbol": "selRemove",
+    "record": "HTML lines 11173\u201311173 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 20,
+    "sequencePage": 188
+  },
+  {
+    "symbol": "selClear",
+    "record": "HTML lines 11174\u201311174 (1) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 21,
+    "sequencePage": 189
+  },
+  {
+    "symbol": "selCsvTemplate",
+    "record": "HTML lines 11188\u201311193 (6) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 22,
+    "sequencePage": 190
+  },
+  {
+    "symbol": "selApplyCsv",
+    "record": "HTML lines 11194\u201311216 (23) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 22,
+    "sequencePage": 190
+  },
+  {
+    "symbol": "selZipEntries",
+    "record": "HTML lines 11219\u201311236 (18) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 23,
+    "sequencePage": 191
+  },
+  {
+    "symbol": "selReadme",
+    "record": "HTML lines 11237\u201311257 (21) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 25,
+    "sequencePage": 193
+  },
+  {
+    "symbol": "selWithExportNames",
+    "record": "HTML lines 11261\u201311265 (5) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 26,
+    "sequencePage": 194
+  },
+  {
+    "symbol": "selDownloadZip",
+    "record": "HTML lines 11266\u201311270 (5) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 27,
+    "sequencePage": 195
+  },
+  {
+    "symbol": "SEL_TABLE_ROWS",
+    "record": "HTML lines 11277\u201311277 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 28,
+    "sequencePage": 196
+  },
+  {
+    "symbol": "selReportTitle",
+    "record": "HTML lines 11278\u201311280 (3) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 28,
+    "sequencePage": 196
+  },
+  {
+    "symbol": "selTableBlock",
+    "record": "HTML lines 11281\u201311326 (46) \u2219 arity 3 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 29,
+    "sequencePage": 197
+  },
+  {
+    "symbol": "selBuildReport",
+    "record": "HTML lines 11327\u201311383 (57) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 30,
+    "sequencePage": 198
+  },
+  {
+    "symbol": "selDownloadReport",
+    "record": "HTML lines 11384\u201311388 (5) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 32,
+    "sequencePage": 200
+  },
+  {
+    "symbol": "CMD",
+    "record": "HTML lines 11395\u201311395 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 33,
+    "sequencePage": 201
+  },
+  {
+    "symbol": "CMD_HELP",
+    "record": "HTML lines 11396\u201311416 (21) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 33,
+    "sequencePage": 201
+  },
+  {
+    "symbol": "cmdEl",
+    "record": "HTML lines 11417\u201311417 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 34,
+    "sequencePage": 202
+  },
+  {
+    "symbol": "cmdPrint",
+    "record": "HTML lines 11418\u201311424 (7) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 35,
+    "sequencePage": 203
+  },
+  {
+    "symbol": "cmdTable",
+    "record": "HTML lines 11425\u201311429 (5) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 36,
+    "sequencePage": 204
+  },
+  {
+    "symbol": "cmdStatusLine",
+    "record": "HTML lines 11430\u201311432 (3) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 37,
+    "sequencePage": 205
+  },
+  {
+    "symbol": "cmdExec",
+    "record": "HTML lines 11433\u201311487 (55) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 37,
+    "sequencePage": 205
+  },
+  {
+    "symbol": "cmdRunLine",
+    "record": "HTML lines 11488\u201311495 (8) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 39,
+    "sequencePage": 207
+  },
+  {
+    "symbol": "cmdRunScript",
+    "record": "HTML lines 11496\u201311504 (9) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 40,
+    "sequencePage": 208
+  },
+  {
+    "symbol": "cmdScriptToggle",
+    "record": "HTML lines 11505\u201311509 (5) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 41,
+    "sequencePage": 209
+  },
+  {
+    "symbol": "cmdOpen",
+    "record": "HTML lines 11510\u201311519 (10) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 41,
+    "sequencePage": 209
+  },
+  {
+    "symbol": "cmdClose",
+    "record": "HTML lines 11520\u201311520 (1) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 42,
+    "sequencePage": 210
+  },
+  {
+    "symbol": "cmdToggle",
+    "record": "HTML lines 11521\u201311521 (1) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 42,
+    "sequencePage": 210
+  },
+  {
+    "symbol": "cmdInit",
+    "record": "HTML lines 11522\u201311544 (23) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 43,
+    "sequencePage": 211
+  },
+  {
+    "symbol": "AST",
+    "record": "HTML lines 11551\u201311551 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 44,
+    "sequencePage": 212
+  },
+  {
+    "symbol": "astEl",
+    "record": "HTML lines 11552\u201311552 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 45,
+    "sequencePage": 213
+  },
+  {
+    "symbol": "astRender",
+    "record": "HTML lines 11553\u201311585 (33) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 45,
+    "sequencePage": 213
+  },
+  {
+    "symbol": "astCount",
+    "record": "HTML lines 11586\u201311590 (5) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 47,
+    "sequencePage": 215
+  },
+  {
+    "symbol": "astOutput",
+    "record": "HTML lines 11591\u201311594 (4) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 48,
+    "sequencePage": 216
+  },
+  {
+    "symbol": "astBuild",
+    "record": "HTML lines 11595\u201311605 (11) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 48,
+    "sequencePage": 216
+  },
+  {
+    "symbol": "astOpen",
+    "record": "HTML lines 11606\u201311606 (1) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 49,
+    "sequencePage": 217
+  },
+  {
+    "symbol": "astClose",
+    "record": "HTML lines 11607\u201311607 (1) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 50,
+    "sequencePage": 218
+  },
+  {
+    "symbol": "astToggle",
+    "record": "HTML lines 11608\u201311608 (1) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 50,
+    "sequencePage": 218
+  },
+  {
+    "symbol": "astInit",
+    "record": "HTML lines 11609\u201311633 (25) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 51,
+    "sequencePage": 219
+  },
+  {
+    "symbol": "modesInit",
+    "record": "HTML lines 11634\u201311638 (5) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 52,
+    "sequencePage": 220
+  },
+  {
+    "symbol": "rdmlSampleType",
+    "record": "HTML lines 8262\u20138267 (6) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 53,
+    "sequencePage": 221
+  },
+  {
+    "symbol": "rdmlId",
+    "record": "HTML lines 8268\u20138268 (1) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 54,
+    "sequencePage": 222
+  },
+  {
+    "symbol": "rdmlEntries",
+    "record": "HTML lines 10641\u201310644 (4) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 54,
+    "sequencePage": 222
+  },
+  {
+    "symbol": "rdmlIsContainer",
+    "record": "HTML lines 10645\u201310647 (3) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 55,
+    "sequencePage": 223
+  },
+  {
+    "symbol": "rdmlKids",
+    "record": "HTML lines 10652\u201310656 (5) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 56,
+    "sequencePage": 224
+  },
+  {
+    "symbol": "rdmlKid",
+    "record": "HTML lines 10657\u201310657 (1) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 56,
+    "sequencePage": 224
+  },
+  {
+    "symbol": "rdmlText",
+    "record": "HTML lines 10658\u201310658 (1) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 57,
+    "sequencePage": 225
+  },
+  {
+    "symbol": "rdmlNum",
+    "record": "HTML lines 10659\u201310662 (4) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 58,
+    "sequencePage": 226
+  },
+  {
+    "symbol": "rdmlAttrId",
+    "record": "HTML lines 10663\u201310663 (1) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 58,
+    "sequencePage": 226
+  },
+  {
+    "symbol": "RDML_SAMPLE_ROLE",
+    "record": "HTML lines 10666\u201310666 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 59,
+    "sequencePage": 227
+  },
+  {
+    "symbol": "rdmlParse",
+    "record": "HTML lines 10667\u201310828 (162) \u2219 arity 3 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 59,
+    "sequencePage": 227
+  },
+  {
+    "symbol": "RDML_REANALYSIS_TOOLS",
+    "record": "HTML lines 10846\u201310846 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 63,
+    "sequencePage": 231
+  },
+  {
+    "symbol": "runProcessingState",
+    "record": "HTML lines 10847\u201310864 (18) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 64,
+    "sequencePage": 232
+  },
+  {
+    "symbol": "runIsInstrumentAnalysed",
+    "record": "HTML lines 10865\u201310867 (3) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 65,
+    "sequencePage": 233
+  },
+  {
+    "symbol": "sopProcessingApplicability",
+    "record": "HTML lines 10872\u201310885 (14) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 65,
+    "sequencePage": 233
+  },
+  {
+    "symbol": "rdmlStem",
+    "record": "HTML lines 10892\u201310894 (3) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 66,
+    "sequencePage": 234
+  },
+  {
+    "symbol": "rdmlKeyOf",
+    "record": "HTML lines 10895\u201310897 (3) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 67,
+    "sequencePage": 235
+  },
+  {
+    "symbol": "applyRawFilePriority",
+    "record": "HTML lines 10898\u201310915 (18) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 68,
+    "sequencePage": 236
+  },
+  {
+    "symbol": "runIsSuperseded",
+    "record": "HTML lines 10916\u201310916 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 69,
+    "sequencePage": 237
+  },
+  {
+    "symbol": "MG_GLYPH",
+    "record": "HTML lines 7054\u20137054 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 70,
+    "sequencePage": 238
+  },
+  {
+    "symbol": "MG_WORD",
+    "record": "HTML lines 7055\u20137055 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 70,
+    "sequencePage": 238
+  },
+  {
+    "symbol": "mgBuildQueue",
+    "record": "HTML lines 7058\u20137175 (118) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 71,
+    "sequencePage": 239
+  },
+  {
+    "symbol": "mgItem",
+    "record": "HTML lines 7178\u20137178 (1) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 74,
+    "sequencePage": 242
+  },
+  {
+    "symbol": "MG_TYPE_LABEL",
+    "record": "HTML lines 7179\u20137179 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 75,
+    "sequencePage": 243
+  },
+  {
+    "symbol": "mgChartTypeOptions",
+    "record": "HTML lines 7180\u20137184 (5) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 75,
+    "sequencePage": 243
+  },
+  {
+    "symbol": "mgChartAxisOptions",
+    "record": "HTML lines 7185\u20137192 (8) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 76,
+    "sequencePage": 244
+  },
+  {
+    "symbol": "mgStatusPaint",
+    "record": "HTML lines 7193\u20137202 (10) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 77,
+    "sequencePage": 245
+  },
+  {
+    "symbol": "mgRender",
+    "record": "HTML lines 7204\u20137282 (79) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 78,
+    "sequencePage": 246
+  },
+  {
+    "symbol": "mgSheet",
+    "record": "HTML lines 7285\u20137299 (15) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 80,
+    "sequencePage": 248
+  },
+  {
+    "symbol": "mgSheetPick",
+    "record": "HTML lines 7300\u20137305 (6) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 81,
+    "sequencePage": 249
+  },
+  {
+    "symbol": "mgSheetClose",
+    "record": "HTML lines 7306\u20137306 (1) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 82,
+    "sequencePage": 250
+  },
+  {
+    "symbol": "mgItemSentence",
+    "record": "HTML lines 7307\u20137311 (5) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 82,
+    "sequencePage": 250
+  },
+  {
+    "symbol": "mgStage",
+    "record": "HTML lines 7319\u20137324 (6) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 83,
+    "sequencePage": 251
+  },
+  {
+    "symbol": "mgStageSet",
+    "record": "HTML lines 7325\u20137325 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 84,
+    "sequencePage": 252
+  },
+  {
+    "symbol": "mgApplyChartView",
+    "record": "HTML lines 7326\u20137333 (8) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 84,
+    "sequencePage": 252
+  },
+  {
+    "symbol": "mgZoom",
+    "record": "HTML lines 7334\u20137340 (7) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 85,
+    "sequencePage": 253
+  },
+  {
+    "symbol": "mgPan",
+    "record": "HTML lines 7341\u20137341 (1) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 86,
+    "sequencePage": 254
+  },
+  {
+    "symbol": "MG_COMMANDS",
+    "record": "HTML lines 7343\u20137374 (32) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 87,
+    "sequencePage": 255
+  },
+  {
+    "symbol": "mgCommand",
+    "record": "HTML lines 7375\u20137392 (18) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 88,
+    "sequencePage": 256
+  },
+  {
+    "symbol": "mgGo",
+    "record": "HTML lines 7393\u20137398 (6) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 89,
+    "sequencePage": 257
+  },
+  {
+    "symbol": "mgGoChart",
+    "record": "HTML lines 7399\u20137407 (9) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 90,
+    "sequencePage": 258
+  },
+  {
+    "symbol": "mgSetChartType",
+    "record": "HTML lines 7408\u20137411 (4) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 90,
+    "sequencePage": 258
+  },
+  {
+    "symbol": "mgSetChartAxis",
+    "record": "HTML lines 7412\u20137415 (4) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 91,
+    "sequencePage": 259
+  },
+  {
+    "symbol": "mgReadFiles",
+    "record": "HTML lines 7416\u20137422 (7) \u2219 arity 0 \u2219 probed in a page of its own by design",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 92,
+    "sequencePage": 260
+  },
+  {
+    "symbol": "mgChooseFiles",
+    "record": "HTML lines 7423\u20137427 (5) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 93,
+    "sequencePage": 261
+  },
+  {
+    "symbol": "mgLeaveTo",
+    "record": "HTML lines 7428\u20137428 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 93,
+    "sequencePage": 261
+  },
+  {
+    "symbol": "MG_PICT",
+    "record": "HTML lines 7441\u20137442 (2) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 94,
+    "sequencePage": 262
+  },
+  {
+    "symbol": "mgIt",
+    "record": "HTML lines 7443\u20137444 (2) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 94,
+    "sequencePage": 262
+  },
+  {
+    "symbol": "mgSafe",
+    "record": "HTML lines 7445\u20137445 (1) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 95,
+    "sequencePage": 263
+  },
+  {
+    "symbol": "mgTxt",
+    "record": "HTML lines 7446\u20137446 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 96,
+    "sequencePage": 264
+  },
+  {
+    "symbol": "mgViewLoad",
+    "record": "HTML lines 7449\u20137504 (56) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 97,
+    "sequencePage": 265
+  },
+  {
+    "symbol": "mgViewSop",
+    "record": "HTML lines 7507\u20137573 (67) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 99,
+    "sequencePage": 267
+  },
+  {
+    "symbol": "mgViewResults",
+    "record": "HTML lines 7576\u20137654 (79) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 101,
+    "sequencePage": 269
+  },
+  {
+    "symbol": "mgPanelItems",
+    "record": "HTML lines 7657\u20137694 (38) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 104,
+    "sequencePage": 272
+  },
+  {
+    "symbol": "mgViewPanel",
+    "record": "HTML lines 7695\u20137717 (23) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 106,
+    "sequencePage": 274
+  },
+  {
+    "symbol": "mgGraphCtx",
+    "record": "HTML lines 7720\u20137724 (5) \u2219 arity 3 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 107,
+    "sequencePage": 275
+  },
+  {
+    "symbol": "mgViewGraphs",
+    "record": "HTML lines 7725\u20137753 (29) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 108,
+    "sequencePage": 276
+  },
+  {
+    "symbol": "mgViewReview",
+    "record": "HTML lines 7756\u20137786 (31) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 110,
+    "sequencePage": 278
+  },
+  {
+    "symbol": "mgViewIntegrity",
+    "record": "HTML lines 7789\u20137801 (13) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 111,
+    "sequencePage": 279
+  },
+  {
+    "symbol": "mgViewExport",
+    "record": "HTML lines 7804\u20137829 (26) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 112,
+    "sequencePage": 280
+  },
+  {
+    "symbol": "MG_VIEWS",
+    "record": "HTML lines 7831\u20137840 (10) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 113,
+    "sequencePage": 281
+  },
+  {
+    "symbol": "mgScope",
+    "record": "HTML lines 7841\u20137844 (4) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 114,
+    "sequencePage": 282
+  },
+  {
+    "symbol": "mgScopeMark",
+    "record": "HTML lines 7845\u20137848 (4) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 115,
+    "sequencePage": 283
+  },
+  {
+    "symbol": "mgItemKey",
+    "record": "HTML lines 7849\u20137849 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 115,
+    "sequencePage": 283
+  },
+  {
+    "symbol": "mgScopeFilter",
+    "record": "HTML lines 7852\u20137857 (6) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 116,
+    "sequencePage": 284
+  },
+  {
+    "symbol": "mgRefresh",
+    "record": "HTML lines 7858\u20137872 (15) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 117,
+    "sequencePage": 285
+  },
+  {
+    "symbol": "mgOpen",
+    "record": "HTML lines 7876\u20137880 (5) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 118,
+    "sequencePage": 286
+  },
+  {
+    "symbol": "mgClose",
+    "record": "HTML lines 7881\u20137883 (3) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 119,
+    "sequencePage": 287
+  },
+  {
+    "symbol": "mgToggle",
+    "record": "HTML lines 7884\u20137884 (1) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 119,
+    "sequencePage": 287
+  },
+  {
+    "symbol": "mgInit",
+    "record": "HTML lines 7885\u20137895 (11) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 120,
+    "sequencePage": 288
+  },
+  {
+    "symbol": "CC_TARGET_ALIAS",
+    "record": "HTML lines 4408\u20134408 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 122,
+    "sequencePage": 290
+  },
+  {
+    "symbol": "ccCanonTarget",
+    "record": "HTML lines 4409\u20134409 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 122,
+    "sequencePage": 290
+  },
+  {
+    "symbol": "ccBaselineNeed",
+    "record": "HTML lines 4452\u20134452 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 123,
+    "sequencePage": 291
+  },
+  {
+    "symbol": "ccNoDataReason",
+    "record": "HTML lines 4453\u20134458 (6) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 124,
+    "sequencePage": 292
+  },
+  {
+    "symbol": "ccLzss",
+    "record": "HTML lines 5674\u20135688 (15) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 124,
+    "sequencePage": 292
+  },
+  {
+    "symbol": "ccDecodeArz",
+    "record": "HTML lines 5689\u20135702 (14) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 125,
+    "sequencePage": 293
+  },
+  {
+    "symbol": "ccIxoTemperatureLog",
+    "record": "HTML lines 5703\u20135711 (9) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 126,
+    "sequencePage": 294
+  },
+  {
+    "symbol": "ccIxoAcquisitions",
+    "record": "HTML lines 5714\u20135721 (8) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 127,
+    "sequencePage": 295
+  },
+  {
+    "symbol": "ccThermalSteps",
+    "record": "HTML lines 5724\u20135756 (33) \u2219 arity 3 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 127,
+    "sequencePage": 295
+  },
+  {
+    "symbol": "ccTransitionPairs",
+    "record": "HTML lines 5764\u20135775 (12) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 129,
+    "sequencePage": 297
+  },
+  {
+    "symbol": "ccTransitions",
+    "record": "HTML lines 5776\u20135802 (27) \u2219 arity 3 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 130,
+    "sequencePage": 298
+  },
+  {
+    "symbol": "ccThin",
+    "record": "HTML lines 5805\u20135812 (8) \u2219 arity 3 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 131,
+    "sequencePage": 299
+  },
+  {
+    "symbol": "ccPeakRates",
+    "record": "HTML lines 5813\u20135825 (13) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 131,
+    "sequencePage": 299
+  },
+  {
+    "symbol": "ccThermalSummary",
+    "record": "HTML lines 5826\u20135834 (9) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 132,
+    "sequencePage": 300
+  },
+  {
+    "symbol": "ccSetpoints",
+    "record": "HTML lines 5835\u20135838 (4) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 133,
+    "sequencePage": 301
+  },
+  {
+    "symbol": "ccQsLog",
+    "record": "HTML lines 5841\u20135881 (41) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 134,
+    "sequencePage": 302
+  },
+  {
+    "symbol": "ccCalibSummary",
+    "record": "HTML lines 5883\u20135893 (11) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 135,
+    "sequencePage": 303
+  },
+  {
+    "symbol": "ccQuantSaturation",
+    "record": "HTML lines 5895\u20135900 (6) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 136,
+    "sequencePage": 304
+  },
+  {
+    "symbol": "CC_TZ",
+    "record": "HTML lines 5901\u20135901 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 137,
+    "sequencePage": 305
+  },
+  {
+    "symbol": "ccParseJavaDate",
+    "record": "HTML lines 5902\u20135906 (5) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 137,
+    "sequencePage": 305
+  },
+  {
+    "symbol": "ccQ",
+    "record": "HTML lines 5909\u20135909 (1) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 138,
+    "sequencePage": 306
+  },
+  {
+    "symbol": "ccMedian",
+    "record": "HTML lines 5910\u20135910 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 139,
+    "sequencePage": 307
+  },
+  {
+    "symbol": "ccStatic",
+    "record": "HTML lines 5911\u20135977 (67) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 139,
+    "sequencePage": 307
+  },
+  {
+    "symbol": "ccDynamic",
+    "record": "HTML lines 5979\u20136028 (50) \u2219 arity 3 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 142,
+    "sequencePage": 310
+  },
+  {
+    "symbol": "ccExtractOnLoad",
+    "record": "HTML lines 6030\u20136049 (20) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 143,
+    "sequencePage": 311
+  },
+  {
+    "symbol": "ccProtocolKey",
+    "record": "HTML lines 6053\u20136056 (4) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 145,
+    "sequencePage": 313
+  },
+  {
+    "symbol": "CC_GROUPS",
+    "record": "HTML lines 6069\u20136073 (5) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 146,
+    "sequencePage": 314
+  },
+  {
+    "symbol": "CC_CHARTS",
+    "record": "HTML lines 6074\u20136258 (185) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 146,
+    "sequencePage": 314
+  },
+  {
+    "symbol": "CC_BY_ID",
+    "record": "HTML lines 6259\u20136259 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 152,
+    "sequencePage": 320
+  },
+  {
+    "symbol": "CC_DEFAULT_CFG",
+    "record": "HTML lines 6260\u20136261 (2) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 154,
+    "sequencePage": 322
+  },
+  {
+    "symbol": "CC_RULES_OFF",
+    "record": "HTML lines 6264\u20136264 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 154,
+    "sequencePage": 322
+  },
+  {
+    "symbol": "ccCfg",
+    "record": "HTML lines 6265\u20136266 (2) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 155,
+    "sequencePage": 323
+  },
+  {
+    "symbol": "ccSetCfg",
+    "record": "HTML lines 6267\u20136268 (2) \u2219 arity 2 \u2219 probed in a page of its own by design",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 156,
+    "sequencePage": 324
+  },
+  {
+    "symbol": "CC_C4",
+    "record": "HTML lines 6271\u20136271 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 157,
+    "sequencePage": 325
+  },
+  {
+    "symbol": "ccPhase",
+    "record": "HTML lines 6272\u20136272 (1) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 157,
+    "sequencePage": 325
+  },
+  {
+    "symbol": "ccI",
+    "record": "HTML lines 6274\u20136286 (13) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 158,
+    "sequencePage": 326
+  },
+  {
+    "symbol": "ccWestgard",
+    "record": "HTML lines 6288\u20136298 (11) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 159,
+    "sequencePage": 327
+  },
+  {
+    "symbol": "ccEWMA",
+    "record": "HTML lines 6299\u20136304 (6) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 160,
+    "sequencePage": 328
+  },
+  {
+    "symbol": "ccCUSUM",
+    "record": "HTML lines 6305\u20136320 (16) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 161,
+    "sequencePage": 329
+  },
+  {
+    "symbol": "ccTrend",
+    "record": "HTML lines 6322\u20136337 (16) \u2219 arity 4 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 162,
+    "sequencePage": 330
+  },
+  {
+    "symbol": "ccP",
+    "record": "HTML lines 6338\u20136343 (6) \u2219 arity 3 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 163,
+    "sequencePage": 331
+  },
+  {
+    "symbol": "ccU",
+    "record": "HTML lines 6344\u20136347 (4) \u2219 arity 3 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 164,
+    "sequencePage": 332
+  },
+  {
+    "symbol": "ccC",
+    "record": "HTML lines 6348\u20136351 (4) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 165,
+    "sequencePage": 333
+  },
+  {
+    "symbol": "ccXbarS",
+    "record": "HTML lines 6352\u20136363 (12) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 166,
+    "sequencePage": 334
+  },
+  {
+    "symbol": "ccFunnel",
+    "record": "HTML lines 6364\u20136370 (7) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 167,
+    "sequencePage": 335
+  },
+  {
+    "symbol": "CC_LIMIT_TEXT",
+    "record": "HTML lines 6373\u20136431 (59) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 167,
+    "sequencePage": 335
+  },
+  {
+    "symbol": "ccAlarmDir",
+    "record": "HTML lines 6437\u20136443 (7) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 172,
+    "sequencePage": 340
+  },
+  {
+    "symbol": "CC_STATE",
+    "record": "HTML lines 6448\u20136448 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 172,
+    "sequencePage": 340
+  },
+  {
+    "symbol": "CC_HIST_KEY",
+    "record": "HTML lines 6449\u20136449 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 174,
+    "sequencePage": 342
+  },
+  {
+    "symbol": "CC_COL",
+    "record": "HTML lines 6450\u20136450 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 175,
+    "sequencePage": 343
+  },
+  {
+    "symbol": "CC_SEG_PALETTE",
+    "record": "HTML lines 6454\u20136454 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 175,
+    "sequencePage": 343
+  },
+  {
+    "symbol": "CC_LIMIT_FLAG",
+    "record": "HTML lines 6455\u20136455 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 176,
+    "sequencePage": 344
+  },
+  {
+    "symbol": "ccSignal",
+    "record": "HTML lines 6456\u20136456 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 176,
+    "sequencePage": 344
+  },
+  {
+    "symbol": "ccPlatform",
+    "record": "HTML lines 6457\u20136457 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 177,
+    "sequencePage": 345
+  },
+  {
+    "symbol": "ccInstrumentKey",
+    "record": "HTML lines 6458\u20136458 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 178,
+    "sequencePage": 346
+  },
+  {
+    "symbol": "ccOperator",
+    "record": "HTML lines 6459\u20136459 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 178,
+    "sequencePage": 346
+  },
+  {
+    "symbol": "ccRowsFromRuns",
+    "record": "HTML lines 6461\u20136475 (15) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 179,
+    "sequencePage": 347
+  },
+  {
+    "symbol": "ccAllRows",
+    "record": "HTML lines 6476\u20136479 (4) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 180,
+    "sequencePage": 348
+  },
+  {
+    "symbol": "ccInstruments",
+    "record": "HTML lines 6480\u20136480 (1) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 182,
+    "sequencePage": 350
+  },
+  {
+    "symbol": "ccRowsFor",
+    "record": "HTML lines 6481\u20136486 (6) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 183,
+    "sequencePage": 351
+  },
+  {
+    "symbol": "ccVariants",
+    "record": "HTML lines 6488\u20136490 (3) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 184,
+    "sequencePage": 352
+  },
+  {
+    "symbol": "ccValue",
+    "record": "HTML lines 6491\u20136493 (3) \u2219 arity 3 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 185,
+    "sequencePage": 353
+  },
+  {
+    "symbol": "ccXAxis",
+    "record": "HTML lines 6494\u20136500 (7) \u2219 arity 3 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 186,
+    "sequencePage": 354
+  },
+  {
+    "symbol": "ccSpec",
+    "record": "HTML lines 6501\u20136506 (6) \u2219 arity 5 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 186,
+    "sequencePage": 354
+  },
+  {
+    "symbol": "ccCompute",
+    "record": "HTML lines 6507\u20136557 (51) \u2219 arity 3 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 187,
+    "sequencePage": 355
+  },
+  {
+    "symbol": "ccShift",
+    "record": "HTML lines 6561\u20136572 (12) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 189,
+    "sequencePage": 357
+  },
+  {
+    "symbol": "ccStatus",
+    "record": "HTML lines 6573\u20136598 (26) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 190,
+    "sequencePage": 358
+  },
+  {
+    "symbol": "ccSpark",
+    "record": "HTML lines 6600\u20136610 (11) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 191,
+    "sequencePage": 359
+  },
+  {
+    "symbol": "ccVersionMarks",
+    "record": "HTML lines 6611\u20136615 (5) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 192,
+    "sequencePage": 360
+  },
+  {
+    "symbol": "ccChartSvg",
+    "record": "HTML lines 6616\u20136675 (60) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 193,
+    "sequencePage": 361
+  },
+  {
+    "symbol": "ccSChartSvg",
+    "record": "HTML lines 6676\u20136682 (7) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 196,
+    "sequencePage": 364
+  },
+  {
+    "symbol": "ccPng",
+    "record": "HTML lines 6795\u20136800 (6) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 196,
+    "sequencePage": 364
+  },
+  {
+    "symbol": "ccChartRows",
+    "record": "HTML lines 6801\u20136808 (8) \u2219 arity 3 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 197,
+    "sequencePage": 365
+  },
+  {
+    "symbol": "ccSvgToPng",
+    "record": "HTML lines 6809\u20136814 (6) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 198,
+    "sequencePage": 366
+  },
+  {
+    "symbol": "ccZipAll",
+    "record": "HTML lines 6818\u20136866 (49) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 199,
+    "sequencePage": 367
+  },
+  {
+    "symbol": "ccHistoryJSON",
+    "record": "HTML lines 6868\u20136872 (5) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 201,
+    "sequencePage": 369
+  },
+  {
+    "symbol": "ccHistoryCSV",
+    "record": "HTML lines 6873\u20136879 (7) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 202,
+    "sequencePage": 370
+  },
+  {
+    "symbol": "ccMigrateControlKeys",
+    "record": "HTML lines 6881\u20136893 (13) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 203,
+    "sequencePage": 371
+  },
+  {
+    "symbol": "ccImport",
+    "record": "HTML lines 6894\u20136902 (9) excluded",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 204,
+    "sequencePage": 372
+  },
+  {
+    "symbol": "ccRemember",
+    "record": "HTML lines 6903\u20136903 (1) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 205,
+    "sequencePage": 373
+  },
+  {
+    "symbol": "ccRestore",
+    "record": "HTML lines 6904\u20136904 (1) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 205,
+    "sequencePage": 373
+  },
+  {
+    "symbol": "ccEvents",
+    "record": "HTML lines 6906\u20136917 (12) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 206,
+    "sequencePage": 374
+  },
+  {
+    "symbol": "SOP_SCHEMA",
+    "record": "HTML lines 4205\u20134205 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 208,
+    "sequencePage": 376
+  },
+  {
+    "symbol": "SOP_OUTCOMES",
+    "record": "HTML lines 4206\u20134206 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 208,
+    "sequencePage": 376
+  },
+  {
+    "symbol": "SOP_OUTCOME_DEFAULTS",
+    "record": "HTML lines 4207\u20134218 (12) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 209,
+    "sequencePage": 377
+  },
+  {
+    "symbol": "sopBase",
+    "record": "HTML lines 4219\u20134235 (17) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 210,
+    "sequencePage": 378
+  },
+  {
+    "symbol": "SOP_PRESETS",
+    "record": "HTML lines 4236\u20134263 (28) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 211,
+    "sequencePage": 379
+  },
+  {
+    "symbol": "SOP",
+    "record": "HTML lines 4335\u20134335 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 212,
+    "sequencePage": 380
+  },
+  {
+    "symbol": "SOP_AUTO_DEFAULT",
+    "record": "HTML lines 4336\u20134336 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 214,
+    "sequencePage": 382
+  },
+  {
+    "symbol": "SOP_CACHE",
+    "record": "HTML lines 4337\u20134337 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 215,
+    "sequencePage": 383
+  },
+  {
+    "symbol": "sopLoadStored",
+    "record": "HTML lines 4338\u20134338 (1) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 217,
+    "sequencePage": 385
+  },
+  {
+    "symbol": "sopStore",
+    "record": "HTML lines 4339\u20134339 (1) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 218,
+    "sequencePage": 386
+  },
+  {
+    "symbol": "sopMaybeSelectScDefault",
+    "record": "HTML lines 4340\u20134347 (8) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 218,
+    "sequencePage": 386
+  },
+  {
+    "symbol": "sopNormalise",
+    "record": "HTML lines 4348\u20134362 (15) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 219,
+    "sequencePage": 387
+  },
+  {
+    "symbol": "sopCanonical",
+    "record": "HTML lines 4363\u20134366 (4) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 220,
+    "sequencePage": 388
+  },
+  {
+    "symbol": "sopHash",
+    "record": "HTML lines 4367\u20134367 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 221,
+    "sequencePage": 389
+  },
+  {
+    "symbol": "sopJSON",
+    "record": "HTML lines 4368\u20134368 (1) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 222,
+    "sequencePage": 390
+  },
+  {
+    "symbol": "sopChanged",
+    "record": "HTML lines 4369\u20134369 (1) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 223,
+    "sequencePage": 391
+  },
+  {
+    "symbol": "sopMatcher",
+    "record": "HTML lines 4372\u20134378 (7) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 224,
+    "sequencePage": 392
+  },
+  {
+    "symbol": "sopNum",
+    "record": "HTML lines 4379\u20134379 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 225,
+    "sequencePage": 393
+  },
+  {
+    "symbol": "sopCq",
+    "record": "HTML lines 4380\u20134380 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 225,
+    "sequencePage": 393
+  },
+  {
+    "symbol": "sopOmitted",
+    "record": "HTML lines 4381\u20134381 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 226,
+    "sequencePage": 394
+  },
+  {
+    "symbol": "sopTargetSpec",
+    "record": "HTML lines 4382\u20134388 (7) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 226,
+    "sequencePage": 394
+  },
+  {
+    "symbol": "sopRunApplicability",
+    "record": "HTML lines 4389\u20134399 (11) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 227,
+    "sequencePage": 395
+  },
+  {
+    "symbol": "sopReplicateMinimum",
+    "record": "HTML lines 4400\u20134405 (6) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 228,
+    "sequencePage": 396
+  },
+  {
+    "symbol": "sopControlIdentity",
+    "record": "HTML lines 4410\u20134432 (23) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 229,
+    "sequencePage": 397
+  },
+  {
+    "symbol": "sopLabScreening",
+    "record": "HTML lines 4433\u20134451 (19) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 230,
+    "sequencePage": 398
+  },
+  {
+    "symbol": "sopControlSpec",
+    "record": "HTML lines 4487\u20134492 (6) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 232,
+    "sequencePage": 400
+  },
+  {
+    "symbol": "sopFmt",
+    "record": "HTML lines 4493\u20134493 (1) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 232,
+    "sequencePage": 400
+  },
+  {
+    "symbol": "sopTime",
+    "record": "HTML lines 4494\u20134498 (5) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 233,
+    "sequencePage": 401
+  },
+  {
+    "symbol": "sopFmtTime",
+    "record": "HTML lines 4499\u20134500 (2) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 234,
+    "sequencePage": 402
+  },
+  {
+    "symbol": "sopStdCurves",
+    "record": "HTML lines 4542\u20134555 (14) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 235,
+    "sequencePage": 403
+  },
+  {
+    "symbol": "sopEvaluateRun",
+    "record": "HTML lines 4558\u20134694 (137) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 235,
+    "sequencePage": 403
+  },
+  {
+    "symbol": "sopEvaluateAll",
+    "record": "HTML lines 4695\u20134699 (5) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 239,
+    "sequencePage": 407
+  },
+  {
+    "symbol": "sopResultForWell",
+    "record": "HTML lines 4700\u20134703 (4) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 241,
+    "sequencePage": 409
+  },
+  {
+    "symbol": "sopMeta",
+    "record": "HTML lines 4704\u20134704 (1) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 241,
+    "sequencePage": 409
+  },
+  {
+    "symbol": "sopInterpretationRows",
+    "record": "HTML lines 4705\u20134716 (12) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 242,
+    "sequencePage": 410
+  },
+  {
+    "symbol": "sopSampleRows",
+    "record": "HTML lines 4717\u20134730 (14) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 243,
+    "sequencePage": 411
+  },
+  {
+    "symbol": "sopCriteriaRows",
+    "record": "HTML lines 4731\u20134734 (4) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 244,
+    "sequencePage": 412
+  },
+  {
+    "symbol": "sopRunRows",
+    "record": "HTML lines 4735\u20134746 (12) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 245,
+    "sequencePage": 413
+  },
+  {
+    "symbol": "sopEvents",
+    "record": "HTML lines 4747\u20134759 (13) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 246,
+    "sequencePage": 414
+  },
+  {
+    "symbol": "sopOutcomeFor",
+    "record": "HTML lines 4830\u20134834 (5) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 247,
+    "sequencePage": 415
+  },
+  {
+    "symbol": "SOP_OUTCOME_OPTIONS",
+    "record": "HTML lines 4835\u20134835 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 248,
+    "sequencePage": 416
+  },
+  {
+    "symbol": "sopField",
+    "record": "HTML lines 4836\u20134845 (10) \u2219 arity 5 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 248,
+    "sequencePage": 416
+  },
+  {
+    "symbol": "SOP_ACTION_LABEL",
+    "record": "HTML lines 4846\u20134848 (3) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 249,
+    "sequencePage": 417
+  },
+  {
+    "symbol": "sopSetPath",
+    "record": "HTML lines 4849\u20134854 (6) \u2219 arity 2 \u2219 probed in a page of its own by design",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 250,
+    "sequencePage": 418
+  },
+  {
+    "symbol": "sopTableEditor",
+    "record": "HTML lines 4855\u20134873 (19) \u2219 arity 5 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 251,
+    "sequencePage": 419
+  },
+  {
+    "symbol": "sopProfileEdited",
+    "record": "HTML lines 4874\u20134877 (4) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 252,
+    "sequencePage": 420
+  },
+  {
+    "symbol": "sopProcedureHTML",
+    "record": "HTML lines 4887\u20134906 (20) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 253,
+    "sequencePage": 421
+  },
+  {
+    "symbol": "SOP_VIEW",
+    "record": "HTML lines 4998\u20134998 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 254,
+    "sequencePage": 422
+  },
+  {
+    "symbol": "sopCurrentRows",
+    "record": "HTML lines 5047\u20135050 (4) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 255,
+    "sequencePage": 423
+  },
+  {
+    "symbol": "sopReadme",
+    "record": "HTML lines 5053\u20135066 (14) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 255,
+    "sequencePage": 423
+  },
+  {
+    "symbol": "sopDownloadWorkbook",
+    "record": "HTML lines 5067\u20135074 (8) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 256,
+    "sequencePage": 424
+  },
+  {
+    "symbol": "sopDownloadBundle",
+    "record": "HTML lines 5075\u20135084 (10) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 257,
+    "sequencePage": 425
+  },
+  {
+    "symbol": "sopColour",
+    "record": "HTML lines 5166\u20135166 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 258,
+    "sequencePage": 426
+  },
+  {
+    "symbol": "sopLabel",
+    "record": "HTML lines 5167\u20135167 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 259,
+    "sequencePage": 427
+  },
+  {
+    "symbol": "sopLab",
+    "record": "HTML lines 11180\u201311183 (4) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 259,
+    "sequencePage": 427
+  },
+  {
+    "symbol": "sopLabName",
+    "record": "HTML lines 11184\u201311184 (1) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 260,
+    "sequencePage": 428
+  },
+  {
+    "symbol": "sopAnalystName",
+    "record": "HTML lines 11185\u201311185 (1) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 261,
+    "sequencePage": 429
+  },
+  {
+    "symbol": "integrityLabel",
+    "record": "HTML lines 3881\u20133885 (5) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 262,
+    "sequencePage": 430
+  },
+  {
+    "symbol": "integrityEvents",
+    "record": "HTML lines 3886\u20133901 (16) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 263,
+    "sequencePage": 431
+  },
+  {
+    "symbol": "reviewForensicEvents",
+    "record": "HTML lines 4188\u20134195 (8) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 264,
+    "sequencePage": 432
+  },
+  {
+    "symbol": "FORENSIC_CACHE",
+    "record": "HTML lines 4764\u20134764 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 265,
+    "sequencePage": 433
+  },
+  {
+    "symbol": "forensicSnapshot",
+    "record": "HTML lines 4768\u20134773 (6) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 267,
+    "sequencePage": 435
+  },
+  {
+    "symbol": "extraForensicEvents",
+    "record": "HTML lines 4774\u20134774 (1) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 268,
+    "sequencePage": 436
+  },
+  {
+    "symbol": "reviewForensicEventsCore",
+    "record": "HTML lines 4775\u20134775 (1) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 269,
+    "sequencePage": 437
+  },
+  {
+    "symbol": "forensicCounts",
+    "record": "HTML lines 4776\u20134782 (7) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 269,
+    "sequencePage": 437
+  },
+  {
+    "symbol": "extraForensicEventsUncached",
+    "record": "HTML lines 4783\u20134825 (43) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 270,
+    "sequencePage": 438
+  },
+  {
+    "symbol": "ORPHAN_CURVE_KEY",
+    "record": "HTML lines 8915\u20138915 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 272,
+    "sequencePage": 440
+  },
+  {
+    "symbol": "reviewStatisticsRows",
+    "record": "HTML lines 8997\u20139016 (20) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 272,
+    "sequencePage": 440
+  },
+  {
+    "symbol": "orphanBlankRole",
+    "record": "HTML lines 9039\u20139045 (7) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 274,
+    "sequencePage": 442
+  },
+  {
+    "symbol": "orphanOtherChannels",
+    "record": "HTML lines 9049\u20139061 (13) \u2219 arity 3 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 275,
+    "sequencePage": 443
+  },
+  {
+    "symbol": "orphanCurveCandidates",
+    "record": "HTML lines 9098\u20139190 (93) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 276,
+    "sequencePage": 444
+  },
+  {
+    "symbol": "reviewOrphanWells",
+    "record": "HTML lines 9191\u20139199 (9) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 278,
+    "sequencePage": 446
+  },
+  {
+    "symbol": "reviewForensicEventsCoreUncached",
+    "record": "HTML lines 9200\u20139258 (59) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 279,
+    "sequencePage": 447
+  },
+  {
+    "symbol": "reviewRunRows",
+    "record": "HTML lines 9259\u20139277 (19) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 281,
+    "sequencePage": 449
+  },
+  {
+    "symbol": "westgardReview",
+    "record": "HTML lines 9364\u20139381 (18) \u2219 arity 3 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 282,
+    "sequencePage": 450
+  },
+  {
+    "symbol": "reviewControlSeries",
+    "record": "HTML lines 9382\u20139418 (37) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 283,
+    "sequencePage": 451
+  },
+  {
+    "symbol": "reviewBundleEntries",
+    "record": "HTML lines 9469\u20139490 (22) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 285,
+    "sequencePage": 453
+  },
+  {
+    "symbol": "reviewDisplayFindings",
+    "record": "HTML lines 9517\u20139535 (19) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 287,
+    "sequencePage": 455
+  },
+  {
+    "symbol": "reviewDisplayCounts",
+    "record": "HTML lines 9536\u20139544 (9) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 288,
+    "sequencePage": 456
+  },
+  {
+    "symbol": "reviewEventsWithoutIntegrity",
+    "record": "HTML lines 9545\u20139547 (3) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 288,
+    "sequencePage": 456
+  },
+  {
+    "symbol": "integrityMismatches",
+    "record": "HTML lines 9548\u20139562 (15) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 289,
+    "sequencePage": 457
+  },
+  {
+    "symbol": "risingCurveRows",
+    "record": "HTML lines 9956\u20139958 (3) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 290,
+    "sequencePage": 458
+  },
+  {
+    "symbol": "risingCurveDisplayRows",
+    "record": "HTML lines 9959\u20139970 (12) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 291,
+    "sequencePage": 459
+  },
+  {
+    "symbol": "drawTemperatureTrace",
+    "record": "HTML lines 4035\u20134047 (13) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 292,
+    "sequencePage": 460
+  },
+  {
+    "symbol": "niceTicks",
+    "record": "HTML lines 5107\u20135114 (8) \u2219 arity 3 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 293,
+    "sequencePage": 461
+  },
+  {
+    "symbol": "svgPlot",
+    "record": "HTML lines 5117\u20135161 (45) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 294,
+    "sequencePage": 462
+  },
+  {
+    "symbol": "extent",
+    "record": "HTML lines 5163\u20135163 (1) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 296,
+    "sequencePage": 464
+  },
+  {
+    "symbol": "gRunWells",
+    "record": "HTML lines 5170\u20135170 (1) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 296,
+    "sequencePage": 464
+  },
+  {
+    "symbol": "gRunDate",
+    "record": "HTML lines 5181\u20135181 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 297,
+    "sequencePage": 465
+  },
+  {
+    "symbol": "gByDate",
+    "record": "HTML lines 5182\u20135182 (1) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 298,
+    "sequencePage": 466
+  },
+  {
+    "symbol": "gRunTicks",
+    "record": "HTML lines 5183\u20135188 (6) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 299,
+    "sequencePage": 467
+  },
+  {
+    "symbol": "GRAPHS",
+    "record": "HTML lines 5189\u20135540 (352) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 299,
+    "sequencePage": 467
+  },
+  {
+    "symbol": "graphContext",
+    "record": "HTML lines 5543\u20135548 (6) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 310,
+    "sequencePage": 478
+  },
+  {
+    "symbol": "graphFileBase",
+    "record": "HTML lines 5579\u20135579 (1) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 311,
+    "sequencePage": 479
+  },
+  {
+    "symbol": "graphSvgText",
+    "record": "HTML lines 5580\u20135581 (2) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 311,
+    "sequencePage": 479
+  },
+  {
+    "symbol": "graphPng",
+    "record": "HTML lines 5582\u20135589 (8) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 312,
+    "sequencePage": 480
+  },
+  {
+    "symbol": "graphAllZip",
+    "record": "HTML lines 5590\u20135610 (21) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 313,
+    "sequencePage": 481
+  },
+  {
+    "symbol": "hashColour",
+    "record": "HTML lines 9465\u20139468 (4) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 314,
+    "sequencePage": 482
+  },
+  {
+    "symbol": "drawPlateMapImage",
+    "record": "HTML lines 9661\u20139682 (22) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 315,
+    "sequencePage": 483
+  },
+  {
+    "symbol": "drawLeveyJennings",
+    "record": "HTML lines 9767\u20139800 (34) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 316,
+    "sequencePage": 484
+  },
+  {
+    "symbol": "CURVE_KEY_COLOURS",
+    "record": "HTML lines 9862\u20139862 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 317,
+    "sequencePage": 485
+  },
+  {
+    "symbol": "drawAmplificationCurves",
+    "record": "HTML lines 9909\u20139937 (29) \u2219 arity 5 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 318,
+    "sequencePage": 486
+  },
+  {
+    "symbol": "drawRisingCurveBundle",
+    "record": "HTML lines 9971\u20139991 (21) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 319,
+    "sequencePage": 487
+  },
+  {
+    "symbol": "CRC_TABLE",
+    "record": "HTML lines 2198\u20132198 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 321,
+    "sequencePage": 489
+  },
+  {
+    "symbol": "crc32",
+    "record": "HTML lines 2199\u20132199 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 321,
+    "sequencePage": 489
+  },
+  {
+    "symbol": "inflate",
+    "record": "HTML lines 2244\u20132249 (6) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 322,
+    "sequencePage": 490
+  },
+  {
+    "symbol": "readZip",
+    "record": "HTML lines 2251\u20132276 (26) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 323,
+    "sequencePage": 491
+  },
+  {
+    "symbol": "makeStoredZip",
+    "record": "HTML lines 2282\u20132307 (26) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 324,
+    "sequencePage": 492
+  },
+  {
+    "symbol": "posToWell",
+    "record": "HTML lines 2319\u20132319 (1) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 325,
+    "sequencePage": 493
+  },
+  {
+    "symbol": "decodeAcq",
+    "record": "HTML lines 2334\u20132421 (88) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 326,
+    "sequencePage": 494
+  },
+  {
+    "symbol": "decodePlateModel",
+    "record": "HTML lines 2432\u20132493 (62) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 328,
+    "sequencePage": 496
+  },
+  {
+    "symbol": "decodeSubsets",
+    "record": "HTML lines 2495\u20132505 (11) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 330,
+    "sequencePage": 498
+  },
+  {
+    "symbol": "decodeProtocol",
+    "record": "HTML lines 2507\u20132542 (36) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 331,
+    "sequencePage": 499
+  },
+  {
+    "symbol": "readLists",
+    "record": "HTML lines 2580\u20132588 (9) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 332,
+    "sequencePage": 500
+  },
+  {
+    "symbol": "decodeRelQuant",
+    "record": "HTML lines 2624\u20132670 (47) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 333,
+    "sequencePage": 501
+  },
+  {
+    "symbol": "ownQueryAll",
+    "record": "HTML lines 2684\u20132684 (1) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 334,
+    "sequencePage": 502
+  },
+  {
+    "symbol": "ownQuery",
+    "record": "HTML lines 2685\u20132685 (1) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 335,
+    "sequencePage": 503
+  },
+  {
+    "symbol": "decodeAnalyses",
+    "record": "HTML lines 2687\u20132774 (88) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 335,
+    "sequencePage": 503
+  },
+  {
+    "symbol": "ownsResult",
+    "record": "HTML lines 2781\u20132789 (9) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 338,
+    "sequencePage": 506
+  },
+  {
+    "symbol": "analysisResults",
+    "record": "HTML lines 2790\u20132809 (20) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 339,
+    "sequencePage": 507
+  },
+  {
+    "symbol": "decodeIxo",
+    "record": "HTML lines 2811\u20133153 (343) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 340,
+    "sequencePage": 508
+  },
+  {
+    "symbol": "EDS",
+    "record": "HTML lines 3158\u20133706 (549) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 347,
+    "sequencePage": 515
+  },
+  {
+    "symbol": "ROWS",
+    "record": "HTML lines 3170\u20133170 (1) private",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 359,
+    "sequencePage": 527
+  },
+  {
+    "symbol": "wellPos",
+    "record": "HTML lines 3171\u20133171 (1) private",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 360,
+    "sequencePage": 528
+  },
+  {
+    "symbol": "CRC_T",
+    "record": "HTML lines 3180\u20133180 (1) private",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 360,
+    "sequencePage": 528
+  },
+  {
+    "symbol": "MD5",
+    "record": "HTML lines 3184\u20133211 (28) \u2219 arity 0 \u2219 reached as EDS.MD5 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 361,
+    "sequencePage": 529
+  },
+  {
+    "symbol": "inflateRaw",
+    "record": "HTML lines 3214\u20133219 (6) private",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 362,
+    "sequencePage": 530
+  },
+  {
+    "symbol": "FLAGS",
+    "record": "HTML lines 3282\u20133300 (19) \u2219 reached as EDS.FLAGS pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 362,
+    "sequencePage": 530
+  },
+  {
+    "symbol": "flagName",
+    "record": "HTML lines 3301\u20133301 (1) \u2219 arity 1 \u2219 reached as EDS.flagName pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 363,
+    "sequencePage": 531
+  },
+  {
+    "symbol": "parseEds",
+    "record": "HTML lines 3305\u20133511 (207) \u2219 arity 2 \u2219 reached as EDS.parseEds pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 364,
+    "sequencePage": 532
+  },
+  {
+    "symbol": "recalcCt",
+    "record": "HTML lines 3515\u20133519 (5) \u2219 arity 2 \u2219 reached as EDS.recalcCt pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 369,
+    "sequencePage": 537
+  },
+  {
+    "symbol": "parseLog",
+    "record": "HTML lines 3521\u20133537 (17) private",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 370,
+    "sequencePage": 538
+  },
+  {
+    "symbol": "studyRows",
+    "record": "HTML lines 3539\u20133543 (5) \u2219 arity 1 \u2219 reached as EDS.studyRows pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 371,
+    "sequencePage": 539
+  },
+  {
+    "symbol": "QS_DEFAULT_COLS",
+    "record": "HTML lines 3551\u20133557 (7) private",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 371,
+    "sequencePage": 539
+  },
+  {
+    "symbol": "qsCols",
+    "record": "HTML lines 3558\u20133563 (6) private",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 372,
+    "sequencePage": 540
+  },
+  {
+    "symbol": "qsCalDate",
+    "record": "HTML lines 3565\u20133565 (1) private",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 372,
+    "sequencePage": 540
+  },
+  {
+    "symbol": "qsStamp",
+    "record": "HTML lines 3566\u20133570 (5) private",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 373,
+    "sequencePage": 541
+  },
+  {
+    "symbol": "qsRGB",
+    "record": "HTML lines 3571\u20133571 (1) private",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 373,
+    "sequencePage": 541
+  },
+  {
+    "symbol": "qsInstrument",
+    "record": "HTML lines 3574\u20133585 (12) \u2219 arity 1 \u2219 reached as EDS.qsInstrument pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 374,
+    "sequencePage": 542
+  },
+  {
+    "symbol": "qsHeader",
+    "record": "HTML lines 3592\u20133611 (20) private",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 375,
+    "sequencePage": 543
+  },
+  {
+    "symbol": "qsTables",
+    "record": "HTML lines 3612\u20133690 (79) \u2219 arity 2 \u2219 reached as EDS.qsTables pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 375,
+    "sequencePage": 543
+  },
+  {
+    "symbol": "qsExport",
+    "record": "HTML lines 3691\u20133703 (13) \u2219 arity 2 \u2219 reached as EDS.qsExport pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 378,
+    "sequencePage": 546
+  },
+  {
+    "symbol": "QS_DYE_FILTER",
+    "record": "HTML lines 3719\u20133721 (3) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 379,
+    "sequencePage": 547
+  },
+  {
+    "symbol": "QS_TASK_ROLE",
+    "record": "HTML lines 3722\u20133723 (2) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 380,
+    "sequencePage": 548
+  },
+  {
+    "symbol": "QS_AMP",
+    "record": "HTML lines 3724\u20133725 (2) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 380,
+    "sequencePage": 548
+  },
+  {
+    "symbol": "QS_KIND",
+    "record": "HTML lines 3726\u20133727 (2) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 381,
+    "sequencePage": 549
+  },
+  {
+    "symbol": "isEdsName",
+    "record": "HTML lines 3734\u20133734 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 381,
+    "sequencePage": 549
+  },
+  {
+    "symbol": "decodeEds",
+    "record": "HTML lines 3735\u20133863 (129) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 382,
+    "sequencePage": 550
+  },
+  {
+    "symbol": "ixoIntegrity",
+    "record": "HTML lines 3866\u20133880 (15) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 385,
+    "sequencePage": 553
+  },
+  {
+    "symbol": "edsEvents",
+    "record": "HTML lines 3902\u20133985 (84) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 386,
+    "sequencePage": 554
+  },
+  {
+    "symbol": "edsRecordTables",
+    "record": "HTML lines 3989\u20134034 (46) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 388,
+    "sequencePage": 556
+  },
+  {
+    "symbol": "edsDerived",
+    "record": "HTML lines 4050\u20134100 (51) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 390,
+    "sequencePage": 558
+  },
+  {
+    "symbol": "edsSignalRows",
+    "record": "HTML lines 4137\u20134153 (17) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 392,
+    "sequencePage": 560
+  },
+  {
+    "symbol": "qsWorkbook",
+    "record": "HTML lines 4179\u20134186 (8) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 393,
+    "sequencePage": 561
+  },
+  {
+    "symbol": "intake",
+    "record": "HTML lines 10125\u201310194 (70) \u2219 arity 1 \u2219 probed in a page of its own by design",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 394,
+    "sequencePage": 562
+  },
+  {
+    "symbol": "readStaged",
+    "record": "HTML lines 10195\u201310205 (11) \u2219 arity 0 \u2219 probed in a page of its own by design",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 396,
+    "sequencePage": 564
+  },
+  {
+    "symbol": "readStagedCore",
+    "record": "HTML lines 10206\u201310247 (42) \u2219 arity 1 \u2219 probed in a page of its own by design",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 397,
+    "sequencePage": 565
+  },
+  {
+    "symbol": "parseCqTable",
+    "record": "HTML lines 10255\u201310300 (46) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 399,
+    "sequencePage": 567
+  },
+  {
+    "symbol": "derivedSettings",
+    "record": "HTML lines 10413\u201310568 (156) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 400,
+    "sequencePage": 568
+  },
+  {
+    "symbol": "derivedSettingsFor",
+    "record": "HTML lines 10570\u201310573 (4) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 404,
+    "sequencePage": 572
+  },
+  {
+    "symbol": "safeName",
+    "record": "HTML lines 2078\u20132078 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 405,
+    "sequencePage": 573
+  },
+  {
+    "symbol": "download",
+    "record": "HTML lines 3172\u20133176 (5) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 406,
+    "sequencePage": 574
+  },
+  {
+    "symbol": "makeZip",
+    "record": "HTML lines 3250\u20133266 (17) private",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 407,
+    "sequencePage": 575
+  },
+  {
+    "symbol": "pseudonymMap",
+    "record": "HTML lines 4104\u20134113 (10) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 407,
+    "sequencePage": 575
+  },
+  {
+    "symbol": "pseudoOn",
+    "record": "HTML lines 4114\u20134114 (1) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 408,
+    "sequencePage": 576
+  },
+  {
+    "symbol": "exportName",
+    "record": "HTML lines 4115\u20134115 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 409,
+    "sequencePage": 577
+  },
+  {
+    "symbol": "pseudoRun",
+    "record": "HTML lines 4116\u20134123 (8) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 410,
+    "sequencePage": 578
+  },
+  {
+    "symbol": "xlsxCol",
+    "record": "HTML lines 4156\u20134156 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 411,
+    "sequencePage": 579
+  },
+  {
+    "symbol": "xlsxCell",
+    "record": "HTML lines 4157\u20134163 (7) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 411,
+    "sequencePage": 579
+  },
+  {
+    "symbol": "makeXlsx",
+    "record": "HTML lines 4164\u20134178 (15) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 412,
+    "sequencePage": 580
+  },
+  {
+    "symbol": "csvOf",
+    "record": "HTML lines 5051\u20135051 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 413,
+    "sequencePage": 581
+  },
+  {
+    "symbol": "makeWebsiteArchive",
+    "record": "HTML lines 8064\u20138070 (7) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 414,
+    "sequencePage": 582
+  },
+  {
+    "symbol": "downloadWebsiteArchive",
+    "record": "HTML lines 8071\u20138074 (4) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 415,
+    "sequencePage": 583
+  },
+  {
+    "symbol": "csvq",
+    "record": "HTML lines 8075\u20138078 (4) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 416,
+    "sequencePage": 584
+  },
+  {
+    "symbol": "toCSV",
+    "record": "HTML lines 8079\u20138082 (4) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 416,
+    "sequencePage": 584
+  },
+  {
+    "symbol": "makeRDMLXML",
+    "record": "HTML lines 8280\u20138323 (44) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 417,
+    "sequencePage": 585
+  },
+  {
+    "symbol": "makeRDML",
+    "record": "HTML lines 8324\u20138324 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 419,
+    "sequencePage": 587
+  },
+  {
+    "symbol": "makeQpcrWide",
+    "record": "HTML lines 8329\u20138341 (13) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 420,
+    "sequencePage": 588
+  },
+  {
+    "symbol": "makeQpcrWideTables",
+    "record": "HTML lines 8342\u20138349 (8) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 421,
+    "sequencePage": 589
+  },
+  {
+    "symbol": "makeBaselineCSV",
+    "record": "HTML lines 8353\u20138365 (13) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 422,
+    "sequencePage": 590
+  },
+  {
+    "symbol": "makeRDES",
+    "record": "HTML lines 8366\u20138378 (13) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 423,
+    "sequencePage": 591
+  },
+  {
+    "symbol": "makeRDESTables",
+    "record": "HTML lines 8379\u20138386 (8) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 424,
+    "sequencePage": 592
+  },
+  {
+    "symbol": "exportCatalogue",
+    "record": "HTML lines 8602\u20138638 (37) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 425,
+    "sequencePage": 593
+  },
+  {
+    "symbol": "exportCatalogueCore",
+    "record": "HTML lines 8639\u20138691 (53) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 427,
+    "sequencePage": 595
+  },
+  {
+    "symbol": "bundleZip",
+    "record": "HTML lines 8692\u20138735 (44) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 429,
+    "sequencePage": 597
+  },
+  {
+    "symbol": "bundleReadme",
+    "record": "HTML lines 8736\u20138778 (43) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 431,
+    "sequencePage": 599
+  },
+  {
+    "symbol": "downloadCanvas",
+    "record": "HTML lines 9460\u20139464 (5) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 433,
+    "sequencePage": 601
+  },
+  {
+    "symbol": "downloadReviewBundle",
+    "record": "HTML lines 9491\u20139494 (4) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 434,
+    "sequencePage": 602
+  },
+  {
+    "symbol": "downloadCurveCSV",
+    "record": "HTML lines 10061\u201310061 (1) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 434,
+    "sequencePage": 602
+  },
+  {
+    "symbol": "downloadCurveCSVCore",
+    "record": "HTML lines 10062\u201310069 (8) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 435,
+    "sequencePage": 603
+  },
+  {
+    "symbol": "downloadForensicCSV",
+    "record": "HTML lines 10070\u201310077 (8) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 436,
+    "sequencePage": 604
+  },
+  {
+    "symbol": "CSV_EXAMPLE",
+    "record": "HTML lines 10301\u201310311 (11) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 437,
+    "sequencePage": 605
+  },
+  {
+    "symbol": "DEFAULT_LANG",
+    "record": "HTML lines 993\u2013993 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 438,
+    "sequencePage": 606
+  },
+  {
+    "symbol": "ZH_TERMS",
+    "record": "HTML lines 994\u20131918 (925) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 439,
+    "sequencePage": 607
+  },
+  {
+    "symbol": "UI_LANG",
+    "record": "HTML lines 1919\u20131919 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 465,
+    "sequencePage": 633
+  },
+  {
+    "symbol": "I18N_ORIGINAL_TEXT",
+    "record": "HTML lines 1920\u20131920 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 465,
+    "sequencePage": 633
+  },
+  {
+    "symbol": "zhPhrase",
+    "record": "HTML lines 1922\u20132000 (79) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 466,
+    "sequencePage": 634
+  },
+  {
+    "symbol": "ui",
+    "record": "HTML lines 2001\u20132001 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 468,
+    "sequencePage": 636
+  },
+  {
+    "symbol": "localizeDOM",
+    "record": "HTML lines 2002\u20132021 (20) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 469,
+    "sequencePage": 637
+  },
+  {
+    "symbol": "showCuteToast",
+    "record": "HTML lines 2022\u20132028 (7) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 470,
+    "sequencePage": 638
+  },
+  {
+    "symbol": "ce",
+    "record": "HTML lines 2068\u20132068 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 471,
+    "sequencePage": 639
+  },
+  {
+    "symbol": "esc",
+    "record": "HTML lines 2076\u20132076 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 472,
+    "sequencePage": 640
+  },
+  {
+    "symbol": "fmt",
+    "record": "HTML lines 3164\u20133164 (1) private",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 472,
+    "sequencePage": 640
+  },
+  {
+    "symbol": "pill",
+    "record": "HTML lines 3165\u20133165 (1) private",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 473,
+    "sequencePage": 641
+  },
+  {
+    "symbol": "dt",
+    "record": "HTML lines 3166\u20133166 (1) \u2219 arity 1 \u2219 reached as EDS.dt pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 473,
+    "sequencePage": 641
+  },
+  {
+    "symbol": "renderSopHeader",
+    "record": "HTML lines 4878\u20134886 (9) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 474,
+    "sequencePage": 642
+  },
+  {
+    "symbol": "renderSopEditor",
+    "record": "HTML lines 4907\u20134997 (91) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 475,
+    "sequencePage": 643
+  },
+  {
+    "symbol": "renderSopResults",
+    "record": "HTML lines 4999\u20135046 (48) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 478,
+    "sequencePage": 646
+  },
+  {
+    "symbol": "renderSop",
+    "record": "HTML lines 5102\u20135102 (1) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 480,
+    "sequencePage": 648
+  },
+  {
+    "symbol": "renderResults",
+    "record": "HTML lines 5103\u20135103 (1) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 481,
+    "sequencePage": 649
+  },
+  {
+    "symbol": "fmtTick",
+    "record": "HTML lines 5115\u20135115 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 481,
+    "sequencePage": 649
+  },
+  {
+    "symbol": "renderGraphs",
+    "record": "HTML lines 5549\u20135578 (30) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 482,
+    "sequencePage": 650
+  },
+  {
+    "symbol": "DIRTY",
+    "record": "HTML lines 5626\u20135626 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 483,
+    "sequencePage": 651
+  },
+  {
+    "symbol": "renderTab",
+    "record": "HTML lines 5633\u20135654 (22) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 484,
+    "sequencePage": 652
+  },
+  {
+    "symbol": "renderReviewSheetLazy",
+    "record": "HTML lines 5655\u20135659 (5) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 485,
+    "sequencePage": 653
+  },
+  {
+    "symbol": "renderPanel",
+    "record": "HTML lines 6684\u20136724 (41) \u2219 arity 0 \u2219 probed in a page of its own pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 486,
+    "sequencePage": 654
+  },
+  {
+    "symbol": "renderCcDetail",
+    "record": "HTML lines 6725\u20136794 (70) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 488,
+    "sequencePage": 656
+  },
+  {
+    "symbol": "APP_VERSION",
+    "record": "HTML lines 7000\u20137000 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 491,
+    "sequencePage": 659
+  },
+  {
+    "symbol": "APP_LIMITS",
+    "record": "HTML lines 7004\u20137004 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 492,
+    "sequencePage": 660
+  },
+  {
+    "symbol": "APP_STATE",
+    "record": "HTML lines 7005\u20137005 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 492,
+    "sequencePage": 660
+  },
+  {
+    "symbol": "appError",
+    "record": "HTML lines 7006\u20137013 (8) \u2219 arity 3 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 493,
+    "sequencePage": 661
+  },
+  {
+    "symbol": "APP_PHASE_TRANSITIONS",
+    "record": "HTML lines 7014\u20137014 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 494,
+    "sequencePage": 662
+  },
+  {
+    "symbol": "appDiagnostics",
+    "record": "HTML lines 7025\u20137025 (1) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 495,
+    "sequencePage": 663
+  },
+  {
+    "symbol": "APP_STATS",
+    "record": "HTML lines 7902\u20137902 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 495,
+    "sequencePage": 663
+  },
+  {
+    "symbol": "appTaskStart",
+    "record": "HTML lines 7903\u20137907 (5) \u2219 arity 3 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 496,
+    "sequencePage": 664
+  },
+  {
+    "symbol": "appTaskStep",
+    "record": "HTML lines 7908\u20137908 (1) \u2219 arity 3 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 497,
+    "sequencePage": 665
+  },
+  {
+    "symbol": "appTaskEnd",
+    "record": "HTML lines 7909\u20137913 (5) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 497,
+    "sequencePage": 665
+  },
+  {
+    "symbol": "appTaskWrap",
+    "record": "HTML lines 7914\u20137917 (4) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 498,
+    "sequencePage": 666
+  },
+  {
+    "symbol": "APP_TASK_LABEL",
+    "record": "HTML lines 7918\u20137920 (3) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 499,
+    "sequencePage": 667
+  },
+  {
+    "symbol": "appHeapMB",
+    "record": "HTML lines 7921\u20137921 (1) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 499,
+    "sequencePage": 667
+  },
+  {
+    "symbol": "appStagedBytes",
+    "record": "HTML lines 7922\u20137922 (1) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 500,
+    "sequencePage": 668
+  },
+  {
+    "symbol": "appNotice",
+    "record": "HTML lines 7923\u20137928 (6) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 500,
+    "sequencePage": 668
+  },
+  {
+    "symbol": "appCancel",
+    "record": "HTML lines 7929\u20137933 (5) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 501,
+    "sequencePage": 669
+  },
+  {
+    "symbol": "appReadSuperseded",
+    "record": "HTML lines 7934\u20137941 (8) \u2219 arity 1 \u2219 probed in a page of its own by design",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 502,
+    "sequencePage": 670
+  },
+  {
+    "symbol": "APP_PHASE_TEXT",
+    "record": "HTML lines 7942\u20137943 (2) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 503,
+    "sequencePage": 671
+  },
+  {
+    "symbol": "appFmtMs",
+    "record": "HTML lines 7944\u20137944 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 503,
+    "sequencePage": 671
+  },
+  {
+    "symbol": "appFmtMB",
+    "record": "HTML lines 7945\u20137945 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 504,
+    "sequencePage": 672
+  },
+  {
+    "symbol": "appStatusSnapshot",
+    "record": "HTML lines 7946\u20137959 (14) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 505,
+    "sequencePage": 673
+  },
+  {
+    "symbol": "renderConsoleIdentity",
+    "record": "HTML lines 7960\u20137971 (12) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 506,
+    "sequencePage": 674
+  },
+  {
+    "symbol": "APP_SB_LAST",
+    "record": "HTML lines 7972\u20137972 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 507,
+    "sequencePage": 675
+  },
+  {
+    "symbol": "appStatusPaint",
+    "record": "HTML lines 7973\u20138020 (48) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 507,
+    "sequencePage": 675
+  },
+  {
+    "symbol": "appStatusReport",
+    "record": "HTML lines 8021\u20138026 (6) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 509,
+    "sequencePage": 677
+  },
+  {
+    "symbol": "appStatusInit",
+    "record": "HTML lines 8027\u20138038 (12) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 510,
+    "sequencePage": 678
+  },
+  {
+    "symbol": "renderMachineMetadata",
+    "record": "HTML lines 8598\u20138601 (4) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 511,
+    "sequencePage": 679
+  },
+  {
+    "symbol": "renderLoaded",
+    "record": "HTML lines 8784\u20138814 (31) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 511,
+    "sequencePage": 679
+  },
+  {
+    "symbol": "renderDiagnostics",
+    "record": "HTML lines 8815\u20138831 (17) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 513,
+    "sequencePage": 681
+  },
+  {
+    "symbol": "renderExports",
+    "record": "HTML lines 8832\u20138871 (40) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 514,
+    "sequencePage": 682
+  },
+  {
+    "symbol": "setSelectItems",
+    "record": "HTML lines 8907\u20138914 (8) \u2219 arity 3 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 515,
+    "sequencePage": 683
+  },
+  {
+    "symbol": "renderControlCategoryEditor",
+    "record": "HTML lines 9339\u20139363 (25) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 516,
+    "sequencePage": 684
+  },
+  {
+    "symbol": "renderIntegrity",
+    "record": "HTML lines 9563\u20139585 (23) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 518,
+    "sequencePage": 686
+  },
+  {
+    "symbol": "renderReviewOverview",
+    "record": "HTML lines 9587\u20139616 (30) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 519,
+    "sequencePage": 687
+  },
+  {
+    "symbol": "renderReviewPlate",
+    "record": "HTML lines 9624\u20139660 (37) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 520,
+    "sequencePage": 688
+  },
+  {
+    "symbol": "renderReviewComparison",
+    "record": "HTML lines 9683\u20139703 (21) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 522,
+    "sequencePage": 690
+  },
+  {
+    "symbol": "renderReviewStatistics",
+    "record": "HTML lines 9704\u20139740 (37) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 523,
+    "sequencePage": 691
+  },
+  {
+    "symbol": "renderReviewControls",
+    "record": "HTML lines 9741\u20139766 (26) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 525,
+    "sequencePage": 693
+  },
+  {
+    "symbol": "renderReviewRuns",
+    "record": "HTML lines 9801\u20139839 (39) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 526,
+    "sequencePage": 694
+  },
+  {
+    "symbol": "renderReviewCurves",
+    "record": "HTML lines 9879\u20139908 (30) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 527,
+    "sequencePage": 695
+  },
+  {
+    "symbol": "renderReviewRising",
+    "record": "HTML lines 9992\u201310015 (24) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 529,
+    "sequencePage": 697
+  },
+  {
+    "symbol": "renderReviewInstrument",
+    "record": "HTML lines 10016\u201310053 (38) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 530,
+    "sequencePage": 698
+  },
+  {
+    "symbol": "renderQualityReview",
+    "record": "HTML lines 10078\u201310081 (4) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 532,
+    "sequencePage": 700
+  },
+  {
+    "symbol": "renderQualityReviewLazy",
+    "record": "HTML lines 10082\u201310082 (1) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 533,
+    "sequencePage": 701
+  },
+  {
+    "symbol": "showReviewSheet",
+    "record": "HTML lines 10083\u201310088 (6) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 533,
+    "sequencePage": 701
+  },
+  {
+    "symbol": "showTab",
+    "record": "HTML lines 10335\u201310341 (7) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 534,
+    "sequencePage": 702
+  },
+  {
+    "symbol": "renderDerived",
+    "record": "HTML lines 10574\u201310587 (14) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 535,
+    "sequencePage": 703
+  },
+  {
+    "symbol": "languageStorageKey",
+    "record": "HTML lines 2029\u20132029 (1) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 538,
+    "sequencePage": 706
+  },
+  {
+    "symbol": "rememberedLanguage",
+    "record": "HTML lines 2030\u20132030 (1) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 538,
+    "sequencePage": 706
+  },
+  {
+    "symbol": "setLanguage",
+    "record": "HTML lines 2031\u20132041 (11) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 539,
+    "sequencePage": 707
+  },
+  {
+    "symbol": "UNKNOWN_ROLE",
+    "record": "HTML lines 2042\u20132042 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 540,
+    "sequencePage": 708
+  },
+  {
+    "symbol": "ROLES",
+    "record": "HTML lines 2043\u20132043 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 540,
+    "sequencePage": 708
+  },
+  {
+    "symbol": "REP_REGEX",
+    "record": "HTML lines 2044\u20132048 (5) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 541,
+    "sequencePage": 709
+  },
+  {
+    "symbol": "CALL",
+    "record": "HTML lines 2050\u20132050 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 541,
+    "sequencePage": 709
+  },
+  {
+    "symbol": "SAMPLE_TYPE",
+    "record": "HTML lines 2051\u20132055 (5) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 542,
+    "sequencePage": 710
+  },
+  {
+    "symbol": "TYPE_TO_ROLE",
+    "record": "HTML lines 2056\u20132060 (5) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 542,
+    "sequencePage": 710
+  },
+  {
+    "symbol": "NEGATIVE_FAMILY",
+    "record": "HTML lines 2061\u20132061 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 543,
+    "sequencePage": 711
+  },
+  {
+    "symbol": "ROLE_COLOURS",
+    "record": "HTML lines 2062\u20132063 (2) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 543,
+    "sequencePage": 711
+  },
+  {
+    "symbol": "ROLE_LINE",
+    "record": "HTML lines 2064\u20132065 (2) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 544,
+    "sequencePage": 712
+  },
+  {
+    "symbol": "PALETTE",
+    "record": "HTML lines 2066\u20132066 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 544,
+    "sequencePage": 712
+  },
+  {
+    "symbol": "textEncoder",
+    "record": "HTML lines 2069\u20132069 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 545,
+    "sequencePage": 713
+  },
+  {
+    "symbol": "clone",
+    "record": "HTML lines 2075\u20132075 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 545,
+    "sequencePage": 713
+  },
+  {
+    "symbol": "xesc",
+    "record": "HTML lines 2077\u20132077 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 546,
+    "sequencePage": 714
+  },
+  {
+    "symbol": "bytesFrom",
+    "record": "HTML lines 2079\u20132079 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 547,
+    "sequencePage": 715
+  },
+  {
+    "symbol": "scrollToEl",
+    "record": "HTML lines 2080\u20132080 (1) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 547,
+    "sequencePage": 715
+  },
+  {
+    "symbol": "option",
+    "record": "HTML lines 2081\u20132081 (1) \u2219 arity 3 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 548,
+    "sequencePage": 716
+  },
+  {
+    "symbol": "num",
+    "record": "HTML lines 2082\u20132082 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 548,
+    "sequencePage": 716
+  },
+  {
+    "symbol": "safeRe",
+    "record": "HTML lines 2083\u20132083 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 549,
+    "sequencePage": 717
+  },
+  {
+    "symbol": "uniq",
+    "record": "HTML lines 2084\u20132084 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 550,
+    "sequencePage": 718
+  },
+  {
+    "symbol": "byKey",
+    "record": "HTML lines 2085\u20132085 (1) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 551,
+    "sequencePage": 719
+  },
+  {
+    "symbol": "mean",
+    "record": "HTML lines 2090\u20132090 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 552,
+    "sequencePage": 720
+  },
+  {
+    "symbol": "avg",
+    "record": "HTML lines 2091\u20132091 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 553,
+    "sequencePage": 721
+  },
+  {
+    "symbol": "sd",
+    "record": "HTML lines 2092\u20132092 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 554,
+    "sequencePage": 722
+  },
+  {
+    "symbol": "median",
+    "record": "HTML lines 2093\u20132093 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 554,
+    "sequencePage": 722
+  },
+  {
+    "symbol": "percentile",
+    "record": "HTML lines 2095\u20132100 (6) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 555,
+    "sequencePage": 723
+  },
+  {
+    "symbol": "range",
+    "record": "HTML lines 2101\u20132101 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 556,
+    "sequencePage": 724
+  },
+  {
+    "symbol": "cv",
+    "record": "HTML lines 2102\u20132102 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 556,
+    "sequencePage": 724
+  },
+  {
+    "symbol": "lgamma",
+    "record": "HTML lines 2105\u20132110 (6) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 557,
+    "sequencePage": 725
+  },
+  {
+    "symbol": "betacf",
+    "record": "HTML lines 2112\u20132131 (20) \u2219 arity 3 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 558,
+    "sequencePage": 726
+  },
+  {
+    "symbol": "betai",
+    "record": "HTML lines 2132\u20132136 (5) \u2219 arity 3 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 559,
+    "sequencePage": 727
+  },
+  {
+    "symbol": "tDistTwoTail",
+    "record": "HTML lines 2138\u20132141 (4) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 559,
+    "sequencePage": 727
+  },
+  {
+    "symbol": "gammap",
+    "record": "HTML lines 2143\u20132158 (16) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 560,
+    "sequencePage": 728
+  },
+  {
+    "symbol": "chiSqP",
+    "record": "HTML lines 2159\u20132159 (1) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 561,
+    "sequencePage": 729
+  },
+  {
+    "symbol": "tTest",
+    "record": "HTML lines 2162\u20132185 (24) \u2219 arity 3 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 562,
+    "sequencePage": 730
+  },
+  {
+    "symbol": "fitLin",
+    "record": "HTML lines 2186\u20132193 (8) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 563,
+    "sequencePage": 731
+  },
+  {
+    "symbol": "sourceSha256",
+    "record": "HTML lines 2204\u20132210 (7) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 563,
+    "sequencePage": 731
+  },
+  {
+    "symbol": "sha256Hex",
+    "record": "HTML lines 2211\u20132243 (33) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 564,
+    "sequencePage": 732
+  },
+  {
+    "symbol": "dosStamp",
+    "record": "HTML lines 2277\u20132281 (5) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 566,
+    "sequencePage": 734
+  },
+  {
+    "symbol": "propText",
+    "record": "HTML lines 2315\u20132315 (1) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 566,
+    "sequencePage": 734
+  },
+  {
+    "symbol": "pv",
+    "record": "HTML lines 2316\u20132316 (1) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 567,
+    "sequencePage": 735
+  },
+  {
+    "symbol": "propValues",
+    "record": "HTML lines 2317\u20132317 (1) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 568,
+    "sequencePage": 736
+  },
+  {
+    "symbol": "base64ToBytes",
+    "record": "HTML lines 2318\u20132318 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 569,
+    "sequencePage": 737
+  },
+  {
+    "symbol": "posToLimsWell",
+    "record": "HTML lines 2320\u20132320 (1) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 569,
+    "sequencePage": 737
+  },
+  {
+    "symbol": "wellToPos",
+    "record": "HTML lines 2321\u20132324 (4) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 570,
+    "sequencePage": 738
+  },
+  {
+    "symbol": "hexBEToDouble",
+    "record": "HTML lines 2325\u20132332 (8) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 570,
+    "sequencePage": 738
+  },
+  {
+    "symbol": "acquisitionStats",
+    "record": "HTML lines 2422\u20132429 (8) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 571,
+    "sequencePage": 739
+  },
+  {
+    "symbol": "ANALYSIS_CLASS_RE",
+    "record": "HTML lines 2549\u20132549 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 572,
+    "sequencePage": 740
+  },
+  {
+    "symbol": "ANALYSIS_KINDS",
+    "record": "HTML lines 2550\u20132558 (9) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 572,
+    "sequencePage": 740
+  },
+  {
+    "symbol": "analysisKind",
+    "record": "HTML lines 2559\u20132563 (5) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 573,
+    "sequencePage": 741
+  },
+  {
+    "symbol": "LC_CALC_STATE_LABELS",
+    "record": "HTML lines 2568\u20132568 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 574,
+    "sequencePage": 742
+  },
+  {
+    "symbol": "calcStateLabel",
+    "record": "HTML lines 2569\u20132569 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 574,
+    "sequencePage": 742
+  },
+  {
+    "symbol": "cpMethodOf",
+    "record": "HTML lines 2570\u20132576 (7) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 575,
+    "sequencePage": 743
+  },
+  {
+    "symbol": "RESULT_PROPS",
+    "record": "HTML lines 2578\u20132579 (2) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 576,
+    "sequencePage": 744
+  },
+  {
+    "symbol": "resultKindOf",
+    "record": "HTML lines 2589\u20132599 (11) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 576,
+    "sequencePage": 744
+  },
+  {
+    "symbol": "PAIRING_RULES",
+    "record": "HTML lines 2606\u20132606 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 577,
+    "sequencePage": 745
+  },
+  {
+    "symbol": "rqResult",
+    "record": "HTML lines 2607\u20132623 (17) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 577,
+    "sequencePage": 745
+  },
+  {
+    "symbol": "ownedBy",
+    "record": "HTML lines 2675\u20132683 (9) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 578,
+    "sequencePage": 746
+  },
+  {
+    "symbol": "NON_RESULT_CLASSES",
+    "record": "HTML lines 2777\u20132777 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 579,
+    "sequencePage": 747
+  },
+  {
+    "symbol": "$",
+    "record": "HTML lines 3161\u20133161 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 580,
+    "sequencePage": 748
+  },
+  {
+    "symbol": "hex",
+    "record": "HTML lines 3167\u20133167 (1) private",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 580,
+    "sequencePage": 748
+  },
+  {
+    "symbol": "xml",
+    "record": "HTML lines 3269\u20133269 (1) private",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 581,
+    "sequencePage": 749
+  },
+  {
+    "symbol": "kid",
+    "record": "HTML lines 3270\u20133270 (1) private",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 581,
+    "sequencePage": 749
+  },
+  {
+    "symbol": "kids",
+    "record": "HTML lines 3271\u20133271 (1) private",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 582,
+    "sequencePage": 750
+  },
+  {
+    "symbol": "txt",
+    "record": "HTML lines 3272\u20133272 (1) private",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 582,
+    "sequencePage": 750
+  },
+  {
+    "symbol": "argb",
+    "record": "HTML lines 3273\u20133273 (1) private",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 582,
+    "sequencePage": 750
+  },
+  {
+    "symbol": "bracketList",
+    "record": "HTML lines 3274\u20133274 (1) private",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 583,
+    "sequencePage": 751
+  },
+  {
+    "symbol": "ini",
+    "record": "HTML lines 3275\u20133277 (3) private",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 583,
+    "sequencePage": 751
+  },
+  {
+    "symbol": "P",
+    "record": "HTML lines 3304\u20133304 (1) private",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 584,
+    "sequencePage": 752
+  },
+  {
+    "symbol": "pad2",
+    "record": "HTML lines 3564\u20133564 (1) private",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 584,
+    "sequencePage": 752
+  },
+  {
+    "symbol": "javaHashOrder",
+    "record": "HTML lines 3587\u20133591 (5) private",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 585,
+    "sequencePage": 753
+  },
+  {
+    "symbol": "isoLocal",
+    "record": "HTML lines 3728\u20133733 (6) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 585,
+    "sequencePage": 753
+  },
+  {
+    "symbol": "ec",
+    "record": "HTML lines 3986\u20133986 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 586,
+    "sequencePage": 754
+  },
+  {
+    "symbol": "PSEUDO_MAP",
+    "record": "HTML lines 4103\u20134103 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 586,
+    "sequencePage": 754
+  },
+  {
+    "symbol": "withExportNames",
+    "record": "HTML lines 4124\u20134128 (5) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 587,
+    "sequencePage": 755
+  },
+  {
+    "symbol": "rqRows",
+    "record": "HTML lines 4129\u20134136 (8) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 588,
+    "sequencePage": 756
+  },
+  {
+    "symbol": "STORED_SOP",
+    "record": "HTML lines 4333\u20134333 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 589,
+    "sequencePage": 757
+  },
+  {
+    "symbol": "STORED_SOP_IS_TEMPLATE",
+    "record": "HTML lines 4334\u20134334 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 589,
+    "sequencePage": 757
+  },
+  {
+    "symbol": "controlBatchRecords",
+    "record": "HTML lines 4459\u20134468 (10) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 590,
+    "sequencePage": 758
+  },
+  {
+    "symbol": "controlBatchGraph",
+    "record": "HTML lines 4469\u20134485 (17) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 591,
+    "sequencePage": 759
+  },
+  {
+    "symbol": "wellSignal",
+    "record": "HTML lines 4503\u20134508 (6) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 592,
+    "sequencePage": 760
+  },
+  {
+    "symbol": "runTimeline",
+    "record": "HTML lines 4511\u20134531 (21) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 593,
+    "sequencePage": 761
+  },
+  {
+    "symbol": "runTimes",
+    "record": "HTML lines 4532\u20134539 (8) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 594,
+    "sequencePage": 762
+  },
+  {
+    "symbol": "invalidateAnalysisCaches",
+    "record": "HTML lines 4765\u20134767 (3) excluded",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 595,
+    "sequencePage": 763
+  },
+  {
+    "symbol": "sheetOf",
+    "record": "HTML lines 5052\u20135052 (1) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 596,
+    "sequencePage": 764
+  },
+  {
+    "symbol": "wireSop",
+    "record": "HTML lines 5085\u20135101 (17) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 597,
+    "sequencePage": 765
+  },
+  {
+    "symbol": "svgEsc",
+    "record": "HTML lines 5106\u20135106 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 598,
+    "sequencePage": 766
+  },
+  {
+    "symbol": "SVG_CLIP_N",
+    "record": "HTML lines 5116\u20135116 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 599,
+    "sequencePage": 767
+  },
+  {
+    "symbol": "svgMessage",
+    "record": "HTML lines 5162\u20135162 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 599,
+    "sequencePage": 767
+  },
+  {
+    "symbol": "legendFromMap",
+    "record": "HTML lines 5164\u20135164 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 600,
+    "sequencePage": 768
+  },
+  {
+    "symbol": "catColour",
+    "record": "HTML lines 5165\u20135165 (1) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 601,
+    "sequencePage": 769
+  },
+  {
+    "symbol": "gTargets",
+    "record": "HTML lines 5171\u20135171 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 601,
+    "sequencePage": 769
+  },
+  {
+    "symbol": "gCutLines",
+    "record": "HTML lines 5172\u20135178 (7) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 602,
+    "sequencePage": 770
+  },
+  {
+    "symbol": "GRAPH_METRICS",
+    "record": "HTML lines 5541\u20135541 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 603,
+    "sequencePage": 771
+  },
+  {
+    "symbol": "GRAPH_STATE",
+    "record": "HTML lines 5542\u20135542 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 603,
+    "sequencePage": 771
+  },
+  {
+    "symbol": "wireGraphs",
+    "record": "HTML lines 5611\u20135623 (13) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 605,
+    "sequencePage": 773
+  },
+  {
+    "symbol": "markDirty",
+    "record": "HTML lines 5627\u20135627 (1) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 606,
+    "sequencePage": 774
+  },
+  {
+    "symbol": "currentTab",
+    "record": "HTML lines 5628\u20135628 (1) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 607,
+    "sequencePage": 775
+  },
+  {
+    "symbol": "currentReviewSheet",
+    "record": "HTML lines 5629\u20135629 (1) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 607,
+    "sequencePage": 775
+  },
+  {
+    "symbol": "REVIEW_RENDERERS",
+    "record": "HTML lines 5630\u20135632 (3) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 608,
+    "sequencePage": 776
+  },
+  {
+    "symbol": "CONSOLE_DICT",
+    "record": "HTML lines 6432\u20136436 (5) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 608,
+    "sequencePage": 776
+  },
+  {
+    "symbol": "wirePanel",
+    "record": "HTML lines 6919\u20136936 (18) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 610,
+    "sequencePage": 778
+  },
+  {
+    "symbol": "effWol",
+    "record": "HTML lines 6950\u20136968 (19) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 611,
+    "sequencePage": 779
+  },
+  {
+    "symbol": "effSliwinProxy",
+    "record": "HTML lines 6969\u20136982 (14) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 612,
+    "sequencePage": 780
+  },
+  {
+    "symbol": "efficiencyFromSlope",
+    "record": "HTML lines 6989\u20136993 (5) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 613,
+    "sequencePage": 781
+  },
+  {
+    "symbol": "$$",
+    "record": "HTML lines 6999\u20136999 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 614,
+    "sequencePage": 782
+  },
+  {
+    "symbol": "setPhase",
+    "record": "HTML lines 7015\u20137024 (10) excluded",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 614,
+    "sequencePage": 782
+  },
+  {
+    "symbol": "validateRunBoundary",
+    "record": "HTML lines 7026\u20137035 (10) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 615,
+    "sequencePage": 783
+  },
+  {
+    "symbol": "validateHistoryBoundary",
+    "record": "HTML lines 7036\u20137043 (8) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 616,
+    "sequencePage": 784
+  },
+  {
+    "symbol": "MG",
+    "record": "HTML lines 7053\u20137053 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 617,
+    "sequencePage": 785
+  },
+  {
+    "symbol": "RUNS",
+    "record": "HTML lines 8039\u20138039 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 618,
+    "sequencePage": 786
+  },
+  {
+    "symbol": "PASTED",
+    "record": "HTML lines 8040\u20138040 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 619,
+    "sequencePage": 787
+  },
+  {
+    "symbol": "INHIB",
+    "record": "HTML lines 8041\u20138041 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 620,
+    "sequencePage": 788
+  },
+  {
+    "symbol": "tag",
+    "record": "HTML lines 8043\u20138043 (1) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 620,
+    "sequencePage": 788
+  },
+  {
+    "symbol": "table",
+    "record": "HTML lines 8044\u20138052 (9) \u2219 arity 3 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 621,
+    "sequencePage": 789
+  },
+  {
+    "symbol": "websiteSource",
+    "record": "HTML lines 8060\u20138063 (4) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 622,
+    "sequencePage": 790
+  },
+  {
+    "symbol": "stamp",
+    "record": "HTML lines 8083\u20138083 (1) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 623,
+    "sequencePage": 791
+  },
+  {
+    "symbol": "baseName",
+    "record": "HTML lines 8084\u20138088 (5) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 624,
+    "sequencePage": 792
+  },
+  {
+    "symbol": "NAME_ROLE_RULES",
+    "record": "HTML lines 8101\u20138108 (8) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 625,
+    "sequencePage": 793
+  },
+  {
+    "symbol": "roleFromName",
+    "record": "HTML lines 8109\u20138113 (5) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 625,
+    "sequencePage": 793
+  },
+  {
+    "symbol": "assignRoles",
+    "record": "HTML lines 8114\u20138141 (28) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 626,
+    "sequencePage": 794
+  },
+  {
+    "symbol": "operatorOf",
+    "record": "HTML lines 8146\u20138146 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 627,
+    "sequencePage": 795
+  },
+  {
+    "symbol": "sourceUidOf",
+    "record": "HTML lines 8147\u20138147 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 628,
+    "sequencePage": 796
+  },
+  {
+    "symbol": "sourceCRCOf",
+    "record": "HTML lines 8148\u20138148 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 629,
+    "sequencePage": 797
+  },
+  {
+    "symbol": "sourceSHA256Of",
+    "record": "HTML lines 8149\u20138149 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 630,
+    "sequencePage": 798
+  },
+  {
+    "symbol": "runDurationMinutes",
+    "record": "HTML lines 8150\u20138153 (4) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 631,
+    "sequencePage": 799
+  },
+  {
+    "symbol": "uniqueCurveCount",
+    "record": "HTML lines 8154\u20138156 (3) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 631,
+    "sequencePage": 799
+  },
+  {
+    "symbol": "acquiredCurveCount",
+    "record": "HTML lines 8157\u20138157 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 632,
+    "sequencePage": 800
+  },
+  {
+    "symbol": "wellRows",
+    "record": "HTML lines 8158\u20138188 (31) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 633,
+    "sequencePage": 801
+  },
+  {
+    "symbol": "allWellRows",
+    "record": "HTML lines 8189\u20138189 (1) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 635,
+    "sequencePage": 803
+  },
+  {
+    "symbol": "tmRows",
+    "record": "HTML lines 8190\u20138212 (23) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 635,
+    "sequencePage": 803
+  },
+  {
+    "symbol": "metaRows",
+    "record": "HTML lines 8213\u20138236 (24) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 637,
+    "sequencePage": 805
+  },
+  {
+    "symbol": "dyeChemistryOf",
+    "record": "HTML lines 8252\u20138261 (10) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 638,
+    "sequencePage": 806
+  },
+  {
+    "symbol": "analysisGroups",
+    "record": "HTML lines 8269\u20138277 (9) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 639,
+    "sequencePage": 807
+  },
+  {
+    "symbol": "curveAnalysisGroups",
+    "record": "HTML lines 8278\u20138278 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 640,
+    "sequencePage": 808
+  },
+  {
+    "symbol": "rScript",
+    "record": "HTML lines 8389\u20138427 (39) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 641,
+    "sequencePage": 809
+  },
+  {
+    "symbol": "pyScript",
+    "record": "HTML lines 8428\u20138466 (39) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 643,
+    "sequencePage": 811
+  },
+  {
+    "symbol": "BASE_MACHINE_METADATA",
+    "record": "HTML lines 8471\u20138471 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 644,
+    "sequencePage": 812
+  },
+  {
+    "symbol": "JSONLD_STANDARDS",
+    "record": "HTML lines 8472\u20138478 (7) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 645,
+    "sequencePage": 813
+  },
+  {
+    "symbol": "metadataId",
+    "record": "HTML lines 8479\u20138482 (4) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 646,
+    "sequencePage": 814
+  },
+  {
+    "symbol": "outputDistribution",
+    "record": "HTML lines 8483\u20138489 (7) \u2219 arity 6 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 647,
+    "sequencePage": 815
+  },
+  {
+    "symbol": "distributionsFor",
+    "record": "HTML lines 8490\u20138517 (28) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 648,
+    "sequencePage": 816
+  },
+  {
+    "symbol": "variablesFor",
+    "record": "HTML lines 8518\u20138525 (8) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 649,
+    "sequencePage": 817
+  },
+  {
+    "symbol": "datasetMetadata",
+    "record": "HTML lines 8526\u20138571 (46) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 650,
+    "sequencePage": 818
+  },
+  {
+    "symbol": "pastedDatasetMetadata",
+    "record": "HTML lines 8572\u20138583 (12) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 652,
+    "sequencePage": 820
+  },
+  {
+    "symbol": "machineMetadataDocument",
+    "record": "HTML lines 8584\u20138596 (13) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 653,
+    "sequencePage": 821
+  },
+  {
+    "symbol": "machineMetadataJSON",
+    "record": "HTML lines 8597\u20138597 (1) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 654,
+    "sequencePage": 822
+  },
+  {
+    "symbol": "LOADED_LIMIT",
+    "record": "HTML lines 8783\u20138783 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 655,
+    "sequencePage": 823
+  },
+  {
+    "symbol": "REVIEW_COLOURS",
+    "record": "HTML lines 8880\u20138886 (7) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 655,
+    "sequencePage": 823
+  },
+  {
+    "symbol": "PLATE_PASTELS",
+    "record": "HTML lines 8887\u20138887 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 656,
+    "sequencePage": 824
+  },
+  {
+    "symbol": "CONTROL_CATEGORY_OPTIONS",
+    "record": "HTML lines 8888\u20138890 (3) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 656,
+    "sequencePage": 824
+  },
+  {
+    "symbol": "REVIEW_STATE",
+    "record": "HTML lines 8891\u20138892 (2) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 657,
+    "sequencePage": 825
+  },
+  {
+    "symbol": "runName",
+    "record": "HTML lines 8894\u20138894 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 659,
+    "sequencePage": 827
+  },
+  {
+    "symbol": "shortDate",
+    "record": "HTML lines 8895\u20138898 (4) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 660,
+    "sequencePage": 828
+  },
+  {
+    "symbol": "displayRunTick",
+    "record": "HTML lines 8899\u20138902 (4) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 660,
+    "sequencePage": 828
+  },
+  {
+    "symbol": "runAt",
+    "record": "HTML lines 8903\u20138906 (4) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 661,
+    "sequencePage": 829
+  },
+  {
+    "symbol": "analysisChoices",
+    "record": "HTML lines 8916\u20138926 (11) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 662,
+    "sequencePage": 830
+  },
+  {
+    "symbol": "physicalCurveRows",
+    "record": "HTML lines 8932\u20138948 (17) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 663,
+    "sequencePage": 831
+  },
+  {
+    "symbol": "heatColour",
+    "record": "HTML lines 8949\u20138954 (6) \u2219 arity 3 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 664,
+    "sequencePage": 832
+  },
+  {
+    "symbol": "plateMapRows",
+    "record": "HTML lines 8955\u20138982 (28) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 664,
+    "sequencePage": 832
+  },
+  {
+    "symbol": "sampleComparisonRows",
+    "record": "HTML lines 8983\u20138996 (14) \u2219 arity 3 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 666,
+    "sequencePage": 834
+  },
+  {
+    "symbol": "replicateReviewRows",
+    "record": "HTML lines 9017\u20139031 (15) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 667,
+    "sequencePage": 835
+  },
+  {
+    "symbol": "BLANK_ROLES",
+    "record": "HTML lines 9038\u20139038 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 669,
+    "sequencePage": 837
+  },
+  {
+    "symbol": "CQ_NEGATIVE_STATUS",
+    "record": "HTML lines 9066\u20139066 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 669,
+    "sequencePage": 837
+  },
+  {
+    "symbol": "resultCq",
+    "record": "HTML lines 9070\u20139075 (6) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 669,
+    "sequencePage": 837
+  },
+  {
+    "symbol": "resultAnswers",
+    "record": "HTML lines 9076\u20139084 (9) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 670,
+    "sequencePage": 838
+  },
+  {
+    "symbol": "CQ_ANALYSIS_KINDS",
+    "record": "HTML lines 9089\u20139089 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 671,
+    "sequencePage": 839
+  },
+  {
+    "symbol": "quantChannels",
+    "record": "HTML lines 9090\u20139097 (8) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 671,
+    "sequencePage": 839
+  },
+  {
+    "symbol": "stripLotDate",
+    "record": "HTML lines 9278\u20139282 (5) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 672,
+    "sequencePage": 840
+  },
+  {
+    "symbol": "controlRootName",
+    "record": "HTML lines 9283\u20139286 (4) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 673,
+    "sequencePage": 841
+  },
+  {
+    "symbol": "controlRootKey",
+    "record": "HTML lines 9287\u20139289 (3) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 674,
+    "sequencePage": 842
+  },
+  {
+    "symbol": "controlProfileRoot",
+    "record": "HTML lines 9290\u20139300 (11) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 674,
+    "sequencePage": 842
+  },
+  {
+    "symbol": "controlCategory",
+    "record": "HTML lines 9301\u20139322 (22) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 675,
+    "sequencePage": 843
+  },
+  {
+    "symbol": "detectedControlRoots",
+    "record": "HTML lines 9323\u20139338 (16) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 676,
+    "sequencePage": 844
+  },
+  {
+    "symbol": "instrumentRecordTables",
+    "record": "HTML lines 9419\u20139452 (34) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 677,
+    "sequencePage": 845
+  },
+  {
+    "symbol": "emptyReview",
+    "record": "HTML lines 9454\u20139456 (3) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 679,
+    "sequencePage": 847
+  },
+  {
+    "symbol": "metricCard",
+    "record": "HTML lines 9457\u20139459 (3) \u2219 arity 3 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 680,
+    "sequencePage": 848
+  },
+  {
+    "symbol": "FINDING_SEVERITY_RANK",
+    "record": "HTML lines 9495\u20139495 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 681,
+    "sequencePage": 849
+  },
+  {
+    "symbol": "findingTextKey",
+    "record": "HTML lines 9496\u20139496 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 681,
+    "sequencePage": 849
+  },
+  {
+    "symbol": "findingEvidenceKey",
+    "record": "HTML lines 9508\u20139511 (4) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 682,
+    "sequencePage": 850
+  },
+  {
+    "symbol": "findingKey",
+    "record": "HTML lines 9512\u20139516 (5) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 683,
+    "sequencePage": 851
+  },
+  {
+    "symbol": "plateColour",
+    "record": "HTML lines 9617\u20139623 (7) \u2219 arity 4 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 683,
+    "sequencePage": 851
+  },
+  {
+    "symbol": "curveSignal",
+    "record": "HTML lines 9840\u20139840 (1) \u2219 arity 1 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 684,
+    "sequencePage": 852
+  },
+  {
+    "symbol": "curveRowsSelected",
+    "record": "HTML lines 9841\u20139860 (20) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 685,
+    "sequencePage": 853
+  },
+  {
+    "symbol": "SERIES_PALETTE",
+    "record": "HTML lines 9861\u20139861 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 686,
+    "sequencePage": 854
+  },
+  {
+    "symbol": "CALL_LINE",
+    "record": "HTML lines 9863\u20139863 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 687,
+    "sequencePage": 855
+  },
+  {
+    "symbol": "curveKey",
+    "record": "HTML lines 9864\u20139864 (1) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 687,
+    "sequencePage": 855
+  },
+  {
+    "symbol": "curveColour",
+    "record": "HTML lines 9865\u20139878 (14) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 688,
+    "sequencePage": 856
+  },
+  {
+    "symbol": "bindCurveTip",
+    "record": "HTML lines 9938\u20139955 (18) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 689,
+    "sequencePage": 857
+  },
+  {
+    "symbol": "instrumentZip",
+    "record": "HTML lines 10054\u201310060 (7) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 690,
+    "sequencePage": 858
+  },
+  {
+    "symbol": "wireQualityReview",
+    "record": "HTML lines 10089\u201310119 (31) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 691,
+    "sequencePage": 859
+  },
+  {
+    "symbol": "STAGED",
+    "record": "HTML lines 10124\u201310124 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 692,
+    "sequencePage": 860
+  },
+  {
+    "symbol": "CQ_HEADERS",
+    "record": "HTML lines 10252\u201310252 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 693,
+    "sequencePage": 861
+  },
+  {
+    "symbol": "SAMPLE_HEADERS",
+    "record": "HTML lines 10253\u201310253 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 694,
+    "sequencePage": 862
+  },
+  {
+    "symbol": "WELL_HEADERS",
+    "record": "HTML lines 10254\u201310254 (1) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 694,
+    "sequencePage": 862
+  },
+  {
+    "symbol": "acceptPasted",
+    "record": "HTML lines 10313\u201310322 (10) \u2219 arity 2 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 694,
+    "sequencePage": 862
+  },
+  {
+    "symbol": "refreshAll",
+    "record": "HTML lines 10327\u201310334 (8) \u2219 arity 0 pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 695,
+    "sequencePage": 863
+  },
+  {
+    "symbol": "boot",
+    "record": "HTML lines 10342\u201310397 (56) excluded",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 696,
+    "sequencePage": 864
+  },
+  {
+    "symbol": "SAMPLE_TYPE_LABEL",
+    "record": "HTML lines 10407\u201310412 (6) pass",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 698,
+    "sequencePage": 866
+  },
+  {
+    "symbol": "CLEAN_PAGE_SOURCE",
+    "record": "HTML lines 2133\u20132133. Kind: Literal. not in the harness",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 699,
+    "sequencePage": 867
+  },
+  {
+    "symbol": "I18N_BUSY",
+    "record": "HTML lines 2133\u20132133. Kind: Literal. not in the harness",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 699,
+    "sequencePage": 867
+  },
+  {
+    "symbol": "CUTE_TIMER",
+    "record": "HTML lines 2133\u20132133. Kind: Literal. not in the harness",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 699,
+    "sequencePage": 867
+  },
+  {
+    "symbol": "CUTE_INDEX",
+    "record": "HTML lines 2133\u20132133. Kind: Literal. not in the harness",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 699,
+    "sequencePage": 867
+  },
+  {
+    "symbol": "I18N_ORIGINAL_ATTR",
+    "record": "HTML lines 2134\u20132134. Kind: NewExpression. not in the harness",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 700,
+    "sequencePage": 868
+  },
+  {
+    "symbol": "PLOT_CAPTURE",
+    "record": "HTML lines 5391\u20135391. Kind: Literal. not in the harness",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 700,
+    "sequencePage": 868
+  },
+  {
+    "symbol": "plotArm",
+    "record": "HTML lines 5392\u20135392. Kind: function. not in the harness",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 700,
+    "sequencePage": 868
+  },
+  {
+    "symbol": "plotDisarm",
+    "record": "HTML lines 5393\u20135393. Kind: function. not in the harness",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 701,
+    "sequencePage": 869
+  },
+  {
+    "symbol": "ixReady",
+    "record": "HTML lines 5394\u20135394. Kind: function. not in the harness",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 701,
+    "sequencePage": 869
+  },
+  {
+    "symbol": "ixDash",
+    "record": "HTML lines 5395\u20135395. Kind: function. not in the harness",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 701,
+    "sequencePage": 869
+  },
+  {
+    "symbol": "ixTraces",
+    "record": "HTML lines 5396\u20135420. Kind: function. not in the harness",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 702,
+    "sequencePage": 870
+  },
+  {
+    "symbol": "ixLayout",
+    "record": "HTML lines 5421\u20135464. Kind: function. not in the harness",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 702,
+    "sequencePage": 870
+  },
+  {
+    "symbol": "IX_MOUNTED",
+    "record": "HTML lines 5465\u20135465. Kind: ArrayExpression. not in the harness",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 703,
+    "sequencePage": 871
+  },
+  {
+    "symbol": "ixPurge",
+    "record": "HTML lines 5466\u20135466. Kind: function. not in the harness",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 703,
+    "sequencePage": 871
+  },
+  {
+    "symbol": "ixMount",
+    "record": "HTML lines 5471\u20135501. Kind: function. not in the harness",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 703,
+    "sequencePage": 871
+  },
+  {
+    "symbol": "MISSY_LOGO_OPTION",
+    "record": "HTML lines 11349\u201311349. Kind: Literal. not in the harness",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 704,
+    "sequencePage": 872
+  },
+  {
+    "symbol": "MISSY_TEXT",
+    "record": "HTML lines 11350\u201311350. Kind: CallExpression. not in the harness",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 704,
+    "sequencePage": 872
+  },
+  {
+    "symbol": "MISSY_COLORS",
+    "record": "HTML lines 11351\u201311351. Kind: CallExpression. not in the harness",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 704,
+    "sequencePage": 872
+  },
+  {
+    "symbol": "MISSY_FACE",
+    "record": "HTML lines 11352\u201311352. Kind: Literal. not in the harness",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 705,
+    "sequencePage": 873
+  },
+  {
+    "symbol": "missyEmblem",
+    "record": "HTML lines 11353\u201311359. Kind: function. not in the harness",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 705,
+    "sequencePage": 873
+  },
+  {
+    "symbol": "missyWords",
+    "record": "HTML lines 11360\u201311363. Kind: function. not in the harness",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 705,
+    "sequencePage": 873
+  },
+  {
+    "symbol": "missySvg",
+    "record": "HTML lines 11364\u201311367. Kind: function. not in the harness",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 706,
+    "sequencePage": 874
+  },
+  {
+    "symbol": "missyMarkWithSvg",
+    "record": "HTML lines 11368\u201311374. Kind: function. not in the harness",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 706,
+    "sequencePage": 874
+  },
+  {
+    "symbol": "SEL_OPTION_RULES",
+    "record": "HTML lines 11559\u201311568. Kind: CallExpression. not in the harness",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 707,
+    "sequencePage": 875
+  },
+  {
+    "symbol": "selChartItems",
+    "record": "HTML lines 11569\u201311583. Kind: function. not in the harness",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 707,
+    "sequencePage": 875
+  },
+  {
+    "symbol": "selOptionRule",
+    "record": "HTML lines 11879\u201311882. Kind: function. not in the harness",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 708,
+    "sequencePage": 876
+  },
+  {
+    "symbol": "selValidateOption",
+    "record": "HTML lines 11883\u201311891. Kind: function. not in the harness",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 708,
+    "sequencePage": 876
+  },
+  {
+    "symbol": "selParseCommand",
+    "record": "HTML lines 11892\u201311899. Kind: function. not in the harness",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 709,
+    "sequencePage": 877
+  },
+  {
+    "symbol": "selApplyOptions",
+    "record": "HTML lines 11900\u201311900. Kind: function. not in the harness",
+    "volume": "Manual_volume_04_pages_0169-0878.pdf",
+    "pdfPage": 709,
+    "sequencePage": 877
+  }
+]

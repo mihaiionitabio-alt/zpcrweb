@@ -1,0 +1,1 @@
+(g,i)=>Math.abs(g.mean-ph[i].mean)

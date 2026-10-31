@@ -1,0 +1,1 @@
+function(e,t,a){var i=r[e],o=Date.now();if(!i){for(var l in r)r[l].ts<o-6e4&&delete r[l];i=r[e]={ts:0,timer:null}}function s(){a(),i.ts=Date.now(),i.onDone&&(i.onDone(),i.onDone=null)}n(i),o>i.ts+t?s():i.timer=setTimeout((function(){s(),i.timer=null}),t)}

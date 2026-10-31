@@ -1,0 +1,1 @@
+function t(e){return!0===e.visible}

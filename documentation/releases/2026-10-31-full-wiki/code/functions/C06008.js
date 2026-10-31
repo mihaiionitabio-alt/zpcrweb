@@ -1,0 +1,1 @@
+()=>entries.push({name:"forensic_log.csv",data:csvOf(reviewForensicEvents())})

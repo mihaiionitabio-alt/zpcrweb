@@ -1,0 +1,1 @@
+([k,v])=>plate[k]=Object.assign({},v,{name:P(v.name)})

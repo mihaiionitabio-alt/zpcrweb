@@ -1,0 +1,1 @@
+(r,i)=>`<option value="${i}"${i===ri?' selected':''}>${esc(runName(r))}</option>`

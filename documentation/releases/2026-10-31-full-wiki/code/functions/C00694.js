@@ -1,0 +1,1 @@
+function(e,t){return e.trace.legendrank-t.trace.legendrank||e._preSort-t._preSort}

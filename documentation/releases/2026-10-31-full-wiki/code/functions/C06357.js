@@ -1,0 +1,1 @@
+p=>[p.i,p.r.cqMean]

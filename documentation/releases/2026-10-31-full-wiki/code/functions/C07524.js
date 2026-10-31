@@ -1,0 +1,1 @@
+w=>Number.isFinite(Number(w.channel))&&Number.isFinite(Number(w.pos))

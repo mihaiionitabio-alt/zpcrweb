@@ -1,0 +1,1 @@
+function(e,t,r){var n=e.year(),a=e.month(),i=this.isIntercalaryMonth(n,a),l=this.toChineseMonth(n,a),s=Object.getPrototypeOf(o.prototype).add.call(this,e,t,r);if("y"===r){var c=s.year(),u=s.month(),f=this.isIntercalaryMonth(c,l),d=i&&f?this.toMonthIndex(c,l,!0):this.toMonthIndex(c,l,!1);d!==u&&s.month(d)}return s}

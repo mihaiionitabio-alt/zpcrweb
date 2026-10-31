@@ -1,0 +1,1 @@
+(v,i)=>(v-cc.log.seconds[i])*1000

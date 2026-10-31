@@ -1,0 +1,1 @@
+r=>r.wells.some(x=>x.pos===w.pos&&(x.target||x.analysis)===(w.target||w.analysis))

@@ -1,0 +1,1 @@
+e=>{if(e.key==='Escape'&&!friends.hidden){e.preventDefault();e.stopPropagation();open(false);toggle.focus();}}

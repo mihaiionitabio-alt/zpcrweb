@@ -1,0 +1,1 @@
+function(e){var t=s.createElementNS(i.ns.prefix.svg,"g");return(i.transform=function(e){if(null!=e){t.setAttribute("transform",e);var r=t.transform.baseVal.consolidate()}return new Fr(r?r.matrix:jr)})(e)}

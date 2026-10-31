@@ -1,0 +1,7 @@
+PASS format parity IXO
+PASS format parity EDS
+PASS format parity EDT
+PASS format parity RDML
+PASS format parity CFX_RDML
+PASS format parity ZPCR
+PASS format parity PCRD

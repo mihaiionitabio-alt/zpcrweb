@@ -1,0 +1,1 @@
+next => function(){next();zcSyncGraphs();}

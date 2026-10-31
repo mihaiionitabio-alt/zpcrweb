@@ -1,0 +1,1 @@
+()=>{const n=milliseconds();if(n===null){durationInput.reportValidity();return;}appliedMs=n;try{localStorage.setItem(durationKey,String(n));}catch{}controls();say('Saved','已保存');}

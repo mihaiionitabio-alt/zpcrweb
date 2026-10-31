@@ -1,0 +1,1 @@
+(word,theme='dark')=>{closeModes();MG.theme=theme;const item=selCatalogue().find(x=>x.kind==='image'&&new RegExp(word,'i').test(x.title)&&(!x.ready||x.ready()));if(item)unifiedBrowse(item.id);else showTab('graphs');}

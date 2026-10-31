@@ -1,0 +1,1 @@
+({w,values})=>{ctx.strokeStyle=colour(w);ctx.globalAlpha=w.issueColour?.95:.78;ctx.lineWidth=w.issueColour?2.5:(w.role&&w.role!=="Unknown"?1.8:1.25);ctx.beginPath();let started=false;values.forEach((v,i)=>{if(!Number.isFinite(v))return;const x=xPix(i+1),y=yPix(v);if(!started){ctx.moveTo(x,y);started=true;}else ctx.lineTo(x,y);});ctx.stroke();}

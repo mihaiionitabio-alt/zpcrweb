@@ -1,0 +1,1 @@
+(v,i)=>rows.push({well:o.well,sample:o.sample,channel:o.filterComb||o.filterName||o.channel,cycle:i+1,fluorescence:v,finding:o.finding})

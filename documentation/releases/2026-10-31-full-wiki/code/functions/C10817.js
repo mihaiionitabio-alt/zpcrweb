@@ -1,0 +1,1 @@
+(outcome,index=0)=>{demo.page('results');const row=sopInterpretationRows(null,false).filter(r=>r.outcome===outcome)[index];if(!row)return;document.getElementById('sop-view').value='targets';document.getElementById('sop-run').value=String(RUNS.findIndex(r=>runName(r)===row.experiment));document.getElementById('sop-search').value=row.sample;renderResults();}

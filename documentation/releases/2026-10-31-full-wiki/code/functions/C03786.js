@@ -1,0 +1,1 @@
+function(e){return arguments.length?(n=null==(r=e),a):n?null:r}

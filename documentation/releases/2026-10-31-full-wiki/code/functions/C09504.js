@@ -1,0 +1,1 @@
+function cfxReportScript(){return '# CFX vendor RDML: processed curves, no inferred hardware or acceptance limits\nrun all\ncfx endpoint '+ZPCR_ENDPOINT_N+'\n'+CFX_ITEMS.map(x=>'select '+x.id).join('\n')+'\nselect data:cfxrdml_sources';}

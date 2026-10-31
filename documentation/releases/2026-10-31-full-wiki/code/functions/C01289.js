@@ -1,0 +1,1 @@
+function(){var e=this.translateX,t=this.translateY;this.hbar&&(e-=n.event.dx),this.vbar&&(t-=n.event.dy),this.setTranslate(e,t)}

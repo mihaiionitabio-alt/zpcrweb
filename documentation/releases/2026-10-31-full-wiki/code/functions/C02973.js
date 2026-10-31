@@ -1,0 +1,1 @@
+function fe(e,t){return e[0]===t[0]&&(e[0]===ie||e[0]===oe)||e[1]===t[1]&&(e[1]===le||e[1]===se)||void 0}

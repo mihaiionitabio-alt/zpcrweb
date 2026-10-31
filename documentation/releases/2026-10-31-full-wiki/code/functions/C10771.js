@@ -1,0 +1,1 @@
+(){if(steps[lesson][4])await steps[lesson][4]();else focus(steps[lesson][3],steps[lesson][1]);}

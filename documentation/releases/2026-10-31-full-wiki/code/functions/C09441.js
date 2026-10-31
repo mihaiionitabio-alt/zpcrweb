@@ -1,0 +1,1 @@
+function button(label,fn){const b=document.createElement('button');b.type='button';b.textContent=label;b.style.margin='4px 8px 4px 0';b.onclick=fn;box.append(b);}

@@ -1,0 +1,1 @@
+s=>s?(opt.nameOf?opt.nameOf(s):s):""

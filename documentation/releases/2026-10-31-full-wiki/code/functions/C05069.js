@@ -1,0 +1,1 @@
+function n(e,n){for(var i={},o=[],l=0;l<e.length;l++){var s=e[l],c=n.base?s[0]+n.base:s[0],u=i[c]||0,f="".concat(c," ").concat(u);i[c]=u+1;var d=r(f),h={css:s[1],media:s[2],sourceMap:s[3],supports:s[4],layer:s[5]};if(-1!==d)t[d].references++,t[d].updater(h);else{var p=a(h,n);n.byIndex=l,t.splice(l,0,{identifier:f,updater:p,references:1})}o.push(f)}return o}

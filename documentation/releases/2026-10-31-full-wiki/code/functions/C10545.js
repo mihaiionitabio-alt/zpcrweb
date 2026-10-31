@@ -1,0 +1,1 @@
+()=>download('evidence_export_dictionary.json',JSON.stringify(snapshot(),null,2),'application/json')

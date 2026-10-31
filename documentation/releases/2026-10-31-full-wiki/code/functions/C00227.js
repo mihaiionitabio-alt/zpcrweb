@@ -1,0 +1,1 @@
+function(){var e,t;(o&&ce||!o&&!ce)&&("top"===Y&&(e=D+F.l+ee*z,t=P+F.t+te*(1-oe-$)+3+.75*me),"bottom"===Y&&(e=D+F.l+ee*z,t=P+F.t+te*(1-oe)-3-.25*me),"right"===Y&&(t=P+F.t+te*I+3+.75*me,e=D+F.l+ee*oe),_e(se._id+"title",{attributes:{x:e,y:t,"text-anchor":o?"start":"middle"}}))}

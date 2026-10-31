@@ -1,0 +1,1 @@
+v=>v.lang.toLowerCase().startsWith(zh()?'zh':'en')

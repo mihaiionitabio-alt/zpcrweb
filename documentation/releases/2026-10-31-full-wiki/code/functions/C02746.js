@@ -1,0 +1,1 @@
+function D(e,t,r){return i.finiteRange&&(r=0),n.inbox(e-l,t-l,r+Math.min(1,Math.abs(t-e)/v)-1)}

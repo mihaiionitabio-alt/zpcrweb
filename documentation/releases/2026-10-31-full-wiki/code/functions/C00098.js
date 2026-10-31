@@ -1,0 +1,1 @@
+()=>{if(ready||failed)return;failed=true;const enter=document.getElementById('missy-startup-enter');if(enter){enter.disabled=true;enter.classList.remove('is-ready');}label='Startup failed. Please reload.';paint();const retry=document.getElementById('missy-startup-retry');if(retry)retry.hidden=false;}

@@ -1,0 +1,1 @@
+function(e){var t,r,n=e.length,a=e.map(yn),o=e.map(xn),l=i.range(n).sort((function(e,t){return a[e]-a[t]})),s=0,c=0,u=[],f=[];for(t=0;t<n;++t)r=l[t],s<c?(s+=o[r],u.push(r)):(c+=o[r],f.push(r));return f.reverse().concat(u)}

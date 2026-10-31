@@ -1,0 +1,1 @@
+function(e,t){for(var r=0;r<t.length;r++){var n=t[r],a=(e[r]||[])[0];if(a&&a.trace){var i=a.trace;if(i._hasCalcTransform){var o,l,s,c=i._arrayAttrs;for(o=0;o<c.length;o++)l=c[o],s=f.nestedProperty(i,l).get().slice(),f.nestedProperty(n,l).set(s)}a.trace=n}}}

@@ -1,0 +1,1 @@
+()=>downloadCanvas($("#temp-chart"),safeName(runName(run))+"_temperature_trace.png")

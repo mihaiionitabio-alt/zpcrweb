@@ -1,0 +1,1 @@
+function(e,t){return n("check",{seg1:e,seg2:t})}

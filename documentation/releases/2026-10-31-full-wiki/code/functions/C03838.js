@@ -1,0 +1,1 @@
+function(){var e=Yn(n),o=[],l=e[0],s=e[1],c=Math.floor(a(l)),u=Math.ceil(a(s)),f=t%1?2:t;if(isFinite(u-c)){if(r){for(;c<u;c++)for(var d=1;d<f;d++)o.push(i(c)*d);o.push(i(c))}else for(o.push(i(c));c++<u;)for(d=f-1;d>0;d--)o.push(i(c)*d);for(c=0;o[c]<l;c++);for(u=o.length;o[u-1]>s;u--);o=o.slice(c,u)}return o}

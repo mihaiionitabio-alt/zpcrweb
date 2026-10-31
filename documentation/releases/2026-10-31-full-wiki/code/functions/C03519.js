@@ -1,0 +1,1 @@
+function l(e){return e.map((function(e,t){return{x:Math.round(n(e,t)/Se)*Se,y:Math.round(a(e,t)/Se)*Se,i:t}}))}

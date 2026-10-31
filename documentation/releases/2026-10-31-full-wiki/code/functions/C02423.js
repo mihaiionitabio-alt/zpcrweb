@@ -1,0 +1,1 @@
+function(e,n){if((e=i.constrain(e,t,r))!==(n=i.constrain(n,t,r))){for(var a=!0,o=0;o<c.length;o++){var l=c[o];e<l.max&&n>=l.min&&(e<l.min&&(l.min=e),n>l.max&&(l.max=n),a=!1)}a&&c.push({min:e,max:n})}}

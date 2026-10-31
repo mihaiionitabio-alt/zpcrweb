@@ -1,0 +1,1 @@
+(s){if(String(s).includes('ZPCR hardware fields are decoded')||String(s).includes('The page recomputes nothing.'))s='• Research Use Only.\n• Not validated for clinical or instrument qualification decisions.\n• Does not replace vendor QC certification or laboratory validation.';return String(s).split('\n').map(line=>line.replace(/^• /,'- '));}

@@ -1,0 +1,1 @@
+function ssApply(){SAMPLE_SELECTION.excluded=new Set(SAMPLE_SELECTION.draft);SAMPLE_SELECTION.pending=false;SAMPLE_SELECTION.revision++;$("#ss-review").hidden=true;SOP_CACHE=null;invalidateAnalysisCaches();ssUpdateBadge();refreshAll();showTab("results");}

@@ -1,0 +1,1 @@
+v=>[ws.find(w=>w.well===v.well).pos+1,v.value,v.well+' · '+v.sample]

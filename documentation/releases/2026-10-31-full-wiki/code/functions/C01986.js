@@ -1,0 +1,1 @@
+function(e){var t=n.select(this);t.select(".text-math-group").empty()&&(e.bb=s.bBox(t.node()))}

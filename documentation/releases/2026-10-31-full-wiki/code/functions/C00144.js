@@ -1,0 +1,1 @@
+function(){e._dragging=!1,e.emit("plotly_clickannotation",G(n.event))}

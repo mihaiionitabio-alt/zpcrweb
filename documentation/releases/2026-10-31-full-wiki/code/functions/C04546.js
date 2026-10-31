@@ -1,0 +1,1 @@
+function(e){e.exports=function(e,t,r){var n=Math.sin(r),a=Math.cos(r),i=t[0],o=t[1],l=t[2],s=t[3],c=t[8],u=t[9],f=t[10],d=t[11];return t!==e&&(e[4]=t[4],e[5]=t[5],e[6]=t[6],e[7]=t[7],e[12]=t[12],e[13]=t[13],e[14]=t[14],e[15]=t[15]),e[0]=i*a-c*n,e[1]=o*a-u*n,e[2]=l*a-f*n,e[3]=s*a-d*n,e[8]=i*n+c*a,e[9]=o*n+u*a,e[10]=l*n+f*a,e[11]=s*n+d*a,e}}

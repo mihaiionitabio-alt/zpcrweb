@@ -1,0 +1,1 @@
+function numberChartLabels(){const index=chartList();for(const option of document.querySelectorAll('#g-graph option')){const n=index.findIndex(c=>!c.control&&c.id===option.value)+1;if(n&&!option.dataset.voiceNumber){option.dataset.voiceNumber=String(n);option.textContent=n+' · '+option.textContent;}}}

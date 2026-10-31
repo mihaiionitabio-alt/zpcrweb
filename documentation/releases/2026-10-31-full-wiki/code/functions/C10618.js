@@ -1,0 +1,1 @@
+()=>sound.setAmbience(ambient.value)

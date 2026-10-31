@@ -1,0 +1,1 @@
+x=>x.key===CC_STATE.instrument

@@ -1,0 +1,1 @@
+function(e,t,r){for(var n=0;n<t.length;n++)for(var a=e._fullData[n],i=0;i<3;i++){var l=f(e,a,_[i]);if(l&&"log"!==l.type){var s=l._name,c=l._id.substr(1);if("scene"===c.substr(0,5)){if(void 0!==r[c])continue;s=c+"."+s}var u=s+".type";void 0===r[s]&&void 0===r[u]&&o.nestedProperty(e.layout,u).set(null)}}}

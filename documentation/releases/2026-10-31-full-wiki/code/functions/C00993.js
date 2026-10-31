@@ -1,0 +1,1 @@
+function te(e,t){for(var r=[],n=0;n<e.length;n++){r[n]=[];for(var a=0;a<e[n].length;a++){r[n][a]=[],r[n][a][0]=a?"L":"M";for(var i=0;i<e[n][a].length;i++)r[n][a].push(e[n][a][i])}t||r[n].push(["Z",r[n][0][1],r[n][0][2]])}return r}

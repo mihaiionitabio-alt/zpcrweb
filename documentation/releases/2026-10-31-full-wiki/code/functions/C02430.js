@@ -1,0 +1,1 @@
+function(t,r){var n=e.c2l(t[h],null,r),a=e.r2l(e.range[0]),i=e.r2l(e.range[1]);return a<i?a<=n&&n<=i:i<=n&&n<=a}

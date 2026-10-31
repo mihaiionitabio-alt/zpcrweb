@@ -1,0 +1,1 @@
+()=>{installChild();if(!window.__MISSY_VOICE_DEMO_FRAME)requestAnimationFrame(()=>document.getElementById('missy-startup-enter')?.click());}

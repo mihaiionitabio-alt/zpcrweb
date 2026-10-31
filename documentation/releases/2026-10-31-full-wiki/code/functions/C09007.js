@@ -1,0 +1,1 @@
+(x,i)=>({run:i,channel:0,label:'R'+(i+1),points:x.reads.slice(1).map((r,j)=>[j+2,r.temps.BLOCKTEMP?.c-x.reads[j].temps.BLOCKTEMP?.c])})

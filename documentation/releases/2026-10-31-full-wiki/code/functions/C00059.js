@@ -1,0 +1,1 @@
+v=>v.localService&&v.voiceURI===uri

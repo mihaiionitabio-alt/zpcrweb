@@ -1,0 +1,1 @@
+function i(e){return{v:"x",h:"y"}[e.orientation||"v"]}

@@ -1,0 +1,1 @@
+function ka(e){return e.length>1?e.join("L"):e+"Z"}

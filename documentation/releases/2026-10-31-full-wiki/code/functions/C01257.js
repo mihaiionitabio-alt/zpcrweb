@@ -1,0 +1,1 @@
+function(e,t,r,n,a,i){var o,l,s,c=a.direction,u="up"===c||"down"===c,d=a._dims,h=a.active;if(u)for(l=0,s=0;s<h;s++)l+=d.heights[s]+f.gapButton;else for(o=0,s=0;s<h;s++)o+=d.widths[s]+f.gapButton;n.enable(i,o,l),n.hbar&&n.hbar.attr("opacity","0").transition().attr("opacity","1"),n.vbar&&n.vbar.attr("opacity","0").transition().attr("opacity","1")}

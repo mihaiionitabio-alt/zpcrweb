@@ -1,0 +1,1 @@
+p=>{p.segment=seg[0];}

@@ -1,0 +1,1 @@
+function(){return da([0,1])}

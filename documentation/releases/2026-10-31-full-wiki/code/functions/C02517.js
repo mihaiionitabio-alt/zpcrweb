@@ -1,0 +1,1 @@
+function D(e){return"string"==typeof e&&"px"===e.substr(e.length-2)&&parseFloat(e)}

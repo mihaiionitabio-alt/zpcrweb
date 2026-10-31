@@ -1,0 +1,1 @@
+function S(e,t){return e.v!==t.vTotal||t.trace.hole?Math.min(1/(1+1/Math.sin(e.halfangle)),e.ring/2):1}

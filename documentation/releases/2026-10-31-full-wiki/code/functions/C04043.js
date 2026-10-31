@@ -1,0 +1,1 @@
+function(e,n){var a=t.call(this,e,n,this.getAttributeNS(r.space,r.local));return a&&function(e){this.setAttributeNS(r.space,r.local,a(e))}}

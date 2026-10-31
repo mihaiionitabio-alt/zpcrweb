@@ -1,0 +1,1 @@
+function(e,t,r){var n,a,i=t.selectedpoints,o=t._indexToPoints;o&&(n=S(o));for(var l=0;l<i.length;l++){var s=i[l];if(f.isIndex(s)||f.isArrayOrTypedArray(s)&&f.isIndex(s[0])&&f.isIndex(s[1])){var c=n?n[s]:s,u=r?r[c]:c;void 0!==(a=u)&&a<e.length&&(e[u].selected=1)}}}

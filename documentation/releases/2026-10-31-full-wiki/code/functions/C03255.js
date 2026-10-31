@@ -1,0 +1,1 @@
+function ce(e,t){return null==t?function(){delete this[e]}:"function"==typeof t?function(){var r=t.apply(this,arguments);null==r?delete this[e]:this[e]=r}:function(){this[e]=t}}

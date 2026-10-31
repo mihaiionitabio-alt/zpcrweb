@@ -1,0 +1,1 @@
+function(){if(!e.layout||e.layout.width&&e.layout.height||f.isHidden(e))r(e);else{delete e.layout.width,delete e.layout.height;var t=e.changed;e.autoplay=!0,s.call("relayout",e,{autosize:!0}).then((function(){e.changed=t,e._resolveResize===r&&(delete e._resolveResize,r(e))}))}}

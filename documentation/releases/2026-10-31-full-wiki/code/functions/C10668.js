@@ -1,0 +1,1 @@
+function clearCue(){cue.hidden=true;cueTarget=null;cueCustom=null;document.querySelectorAll('.missy-demo-highlight').forEach(e=>e.classList.remove('missy-demo-highlight'));}

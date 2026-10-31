@@ -1,0 +1,1 @@
+(x,c)=>cache.get(x.run)[metric]?.['Step '+step+' · Raw channel '+(c+1)+' · A1 · cycles '+lo+'–'+hi]??NaN

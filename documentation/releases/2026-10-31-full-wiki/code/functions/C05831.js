@@ -1,0 +1,1 @@
+r=>`${r.sample}/${r.target}: ${r.reason}`

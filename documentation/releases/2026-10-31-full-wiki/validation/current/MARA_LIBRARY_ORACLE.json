@@ -1,0 +1,325 @@
+{
+  "scope": "32 shipped profiles; production sopHash plus positive mathematical run outcomes; recorded after explicit Positive and source-immutability assertions. Not laboratory validation.",
+  "profiles": [
+    {
+      "key": "mara1012-01-ND207-identification",
+      "hash": "02ef5a78675a4190b62d59496b929d2671f5e493760af9b3e2f8465c0709652b",
+      "decisions": [
+        {
+          "outcome": "Positive",
+          "code": "majority"
+        }
+      ]
+    },
+    {
+      "key": "mara1012-01-ND207-quantification",
+      "hash": "c634a6f28bda7353fc3533c1f93fc51c599e30bb67c031dceb06c43f5d97af90",
+      "decisions": [
+        {
+          "outcome": "Positive",
+          "code": "quantified"
+        }
+      ]
+    },
+    {
+      "key": "mara1012-02-DBN9501-identification",
+      "hash": "a0a10c7ac451d5de4d2e2a39d4b1ce2cb18a2c47f2ed70511582d086712051ba",
+      "decisions": [
+        {
+          "outcome": "Positive",
+          "code": "majority"
+        }
+      ]
+    },
+    {
+      "key": "mara1012-02-DBN9501-quantification",
+      "hash": "ee5aa78565607b1c5511ac3b5aee630d20d6ede1715640e445b9386f3dddb4d7",
+      "decisions": [
+        {
+          "outcome": "Positive",
+          "code": "quantified"
+        }
+      ]
+    },
+    {
+      "key": "mara1012-03-BBL2-2-identification",
+      "hash": "6d014eaeb4d1ff4c0830b3a2117ab39c2de46225abc7587a497206434937840a",
+      "decisions": [
+        {
+          "outcome": "Positive",
+          "code": "majority"
+        }
+      ]
+    },
+    {
+      "key": "mara1012-03-BBL2-2-quantification",
+      "hash": "3903f050fe930a1d8978ec0b61533b0b070837fa6e3ff5b20832766e56082165",
+      "decisions": [
+        {
+          "outcome": "Positive",
+          "code": "quantified"
+        }
+      ]
+    },
+    {
+      "key": "mara1012-04-LW2-1-identification",
+      "hash": "d223a3812acb3d7db0de4ae0942aeb61013bb425068ceb87efb3b204c14d338f",
+      "decisions": [
+        {
+          "outcome": "Positive",
+          "code": "majority"
+        }
+      ]
+    },
+    {
+      "key": "mara1012-04-LW2-1-quantification",
+      "hash": "da676c5b09274f78b5991eda0042272a7cce6f319d5d600a56e0897890cea4cc",
+      "decisions": [
+        {
+          "outcome": "Positive",
+          "code": "quantified"
+        }
+      ]
+    },
+    {
+      "key": "mara1012-05-LP026-2-identification",
+      "hash": "cfe5ccdbe7c4253598422c5ad7ce1c4916dda0c82c3dc396b6532b26499f69ab",
+      "decisions": [
+        {
+          "outcome": "Positive",
+          "code": "majority"
+        }
+      ]
+    },
+    {
+      "key": "mara1012-05-LP026-2-quantification",
+      "hash": "59a6e2b0bf08c7c13f85d0694e180a2338cfd0fcce20b148b68cd563b5634050",
+      "decisions": [
+        {
+          "outcome": "Positive",
+          "code": "quantified"
+        }
+      ]
+    },
+    {
+      "key": "mara1012-06-KJ1003-identification",
+      "hash": "cbe05a04941ca2e7b82294f31bc2112825f80e6947972f82e4aa10fc634c7572",
+      "decisions": [
+        {
+          "outcome": "Positive",
+          "code": "majority"
+        }
+      ]
+    },
+    {
+      "key": "mara1012-06-KJ1003-quantification",
+      "hash": "36f0df779580f592cf47b724081637598640e93db02fffb03e915739b7b78b71",
+      "decisions": [
+        {
+          "outcome": "Positive",
+          "code": "quantified"
+        }
+      ]
+    },
+    {
+      "key": "mara1012-07-WYN041-identification",
+      "hash": "25c51abc8343ecac503e6002658652c024ba8c2684177f1c2bd26984357cbfda",
+      "decisions": [
+        {
+          "outcome": "Positive",
+          "code": "majority"
+        }
+      ]
+    },
+    {
+      "key": "mara1012-07-WYN041-quantification",
+      "hash": "0211daea98b54d8d9bdf7874a9fb20a0e3d7ae3c7c1cce42ee86e5fec49e0f0d",
+      "decisions": [
+        {
+          "outcome": "Positive",
+          "code": "quantified"
+        }
+      ]
+    },
+    {
+      "key": "mara1012-08-WYN17132-identification",
+      "hash": "36b6c610254747cde189754ece710e0e1a7fcabe85eaa1c8e7b6de564c3029af",
+      "decisions": [
+        {
+          "outcome": "Positive",
+          "code": "majority"
+        }
+      ]
+    },
+    {
+      "key": "mara1012-08-WYN17132-quantification",
+      "hash": "b1b5a8f5b3b1bed014972596fadf7dfa2422a655ca84201613ab0027b19b0438",
+      "decisions": [
+        {
+          "outcome": "Positive",
+          "code": "quantified"
+        }
+      ]
+    },
+    {
+      "key": "mara1012-09-DBN9004-identification",
+      "hash": "4975cdac5c4e34de81652247df5e6b8fa081040476e7a1a98d5fecabf692e944",
+      "decisions": [
+        {
+          "outcome": "Positive",
+          "code": "majority"
+        }
+      ]
+    },
+    {
+      "key": "mara1012-09-DBN9004-quantification",
+      "hash": "d5a467d108f237096ac43ab35e9ba50d8271a3287cf6e49f110ce22f25e1f738",
+      "decisions": [
+        {
+          "outcome": "Positive",
+          "code": "quantified"
+        }
+      ]
+    },
+    {
+      "key": "mara1012-10-CAL16-identification",
+      "hash": "330b27ed71f3f76f10906ffbc4b82ad522a5d66576653b24b6dd57fb46f66e80",
+      "decisions": [
+        {
+          "outcome": "Positive",
+          "code": "majority"
+        }
+      ]
+    },
+    {
+      "key": "mara1012-10-CAL16-quantification",
+      "hash": "7a5758a10c5e8ebbcd5e4883a4c43d8cad96d1a85afa782058e5fde71764ef2e",
+      "decisions": [
+        {
+          "outcome": "Positive",
+          "code": "quantified"
+        }
+      ]
+    },
+    {
+      "key": "mara1012-11-DBN8002-identification",
+      "hash": "e77d0c26f10dc99b2550476456f13a4351a6ef14e1f853b11dcbb9b973578dcc",
+      "decisions": [
+        {
+          "outcome": "Positive",
+          "code": "majority"
+        }
+      ]
+    },
+    {
+      "key": "mara1012-11-DBN8002-quantification",
+      "hash": "35a66c15a6284c0d34a27c0127ae4a96ec1bbe36b664b1afbcc008e41c70d2dd",
+      "decisions": [
+        {
+          "outcome": "Positive",
+          "code": "quantified"
+        }
+      ]
+    },
+    {
+      "key": "mara1012-12-WYN029GmA-identification",
+      "hash": "21f323632c1e86faa4e5cdc1f743fb269e2bcf54b716f710fa5f7d66931630de",
+      "decisions": [
+        {
+          "outcome": "Positive",
+          "code": "majority"
+        }
+      ]
+    },
+    {
+      "key": "mara1012-12-WYN029GmA-quantification",
+      "hash": "a00aa68c6cd0f92fbc0e6cc41b27b28d2ed6bb59d3f5d624c94171e88c417641",
+      "decisions": [
+        {
+          "outcome": "Positive",
+          "code": "quantified"
+        }
+      ]
+    },
+    {
+      "key": "mara1012-13-WYN341GmC-identification",
+      "hash": "9dfff1727fc8a019075950cc1a8dc5a6ce1b8d447d44bc285747bbb1478b891f",
+      "decisions": [
+        {
+          "outcome": "Positive",
+          "code": "majority"
+        }
+      ]
+    },
+    {
+      "key": "mara1012-13-WYN341GmC-quantification",
+      "hash": "6cb702d59effebeb54cddfc460eddd0aec7208741c8db69174f9df666b7745b4",
+      "decisions": [
+        {
+          "outcome": "Positive",
+          "code": "quantified"
+        }
+      ]
+    },
+    {
+      "key": "mara1012-14-GGK2-identification",
+      "hash": "c7a4f8bcc729819ed948dd54fd931c29787337daf01ab898040f72a7270c5c10",
+      "decisions": [
+        {
+          "outcome": "Positive",
+          "code": "majority"
+        }
+      ]
+    },
+    {
+      "key": "mara1012-14-GGK2-quantification",
+      "hash": "b93e35cbd5137fe44274ecf21c916861f15bb02a3f353af37a4710cb6841c433",
+      "decisions": [
+        {
+          "outcome": "Positive",
+          "code": "quantified"
+        }
+      ]
+    },
+    {
+      "key": "mara1012-15-KJC017-identification",
+      "hash": "32712306c574aefaaef05c43cc613300267045701e3414b1ef1fe7415b98a52e",
+      "decisions": [
+        {
+          "outcome": "Positive",
+          "code": "majority"
+        }
+      ]
+    },
+    {
+      "key": "mara1012-15-KJC017-quantification",
+      "hash": "e56c51898c93508f3b82077028eb52cf4cd31f21f41aabf009e0681898e13a87",
+      "decisions": [
+        {
+          "outcome": "Positive",
+          "code": "quantified"
+        }
+      ]
+    },
+    {
+      "key": "mara1012-17-screening",
+      "hash": "66af6175d2aa791280d341f2108dc741e8f1aa408781a154b1ef0c286da86894",
+      "decisions": [
+        {
+          "outcome": "Positive",
+          "code": "panel_detected"
+        }
+      ]
+    },
+    {
+      "key": "mara1012-16-screening",
+      "hash": "c5f20941558100ace36df193379092039b827afb0dc60b1d74f9ffad8f0bd804",
+      "decisions": [
+        {
+          "outcome": "Positive",
+          "code": "higher"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+(x,i)=>mgIt({kind:'graph',sev:'none',code:'CFX '+(i+1),title:x.title,graphId:x.id.slice(4),state:x.note,rows:[],actions:[{key:'3',label:'Open graph',cmd:'chart'}]})

@@ -1,0 +1,1 @@
+function s(e){return void 0===e._maxListeners?i.defaultMaxListeners:e._maxListeners}

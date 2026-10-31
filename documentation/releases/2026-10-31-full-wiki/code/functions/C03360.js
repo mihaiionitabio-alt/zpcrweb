@@ -1,0 +1,1 @@
+function v(){var e=i.event.target;i.select(e).on(s,g).on(c,y),u.push(e);for(var r=i.event.changedTouches,l=0,f=r.length;l<f;++l)n[r[l].identifier]=null;var h=p(),v=Date.now();if(1===h.length){if(v-a<500){var m=h[0];A(t,m,n[m.identifier],Math.floor(Math.log(d.k)/Math.LN2)+1),Y()}a=v}else if(h.length>1){m=h[0];var x=h[1],b=m[0]-x[0],_=m[1]-x[1];o=b*b+_*_}}

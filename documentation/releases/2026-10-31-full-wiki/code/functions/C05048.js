@@ -1,0 +1,1 @@
+function(e){return this.newDate(e.getFullYear(),e.getMonth()+1,e.getDate())}

@@ -1,0 +1,1 @@
+function C(e){return L(e)in this._}

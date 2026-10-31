@@ -1,0 +1,2 @@
+r=>download(safeName(r.meta.name||r.file)+"_QuantStudio_export.xlsx",
+      qsWorkbook(r,{pseudo:pseudoOn(),nameOf:exportName}),"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")

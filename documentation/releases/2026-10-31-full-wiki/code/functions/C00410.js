@@ -1,0 +1,1 @@
+function(e,t,r){if(v(t))return c;var n=s(2*e/f,2);return g(t,r,"M"+s(e/2,2)+",-"+n+"V"+n+"L-"+s(e,2)+",0Z")}

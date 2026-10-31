@@ -1,0 +1,1 @@
+()=>download(r.file+'.container.json',JSON.stringify({file:r.file,sourceSHA256:r.meta.sourceSHA256,sourceBytes:r.meta.sourceBytes,container:r.pcrdContainer,status:r.meta.Notes},null,2),'application/json')

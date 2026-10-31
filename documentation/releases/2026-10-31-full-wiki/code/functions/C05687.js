@@ -1,0 +1,1 @@
+(r,ri)=>`<row r="${ri+1}">${(r||[]).map((v,ci)=>xlsxCell(xlsxCol(ci)+(ri+1),v)).join("")}</row>`

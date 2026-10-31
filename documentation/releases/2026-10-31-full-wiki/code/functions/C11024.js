@@ -1,0 +1,1 @@
+function(){var A=this._tokens.shift();return void 0===A?NA:A}

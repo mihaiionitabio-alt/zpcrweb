@@ -1,0 +1,1 @@
+s=>s.points.filter(v=>Number.isFinite(v[0])&&Number.isFinite(v[1]))

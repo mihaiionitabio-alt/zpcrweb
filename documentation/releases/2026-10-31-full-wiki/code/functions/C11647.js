@@ -1,0 +1,1 @@
+e=>{soundOn=!soundOn;const b=head.querySelector('[data-game-command=reward-sound]');b.textContent=tr(soundOn?'Sound on':'Sound off',soundOn?'声音开':'声音关');b.setAttribute('aria-pressed',String(soundOn));}

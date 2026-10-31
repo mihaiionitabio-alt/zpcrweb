@@ -1,0 +1,1 @@
+function define(name){if(!points.has(name)){if(sealed)throw Error('Hooks are sealed');points.set(name,[]);}}

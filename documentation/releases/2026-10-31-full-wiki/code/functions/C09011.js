@@ -1,0 +1,1 @@
+(v,j)=>[j+1,v.deviationPct??NaN]

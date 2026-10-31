@@ -1,0 +1,1 @@
+v=>ylog?Math.log10(v):v

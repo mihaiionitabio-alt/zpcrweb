@@ -1,0 +1,1 @@
+x=>/^cc:z_/.test(x.id)

@@ -1,0 +1,1 @@
+function(e,t){return e.pattern===k&&t.pattern===M?-1:t.pattern===k&&e.pattern===M?1:0}

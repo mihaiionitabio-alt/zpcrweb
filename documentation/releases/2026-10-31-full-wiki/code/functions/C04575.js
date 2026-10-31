@@ -1,0 +1,1 @@
+function s(e,t,r){var n,a;try{!1===t?r.reject(e.msg):(n=!0===t?e.msg:t.call(void 0,e.msg))===r.promise?r.reject(TypeError("Promise-chain cycle")):(a=o(n))?a.call(n,r.resolve,r.reject):r.resolve(n)}catch(e){r.reject(e)}}

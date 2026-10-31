@@ -1,0 +1,1 @@
+function T(e,t){e.select("rect."+f.itemRectClassName).call(i.fill,t.bgcolor)}

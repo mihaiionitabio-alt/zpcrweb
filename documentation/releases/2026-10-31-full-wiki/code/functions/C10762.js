@@ -1,0 +1,1 @@
+async()=>{focus('#missy-command-menu-items','Command / Console / Assisted, Save status report, GPL and Details are in one expanding menu.');await wait(1000);await press('#sb-toggle','Open the current status details.');focus('#sb-detail','The status report can be saved from the same menu; it documents this artificial session.')}

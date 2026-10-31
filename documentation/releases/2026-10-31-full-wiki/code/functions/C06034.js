@@ -1,0 +1,1 @@
+t=>{const x=X(t.v);if(x<L-0.5||x>L+pw+0.5)return;s+=`<line x1="${x}" x2="${x}" y1="${T+ph}" y2="${T+ph+4}" stroke="#9ca3af"/><text x="${x}" y="${T+ph+16}" text-anchor="${t.anchor||"middle"}" fill="#6b7280"${t.rotate?` transform="rotate(${t.rotate} ${x} ${T+ph+16})"`:""}>${svgEsc(t.label)}</text>`;}

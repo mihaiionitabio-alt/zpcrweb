@@ -1,0 +1,1 @@
+function(){return this.isPositioned()&&!this.zIndex.auto}

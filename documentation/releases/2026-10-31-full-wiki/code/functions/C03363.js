@@ -1,0 +1,1 @@
+function z(){var a=_.of(this,arguments);n?clearTimeout(n):(Xa.call(this),e=T(t=r||i.mouse(this)),S(a)),n=setTimeout((function(){n=null,O(a)}),50),Y(),M(Math.pow(2,.002*He())*d.k),k(t,e),C(a)}

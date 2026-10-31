@@ -1,0 +1,1 @@
+function(){var t,a=this.getAttributeNS(n.space,n.local);return a!==e&&(t=r(a,e),function(e){this.setAttributeNS(n.space,n.local,t(e))})}

@@ -1,0 +1,1 @@
+function closeMicrophone(){if(meterTimer!==null){clearInterval(meterTimer);meterTimer=null;}if(micStream){micStream.getTracks().forEach(track=>track.stop());micStream=null;}try{meterSource?.disconnect();}catch{}meterSource=null;if(meterContext){meterContext.close().catch(()=>{});meterContext=null;}setLevel(0);}

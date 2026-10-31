@@ -1,0 +1,1 @@
+p=>Number.isFinite(p[0])&&Number.isFinite(p[1])&&(!ylog||p[1]>0)

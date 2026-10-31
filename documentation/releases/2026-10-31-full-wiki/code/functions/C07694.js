@@ -1,0 +1,1 @@
+c=>`<option value="${esc(c)}"${cat===c?" selected":""}>${esc(c)}</option>`

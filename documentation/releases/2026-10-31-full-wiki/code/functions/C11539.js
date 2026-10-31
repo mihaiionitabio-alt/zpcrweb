@@ -1,0 +1,1 @@
+(id,title,guide,open,rule)=>record(id,title,guide,['Open the highlighted evidence, then confirm.','打开高亮证据，然后确认。'],()=>({evidence:{kind:'opened',id}}),open,null,rule,'open')

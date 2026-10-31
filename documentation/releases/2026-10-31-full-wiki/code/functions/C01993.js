@@ -1,0 +1,1 @@
+function D(r){l=t[r],a(l)&&(u=A(r),f=L(r),M?(s=e.c2l(l)-C(r),c=e.c2l(l)+S(r)):(d=l-C(r),h=l+S(r),w&&d<h/10&&(d=h/10),s=e.c2l(d),c=e.c2l(h)),_&&(s=Math.min(0,s),c=Math.max(0,c)),b(s)&&m(p,s,f,O),b(c)&&y(v,c,u,O))}

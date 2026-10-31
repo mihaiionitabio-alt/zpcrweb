@@ -1,0 +1,1 @@
+()=>{if(!alerting)return;scheduleCue(c,byId.get('redalert'),c.currentTime+.005,false,alarmNodes,masterGain);}

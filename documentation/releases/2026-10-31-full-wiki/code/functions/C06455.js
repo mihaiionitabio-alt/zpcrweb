@@ -1,0 +1,1 @@
+()=>{const L=GRAPH_STATE.last;if(L&&L.res.rows&&L.res.rows.length)withExportNames(()=>{const r=L.g.render(Object.assign({},L.c,{run:RUNS[L.c.ri]}));download(graphFileBase()+".csv",csvOf(r.rows),"text/csv");});}

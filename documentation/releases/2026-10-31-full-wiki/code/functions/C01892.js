@@ -1,0 +1,1 @@
+function w(e,t,r){var n=e._lw/2;return"x"===e._id.charAt(0)?t?"top"===r?t._offset-y-n:t._offset+t._length+y+n:m.t+m.h*(1-(e.position||0))+n%1:t?"right"===r?t._offset+t._length+y+n:t._offset-y-n:m.l+m.w*(e.position||0)+n%1}

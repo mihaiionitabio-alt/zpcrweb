@@ -1,0 +1,1 @@
+r=>[samples.indexOf(r.sample),Number.isFinite(r.cqMean)?r.cqMean:NaN,graphHoverLabel(c.run,{well:r.wells&&r.wells[0]&&r.wells[0].well,sample:r.sample},`${t} · ${num(r.cqMean,2)} · ${r.label}`)]

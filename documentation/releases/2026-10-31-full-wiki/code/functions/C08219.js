@@ -1,0 +1,1 @@
+function selAdd(patterns){const m=selMatchAll(patterns);m.forEach(id=>SEL_STATE.ids.add(id));return m;}

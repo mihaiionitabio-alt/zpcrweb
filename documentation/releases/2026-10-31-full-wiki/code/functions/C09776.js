@@ -1,0 +1,1 @@
+function(value){const s=String(value??'');const m=s.match(/^Download (.+)$/);return m?'下载 '+zhPhrase(m[1]):next(value);}

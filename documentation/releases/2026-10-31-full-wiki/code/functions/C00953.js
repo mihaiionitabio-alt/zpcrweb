@@ -1,0 +1,1 @@
+function v(e){d(e)&&e._fullLayout._activeSelectionIndex>=0&&(i(e),delete e._fullLayout._activeSelectionIndex,f(e))}

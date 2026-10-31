@@ -1,0 +1,1 @@
+function ue(e){return function(t,r){for(var n,a,i=0;i<e.length;i++){var o=e[i],l=o._id,s=l.charAt(0);if(r.isRect){n||(n={});var c=r[s+"min"],u=r[s+"max"];void 0!==c&&void 0!==u&&(n[l]=[F(o,c),F(o,u)].sort(L))}else a||(a={}),a[l]=r.map(H(o))}n&&(t.range=n),a&&(t.lassoPoints=a)}}

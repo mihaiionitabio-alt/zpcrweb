@@ -1,0 +1,1 @@
+function d(e,t,r){for(var n=t.minDiff,a=t.traces,i=n*(1-r.gap),o=i*(1-(r.groupgap||0)),l=-o/2,s=0;s<a.length;s++){var c=a[s][0].t;c.barwidth=o,c.poffset=l,c.bargroupwidth=i,c.bardelta=n}t.binWidth=a[0][0].t.barwidth/100,h(t),p(e,t),v(e,t)}

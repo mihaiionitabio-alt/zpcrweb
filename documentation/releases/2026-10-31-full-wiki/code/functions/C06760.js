@@ -1,0 +1,1 @@
+p=>ccSignal(p)==="limit"&&p.flags.some(f=>!/specification/.test(f))?Math.sign(p.y-p.cl):0

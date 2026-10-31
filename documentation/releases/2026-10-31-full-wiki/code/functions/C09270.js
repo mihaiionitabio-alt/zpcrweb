@@ -1,0 +1,1 @@
+(_,i)=>({name:'Stored optical channel '+(i+1),active:true,ex:'',em:'',filterSet:''})

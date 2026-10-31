@@ -1,0 +1,1 @@
+function(e){return n(e.xaxis._offset,e.yaxis._offset)}

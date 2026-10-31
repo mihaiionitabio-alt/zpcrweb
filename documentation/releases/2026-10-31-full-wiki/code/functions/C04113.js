@@ -1,0 +1,1 @@
+function(e){return arguments.length?(n&&a?(s=!!e[0],c=!!e[1]):n?s=!!e:a&&(c=!!e),d):n&&a?[s,c]:n?s:a?c:null}

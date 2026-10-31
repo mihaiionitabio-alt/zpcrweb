@@ -1,0 +1,1 @@
+function(e,t,r){"use strict";var n=r(5568);e.exports=function(e,t,r){var a=e.selectAll("g."+r.replace(/\s/g,".")).data(t,(function(e){return e[0].trace.uid}));a.exit().remove(),a.enter().append("g").attr("class",r),a.order();var i=e.classed("rangeplot")?"nodeRangePlot3":"node3";return a.each((function(e){e[0][i]=n.select(this)})),a}}

@@ -1,0 +1,1 @@
+t=>Object.assign({match:"*",kind:"auto",cqMax:40,cqLate:"",quantMin:"",lateOutcome:"Inconclusive"},t)

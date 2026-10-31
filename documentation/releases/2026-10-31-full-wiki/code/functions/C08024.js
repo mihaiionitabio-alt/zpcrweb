@@ -1,0 +1,1 @@
+r=>(r.wells||[]).map(w=>`${r.file}|${w.pos}`)

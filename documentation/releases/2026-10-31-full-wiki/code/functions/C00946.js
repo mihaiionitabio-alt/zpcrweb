@@ -1,0 +1,1 @@
+function f(e){var t=e._fullLayout;for(var r in i(e),t._selectionLayer.selectAll("path").remove(),t._plots){var n=t._plots[r].selectionLayer;n&&n.selectAll("path").remove()}for(var a=0;a<t.selections.length;a++)h(e,a)}

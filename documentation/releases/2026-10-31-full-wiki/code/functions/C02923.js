@@ -1,0 +1,1 @@
+function g(e,t,r,n){var a=e.stackgroup;if(a){var i=t._scatterStackOpts[r._id+n._id][a],o="v"===i.orientation?n:r;return"linear"===o.type||"log"===o.type?i:void 0}}

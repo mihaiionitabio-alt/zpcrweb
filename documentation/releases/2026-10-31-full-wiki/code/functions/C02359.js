@@ -1,0 +1,1 @@
+function $(e){return"x"===e?H:F}

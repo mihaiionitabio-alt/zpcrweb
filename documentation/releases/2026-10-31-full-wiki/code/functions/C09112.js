@@ -1,0 +1,1 @@
+(name,i)=>{const x=28+i*(temp?190:160),color=ZC_COLORS[runOnly?0:i];svg+=`<path d="M${x} 151h22" stroke="${color}" stroke-width="4" stroke-dasharray="${runOnly&&i%2?'7 4':''}"/><text x="${x+30}" y="157" font-size="18">${E(name)}</text>`;}

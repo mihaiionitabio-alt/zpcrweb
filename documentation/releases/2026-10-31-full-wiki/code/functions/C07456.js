@@ -1,0 +1,1 @@
+b=>b.onclick=()=>items[Number(b.dataset.exp)].run()

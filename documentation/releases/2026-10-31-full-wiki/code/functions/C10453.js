@@ -1,0 +1,1 @@
+()=>download('native_reading_excerpt.csv',csvOf(rows(false)),'text/csv')

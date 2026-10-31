@@ -1,0 +1,1 @@
+function(e,t,r){var a=this._validate(e,t,r,n.local.invalidDate);e=a.year(),t=a.month(),r=a.day();var i=e<=0?e+1:e,o=this.jdEpoch+this._delay1(i)+this._delay2(i)+r+1;if(t<7){for(var l=7;l<=this.monthsInYear(e);l++)o+=this.daysInMonth(e,l);for(l=1;l<t;l++)o+=this.daysInMonth(e,l)}else for(l=7;l<t;l++)o+=this.daysInMonth(e,l);return o}

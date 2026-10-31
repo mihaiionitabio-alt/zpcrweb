@@ -1,0 +1,6 @@
+function snapshot(runs){
+  const views=runs.map((run,i)=>{const meta=run.meta||{},hash=meta.sourceSHA256;return {view:i+1,filename:run.file||'',source_sha256:typeof hash==='string'?hash:'',source_bytes:Number.isSafeInteger(meta.sourceBytes)&&meta.sourceBytes>=0?meta.sourceBytes:null,hash_available:typeof hash==='string'&&/^[a-f\d]{64}$/i.test(hash)};});
+  const groups=new Map();for(const view of views)if(view.hash_available){const key=view.source_sha256.toLowerCase();if(!groups.has(key))groups.set(key,[]);groups.get(key).push(view);}
+  for(const view of views){const group=view.hash_available?groups.get(view.source_sha256.toLowerCase()):[],known=group.filter(v=>v.source_bytes!==null).map(v=>v.source_bytes);view.match_view_count=view.hash_available?group.length:null;view.comparison_state=!view.hash_available?'hash_unavailable':new Set(known).size>1?'byte_count_conflict':group.length<2?'single_view':'shared_views';view.byte_count_state=!view.hash_available?'not_compared':new Set(known).size>1?'conflict':known.length===group.length&&group.length?'available':'incomplete';}
+  return views;
+ }

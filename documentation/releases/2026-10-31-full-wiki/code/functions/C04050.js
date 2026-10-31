@@ -1,0 +1,1 @@
+function(){var n,a=u(this).getComputedStyle(this,null).getPropertyValue(e);return a!==t&&(n=Tr(a,t),function(t){this.style.setProperty(e,n(t),r)})}

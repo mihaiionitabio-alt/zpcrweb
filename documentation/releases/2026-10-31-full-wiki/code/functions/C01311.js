@@ -1,0 +1,1 @@
+function s(e){return Math.abs(e[1]-e[0])>l-1e-14}

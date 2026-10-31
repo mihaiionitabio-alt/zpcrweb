@@ -1,0 +1,1 @@
+s=>s.score>=ref&&!S.pts[s.i].flags.length

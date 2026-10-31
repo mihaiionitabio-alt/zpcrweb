@@ -1,0 +1,1 @@
+w=>`${w.well} ${w.target} ${num(w.CpRaw,2)}`

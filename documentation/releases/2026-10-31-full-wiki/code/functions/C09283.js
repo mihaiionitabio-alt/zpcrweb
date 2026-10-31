@@ -1,0 +1,1 @@
+run=>({run,reads:run.pcrd.reads.filter(r=>r.step===step)})

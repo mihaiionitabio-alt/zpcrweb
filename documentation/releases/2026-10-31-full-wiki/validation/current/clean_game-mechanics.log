@@ -1,0 +1,22 @@
+{
+  "checks": 14,
+  "passed": true,
+  "summary": {
+    "completed": 7,
+    "total": 7,
+    "mean": 100,
+    "unresolvedUnsafe": 0,
+    "passed": true,
+    "missProfile": {
+      "chart.baseline": {
+        "attempts": 5,
+        "misses": 1
+      },
+      "sop.native": {
+        "attempts": 4,
+        "misses": 0
+      }
+    },
+    "badges": []
+  }
+}

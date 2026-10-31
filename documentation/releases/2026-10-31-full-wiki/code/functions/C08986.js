@@ -1,0 +1,1 @@
+fn=>rr.flatMap((x,i)=>Array.from({length:x.reads[0].channels},(_,c)=>({run:i,channel:c,points:x.reads.map((r,j)=>[j+1,fn(r,c,x.run)])})))

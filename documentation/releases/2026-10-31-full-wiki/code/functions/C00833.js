@@ -1,0 +1,1 @@
+function c(e){this.container=e.container,this.element=document.createElement("div"),this.update(e.graphInfo,e.buttons),this.container.appendChild(this.element)}

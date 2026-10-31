@@ -1,0 +1,1 @@
+(v,i)=>{if(!Number.isFinite(v))return;const x=xPix(i+1),y=yPix(v);if(!started){ctx.moveTo(x,y);started=true;}else ctx.lineTo(x,y);}

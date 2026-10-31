@@ -1,0 +1,1 @@
+function V(e){return"pointNumber"in e&&"searchInfo"in e}

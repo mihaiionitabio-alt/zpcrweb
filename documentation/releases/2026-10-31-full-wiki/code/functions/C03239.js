@@ -1,0 +1,1 @@
+function(){var r=t.apply(this,arguments);null==r?this.removeAttributeNS(e.space,e.local):this.setAttributeNS(e.space,e.local,r)}

@@ -1,0 +1,1 @@
+function(){r._editing=!1,e.text(this.textContent).style({opacity:1});var t,a=n.select(this).attr("class");(t=a?"."+a.split(" ")[0]+"-math-group":"[class*=-math-group]")&&n.select(e.node().parentNode).select(t).style({opacity:0});var o=this.textContent;n.select(this).transition().duration(0).remove(),n.select(document).on("mouseup",null),i.edit.call(e,o)}

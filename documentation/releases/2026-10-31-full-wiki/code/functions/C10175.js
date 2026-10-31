@@ -1,0 +1,1 @@
+e=>shown(e)||!!(e&&!e.disabled&&MG.open&&!MG.sheet&&document.getElementById('mg').classList.contains('mg-focus')&&e.matches('#mg-actions .mg-act'))

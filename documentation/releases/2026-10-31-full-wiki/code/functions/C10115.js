@@ -1,0 +1,1 @@
+()=>{if(!SOP.experiment_analysis)SOP.experiment_analysis=JSON.parse(JSON.stringify(EXPERIMENT_SOP_DEFAULTS));}

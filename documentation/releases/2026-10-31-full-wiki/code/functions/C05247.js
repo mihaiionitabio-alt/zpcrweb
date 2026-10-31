@@ -1,0 +1,1 @@
+x=>parseInt(x.textContent,10)

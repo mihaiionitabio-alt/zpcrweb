@@ -1,0 +1,1 @@
+function award(id){if(awarded.has(id))return;awarded.add(id);updateProgress();const reward=rewardPanel;reward.classList.remove('on');void reward.offsetWidth;reward.classList.add('on');reward.scrollIntoView({block:'nearest',behavior:'instant'});setTimeout(()=>reward.classList.remove('on'),1700);rewardSound();}

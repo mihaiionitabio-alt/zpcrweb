@@ -1,0 +1,1 @@
+function(A){return B.drawImage(A,0,0),Lr(B.getImageData(0,0,r,r).data)}

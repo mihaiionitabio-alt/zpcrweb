@@ -1,0 +1,1 @@
+w=>w.curve&&w.curve.length

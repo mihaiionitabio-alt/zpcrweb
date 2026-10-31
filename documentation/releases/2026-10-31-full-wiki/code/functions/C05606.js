@@ -1,0 +1,1 @@
+w=>w.flags.map(f=>EDS.flagName(f.code))

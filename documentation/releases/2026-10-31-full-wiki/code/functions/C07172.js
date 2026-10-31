@@ -1,0 +1,10 @@
+(g,i)=>out.push(mgIt({kind:"graph",sev:"none",pict:MG_PICT.graph,kindWord:g.group,
+    code:"G"+(i+1),title:g.title,value:"",unit:"",
+    limits:g.scope==="run"?runName(run):"all loaded runs",
+    state:"",evidence:`graph ${i+1} of ${GRAPHS.length} · drawn with ${SOP.name} v${SOP.version}`,
+    graphId:g.id,runIndex:ri,
+    rows:[["Group",g.group],["Drawn from",g.scope==="run"?"one run":"every loaded run"],
+          ["Run",runName(run)],["Options",(g.opts||[]).join(", ")||"none"],
+          ["Profile",`${SOP.name} v${SOP.version}`],["Graph",`${i+1} of ${GRAPHS.length}`]],
+    actions:[{key:"3",label:"Draw the graph",cmd:"chart"},
+             {key:"4",label:"Open the graphs view on the page",cmd:"open page graphs"}]}))

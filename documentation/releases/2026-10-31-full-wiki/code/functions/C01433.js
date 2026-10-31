@@ -1,0 +1,1 @@
+function d(t){var r=e.getPointAtLength(t);0===t?n=r:t===u&&(a=r);var c=r.x<i?i-r.x:r.x>o?r.x-o:0,f=r.y<l?l-r.y:r.y>s?r.y-s:0;return Math.sqrt(c*c+f*f)}

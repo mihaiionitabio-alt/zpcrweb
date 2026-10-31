@@ -1,0 +1,1 @@
+t=>{const v=pv(el,t);return v===""?null:Number(v);}

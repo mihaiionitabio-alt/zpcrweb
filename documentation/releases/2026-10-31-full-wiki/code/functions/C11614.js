@@ -1,0 +1,1 @@
+(){MISSY_CONSOLE_VOICE.stop();MISSY_COMPUTER_SOUND.stopAlert();demo.closeModes();}

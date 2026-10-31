@@ -1,0 +1,1 @@
+function ssOpen(pending=false){ssBuildRows();SAMPLE_SELECTION.draft=new Set(SAMPLE_SELECTION.excluded);SAMPLE_SELECTION.page=0;SAMPLE_SELECTION.pending=pending;$("#ss-search").value="";$("#ss-view").value="all";$("#ss-review").hidden=false;$("#ss-cancel").hidden=pending;ssRender();ssUpdateBadge();showTab("load");$("#ss-review").scrollIntoView({block:"start"});}

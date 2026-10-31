@@ -1,0 +1,1 @@
+function(t){t.target=e._fullLayout._lasthover,a.click(e,t)}

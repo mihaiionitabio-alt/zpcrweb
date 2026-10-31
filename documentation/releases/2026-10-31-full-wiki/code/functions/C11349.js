@@ -1,0 +1,1 @@
+function ns(A,t){return A.length===t.length&&A.some(function(A,e){return A===t[e]})}

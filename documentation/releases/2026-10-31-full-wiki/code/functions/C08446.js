@@ -1,0 +1,1 @@
+row=>row.reduce((s,m,j)=>s+m*v[j],0)

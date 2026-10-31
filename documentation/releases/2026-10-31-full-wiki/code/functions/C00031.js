@@ -1,0 +1,1 @@
+function renderInto(c,id,preview=false,layer=null){const item=byId.get(id);if(!item)return null;if(item.sample){scheduleSample(c,item,0,null,c.destination);return sampleDuration(item);}scheduleCue(c,item,0,preview,null,c.destination,layer||item.playbackLayer||'event');return item.pattern.length?Math.max(...item.pattern.map(x=>x[1]+x[2])):0;}

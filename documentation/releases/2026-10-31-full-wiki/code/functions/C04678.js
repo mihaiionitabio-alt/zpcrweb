@@ -1,0 +1,1 @@
+function(t,r){for(var n=t[0],a=t[1],i=r[r.length-1][0],o=r[r.length-1][1],l=!1,s=0;s<r.length;s++){var c=r[s][0],u=r[s][1];u-a>e!=o-a>e&&(i-c)*(a-u)/(o-u)+c-n>e&&(l=!l),i=c,o=u}return l}

@@ -1,0 +1,1 @@
+function g(e,t){return e<t?-1:e>t?1:e>=t?0:NaN}

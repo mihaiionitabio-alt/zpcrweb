@@ -1,0 +1,1 @@
+function(e,t,r){return e*t<0||0===e?r:1/0}

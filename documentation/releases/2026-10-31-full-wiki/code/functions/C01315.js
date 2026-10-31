@@ -1,0 +1,1 @@
+function g(e,t){return[e*Math.cos(t)+a,i-e*Math.sin(t)]}

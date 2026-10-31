@@ -1,0 +1,1 @@
+function(e){x.singlePointStyle(e,n.select(this),t,i,r,a)}

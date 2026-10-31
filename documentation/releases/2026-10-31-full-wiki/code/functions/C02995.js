@@ -1,0 +1,1 @@
+function i(e,t){return n(t,e%a==0?1:0)}

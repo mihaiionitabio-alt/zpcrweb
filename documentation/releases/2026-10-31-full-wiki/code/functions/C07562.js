@@ -1,0 +1,1 @@
+w=>Number(w.CpRaw)===40&&w.call==="Positive"

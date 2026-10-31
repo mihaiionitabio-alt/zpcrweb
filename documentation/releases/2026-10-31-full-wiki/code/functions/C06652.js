@@ -1,0 +1,1 @@
+i=>Number.isFinite(y[i])&&Number.isFinite(x[i])

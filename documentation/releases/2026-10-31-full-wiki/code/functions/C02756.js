@@ -1,0 +1,1 @@
+function(e,t,r,n,i){var o=u(e,t,r,n,i);if(o){var l=o.cd,s=l[0].trace,c=l[o.index];return o.color=f(s,c),a.getComponentMethod("errorbars","hoverInfo")(c,s,o),[o]}}

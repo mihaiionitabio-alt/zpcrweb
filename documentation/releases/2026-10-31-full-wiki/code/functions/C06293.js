@@ -1,0 +1,1 @@
+t=>({time:sopFmtTime(t[0]),minutes:+m(t).toFixed(3),block_C:t[1],cover_C:t[2],heatsink_C:t[3],zone_spread_C:t[4]})

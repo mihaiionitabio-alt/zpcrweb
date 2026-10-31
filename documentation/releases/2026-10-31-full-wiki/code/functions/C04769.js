@@ -1,0 +1,1 @@
+function(){var e=p(this._r,this._g,this._b),t=s(360*e.h),r=s(100*e.s),n=s(100*e.v);return 1==this._a?"hsv("+t+", "+r+"%, "+n+"%)":"hsva("+t+", "+r+"%, "+n+"%, "+this._roundA+")"}

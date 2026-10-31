@@ -1,0 +1,1 @@
+function G(e,t,r){var n=t._fullLayout,a=r.plotinfo,i=r.dragmode,o=n._lastSelectedSubplot&&n._lastSelectedSubplot===a.id,l=(e.shiftKey||e.altKey)&&!(h(i)&&p(i));o&&l&&a.selection&&a.selection.selectionDefs&&!r.selectionDefs?(r.selectionDefs=a.selection.selectionDefs,r.mergedPolygons=a.selection.mergedPolygons):l&&a.selection||Z(r),o||(x(t),n._lastSelectedSubplot=a.id)}

@@ -1,0 +1,1 @@
+v=>`<option${v===CC_STATE.variant?" selected":""}>${esc(v)}</option>`

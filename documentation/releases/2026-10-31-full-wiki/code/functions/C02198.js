@@ -1,0 +1,1 @@
+function h(e){if(!e.showline||!e.linewidth)return!1;var r=Math.max((e.linewidth+t.zerolinewidth)/2,1);function n(e){return"number"==typeof e&&Math.abs(e-s)<r}if(n(e._mainLinePosition)||n(e._mainMirrorPosition))return!0;var a=e._linepositions||{};for(var i in a)if(n(a[i][0])||n(a[i][1]))return!0}

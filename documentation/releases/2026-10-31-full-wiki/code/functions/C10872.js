@@ -1,0 +1,1 @@
+()=>{api=frame.contentWindow.MISSY_VOICE_DEMO_CHILD;if(api)resolve(api);else reject(Error('Voice demonstration failed to initialise'));}

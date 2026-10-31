@@ -1,0 +1,1 @@
+function(){return oe(this.backgroundColor)}

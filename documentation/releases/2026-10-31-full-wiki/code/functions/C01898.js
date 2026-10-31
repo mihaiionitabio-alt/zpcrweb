@@ -1,0 +1,1 @@
+function re(e){return void 0!==v._shift&&(e+=v._shift),"M"+e+","+v._offset+"v"+v._length}

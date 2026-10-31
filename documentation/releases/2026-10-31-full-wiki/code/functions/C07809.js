@@ -1,0 +1,1 @@
+y=>T+(view.y1-y)/Math.max(1e-9,view.y1-view.y0)*(H-T-B)

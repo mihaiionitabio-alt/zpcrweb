@@ -1,0 +1,1 @@
+function(A){return"blob"===A.substr(0,4)}

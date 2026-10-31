@@ -1,0 +1,1 @@
+function(){this._activeEffects.pop(),this.ctx.restore()}

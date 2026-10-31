@@ -1,0 +1,1 @@
+function jn(e,t){var r=e.x+t[3],n=e.y+t[0],a=e.dx-t[1]-t[3],i=e.dy-t[0]-t[2];return a<0&&(r+=a/2,a=0),i<0&&(n+=i/2,i=0),{x:r,y:n,dx:a,dy:i}}

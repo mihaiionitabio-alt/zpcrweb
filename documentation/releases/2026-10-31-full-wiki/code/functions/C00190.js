@@ -1,0 +1,1 @@
+function(e,t,r){for(var n,a,i,s,c,d=Math.floor((t+.05)/l)+o,p=h(r).fromJD(d),v=0;-1!==(v=e.indexOf("%",v));)"0"===(n=e.charAt(v+1))||"-"===n||"_"===n?(i=3,a=e.charAt(v+2),"_"===n&&(n="-")):(a=n,n="0",i=2),(s=f[a])?(c=s===u?u:p.formatDate(s[n]),e=e.substr(0,v)+c+e.substr(v+i),v+=c.length):v+=i;return e}

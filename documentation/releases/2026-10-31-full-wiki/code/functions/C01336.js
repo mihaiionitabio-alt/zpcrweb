@@ -1,0 +1,1 @@
+function(e){return d(e,Math.min,1/0)}

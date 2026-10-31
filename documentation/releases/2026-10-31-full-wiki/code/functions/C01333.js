@@ -1,0 +1,1 @@
+function(e){return a(e)&&e.hasOwnProperty("dtype")&&"string"==typeof e.dtype&&e.hasOwnProperty("bdata")&&("string"==typeof e.bdata||f(e.bdata))&&(void 0===e.shape||e.hasOwnProperty("shape")&&("string"==typeof e.shape||"number"==typeof e.shape))}

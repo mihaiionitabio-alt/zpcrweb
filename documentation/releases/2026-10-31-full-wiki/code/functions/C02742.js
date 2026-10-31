@@ -1,0 +1,1 @@
+function(e){return e.p-S(e)/2}

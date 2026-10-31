@@ -1,0 +1,1 @@
+function maraProfileActive(p=SOP){return String(p?.method?.id||'').startsWith('MARA1012-');}

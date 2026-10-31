@@ -1,0 +1,1 @@
+function _e(e){return e>14||e<-15}

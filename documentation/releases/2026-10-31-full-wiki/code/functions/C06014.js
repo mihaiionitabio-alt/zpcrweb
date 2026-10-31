@@ -1,0 +1,1 @@
+()=>download(safeName((SOP.fileStem||SOP.name)+"_v"+SOP.version)+".sop.json",sopJSON(),"application/json")

@@ -1,0 +1,1 @@
+function C(e){var t=e.transforms;if(Array.isArray(t)&&t.length)for(var r=0;r<t.length;r++){var n=t[r],a=n._module||T[n.type];if(a&&a.makesData)return!0}return!1}

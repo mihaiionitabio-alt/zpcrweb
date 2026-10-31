@@ -1,0 +1,1 @@
+f=>f.degree===1?"linear":"quadratic"

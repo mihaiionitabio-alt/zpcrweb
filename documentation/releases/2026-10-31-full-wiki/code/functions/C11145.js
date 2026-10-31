@@ -1,0 +1,1 @@
+function(A,e){switch(e){case"oblique":return"oblique";case"italic":return"italic";default:return"normal"}}

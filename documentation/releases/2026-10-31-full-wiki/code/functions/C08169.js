@@ -1,0 +1,1 @@
+(v,i)=>({experiment:runName(run),well:w.well,sample:w.sample||"",target:w.target||"",cycle:i+1,fluorescence:v})

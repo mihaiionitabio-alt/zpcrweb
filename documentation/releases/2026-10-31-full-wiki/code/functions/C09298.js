@@ -1,0 +1,1 @@
+(_,n)=>pcrdCell(r,c,Math.floor(n/p.grid.cols),n%p.grid.cols)

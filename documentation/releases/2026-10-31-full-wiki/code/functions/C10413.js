@@ -1,0 +1,61 @@
+()=>{
+ const selections=new WeakMap(),initial=()=>({read:0,channel:0,row:0,column:0});
+ // Existing report pseudonymization shallow-clones runs, retaining native payload identity.
+ const selectionKey=run=>run.zpcr||run.pcrd||run;
+ const t=(en,zh)=>UI_LANG==='zh'?zh:en;
+ const array=a=>Array.isArray(a)||(ArrayBuffer.isView(a)&&typeof a.length==='number');
+ const integer=(n,max)=>Number.isSafeInteger(n)&&n>=0&&n<max;
+ const numeric=v=>typeof v!=='number'?'':Object.is(v,-0)?'-0':String(v);
+ const labels={mean:['Stored mean','保存的均值'],sd:['Stored within-read SD','保存的单次读数标准差'],min:['Stored minimum','保存的最小值'],max:['Stored maximum','保存的最大值']};
+ function snapshot(run,index=0,choice=selections.get(selectionKey(run))||initial()){
+  const out={view:index+1,filename:run.file||'',status:'not_exposed',reason:run.pcrdLocked?'locked':run.isTemplate?'template':'no_native',selection:{...choice},entries:[]};
+  if(run.pcrdLocked||run.isTemplate)return out;
+  const raw=run.zpcr||run.pcrd;if(!Array.isArray(raw?.reads)||!raw.reads.length)return out;
+  if(!integer(choice.read,raw.reads.length)){out.reason='invalid_selection';return out;}
+  const read=raw.reads[choice.read],width=run.zpcr?4:read.tupleWidth,data=run.zpcr?read.wellData:read.originalData,dark=run.zpcr?read.darkData:read.originalDark;
+  if(![read.rows,read.cols,read.channels].every(n=>Number.isSafeInteger(n)&&n>0)||![1,2,4].includes(width)||!array(data)||data.length!==read.rows*read.cols*read.channels*width){out.reason='unsupported_layout';return out;}
+  if(!integer(choice.channel,read.channels)||!integer(choice.row,read.rows)||!integer(choice.column,read.cols)){out.reason='invalid_selection';return out;}
+  Object.assign(out,{status:'provided',reason:'',format:run.zpcr?'zpcr':'pcrd',read_name:read.name||'',step:read.step??'',cycle:read.cycle??'',read_count:raw.reads.length,rows:read.rows,columns:read.cols,channels:read.channels,width,role:'unknown'});
+  const grid=raw.grid||{};
+  if(Number.isSafeInteger(grid.sampleRows)&&Number.isSafeInteger(grid.referenceRows)&&grid.sampleRows>=0&&grid.referenceRows>=0&&grid.sampleRows+grid.referenceRows===read.rows)out.role=choice.row<grid.sampleRows?'sample_grid':'reference_grid';
+  const base=((choice.channel*read.rows+choice.row)*read.cols+choice.column)*width;
+  const push=(kind,source,at,a,k)=>{const value=a?.[at];out.entries.push({kind,source_array:source,source_index:at,component:run.zpcr?['mean','sd','min','max'][k]:'native_'+(k+1),value:numeric(value),state:typeof value!=='number'?'unavailable':Number.isFinite(value)?'finite':'native_nonfinite'});};
+  for(let k=0;k<width;k++)push('position',run.zpcr?'wellData':'originalData',base+k,data,k);
+  const darkAvailable=array(dark)&&dark.length===read.channels*width;
+  for(let k=0;k<width;k++)push('dark',run.zpcr?'darkData':'originalDark',choice.channel*width+k,darkAvailable?dark:null,k);
+  return out;
+ }
+ function select(run,choice){if(snapshot(run,0,choice).status!=='provided')return false;selections.set(selectionKey(run),{read:choice.read,channel:choice.channel,row:choice.row,column:choice.column});return true;}
+ function reason(code,localized){const p=(en,zh)=>localized?t(en,zh):en;return ({locked:p('Locked inventory only; no decoded native values.','仅有加密文件清单；未解码原始值。'),template:p('Template only; no completed acquisition is implied.','仅模板；不表示已完成数据采集。'),no_native:p('This view does not expose supported original native arrays. No new decoding is attempted.','此视图未提供受支持的原始数组。不尝试新的解码。'),unsupported_layout:p('Native array layout is not supported by this inspector; existing reader/results are unaffected.','此检查器不支持该原始数组布局；不影响已有读取器和结果。'),invalid_selection:p('Choose valid integer read, channel, physical row and column indices.','请选择有效的整数读取序号、通道、实际行号和列号。')})[code]||'';}
+ function role(code,localized){const p=(en,zh)=>localized?t(en,zh):en;return ({sample_grid:p('Declared sample grid; not sample identity','声明的样本区域；不表示样本标识'),reference_grid:p('Declared instrument reference row; not a PCR control','声明的仪器参比行；不属于 PCR 对照'),unknown:p('Physical role unavailable','未提供实际位置用途')})[code];}
+ function scope(s,localized){if(s.status!=='provided')return reason(s.reason,localized);const p=(en,zh)=>localized?t(en,zh):en,c=s.selection;return p('Read ','读取序号 ')+(c.read+1)+' · '+s.read_name+p('; channel ','；通道 ')+(c.channel+1)+p('; physical row/column ','；实际行／列 ')+(c.row+1)+'/'+(c.column+1)+p('; step/cycle ','；步骤／循环 ')+s.step+'/'+s.cycle+' · '+role(s.role,localized);}
+ function component(e,localized){const p=(en,zh)=>localized?t(en,zh):en;return (e.kind==='dark'?p('Dark: ','暗值：'):p('Position: ','位置：'))+(labels[e.component]?(localized?t(...labels[e.component]):labels[e.component][0]):p('Original component ','原始组分 ')+e.component.split('_')[1]+p(' (meaning not assigned)','（未赋予含义）'));}
+ function state(code,localized){const p=(en,zh)=>localized?t(en,zh):en;return ({finite:p('Decoded finite number','解码后的有限数值'),native_nonfinite:p('Native non-finite token; not replaced','原始非有限标记；未替换'),unavailable:p('Unavailable; not zero','未提供；不等于零')})[code];}
+ function rows(localized=false){return RUNS.flatMap((run,i)=>{const s=snapshot(run,i),p=(en,zh)=>localized?t(en,zh):en;const common={native_view:i+1,filename:s.filename,inspection_scope:scope(s,localized)};
+  if(s.status!=='provided')return [{...common,native_component:p('Availability','提供情况'),native_value:'',native_state:reason(s.reason,localized),native_basis:p('Existing reader and results unchanged.','已有读取器和结果保持不变。')}];
+  return s.entries.map(e=>({...common,native_component:component(e,localized),native_value:e.value,native_state:state(e.state,localized),native_basis:e.source_array+'['+e.source_index+']'+p(' · decoded numeric excerpt only; not original bits or calibrated units',' · 仅为解码后的数值摘录；不代表原始位值或校准单位'),component_code:e.component,source_array:e.source_array,source_index:e.source_index,read_number:s.selection.read+1,channel_number:s.selection.channel+1,physical_row:s.selection.row+1,physical_column:s.selection.column+1,role_code:s.role}));});}
+ function render(){return MISSY_EVIDENCE_A11Y.refresh('missy-native-inspector',renderContent);}
+ function renderContent(){
+  const host=document.getElementById('loadedcard');if(!host)return;let box=document.getElementById('missy-native-inspector');
+  if(!box){box=document.createElement('details');box.id='missy-native-inspector';box.setAttribute('data-i18n-skip','');box.addEventListener('toggle',render);host.append(box);}
+  box.hidden=!RUNS.length;const open=box.open;const title=document.createElement('summary');title.textContent=t('Native reading inspector (read only)','原始读数检查器（只读）');MISSY_EVIDENCE_A11Y.reset(box,title);if(!open)return;
+  const note=document.createElement('p');note.textContent=t('Inspect one decoded read/channel/physical position per source. This is an excerpt, not a complete raw export. No Cq, Tm, quantity or QC result is calculated. Stored within-read SD is not replicate SD; contributing count is unavailable. Optical channel does not establish dye identity.','每个源文件仅查看一个解码后的读取序号／通道／实际位置。这是摘录，不是完整原始数据导出。不计算 Cq、Tm、定量值或质控结果。保存的单次读数标准差不等于重复测定标准差；未提供构成该读数的测量次数。光学通道不表示染料标识。');box.append(note);
+  RUNS.forEach((run,i)=>{const s=snapshot(run,i),card=document.createElement('div'),h=document.createElement('h4');card.className='native-card';h.id='missy-native-source-'+i;h.textContent=(i+1)+' · '+run.file;card.append(h);box.append(card);
+   if(s.status!=='provided'){const p=document.createElement('p');p.textContent=reason(s.reason,true);card.append(p);return;}
+   const form=document.createElement('form');form.noValidate=true;form.setAttribute('aria-labelledby',h.id);const inputs={};
+   for(const [key,label,max]of [['read',t('Read number','读取序号'),s.read_count],['channel',t('Stored channel','保存的通道'),s.channels],['row',t('Physical row','实际行号'),s.rows],['column',t('Physical column','实际列号'),s.columns]]){const l=document.createElement('label'),input=document.createElement('input');l.textContent=label+' (1–'+max+') ';input.type='number';input.min='1';input.max=String(max);input.step='1';input.value=String(s.selection[key]+1);input.setAttribute('aria-label',label);input.dataset.nativeIndex=key;input.setAttribute('aria-describedby','missy-native-error-'+i);l.append(input);form.append(l);inputs[key]=input;}
+   const button=document.createElement('button');button.type='submit';button.textContent=t('Inspect','查看');form.append(button);const error=document.createElement('p');error.id='missy-native-error-'+i;error.setAttribute('aria-live','polite');form.addEventListener('submit',e=>{e.preventDefault();const choice=Object.fromEntries(Object.entries(inputs).map(([k,v])=>[k,v.value.trim()===''?NaN:Number(v.value)-1]));if(!select(run,choice)){error.textContent=reason('invalid_selection',true);return;}render();});card.append(form,error);
+   const context=document.createElement('p');context.textContent=scope(s,true);card.append(context);const dl=document.createElement('dl');for(const e of s.entries){const dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=component(e,true);dd.textContent=[e.value,state(e.state,true),e.source_array+'['+e.source_index+']'].filter(Boolean).join(' · ');dl.append(dt,dd);}card.append(dl);
+  });
+ }
+ MISSY_HOOKS.use('showTab','native-inspector/read-only-panel',262,next=>function(...args){const result=next(...args);render();return result;});
+ MISSY_HOOKS.use('selDataItems','native-inspector/optional-table',262,next=>function(){return next().concat({id:'data:native_excerpt',kind:'data',group:'Source provenance',title:'Native reading excerpt',note:'',ready:()=>RUNS.length>0,rows:()=>rows(true),file:'native_reading_excerpt.csv',tableOptions:{full:true,columns:['filename','inspection_scope','native_component','native_value','native_state','native_basis']},text:()=>csvOf(rows(false))});});
+ MISSY_HOOKS.use('exportCatalogue','native-inspector/optional-csv',262,next=>function(){return next().concat({title:'Native reading excerpt (CSV)',note:'',ready:()=>RUNS.length>0,run:()=>download('native_reading_excerpt.csv',csvOf(rows(false)),'text/csv')});});
+ MISSY_HOOKS.use('cmdExec','native-inspector/read-only-command',262,next=>async function(raw){if(String(raw).trim().toLowerCase()==='native'){cmdTable(rows(true).map(r=>[r.filename,[r.inspection_scope,r.native_component,r.native_value,r.native_state,r.native_basis].filter(Boolean).join(' · ')]),true);return;}return next(raw);});
+ if(typeof REPORT_LITERAL_COLUMNS!=='undefined')for(const key of ['inspection_scope','native_value','native_basis'])REPORT_LITERAL_COLUMNS.add(key);
+ CMD_HELP.push(['native','show the current read-only native reading excerpt']);
+ Object.assign(ZH_TERMS,{'Native reading excerpt':'原始读数摘录','Native reading excerpt (CSV)':'原始读数摘录（CSV）','show the current read-only native reading excerpt':'显示当前只读原始读数摘录',inspection_scope:'查看范围',native_component:'原始组分',native_value:'原始数值',native_state:'数值状态',native_basis:'数值依据'});
+ const style=document.createElement('style');style.textContent='#missy-native-inspector{margin-top:16px;border-top:1px solid #d8dee8;padding-top:10px}#missy-native-inspector[hidden]{display:none!important}#missy-native-inspector summary{cursor:pointer;font-weight:600}#missy-native-inspector h4,#missy-native-inspector p{overflow-wrap:anywhere}#missy-native-inspector .native-card{border-top:1px solid #e5e7eb;padding:10px 0}#missy-native-inspector form{display:flex;flex-wrap:wrap;gap:10px;align-items:end}#missy-native-inspector label{display:flex;flex-direction:column;min-width:0;max-width:100%}#missy-native-inspector input{width:100px;max-width:100%;box-sizing:border-box}#missy-native-inspector dl{display:grid;grid-template-columns:minmax(160px,300px) minmax(0,1fr);gap:6px 14px}#missy-native-inspector dt,#missy-native-inspector dd{margin:0;min-width:0;overflow-wrap:anywhere}@media(max-width:600px){#missy-native-inspector dl{grid-template-columns:minmax(0,1fr)}#missy-native-inspector dd{margin-bottom:6px}}';document.head.append(style);
+ document.addEventListener('DOMContentLoaded',()=>{render();const loaded=document.getElementById('loaded');if(loaded)new MutationObserver(render).observe(loaded,{childList:true});new MutationObserver(render).observe(document.body,{attributes:true,attributeFilter:['class']});});
+ return Object.freeze({snapshot,select,rows,render});
+}

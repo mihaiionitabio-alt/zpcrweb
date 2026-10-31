@@ -1,0 +1,1 @@
+function F(e){return void 0===e?null:e}

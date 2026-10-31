@@ -1,0 +1,1 @@
+function(e){"use strict";e.exports=function(e){for(var t,r=e.length,n=0;n<r;n++)if(((t=e.charCodeAt(n))<9||t>13)&&32!==t&&133!==t&&160!==t&&5760!==t&&6158!==t&&(t<8192||t>8205)&&8232!==t&&8233!==t&&8239!==t&&8287!==t&&8288!==t&&12288!==t&&65279!==t)return!1;return!0}}

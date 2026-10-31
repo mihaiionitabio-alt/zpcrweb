@@ -1,0 +1,1 @@
+function(){e.prev.next=e.next,e.next&&(e.next.prev=e.prev),e.prev=null,e.next=null}

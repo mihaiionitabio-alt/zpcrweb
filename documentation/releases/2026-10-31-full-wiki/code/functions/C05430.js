@@ -1,0 +1,1 @@
+st=>!/^pre[_ -]?cycling/i.test(String(st.flag||""))&&/cycling|ampl|quant/i.test(`${st.flag||""} ${st.mode||""}`)

@@ -1,0 +1,54 @@
+function interpret(text,armed=false){let s=String(text).normalize('NFKC').toLowerCase();const short=s.trim().replace(/^(?:computer|missy)[,\s:]*/,'').replace(/[.!?。！？]+$/,'').trim();if(/^(?:yes|affirmative|是|确认)$/.test(short)&&currentConfirmation())return 'confirm:yes';if(/^(?:no|negative|否|不)$/.test(short)&&currentConfirmation())return 'confirm:no';const wakes=[...s.matchAll(wakePattern)];if(wakes.length)s=s.slice(wakes.at(-1).index+wakes.at(-1)[0].length);else if(!armed)return null;if(window.MISSY_LEARNING?.active)return 'learning:'+s.trim();const subject=s.trim().replace(/[!?。！？]+$/,'');s=s.replace(/[.,!?;:。！？，；：]/g,' ').replace(/\s+/g,' ').trim();if(!s)return null;if(s==='this is not a drill')return 'ship:drill:0';if(/^(?:cancel red alert|stand down|all clear)$/.test(s))return 'ship:standdown';if(/\b(?:not|never|don't|dont|cancel)\b/.test(s))return null;
+  const incomplete={'locate sample':'sample','locate file':'file','show chart':'chart','display chart':'chart','compare':'compare','查找样品':'sample','查找文件':'file','显示图表':'chart','比较':'compare'};if(incomplete[s])return 'clarify:'+incomplete[s];
+  if(/^(?:status report|give (?:me )?a status report|report status|状态报告)$/.test(s))return 'f:report';
+  if(/^(?:full report|read everything|完整报告)$/.test(s))return 'f:fullreport';
+  if(/^(?:is there a problem|what is the problem|is there something wrong)(?: here)?$/.test(s))return 'f:report';
+  if(/^(?:highlight (?:this chart|this graph|the problem|what needs attention)|show what needs attention)$/.test(s))return 'q:analyse';
+  if(/^can you be more specific$/.test(s))return 'f:fullreport';
+  if(/^what build(?: is this)?$/.test(s))return 'q:build';
+  if(/^(?:who is the operator|who am i)$/.test(s))return 'q:operator';
+  if(/^what language are you speaking$/.test(s))return 'q:lang';
+  if(/^what views are there$/.test(s))return 'q:views';
+  if(/^where is pseudonymisation$/.test(s))return 'q:privacy';
+  if(/^(?:are there any faults|which file failed|why was that file skipped)$/.test(s))return 'o:fault';
+  if(/^(?:why has this chart no limits|are there any alarms)$/.test(s))return 'q:analyse';
+  const navigation={'zoom in':'zoom in','reset the view':'zoom reset','next chart':'chart next','next run':'next run'};if(navigation[s])return 'nav:'+navigation[s];
+  if(/^(?:is there any indication of inhibition|is this sample contaminated|contaminated)$/.test(s))return 'refuse:cause';
+  if(/^has the instrument failed$/.test(s))return 'refuse:hardware';
+  if(/^what will happen next (?:week|month)$/.test(s))return 'refuse:forecast';
+  if(/^which instrument is best$/.test(s))return 'refuse:rank';
+  if(/^approve this run(?: for release)?$/.test(s))return 'refuse:release';
+  if(/^change this result to .+$/.test(s))return 'refuse:result';
+  if(/^delete this run$/.test(s))return 'refuse:delete';
+  if(/^are these results validated$/.test(s))return 'refuse:validation';
+  const order=subject.match(/^(locate sample|locate file|locate|identify run|run diagnostic on module|request all information on|information on|tell me about) (.+)$/);if(order)return 'o:'+order[1]+':'+order[2];
+  if(/^(?:explanation for|identify) (?:the )?malfunction(?: immediately)?$/.test(s))return 'o:fault';
+  if(/^bracket (?:the )?dates$/.test(s))return 'o:dates';
+  if(/^what is the magnification$/.test(s))return 'o:zoom';
+  if(/^(?:access|open) the (?:run )?log$/.test(s))return 'o:log';
+  if(/^override(?: previous programming| the profile| the rules)?$/.test(s))return 'o:override';
+  const facts={memory:'memory','memory status':'memory','how much memory':'memory','what time is it':'clock','the date':'clock','uptime':'uptime','how long have you been open':'uptime','how many files':'files','list the files':'listfiles','what files':'listfiles','how many samples':'samples','list the samples':'listsamples','read the sample names':'listsamples','describe the table':'table',"what is in this table":'table','more':'more','continue':'more','go on':'more','内存':'memory','时间':'clock','日期':'clock','列出文件':'listfiles','列出样本':'listsamples','表格内容':'table','继续':'more'};if(facts[s])return 'f:'+facts[s];
+  const row=s.match(/^read row (\d{1,4})$/);if(row)return 'f:row:'+row[1];
+  const col=s.match(/^(?:statistics|stats) for (.+)$/);if(col)return 'f:col:'+col[1];
+  const chart=s.match(/^(?:please )?(?:show |open |go to )?(?:chart|graph)(?: number)? (.+)$/);if(chart){const n=chartNumber(chart[1]);if(n!==null)return 'chart:'+n;}
+  if(/^(?:analyse|analyze|describe|summarise|summarize|check)(?: this| the| current)? (?:chart|graph)$|^(?:what does this (?:chart|graph) show|how many (?:outliers|errors|flagged points)|is (?:everything|all data) (?:normal|nominal))$/.test(s))return 'q:analyse';
+  if(/^(?:white|light|dark|black) background$/.test(s))return s.startsWith('white')||s.startsWith('light')?'theme:light':'theme:dark';
+  if(/^(?:list charts|list graphs|what charts are available)$/.test(s))return 'q:chartlist';
+  if(/^(?:please )?(?:where am i|where are we|what view is this|what page am i on|我在哪里|当前位置)$/.test(s))return 'q:where';
+  if(/^(?:please )?(?:what can i do(?: here| there| now| on this page| in this view)?|what can you do(?: here)?|what are my options|what(?:'s| is) here|help(?: me)?|show (?:the )?commands|我能做什么|这里可以做什么)$/.test(s))return 'q:help';
+  if(/^(?:how many (?:runs|experiments|results)(?: are loaded)?|what is loaded|运行数量|多少运行)$/.test(s))return 'q:counts';
+  if(/^(?:what are you doing|what is happening|what is the status|你在做什么)$/.test(s))return 'q:status';
+  if(/^(?:which profile is active|what profile is active|which sop is active|当前方法配置)$/.test(s))return 'q:profile';
+  if(/^(?:what (?:chart|graph) is this|which (?:chart|graph) is open|当前图表)$/.test(s))return 'q:graph';
+  if(/^(?:what formats do you read|which file formats|支持什么文件格式)$/.test(s))return 'q:formats';
+  if(/^(?:say again|repeat (?:that|the answer)|再说一次)$/.test(s))return 'q:repeat';
+  if(/^(?:stop|stop listening|stop voice)$/.test(s))return 'q:stop';
+  const ship={'damage report':'damage','all stop':'stop','full stop':'stop','belay that':'restore','belay my last':'restore','belay':'restore','as you were':'restore','stations':'stations','battle stations':'stations','general quarters':'stations','review stations':'stations','security alert':'security','intruder alert':'security','this is a drill':'drill:1','all hands':'broadcast','all decks':'broadcast','drill log':'log','red alert':'red'};if(ship[s])return 'ship:'+ship[s];
+  const readOnly={
+   'how many instruments':'instruments','are these runs comparable':'cohort','which run is newest':'newest','which run is oldest':'oldest','what protocol was used':'protocols','what targets are loaded':'targets','read the results':'results','summarise the run':'summary','which samples should i repeat':'repeat','check the controls':'controls','did any control fail':'controlfail','what does the profile require':'rules','is the run acceptable':'acceptance','does this profile apply':'applicability','how many standards':'standards','which chart is this':'chart','where did this run come from':'origin','which target is the reference':'references','what will the export contain':'exportscope','run a diagnostic':'diagnostic'};
+  if(readOnly[s])return 'data:'+readOnly[s];
+  const duration=s.match(/^how long did run (.+) take$/);if(duration){const n=chartNumber(duration[1]);if(n!==null)return 'data:duration:'+n;}
+  const registered=voicePairRegistry.find(r=>r.phrase===s);if(registered)return 'guard:'+registered.group;
+  if(/^(?:what|where|how|why|which|can|do|is|are|tell|describe|explain|compare|calculate|summarise|summarize|check|verify|give|report)\b/.test(s))return 'q:unknown';
+  return resolve(text,armed);
+ }

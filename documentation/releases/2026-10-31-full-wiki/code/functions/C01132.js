@@ -1,0 +1,1 @@
+function(e){var t=(e-r._offset)/r._length;return n?1-t:t}

@@ -1,0 +1,1 @@
+function O(e){return(e=L(e))in this._&&delete this._[e]}

@@ -1,0 +1,1 @@
+function YA(A){this._tokens=A}

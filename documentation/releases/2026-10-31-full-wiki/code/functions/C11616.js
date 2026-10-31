@@ -1,0 +1,1 @@
+text=>window.parent.MISSY_LEARNING.voice(text)

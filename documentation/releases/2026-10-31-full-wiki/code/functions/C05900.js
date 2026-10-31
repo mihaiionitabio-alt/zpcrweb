@@ -1,0 +1,1 @@
+rs=>{if(rs.length>1)push(null,"error","Duplicate file","The same file content was loaded under several names",rs.map(r=>r.file).join(", "));}

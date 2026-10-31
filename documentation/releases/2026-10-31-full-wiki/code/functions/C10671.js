@@ -1,0 +1,1 @@
+()=>requestAnimationFrame(()=>{Object.assign(pointer.style,destination);const nh=note.getBoundingClientRect().height;note.style.top=Math.max(8,Math.min(parseFloat(note.style.top),innerHeight-nh-8))+'px';})

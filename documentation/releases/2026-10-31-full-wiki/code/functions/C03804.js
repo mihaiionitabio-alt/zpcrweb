@@ -1,0 +1,1 @@
+function(){var r,n,a;do{a=(r=2*Math.random()-1)*r+(n=2*Math.random()-1)*n}while(!a||a>1);return e+t*r*Math.sqrt(-2*Math.log(a)/a)}

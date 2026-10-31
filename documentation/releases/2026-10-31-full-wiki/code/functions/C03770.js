@@ -1,0 +1,1 @@
+function(e,r,n){if(r){for(var a,i=e,o=e,l=r,s=i.parent.children[0],c=i.m,u=o.m,f=l.m,d=s.m;l=En(l),i=In(i),l&&i;)s=In(s),(o=En(o)).a=e,(a=l.z+f-i.z-c+t(l._,i._))>0&&(Rn(Nn(l,e,n),e,a),c+=a,u+=a),f+=l.m,c+=i.m,d+=s.m,u+=o.m;l&&!En(o)&&(o.t=l,o.m+=f-u),i&&!In(s)&&(s.t=i,s.m+=c-d,n=e)}return n}

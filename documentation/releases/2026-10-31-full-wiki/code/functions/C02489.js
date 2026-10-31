@@ -1,0 +1,1 @@
+function(e,t,r){var a,i=[],o=[];if(!(a="string"==typeof t?n.getModule(t).plot:"function"==typeof t?t:t.plot))return[i,e];for(var l=r,s=0;s<e.length;s++){var c=e[s],u=c[0].trace,f=void 0!==u.zorder;!0===u.visible&&0!==u._length&&(!u._module||u._module.plot!==a||f&&u.zorder!==l?o.push(c):i.push(c))}return[i,o]}

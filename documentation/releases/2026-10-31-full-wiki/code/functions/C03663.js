@@ -1,0 +1,1 @@
+function sn(e,t){return t.value-e.value}

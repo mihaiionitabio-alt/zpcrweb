@@ -1,0 +1,1 @@
+function(e,t){if(e.year&&(e=e.year()),"number"!=typeof e||e<1888||e>2111)throw t.replace(/\{0\}/,this.local.name);return e}

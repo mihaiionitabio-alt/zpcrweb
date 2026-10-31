@@ -1,0 +1,1 @@
+function WA(A){return 15===A.type}

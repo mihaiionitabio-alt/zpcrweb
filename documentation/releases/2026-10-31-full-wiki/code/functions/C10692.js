@@ -1,0 +1,1 @@
+x=>x.kind==='image'&&new RegExp(word,'i').test(x.title)&&(!x.ready||x.ready())

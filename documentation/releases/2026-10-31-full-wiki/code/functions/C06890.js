@@ -1,0 +1,1 @@
+()=>{const rowsOut=ccChartRows(def,res,CC_STATE.variant);if(rowsOut.length)download(base()+".csv",csvOf(rowsOut),"text/csv");}

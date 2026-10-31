@@ -1,0 +1,1 @@
+()=>zsSingleFigure(panel,acq)

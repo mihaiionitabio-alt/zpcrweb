@@ -1,0 +1,1 @@
+g=>({name:'Acquisition group '+g.step,cycles:g.reads.length,mode:'Stored acquisition',segments:[]})

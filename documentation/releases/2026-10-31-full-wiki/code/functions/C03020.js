@@ -1,0 +1,1 @@
+function se(e){return e.filter((function(e){return e.vis}))}

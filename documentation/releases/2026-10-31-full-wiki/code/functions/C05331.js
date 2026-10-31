@@ -1,0 +1,1 @@
+c=>c.name&&c.name!==a.channelName

@@ -1,0 +1,1 @@
+function bn(e,t){return e+t[1]}

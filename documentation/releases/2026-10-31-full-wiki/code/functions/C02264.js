@@ -1,0 +1,1 @@
+function F(e){return 1-(e>=0?Math.min(e,.9):1/(1/Math.max(e,-.3)+3.222))}

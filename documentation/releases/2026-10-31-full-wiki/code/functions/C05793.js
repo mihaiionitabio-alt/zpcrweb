@@ -1,0 +1,1 @@
+p=>p.residual=p.y-(icpt+slope*p.x)

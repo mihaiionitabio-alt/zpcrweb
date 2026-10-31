@@ -1,0 +1,1 @@
+function k(){if(d.clearAutoMarginIds(e),M.drawMarginPushers(e),h.allowAutoMargin(e),e._fullLayout.title.text&&e._fullLayout.title.automargin&&d.allowAutoMargin(e,"title.automargin"),p._has("pie"))for(var t=e._fullData,r=0;r<t.length;r++){var n=t[r];"pie"===n.type&&n.automargin&&d.allowAutoMargin(e,"pie."+n.uid+".automargin")}return d.doAutoMargin(e),d.previousPromises(e)}

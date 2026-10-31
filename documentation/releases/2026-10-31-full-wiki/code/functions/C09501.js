@@ -1,0 +1,1 @@
+function(){const a=next();if(a.some(x=>x.id.startsWith('img:cfxrdml_'))&&!a.some(x=>x.id==='data:cfxrdml_sources'))a.push(selItem('data:cfxrdml_sources'));return a;}

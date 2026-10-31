@@ -1,0 +1,1 @@
+r=>names.set(r.sample,ssNameTemplate(r.sample))

@@ -1,0 +1,1 @@
+e=>{CC_STATE.ix=e.target.checked;ixMount($("#cc-chart"),ccMainSpec.concat(ccSSpec),CC_STATE.ix);}

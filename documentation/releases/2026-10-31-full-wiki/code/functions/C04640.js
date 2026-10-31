@@ -1,0 +1,1 @@
+function n(t,r){return e.list.push({type:t,data:r?JSON.parse(JSON.stringify(r)):void 0}),e}

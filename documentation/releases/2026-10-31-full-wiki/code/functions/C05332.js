@@ -1,0 +1,1 @@
+c=>new RegExp("\\b"+c.name.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+"\\b","i").test(a.name||"")

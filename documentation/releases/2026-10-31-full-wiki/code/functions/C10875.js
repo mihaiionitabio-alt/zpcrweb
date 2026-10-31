@@ -1,0 +1,1 @@
+()=>{const now=performance.now();if(!paused)elapsed+=now-last;last=now;if(token!==t||!overlay.isConnected||elapsed>=ms){clearInterval(timer);resolve(token===t&&overlay.isConnected);}}

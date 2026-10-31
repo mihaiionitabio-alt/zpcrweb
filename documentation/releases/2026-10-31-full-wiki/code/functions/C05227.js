@@ -1,0 +1,1 @@
+el=>{const t=pv(el,"Position");if(t==="")return null;const n=parseInt(t,10);return Number.isFinite(n)?n:null;}

@@ -1,0 +1,1 @@
+()=>{if(document.querySelector('#missy-startup [data-missy-sound-toggle]')){labels();firstLabels.disconnect();}}

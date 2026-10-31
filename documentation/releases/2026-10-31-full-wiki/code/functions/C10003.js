@@ -1,0 +1,1 @@
+r=>r.role==='sample'&&r.assay===input.context.reference

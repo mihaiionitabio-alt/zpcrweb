@@ -1,0 +1,1 @@
+function(e,t){return n("div_seg",{seg:e,pt:t}),n("chop",{seg:e,pt:t})}

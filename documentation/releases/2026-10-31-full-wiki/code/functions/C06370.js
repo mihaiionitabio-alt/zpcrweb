@@ -1,0 +1,1 @@
+w=>wellSignal(w.curve)

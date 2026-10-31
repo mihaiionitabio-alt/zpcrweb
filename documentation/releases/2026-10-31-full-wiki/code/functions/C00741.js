@@ -1,0 +1,1 @@
+function(e,r){var a=n.select(this),i=t[r?"increasing":"decreasing"],o=w(void 0,i.line,5,2);a.style("fill","none").call(l.dashLine,i.line.dash,o),o&&s.stroke(a,i.line.color)}

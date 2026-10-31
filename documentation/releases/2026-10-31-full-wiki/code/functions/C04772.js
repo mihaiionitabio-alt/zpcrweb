@@ -1,0 +1,1 @@
+function(e){return v(this._r,this._g,this._b,e)}

@@ -1,0 +1,1 @@
+text=>document.body.classList.contains('lang-zh')?(narrationZh[text]||text):text

@@ -1,0 +1,1 @@
+x=>x.classList.remove('game-evidence-focus')

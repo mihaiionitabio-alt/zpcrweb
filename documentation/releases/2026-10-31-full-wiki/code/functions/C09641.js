@@ -1,0 +1,1 @@
+function reportGraphFigure(g,ri){const f=g.render(selGraphContext(g,ri));return {svg:f.svg,rows:f.rows||[]};}

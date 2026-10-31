@@ -1,0 +1,1 @@
+function(e,t,r){var a=n(e).toRgb(),i=n(t).toRgb(),o={r:r*a.r+(1-r)*i.r,g:r*a.g+(1-r)*i.g,b:r*a.b+(1-r)*i.b};return n(o).toRgbString()}

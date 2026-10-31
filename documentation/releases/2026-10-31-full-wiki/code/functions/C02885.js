@@ -1,0 +1,1 @@
+function(e){return{label:e.label,value:e.v,valueLabel:g.formatPieValue(e.v,n.separators),percent:e.v/r.vTotal,percentLabel:g.formatPiePercent(e.v/r.vTotal,n.separators),color:e.color,text:e.text,customdata:s.castOption(a,e.i,"customdata")}}

@@ -1,0 +1,1 @@
+w=>({w,key:w.filterComb||w.target||String(w.channel),outside:false})

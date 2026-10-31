@@ -1,0 +1,1 @@
+()=>b.classList.remove('is-playing')

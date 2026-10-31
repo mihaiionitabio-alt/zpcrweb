@@ -1,0 +1,1 @@
+function(e){var r,n=e.calcdata,o=[];for(r=0;r<n.length;r++){var l=n[r],c=l[0]||{},u=c.trace||{},f=u._module||{},d=f.arraysToCalcdata;d&&d(l,u);var h=f.editStyle;h&&o.push({fn:h,cd0:c})}if(o.length){for(r=0;r<o.length;r++){var p=o[r];p.fn(e,p.cd0)}s(e),t.redrawReglTraces(e)}return i.style(e),a.getComponentMethod("legend","draw")(e),i.previousPromises(e)}

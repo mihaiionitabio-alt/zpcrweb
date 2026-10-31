@@ -1,0 +1,1 @@
+()=>chart('lamp_ref')

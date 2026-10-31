@@ -1,0 +1,1 @@
+function(e){return e=ue(e),this.select((function(){return this.appendChild(e.apply(this,arguments))}))}

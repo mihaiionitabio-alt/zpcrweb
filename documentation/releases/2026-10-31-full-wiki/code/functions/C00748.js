@@ -1,0 +1,1 @@
+function v(e,t){for(var r=t.currentTarget,a=r.getAttribute("data-attr"),i=r.getAttribute("data-val")||!0,o=e._fullLayout,l=o._subplots.geo||[],s=0;s<l.length;s++){var c=l[s],u=o[c];if("zoom"===a){var f=u.projection.scale,d="in"===i?2*f:.5*f;n.call("_guiRelayout",e,c+".projection.scale",d)}}"reset"===a&&_(e,"geo")}

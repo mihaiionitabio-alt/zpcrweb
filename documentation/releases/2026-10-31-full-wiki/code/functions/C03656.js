@@ -1,0 +1,1 @@
+function(){return l.alpha(0)}

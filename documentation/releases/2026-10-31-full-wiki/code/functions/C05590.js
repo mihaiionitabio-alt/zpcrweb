@@ -1,0 +1,1 @@
+w=>w.sample===s&&w.target===e

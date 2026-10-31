@@ -1,0 +1,1 @@
+([a,l])=>({area:a,errors:l.filter(e=>e.severity==="error").length,reviews:l.filter(e=>e.severity==="review").length})

@@ -1,0 +1,1 @@
+function(e,t,r){var n,a,i,o,l=null,s=0;a=(r=r||{}).includeFallbackColors,i=r.level,o=r.size;for(var c=0;c<t.length;c++)(n=d.readability(e,t[c]))>s&&(s=n,l=d(t[c]));return d.isReadable(e,l,{level:i,size:o})||!a?l:(r.includeFallbackColors=!1,d.mostReadable(e,["#fff","#000"],r))}

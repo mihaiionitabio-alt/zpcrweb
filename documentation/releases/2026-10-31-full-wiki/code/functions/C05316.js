@@ -1,0 +1,1 @@
+(e,i)=>ex2chan[e]=i

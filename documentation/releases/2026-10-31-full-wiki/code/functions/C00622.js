@@ -1,0 +1,1 @@
+function a(){r.remove(),e()}

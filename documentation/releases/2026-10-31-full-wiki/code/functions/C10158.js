@@ -1,0 +1,1 @@
+function milliseconds(){const minutes=Number(durationInput?.value),n=Math.round(minutes*60000);return Number.isFinite(minutes)&&minutes>=5/60&&minutes<=60?n:null;}

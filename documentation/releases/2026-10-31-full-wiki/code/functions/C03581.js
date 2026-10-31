@@ -1,0 +1,1 @@
+function Pr(e){if(e<=0)return 0;if(e>=1)return 1;var t=e*e,r=t*e;return 4*(e<.5?r:3*(e-t)+r-.75)}

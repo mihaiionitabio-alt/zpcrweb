@@ -1,0 +1,1 @@
+([k,l])=>[k,`${l.length} finding(s) · ${l.filter(e=>e.severity==="error").length} error · ${new Set(l.map(e=>e.experiment)).size} experiment(s)`]

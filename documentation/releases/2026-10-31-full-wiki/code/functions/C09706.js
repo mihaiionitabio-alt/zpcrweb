@@ -1,0 +1,1 @@
+()=>g.points.length>0

@@ -1,0 +1,1 @@
+function(e,t,r){var n,i=r.slice(),o=t.shapes;if(o)for(n=0;n<o.length;n++){var l=o[n];if(l.showlegend){var s={_input:l._input,visible:l.visible,showlegend:l.showlegend,legend:l.legend};i.push(s)}}var c=["legend"];for(n=0;n<i.length;n++)a.pushUnique(c,i[n].legend);for(t._legends=[],n=0;n<c.length;n++){var f=c[n];u(f,e,t,i),t[f]&&t[f].visible&&(t[f]._id=f),t._legends.push(f)}}

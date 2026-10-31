@@ -1,0 +1,1 @@
+function A(e,a){var i=n[e],o=n[a],l=i[i.length-1],s=i[i.length-2],c=o[0],u=o[1];t.pointsCollinear(s,l,c)&&(r&&r.chainRemoveTail(e,l),i.pop(),l=s),t.pointsCollinear(l,c,u)&&(r&&r.chainRemoveHead(a,c),o.shift()),r&&r.chainJoin(e,a),n[e]=i.concat(o),n.splice(a,1)}

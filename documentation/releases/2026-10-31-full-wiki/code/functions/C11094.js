@@ -1,0 +1,1 @@
+function(A){return{name:"border-"+A+"-color",initialValue:"transparent",prefix:!1,type:3,format:"color"}}

@@ -1,0 +1,1 @@
+s=>nm===s||nm.indexOf(s+" · ")===0

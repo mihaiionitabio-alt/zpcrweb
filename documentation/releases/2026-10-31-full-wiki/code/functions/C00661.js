@@ -1,0 +1,1 @@
+function(){var e=n.event.sourceEvent;E="touchstart"===e.type?e.changedTouches[0].clientY:e.clientY,N=J}

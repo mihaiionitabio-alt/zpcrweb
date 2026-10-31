@@ -1,0 +1,1 @@
+w=>sopOmitted(w)&&sopControlSpec(w)

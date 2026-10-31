@@ -1,0 +1,1 @@
+x=>`<li><b>${esc(x.id||"")}</b> — when ${esc(x.when||"")}; <b>action:</b> ${esc(x.action||"")}; <b>outcome:</b> ${esc(x.outcome||"")}</li>`

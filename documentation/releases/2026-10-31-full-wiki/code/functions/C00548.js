@@ -1,0 +1,1 @@
+function(e,r){var n=e.y0-e.by/2;e.offset=n-5<s?s-n+5:0,s=n+e.by+e.offset,r===t.anchorIndex&&(c=e.offset)}

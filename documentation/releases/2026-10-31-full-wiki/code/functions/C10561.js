@@ -1,0 +1,1 @@
+next=>function(...args){const result=next(...args);render();return result;}

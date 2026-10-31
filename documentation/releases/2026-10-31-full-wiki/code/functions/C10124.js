@@ -1,0 +1,1 @@
+(quantity,i)=>({sample:'ABS_STD_'+(i+1),target:'DNA_TARGET',quantity,unit:'copies/reaction'})

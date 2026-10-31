@@ -1,0 +1,1 @@
+function spec(i){const x=lessons[i];return {id:x.id,title:x.title,guide:x.guide,question:x.question,options:x.options,rule:x.rule,mode:x.mode};}

@@ -1,0 +1,1 @@
+function ccProtocolKey(...args){return MISSY_HOOKS.invoke("ccProtocolKey",this,args,ccProtocolKeyBase);}

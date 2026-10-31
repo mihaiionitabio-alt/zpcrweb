@@ -1,0 +1,1 @@
+function stopEvents(){if(queueTimer!==null)clearTimeout(queueTimer);queueTimer=null;pendingCue=null;for(const n of eventNodes){try{n.stop();}catch{}}eventNodes.clear();}

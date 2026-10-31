@@ -1,0 +1,1 @@
+()=>{paused=true;clearTimeout(timer);if(lightTimer)clearInterval(lightTimer);api?.stop();overlay.remove();if(window.MISSY_DEMO_TOUR?.frame===frame)delete window.MISSY_DEMO_TOUR;button.focus();}

@@ -1,0 +1,1 @@
+function te(e){return+e}

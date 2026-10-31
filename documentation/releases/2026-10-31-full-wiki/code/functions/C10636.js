@@ -1,0 +1,1 @@
+value=>{items.hidden=!value;toggle.setAttribute('aria-expanded',String(value));label();}

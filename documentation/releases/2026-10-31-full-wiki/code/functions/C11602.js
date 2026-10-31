@@ -1,0 +1,1 @@
+()=>{hit({kind:'point',chart:'bg_median',index});c.classList.add('game-evidence-selected');}

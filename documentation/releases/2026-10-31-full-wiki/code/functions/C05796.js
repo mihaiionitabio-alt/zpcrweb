@@ -1,0 +1,1 @@
+([x,ps])=>({x,mean:mean(ps.map(p=>p.y))})

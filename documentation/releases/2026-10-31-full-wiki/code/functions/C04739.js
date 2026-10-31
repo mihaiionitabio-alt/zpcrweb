@@ -1,0 +1,1 @@
+function(e,t,r){e=6*z(e,360),t=z(t,100),r=z(r,100);var n=a.floor(e),i=e-n,o=r*(1-t),l=r*(1-i*t),s=r*(1-(1-i)*t),c=n%6;return{r:255*[r,l,o,o,s,r][c],g:255*[s,r,r,l,o,o][c],b:255*[o,o,s,r,r,l][c]}}

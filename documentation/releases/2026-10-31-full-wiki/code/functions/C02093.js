@@ -1,0 +1,1 @@
+function Fe(e){return-1!==(e.ticklabelposition||"").indexOf("inside")}

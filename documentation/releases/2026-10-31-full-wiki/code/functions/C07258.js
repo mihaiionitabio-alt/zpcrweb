@@ -1,0 +1,1 @@
+c=>`<th class="${c.n?"n":""}">${esc(ui(c.label))}</th>`

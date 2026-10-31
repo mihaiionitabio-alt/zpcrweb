@@ -1,0 +1,1 @@
+function G(e,t){return b(e.getHours()%12||12,t,2)}

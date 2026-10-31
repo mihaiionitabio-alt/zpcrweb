@@ -1,0 +1,1 @@
+function(A,e){return{color:A.color,stop:Math.max(Math.min(1,B[e]/t),0)}}

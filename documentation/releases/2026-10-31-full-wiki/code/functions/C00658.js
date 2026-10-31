@@ -1,0 +1,1 @@
+function(e,t,r){if("top center"===t.title.side||"top right"===t.title.side){var n=t.title.font.size*v,a=0,i=e.node(),o=c.bBox(i).width;"top center"===t.title.side?a=.5*(t._width-2*r-2*h.titlePad-o):"top right"===t.title.side&&(a=t._width-2*r-2*h.titlePad-o),f.positionText(e,r+h.titlePad+a,r+n)}}

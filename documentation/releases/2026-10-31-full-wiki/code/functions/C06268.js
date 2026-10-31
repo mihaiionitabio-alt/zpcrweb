@@ -1,0 +1,1 @@
+w=>ssPositionIncluded(c.run,w.pos)

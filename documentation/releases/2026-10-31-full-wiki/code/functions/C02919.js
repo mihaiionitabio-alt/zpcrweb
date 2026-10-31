@@ -1,0 +1,1 @@
+function(e){return Math.max(Math.sqrt((e||0)/o),3)}

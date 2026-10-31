@@ -1,0 +1,1 @@
+s=>s.kind==="rdml"

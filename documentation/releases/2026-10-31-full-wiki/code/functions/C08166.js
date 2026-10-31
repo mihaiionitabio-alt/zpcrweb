@@ -1,0 +1,2 @@
+run=>(run.wells||[]).filter(w=>w.curve&&w.curve.length)
+      .flatMap(w=>w.curve.map((v,i)=>({experiment:runName(run),well:w.well,sample:w.sample||"",target:w.target||"",cycle:i+1,fluorescence:v})))

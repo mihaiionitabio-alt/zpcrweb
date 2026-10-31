@@ -1,0 +1,1 @@
+function sampleDuration(item){return item.sample.frames/item.sample.rate;}

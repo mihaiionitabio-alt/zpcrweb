@@ -1,0 +1,1 @@
+function(e,t){for(var r=t.charAt(0),n=[],a=[],i=[],o=0;o<e.length;o++){var l=e[o];y.traceIs(l.trace,"bar-like")||y.traceIs(l.trace,"box-violin")?i.push(l):l.trace[r+"period"]?a.push(l):n.push(l)}return n.concat(a).concat(i)}

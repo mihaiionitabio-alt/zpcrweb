@@ -1,0 +1,1 @@
+function(e){for(var t=0;t<l.modeBarButtonsToAdd.length;t++)if(u(e,l.modeBarButtonsToAdd[t]))return!1;return!0}

@@ -1,0 +1,1 @@
+()=>chart('bg_median')

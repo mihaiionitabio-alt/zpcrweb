@@ -1,0 +1,1 @@
+()=>{if(GRAPH_STATE.last)download(graphFileBase()+".svg",graphSvgText(),"image/svg+xml");}

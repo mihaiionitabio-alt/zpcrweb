@@ -1,0 +1,1 @@
+([v,l])=>`<option value="${v}"${(cfg.x||def.x||"order")===v?" selected":""}>${esc(ui(l))}</option>`

@@ -1,0 +1,1 @@
+function mgCommand(...args){return MISSY_HOOKS.invoke("mgCommand",this,args,mgCommandBase);}

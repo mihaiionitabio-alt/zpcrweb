@@ -1,0 +1,1 @@
+b=>b.arrayBuffer().then(ab=>download(graphFileBase()+".png",new Uint8Array(ab),"image/png"))

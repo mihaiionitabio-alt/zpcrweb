@@ -1,0 +1,1 @@
+function(t){var r=E(t);return void 0!==r?r:e.fraction2r(.5)}

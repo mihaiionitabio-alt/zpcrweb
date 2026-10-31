@@ -1,0 +1,1 @@
+function(e){for(var t="on"===e._fullLayout._cartesianSpikesEnabled,r=i.list(e,null,!0),n={},a=0;a<r.length;a++){var o=r[a];n[o._name+".showspikes"]=!!t||o._showSpikeInitial}return n}

@@ -1,0 +1,1 @@
+w=>w.sample&&!sopControlSpec(w)&&w.role!=="Standard"

@@ -1,0 +1,1 @@
+function TB(A){return 0<A.tagName.indexOf("-")}

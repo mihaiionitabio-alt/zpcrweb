@@ -1,0 +1,1 @@
+function C(e){return function(t,n){return!1===t?i[r[n]][e]:null}}

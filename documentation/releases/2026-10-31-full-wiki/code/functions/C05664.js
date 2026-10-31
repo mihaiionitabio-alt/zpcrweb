@@ -1,0 +1,1 @@
+a=>(a||[]).map(w=>Object.assign({},w,{sample:P(w.sample)}))

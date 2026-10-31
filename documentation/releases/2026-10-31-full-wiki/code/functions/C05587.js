@@ -1,0 +1,1 @@
+w=>w.target===e&&w.role!=="NTC"

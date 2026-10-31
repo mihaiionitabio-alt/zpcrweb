@@ -1,0 +1,1 @@
+function(e){var t=n.select(e);return t.node()instanceof HTMLElement&&t.size()&&t.classed("js-plotly-plot")}

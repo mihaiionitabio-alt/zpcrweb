@@ -1,0 +1,1 @@
+r=>((r.m.pc_batch||{})[variant])||"extract not recorded"

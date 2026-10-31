@@ -1,0 +1,1 @@
+o=>o.label.toLowerCase()===t0||o.value===t0

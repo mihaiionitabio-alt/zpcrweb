@@ -1,0 +1,1 @@
+function(e,t){for(var r=e.length,n=f(r),a=0,o=0,l={},u=0;u<r;u+=n){var d=e[c(u)],h=String(d);if(!l[h]){l[h]=1;var p=typeof d;"boolean"===p?o++:(t?s(d)!==i:"number"===p)?a++:"string"===p&&o++}}return o>2*a}

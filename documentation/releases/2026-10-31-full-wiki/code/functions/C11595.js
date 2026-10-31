@@ -1,0 +1,1 @@
+async()=>{await demo.report();reportReady=true;hit({kind:'report',ready:true});focus(document.getElementById('ast-msg'));}

@@ -1,0 +1,1 @@
+function n(e){return"number"==typeof e&&Math.abs(e-s)<r}

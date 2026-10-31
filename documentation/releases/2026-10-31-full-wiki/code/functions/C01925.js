@@ -1,0 +1,1 @@
+function(e){a.getComponentMethod("rangeslider","draw")(e),a.getComponentMethod("rangeselector","draw")(e)}

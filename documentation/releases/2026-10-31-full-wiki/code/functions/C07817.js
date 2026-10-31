@@ -1,0 +1,1 @@
+function nearest(mx,my){let best=null,bd=12*12;transformed.forEach(({w,values})=>values.forEach((v,i)=>{if(!Number.isFinite(v))return;const d=(xPix(i+1)-mx)**2+(yPix(v)-my)**2;if(d<bd){bd=d;best={w,v,i};}}));return best;}

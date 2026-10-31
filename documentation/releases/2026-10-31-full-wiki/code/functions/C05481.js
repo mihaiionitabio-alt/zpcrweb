@@ -1,0 +1,1 @@
+c=>!/^Filter \d+$/.test(c)

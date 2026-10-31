@@ -1,0 +1,1 @@
+function f(e){return Math.max(1,(e-1)/1e3)}

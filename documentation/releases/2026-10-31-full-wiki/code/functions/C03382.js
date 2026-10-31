@@ -1,0 +1,1 @@
+function(e){return arguments.length?(l=e,o=e.copy(),d={x:0,y:0,k:1},w):l}

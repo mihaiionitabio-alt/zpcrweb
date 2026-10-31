@@ -1,0 +1,1 @@
+function(e,t,r,a){var i=t.orientation,o=t[{v:"x",h:"y"}[i]+"axis"],l=n(r,o)+i,s=r._alignmentOpts||{},c=a("alignmentgroup"),u=s[l];u||(u=s[l]={});var f=u[c];f?f.traces.push(t):f=u[c]={traces:[t],alignmentIndex:Object.keys(u).length,offsetGroups:{}};var d=a("offsetgroup"),h=f.offsetGroups,p=h[d];d&&(p||(p=h[d]={offsetIndex:Object.keys(h).length}),t._offsetIndex=p.offsetIndex)}

@@ -1,0 +1,1 @@
+function Z(r){return r.call(u.font,V).attr({"text-anchor":{left:"start",right:"end"}[t.align]||"middle"}),d.convertToTspans(r,e,W),r}

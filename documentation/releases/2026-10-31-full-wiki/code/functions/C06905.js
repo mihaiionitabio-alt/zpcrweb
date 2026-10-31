@@ -1,0 +1,1 @@
+(def,v,ext)=>safeName(`${def.code}_${def.id}${v?"_"+v.replace(/[0-9a-f]{40,64}/gi,h=>h.slice(0,8)).replace(/\s*°C/g,"").replace(/\s*→\s*/g,"-to-"):""}`).slice(0,100)+ext

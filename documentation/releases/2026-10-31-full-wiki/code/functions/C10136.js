@@ -1,0 +1,1 @@
+(when,whenZh,action,actionZh,outcome,outcomeZh)=>n.rules.push({id:'I'+String(n.rules.length+1).padStart(2,'0'),when:t(when,whenZh),action:t(action,actionZh),outcome:t(outcome,outcomeZh)})

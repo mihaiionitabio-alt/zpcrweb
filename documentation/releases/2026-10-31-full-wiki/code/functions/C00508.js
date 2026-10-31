@@ -1,0 +1,1 @@
+function(r){var n=e(r),a=t(r);return Math.sqrt(n*n+a*a)}

@@ -1,0 +1,1 @@
+function(e){return"bottom"===e.yanchor||"auto"===e.yanchor&&e.y<=1/3}

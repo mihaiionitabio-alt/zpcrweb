@@ -1,0 +1,1 @@
+function(t,r){t&&f(t,r);var a=d();for(var i in a)n.nestedProperty(e,i).set(a[i])}

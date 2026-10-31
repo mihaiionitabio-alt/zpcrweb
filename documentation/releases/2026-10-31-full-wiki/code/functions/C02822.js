@@ -1,0 +1,1 @@
+function i(e){return"_"+e+"Text_minsize"}

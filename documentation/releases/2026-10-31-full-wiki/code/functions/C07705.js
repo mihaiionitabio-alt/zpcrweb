@@ -1,0 +1,1 @@
+w=>w.issueColour||"#64748b"

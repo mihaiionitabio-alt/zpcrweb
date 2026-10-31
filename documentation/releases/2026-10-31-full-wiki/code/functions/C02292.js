@@ -1,0 +1,1 @@
+function h(e,t,r){for(var n,a,i=1-t,o=0;o<e.length;o++){var l=e[o];if(!l.fixedrange){n=l,a=l._rl[i]+(l._rl[t]-l._rl[i])/F(r/l._length);var s=l.l2r(a);!1!==s&&void 0!==s&&(l.range[t]=s)}}return n._length*(n._rl[t]-a)/(n._rl[t]-n._rl[i])}

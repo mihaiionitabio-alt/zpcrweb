@@ -1,0 +1,1 @@
+function(e){e.regl&&e.regl.clear({color:!0,depth:!0})}

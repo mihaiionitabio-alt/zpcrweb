@@ -1,0 +1,1 @@
+()=>Array.from({length:dims},(_,d)=>lo[d]+rng()*(hi[d]-lo[d]))

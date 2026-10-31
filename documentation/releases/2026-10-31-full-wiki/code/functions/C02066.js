@@ -1,0 +1,1 @@
+function(e){function t(e,t){return Math.abs(e-t)<=1e-6}var r=function(e){for(var r=1;!t(Math.round(e*r)/r,e);)r*=10;return r}(e),n=e*r,a=Math.abs(function e(r,n){return t(n,0)?r:e(n,r%n)}(n,r));return[Math.round(n/a),Math.round(r/a)]}

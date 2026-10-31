@@ -1,0 +1,1 @@
+function(){var e=a.ensureSingleById(n.select("body"),"svg","js-plotly-tester",(function(e){e.attr(h.svgAttrs).style({position:"absolute",left:"-10000px",top:"-10000px",width:"9000px",height:"9000px","z-index":"1"})})),t=a.ensureSingle(e,"path","js-reference-point",(function(e){e.attr("d","M0,0H1V1H0Z").style({"stroke-width":0,fill:"black"})}));x.tester=e,x.testref=t}

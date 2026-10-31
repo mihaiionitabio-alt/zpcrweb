@@ -1,0 +1,1 @@
+function(e){var t=e._fullLayout,r=(e.layout||{}).selections,n=t._previousSelections;t._previousSelections=r;var a=t._reselect||JSON.stringify(r)!==JSON.stringify(n);s.getComponentMethod("selections","reselect")(e,a)}

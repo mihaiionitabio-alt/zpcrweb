@@ -1,0 +1,1 @@
+(w,i)=>({colour:i?'#7c3aed':'#0891b2',data:w.temps.map((t,k)=>[t,w.curve[k]])})

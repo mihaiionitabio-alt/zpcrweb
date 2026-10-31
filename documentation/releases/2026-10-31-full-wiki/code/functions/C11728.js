@@ -1,0 +1,1 @@
+n=>/^RunInfo\.xml$/i.test(n)

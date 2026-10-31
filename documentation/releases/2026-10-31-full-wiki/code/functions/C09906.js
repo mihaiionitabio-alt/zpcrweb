@@ -1,0 +1,1 @@
+s=>{const e=s.filter(r=>r.assay===a),r=s.filter(r=>r.assay===ctx.reference);return (q||rapid?e.length<nPCR||r.length<nPCR:e.length!==nPCR||r.length!==nPCR);}

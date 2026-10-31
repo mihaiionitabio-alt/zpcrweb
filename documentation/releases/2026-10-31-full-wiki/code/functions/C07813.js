@@ -1,0 +1,8 @@
+function draw(){
+    ctx.clearRect(0,0,W,H);ctx.fillStyle="#fff";ctx.fillRect(0,0,W,H);ctx.font="11px sans-serif";ctx.strokeStyle="#e5e7eb";ctx.fillStyle="#64748b";ctx.textAlign="right";
+    for(let i=0;i<=5;i++){const y=T+i*(H-T-B)/5,v=view.y1-(view.y1-view.y0)*i/5;ctx.beginPath();ctx.moveTo(L,y);ctx.lineTo(W-R,y);ctx.stroke();ctx.fillText(fmt(v),L-8,y+3);}
+    ctx.textAlign="center";for(let i=0;i<=5;i++){const x=L+i*(W-L-R)/5,v=view.x0+(view.x1-view.x0)*i/5;ctx.strokeStyle="#f1f5f9";ctx.beginPath();ctx.moveTo(x,T);ctx.lineTo(x,H-B);ctx.stroke();ctx.fillStyle="#64748b";ctx.fillText(String(Math.max(1,Math.round(v))),x,H-B+18);}
+    (opts.hlines||[]).forEach(h=>{const hv=Number.isFinite(h.y)?(!normalize&&opts.log&&h.y>0?Math.log10(h.y):h.y):NaN;if(!Number.isFinite(hv)||hv<view.y0||hv>view.y1)return;const y=yPix(hv);ctx.save();ctx.strokeStyle=h.colour||"#475569";ctx.setLineDash([6,4]);ctx.beginPath();ctx.moveTo(L,y);ctx.lineTo(W-R,y);ctx.stroke();ctx.setLineDash([]);ctx.fillStyle=h.colour||"#475569";ctx.textAlign="left";ctx.fillText(h.label||"",L+5,y-4);ctx.restore();});
+    transformed.forEach(({w,values})=>{ctx.strokeStyle=colour(w);ctx.globalAlpha=w.issueColour?.95:.78;ctx.lineWidth=w.issueColour?2.5:(w.role&&w.role!=="Unknown"?1.8:1.25);ctx.beginPath();let started=false;values.forEach((v,i)=>{if(!Number.isFinite(v))return;const x=xPix(i+1),y=yPix(v);if(!started){ctx.moveTo(x,y);started=true;}else ctx.lineTo(x,y);});ctx.stroke();});ctx.globalAlpha=1;
+    ctx.fillStyle="#334155";ctx.textAlign="center";ctx.fillText("Cycle",(L+W-R)/2,H-10);ctx.save();ctx.translate(17,(T+H-B)/2);ctx.rotate(-Math.PI/2);ctx.fillText(opts.ylabel||"Stored fluorescence",0,0);ctx.restore();
+  }

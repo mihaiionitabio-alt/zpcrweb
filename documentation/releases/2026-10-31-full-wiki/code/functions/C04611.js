@@ -1,0 +1,1 @@
+function(e,a){for(var i,o,l=function(e){if(null==e)throw new TypeError("Object.assign cannot be called with null or undefined");return Object(e)}(e),s=1;s<arguments.length;s++){for(var c in i=Object(arguments[s]))r.call(i,c)&&(l[c]=i[c]);if(t){o=t(i);for(var u=0;u<o.length;u++)n.call(i,o[u])&&(l[o[u]]=i[o[u]])}}return l}

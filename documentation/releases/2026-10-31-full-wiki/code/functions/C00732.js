@@ -1,0 +1,1 @@
+function(e){if(e.size()){var r="legendline-"+b.uid;l.lineGroupStyle(e),l.gradient(e,t,r,p(M),T,"stroke")}}

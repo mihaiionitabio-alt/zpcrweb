@@ -1,0 +1,1 @@
+function Re(e){return e>1?ze:e<-1?-ze:Math.asin(e)}

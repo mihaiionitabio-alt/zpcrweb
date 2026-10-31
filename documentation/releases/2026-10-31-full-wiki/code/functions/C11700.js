@@ -1,0 +1,1 @@
+(a,b)=>UI_LANG==='zh'?b:a

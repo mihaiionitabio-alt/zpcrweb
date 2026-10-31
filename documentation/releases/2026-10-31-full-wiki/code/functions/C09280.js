@@ -1,0 +1,1 @@
+r=>pcrdCell(r,c,Math.floor(pos/p.grid.cols),pos%p.grid.cols)

@@ -1,0 +1,1 @@
+(id,theme='dark')=>{closeModes();MG.theme=theme;unifiedBrowse('cc:'+id);}

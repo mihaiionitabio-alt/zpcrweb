@@ -1,0 +1,1 @@
+function(e){return arguments.length?(n="number"==typeof e?function(t){return wn(t,e)}:gt(e),a):n}

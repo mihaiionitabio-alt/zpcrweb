@@ -1,0 +1,1 @@
+(f,c)=>({run:i,channel:c,points:x.reads.map((r,j)=>[j+1,r.temps[f]?.c])})

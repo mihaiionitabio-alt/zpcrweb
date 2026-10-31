@@ -1,0 +1,1 @@
+p=>{s+=`<circle cx="${X(p[0]).toFixed(1)}" cy="${Y(p[1]).toFixed(1)}" r="${se.r||3.5}" fill="${p[3]||se.colour}" fill-opacity="${se.opacity||0.85}" stroke="#fff" stroke-width="0.6"><title>${svgEsc(p[2]||se.label||"")}</title></circle>`;}

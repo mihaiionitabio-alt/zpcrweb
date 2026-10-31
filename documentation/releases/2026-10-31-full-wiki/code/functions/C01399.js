@@ -1,0 +1,1 @@
+function f(e){return e&&(e instanceof Element||e instanceof HTMLElement)}

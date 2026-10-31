@@ -1,0 +1,1 @@
+(id,title,guide,question,value,open,rule)=>record(id,title,guide,question,()=>({value:value()}),open,null,rule,'number')

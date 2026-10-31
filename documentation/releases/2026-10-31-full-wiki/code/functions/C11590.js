@@ -1,0 +1,1 @@
+()=>{page('integrity');focus(card(['Training manifest comparison','训练清单比较'],[[['Trusted digest','可信摘要'],sourceHash],[['Changed-copy digest','更改副本摘要'],mismatchHash]]));}

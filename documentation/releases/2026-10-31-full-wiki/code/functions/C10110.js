@@ -1,0 +1,1 @@
+path=>path.split('.').reduce((o,k)=>o?.[k],config)

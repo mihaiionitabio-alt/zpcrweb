@@ -1,0 +1,1 @@
+(name){const w=final.wells.find(w=>w.well.toUpperCase().replace(/^([A-H])0+(\d)/,'$1$2')===name.toUpperCase().replace(/^([A-H])0+(\d)/,'$1$2'));const row=w&&document.querySelector('[data-well="'+w.pos+'"]');if(!row)return false;row.click();return true;}

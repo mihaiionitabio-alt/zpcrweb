@@ -1,0 +1,1 @@
+function(){var a=o(t,l(arguments));c.call(this),this.addEventListener(e,this[n]=a,a.$=r),a._=t}

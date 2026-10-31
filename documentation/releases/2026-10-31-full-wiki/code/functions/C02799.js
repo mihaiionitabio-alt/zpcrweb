@@ -1,0 +1,1 @@
+function(e,t){var r=this.getLabel(e,t);return this.bins[r]||0}

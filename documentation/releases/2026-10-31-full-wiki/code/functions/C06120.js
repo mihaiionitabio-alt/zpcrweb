@@ -1,0 +1,1 @@
+m=>`${m.scope}: ${m.common.join("; ")}`

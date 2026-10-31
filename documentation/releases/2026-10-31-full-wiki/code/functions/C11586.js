@@ -1,0 +1,1 @@
+()=>{page('results');document.getElementById('sop-view').value='targets';document.getElementById('sop-run').value='0';document.getElementById('sop-search').value='DEMO_STD_';renderResults();focus(document.getElementById('sop-results'));}

@@ -1,0 +1,1 @@
+()=>{for(const el of highlighted)el.classList.remove('missy-interest','missy-interest-point');highlighted=[];}

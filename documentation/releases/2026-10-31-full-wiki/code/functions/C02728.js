@@ -1,0 +1,1 @@
+function(e,t,r){return e.x="xVal"in t?t.xVal:t.x,e.y="yVal"in t?t.yVal:t.y,t.xa&&(e.xaxis=t.xa),t.ya&&(e.yaxis=t.ya),"h"===r.orientation?(e.label=e.y,e.value=e.x):(e.label=e.x,e.value=e.y),e}

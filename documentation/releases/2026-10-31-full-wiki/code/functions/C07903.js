@@ -1,0 +1,1 @@
+()=>downloadCanvas($("#curve-chart"),safeName(runName(runAt("#curve-run",0)))+"_amplification_curves.png")

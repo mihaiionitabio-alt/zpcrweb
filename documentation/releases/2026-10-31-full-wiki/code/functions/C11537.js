@@ -1,0 +1,1 @@
+(id,title,guide,question,value,open,options,rule)=>record(id,title,guide,question,()=>({call:value()}),open,options,rule)

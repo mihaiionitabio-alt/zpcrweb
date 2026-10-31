@@ -1,0 +1,1 @@
+function stop(){pendingConfirmation=null;window.MISSY_COMPUTER_SOUND?.interrupt?.();clearListenTimer();generation++;busy=false;listening=false;const old=recognizer;recognizer=null;if(old){old.onend=null;old.onerror=null;old.onresult=null;try{old.abort();}catch{}}closeMicrophone();controls();say('Off','已关闭');}

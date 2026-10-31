@@ -1,0 +1,1 @@
+function c(e,t){var r=a.isArrayOrTypedArray(e),i=a.isArrayOrTypedArray(t),o=Math.min(r?e.length:1/0,i?t.length:1/0);if(isFinite(o)||(o=0),o&&i){for(var l,s=0;s<o;s++){var c=t[s];if(n(c)&&c>0){l=!0;break}}l||(o=0)}return{hasLabels:r,hasValues:i,len:o}}

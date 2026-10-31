@@ -1,0 +1,1 @@
+function c(e){return"string"!=typeof e?e:Number(e.replace("M",""))*T}

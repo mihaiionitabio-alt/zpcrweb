@@ -1,0 +1,1 @@
+()=>MISSY_CONSOLE_VOICE.command('one')

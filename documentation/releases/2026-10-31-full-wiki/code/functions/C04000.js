@@ -1,0 +1,1 @@
+function(){var e=qa,t=Ua;function r(r,n){return(Za.get(e.call(this,r,n))||Ga)(t.call(this,r,n))}return r.type=function(t){return arguments.length?(e=gt(t),r):e},r.size=function(e){return arguments.length?(t=gt(e),r):t},r}

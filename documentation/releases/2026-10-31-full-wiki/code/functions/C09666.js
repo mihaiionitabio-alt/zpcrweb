@@ -1,0 +1,1 @@
+()=>{for(const x of selCatalogue().filter(reportItemVisible))SEL_STATE.ids.add(x.id);astRender();}

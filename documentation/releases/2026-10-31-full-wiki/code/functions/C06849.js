@@ -1,0 +1,1 @@
+e=>alarmCounts.set(e.area,(alarmCounts.get(e.area)||0)+1)

@@ -1,0 +1,1 @@
+e=>e.rows.some(r=>r.outcome===o)

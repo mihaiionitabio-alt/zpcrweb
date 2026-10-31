@@ -1,0 +1,1 @@
+function(e,t){t=+t||1;var r=Math.max(t,3);return"solid"===e?e="":"dot"===e?e=r+"px,"+r+"px":"dash"===e?e=3*r+"px,"+3*r+"px":"longdash"===e?e=5*r+"px,"+5*r+"px":"dashdot"===e?e=3*r+"px,"+r+"px,"+r+"px,"+r+"px":"longdashdot"===e&&(e=5*r+"px,"+2*r+"px,"+r+"px,"+2*r+"px"),e}

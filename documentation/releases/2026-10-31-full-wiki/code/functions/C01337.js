@@ -1,0 +1,1 @@
+function(e,t,r){"use strict";var n=r(721),a=r(3821).BADNUM,i=/^['"%,$#\s']+|[, ]|['"%,$#\s']+$/g;e.exports=function(e){return"string"==typeof e&&(e=e.replace(i,"")),n(e)?Number(e):a}}

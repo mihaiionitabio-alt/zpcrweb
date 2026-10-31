@@ -1,0 +1,1 @@
+d=>d.group===g.id&&!d.inst.includes(platform)

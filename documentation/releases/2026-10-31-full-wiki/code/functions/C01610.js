@@ -1,0 +1,1 @@
+function(e,t){t=t||i;for(var r,n=1/0,a=0;a<e.length;a++){var o=t(e[a]);o<n&&(n=o,r=a)}return r}

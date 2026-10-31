@@ -1,0 +1,1 @@
+function Le(e,t,r){for(var n,a=null,i=1/0,o=0;o<e.length;o++)f&&f._id!==e[o].xa._id||h&&h._id!==e[o].ya._id||(n=e[o].spikeDistance,r&&0===o&&(n=-1/0),n<=i&&n<=t&&(a=e[o],i=n));return a}

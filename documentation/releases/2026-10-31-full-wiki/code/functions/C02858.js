@@ -1,0 +1,1 @@
+function(e,t){function r(r,i){return n.coerce(e,t,a,r,i)}r("hiddenlabels"),r("piecolorway",t.colorway),r("extendpiecolors")}

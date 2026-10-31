@@ -1,0 +1,1 @@
+function o(e,t){return e-t*Math.floor(e/t)}

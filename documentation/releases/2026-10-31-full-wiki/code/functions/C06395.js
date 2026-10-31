@@ -1,0 +1,1 @@
+(x,i)=>({v:i,label:x.area.slice(0,22),rotate:-40,anchor:"end"})

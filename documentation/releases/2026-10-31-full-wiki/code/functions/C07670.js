@@ -1,0 +1,1 @@
+function renderIntegrity(...args){return MISSY_HOOKS.invoke("renderIntegrity",this,args,renderIntegrityBase);}

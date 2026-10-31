@@ -1,0 +1,1 @@
+(r,j)=>[j+2,(r.epochMs-x.reads[j].epochMs)/1000]

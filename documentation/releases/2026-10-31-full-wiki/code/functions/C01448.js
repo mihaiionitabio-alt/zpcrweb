@@ -1,0 +1,1 @@
+function(e,t,r,n){r||(r="x"),n||(n="y");for(var a=0;a<t.length;a++){var i=t[a],o=f.nestedProperty(e,i.replace("?",r)),l=f.nestedProperty(e,i.replace("?",n)),s=o.get();o.set(l.get()),l.set(s)}}

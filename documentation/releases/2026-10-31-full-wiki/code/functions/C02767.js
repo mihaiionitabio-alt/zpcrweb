@@ -1,0 +1,1 @@
+function A(e,t,r,n){var a;return!t.uniformtext.mode&&L(r)?(n&&(a=n()),e.transition().duration(r.duration).ease(r.easing).each("end",(function(){a&&a()})).each("interrupt",(function(){a&&a()}))):e}

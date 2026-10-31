@@ -1,0 +1,1032 @@
+[
+  {
+    "module": "core/advisory/engine.js",
+    "functions": 157,
+    "pages": [
+      "Code-001-01",
+      "Code-001-02",
+      "Code-001-03"
+    ]
+  },
+  {
+    "module": "core/advisory/panel.js",
+    "functions": 148,
+    "pages": [
+      "Code-002-01",
+      "Code-002-02",
+      "Code-002-03"
+    ]
+  },
+  {
+    "module": "core/analysis/loaded_overview.js",
+    "functions": 58,
+    "pages": [
+      "Code-003-01",
+      "Code-003-02"
+    ]
+  },
+  {
+    "module": "core/analysis/pcrd_independent.js",
+    "functions": 105,
+    "pages": [
+      "Code-004-01",
+      "Code-004-02"
+    ]
+  },
+  {
+    "module": "core/biorad/cfx_rdml_views.js",
+    "functions": 64,
+    "pages": [
+      "Code-005-01",
+      "Code-005-02"
+    ]
+  },
+  {
+    "module": "core/biorad/graph_viewport.js",
+    "functions": 7,
+    "pages": [
+      "Code-006-01"
+    ]
+  },
+  {
+    "module": "core/biorad/legacy_view_adapter.js",
+    "functions": 34,
+    "pages": [
+      "Code-007-01"
+    ]
+  },
+  {
+    "module": "core/biorad/lifecycle.js",
+    "functions": 4,
+    "pages": [
+      "Code-008-01"
+    ]
+  },
+  {
+    "module": "core/biorad/pcrd_views.js",
+    "functions": 177,
+    "pages": [
+      "Code-009-01",
+      "Code-009-02",
+      "Code-009-03",
+      "Code-009-04"
+    ]
+  },
+  {
+    "module": "core/biorad/reference_console_style.js",
+    "functions": 2,
+    "pages": [
+      "Code-010-01"
+    ]
+  },
+  {
+    "module": "core/biorad/unified_shell.js",
+    "functions": 52,
+    "pages": [
+      "Code-011-01",
+      "Code-011-02"
+    ]
+  },
+  {
+    "module": "core/biorad/zpcr_compact_report.js",
+    "functions": 80,
+    "pages": [
+      "Code-012-01",
+      "Code-012-02"
+    ]
+  },
+  {
+    "module": "core/biorad/zpcr_comparative_modes.js",
+    "functions": 45,
+    "pages": [
+      "Code-013-01"
+    ]
+  },
+  {
+    "module": "core/biorad/zpcr_control_charts.js",
+    "functions": 22,
+    "pages": [
+      "Code-014-01"
+    ]
+  },
+  {
+    "module": "core/biorad/zpcr_gates_dark.js",
+    "functions": 46,
+    "pages": [
+      "Code-015-01"
+    ]
+  },
+  {
+    "module": "core/biorad/zpcr_guide_charts.js",
+    "functions": 19,
+    "pages": [
+      "Code-016-01"
+    ]
+  },
+  {
+    "module": "core/biorad/zpcr_manual_endpoint.js",
+    "functions": 46,
+    "pages": [
+      "Code-017-01"
+    ]
+  },
+  {
+    "module": "core/biorad/zpcr_modes_reports.js",
+    "functions": 60,
+    "pages": [
+      "Code-018-01",
+      "Code-018-02"
+    ]
+  },
+  {
+    "module": "core/biorad/zpcr_single_measurement.js",
+    "functions": 77,
+    "pages": [
+      "Code-019-01",
+      "Code-019-02"
+    ]
+  },
+  {
+    "module": "core/charts/catalogue.js",
+    "functions": 62,
+    "pages": [
+      "Code-020-01",
+      "Code-020-02"
+    ]
+  },
+  {
+    "module": "core/charts/thermal.js",
+    "functions": 32,
+    "pages": [
+      "Code-021-01"
+    ]
+  },
+  {
+    "module": "core/container_metadata.js",
+    "functions": 55,
+    "pages": [
+      "Code-022-01",
+      "Code-022-02"
+    ]
+  },
+  {
+    "module": "core/efficiency.js",
+    "functions": 14,
+    "pages": [
+      "Code-023-01"
+    ]
+  },
+  {
+    "module": "core/exports/open_formats.js",
+    "functions": 42,
+    "pages": [
+      "Code-024-01"
+    ]
+  },
+  {
+    "module": "core/forensic_events.js",
+    "functions": 1,
+    "pages": [
+      "Code-025-01"
+    ]
+  },
+  {
+    "module": "core/helpers.js",
+    "functions": 13,
+    "pages": [
+      "Code-026-01"
+    ]
+  },
+  {
+    "module": "core/hooks.js",
+    "functions": 12,
+    "pages": [
+      "Code-027-01"
+    ]
+  },
+  {
+    "module": "core/i18n/english_scientific_wording.js",
+    "functions": 1,
+    "pages": [
+      "Code-028-01"
+    ]
+  },
+  {
+    "module": "core/i18n/report_chinese.js",
+    "functions": 23,
+    "pages": [
+      "Code-029-01"
+    ]
+  },
+  {
+    "module": "core/i18n/zh_coverage.js",
+    "functions": 34,
+    "pages": [
+      "Code-030-01",
+      "Code-030-02"
+    ]
+  },
+  {
+    "module": "core/i18n/zh_manual_terminology.js",
+    "functions": 6,
+    "pages": [
+      "Code-031-01"
+    ]
+  },
+  {
+    "module": "core/i18n/zh_terminology_review_r2.js",
+    "functions": 4,
+    "pages": [
+      "Code-032-01"
+    ]
+  },
+  {
+    "module": "core/mara_engine.js",
+    "functions": 104,
+    "pages": [
+      "Code-033-01",
+      "Code-033-02",
+      "Code-033-03"
+    ]
+  },
+  {
+    "module": "core/mara_results.js",
+    "functions": 105,
+    "pages": [
+      "Code-034-01",
+      "Code-034-02",
+      "Code-034-03"
+    ]
+  },
+  {
+    "module": "core/mara1012_profiles.js",
+    "functions": 27,
+    "pages": [
+      "Code-035-01"
+    ]
+  },
+  {
+    "module": "core/md5.js",
+    "functions": 5,
+    "pages": [
+      "Code-036-01"
+    ]
+  },
+  {
+    "module": "core/pseudonyms.js",
+    "functions": 16,
+    "pages": [
+      "Code-037-01"
+    ]
+  },
+  {
+    "module": "core/readers_registry.js",
+    "functions": 17,
+    "pages": [
+      "Code-038-01"
+    ]
+  },
+  {
+    "module": "core/roles.js",
+    "functions": 4,
+    "pages": [
+      "Code-039-01"
+    ]
+  },
+  {
+    "module": "core/rq_rows.js",
+    "functions": 4,
+    "pages": [
+      "Code-040-01"
+    ]
+  },
+  {
+    "module": "core/run_model.js",
+    "functions": 8,
+    "pages": [
+      "Code-041-01"
+    ]
+  },
+  {
+    "module": "core/statistics.js",
+    "functions": 18,
+    "pages": [
+      "Code-042-01"
+    ]
+  },
+  {
+    "module": "core/test_surface.js",
+    "functions": 7,
+    "pages": [
+      "Code-043-01"
+    ]
+  },
+  {
+    "module": "core/ui/build_identity.js",
+    "functions": 3,
+    "pages": [
+      "Code-044-01"
+    ]
+  },
+  {
+    "module": "core/ui/calibration_metadata.js",
+    "functions": 17,
+    "pages": [
+      "Code-045-01"
+    ]
+  },
+  {
+    "module": "core/ui/computer_sound_events.js",
+    "functions": 14,
+    "pages": [
+      "Code-046-01"
+    ]
+  },
+  {
+    "module": "core/ui/console_layout.js",
+    "functions": 5,
+    "pages": [
+      "Code-047-01"
+    ]
+  },
+  {
+    "module": "core/ui/console_voice.js",
+    "functions": 188,
+    "pages": [
+      "Code-048-01",
+      "Code-048-02",
+      "Code-048-03",
+      "Code-048-04",
+      "Code-048-05"
+    ]
+  },
+  {
+    "module": "core/ui/evidence_a11y.js",
+    "functions": 5,
+    "pages": [
+      "Code-049-01"
+    ]
+  },
+  {
+    "module": "core/ui/evidence_guide.js",
+    "functions": 6,
+    "pages": [
+      "Code-050-01"
+    ]
+  },
+  {
+    "module": "core/ui/evidence_summary.js",
+    "functions": 30,
+    "pages": [
+      "Code-051-01"
+    ]
+  },
+  {
+    "module": "core/ui/experiment_sop_editor.js",
+    "functions": 20,
+    "pages": [
+      "Code-052-01"
+    ]
+  },
+  {
+    "module": "core/ui/export_dictionary.js",
+    "functions": 11,
+    "pages": [
+      "Code-053-01"
+    ]
+  },
+  {
+    "module": "core/ui/footer_command_menu.js",
+    "functions": 24,
+    "pages": [
+      "Code-054-01"
+    ]
+  },
+  {
+    "module": "core/ui/guided_demo.js",
+    "functions": 151,
+    "pages": [
+      "Code-055-01",
+      "Code-055-02",
+      "Code-055-03"
+    ]
+  },
+  {
+    "module": "core/ui/instrument_context.js",
+    "functions": 36,
+    "pages": [
+      "Code-056-01"
+    ]
+  },
+  {
+    "module": "core/ui/learning_game.js",
+    "functions": 34,
+    "pages": [
+      "Code-057-01"
+    ]
+  },
+  {
+    "module": "core/ui/learning_report.js",
+    "functions": 10,
+    "pages": [
+      "Code-058-01"
+    ]
+  },
+  {
+    "module": "core/ui/learning_workspace.js",
+    "functions": 207,
+    "pages": [
+      "Code-059-01",
+      "Code-059-02",
+      "Code-059-03",
+      "Code-059-04"
+    ]
+  },
+  {
+    "module": "core/ui/local_password.js",
+    "functions": 9,
+    "pages": [
+      "Code-060-01"
+    ]
+  },
+  {
+    "module": "core/ui/mara_evidence_editor.js",
+    "functions": 16,
+    "pages": [
+      "Code-061-01"
+    ]
+  },
+  {
+    "module": "core/ui/mara_sop_editor.js",
+    "functions": 16,
+    "pages": [
+      "Code-062-01"
+    ]
+  },
+  {
+    "module": "core/ui/mascot_controls.js",
+    "functions": 35,
+    "pages": [
+      "Code-063-01"
+    ]
+  },
+  {
+    "module": "core/ui/method_narratives.js",
+    "functions": 19,
+    "pages": [
+      "Code-064-01"
+    ]
+  },
+  {
+    "module": "core/ui/native_inspector.js",
+    "functions": 45,
+    "pages": [
+      "Code-065-01",
+      "Code-065-02"
+    ]
+  },
+  {
+    "module": "core/ui/navigation_tones.js",
+    "functions": 10,
+    "pages": [
+      "Code-066-01"
+    ]
+  },
+  {
+    "module": "core/ui/provenance_details.js",
+    "functions": 31,
+    "pages": [
+      "Code-067-01"
+    ]
+  },
+  {
+    "module": "core/ui/reader_inventory.js",
+    "functions": 12,
+    "pages": [
+      "Code-068-01"
+    ]
+  },
+  {
+    "module": "core/ui/release_checksum.js",
+    "functions": 4,
+    "pages": [
+      "Code-069-01"
+    ]
+  },
+  {
+    "module": "core/ui/render.js",
+    "functions": 23,
+    "pages": [
+      "Code-070-01"
+    ]
+  },
+  {
+    "module": "core/ui/report_workflow.js",
+    "functions": 41,
+    "pages": [
+      "Code-071-01"
+    ]
+  },
+  {
+    "module": "core/ui/scope_snapshot.js",
+    "functions": 26,
+    "pages": [
+      "Code-072-01"
+    ]
+  },
+  {
+    "module": "core/ui/session_setup.js",
+    "functions": 15,
+    "pages": [
+      "Code-073-01"
+    ]
+  },
+  {
+    "module": "core/ui/sop_results_gallery.js",
+    "functions": 551,
+    "pages": [
+      "Code-074-01",
+      "Code-074-02",
+      "Code-074-03",
+      "Code-074-04",
+      "Code-074-05",
+      "Code-074-06",
+      "Code-074-07",
+      "Code-074-08",
+      "Code-074-09",
+      "Code-074-10",
+      "Code-074-11"
+    ]
+  },
+  {
+    "module": "core/ui/sop_selection.js",
+    "functions": 2,
+    "pages": [
+      "Code-075-01"
+    ]
+  },
+  {
+    "module": "core/ui/sound_settings.js",
+    "functions": 27,
+    "pages": [
+      "Code-076-01"
+    ]
+  },
+  {
+    "module": "core/ui/source_matches.js",
+    "functions": 15,
+    "pages": [
+      "Code-077-01"
+    ]
+  },
+  {
+    "module": "core/ui/state.js",
+    "functions": 11,
+    "pages": [
+      "Code-078-01"
+    ]
+  },
+  {
+    "module": "core/ui/voice_demo.js",
+    "functions": 98,
+    "pages": [
+      "Code-079-01",
+      "Code-079-02",
+      "Code-079-03"
+    ]
+  },
+  {
+    "module": "core/ui/workspace_entry.js",
+    "functions": 14,
+    "pages": [
+      "Code-080-01"
+    ]
+  },
+  {
+    "module": "core/xlsx.js",
+    "functions": 7,
+    "pages": [
+      "Code-081-01"
+    ]
+  },
+  {
+    "module": "readers/eds/cc_extract.js",
+    "functions": 8,
+    "pages": [
+      "Code-082-01"
+    ]
+  },
+  {
+    "module": "readers/eds/parse_1_utilities.js",
+    "functions": 21,
+    "pages": [
+      "Code-083-01"
+    ]
+  },
+  {
+    "module": "readers/eds/records.js",
+    "functions": 90,
+    "pages": [
+      "Code-084-01",
+      "Code-084-02"
+    ]
+  },
+  {
+    "module": "readers/eds/signal_rows.js",
+    "functions": 8,
+    "pages": [
+      "Code-085-01"
+    ]
+  },
+  {
+    "module": "readers/eds/workbook.js",
+    "functions": 5,
+    "pages": [
+      "Code-086-01"
+    ]
+  },
+  {
+    "module": "readers/ixo/cc_extract.js",
+    "functions": 7,
+    "pages": [
+      "Code-087-01"
+    ]
+  },
+  {
+    "module": "readers/ixo/decode.js",
+    "functions": 169,
+    "pages": [
+      "Code-088-01",
+      "Code-088-02",
+      "Code-088-03",
+      "Code-088-04"
+    ]
+  },
+  {
+    "module": "readers/ixo/integrity.js",
+    "functions": 2,
+    "pages": [
+      "Code-089-01"
+    ]
+  },
+  {
+    "module": "readers/pcrd/reader.js",
+    "functions": 33,
+    "pages": [
+      "Code-090-01"
+    ]
+  },
+  {
+    "module": "readers/rdml/cfx_adapter.js",
+    "functions": 17,
+    "pages": [
+      "Code-091-01"
+    ]
+  },
+  {
+    "module": "readers/register_public.js",
+    "functions": 15,
+    "pages": [
+      "Code-092-01"
+    ]
+  },
+  {
+    "module": "readers/zpcr/reader.js",
+    "functions": 75,
+    "pages": [
+      "Code-093-01",
+      "Code-093-02"
+    ]
+  },
+  {
+    "module": "readers/zpcr/to_run_model.js",
+    "functions": 13,
+    "pages": [
+      "Code-094-01"
+    ]
+  },
+  {
+    "module": "shell/public_browser_guard.html",
+    "functions": 2,
+    "pages": [
+      "Code-095-01"
+    ]
+  },
+  {
+    "module": "shell/public_calm_voice.html",
+    "functions": 12,
+    "pages": [
+      "Code-096-01"
+    ]
+  },
+  {
+    "module": "shell/public_legal_zh.html",
+    "functions": 1,
+    "pages": [
+      "Code-097-01"
+    ]
+  },
+  {
+    "module": "shell/public_startup_sound.html",
+    "functions": 78,
+    "pages": [
+      "Code-098-01",
+      "Code-098-02"
+    ]
+  },
+  {
+    "module": "variants/public/core/sop.js",
+    "functions": 228,
+    "pages": [
+      "Code-099-01",
+      "Code-099-02",
+      "Code-099-03",
+      "Code-099-04",
+      "Code-099-05"
+    ]
+  },
+  {
+    "module": "variants/public/hooks/core/charts/extract.js",
+    "functions": 105,
+    "pages": [
+      "Code-100-01",
+      "Code-100-02"
+    ]
+  },
+  {
+    "module": "variants/public/hooks/core/charts/panel.js",
+    "functions": 271,
+    "pages": [
+      "Code-101-01",
+      "Code-101-02",
+      "Code-101-03",
+      "Code-101-04",
+      "Code-101-05",
+      "Code-101-06"
+    ]
+  },
+  {
+    "module": "variants/public/hooks/core/exports/catalogue.js",
+    "functions": 95,
+    "pages": [
+      "Code-102-01",
+      "Code-102-02"
+    ]
+  },
+  {
+    "module": "variants/public/hooks/core/flatten.js",
+    "functions": 22,
+    "pages": [
+      "Code-103-01"
+    ]
+  },
+  {
+    "module": "variants/public/hooks/core/i18n_constants.js",
+    "functions": 11,
+    "pages": [
+      "Code-104-01"
+    ]
+  },
+  {
+    "module": "variants/public/hooks/core/review.js",
+    "functions": 444,
+    "pages": [
+      "Code-105-01",
+      "Code-105-02",
+      "Code-105-03",
+      "Code-105-04",
+      "Code-105-05",
+      "Code-105-06",
+      "Code-105-07",
+      "Code-105-08",
+      "Code-105-09",
+      "Code-105-10"
+    ]
+  },
+  {
+    "module": "variants/public/hooks/core/ui/console_views.js",
+    "functions": 178,
+    "pages": [
+      "Code-106-01",
+      "Code-106-02",
+      "Code-106-03",
+      "Code-106-04"
+    ]
+  },
+  {
+    "module": "variants/public/hooks/core/ui/console.js",
+    "functions": 111,
+    "pages": [
+      "Code-107-01",
+      "Code-107-02",
+      "Code-107-03"
+    ]
+  },
+  {
+    "module": "variants/public/hooks/core/ui/report_command_modes.js",
+    "functions": 259,
+    "pages": [
+      "Code-108-01",
+      "Code-108-02",
+      "Code-108-03",
+      "Code-108-04",
+      "Code-108-05",
+      "Code-108-06"
+    ]
+  },
+  {
+    "module": "variants/public/hooks/core/wiring.js",
+    "functions": 29,
+    "pages": [
+      "Code-109-01"
+    ]
+  },
+  {
+    "module": "variants/public/intake.js",
+    "functions": 20,
+    "pages": [
+      "Code-110-01"
+    ]
+  },
+  {
+    "module": "variants/public/integrity.js",
+    "functions": 2,
+    "pages": [
+      "Code-111-01"
+    ]
+  },
+  {
+    "module": "variants/public/processing_state.js",
+    "functions": 16,
+    "pages": [
+      "Code-112-01"
+    ]
+  },
+  {
+    "module": "variants/public/readers/eds/parse_2_container.js",
+    "functions": 131,
+    "pages": [
+      "Code-113-01",
+      "Code-113-02",
+      "Code-113-03"
+    ]
+  },
+  {
+    "module": "variants/public/readers/eds/to_run_model.js",
+    "functions": 39,
+    "pages": [
+      "Code-114-01"
+    ]
+  },
+  {
+    "module": "variants/public/readers/rdml/reader.js",
+    "functions": 32,
+    "pages": [
+      "Code-115-01",
+      "Code-115-02"
+    ]
+  },
+  {
+    "module": "variants/public/startup_head.html",
+    "functions": 12,
+    "pages": [
+      "Code-116-01"
+    ]
+  },
+  {
+    "module": "variants/public/zip.js",
+    "functions": 14,
+    "pages": [
+      "Code-117-01"
+    ]
+  },
+  {
+    "module": "vendor/html2canvas.js",
+    "functions": 529,
+    "pages": [
+      "Code-118-01",
+      "Code-118-02",
+      "Code-118-03",
+      "Code-118-04",
+      "Code-118-05",
+      "Code-118-06",
+      "Code-118-07",
+      "Code-118-08",
+      "Code-118-09",
+      "Code-118-10",
+      "Code-118-11"
+    ]
+  },
+  {
+    "module": "vendor/plotly-basic.html",
+    "functions": 5023,
+    "pages": [
+      "Code-119-01",
+      "Code-119-02",
+      "Code-119-03",
+      "Code-119-04",
+      "Code-119-05",
+      "Code-119-06",
+      "Code-119-07",
+      "Code-119-08",
+      "Code-119-09",
+      "Code-119-10",
+      "Code-119-11",
+      "Code-119-12",
+      "Code-119-13",
+      "Code-119-14",
+      "Code-119-15",
+      "Code-119-16",
+      "Code-119-17",
+      "Code-119-18",
+      "Code-119-19",
+      "Code-119-20",
+      "Code-119-21",
+      "Code-119-22",
+      "Code-119-23",
+      "Code-119-24",
+      "Code-119-25",
+      "Code-119-26",
+      "Code-119-27",
+      "Code-119-28",
+      "Code-119-29",
+      "Code-119-30",
+      "Code-119-31",
+      "Code-119-32",
+      "Code-119-33",
+      "Code-119-34",
+      "Code-119-35",
+      "Code-119-36",
+      "Code-119-37",
+      "Code-119-38",
+      "Code-119-39",
+      "Code-119-40",
+      "Code-119-41",
+      "Code-119-42",
+      "Code-119-43",
+      "Code-119-44",
+      "Code-119-45",
+      "Code-119-46",
+      "Code-119-47",
+      "Code-119-48",
+      "Code-119-49",
+      "Code-119-50",
+      "Code-119-51",
+      "Code-119-52",
+      "Code-119-53",
+      "Code-119-54",
+      "Code-119-55",
+      "Code-119-56",
+      "Code-119-57",
+      "Code-119-58",
+      "Code-119-59",
+      "Code-119-60",
+      "Code-119-61",
+      "Code-119-62",
+      "Code-119-63",
+      "Code-119-64",
+      "Code-119-65",
+      "Code-119-66",
+      "Code-119-67",
+      "Code-119-68",
+      "Code-119-69",
+      "Code-119-70",
+      "Code-119-71",
+      "Code-119-72",
+      "Code-119-73",
+      "Code-119-74",
+      "Code-119-75",
+      "Code-119-76",
+      "Code-119-77",
+      "Code-119-78",
+      "Code-119-79",
+      "Code-119-80",
+      "Code-119-81",
+      "Code-119-82",
+      "Code-119-83",
+      "Code-119-84",
+      "Code-119-85",
+      "Code-119-86",
+      "Code-119-87",
+      "Code-119-88",
+      "Code-119-89",
+      "Code-119-90",
+      "Code-119-91",
+      "Code-119-92",
+      "Code-119-93",
+      "Code-119-94",
+      "Code-119-95",
+      "Code-119-96",
+      "Code-119-97",
+      "Code-119-98",
+      "Code-119-99",
+      "Code-119-100",
+      "Code-119-101",
+      "Code-119-102",
+      "Code-119-103",
+      "Code-119-104",
+      "Code-119-105",
+      "Code-119-106"
+    ]
+  }
+]

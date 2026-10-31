@@ -1,0 +1,1 @@
+()=>checks.every(c=>c.pass)

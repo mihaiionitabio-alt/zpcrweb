@@ -1,0 +1,1 @@
+function(e){var t=e.title,r="0em";return o.isTopAnchor(t)?r=p.CAP_SHIFT+"em":o.isMiddleAnchor(t)&&(r=p.MID_SHIFT+"em"),r}

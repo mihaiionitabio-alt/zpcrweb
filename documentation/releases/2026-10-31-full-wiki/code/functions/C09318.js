@@ -1,0 +1,1 @@
+r=>r.pcrd.reads.map(x=>x.step)

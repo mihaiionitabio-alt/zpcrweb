@@ -1,0 +1,1 @@
+()=>{const rows=risingCurveDisplayRows(risingCurveRows());if(rows.length)download(baseName()+"_rising_curves_review.csv",toCSV(Object.keys(rows[0]).map(k=>({key:k,label:k})),rows),"text/csv");}

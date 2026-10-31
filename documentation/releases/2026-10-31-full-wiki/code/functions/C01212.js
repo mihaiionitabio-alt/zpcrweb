@@ -1,0 +1,1 @@
+function(e){var t=e._dims;t.labelSteps=[];for(var r=e._stepCount,n=0;n<r;n+=t.labelStride)t.labelSteps.push({fraction:n/(r-1),step:e._visibleSteps[n]})}

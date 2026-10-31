@@ -1,0 +1,1 @@
+function k(e){return L(e,-1)}

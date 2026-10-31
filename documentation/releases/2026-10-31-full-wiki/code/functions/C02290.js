@@ -1,0 +1,1 @@
+function(){var t=e._dragdata;if(t&&t.element===be){var r=e._fullLayout.dragmode;y(r)||(ye(),Ge([0,0,ee,te]),De.moveFn(t.dx,t.dy))}}

@@ -1,0 +1,1 @@
+function S(e,t){var r=e._dims;return r.inputAreaStart+f.stepInset+(r.inputAreaLength-2*f.stepInset)*Math.min(1,Math.max(0,t))}

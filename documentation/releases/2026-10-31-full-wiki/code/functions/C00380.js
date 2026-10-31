@@ -1,0 +1,1 @@
+function(e){e.attr(h.svgAttrs).style({position:"absolute",left:"-10000px",top:"-10000px",width:"9000px",height:"9000px","z-index":"1"})}

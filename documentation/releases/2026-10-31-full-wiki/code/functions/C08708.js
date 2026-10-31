@@ -1,0 +1,1 @@
+async bytes=>{const c=typeof crypto!=='undefined'?crypto:require('crypto').webcrypto;return Array.from(new Uint8Array(await c.subtle.digest('SHA-256',bytes)),b=>b.toString(16).padStart(2,'0')).join('');}

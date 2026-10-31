@@ -1,0 +1,1 @@
+(r,j)=>r.epochMs!==null&&x.reads[j].epochMs!==null&&r.epochMs>=x.reads[j].epochMs?(r.epochMs-x.reads[j].epochMs)/1000:NaN

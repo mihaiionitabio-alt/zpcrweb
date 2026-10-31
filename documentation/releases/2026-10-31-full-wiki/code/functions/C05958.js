@@ -1,0 +1,1 @@
+()=>({name:"",matchBy:"name",match:"",expect:"negative",cqLo:"",cqHi:"",targets:"*",minPerRun:1,onFail:"reject"})

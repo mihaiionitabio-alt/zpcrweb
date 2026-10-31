@@ -1,0 +1,1 @@
+function _n(A,e){this.type=0,this.x=A,this.y=e}

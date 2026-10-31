@@ -1,0 +1,1 @@
+function selRemove(patterns){const m=selMatchAll(patterns);m.forEach(id=>SEL_STATE.ids.delete(id));return m;}

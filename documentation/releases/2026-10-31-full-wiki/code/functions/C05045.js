@@ -1,0 +1,1 @@
+function(e,t,r){var n=this._validate(e,t,r,c.local.invalidDate||c.regionalOptions[""].invalidDate);e=n.year(),t=n.month(),r=n.day(),e<0&&e++,t<3&&(t+=12,e--);var a=Math.floor(e/100),i=2-a+Math.floor(a/4);return Math.floor(365.25*(e+4716))+Math.floor(30.6001*(t+1))+r+i-1524.5}

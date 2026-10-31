@@ -1,0 +1,1 @@
+(en,zh)=>localized?t(en,zh):en

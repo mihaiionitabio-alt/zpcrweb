@@ -1,0 +1,1 @@
+function(e,t,r){"use strict";var n,a=r(8253);n="function"==typeof r.g.matchMedia?!r.g.matchMedia("(hover: none)").matches:a,e.exports=n}

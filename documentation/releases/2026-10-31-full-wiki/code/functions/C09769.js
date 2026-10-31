@@ -1,0 +1,1 @@
+x=>ROLES.includes(x)

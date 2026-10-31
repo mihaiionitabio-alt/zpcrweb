@@ -1,0 +1,1 @@
+x=>plat.toLowerCase().includes(String(x).toLowerCase())

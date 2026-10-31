@@ -1,0 +1,1 @@
+(c,k)=>{const name=dl[k]||`dye${k+1}`;all.add(name);o[name]=bracketList(c.textContent).map(Number)}

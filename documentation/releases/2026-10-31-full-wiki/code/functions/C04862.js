@@ -1,0 +1,1 @@
+function(e,t,r){var a=this._validate(e,t,r,n.local.invalidDate);return e=a.year()+(a.year()<0?1:0),t=a.month(),(r=a.day())+(t>1?16:0)+(t>2?32*(t-2):0)+400*(e-1)+this.jdEpoch-1}

@@ -1,0 +1,1 @@
+(x,k)=>({x:-span*0.03,y:rs.length-k,text:runName(x.r).slice(0,40)+"  ",anchor:"end",size:10})

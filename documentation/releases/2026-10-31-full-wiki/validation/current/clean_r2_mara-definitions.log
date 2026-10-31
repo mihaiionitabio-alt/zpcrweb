@@ -1,0 +1,2 @@
+PASS 32 standards/roles; 131 decision checks; OLS/inverse, per-event uncertainty, majority/Ct boundary, missing evidence, contamination, CRM/basis/pairing, calibration coverage, LOQ and precision; zero experiment files
+PASS document/schema/32 hashes; standard-code SOP names; per-event constants and references; 25 rapid assay entries; bilingual menus/3 widths; JSON save/import; ZIP export; 32 pinned hashes and synthetic run outcomes; raw fixture records unchanged; zero native experiment files

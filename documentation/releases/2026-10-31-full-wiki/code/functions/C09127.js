@@ -1,0 +1,1 @@
+v=>Math.abs(v)>=10000||Math.abs(v)>0&&Math.abs(v)<.001?v.toExponential(2):String(+v.toPrecision(5))

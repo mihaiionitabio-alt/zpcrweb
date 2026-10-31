@@ -1,0 +1,1 @@
+pos=>plate[pos]??=(plate[pos]={pos,name:"",sampleId:"",notes:"",replicateOf:null,subsets:[],channels:{}})

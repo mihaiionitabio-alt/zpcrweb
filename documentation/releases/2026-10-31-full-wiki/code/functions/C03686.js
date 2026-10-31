@@ -1,0 +1,1 @@
+function(e){y[e]={data:l[e],value:s=u[e],startAngle:f,endAngle:f+=s*g+p,padAngle:h}}

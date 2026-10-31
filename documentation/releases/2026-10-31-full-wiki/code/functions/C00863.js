@@ -1,0 +1,1 @@
+function b(e,t,r,n){var a,i;s.ensureSingle(e,"text","selector-text",(function(e){e.attr("text-anchor","middle")})).call(l.font,t.font).text((a=r,i=n._fullLayout._meta,a.label?i?s.templateString(a.label,i):a.label:"all"===a.step?"all":a.count+a.step.charAt(0))).call((function(e){u.convertToTspans(e,n)}))}

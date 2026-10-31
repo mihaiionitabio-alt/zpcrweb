@@ -1,0 +1,1 @@
+function(){const all=ccInstruments(),chosen=all.find(i=>i.key===CC_STATE.instrument)||all[0];return chosen?.platform==='CFX'?MG_VIEWS.zpcrcharts.build():next();}

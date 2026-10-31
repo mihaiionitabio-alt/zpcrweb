@@ -1,0 +1,1 @@
+function We(e,t){return t?(e.range=e._r.slice(),S(e,t),Je(e,t)):0}

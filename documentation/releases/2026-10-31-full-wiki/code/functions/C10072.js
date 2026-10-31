@@ -1,0 +1,1 @@
+function(){return maraProfileActive()&&!SEL_STATE.title?ui('Selected results')+(RUNS.length===1?' — '+runName(RUNS[0]):''):next();}

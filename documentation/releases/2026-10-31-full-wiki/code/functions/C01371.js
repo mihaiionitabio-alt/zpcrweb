@@ -1,0 +1,1 @@
+function(e,r,n){var a,i=r._module.attributes,l=i.hoverinfo?i:o,s=l.hoverinfo;if(1===n._dataLength){var c="all"===s.dflt?s.flags.slice():s.dflt.split("+");c.splice(c.indexOf("name"),1),a=c.join("+")}return t.coerce(e,r,l,"hoverinfo",a)}

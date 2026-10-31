@@ -1,0 +1,1 @@
+(chapter,title,say,target,tier='standard',prepare=null)=>({chapter,title,say,target,tier,prepare,type:'command'})

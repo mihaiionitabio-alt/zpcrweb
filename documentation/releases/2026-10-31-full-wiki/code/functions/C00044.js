@@ -1,0 +1,1 @@
+()=>{if(!speak(kind,preview,override))document.dispatchEvent(new Event('missy-speech-error'));}

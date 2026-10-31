@@ -1,0 +1,1 @@
+function h(e,t,r){e=z(e,255),t=z(t,255),r=z(r,255);var n,a,i=u(e,t,r),o=c(e,t,r),l=(i+o)/2;if(i==o)n=a=0;else{var s=i-o;switch(a=l>.5?s/(2-i-o):s/(i+o),i){case e:n=(t-r)/s+(t<r?6:0);break;case t:n=(r-e)/s+2;break;case r:n=(e-t)/s+4}n/=6}return{h:n,s:a,l:l}}

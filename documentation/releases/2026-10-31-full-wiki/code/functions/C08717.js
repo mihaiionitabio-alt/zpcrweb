@@ -1,0 +1,1 @@
+(r,i)=>r.epochMs===null||r.dateBasis!=='offset-qualified'||(i&&r.epochMs<reads[i-1].epochMs)

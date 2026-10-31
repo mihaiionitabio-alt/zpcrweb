@@ -1,0 +1,1 @@
+function(e){var t=this.daysPerMonth.slice(0);t.unshift(17);for(var r=e-1;r<e+2;r++)void 0===this.NEPALI_CALENDAR_DATA[r]&&(this.NEPALI_CALENDAR_DATA[r]=t)}

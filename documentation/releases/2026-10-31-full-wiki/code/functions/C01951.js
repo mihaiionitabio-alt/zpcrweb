@@ -1,0 +1,1 @@
+function d(){a.purge(M),document.body.removeChild(M)}

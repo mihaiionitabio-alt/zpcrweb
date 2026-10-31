@@ -1,0 +1,1 @@
+function(){var e=n.select(this);e.append("rect").call(p.fill,p.addOpacity(u,.8)),e.append("text").classed("name",!0),e.append("path").style("stroke-width","1px"),e.append("text").classed("nums",!0).call(h.font,{weight:k,style:A,variant:L,textcase:O,lineposition:D,shadow:P,family:m,size:M})}

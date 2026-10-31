@@ -1,0 +1,1 @@
+(){return window.MISSY_DEMO_CHILD.reportURL;}

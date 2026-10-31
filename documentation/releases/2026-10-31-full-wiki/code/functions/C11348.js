@@ -1,0 +1,1 @@
+function Bs(A){return 1===A.type}

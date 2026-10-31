@@ -1,0 +1,1 @@
+function(e){if(e){var t=n.select(e.node().parentNode).select("."+le);if(!t.empty()){var r=e.node().getBBox();if(r.height){var a=r.y+r.height+1.6*Z;t.attr("y",a)}}}}

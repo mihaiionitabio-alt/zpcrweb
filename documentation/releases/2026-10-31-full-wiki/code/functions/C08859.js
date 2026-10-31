@@ -1,0 +1,1 @@
+r=>JSON.stringify([r.zpcr.evidence?.baseSerial,r.meta.ZPCRProtocolSHA256,r.meta.StartTime,r.meta.InstrumentVersion])

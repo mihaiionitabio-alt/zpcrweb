@@ -1,0 +1,1 @@
+function(e,t){var r,n,a,i=-1,o=e.length;if(1===arguments.length){for(;++i<o;)if(null!=(n=e[i])&&n>=n){r=a=n;break}for(;++i<o;)null!=(n=e[i])&&(r>n&&(r=n),a<n&&(a=n))}else{for(;++i<o;)if(null!=(n=t.call(e,e[i],i))&&n>=n){r=a=n;break}for(;++i<o;)null!=(n=t.call(e,e[i],i))&&(r>n&&(r=n),a<n&&(a=n))}return[r,a]}

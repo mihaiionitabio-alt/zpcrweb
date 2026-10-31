@@ -1,0 +1,1 @@
+function u(e,t){if(s(t))return!0;var r,n;t[0]<t[1]?(r=t[0],n=t[1]):(r=t[1],n=t[0]),(r=a(r,l))>(n=a(n,l))&&(n+=l);var i=a(e,l),o=i+l;return i>=r&&i<=n||o>=r&&o<=n}

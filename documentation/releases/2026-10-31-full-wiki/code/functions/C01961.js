@@ -1,0 +1,1 @@
+function(e,t){return("data"===e?"The data argument":d(e)+"key "+t)+" must be linked to an array container"}

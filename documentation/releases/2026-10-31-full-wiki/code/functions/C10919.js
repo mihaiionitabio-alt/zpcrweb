@@ -1,0 +1,1 @@
+()=>({value:rows.filter(w=>w.nativeStatus==='Detected').length,rule:'sop.native'})

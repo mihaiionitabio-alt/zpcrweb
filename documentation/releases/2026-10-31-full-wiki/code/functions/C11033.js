@@ -1,0 +1,1 @@
+function $A(A){return 31!==A.type&&4!==A.type}

@@ -1,0 +1,1 @@
+({e,r})=>runName(e.run)+'; '+text(r.ctrl.name)+'; '+text(r.target)+'; '+text(r.outcome)+'; rule '+text(r.rule)+'; '+text(r.reason)

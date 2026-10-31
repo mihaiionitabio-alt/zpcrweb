@@ -1,0 +1,1 @@
+function(e){"on"+e in s&&xe.remove(e)}

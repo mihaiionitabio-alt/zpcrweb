@@ -1,0 +1,1 @@
+x=>({id:'graph:'+x.id,label:(x.id.startsWith('cc:')?(CC_BY_ID[x.id.slice(3)]?.code+' · '):'')+ui(x.title),group:x.id.startsWith('cc:')?ui('Control charts'):ui('Graphs')})

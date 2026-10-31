@@ -1,0 +1,1 @@
+rs=>rs.map(r=>((((r.m||{}).findings||{}).count)>0)?1:0)

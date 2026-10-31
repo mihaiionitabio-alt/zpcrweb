@@ -1,0 +1,1 @@
+function(e,t,r){return{pointNumber:e,searchInfo:t,subtract:!!r}}

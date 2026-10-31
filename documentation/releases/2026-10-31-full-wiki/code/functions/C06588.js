@@ -1,0 +1,1 @@
+s=>{if(Number.isFinite(s.efficiency)&&s.efficiency>0&&s.efficiency<200)eff[s.target]=s.efficiency;}

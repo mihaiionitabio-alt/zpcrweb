@@ -1,0 +1,1 @@
+function(e){for(var t=u([],e),r=0;r<t.length;r++)for(var n=t[r],a=0;a<n.length;a++){var i=n[a];if("string"==typeof i){if(void 0===s[i])throw new Error(["*modeBarButtons* configuration options","invalid button name"].join(" "));t[r][a]=s[i]}}return t}

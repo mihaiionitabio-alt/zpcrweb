@@ -1,0 +1,1 @@
+x=>x.id==='data:loaded_overview'?0:x.id==='data:cohort_statistics'?1:x.id.startsWith('img:overview_')?2:3

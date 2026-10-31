@@ -1,0 +1,1 @@
+p=>({operator:p.operator,n:p.n,bad:p.bad,rate:p.y,limit95:p.u95,limit998:p.u998,flags:p.flags.join("; ")})

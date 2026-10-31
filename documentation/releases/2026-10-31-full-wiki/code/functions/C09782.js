@@ -1,0 +1,1 @@
+([id,label])=>({id:'page:'+id,label:ui(label)})

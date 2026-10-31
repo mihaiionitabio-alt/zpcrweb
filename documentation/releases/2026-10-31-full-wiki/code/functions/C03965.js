@@ -1,0 +1,1 @@
+function(e){return arguments.length?(n=a=e,f):a}

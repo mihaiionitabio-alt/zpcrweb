@@ -1,0 +1,1 @@
+function(){next();if(RUNS.length&&RUNS.every(r=>r.zpcr)){MG.scope='zpcrcharts';mgRefresh();MG.at=0;mgRender();}}

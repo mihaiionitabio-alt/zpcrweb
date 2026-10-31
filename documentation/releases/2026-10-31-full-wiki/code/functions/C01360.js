@@ -1,0 +1,1 @@
+function(e,t){var r=t.dflt;return e===r||"string"==typeof e&&!!f(r).test(e)}

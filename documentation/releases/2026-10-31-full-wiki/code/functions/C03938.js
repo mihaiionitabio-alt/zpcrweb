@@ -1,0 +1,1 @@
+function(e,t){var r=e.length-1;if(r)for(var n,a,i=e[0][0],o=e[0][1],l=e[r][0]-i,s=e[r][1]-o,c=-1;++c<=r;)a=c/r,(n=e[c])[0]=t*n[0]+(1-t)*(i+a*l),n[1]=t*n[1]+(1-t)*(o+a*s);return Da(e)}

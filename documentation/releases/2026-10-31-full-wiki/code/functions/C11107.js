@@ -1,0 +1,1 @@
+function(A,e){return"strict"!==e?We.NORMAL:We.STRICT}

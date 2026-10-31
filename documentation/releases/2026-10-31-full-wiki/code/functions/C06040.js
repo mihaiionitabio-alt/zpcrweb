@@ -1,0 +1,2 @@
+h=>{if(!Number.isFinite(h.y)||(ylog&&h.y<=0))return;const y=Y(h.y);if(y<T||y>T+ph)return;
+    s+=`<line x1="${L}" x2="${L+pw}" y1="${y}" y2="${y}" stroke="${h.colour||"#111"}" stroke-dasharray="${h.dash||"5 4"}" stroke-width="1.2"/>${o.hlabelsOutside?`<text x="${L+pw+5}" y="${y+3.5}" text-anchor="start" fill="${h.colour||"#111"}">${svgEsc(h.label||"")}</text>`:`<text x="${L+pw-4}" y="${y-4}" text-anchor="end" fill="${h.colour||"#111"}">${svgEsc(h.label||"")}</text>`}`;}

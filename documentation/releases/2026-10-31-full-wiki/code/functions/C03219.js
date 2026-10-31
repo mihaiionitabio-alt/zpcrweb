@@ -1,0 +1,1 @@
+function(e,t){var r=e.indexOf("."),n="";if(r>=0&&(n=e.slice(r+1),e=e.slice(0,r)),e)return arguments.length<2?this[e].on(n):this[e].on(n,t);if(2===arguments.length){if(null==t)for(e in this)this.hasOwnProperty(e)&&this[e].on(n,null);return this}}

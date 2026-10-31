@@ -1,0 +1,1 @@
+id=>$(id).onchange=renderReviewComparison

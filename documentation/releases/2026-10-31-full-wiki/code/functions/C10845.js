@@ -1,0 +1,1 @@
+()=>{demo.closeModes();cmdOpen();return ask('Computer where am I').answer;}

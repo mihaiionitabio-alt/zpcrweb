@@ -1,0 +1,1 @@
+function(e){return o(e[0])&&o(e[1])}

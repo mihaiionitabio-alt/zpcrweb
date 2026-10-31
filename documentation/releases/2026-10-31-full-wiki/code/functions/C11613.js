@@ -1,0 +1,1 @@
+w=>w.well.toUpperCase().replace(/^([A-H])0+(\d)/,'$1$2')===name.toUpperCase().replace(/^([A-H])0+(\d)/,'$1$2')

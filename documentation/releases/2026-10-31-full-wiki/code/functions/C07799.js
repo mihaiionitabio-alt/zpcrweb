@@ -1,0 +1,1 @@
+function purgeCurvePlots(){while(CURVE_PLOTS.length){const el=CURVE_PLOTS.pop();try{if(el&&el._curveDispose)el._curveDispose();}catch(e){}}}

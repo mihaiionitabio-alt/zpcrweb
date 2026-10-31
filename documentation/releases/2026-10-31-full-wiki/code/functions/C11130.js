@@ -1,0 +1,1 @@
+function Pt(A,e){return 0!=(A&e)}

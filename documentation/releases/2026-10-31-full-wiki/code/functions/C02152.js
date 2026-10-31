@@ -1,0 +1,1 @@
+function(e){return e.dx+t-(m+e.fontSize*x)*b+T*e.fontSize}

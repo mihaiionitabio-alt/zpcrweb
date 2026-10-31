@@ -1,0 +1,1 @@
+function Xr(e){e.fixed|=4,e.px=e.x,e.py=e.y}

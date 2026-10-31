@@ -1,0 +1,1 @@
+()=>{cmdScriptToggle(true);cmdEl('cmd-script').value=RUNS.some(r=>r.pcrd||r.pcrdLocked)?pcrdReportScript():RUNS.some(r=>r.zpcr)?zpcrReportScript():cmdEl('cmd-script').defaultValue;}

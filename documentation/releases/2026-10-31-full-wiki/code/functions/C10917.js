@@ -1,0 +1,1 @@
+()=>({value:rows.filter(w=>w.cq===40).length,rule:'sop.native'})

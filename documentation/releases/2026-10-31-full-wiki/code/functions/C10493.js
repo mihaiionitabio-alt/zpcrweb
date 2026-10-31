@@ -1,0 +1,1 @@
+n=>n.id==='missy-native-inspector'

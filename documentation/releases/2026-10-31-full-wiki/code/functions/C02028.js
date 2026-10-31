@@ -1,0 +1,1 @@
+function(e){var t=e.charAt(0);return"x"===t?"y":"y"===t?"x":void 0}

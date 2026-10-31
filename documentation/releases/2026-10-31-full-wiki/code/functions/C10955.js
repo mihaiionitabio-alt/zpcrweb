@@ -1,0 +1,1 @@
+function(){if(1&s[0])throw s[1];return s[1]}

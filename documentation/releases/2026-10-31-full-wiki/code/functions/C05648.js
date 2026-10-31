@@ -1,0 +1,1 @@
+r=>`${EDS.flagName(r.code)} ${r.criteria}`

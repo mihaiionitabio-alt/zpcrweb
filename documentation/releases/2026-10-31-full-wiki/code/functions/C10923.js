@@ -1,0 +1,8 @@
+function session(data=fixtures(),identity={}){
+ const records=[],latest=new Map(),usedHints=new Map();
+ const find=(c,s)=>{const step=data.cases.find(x=>x.id===c)?.steps.find(x=>x.id===s);if(!step)throw Error('Unknown training step');return step;};
+ return {data,records,hint(c,s){const st=find(c,s),k=c+'/'+s,n=Math.min(3,(usedHints.get(k)||0)+1);usedHints.set(k,n);return st.hints[n-1];},
+ commit(c,s,answer,rationale='',latencyMs=0){const step=find(c,s),key=c+'/'+s,score=grade(step,answer,usedHints.get(key)||0);const row={scenario:c,step:s,attempt:records.filter(x=>x.scenario===c&&x.step===s).length+1,answer:clone(answer),truth:clone(score.truth),score,rationale:String(rationale),latencyMs:Math.max(0,Number(latencyMs)||0),hintsUsed:usedHints.get(key)||0,profile:clone(data.profile),moduleVersion:VERSION,...identity,at:new Date().toISOString()};records.push(row);latest.set(key,row);return clone(row);},
+ summary(){const all=[...latest.values()],expected=data.cases.reduce((n,c)=>n+c.steps.length,0),mean=all.length?all.reduce((n,x)=>n+x.score.points,0)/all.length:0;return {completed:all.length,total:expected,mean,unresolvedUnsafe:all.filter(x=>x.score.unsafe).length,passed:all.length===expected&&mean>=70&&!all.some(x=>x.score.unsafe),missProfile:records.reduce((a,x)=>{const rule=x.truth.rule;a[rule]??={attempts:0,misses:0};a[rule].attempts++;if(Object.values(x.score.parts).some(p=>!p.correct)||x.score.unsafe)a[rule].misses++;return a;},{}),badges:all.length===expected&&records.every(x=>!x.score.unsafe)?['Steady Hand']:[]};}
+ };
+}

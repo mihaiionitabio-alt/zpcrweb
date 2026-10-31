@@ -1,0 +1,1 @@
+function zr(e){return 1-Math.cos(e*ze)}

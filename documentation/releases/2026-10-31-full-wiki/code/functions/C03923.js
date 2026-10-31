@@ -1,0 +1,1 @@
+function ba(e,t,r,n){return(e-r)*t-(t-n)*e>0?0:1}

@@ -1,0 +1,1 @@
+function o(e){var t=new Array(e.length),r=i[0][0],n=i[0][1],a=i[1][0],o=i[1][1];return fr(l(e),i).cells.forEach((function(i,l){var s=i.edges,c=i.site;(t[l]=s.length?s.map((function(e){var t=e.start();return[t.x,t.y]})):c.x>=r&&c.x<=a&&c.y>=n&&c.y<=o?[[r,o],[a,o],[a,n],[r,n]]:[]).point=e[l]})),t}

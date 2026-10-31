@@ -1,0 +1,1 @@
+function cfxRuns(){return RUNS.filter(r=>r.cfxRDML);}

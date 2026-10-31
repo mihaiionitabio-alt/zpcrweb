@@ -1,0 +1,1 @@
+function(t,r,n){return 2===arguments.length&&"function"==typeof r&&(n=r,r=null),yt(t,r,e,n)}

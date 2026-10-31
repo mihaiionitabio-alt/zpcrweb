@@ -1,0 +1,1 @@
+function u(t){return(1+100*(t-e)/r.dtick)%100<2}

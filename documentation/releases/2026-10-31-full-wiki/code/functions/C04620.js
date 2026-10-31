@@ -1,0 +1,1 @@
+function d(e,t,r){var a=n.segments(e),i=n.segments(t),o=r(n.combine(a,i));return n.polygon(o)}

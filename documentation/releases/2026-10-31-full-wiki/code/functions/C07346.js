@@ -1,0 +1,1 @@
+x=>Object.fromEntries(Object.entries(x).filter(([,v])=>v!==undefined))

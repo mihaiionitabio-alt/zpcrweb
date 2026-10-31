@@ -1,0 +1,1 @@
+function(e){var t,r,n=-1,a=this.length,i=0,o=0,l=this[a-1];for(arguments.length||(e=-1/(6*this.area()));++n<a;)t=l,l=this[n],r=t[0]*l[1]-l[0]*t[1],i+=(t[0]+l[0])*r,o+=(t[1]+l[1])*r;return[i*e,o*e]}

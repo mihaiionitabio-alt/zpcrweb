@@ -1,0 +1,1 @@
+x=>/^\d+(?:\.\d+)?$/.test(x)?Number(x):words.indexOf(x)

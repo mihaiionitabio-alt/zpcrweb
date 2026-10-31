@@ -1,0 +1,2 @@
+()=>{const run=runAt("#plate-run",0),rows=plateMapRows(run,$("#plate-target").value);
+    if(rows.length)download(safeName(runName(run))+"_plate_map.csv",toCSV(Object.keys(rows[0]).map(k=>({key:k,label:k})),rows),"text/csv");}

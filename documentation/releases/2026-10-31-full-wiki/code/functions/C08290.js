@@ -1,0 +1,1 @@
+r=>{if(want&&!(r.category.toLowerCase().includes(want)||r.finding.toLowerCase().includes(want)))return;const g=groups.get(r.category)||{n:0,e:0,r:0,runs:new Set()};g.n++;if(r.severity==="error")g.e++;else if(r.severity==="review")g.r++;g.runs.add(r.experiment);groups.set(r.category,g);}

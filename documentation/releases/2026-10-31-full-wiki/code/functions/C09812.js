@@ -1,0 +1,1 @@
+()=>{document.documentElement.style.setProperty('--missy-footer-height',Math.ceil(bar.getBoundingClientRect().height)+'px');paint();}

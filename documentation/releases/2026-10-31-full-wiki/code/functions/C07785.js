@@ -1,0 +1,1 @@
+v=>logScale?Math.log10(Math.max(v,pos.length?Math.min(...pos):1)):v

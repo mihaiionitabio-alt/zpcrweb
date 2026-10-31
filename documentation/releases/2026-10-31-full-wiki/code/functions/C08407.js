@@ -1,0 +1,1 @@
+f=>({model:name(f),aicc:f.aicc,r2:f.r2})

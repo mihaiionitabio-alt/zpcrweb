@@ -1,0 +1,1 @@
+function setVoice(uri){const voice=window.speechSynthesis?.getVoices().find(v=>v.localService&&v.voiceURI===uri);voiceURI=voice?uri:'';try{localStorage.setItem('missy_local_voice_v1',voiceURI);}catch{}}

@@ -1,0 +1,1 @@
+function(){return next().concat({id:'data:native_excerpt',kind:'data',group:'Source provenance',title:'Native reading excerpt',note:'',ready:()=>RUNS.length>0,rows:()=>rows(true),file:'native_reading_excerpt.csv',tableOptions:{full:true,columns:['filename','inspection_scope','native_component','native_value','native_state','native_basis']},text:()=>csvOf(rows(false))});}

@@ -1,0 +1,1 @@
+e=>({time:EDS.dt(e[0]),event:e[1]})

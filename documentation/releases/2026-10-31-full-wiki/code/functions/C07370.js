@@ -1,0 +1,2 @@
+()=>RUNS.filter(r=>r.eds&&r.eds.results.length).forEach(r=>download(safeName(r.meta.name||r.file)+"_QuantStudio_export.txt",
+      EDS.qsExport(r.eds,{pseudo:pseudoOn(),nameOf:exportName}),"text/plain"))

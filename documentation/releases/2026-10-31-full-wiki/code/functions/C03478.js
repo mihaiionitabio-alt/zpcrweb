@@ -1,0 +1,1 @@
+function It(e,t,r,n){var a=e[0],i=r[0],o=t[0]-a,l=n[0]-i,s=e[1],c=r[1],u=t[1]-s,f=n[1]-c,d=(l*(s-c)-f*(a-i))/(f*o-l*u);return[a+d*o,s+d*u]}

@@ -1,0 +1,1 @@
+function R(e,t){var r=e.rotate*Math.PI/180,n=Math.cos(r),a=Math.sin(r),i=(t.left+t.right)/2,o=(t.top+t.bottom)/2;e.textX=i*n-o*a,e.textY=i*a+o*n,e.noCenter=!0}

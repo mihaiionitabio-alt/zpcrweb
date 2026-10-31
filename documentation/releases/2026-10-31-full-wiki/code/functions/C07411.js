@@ -1,0 +1,1 @@
+r=>makeQpcrWideTables(r).map(t=>({name:t.file,data:t.data,mime:"text/csv"}))

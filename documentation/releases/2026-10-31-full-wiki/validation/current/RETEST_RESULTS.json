@@ -1,0 +1,47 @@
+[
+  {
+    "id": "clarification",
+    "file": "tests/yes_no_responses.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 4.803,
+    "passed": true
+  },
+  {
+    "id": "voice-state",
+    "file": "tests/voice_stable.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 8.943,
+    "passed": true
+  },
+  {
+    "id": "mara-definitions",
+    "file": "tests/mara_definitions.cjs",
+    "code": 1,
+    "signal": null,
+    "timeout": false,
+    "seconds": 3.372,
+    "passed": false
+  },
+  {
+    "id": "evidence-keyboard",
+    "file": "tests/evidence_keyboard.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 112.005,
+    "passed": true
+  },
+  {
+    "id": "quantstudio",
+    "file": "tests/quantstudio_reader_exports.cjs",
+    "code": 0,
+    "signal": null,
+    "timeout": false,
+    "seconds": 123.705,
+    "passed": true
+  }
+]

@@ -1,0 +1,1 @@
+function(e,t,r){return e.coerceNumber&&(t=+t),-1!==e.values.indexOf(t)?t:void 0!==r?r:e.dflt}

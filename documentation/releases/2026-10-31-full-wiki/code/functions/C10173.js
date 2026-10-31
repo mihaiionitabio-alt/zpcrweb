@@ -1,0 +1,1 @@
+function say(en,zh,error=false){const text=t(en,zh);if(status){status.textContent=text;status.title=text;}if(runtimeStatus){runtimeStatus.textContent=error?text:'';runtimeStatus.title=text;runtimeStatus.classList.toggle('voice-error',error);}}

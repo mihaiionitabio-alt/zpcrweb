@@ -1,0 +1,1 @@
+function(A,e){this.context=A,this.options=e}

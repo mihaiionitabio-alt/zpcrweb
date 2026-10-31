@@ -1,0 +1,1 @@
+function(e){"use strict";e.exports={SHOW_PLACEHOLDER:100,HIDE_PLACEHOLDER:1e3,DESELECTDIM:.2}}

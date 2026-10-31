@@ -1,0 +1,1 @@
+b=>b?b.arrayBuffer().then(ab=>res(new Uint8Array(ab))):res(null)

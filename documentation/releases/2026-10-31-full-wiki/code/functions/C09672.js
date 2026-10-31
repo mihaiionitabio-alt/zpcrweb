@@ -1,0 +1,1 @@
+r=>'File: '+r.file+'\nSHA-256: '+(r.meta.sourceSHA256||'Not recorded')

@@ -1,0 +1,1 @@
+()=>new Set(RUNS[0].wells.map(w=>w.pos)).size

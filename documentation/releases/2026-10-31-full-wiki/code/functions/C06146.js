@@ -1,0 +1,1 @@
+id=>$(id).onchange=()=>{if(!$("#ss-names-enable").checked&&$("#ss-group").value==="namePattern")$("#ss-group").value="experiment";SAMPLE_SELECTION.page=0;ssRender();}

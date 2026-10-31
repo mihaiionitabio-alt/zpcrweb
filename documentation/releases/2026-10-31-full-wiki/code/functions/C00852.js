@@ -1,0 +1,1 @@
+function c(e,t,r,a){var i=a.calendar;function o(r,a){return n.coerce(e,t,l.buttons,r,a)}if(o("visible")){var s=o("step");"all"!==s&&(!i||"gregorian"===i||"month"!==s&&"year"!==s?o("stepmode"):t.stepmode="backward",o("count")),o("label")}}

@@ -1,0 +1,1 @@
+function O(e,t,r,n){for(var a=e.transforms,i=[e],o=0;o<a.length;o++){var l=a[o],s=T[l.type];s&&s.transform&&(i=s.transform(i,{transform:l,fullTrace:e,fullData:t,layout:r,fullLayout:n,transformIndex:o}))}return i}

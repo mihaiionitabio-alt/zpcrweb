@@ -1,0 +1,1 @@
+function(e,r){return t.pointsSameX(e,r)?t.pointsSameY(e,r)?0:e[1]<r[1]?-1:1:e[0]<r[0]?-1:1}

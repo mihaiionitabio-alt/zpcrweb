@@ -1,0 +1,1 @@
+(a,b)=>(rank[a.sev]-rank[b.sev])||a.code.localeCompare(b.code)

@@ -1,0 +1,1 @@
+(r,i)=>{try{return sopEvaluateRun(r,i);}catch(e){console.error(e);return {run:r,ri:i,rows:[],criteria:[{criterion:"Evaluation",action:"review",status:"review",evidence:e.message}],status:"Not evaluated",rejected:[],reviewed:[],times:{}};}}

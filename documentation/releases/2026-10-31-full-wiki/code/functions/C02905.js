@@ -1,0 +1,1 @@
+function(){v.selectAll("tspan").each((function(){var e=n.select(this);e.attr("dy")&&e.attr("dy",e.attr("dy"))}))}

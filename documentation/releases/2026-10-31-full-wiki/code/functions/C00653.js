@@ -1,0 +1,1 @@
+function(){var e=0,t=0;n.select(this).selectAll("g.traces").each((function(r){var n=M(r,a,g),i=r[0].height;c.setTranslate(this,A[0],A[1]+d+v+i/2+t),t+=i,e=Math.max(e,n),T[r[0].trace.legendgroup]=e}));var r=e+v;H>0&&r+d+H>a._maxWidth?(N=Math.max(N,H),H=0,B+=F+w,F=t):F=Math.max(F,t),c.setTranslate(this,H,B),H+=r}

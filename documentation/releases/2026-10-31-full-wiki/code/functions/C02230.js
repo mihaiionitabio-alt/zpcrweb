@@ -1,0 +1,1 @@
+function(e,r,n){var a=e._fullLayout;return r=void 0===r||"string"!=typeof r?r:r.replace(" domain",""),"x"===n?r=r.replace(/y[0-9]*/,""):"y"===n&&(r=r.replace(/x[0-9]*/,"")),a[t.id2name(r)]}

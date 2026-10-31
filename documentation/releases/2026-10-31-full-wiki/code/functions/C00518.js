@@ -1,0 +1,1 @@
+function z(e){return[e.trace.index,e.index,e.x0,e.y0,e.name,e.attr,e.xa?e.xa._id:"",e.ya?e.ya._id:""].join(",")}

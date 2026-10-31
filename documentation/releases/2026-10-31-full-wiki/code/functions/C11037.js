@@ -1,0 +1,1 @@
+function te(A){return 16===A.type||ee(A)}

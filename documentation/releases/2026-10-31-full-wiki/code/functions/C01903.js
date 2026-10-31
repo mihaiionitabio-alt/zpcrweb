@@ -1,0 +1,1 @@
+function A(e){return"top"===e?p.CAP_SHIFT+.3+"em":"bottom"===e?"-0.3em":p.MID_SHIFT+"em"}

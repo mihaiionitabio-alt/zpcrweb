@@ -1,0 +1,1 @@
+r=>r.enabled&&r.st.level===l

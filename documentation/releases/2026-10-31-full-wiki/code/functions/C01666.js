@@ -1,0 +1,1 @@
+function a(t,r){return void 0===r?null===(r=e.attr(t))&&(e.attr(t,0),r=0):e.attr(t,r),r}

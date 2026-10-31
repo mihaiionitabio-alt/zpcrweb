@@ -1,0 +1,1 @@
+r=>r.score.points===100

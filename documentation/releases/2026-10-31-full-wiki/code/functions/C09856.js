@@ -1,0 +1,1 @@
+(cq,c)=>c&&c.slope<0&&Number.isFinite(N(cq))?10**((N(cq)-c.intercept)/c.slope):NaN

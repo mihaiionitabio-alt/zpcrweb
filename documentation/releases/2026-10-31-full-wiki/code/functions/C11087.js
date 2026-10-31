@@ -1,0 +1,1 @@
+function(A){return A.filter(_A).map(function(A){return A.value}).join(" ")}

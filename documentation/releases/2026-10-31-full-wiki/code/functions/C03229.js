@@ -1,0 +1,1 @@
+function(){return i.select(s.documentElement)}

@@ -1,0 +1,1 @@
+function(e){return c(e,"Reset camera to last save")}

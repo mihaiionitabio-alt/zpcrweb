@@ -1,0 +1,1 @@
+x=>select.value==='all'||x.group===select.value

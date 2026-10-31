@@ -1,0 +1,1 @@
+()=>select.title=select.selectedOptions[0]?.textContent||''

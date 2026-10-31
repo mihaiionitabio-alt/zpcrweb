@@ -1,0 +1,1 @@
+x=>({experiment:runName(x.r),instrument:x.r.meta.InstrumentID||x.r.meta.InstrumentName||"",software:x.r.meta.SWVersion||"",run_start:sopFmtTime(x.T.start),minutes:x.T.durationMin})

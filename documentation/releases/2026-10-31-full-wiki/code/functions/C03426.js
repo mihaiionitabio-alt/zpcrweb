@@ -1,0 +1,1 @@
+function(e){var t=e.responseType;return t&&"text"!==t?e.response:e.responseText}

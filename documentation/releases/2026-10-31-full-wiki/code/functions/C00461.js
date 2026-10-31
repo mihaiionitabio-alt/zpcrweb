@@ -1,0 +1,1 @@
+function(e){for(var t=e.calcdata,r=0;r<t.length;r++){var n=t[r],o=n[0].trace;if(!0===o.visible&&a.traceIs(o,"errorBarsOK")){var l=i.getFromId(e,o.xaxis),c=i.getFromId(e,o.yaxis);s(n,o,l,"x"),s(n,o,c,"y")}}}

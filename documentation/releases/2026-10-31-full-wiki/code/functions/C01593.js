@@ -1,0 +1,1 @@
+function(e,t){"use strict";t.counter=function(e,t,r,n){var a=(t||"")+(r?"":"$"),i=!1===n?"":"^";return"xy"===e?new RegExp(i+"x([2-9]|[1-9][0-9]+)?y([2-9]|[1-9][0-9]+)?"+a):new RegExp(i+e+"([2-9]|[1-9][0-9]+)?"+a)}}

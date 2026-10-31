@@ -1,0 +1,1 @@
+()=>resultFocus('Repeat',1)

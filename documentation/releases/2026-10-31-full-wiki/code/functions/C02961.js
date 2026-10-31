@@ -1,0 +1,1 @@
+function(e){"use strict";e.exports={scattermode:{valType:"enumerated",values:["group","overlay"],dflt:"overlay",editType:"calc"},scattergap:{valType:"number",min:0,max:1,editType:"calc"}}}

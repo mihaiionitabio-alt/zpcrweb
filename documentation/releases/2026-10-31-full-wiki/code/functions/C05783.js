@@ -1,0 +1,1 @@
+w=>w.role==="Standard"&&!sopOmitted(w)&&Number(w.givenConc||w.StandardConc)>0&&Number.isFinite(sopCq(w))

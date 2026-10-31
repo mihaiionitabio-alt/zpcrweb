@@ -1,0 +1,1 @@
+function(n){return 1+e*Math.pow(2,-10*n)*Math.sin((n-r)*De/t)}

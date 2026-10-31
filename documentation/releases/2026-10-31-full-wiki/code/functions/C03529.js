@@ -1,0 +1,1 @@
+function(e){return arguments.length?o.clipExtent(e&&[[0,0],e]):i===hr?null:i&&i[1]}

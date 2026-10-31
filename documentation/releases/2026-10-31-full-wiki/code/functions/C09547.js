@@ -1,0 +1,1 @@
+function piRamp(x){if(x.length<8||!x.every(Number.isFinite)||x.at(-1)-x[0]<5)return false;const d=x.slice(1).map((v,i)=>v-x[i]);return d.every(v=>v>0)&&piMedian(d)>=.05;}

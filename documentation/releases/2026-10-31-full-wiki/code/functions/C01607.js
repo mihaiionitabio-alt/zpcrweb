@@ -1,0 +1,1 @@
+function(e){var r,n=e.slice();for(n.sort(t.sorterAsc),r=n.length-1;r>-1&&n[r]===o;r--);for(var a,i=n[r]-n[0]||1,l=i/(r||1)/1e4,s=[],c=0;c<=r;c++){var u=n[c],f=u-a;void 0===a?(s.push(u),a=u):f>l&&(i=Math.min(i,f),s.push(u),a=u)}return{vals:s,minDiff:i}}

@@ -1,0 +1,1 @@
+function(e){return"none"!==e.hoverinfo}

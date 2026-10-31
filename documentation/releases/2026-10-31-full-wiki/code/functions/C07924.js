@@ -1,0 +1,1 @@
+e=>source.name.toLowerCase().endsWith(e)

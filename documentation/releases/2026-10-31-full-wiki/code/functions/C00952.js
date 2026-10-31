@@ -1,0 +1,1 @@
+function p(e,t,r){var n=r.xref+r.yref;l.setClipUrl(e,"clip"+t._fullLayout._uid+n,t)}

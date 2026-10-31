@@ -1,0 +1,1 @@
+function d(e,t){var r=t.domain;return r||(r=e[i(t.overlaying)].domain),r[1]-r[0]}

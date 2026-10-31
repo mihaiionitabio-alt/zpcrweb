@@ -1,0 +1,1 @@
+r=>keys.map(k=>r[k])

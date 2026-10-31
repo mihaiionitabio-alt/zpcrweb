@@ -1,0 +1,1 @@
+()=>{g.forEach(r=>box.checked?SAMPLE_SELECTION.draft.delete(r.key):SAMPLE_SELECTION.draft.add(r.key));ssRender();}

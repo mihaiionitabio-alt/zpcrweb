@@ -1,0 +1,1 @@
+x=>x.contextKey===zi.contextKey&&x.measurementKey===measurement.value

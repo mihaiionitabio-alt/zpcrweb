@@ -1,0 +1,1 @@
+function ma(e){return e.startAngle}

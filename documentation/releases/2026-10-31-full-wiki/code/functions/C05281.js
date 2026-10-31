@@ -1,0 +1,1 @@
+x=>rqResult(x,false)

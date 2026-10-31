@@ -1,0 +1,1 @@
+function u(e,t,r){var i=n({},e);for(var o in i){var l=i[o];a(l)&&(i[o]=f(l,t,0,o))}return"from-root"===r&&(i.editType=t),i}

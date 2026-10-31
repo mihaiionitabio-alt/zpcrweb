@@ -1,0 +1,1 @@
+function(e,t){var r=n.subplotsRegistry.gl3d;if(r)for(var i=r.attrRegex,o=Object.keys(e),l=0;l<o.length;l++){var s=o[l];i.test(s)&&(e[s].annotations||[]).length&&(a.pushUnique(t._basePlotModules,r),a.pushUnique(t._subplots.gl3d,s))}}

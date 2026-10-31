@@ -1,0 +1,1 @@
+()=>{SOP.method.selected_assays=[...panel.selectedOptions].map(x=>x.value);refresh();}

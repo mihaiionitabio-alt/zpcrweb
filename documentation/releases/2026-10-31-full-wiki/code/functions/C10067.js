@@ -1,0 +1,1 @@
+s=>s.points.map(p=>({target:s.target,well:p.well,sample:p.sample,assigned_copies:p.conc,cq:p.y,residual:p.residual,slope:s.slope,intercept:s.intercept,r2:s.r2}))

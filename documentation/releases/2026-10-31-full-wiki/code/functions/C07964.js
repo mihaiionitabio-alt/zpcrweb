@@ -1,0 +1,1 @@
+ev=>{ev.preventDefault();drop.classList.remove("hot");}

@@ -1,0 +1,1 @@
+value=>{dock.hidden=!value;toggle.setAttribute('aria-expanded',String(value));label();}

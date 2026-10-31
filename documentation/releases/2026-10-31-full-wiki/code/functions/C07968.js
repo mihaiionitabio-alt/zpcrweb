@@ -1,0 +1,1 @@
+()=>{$("#csvin").value=CSV_EXAMPLE;acceptPasted(CSV_EXAMPLE,"the worked example");showTab("results");}

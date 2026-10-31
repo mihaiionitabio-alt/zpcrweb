@@ -1,0 +1,1 @@
+e=>e.rows.filter(r=>/Invalid|Repeat|Inconclusive|Control fail/.test(r.outcome))

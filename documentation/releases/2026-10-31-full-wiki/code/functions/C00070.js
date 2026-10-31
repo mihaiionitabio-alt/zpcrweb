@@ -1,0 +1,1 @@
+function readySound(){if(!ready||!enabled||!cueEnabled('ready')||announced)return;pending=true;labels();notify('ready');engine().then(c=>{if(c&&enabled){announced=true;pending=false;}else if(enabled)pending=true;labels();}).catch(()=>{pending=true;labels();});}

@@ -1,0 +1,1 @@
+(run,i)=>{const meta=run.meta||{},hash=meta.sourceSHA256;return {view:i+1,filename:run.file||'',source_sha256:typeof hash==='string'?hash:'',source_bytes:Number.isSafeInteger(meta.sourceBytes)&&meta.sourceBytes>=0?meta.sourceBytes:null,hash_available:typeof hash==='string'&&/^[a-f\d]{64}$/i.test(hash)};}

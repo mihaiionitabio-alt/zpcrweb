@@ -1,0 +1,1 @@
+function(){if(t.length&&t[C]&&t[C].length){for(var e=[],r=0;r<t[C].length;r++)r!==O&&e.push(t[C][r]);e.length>1&&(2!==e.length||"Z"!==e[1][0])&&(0===O&&(e[0][0]="M"),t[C]=e,k(),A())}}

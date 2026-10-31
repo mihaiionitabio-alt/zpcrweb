@@ -1,0 +1,1 @@
+function(e,t,r){"use strict";var n=r(4809),a=r(6811);e.exports=function(e,t){function r(r,i){return void 0!==t[r]?t[r]:n.coerce(e,t,a,r,i)}return r("clickmode"),r("hoversubplots"),r("hovermode")}}

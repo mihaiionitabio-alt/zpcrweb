@@ -1,0 +1,1 @@
+function R(e,t){var r=new e.constructor(e.length+t.length);return r.set(e),r.set(t,e.length),r}

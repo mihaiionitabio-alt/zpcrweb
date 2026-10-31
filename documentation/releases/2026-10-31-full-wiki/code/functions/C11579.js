@@ -1,0 +1,1 @@
+()=>{demo.graph('amplification');focus(document.getElementById('mg-chart')||document.getElementById('g-chart'));}

@@ -1,0 +1,1 @@
+next => function(){next();for(const b of document.querySelectorAll('#mg-actions .mg-act')){const label=b.querySelector('.l');if(b.dataset.cmd==='next run'&&label){b.title=b.dataset.graphOriginalLabel||label.textContent;label.textContent='Next run';}}for(const s of document.querySelectorAll('#console-selectors select'))s.title=s.selectedOptions[0]?.textContent||'';}

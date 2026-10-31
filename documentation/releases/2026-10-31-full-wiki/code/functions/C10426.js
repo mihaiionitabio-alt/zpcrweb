@@ -1,0 +1,1 @@
+function role(code,localized){const p=(en,zh)=>localized?t(en,zh):en;return ({sample_grid:p('Declared sample grid; not sample identity','声明的样本区域；不表示样本标识'),reference_grid:p('Declared instrument reference row; not a PCR control','声明的仪器参比行；不属于 PCR 对照'),unknown:p('Physical role unavailable','未提供实际位置用途')})[code];}

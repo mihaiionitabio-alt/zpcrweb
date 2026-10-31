@@ -1,0 +1,1 @@
+function(e,t,r,n,a){var i=k.layoutFlags();return i.arrays={},i.rangesAltered={},i.nChanges=0,i.nChangesAnim=0,oe(t,r,[],{getValObject:function(e){return f.getLayoutValObject(r,e)},flags:i,immutable:n,transition:a,gd:e}),(i.plot||i.calc)&&(i.layoutReplot=!0),a&&i.nChanges&&i.nChangesAnim&&(i.anim=i.nChanges===i.nChangesAnim?"all":"some"),i}

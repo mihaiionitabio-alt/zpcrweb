@@ -1,0 +1,1 @@
+gr=>`<optgroup label="${esc(ui(gr))}">${GRAPHS.filter(g=>g.group===gr).map(g=>`<option value="${g.id}">${esc(ui(g.title))}</option>`).join("")}</optgroup>`

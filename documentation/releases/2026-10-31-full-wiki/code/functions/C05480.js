@@ -1,0 +1,1 @@
+c=>{const m=c.match(/^Filter (\d+)$/);return m?(sets[+m[1]-1]||c):c;}

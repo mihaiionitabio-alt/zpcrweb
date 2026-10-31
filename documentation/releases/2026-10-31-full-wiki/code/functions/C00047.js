@@ -1,0 +1,1 @@
+v=>/zira/i.test(v.name||v.voiceURI)

@@ -1,0 +1,1 @@
+function S(e){return(e+="")[0]===A?e.slice(1):e}

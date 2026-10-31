@@ -1,0 +1,1 @@
+function(r){var n=M(r,a,g),i=r[0].height;c.setTranslate(this,A[0],A[1]+d+v+i/2+t),t+=i,e=Math.max(e,n),T[r[0].trace.legendgroup]=e}

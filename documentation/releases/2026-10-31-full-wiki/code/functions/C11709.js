@@ -1,0 +1,1 @@
+()=>{if(MISSY_CONSOLE_VOICE.listening||MISSY_CONSOLE_VOICE.busy)MISSY_CONSOLE_VOICE.stop();mgClose();cmdClose();astClose();visible=false;screen.hidden=true;if(voicePanel)voicePanel.open=false;document.documentElement.classList.remove('missy-configuring');if(voiceControls&&voiceHome)voiceHome.append(voiceControls);document.documentElement.classList.add('missy-starting');}

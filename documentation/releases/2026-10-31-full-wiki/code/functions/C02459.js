@@ -1,0 +1,1 @@
+function o(e,t){var r=i(e),a=n(e,"box-violin"),o=n(e._fullInput||{},"candlestick");return a&&!o&&t===r&&void 0===e[r]&&void 0===e[r+"0"]}

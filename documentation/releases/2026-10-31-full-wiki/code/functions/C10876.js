@@ -1,0 +1,1 @@
+(event,id,extra={})=>events.push({event,id,atSeconds:(performance.now()-started)/1000,...extra})

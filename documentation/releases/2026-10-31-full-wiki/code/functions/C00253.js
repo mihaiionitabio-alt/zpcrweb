@@ -1,0 +1,1 @@
+function o(e,a){var o=a.container?n.nestedProperty(e,a.container).get():e;if(o)if(o.coloraxis)o._colorAx=t[o.coloraxis];else{var l=i(o),s=l.auto;(s||void 0===l.min)&&r(o,a.min),(s||void 0===l.max)&&r(o,a.max),l.autocolorscale&&r(o,"colorscale")}}

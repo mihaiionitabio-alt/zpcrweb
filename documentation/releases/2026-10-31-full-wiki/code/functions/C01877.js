@@ -1,0 +1,1 @@
+function(e){var t,r,i={};for(t in e)r=e[t],Array.isArray(r)&&r.length&&(i[t]=0);return{newTrace:function(o){var l={type:t=n.coerce(o,{},a,"type"),_template:null};if(t in i){r=e[t];var s=i[t]%r.length;i[t]++,l._template=r[s]}return l}}}

@@ -1,0 +1,1 @@
+function(e){var t=this._validate(e,this.minMonth,this.minDay,n.local.invalidYear);return(e=t.year()+(t.year()<0?1:0))%4==3||e%4==-1}

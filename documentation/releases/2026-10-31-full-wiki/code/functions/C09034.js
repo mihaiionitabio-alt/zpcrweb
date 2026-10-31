@@ -1,0 +1,1 @@
+(t,i)=>t.cycle===lo+i

@@ -1,0 +1,1 @@
+function i(e){return Math.pow(e,Math.floor(Math.log(t)/Math.LN10))}

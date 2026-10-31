@@ -1,0 +1,1 @@
+function A(e){return(180/Math.PI*e+720)%180-90}

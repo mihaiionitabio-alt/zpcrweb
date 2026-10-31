@@ -1,0 +1,1 @@
+function W(e,t,r,n){var a=r-e,i=n-t,o=.5-e,l=.5-t,s=a*a+i*i,c=a*o+i*l;if(c>0&&c<s){var u=o*i-l*a;if(u*u<s)return!0}}

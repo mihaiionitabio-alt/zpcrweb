@@ -1,0 +1,1 @@
+function(){return m.length&&Promise.all(m)}

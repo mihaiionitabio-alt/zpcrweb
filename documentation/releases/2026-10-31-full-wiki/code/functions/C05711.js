@@ -1,0 +1,1 @@
+v=>Array.isArray(v)?v.map(sortKeys):v&&typeof v==="object"?Object.keys(v).sort().reduce((a,k)=>(a[k]=sortKeys(v[k]),a),{}):v

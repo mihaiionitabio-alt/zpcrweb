@@ -1,0 +1,1 @@
+([pos,d])=>{const w=(run.plate||{})[pos];if(!w||!w.name||!d[dye])return;lv.push(mean(d[dye].slice(0,5)));}

@@ -1,0 +1,1 @@
+function(e){var r={};function a(a,i){return n.coerce(e,r,t.attributes,a,i)}return a("enabled")&&(a("target"),a("order")),r}

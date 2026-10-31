@@ -1,0 +1,1 @@
+function(e){t._context.staticPlot||e.style("cursor","pointer").attr("pointer-events","all"),e.call(u.fill,"rgba(0,0,0,0)")}

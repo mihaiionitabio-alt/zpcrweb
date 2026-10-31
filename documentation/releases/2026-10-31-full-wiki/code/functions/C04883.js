@@ -1,0 +1,1 @@
+function(e,t,r){var a=this._validate(e,t,r,n.local.invalidDate);return{yearType:(this.leapYear(a)?"embolismic":"common")+" "+["deficient","regular","complete"][this.daysInYear(a)%10-3]}}

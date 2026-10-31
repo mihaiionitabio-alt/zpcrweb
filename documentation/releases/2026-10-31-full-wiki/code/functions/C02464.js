@@ -1,0 +1,1 @@
+function i(e,t,r){var n,i,o,l=!1;if("data"===t.type)n=e._fullData[null!==t.traces?t.traces[0]:0];else{if("layout"!==t.type)return!1;n=e._fullLayout}return i=a.nestedProperty(n,t.prop).get(),(o=r[t.type]=r[t.type]||{}).hasOwnProperty(t.prop)&&o[t.prop]!==i&&(l=!0),o[t.prop]=i,{changed:l,value:i}}

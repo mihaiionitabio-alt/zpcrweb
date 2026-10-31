@@ -1,0 +1,1 @@
+s=>Math.abs(y[k]-s)<=band

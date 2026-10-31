@@ -1,0 +1,1 @@
+(c,i)=>Math.abs(segs[i+1].level-segs[i].level)>=minStep

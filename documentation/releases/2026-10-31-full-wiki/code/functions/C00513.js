@@ -1,0 +1,1 @@
+function o(e,t){return Array.isArray(t)?Array.isArray(e)&&Array.isArray(e[t[0]])?e[t[0]][t[1]]:void 0:e[t]}

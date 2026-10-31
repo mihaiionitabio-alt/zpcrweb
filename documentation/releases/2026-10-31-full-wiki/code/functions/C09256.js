@@ -1,0 +1,1 @@
+l=>Object.fromEntries([...l.attributes].map(a=>[a.name,a.value]))

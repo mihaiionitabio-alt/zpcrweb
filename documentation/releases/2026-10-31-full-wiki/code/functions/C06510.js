@@ -1,0 +1,1 @@
+p=>(p.segments||[]).map(s=>Number(s.target))

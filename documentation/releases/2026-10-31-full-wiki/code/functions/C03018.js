@@ -1,0 +1,1 @@
+function le(e){return e.filter((function(e){return!e.gap&&e.vis}))}

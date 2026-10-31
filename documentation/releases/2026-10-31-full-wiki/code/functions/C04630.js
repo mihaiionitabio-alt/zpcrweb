@@ -1,0 +1,1 @@
+function(e){return{regions:l(e.segments,f,u),inverted:e.inverted}}

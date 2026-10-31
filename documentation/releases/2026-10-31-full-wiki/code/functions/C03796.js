@@ -1,0 +1,1 @@
+function(e){if(!arguments.length)return a;function t(t){return jn(t,e)}var r;return o=null==(a=e)?Bn:"function"==(r=typeof e)?function(t){var r=e.call(v,t,t.depth);return null==r?Bn(t):jn(t,"number"==typeof r?[r,r,r,r]:r)}:"number"===r?(e=[e,e,e,e],t):t,v}

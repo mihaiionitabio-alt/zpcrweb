@@ -1,0 +1,1 @@
+n=>/^apldbio\/sds\/experiment\.xml$/i.test(n)

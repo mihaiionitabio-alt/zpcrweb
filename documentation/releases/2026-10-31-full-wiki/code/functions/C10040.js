@@ -1,0 +1,1 @@
+r=>r.role==='calibrator'&&!r.omitted&&r.copies>0&&Number.isFinite(r.cq)

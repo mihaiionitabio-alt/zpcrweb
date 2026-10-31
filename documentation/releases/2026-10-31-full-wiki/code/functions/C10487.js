@@ -1,0 +1,1 @@
+()=>download('instrument_context_excerpt.csv',csvOf(rows(false)),'text/csv')

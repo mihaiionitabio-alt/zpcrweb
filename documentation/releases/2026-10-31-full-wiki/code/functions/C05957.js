@@ -1,0 +1,1 @@
+()=>({match:"",kind:"target",cqMax:40,cqLate:"",quantMin:"",lateOutcome:"Inconclusive"})

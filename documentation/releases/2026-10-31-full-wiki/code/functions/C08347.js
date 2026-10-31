@@ -1,0 +1,1 @@
+function mlTrace(){if(ML_TRACE)console.log.apply(console,["[advisory]"].concat([].slice.call(arguments)));}

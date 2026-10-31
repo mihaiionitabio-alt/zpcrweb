@@ -1,0 +1,1 @@
+function(e){var t=re,r=Math.round(se.c2p(e))+B.width/2%1;n.select(this).attr("d","M"+(o?t+","+r:r+","+t)+(o?"h":"v")+X).call(h.lineGroupStyle,B.width,U(e),B.dash)}

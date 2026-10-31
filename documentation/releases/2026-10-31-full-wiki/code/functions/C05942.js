@@ -1,0 +1,1 @@
+()=>{rows.push(blank());sopProfileEdited(true);}

@@ -1,0 +1,1 @@
+function Kr(A){return kr.get(A)}

@@ -1,0 +1,1 @@
+function(e,t){var r,i=e.range,o=new Date(e.r2l(i[1])),l=t.step,s=n["utc"+a(l)],c=t.count;switch(t.stepmode){case"backward":r=e.l2r(+s.offset(o,-c));break;case"todate":var u=s.offset(o,-c);r=e.l2r(+s.ceil(u))}return[r,i[1]]}

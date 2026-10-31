@@ -1,0 +1,1 @@
+function(n){n[t]=e,r[n.name]=n,r.optionList.push(n)}

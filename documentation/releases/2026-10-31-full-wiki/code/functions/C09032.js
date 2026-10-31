@@ -1,0 +1,1 @@
+([lo,hi])=>{const w=a.filter(t=>t.cycle>=lo&&t.cycle<=hi);return w.length===hi-lo+1&&w.every((t,i)=>t.cycle===lo+i);}

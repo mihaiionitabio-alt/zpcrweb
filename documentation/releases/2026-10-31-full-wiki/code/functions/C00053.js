@@ -1,0 +1,1 @@
+function previewState(state,id='',extra={}){document.dispatchEvent(new CustomEvent('missy-sound-preview',{detail:{state,id,...extra}}));}

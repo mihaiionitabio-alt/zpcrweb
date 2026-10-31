@@ -1,0 +1,1 @@
+function pcrdReportScript(){return ['# PCRD stored-data report; no vendor result inference','zpcr endpoint '+ZPCR_ENDPOINT_N,'lab '+(sopLabName()||'Laboratory name'),'analyst '+(sopAnalystName()||'Analyst name'),'title MISSY PCRD acquisition QC','clear','run all',...pcrdItems().map(x=>'select '+x.id),'select data:pcrd_sources','selection'].join('\n');}

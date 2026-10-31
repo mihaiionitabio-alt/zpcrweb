@@ -1,0 +1,1 @@
+function(e){var t=o(!0,f,u);return e.regions.forEach(t.addRegion),{segments:t.calculate(e.inverted),inverted:e.inverted}}

@@ -1,0 +1,1 @@
+w=>/CQCONF/.test(w.warnCodes||"")

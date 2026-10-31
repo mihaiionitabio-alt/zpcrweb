@@ -1,0 +1,1 @@
+r=>[r.cqMean,r.cqSd,graphHoverLabel(c.run,{well:r.wells&&r.wells[0]&&r.wells[0].well,sample:r.sample},`${r.target} · SD ${num(r.cqSd,3)} · ${r.label}`),(cm.set(r.label,r.colour),r.colour)]

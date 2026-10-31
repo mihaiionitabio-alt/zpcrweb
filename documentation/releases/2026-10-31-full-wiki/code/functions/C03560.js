@@ -1,0 +1,1 @@
+function(e,t){var r=typeof t;return("string"===r?vt.has(t.toLowerCase())||/^(#|rgb\(|hsl\()/i.test(t)?mr:br:t instanceof Ye?mr:Array.isArray(t)?Mr:"object"===r&&isNaN(t)?yr:xr)(e,t)}

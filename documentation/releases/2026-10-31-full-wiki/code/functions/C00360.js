@@ -1,0 +1,1 @@
+function z(e,t){var r=e.ts||t.textfont.size;return o(r)&&r>0?r:0}

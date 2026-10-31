@@ -1,0 +1,1 @@
+r=>({...r,mean:num(r.mean,3),sd:num(r.sd,3),range:num(r.range,3)})

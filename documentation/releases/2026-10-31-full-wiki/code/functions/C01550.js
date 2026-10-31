@@ -1,0 +1,1 @@
+function(){var r,n,o,l,s,c=e;for(l=0;l<t.length-1;l++){if(-1===(r=t[l])){for(n=!0,o=[],s=0;s<c.length;s++)o[s]=i(c[s],t.slice(l+1))(),o[s]!==o[0]&&(n=!1);return n?o[0]:o}if("number"==typeof r&&!a(c))return;if("object"!=typeof(c=c[r])||null===c)return}if("object"==typeof c&&null!==c&&null!==(o=c[t[l]]))return o}

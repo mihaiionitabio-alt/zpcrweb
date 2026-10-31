@@ -1,0 +1,1 @@
+function(t,r){var n=!e.isValidRange(t,"nullOk");return n&&r&&r.reverseDflt?n="reversed":t&&(null===t[0]&&null===t[1]?n=!0:null===t[0]&&null!==t[1]?n="min":null!==t[0]&&null===t[1]&&(n="max")),n}

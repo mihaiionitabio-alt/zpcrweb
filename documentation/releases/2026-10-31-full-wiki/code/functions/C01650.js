@@ -1,0 +1,1 @@
+function C(e){return e.replace(S,(function(e,t){return("#"===t.charAt(0)?function(e){if(!(e>1114111)){var t=String.fromCodePoint;if(t)return t(e);var r=String.fromCharCode;return e<=65535?r(e):r(55232+(e>>10),e%1024+56320)}}("x"===t.charAt(1)?parseInt(t.substr(2),16):parseInt(t.substr(1),10)):L[t])||e}))}

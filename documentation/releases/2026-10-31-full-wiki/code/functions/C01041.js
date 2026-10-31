@@ -1,0 +1,1 @@
+function k(){e(t,r,i,u++),(y(t[0])||i.hasText)&&A({redrawing:!0})}

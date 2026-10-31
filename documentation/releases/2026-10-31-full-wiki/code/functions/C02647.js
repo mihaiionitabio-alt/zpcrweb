@@ -1,0 +1,1 @@
+function l(e){var t;switch(e){case"themes__thumb":t={autosize:!0,width:150,height:150,title:{text:""},showlegend:!1,margin:{l:5,r:5,t:5,b:5,pad:0},annotations:[]};break;case"thumbnail":t={title:{text:""},hidesources:!0,showlegend:!1,borderwidth:0,bordercolor:"",margin:{l:1,r:1,t:1,b:1,pad:0},annotations:[]};break;default:t={}}return t}

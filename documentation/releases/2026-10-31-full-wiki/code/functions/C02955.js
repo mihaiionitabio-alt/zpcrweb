@@ -1,0 +1,1 @@
+function(e){var t=Math.max(y,e.mrc||0),r=d.c2p(e.x)-p,n=h.c2p(e.y)-v;return Math.max(Math.sqrt(r*r+n*n)-t,1-y/t)}

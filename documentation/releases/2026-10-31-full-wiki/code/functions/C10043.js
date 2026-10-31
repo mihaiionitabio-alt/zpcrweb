@@ -1,0 +1,1 @@
+r=>({x:Math.log10(r.copies),y:r.cq,well:r.source.well,sample:SS_EXPORT_CONTEXT.has(run)?exportName(r.sample):r.sample,conc:r.copies,residual:r.cq-(c.intercept+c.slope*Math.log10(r.copies))})

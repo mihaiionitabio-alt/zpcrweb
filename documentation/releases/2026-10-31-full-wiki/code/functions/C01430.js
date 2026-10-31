@@ -1,0 +1,1 @@
+function(e,t,r,l){if(e===a&&l===i||(n={},a=e,i=l),n[r])return n[r];var s=e.getPointAtLength(o(r-l/2,t)),c=e.getPointAtLength(o(r+l/2,t)),u=Math.atan((c.y-s.y)/(c.x-s.x)),f=e.getPointAtLength(o(r,t)),d={x:(4*f.x+s.x+c.x)/6,y:(4*f.y+s.y+c.y)/6,theta:u};return n[r]=d,d}

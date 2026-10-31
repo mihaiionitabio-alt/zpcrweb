@@ -1,0 +1,1 @@
+function(e){var t=e._fullLayout;d.manage(e);for(var r=0;r<t._basePlotModules.length;r++){var n=t._basePlotModules[r].updateFx;n&&n(e)}return i.previousPromises(e)}

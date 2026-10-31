@@ -1,0 +1,1 @@
+()=>resultFocus('Control fail',0)

@@ -1,0 +1,1 @@
+k => F[k] && F[k].length > 0

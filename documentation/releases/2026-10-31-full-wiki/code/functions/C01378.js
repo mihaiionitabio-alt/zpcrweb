@@ -1,0 +1,1 @@
+function(e){return _(e)?g.getComponentMethod("calendars","DFLTRANGE")[e]:["2000-01-01","2001-01-01"]}

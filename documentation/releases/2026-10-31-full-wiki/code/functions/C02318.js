@@ -1,0 +1,1 @@
+function(e){var t=e._fullLayout,r="pan"===t.dragmode?"move":"crosshair";o(t._draggers,r)}

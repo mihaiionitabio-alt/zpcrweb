@@ -1,0 +1,1 @@
+p=>({...p,cq:Number.isFinite(p.cq)?num(p.cq,3):"not detected"})

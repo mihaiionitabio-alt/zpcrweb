@@ -1,0 +1,1 @@
+function s(e,t,r){var n="plotly.js-style-"+e,i=document.getElementById(n);i||((i=document.createElement("style")).setAttribute("id",n),i.appendChild(document.createTextNode("")),document.head.appendChild(i));var o=i.sheet;o.insertRule?o.insertRule(t+"{"+r+"}",0):o.addRule?o.addRule(t,r,0):a.warn("addStyleRule failed")}

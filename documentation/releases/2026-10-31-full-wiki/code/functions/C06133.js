@@ -1,0 +1,1 @@
+box=>{const g=listed[Number(box.dataset.ssGroup)],n=g.filter(r=>!SAMPLE_SELECTION.draft.has(r.key)).length;box.indeterminate=n>0&&n<g.length;box.onchange=()=>{g.forEach(r=>box.checked?SAMPLE_SELECTION.draft.delete(r.key):SAMPLE_SELECTION.draft.add(r.key));ssRender();};}

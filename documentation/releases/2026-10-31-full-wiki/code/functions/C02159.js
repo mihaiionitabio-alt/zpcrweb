@@ -1,0 +1,1 @@
+function(e){return f.stroke(n.select(this),e.minor?t.minor.tickcolor:t.tickcolor)}

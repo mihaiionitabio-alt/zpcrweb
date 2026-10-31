@@ -1,0 +1,1 @@
+()=>{const rs=points.map(p=>p.getBoundingClientRect()),left=Math.min(...rs.map(r=>r.left)),right=Math.max(...rs.map(r=>r.right)),top=Math.min(...rs.map(r=>r.top)),bottom=Math.max(...rs.map(r=>r.bottom));return{left,top,width:right-left,height:bottom-top};}

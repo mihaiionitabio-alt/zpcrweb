@@ -1,0 +1,1 @@
+function(e){var t=Math.sqrt(e/Wa),r=t*Wa/2;return"M0,"+-r+"L"+t+","+r+" "+-t+","+r+"Z"}

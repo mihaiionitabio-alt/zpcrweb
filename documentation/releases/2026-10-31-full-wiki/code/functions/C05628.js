@@ -1,0 +1,1 @@
+x=>({well:x.pos,sample:x.sample,target:x.target,automatic:x.baseline.auto,start:x.baseline.start,end:x.baseline.stop})

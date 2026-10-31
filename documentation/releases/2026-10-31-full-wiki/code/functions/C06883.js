@@ -1,0 +1,1 @@
+e=>{ccSetCfg(def.id,{baseFrom:e.target.dataset.date});re();}

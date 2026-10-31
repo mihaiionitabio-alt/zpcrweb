@@ -1,0 +1,1 @@
+function Na(e,t){return(t[1]-e[1])/(t[0]-e[0])}

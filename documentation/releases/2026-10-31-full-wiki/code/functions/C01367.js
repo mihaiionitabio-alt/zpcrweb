@@ -1,0 +1,1 @@
+function(e,r,n,a,i){var o=u(n,a).get(),l=u(e,a),s=u(r,a),c=l.get(),f=r._template;if(void 0===c&&f&&(c=u(f,a).get(),f=0),void 0===i&&(i=o.dflt),o.arrayOk){if(h(c))return s.set(c),c;if(p(c))return c=v(c),s.set(c),c}var d=t.valObjectMeta[o.valType].coerceFunction;d(c,s,i,o);var m=s.get();return f&&m===i&&!g(c,o)&&(d(c=u(f,a).get(),s,i,o),m=s.get()),m}

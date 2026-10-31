@@ -1,0 +1,1 @@
+function(){return Date.now()-this.start}

@@ -1,0 +1,1 @@
+s=>s.points.map(p=>Object.assign({series:s.sample,category:s.category,target:s.target},p))

@@ -1,0 +1,1 @@
+function(A){return YA.create(A).parseComponentValue()}

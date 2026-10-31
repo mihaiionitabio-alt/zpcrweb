@@ -1,0 +1,1 @@
+function(t,r,n){var a=t[1]-r[1],i=n[0]-r[0],o=t[0]-r[0],l=n[1]-r[1],s=o*i+a*l;return!(s<e||s-(i*i+l*l)>-e)}

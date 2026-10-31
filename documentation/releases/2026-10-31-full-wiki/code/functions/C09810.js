@@ -1,0 +1,1 @@
+()=>{legal.open=false;launcher.focus();}

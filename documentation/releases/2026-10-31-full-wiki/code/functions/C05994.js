@@ -1,0 +1,1 @@
+r=>Object.values(r).some(v=>String(v).toLowerCase().includes(q))

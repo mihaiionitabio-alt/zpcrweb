@@ -1,0 +1,1 @@
+x=>pdfWrap(["Figure coverage","Table coverage"].includes(k)?reportDisplay(x):x,valueW,size,false)

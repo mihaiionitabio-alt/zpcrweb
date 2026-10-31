@@ -1,0 +1,1 @@
+a=>({file:a.file,sourceSHA256:a.meta.sourceSHA256})

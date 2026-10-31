@@ -1,0 +1,1 @@
+function Zr(e){for(var t=[],r=e.parent;null!=r;)t.push(e),e=r,r=r.parent;return t.push(e),t}

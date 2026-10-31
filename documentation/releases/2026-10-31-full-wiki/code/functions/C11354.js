@@ -1,0 +1,1 @@
+function(A){this.opacity=A,this.type=2,this.target=6}

@@ -1,0 +1,1 @@
+c=>c.toLowerCase().includes(arg.toLowerCase())

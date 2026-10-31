@@ -1,0 +1,1 @@
+function(e){return window&&window.process&&window.process.versions?"[object Object]"===Object.prototype.toString.call(e):"[object Object]"===Object.prototype.toString.call(e)&&Object.getPrototypeOf(e).hasOwnProperty("hasOwnProperty")}

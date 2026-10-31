@@ -1,0 +1,1 @@
+function(e,t,r){return a(this,void 0,void 0,function(){return H(this,function(A){return this.path(ws(r,t)),this.ctx.fillStyle=ie(e),this.ctx.fill(),[2]})})}

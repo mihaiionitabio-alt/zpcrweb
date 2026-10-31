@@ -1,0 +1,1 @@
+function(e,r,a){return r||(r=t.len(e)),n(a)||(a=t.mean(e,r)),t.aggNums((function(e,t){return e+Math.pow(t-a,2)}),0,e)/r}

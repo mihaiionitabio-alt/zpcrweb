@@ -1,0 +1,1 @@
+r=>({reader_id:r.id,adapter_version:r.version,extensions:Array.isArray(r.extensions)?r.extensions.join(', '):''})

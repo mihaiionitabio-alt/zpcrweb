@@ -1,0 +1,1 @@
+e=>{if(e instanceof ErrorEvent)fail();}

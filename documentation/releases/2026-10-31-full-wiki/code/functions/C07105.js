@@ -1,0 +1,1 @@
+r=>r.acqError||(r.integrity&&r.integrity.ok===false)

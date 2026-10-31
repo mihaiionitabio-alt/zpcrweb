@@ -1,0 +1,1 @@
+()=>{clearInterval(poll);box.dataset.speaking='false';reject(Error('Recorded audio could not play'));}

@@ -1,0 +1,1 @@
+function(A){var e=new PA;return e.write(A),new YA(e.read())}

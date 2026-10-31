@@ -1,0 +1,1 @@
+function(r,i,s){arguments.length<2&&(i=0),arguments.length<3&&(s=i);var c=r[1]<r[0],u=r[c-0],f=r[1-c],d=Math.floor((f-u)/(e.length-i+2*s));return n=l(u+Math.round((f-u-(e.length-i)*d)/2),d),c&&n.reverse(),a=Math.round(d*(1-i)),t={t:"rangeRoundBands",a:arguments},o}

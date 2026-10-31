@@ -1,0 +1,1 @@
+function Q(e){return"function"==typeof e?e:function(){return W(e,this)}}

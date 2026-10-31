@@ -1,0 +1,1 @@
+async function press(sel,message,action){if(!focus(sel,message,'click'))throw Error('Demo target is unavailable: '+sel);await wait(pointerMotion?1400:450);cue.classList.remove('demo-clicked');void cue.offsetWidth;cue.classList.add('demo-clicked');if(action)await action();else document.querySelector(sel)?.click();await wait(320);}

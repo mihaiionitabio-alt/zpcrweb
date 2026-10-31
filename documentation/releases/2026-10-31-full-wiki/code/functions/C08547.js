@@ -1,0 +1,1 @@
+s=>Number.isFinite(s.score)

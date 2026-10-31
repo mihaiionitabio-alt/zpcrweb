@@ -1,0 +1,1 @@
+function k(e,t,r,n,a,i,o,l){var s=.5*(a+o),c=.5*(i+l),u=r>=s,f=n>=c,d=f<<1|u;e.leaf=!1,u?a=s:o=s,f?i=c:l=c,M(e=e.nodes[d]||(e.nodes[d]={leaf:!0,nodes:[],point:null,x:null,y:null}),t,r,n,a,i,o,l)}

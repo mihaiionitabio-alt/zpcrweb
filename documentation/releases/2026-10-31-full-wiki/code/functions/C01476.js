@@ -1,0 +1,1 @@
+function(){return O.test(window.navigator.userAgent)}

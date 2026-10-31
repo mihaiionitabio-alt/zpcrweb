@@ -1,0 +1,1 @@
+function Vn(e){return e.rangeExtent?e.rangeExtent():Yn(e.range())}

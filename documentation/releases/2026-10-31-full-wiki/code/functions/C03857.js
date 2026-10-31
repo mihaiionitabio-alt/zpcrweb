@@ -1,0 +1,1 @@
+function l(t,r){return i.range(e.length).map((function(e){return t+r*e}))}

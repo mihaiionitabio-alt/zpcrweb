@@ -1,0 +1,1 @@
+d=>({id:d.id,control:true,title:d.code+' '+d.title})

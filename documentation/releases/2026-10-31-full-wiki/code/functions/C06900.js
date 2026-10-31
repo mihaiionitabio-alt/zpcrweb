@@ -1,0 +1,2 @@
+()=>{const cv=document.createElement("canvas");cv.width=W*2;cv.height=H*2;const c=cv.getContext("2d");c.fillStyle="#fff";c.fillRect(0,0,cv.width,cv.height);
+      c.drawImage(img,0,0,cv.width,cv.height);cv.toBlob(b=>b?b.arrayBuffer().then(ab=>res(new Uint8Array(ab))):res(null),"image/png");}

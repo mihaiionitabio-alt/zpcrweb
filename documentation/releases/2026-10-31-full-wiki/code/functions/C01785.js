@@ -1,0 +1,1 @@
+function s(e){return Array.isArray(i)?e>=i.length?i[0]:i[e]:i}

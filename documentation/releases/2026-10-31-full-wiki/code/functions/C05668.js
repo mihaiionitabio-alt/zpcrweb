@@ -1,0 +1,1 @@
+q=>Object.assign({},q,{master:P(q.master)})

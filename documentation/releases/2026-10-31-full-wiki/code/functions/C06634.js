@@ -1,0 +1,1 @@
+v=>{const q=(v-cl)/sig;return Math.abs(q)<dead?0:q;}

@@ -1,0 +1,1 @@
+(_,j)=>rows.filter((_,i)=>km.assign[i]===j)

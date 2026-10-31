@@ -1,0 +1,1 @@
+r=>r.platform||"LightCycler 480"

@@ -1,0 +1,1 @@
+()=>{CC_STATE.open=null;card.hidden=true;}

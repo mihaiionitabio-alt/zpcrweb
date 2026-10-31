@@ -1,0 +1,1 @@
+function(){return{r:s(100*z(this._r,255))+"%",g:s(100*z(this._g,255))+"%",b:s(100*z(this._b,255))+"%",a:this._a}}

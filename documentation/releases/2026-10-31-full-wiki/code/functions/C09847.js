@@ -1,0 +1,1 @@
+p=>!(N(p.copies)>0)||!Number.isFinite(N(p.cq))

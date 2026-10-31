@@ -1,0 +1,1 @@
+()=>{if(!MG.open)chart('bg_median')}

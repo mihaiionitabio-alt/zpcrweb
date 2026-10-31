@@ -1,0 +1,1 @@
+(row,i)=>{const r=RUNS[i];if(r?.zpcr){row.curves_decoded=[...new Set(r.zpcr.reads.map(a=>a.step))].length*96*r.zpcr.reads[0].channels;row.quantification_results='Not computed (raw only)';row.cycles=r.zpcr.reads.length;}}

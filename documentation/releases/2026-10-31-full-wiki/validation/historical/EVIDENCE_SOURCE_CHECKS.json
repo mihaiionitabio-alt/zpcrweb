@@ -1,0 +1,87 @@
+[
+  {
+    "file": "SYNTHETIC_TOOLS_AND_DEMO_README.txt",
+    "matchesZenodo": true,
+    "localSource": "D:\\IXO\\_archive_2026-10-22\\tier_b\\zenodo_three_format_addons_2026-10-17\\SYNTHETIC_TOOLS_AND_DEMO_README.txt"
+  },
+  {
+    "file": "validation_toolkit_2026-10-17.zip",
+    "matchesZenodo": true,
+    "localSource": "D:\\IXO\\_archive_2026-10-22\\tier_b\\zenodo_extra_packages_2026-10-17\\validation_toolkit_2026-10-17.zip"
+  },
+  {
+    "file": "VALIDATION_SUMMARY.txt",
+    "matchesZenodo": true,
+    "localSource": "D:\\IXO\\_archive_2026-10-22\\tier_b\\zenodo_three_format_addons_2026-10-17\\VALIDATION_SUMMARY.txt"
+  },
+  {
+    "file": "SYNTHETIC_IMPORT_SMOKE_RESULTS.json",
+    "matchesZenodo": true,
+    "localSource": "D:\\IXO\\_archive_2026-10-22\\tier_b\\zenodo_three_format_addons_2026-10-17\\SYNTHETIC_IMPORT_SMOKE_RESULTS.json"
+  },
+  {
+    "file": "validation_evidence_2026-10-17.zip",
+    "matchesZenodo": true,
+    "localSource": "D:\\IXO\\_archive_2026-10-22\\tier_b\\zenodo_extra_packages_2026-10-17\\validation_evidence_2026-10-17.zip"
+  },
+  {
+    "file": "release_reproducibility_2026-10-17.zip",
+    "matchesZenodo": true,
+    "localSource": "D:\\IXO\\_archive_2026-10-22\\tier_b\\zenodo_extra_packages_2026-10-17\\release_reproducibility_2026-10-17.zip"
+  },
+  {
+    "file": "CHANGELOG.txt",
+    "matchesZenodo": true,
+    "localSource": "D:\\IXO\\zenodo_upload_23437639\\CHANGELOG.txt"
+  },
+  {
+    "file": "EXPECTED.tsv",
+    "matchesZenodo": true,
+    "localSource": "D:\\IXO\\_archive_2026-10-22\\tier_b\\zenodo_individual_addons_2026-10-17\\EXPECTED.tsv"
+  },
+  {
+    "file": "MANIFEST.tsv",
+    "matchesZenodo": true,
+    "localSource": "D:\\IXO\\_archive_2026-10-22\\tier_b\\zenodo_individual_addons_2026-10-17\\MANIFEST.tsv"
+  },
+  {
+    "file": "ui_walkthrough_synthetic_2026-10-17.zip",
+    "matchesZenodo": true,
+    "localSource": "D:\\IXO\\_archive_2026-10-22\\tier_b\\zenodo_extra_packages_2026-10-17\\ui_walkthrough_synthetic_2026-10-17.zip"
+  },
+  {
+    "file": "usage_examples_2026-10-17.zip",
+    "matchesZenodo": true,
+    "localSource": "D:\\IXO\\_archive_2026-10-22\\tier_b\\zenodo_extra_packages_2026-10-17\\usage_examples_2026-10-17.zip"
+  },
+  {
+    "file": "documentation_sources_reviewed_subset_2026-10-17.zip",
+    "matchesZenodo": true,
+    "localSource": "D:\\IXO\\_archive_2026-10-22\\tier_b\\zenodo_extra_packages_2026-10-17\\documentation_sources_reviewed_subset_2026-10-17.zip"
+  },
+  {
+    "file": "bug_regression_examples_2026-10-17.zip",
+    "matchesZenodo": true,
+    "localSource": "D:\\IXO\\_archive_2026-10-22\\tier_b\\zenodo_extra_packages_2026-10-17\\bug_regression_examples_2026-10-17.zip"
+  },
+  {
+    "file": "README.txt",
+    "matchesZenodo": true,
+    "localSource": "D:\\IXO\\zenodo_upload_23437639\\README.txt"
+  },
+  {
+    "file": "screenshot_catalogue_2026-10-17.zip",
+    "matchesZenodo": true,
+    "localSource": "D:\\IXO\\_archive_2026-10-22\\tier_b\\zenodo_screenshot_upload_2026-10-17\\screenshot_catalogue_2026-10-17.zip"
+  },
+  {
+    "file": "SHA256SUMS.txt",
+    "matchesZenodo": true,
+    "localSource": "D:\\IXO\\zenodo_upload_23437639\\SHA256SUMS.txt"
+  },
+  {
+    "file": "screenshot_capture_tools_2026-10-17.zip",
+    "matchesZenodo": true,
+    "localSource": "D:\\IXO\\_archive_2026-10-22\\tier_b\\zenodo_screenshot_upload_2026-10-17\\screenshot_capture_tools_2026-10-17.zip"
+  }
+]

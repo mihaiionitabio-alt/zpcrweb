@@ -1,0 +1,1 @@
+f=>{const a=f.slice(1);while(a.length&&a[a.length-1].trim()==='')a.pop();return a;}

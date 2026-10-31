@@ -1,0 +1,1 @@
+function(){27===n.event.which?(r._editing=!1,e.style({opacity:1}),n.select(this).style({opacity:0}).on("blur",(function(){return!1})).transition().remove(),i.cancel.call(e,this.textContent)):(i.input.call(e,this.textContent),n.select(this).call(D(e,a,t)))}

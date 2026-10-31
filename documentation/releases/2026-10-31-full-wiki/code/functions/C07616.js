@@ -1,0 +1,1 @@
+(p,i)=>p.flags=flags[i].join(" ")

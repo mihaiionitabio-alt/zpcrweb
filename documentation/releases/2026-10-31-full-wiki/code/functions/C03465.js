@@ -1,0 +1,1 @@
+function St(e){return e[0]}

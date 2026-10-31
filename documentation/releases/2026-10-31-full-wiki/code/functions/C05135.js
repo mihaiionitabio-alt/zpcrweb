@@ -1,0 +1,1 @@
+function(...args){return invoke(name,this,args,base);}

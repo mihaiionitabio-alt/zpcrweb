@@ -1,0 +1,1 @@
+()=>focus(document.querySelector('[data-review-sheet="plate"] canvas')||'#tab-review','Match wells to samples and roles. An attractive curve cannot correct a mapping error.')

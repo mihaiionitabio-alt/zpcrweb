@@ -1,0 +1,1 @@
+function be(e,t){return function(r){var n=i.event;i.event=r,t[0]=this.__data__;try{e.apply(this,t)}finally{i.event=n}}}

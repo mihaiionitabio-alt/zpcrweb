@@ -1,0 +1,1 @@
+function sopInterpretationRows(filterRun,forExport){return MISSY_HOOKS.invoke('sopInterpretationRows',this,[filterRun,forExport],sopInterpretationRowsBase);}

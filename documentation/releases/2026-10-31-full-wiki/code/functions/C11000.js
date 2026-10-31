@@ -1,0 +1,1 @@
+function(A){return A>=this._value.length?-1:this._value[A]}

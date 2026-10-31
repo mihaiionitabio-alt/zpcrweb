@@ -1,0 +1,1 @@
+()=>{if(token!==generation)return;busy=false;listening=true;controls();clearListenTimer();listenTimer=setTimeout(()=>{if(token!==generation)return;stop();say('Time limit','已到时限');window.MISSY_COMPUTER_SOUND?.notify('voiceTimeLimit');},limit);say('Listening','正在聆听');}

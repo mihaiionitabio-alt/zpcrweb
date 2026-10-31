@@ -1,0 +1,1 @@
+()=>{const tile=document.querySelector('.cc-tile');focus(tile||'#tab-panel','Each tile is a shortcut to a full chart. Red means a signal needs review, not an automatic diagnosis.')}

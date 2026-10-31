@@ -1,0 +1,1 @@
+w=>`${safeName(w.target||"tgt")}_${safeName(w.sample||w.well)}_${w.well}`

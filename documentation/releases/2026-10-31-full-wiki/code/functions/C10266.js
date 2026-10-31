@@ -1,0 +1,1 @@
+c=>c.criterion.startsWith('Control present — ')&&(c.status==='fail'||c.status==='review')

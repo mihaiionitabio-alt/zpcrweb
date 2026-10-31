@@ -1,0 +1,1 @@
+function(e){var t,r,n=0;for(r=0;r<e.length;r++)if((t=e[r].cd[0].trace).selectedpoints){if(t.selectedpoints.length>1)return!1;if((n+=t.selectedpoints.length)>1)return!1}return 1===n}

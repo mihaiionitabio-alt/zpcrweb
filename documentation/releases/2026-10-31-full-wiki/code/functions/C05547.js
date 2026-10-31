@@ -1,0 +1,1 @@
+x=>x.sample||p.plate.wells[x.well]?.tasks.some(t=>t.target===x.target)

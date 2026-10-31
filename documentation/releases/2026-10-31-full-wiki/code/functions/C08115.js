@@ -1,0 +1,1 @@
+x=>{const b=x instanceof Uint8Array?x:enc.encode(x);chunks.push(b);len+=b.length;}

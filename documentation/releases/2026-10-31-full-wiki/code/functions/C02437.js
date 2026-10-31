@@ -1,0 +1,1 @@
+function(r){return e[r]===e[t[0]]}

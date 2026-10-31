@@ -1,0 +1,1 @@
+e=>{if(e.key==='Escape'&&e.target===footer.querySelector('#demo-exit'))exit();}

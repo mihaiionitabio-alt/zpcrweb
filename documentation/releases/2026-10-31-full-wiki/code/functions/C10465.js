@@ -1,0 +1,1 @@
+(r,i,path)=>{for(const [field,k]of [['time',0],['sample_mean',1],['cover',2],['heatsink',3],['zone_span',4]])add(field,r?.[k],path+'['+k+']',{record:i+1},'eds_temperature');}

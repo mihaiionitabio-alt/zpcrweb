@@ -1,0 +1,1 @@
+()=>{for(const step of api.steps)select.add(new Option(step.chapter+' · '+step.title,String(step.id)));if(!window.__MISSY_VOICE_PREFLIGHT)void go(0);}

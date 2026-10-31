@@ -1,0 +1,583 @@
+{
+  "application_sha256": "e2e4b58082386e77e1c125e962e426439fdb0bddbbc5378e34b15e5c956b67fc",
+  "scope": "Synthetic import smoke check only. Does not establish scenario coverage, chart correctness or statistical calibration.",
+  "files": [
+    {
+      "name": "SC_SYNTH_LC96_001",
+      "file": "SC_SYNTH_LC96_001.ixo",
+      "well_records": 274,
+      "thermal_log_minutes": 44.20483333333333
+    },
+    {
+      "name": "SC_SYNTH_LC96_002",
+      "file": "SC_SYNTH_LC96_002.ixo",
+      "well_records": 274,
+      "thermal_log_minutes": 44.2185
+    },
+    {
+      "name": "SC_SYNTH_LC96_003",
+      "file": "SC_SYNTH_LC96_003.ixo",
+      "well_records": 82,
+      "thermal_log_minutes": 44.51916666666667
+    },
+    {
+      "name": "SC_SYNTH_LC96_004",
+      "file": "SC_SYNTH_LC96_004.ixo",
+      "well_records": 274,
+      "thermal_log_minutes": 44.20483333333333
+    },
+    {
+      "name": "SC_SYNTH_LC96_005",
+      "file": "SC_SYNTH_LC96_005.ixo",
+      "well_records": 274,
+      "thermal_log_minutes": 44.21166666666667
+    },
+    {
+      "name": "SC_SYNTH_LC96_006",
+      "file": "SC_SYNTH_LC96_006.ixo",
+      "well_records": 274,
+      "thermal_log_minutes": 44.51916666666667
+    },
+    {
+      "name": "SC_SYNTH_LC96_007",
+      "file": "SC_SYNTH_LC96_007.ixo",
+      "well_records": 274,
+      "thermal_log_minutes": 44.826666666666675
+    },
+    {
+      "name": "SC_SYNTH_LC96_008",
+      "file": "SC_SYNTH_LC96_008.ixo",
+      "well_records": 274,
+      "thermal_log_minutes": 44.51916666666667
+    },
+    {
+      "name": "SC_SYNTH_LC96_009",
+      "file": "SC_SYNTH_LC96_009.ixo",
+      "well_records": 274,
+      "thermal_log_minutes": 44.8335
+    },
+    {
+      "name": "SC_SYNTH_LC96_010",
+      "file": "SC_SYNTH_LC96_010.ixo",
+      "well_records": 274,
+      "thermal_log_minutes": 45.141
+    },
+    {
+      "name": "SC_SYNTH_LC96_011",
+      "file": "SC_SYNTH_LC96_011.ixo",
+      "well_records": 274,
+      "thermal_log_minutes": 44.826666666666675
+    },
+    {
+      "name": "SC_SYNTH_LC96_012",
+      "file": "SC_SYNTH_LC96_012.ixo",
+      "well_records": 274,
+      "thermal_log_minutes": 45.13416666666667
+    },
+    {
+      "name": "SC_SYNTH_LC96_013",
+      "file": "SC_SYNTH_LC96_013.ixo",
+      "well_records": 274,
+      "thermal_log_minutes": 45.13416666666667
+    },
+    {
+      "name": "SC_SYNTH_LC96_014",
+      "file": "SC_SYNTH_LC96_014.ixo",
+      "well_records": 274,
+      "thermal_log_minutes": 45.13416666666667
+    },
+    {
+      "name": "SC_SYNTH_LC96_015",
+      "file": "SC_SYNTH_LC96_015.ixo",
+      "well_records": 274,
+      "thermal_log_minutes": 47.184333333333335
+    },
+    {
+      "name": "SC_SYNTH_LC96_016",
+      "file": "SC_SYNTH_LC96_016.ixo",
+      "well_records": 274,
+      "thermal_log_minutes": 45.4485
+    },
+    {
+      "name": "SC_SYNTH_LC96_017",
+      "file": "SC_SYNTH_LC96_017.ixo",
+      "well_records": 274,
+      "thermal_log_minutes": 45.455333333333336
+    },
+    {
+      "name": "SC_SYNTH_LC96_018",
+      "file": "SC_SYNTH_LC96_018.ixo",
+      "well_records": 274,
+      "thermal_log_minutes": 45.455333333333336
+    },
+    {
+      "name": "SC_SYNTH_LC96_019",
+      "file": "SC_SYNTH_LC96_019.ixo",
+      "well_records": 274,
+      "thermal_log_minutes": 45.455333333333336
+    },
+    {
+      "name": "SC_SYNTH_LC96_020",
+      "file": "SC_SYNTH_LC96_020.ixo",
+      "well_records": 274,
+      "thermal_log_minutes": 47.1775
+    },
+    {
+      "name": "SC_SYNTH_LC96_021",
+      "file": "SC_SYNTH_LC96_021.ixo",
+      "well_records": 274,
+      "thermal_log_minutes": 45.4485
+    },
+    {
+      "name": "SC_SYNTH_LC96_022",
+      "file": "SC_SYNTH_LC96_022.ixo",
+      "well_records": 274,
+      "thermal_log_minutes": 45.4485
+    },
+    {
+      "name": "SC_SYNTH_LC96_023",
+      "file": "SC_SYNTH_LC96_023.ixo",
+      "well_records": 274,
+      "thermal_log_minutes": 45.76966666666667
+    },
+    {
+      "name": "SC_SYNTH_LC96_024",
+      "file": "SC_SYNTH_LC96_024.ixo",
+      "well_records": 274,
+      "thermal_log_minutes": 46.377833333333335
+    },
+    {
+      "name": "SC_SYNTH_QS96_001",
+      "file": "SC_SYNTH_QS96_001.eds",
+      "well_records": 274,
+      "thermal_log_minutes": 37.576049999396005
+    },
+    {
+      "name": "SC_SYNTH_QS96_002",
+      "file": "SC_SYNTH_QS96_002.eds",
+      "well_records": 274,
+      "thermal_log_minutes": 37.64759999910991
+    },
+    {
+      "name": "SC_SYNTH_QS96_003",
+      "file": "SC_SYNTH_QS96_003.eds",
+      "well_records": 82,
+      "thermal_log_minutes": 37.72196666797002
+    },
+    {
+      "name": "SC_SYNTH_QS96_004",
+      "file": "SC_SYNTH_QS96_004.eds",
+      "well_records": 274,
+      "thermal_log_minutes": 37.80619999965032
+    },
+    {
+      "name": "SC_SYNTH_QS96_005",
+      "file": "SC_SYNTH_QS96_005.eds",
+      "well_records": 274,
+      "thermal_log_minutes": 38.54316666523616
+    },
+    {
+      "name": "SC_SYNTH_QS96_006",
+      "file": "SC_SYNTH_QS96_006.eds",
+      "well_records": 274,
+      "thermal_log_minutes": 38.62513333559036
+    },
+    {
+      "name": "SC_SYNTH_QS96_007",
+      "file": "SC_SYNTH_QS96_007.eds",
+      "well_records": 274,
+      "thermal_log_minutes": 38.704866667588554
+    },
+    {
+      "name": "SC_SYNTH_QS96_008",
+      "file": "SC_SYNTH_QS96_008.eds",
+      "well_records": 274,
+      "thermal_log_minutes": 39.45419999758403
+    },
+    {
+      "name": "SC_SYNTH_QS96_009",
+      "file": "SC_SYNTH_QS96_009.eds",
+      "well_records": 274,
+      "thermal_log_minutes": 39.51864999930064
+    },
+    {
+      "name": "SC_SYNTH_QS96_010",
+      "file": "SC_SYNTH_QS96_010.eds",
+      "well_records": 274,
+      "thermal_log_minutes": 39.60468333562215
+    },
+    {
+      "name": "SC_SYNTH_QS96_011",
+      "file": "SC_SYNTH_QS96_011.eds",
+      "well_records": 274,
+      "thermal_log_minutes": 39.68035000165303
+    },
+    {
+      "name": "SC_SYNTH_QS96_012",
+      "file": "SC_SYNTH_QS96_012.eds",
+      "well_records": 274,
+      "thermal_log_minutes": 41.01478333473206
+    },
+    {
+      "name": "SC_SYNTH_QS96_013",
+      "file": "SC_SYNTH_QS96_013.eds",
+      "well_records": 274,
+      "thermal_log_minutes": 39.81938333113988
+    },
+    {
+      "name": "SC_SYNTH_QS96_014",
+      "file": "SC_SYNTH_QS96_014.eds",
+      "well_records": 274,
+      "thermal_log_minutes": 39.88526666561763
+    },
+    {
+      "name": "SC_SYNTH_QS96_015",
+      "file": "SC_SYNTH_QS96_015.eds",
+      "well_records": 274,
+      "thermal_log_minutes": 39.977166668574014
+    },
+    {
+      "name": "SC_SYNTH_QS96_016",
+      "file": "SC_SYNTH_QS96_016.eds",
+      "well_records": 274,
+      "thermal_log_minutes": 40.06215000152588
+    },
+    {
+      "name": "SC_SYNTH_QS96_017",
+      "file": "SC_SYNTH_QS96_017.eds",
+      "well_records": 274,
+      "thermal_log_minutes": 40.41725000143051
+    },
+    {
+      "name": "SC_SYNTH_QS96_018",
+      "file": "SC_SYNTH_QS96_018.eds",
+      "well_records": 274,
+      "thermal_log_minutes": 40.51578333377838
+    },
+    {
+      "name": "SC_SYNTH_QS96_019",
+      "file": "SC_SYNTH_QS96_019.eds",
+      "well_records": 274,
+      "thermal_log_minutes": 40.31675000190735
+    },
+    {
+      "name": "SC_SYNTH_QS96_020",
+      "file": "SC_SYNTH_QS96_020.eds",
+      "well_records": 274,
+      "thermal_log_minutes": 42.22088333368301
+    },
+    {
+      "name": "SC_SYNTH_QS96_021",
+      "file": "SC_SYNTH_QS96_021.eds",
+      "well_records": 274,
+      "thermal_log_minutes": 41.10769999821981
+    },
+    {
+      "name": "SC_SYNTH_QS96_022",
+      "file": "SC_SYNTH_QS96_022.eds",
+      "well_records": 274,
+      "thermal_log_minutes": 41.19474999904632
+    },
+    {
+      "name": "SC_SYNTH_QS96_023",
+      "file": "SC_SYNTH_QS96_023.eds",
+      "well_records": 274,
+      "thermal_log_minutes": 41.282866668701175
+    },
+    {
+      "name": "SC_SYNTH_QS96_024",
+      "file": "SC_SYNTH_QS96_024.eds",
+      "well_records": 274,
+      "thermal_log_minutes": 41.352799999713895
+    },
+    {
+      "name": "SC_SYNTH_LC96_001 / PLATE-SYN-LC96-001",
+      "file": "SC_SYNTH_LC96_001.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_LC96_002 / PLATE-SYN-LC96-002",
+      "file": "SC_SYNTH_LC96_002.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_LC96_003 / PLATE-SYN-LC96-003",
+      "file": "SC_SYNTH_LC96_003.rdml",
+      "well_records": 82,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_LC96_004 / PLATE-SYN-LC96-004",
+      "file": "SC_SYNTH_LC96_004.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_LC96_005 / PLATE-SYN-LC96-005",
+      "file": "SC_SYNTH_LC96_005.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_LC96_006 / PLATE-SYN-LC96-006",
+      "file": "SC_SYNTH_LC96_006.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_LC96_007 / PLATE-SYN-LC96-007",
+      "file": "SC_SYNTH_LC96_007.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_LC96_008 / PLATE-SYN-LC96-008",
+      "file": "SC_SYNTH_LC96_008.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_LC96_009 / PLATE-SYN-LC96-009",
+      "file": "SC_SYNTH_LC96_009.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_LC96_010 / PLATE-SYN-LC96-010",
+      "file": "SC_SYNTH_LC96_010.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_LC96_011 / PLATE-SYN-LC96-011",
+      "file": "SC_SYNTH_LC96_011.rdml",
+      "well_records": 265,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_LC96_012 / PLATE-SYN-LC96-012",
+      "file": "SC_SYNTH_LC96_012.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_LC96_013 / PLATE-SYN-LC96-013",
+      "file": "SC_SYNTH_LC96_013.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_LC96_014 / PLATE-SYN-LC96-014",
+      "file": "SC_SYNTH_LC96_014.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_LC96_015 / PLATE-SYN-LC96-015",
+      "file": "SC_SYNTH_LC96_015.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_LC96_016 / PLATE-SYN-LC96-016",
+      "file": "SC_SYNTH_LC96_016.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_LC96_017 / PLATE-SYN-LC96-017",
+      "file": "SC_SYNTH_LC96_017.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_LC96_018 / PLATE-SYN-LC96-018",
+      "file": "SC_SYNTH_LC96_018.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_LC96_019 / PLATE-SYN-LC96-019",
+      "file": "SC_SYNTH_LC96_019.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_LC96_020 / PLATE-SYN-LC96-020",
+      "file": "SC_SYNTH_LC96_020.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_LC96_021 / PLATE-SYN-LC96-021",
+      "file": "SC_SYNTH_LC96_021.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_LC96_022 / PLATE-SYN-LC96-022",
+      "file": "SC_SYNTH_LC96_022.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_LC96_023 / PLATE-SYN-LC96-023",
+      "file": "SC_SYNTH_LC96_023.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_LC96_024 / PLATE-SYN-LC96-024",
+      "file": "SC_SYNTH_LC96_024.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_QS96_001 / QS96-001",
+      "file": "SC_SYNTH_QS96_001.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_QS96_002 / QS96-002",
+      "file": "SC_SYNTH_QS96_002.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_QS96_003 / QS96-003",
+      "file": "SC_SYNTH_QS96_003.rdml",
+      "well_records": 82,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_QS96_004 / QS96-004",
+      "file": "SC_SYNTH_QS96_004.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_QS96_005 / QS96-005",
+      "file": "SC_SYNTH_QS96_005.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_QS96_006 / QS96-006",
+      "file": "SC_SYNTH_QS96_006.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_QS96_007 / QS96-007",
+      "file": "SC_SYNTH_QS96_007.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_QS96_008 / QS96-008",
+      "file": "SC_SYNTH_QS96_008.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_QS96_009 / QS96-009",
+      "file": "SC_SYNTH_QS96_009.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_QS96_010 / QS96-010",
+      "file": "SC_SYNTH_QS96_010.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_QS96_011 / QS96-011",
+      "file": "SC_SYNTH_QS96_011.rdml",
+      "well_records": 265,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_QS96_012 / QS96-012",
+      "file": "SC_SYNTH_QS96_012.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_QS96_013 / QS96-013",
+      "file": "SC_SYNTH_QS96_013.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_QS96_014 / QS96-014",
+      "file": "SC_SYNTH_QS96_014.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_QS96_015 / QS96-015",
+      "file": "SC_SYNTH_QS96_015.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_QS96_016 / QS96-016",
+      "file": "SC_SYNTH_QS96_016.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_QS96_017 / QS96-017",
+      "file": "SC_SYNTH_QS96_017.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_QS96_018 / QS96-018",
+      "file": "SC_SYNTH_QS96_018.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_QS96_019 / QS96-019",
+      "file": "SC_SYNTH_QS96_019.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_QS96_020 / QS96-020",
+      "file": "SC_SYNTH_QS96_020.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_QS96_021 / QS96-021",
+      "file": "SC_SYNTH_QS96_021.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_QS96_022 / QS96-022",
+      "file": "SC_SYNTH_QS96_022.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_QS96_023 / QS96-023",
+      "file": "SC_SYNTH_QS96_023.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    },
+    {
+      "name": "SC_SYNTH_QS96_024 / QS96-024",
+      "file": "SC_SYNTH_QS96_024.rdml",
+      "well_records": 274,
+      "thermal_log_minutes": null
+    }
+  ],
+  "errors": []
+}

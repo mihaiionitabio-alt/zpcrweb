@@ -1,0 +1,1 @@
+function(e){for(var t=0;t<l.modeBarButtonsToRemove.length;t++)if(u(e,l.modeBarButtonsToRemove[t]))return!1;return!0}

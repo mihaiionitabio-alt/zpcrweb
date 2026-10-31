@@ -1,0 +1,1 @@
+t=>counts.set(t,(counts.get(t)||0)+1)

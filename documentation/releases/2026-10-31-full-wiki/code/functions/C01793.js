@@ -1,0 +1,1 @@
+function g(e){return Array.isArray(a)?v>=a.length?e.transitionOpts=a[v]:e.transitionOpts=a[0]:e.transitionOpts=a,v++,e}

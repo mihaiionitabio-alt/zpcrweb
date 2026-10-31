@@ -1,0 +1,1 @@
+function readerById(id){const r=MISSY_READERS.find(r=>r.id===id);if(!r)throw Error('Reader is not available: '+id);return r;}

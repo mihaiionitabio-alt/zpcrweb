@@ -1,0 +1,1 @@
+e=>({time:EDS.dt(e[0]),level:e[1],message:e[2]})

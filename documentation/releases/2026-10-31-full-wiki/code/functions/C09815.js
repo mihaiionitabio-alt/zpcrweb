@@ -1,0 +1,1 @@
+function pdfUnicodeHex(s){let hex='';for(let i=0;i<String(s).length;i++)hex+=String(s).charCodeAt(i).toString(16).padStart(4,'0');return hex;}

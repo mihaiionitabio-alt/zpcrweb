@@ -1,0 +1,1 @@
+function(e,t,r){"use strict";var n=r(4809).dateTick0,a=r(3821).ONEWEEK;function i(e,t){return n(t,e%a==0?1:0)}e.exports=function(e,t,r,n,a){if(a||(a={x:!0,y:!0}),a.x){var o=n("xperiod");o&&(n("xperiod0",i(o,t.xcalendar)),n("xperiodalignment"))}if(a.y){var l=n("yperiod");l&&(n("yperiod0",i(l,t.ycalendar)),n("yperiodalignment"))}}}

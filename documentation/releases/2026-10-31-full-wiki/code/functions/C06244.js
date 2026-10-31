@@ -1,0 +1,1 @@
+r=>(r.spec.kind==="ic"||r.spec.kind==="reference")&&!r.ctrl&&r.role!=="Standard"

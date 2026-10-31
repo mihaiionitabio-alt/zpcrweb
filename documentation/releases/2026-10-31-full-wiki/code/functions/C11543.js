@@ -1,0 +1,1 @@
+()=>{page('integrity');focus(document.getElementById('tab-integrity'));}

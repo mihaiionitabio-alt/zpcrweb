@@ -1,0 +1,1 @@
+r=>({...r,intent:interpret('Computer '+r.phrase)})

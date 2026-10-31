@@ -1,0 +1,2 @@
+h=>{if(!Number.isFinite(h.x))return;const x=X(h.x);if(x<L||x>L+pw)return;
+    s+=`<line x1="${x}" x2="${x}" y1="${T}" y2="${T+ph}" stroke="${h.colour||"#111"}" stroke-dasharray="${h.dash||"5 4"}" stroke-width="1.2"/><text x="${x>L+pw*0.75?x-4:x+4}" text-anchor="${x>L+pw*0.75?"end":"start"}" y="${T+12+(h.row||0)*13}" fill="${h.colour||"#111"}">${svgEsc(h.label||"")}</text>`;}

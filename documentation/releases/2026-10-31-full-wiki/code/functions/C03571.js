@@ -1,0 +1,1 @@
+function(e){return e||(e=1.70158),function(t){return t*t*((e+1)*t-e)}}

@@ -1,0 +1,1 @@
+function(e){for(var t=!1,r=0;r<e.length&&!t;r++){var n=e[r];n._module&&n._module.selectPoints&&(i.traceIs(n,"scatter-like")?(a.hasMarkers(n)||a.hasText(n))&&(t=!0):i.traceIs(n,"box-violin")&&"all"!==n.boxpoints&&"all"!==n.points||(t=!0))}return t}

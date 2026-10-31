@@ -1,0 +1,1 @@
+row=>({call:row.nativeStatus==='Detected'&&row.cq<=profile.cutoff?'Positive':'Negative',rule:'sop.native',sentinel:row.nativeStatus==='Undetermined',evidence:{kind:'field',run:row.run,well:row.well,field:'nativeStatus'}})

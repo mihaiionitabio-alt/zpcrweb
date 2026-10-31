@@ -1,0 +1,1 @@
+function b(e){return a(e)&&Math.abs(e)<o}

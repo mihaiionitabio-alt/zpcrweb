@@ -1,0 +1,1 @@
+x=>graphAnalysisControl(x.w)

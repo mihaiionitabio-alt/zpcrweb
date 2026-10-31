@@ -1,0 +1,1 @@
+function(e,t,r){return e.each((function(){var e=n.select(this);function a(t,r){return void 0===r?null===(r=e.attr(t))&&(e.attr(t,0),r=0):e.attr(t,r),r}var i=a("x",t),o=a("y",r);"text"===this.nodeName&&e.selectAll("tspan.line").attr({x:i,y:o})}))}

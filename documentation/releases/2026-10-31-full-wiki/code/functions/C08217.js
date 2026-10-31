@@ -1,0 +1,1 @@
+p=>selMatch(p).forEach(id=>{if(!out.includes(id))out.push(id);})

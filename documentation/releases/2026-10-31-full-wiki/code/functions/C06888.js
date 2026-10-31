@@ -1,0 +1,1 @@
+()=>download(base()+".svg",svgText(),"image/svg+xml")

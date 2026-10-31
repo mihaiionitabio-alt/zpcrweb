@@ -1,0 +1,2 @@
+t=>scRows.push(Object.assign({},base,{"Target Name":t.target,"Target Color":qsRGB(t.color),"Task":t.task,
+      "Reporter":t.reporter,"Quencher":t.quencher,"Quantity":t.task==="STANDARD"?num(t.quantity):null}))

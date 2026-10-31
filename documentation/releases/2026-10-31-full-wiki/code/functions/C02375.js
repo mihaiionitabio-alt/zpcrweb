@@ -1,0 +1,1 @@
+function L(e){return null!=e}

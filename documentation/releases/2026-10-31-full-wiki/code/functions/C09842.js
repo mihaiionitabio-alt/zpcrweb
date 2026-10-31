@@ -1,0 +1,1 @@
+x=>x===''||x===null||x===undefined?NaN:Number(x)

@@ -1,0 +1,1 @@
+function(e,t){var r=e.startangle,n=e.stopangle;return r>t&&t>n||r<t&&t<n}

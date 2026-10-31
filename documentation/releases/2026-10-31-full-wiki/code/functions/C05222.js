@@ -1,0 +1,1 @@
+c=>channels[key][c].length

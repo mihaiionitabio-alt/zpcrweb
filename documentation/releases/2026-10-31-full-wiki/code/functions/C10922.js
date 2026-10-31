@@ -1,0 +1,1 @@
+()=>outcome(rows[i])

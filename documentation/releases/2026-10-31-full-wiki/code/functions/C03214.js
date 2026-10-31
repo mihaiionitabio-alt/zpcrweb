@@ -1,0 +1,1 @@
+function V(){for(var e,t=i.event;e=t.sourceEvent;)t=e;return t}

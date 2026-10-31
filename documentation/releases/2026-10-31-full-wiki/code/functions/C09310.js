@@ -1,0 +1,1 @@
+x=>90+(x-xmin)/(xmax-xmin)*970

@@ -1,0 +1,1 @@
+function(e){var t,r;if(e&&0!==e.length){for(t=new Array(e.length-1+X.length),r=0;r<e.length-1;r++)t[r]=d(e[r]);var n=e[e.length-1].slice();for(n.reverse(),r=0;r<X.length;r++)t[e.length-1+r]=d(X[r].concat(n))}else for(t=new Array(X.length),r=0;r<X.length;r++){var a=X[r][0].slice(),i=X[r][X[r].length-1].slice();a[D]=i[D]=P;var o=[i,a].concat(X[r]);t[r]=d(o)}return t}

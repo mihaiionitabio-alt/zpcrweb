@@ -1,0 +1,1 @@
+s=>sopMatcher(s.match)(t)

@@ -1,0 +1,1 @@
+e=>{if(e.target.closest?.('#missy-red-alert')){pendingAlertDrill=drillMode;setTimeout(()=>{pendingAlertDrill=null;},0);shipRecord('manual-alert-button',window.MISSY_COMPUTER_SOUND?.alerting?'stop requested':'start requested');}}

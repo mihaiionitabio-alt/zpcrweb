@@ -1,0 +1,1 @@
+function b(e){var t=e.search(x);if(t>0)return e.substr(0,t)}

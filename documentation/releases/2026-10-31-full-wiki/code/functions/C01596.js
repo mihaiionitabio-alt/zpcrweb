@@ -1,0 +1,1 @@
+function(e,n){for(;n;){var a=e.match(t);if(a)e=a[1];else{if(!e.match(r))throw new Error("bad relativeAttr call:"+[e,n]);e=""}if("^"!==n.charAt(0))break;n=n.slice(1)}return e&&"["!==n.charAt(0)?e+"."+n:e+n}

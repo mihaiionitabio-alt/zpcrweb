@@ -1,0 +1,1 @@
+function Dr(e){return e*e*e}

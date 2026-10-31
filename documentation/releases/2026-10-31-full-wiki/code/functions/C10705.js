@@ -1,0 +1,1 @@
+async()=>{page('load');await stage();}

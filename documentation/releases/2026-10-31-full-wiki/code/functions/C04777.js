@@ -1,0 +1,1 @@
+function(){return{r:s(this._r),g:s(this._g),b:s(this._b),a:this._a}}

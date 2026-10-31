@@ -1,0 +1,1 @@
+function(t){return s(e._offset+e.l2p(t.x),0)}

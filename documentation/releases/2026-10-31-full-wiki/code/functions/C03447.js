@@ -1,0 +1,1 @@
+function l(t){return t.map(s).join(e)}

@@ -1,0 +1,1 @@
+(){if(!paused)footer.querySelector('#demo-pause').click()}

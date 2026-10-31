@@ -1,0 +1,1 @@
+function w(e,t){return e>=t}

@@ -1,0 +1,1 @@
+e=>{selected=e;window.parent.MISSY_LEARNING.receiveEvidence(copy(e));}

@@ -1,0 +1,1 @@
+()=>{if(focused()){stopEvents();stopPreview();stopAmbience();speechSynthesisSafeCancel();}else if(ambienceId&&!ambienceTimer)void setAmbience(ambienceId);}

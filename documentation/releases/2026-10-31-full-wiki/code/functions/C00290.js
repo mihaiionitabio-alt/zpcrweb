@@ -1,0 +1,1 @@
+function(e){return"select"===e||"drawline"===e||"drawrect"===e||"drawcircle"===e}

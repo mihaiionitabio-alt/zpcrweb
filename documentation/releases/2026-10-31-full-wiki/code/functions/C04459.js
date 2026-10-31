@@ -1,0 +1,1 @@
+function(e,t,r){return Function.prototype.apply.call(e,t,r)}

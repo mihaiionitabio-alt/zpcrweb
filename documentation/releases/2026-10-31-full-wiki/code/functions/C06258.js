@@ -1,0 +1,1 @@
+r=>({sample:r.sample,target:r.target,cq_mean:r.cqMean,detected:r.det,n:r.n,run_median:ev.icMedian,outcome:r.outcome})

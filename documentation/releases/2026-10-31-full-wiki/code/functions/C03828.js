@@ -1,0 +1,1 @@
+function Qn(e,t){null==t&&(t=10);var r=Yn(e),n=r[1]-r[0],a=Math.pow(10,Math.floor(Math.log(n/t)/Math.LN10)),i=t/n*a;return i<=.15?a*=10:i<=.35?a*=5:i<=.75&&(a*=2),r[0]=Math.ceil(r[0]/a)*a,r[1]=Math.floor(r[1]/a)*a+.5*a,r[2]=a,r}

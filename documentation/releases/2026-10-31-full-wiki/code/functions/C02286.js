@@ -1,0 +1,1 @@
+function Ee(){de={},"xy"!==Le&&"x"!==Le||(R(X,Te.l/ee,Te.r/ee,de,re.xaxes),Ye("x",de)),"xy"!==Le&&"y"!==Le||(R(K,(te-Te.b)/te,(te-Te.t)/te,de,re.yaxes),Ye("y",de))}

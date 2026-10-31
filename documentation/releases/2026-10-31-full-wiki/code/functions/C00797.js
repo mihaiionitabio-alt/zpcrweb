@@ -1,0 +1,1 @@
+function(e){return c(e,"Toggle show closest data on hover")}

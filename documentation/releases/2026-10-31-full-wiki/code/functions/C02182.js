@@ -1,0 +1,1 @@
+function(){var i=n.select(this);e.L&&(i=i.selectAll(e.L)),i.each((function(i){var l=t.l2p(o?ke(i):i.x)+t._offset,s=n.select(this);l<t["_visibleLabelMax_"+r._id]&&l>t["_visibleLabelMin_"+r._id]?s.style("display","none"):"tick"!==e.K||a||s.style("display",null)}))}

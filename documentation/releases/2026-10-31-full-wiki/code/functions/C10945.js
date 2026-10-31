@@ -1,0 +1,1 @@
+function t(){this.constructor=A}

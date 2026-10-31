@@ -1,0 +1,1 @@
+o=>ssPositionIncluded(run,o.pos)&&!tch||tch.has(o.channel)

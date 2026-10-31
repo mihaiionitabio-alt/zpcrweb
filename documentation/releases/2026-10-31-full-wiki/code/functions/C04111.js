@@ -1,0 +1,1 @@
+function(e){return arguments.length?(f=di[!(n=e)<<1|!a],d):n}

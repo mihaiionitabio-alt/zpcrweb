@@ -1,0 +1,1 @@
+w=>{const y=reads.map(r=>pcrdCell(r,channel,Math.floor(w.position/run.cols),w.position%run.cols));return {layout:w,y,baseline:isAmp?piBaseline(reads.map(r=>r.cycle),y):null};}

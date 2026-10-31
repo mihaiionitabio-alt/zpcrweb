@@ -1,0 +1,1 @@
+([k,v])=>({setting:k,value:v,source:"IDDCtAnalysisSettings"})

@@ -1,0 +1,1 @@
+(r,j)=>[j+2,r.temps.BLOCKTEMP?.c-x.reads[j].temps.BLOCKTEMP?.c]

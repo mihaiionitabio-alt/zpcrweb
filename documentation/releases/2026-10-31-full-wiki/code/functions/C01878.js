@@ -1,0 +1,1 @@
+function(o){var l={type:t=n.coerce(o,{},a,"type"),_template:null};if(t in i){r=e[t];var s=i[t]%r.length;i[t]++,l._template=r[s]}return l}

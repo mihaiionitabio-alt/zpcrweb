@@ -1,0 +1,1 @@
+()=>sopRunApplicability(RUNS[0]).applicable?'Positive':'Not applicable'

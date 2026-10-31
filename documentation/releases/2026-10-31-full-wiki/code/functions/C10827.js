@@ -1,0 +1,1 @@
+async()=>{await demo.load();loaded=true;demo.page('load');return{en:document.getElementById('readmsg').textContent,zh:'实际读取流程已完成，模拟运行和记录已加载。'};}

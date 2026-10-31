@@ -1,0 +1,1 @@
+function u(e,t){for(var r,n,a=-1,i=e.length;++a<i;)n=(r=e[a]).value*(t<0?0:t),r.area=isNaN(n)||n<=0?0:n}

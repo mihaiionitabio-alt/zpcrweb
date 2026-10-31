@@ -1,0 +1,1 @@
+w=>[sopCq(w),sopCq(w)-w.eds.ctRecalc,graphHoverLabel(c.run,w,`${w.target} · stored ${num(sopCq(w),3)} · re-derived ${num(w.eds.ctRecalc,3)}`),catColour(cm,w.target)]

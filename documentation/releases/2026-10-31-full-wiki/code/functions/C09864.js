@@ -1,0 +1,1 @@
+(code,pass,detail='')=>checks.push({code,pass,detail})

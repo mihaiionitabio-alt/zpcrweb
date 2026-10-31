@@ -1,0 +1,1 @@
+function Oa(e,t){for(var r,n=[],a=(1-t)/2,i=e[0],o=e[1],l=1,s=e.length;++l<s;)r=i,i=o,o=e[l],n.push([a*(o[0]-r[0]),a*(o[1]-r[1])]);return n}

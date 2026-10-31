@@ -1,0 +1,1 @@
+function(e,t){var r=this._validate(e,t,this.minDay,c.local.invalidMonth||c.regionalOptions[""].invalidMonth);return this.daysPerMonth[r.month()-1]+(2===r.month()&&this.leapYear(r.year())?1:0)}

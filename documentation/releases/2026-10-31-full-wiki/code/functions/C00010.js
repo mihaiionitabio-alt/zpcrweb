@@ -1,0 +1,1 @@
+text=>bank[text]?.split(',')[1]||''

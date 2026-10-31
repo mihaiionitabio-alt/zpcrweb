@@ -1,0 +1,1 @@
+()=>{page('integrity');focus(card(['Training manifest: no expected digest','训练清单：没有预期摘要'],[[['Computed digest','计算摘要'],sourceHash],[['Expected digest','预期摘要'],tr('Not supplied','未提供')]]));}

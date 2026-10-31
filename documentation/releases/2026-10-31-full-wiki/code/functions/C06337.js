@@ -1,0 +1,1 @@
+o=>{series.push({type:"bar",colour:sopColour(o),barWidth:Math.max(3,Math.min(40,700/all.length)),data:all.map((e,i)=>{const n=e.rows.filter(r=>r.outcome===o).length;const p=[i,base[i]+n,base[i],`${runName(e.run)}: ${n} ${sopLabel(o)}`,sopColour(o)];base[i]+=n;if(n)rows.push({experiment:runName(e.run),outcome:o,count:n});return p;}).filter(p=>p[1]>p[2])});}

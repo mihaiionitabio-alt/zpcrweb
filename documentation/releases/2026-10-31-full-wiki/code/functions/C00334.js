@@ -1,0 +1,1 @@
+function(){var e=n.select(this);p.attrs&&e.attr(p.attrs),e.attr("id",x);var t=e.selectAll("stop").data(g);t.exit().remove(),t.enter().append("stop"),t.each((function(e){var t=l(e[1]);n.select(this).attr({offset:e[0]+"%","stop-color":c.tinyRGB(t),"stop-opacity":t.getAlpha()})}))}

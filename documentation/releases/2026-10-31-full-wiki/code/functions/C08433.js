@@ -1,0 +1,1 @@
+(q,j)=>i===j?Infinity:Math.sqrt(p.reduce((s,v,t)=>s+(v-q[t])*(v-q[t]),0))

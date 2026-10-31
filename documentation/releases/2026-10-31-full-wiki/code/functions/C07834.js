@@ -1,0 +1,1 @@
+o=>{const k=`${o.experiment}|${o.channel}`;if(!colourBy.has(k))colourBy.set(k,hashColour(k));}

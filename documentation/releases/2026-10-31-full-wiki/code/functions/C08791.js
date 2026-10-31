@@ -1,0 +1,1 @@
+()=>{const r=RUNS.find(r=>r.zpcr);if(!r)return;CC_STATE.instrument=ccInstrumentKey(r);CC_STATE.protocol='';CC_STATE.open='z_block';CC_STATE.variant='';CC_STATE.cache=null;markDirty('panel');showTab('panel');}

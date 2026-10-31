@@ -1,0 +1,1 @@
+function(e,r,n){t.isValObject(e)?!0!==e.arrayOk&&"data_array"!==e.valType||(n[r+"src"]={valType:"string",editType:"none"}):d(e)&&(e.role="object")}

@@ -1,0 +1,1 @@
+function(e){e.exports=function(e,t,r,n,a){var i=1/Math.tan(t/2),o=1/(n-a);return e[0]=i/r,e[1]=0,e[2]=0,e[3]=0,e[4]=0,e[5]=i,e[6]=0,e[7]=0,e[8]=0,e[9]=0,e[10]=(a+n)*o,e[11]=-1,e[12]=0,e[13]=0,e[14]=2*a*n*o,e[15]=0,e}}

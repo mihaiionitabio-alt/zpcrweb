@@ -1,0 +1,1 @@
+()=>{GRAPH_CHROME_HIDDEN=!GRAPH_CHROME_HIDDEN;graphChromePaint();}

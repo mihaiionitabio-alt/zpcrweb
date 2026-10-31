@@ -1,0 +1,1 @@
+o=>o.severity==="error"?"#c0392b":hashColour(`${o.experiment}|${o.channel}`)

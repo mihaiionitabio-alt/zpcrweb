@@ -1,0 +1,1 @@
+function L(e,t,r,n){var a=e+1/(2*Math.tan(t));return r*Math.min(1/(Math.sqrt(a*a+.5)+a),n/(Math.sqrt(e*e+n/2)+e))}

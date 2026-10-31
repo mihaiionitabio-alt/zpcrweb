@@ -1,0 +1,1 @@
+a=>a.slice(1).map((t,i)=>t.temps.BLOCKTEMP?.c-a[i].temps.BLOCKTEMP?.c)

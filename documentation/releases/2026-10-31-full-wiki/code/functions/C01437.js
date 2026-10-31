@@ -1,0 +1,1 @@
+function(e){"use strict";e.exports=function(e,t){if(!t)return e;var r=1/Math.abs(t),n=r>1?(r*e+r*t)/r:e+t,a=String(n).length;if(a>16){var i=String(t).length;if(a>=String(e).length+i){var o=parseFloat(n).toPrecision(12);-1===o.indexOf("e+")&&(n=+o)}}return n}}

@@ -1,0 +1,1 @@
+x=>`<option value="${esc(x.value)}">${esc(ui(x.label))}</option>`

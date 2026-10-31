@@ -1,0 +1,1 @@
+x=>x.match.split('|')[0]

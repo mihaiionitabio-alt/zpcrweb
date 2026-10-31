@@ -1,0 +1,1 @@
+function(e){var t=e.start();return[t.x,t.y]}

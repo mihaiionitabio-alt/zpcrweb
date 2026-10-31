@@ -1,0 +1,1 @@
+function(){for(var e=new B,t=-1,r=arguments.length;++t<r;)e[arguments[t]]=j(e);return e}

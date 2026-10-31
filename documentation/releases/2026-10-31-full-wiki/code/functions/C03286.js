@@ -1,0 +1,1 @@
+function(){return this.insertBefore(e.apply(this,arguments),t.apply(this,arguments)||null)}

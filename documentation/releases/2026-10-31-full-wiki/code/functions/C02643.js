@@ -1,0 +1,1 @@
+function(e,t){for(var r=e.transforms||[],n=0;n<r.length;n++)if(r[n].type===t)return!0;return!1}

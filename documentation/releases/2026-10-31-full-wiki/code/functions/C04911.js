@@ -1,0 +1,1 @@
+function(e){if((e=e.split(".")).length<3)throw"Invalid Mayan year";for(var t=0,r=0;r<e.length;r++){var n=parseInt(e[r],10);if(Math.abs(n)>19||r>0&&n<0)throw"Invalid Mayan year";t=20*t+n}return t}

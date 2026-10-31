@@ -1,0 +1,1 @@
+function f(e){var t,r,n,a=e._colorAx,i=a||e,o={};for(r=0;r<c.length;r++)o[n=c[r]]=i[n];if(a)for(t="c",r=0;r<u.length;r++)o[n=u[r]]=i["c"+n];else{var l;for(r=0;r<u.length;r++)((l="c"+(n=u[r]))in i||(l="z"+n)in i)&&(o[n]=i[l]);t=l.charAt(0)}return o._sync=function(e,r){var n=-1!==u.indexOf(e)?t+e:e;i[n]=i["_"+n]=r},o}

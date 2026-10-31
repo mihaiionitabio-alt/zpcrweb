@@ -1,0 +1,1 @@
+function(e,t,r){this._validateLevel++;var n=this.hasYearZero||0!==e;if(n){var a=this.newDate(e,t,this.minDay);n=t>=this.minMonth&&t-this.minMonth<this.monthsInYear(a)&&r>=this.minDay&&r-this.minDay<this.daysInMonth(a)}return this._validateLevel--,n}

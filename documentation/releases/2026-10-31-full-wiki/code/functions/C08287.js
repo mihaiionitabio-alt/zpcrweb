@@ -1,0 +1,1 @@
+id=>delete SEL_STATE.options[id]

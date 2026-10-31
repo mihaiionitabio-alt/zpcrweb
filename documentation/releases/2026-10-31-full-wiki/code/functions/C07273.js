@@ -1,0 +1,1 @@
+function mgClose(...args){return MISSY_HOOKS.invoke("mgClose",this,args,mgCloseBase);}

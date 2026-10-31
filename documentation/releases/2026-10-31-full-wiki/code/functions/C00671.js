@@ -1,0 +1,1 @@
+function(t,r){var n=l.selectAll("g.traces").filter((function(){var e=this.getBoundingClientRect();return r.clientX>=e.left&&r.clientX<=e.right&&r.clientY>=e.top&&r.clientY<=e.bottom}));n.size()>0&&k(e,H,n,t,r)}

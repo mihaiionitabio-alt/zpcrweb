@@ -1,0 +1,1 @@
+function(e,t,r){return t>r?Math.max(r,Math.min(t,e)):Math.max(t,Math.min(r,e))}

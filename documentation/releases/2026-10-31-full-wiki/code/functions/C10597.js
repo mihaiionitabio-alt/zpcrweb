@@ -1,0 +1,1 @@
+id=>{const e=document.getElementById(id);return !!(e&&!e.hidden&&e.getClientRects().length&&getComputedStyle(e).visibility!=='hidden');}

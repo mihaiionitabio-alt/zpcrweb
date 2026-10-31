@@ -1,0 +1,1 @@
+e=>{if(!MG.open||!document.getElementById('mg').classList.contains('charting')||e.ctrlKey||e.altKey||e.metaKey||e.target.closest?.('input,textarea,select,[contenteditable="true"]'))return;if(e.key.toLowerCase()==='h'){e.preventDefault();GRAPH_CHROME_HIDDEN=!GRAPH_CHROME_HIDDEN;graphChromePaint();}}

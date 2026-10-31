@@ -1,0 +1,1 @@
+function exit(){MISSY_CONSOLE_VOICE.stop();clearInterval(loadingTimer);loadingTimer=null;clearInterval(timer);timer=null;audioContext?.close().catch(()=>{});audioContext=null;child?.stop();frame?.remove();overlay?.remove();if(voiceBox&&voiceHome)voiceHome.append(voiceBox);overlay=null;frame=null;child=null;api.active=false;launch.focus();}

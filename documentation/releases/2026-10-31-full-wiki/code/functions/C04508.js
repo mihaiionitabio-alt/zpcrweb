@@ -1,0 +1,1 @@
+function(e){var t=e[0],r=e[1],n=e[2],a=e[3],i=e[4],o=e[5],l=e[6],s=e[7],c=e[8],u=e[9],f=e[10],d=e[11],h=e[12],p=e[13],v=e[14],g=e[15];return(t*o-r*i)*(f*g-d*v)-(t*l-n*i)*(u*g-d*p)+(t*s-a*i)*(u*v-f*p)+(r*l-n*o)*(c*g-d*h)-(r*s-a*o)*(c*v-f*h)+(n*s-a*l)*(c*p-u*h)}

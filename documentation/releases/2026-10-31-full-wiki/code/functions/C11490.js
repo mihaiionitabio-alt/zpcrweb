@@ -1,0 +1,1 @@
+()=>{sound=!sound;audio.textContent=t(sound?'Sound on':'Sound off',sound?'声音开':'声音关');audio.setAttribute('aria-pressed',String(sound));if(sound)play('entry');}

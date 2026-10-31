@@ -1,0 +1,1 @@
+function(e){return e=this._validate(e,this.minMonth,this.minDay,n.local.invalidYear).year(),this.toJD(-1===e?1:e+1,7,1)-this.toJD(e,7,1)}

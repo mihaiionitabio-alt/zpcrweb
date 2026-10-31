@@ -1,0 +1,1 @@
+function component(e,localized){const p=(en,zh)=>localized?t(en,zh):en;return (e.kind==='dark'?p('Dark: ','暗值：'):p('Position: ','位置：'))+(labels[e.component]?(localized?t(...labels[e.component]):labels[e.component][0]):p('Original component ','原始组分 ')+e.component.split('_')[1]+p(' (meaning not assigned)','（未赋予含义）'));}

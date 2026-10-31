@@ -1,0 +1,1 @@
+function d(e,t){for(var r=t.currentTarget,a=r.getAttribute("data-attr"),i=r.getAttribute("data-val")||!0,o=e._fullLayout._subplots.gl3d||[],l={},s=a.split("."),c=0;c<o.length;c++)l[o[c]+"."+s[1]]=i;var u="pan"===i?i:"zoom";l.dragmode=u,n.call("_guiRelayout",e,l)}

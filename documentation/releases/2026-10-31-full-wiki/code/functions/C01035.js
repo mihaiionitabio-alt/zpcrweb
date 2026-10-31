@@ -1,0 +1,1 @@
+function(e,t,r,n){var a,i;return i=Math.abs(r-e),a=r>=e?t-n:n-t,-180/Math.PI*Math.atan2(a,i)}

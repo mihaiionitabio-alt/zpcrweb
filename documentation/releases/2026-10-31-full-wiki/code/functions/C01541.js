@@ -1,0 +1,1 @@
+function(e){var r=t.apply2DTransform(e);return function(e){return r(e.slice(0,2)).concat(r(e.slice(2,4)))}}

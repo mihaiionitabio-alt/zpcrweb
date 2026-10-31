@@ -1,0 +1,1 @@
+x=>x.errors+x.reviews

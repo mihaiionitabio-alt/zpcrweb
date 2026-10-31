@@ -1,0 +1,1 @@
+function failLoading(){clearInterval(loadingTimer);loadingTimer=null;loadPanel.querySelector('#game-load-stage').textContent=tr('Training could not load. Retry or return.','训练加载失败，请重试或返回。');button(['Retry','重试'],()=>{exit();void start();},loadPanel.querySelector('.game-load-box'));}

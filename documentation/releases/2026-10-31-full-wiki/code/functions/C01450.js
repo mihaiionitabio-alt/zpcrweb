@@ -1,0 +1,1 @@
+function(e){return e.transition().duration(0)}

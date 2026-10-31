@@ -1,0 +1,1 @@
+c=>[c.experiment,`${c.status}${c.evidence?" — "+String(c.evidence).slice(0,70):""}`]

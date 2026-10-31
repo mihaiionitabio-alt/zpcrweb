@@ -1,0 +1,1 @@
+function selClear(){SEL_STATE.ids.clear();}

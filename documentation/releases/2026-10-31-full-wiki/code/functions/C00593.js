@@ -1,0 +1,1 @@
+function(e,t,r){return a.castOption(e,r,"hoverinfo",(function(r){return a.coerceHoverinfo({hoverinfo:r},{_module:e._module},t)}))}

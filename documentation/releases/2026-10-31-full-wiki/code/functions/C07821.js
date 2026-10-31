@@ -1,0 +1,1 @@
+e=>{if(drag){const rc=canvas.getBoundingClientRect(),sx=W/rc.width,sy=H/rc.height,mx=(e.clientX-rc.left)*sx,my=(e.clientY-rc.top)*sy,dx=(mx-drag.x)/(W-L-R)*(view.x1-view.x0),dy=(my-drag.y)/(H-T-B)*(view.y1-view.y0);view.x0=drag.v.x0-dx;view.x1=drag.v.x1-dx;view.y0=drag.v.y0+dy;view.y1=drag.v.y1+dy;draw();}else move(e);}

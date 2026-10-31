@@ -1,0 +1,1 @@
+function(e,t){return u[t]-u[e]}

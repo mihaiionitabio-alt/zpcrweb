@@ -1,0 +1,1 @@
+function(e,t){return arguments.length<2&&(t=V().touches),t?l(t).map((function(t){var r=Ae(e,t);return r.identifier=t.identifier,r})):[]}

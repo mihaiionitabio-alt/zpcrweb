@@ -1,0 +1,1 @@
+function(e){e=pe.apply(this,arguments);for(var t=-1,r=this.length;++t<r;)this[t].sort(e);return this.order()}

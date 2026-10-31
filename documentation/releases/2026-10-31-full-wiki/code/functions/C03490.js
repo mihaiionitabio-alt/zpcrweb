@@ -1,0 +1,1 @@
+function Xt(e){this.site=e,this.edges=[]}

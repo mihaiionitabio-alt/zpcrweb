@@ -1,0 +1,1 @@
+function(e){try{return i.parseDate(n,e,a)}catch(e){}for(var t=((e=e.toLowerCase()).match(/^c/)&&r?r.newDate():null)||i.today(),o=/([+-]?[0-9]+)\s*(d|w|m|y)?/g,l=o.exec(e);l;)t.add(parseInt(l[1],10),l[2]||"d"),l=o.exec(e);return t}

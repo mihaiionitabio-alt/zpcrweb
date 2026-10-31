@@ -1,0 +1,1 @@
+next => async function(raw){const s=String(raw).trim();if(/^pcrd\s+script$/i.test(s)){cmdScriptToggle(true);cmdEl('cmd-script').value=pcrdReportScript();return;}if(/^pcrd\s+(compare|graphs)$/i.test(s)){pcrdSync();unifiedBrowse(pcrdItems()[0]?.id);return;}return next(raw);}

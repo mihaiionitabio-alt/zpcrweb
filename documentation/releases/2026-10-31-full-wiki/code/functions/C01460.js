@@ -1,0 +1,1 @@
+function(e){return"/"===e.substr(-1)?e.substr(0,e.length-1):e}

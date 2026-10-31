@@ -1,0 +1,1 @@
+function tag(cls,text){return `<span class="tag ${cls}">${esc(UI_LANG==="zh"&&/^(Review|review|REVIEW)$/.test(String(text))?ui("Review status"):ui(text))}</span>`;}

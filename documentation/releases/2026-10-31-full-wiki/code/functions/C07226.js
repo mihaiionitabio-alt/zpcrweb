@@ -1,0 +1,1 @@
+()=>{if(MG.open){const before=MG.queue.map(mgItemKey).join("\u001f")+"|"+MG.at;mgRefresh();const after=MG.queue.map(mgItemKey).join("\u001f")+"|"+MG.at;if(before!==after)mgRender();}}

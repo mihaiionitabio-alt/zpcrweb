@@ -1,0 +1,1 @@
+function T(e,t){var r=d(e).toHsl(),n=(r.h+t)%360;return r.h=n<0?360+n:n,d(r)}

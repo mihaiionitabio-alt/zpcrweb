@@ -1,0 +1,1 @@
+function(e,t,r){if("skip"===t)return Promise.resolve();var i=n.apiMethodRegistry[t],o=[e];Array.isArray(r)||(r=[]);for(var l=0;l<r.length;l++)o.push(r[l]);return i.apply(null,o).catch((function(e){return a.warn("API call to Plotly."+t+" rejected.",e),Promise.reject(e)}))}

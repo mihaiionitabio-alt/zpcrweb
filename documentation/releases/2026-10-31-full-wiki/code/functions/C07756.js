@@ -1,0 +1,1 @@
+w=>Object.assign({},w,{curve:w.eds.drn})

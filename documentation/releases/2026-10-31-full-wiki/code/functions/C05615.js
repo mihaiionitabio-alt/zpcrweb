@@ -1,0 +1,1 @@
+t=>({module:t.name,version:t.version,id:t.id})

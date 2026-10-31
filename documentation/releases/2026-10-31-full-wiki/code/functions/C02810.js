@@ -1,0 +1,1 @@
+function _(e,t){return"waterfall"===t.type?t[e.dir].marker.color:e.mcc||e.mc||t.marker.color}

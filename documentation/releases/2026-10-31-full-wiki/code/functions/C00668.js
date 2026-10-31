@@ -1,0 +1,1 @@
+function(e){if(e.target!==q.node()){var t=c.getTranslate(H);y=t.x,x=t.y}}

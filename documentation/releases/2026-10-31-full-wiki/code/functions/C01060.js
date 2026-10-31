@@ -1,0 +1,1 @@
+function _(e){return!e._context.edits.shapePosition}

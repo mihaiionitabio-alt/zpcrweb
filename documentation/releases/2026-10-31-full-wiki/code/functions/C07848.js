@@ -1,0 +1,1 @@
+r=>({...r,severity:r.severity==="error"?tag("bad","error"):tag("warn","review")})

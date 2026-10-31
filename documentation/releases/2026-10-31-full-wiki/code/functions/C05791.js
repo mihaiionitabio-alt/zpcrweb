@@ -1,0 +1,1 @@
+(s,p)=>s+(p.y-(icpt+slope*p.x))**2

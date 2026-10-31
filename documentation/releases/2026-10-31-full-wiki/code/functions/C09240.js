@@ -1,0 +1,1 @@
+function pcrdCRC(a){let c=0xffffffff;for(const b of a)c=(pcrdCRC_TABLE[(c^b)&255]^(c>>>8))>>>0;return(c^0xffffffff)>>>0;}

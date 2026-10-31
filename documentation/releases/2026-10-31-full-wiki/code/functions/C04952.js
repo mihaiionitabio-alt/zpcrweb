@@ -1,0 +1,1 @@
+function o(e){this.local=this.regionalOptions[e||""]||this.regionalOptions[""]}

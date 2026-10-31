@@ -1,0 +1,1 @@
+function(){next();if(cfxRuns().length){const e=document.getElementById('assisted-endpoint');e.querySelector('input').disabled=e.querySelector('button').disabled=false;e.querySelector('input').value=ZPCR_ENDPOINT_N;}}

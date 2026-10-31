@@ -1,0 +1,1 @@
+function gB(A,e){A=cB.call(this,A,e)||this;return A.value=e.value,A}

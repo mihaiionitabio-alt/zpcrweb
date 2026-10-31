@@ -1,0 +1,1 @@
+function(e){return n("pop_seg",{seg:e})}

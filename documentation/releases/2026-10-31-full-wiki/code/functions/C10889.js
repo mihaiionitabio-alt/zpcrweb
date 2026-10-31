@@ -1,0 +1,1 @@
+()=>{paused=!paused;overlay.querySelector('[data-vd=pause]').textContent=paused?'Play / 播放':'Pause / 暂停';if(paused)audio?.pause();else if(audio&&audio.paused&&!audio.ended)audio.play().catch(()=>{});else if(ended)void go(index+1);}

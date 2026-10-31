@@ -1,0 +1,1 @@
+(run,index)=>Object.entries(instrumentRecordTables(run)).flatMap(([table,rows])=>(rows||[]).map(row=>({run:index+1,experiment:runName(run),table,...row})))

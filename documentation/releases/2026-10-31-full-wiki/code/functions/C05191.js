@@ -1,0 +1,1 @@
+async function readZip(ab,archive,filter=/\.ixo$/i){return readZipFiltered(ab,archive,filter);}

@@ -1,0 +1,1 @@
+o=>`${o.name}${o.target?" "+o.target:""} Cq ${o.cq}`

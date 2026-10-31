@@ -1,0 +1,1 @@
+function(e){return a.getComponentMethod("legend","draw")(e),i.previousPromises(e)}

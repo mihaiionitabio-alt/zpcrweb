@@ -1,0 +1,1 @@
+function h(e,t){for(var r,n=e.area,a=0,i=1/0,o=-1,l=e.length;++o<l;)(r=e[o].area)&&(r<i&&(i=r),r>a&&(a=r));return t*=t,(n*=n)?Math.max(t*a*c/n,n/(t*i*c)):1/0}

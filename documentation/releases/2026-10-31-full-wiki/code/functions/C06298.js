@@ -1,0 +1,1 @@
+w=>({well:w.well,sample:w.sample,target:w.target,stored_ct:sopCq(w),rederived_ct:w.eds.ctRecalc,difference:sopCq(w)-w.eds.ctRecalc,threshold:w.eds.threshold})

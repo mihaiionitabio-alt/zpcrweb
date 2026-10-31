@@ -1,0 +1,1 @@
+function(t,r){if("function"!=typeof t||"function"!=typeof r)throw TypeError("Not a function");t(e)}

@@ -1,0 +1,1 @@
+()=>{Object.assign(view,initial);draw();}

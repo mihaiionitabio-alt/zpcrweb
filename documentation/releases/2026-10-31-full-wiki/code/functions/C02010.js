@@ -1,0 +1,1 @@
+function(e,t,r,n,a,i){var o=n.charAt(n.length-1),s=r._fullLayout._subplots[o+"axis"],c=n+"ref",u={};return a||(a=s[0]||("string"==typeof i?i:i[0])),i||(i=a),s=s.concat(s.map((function(e){return e+" domain"}))),u[c]={valType:"enumerated",values:s.concat(i?"string"==typeof i?[i]:i:[]),dflt:a},l.coerce(e,t,u,c)}

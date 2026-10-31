@@ -1,0 +1,1 @@
+w=>w.baseline?.valid&&!w.baseline.earlyRise&&w.baseline.plateau>Math.max(10*w.baseline.noise,0)

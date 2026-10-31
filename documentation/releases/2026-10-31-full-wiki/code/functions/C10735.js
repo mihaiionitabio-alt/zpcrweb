@@ -1,0 +1,1 @@
+()=>{if(!MISSY_CONSOLE_VOICE.command('two'))throw Error('Demo voice Next was not available');}

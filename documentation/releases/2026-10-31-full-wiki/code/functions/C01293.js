@@ -1,0 +1,1 @@
+function(e){"use strict";e.exports={FROM_BL:{left:0,center:.5,right:1,bottom:0,middle:.5,top:1},FROM_TL:{left:0,center:.5,right:1,bottom:1,middle:.5,top:0},FROM_BR:{left:1,center:.5,right:0,bottom:0,middle:.5,top:1},LINE_SPACING:1.3,CAP_SHIFT:.7,MID_SHIFT:.35,OPPOSITE_SIDE:{left:"right",right:"left",top:"bottom",bottom:"top"}}}

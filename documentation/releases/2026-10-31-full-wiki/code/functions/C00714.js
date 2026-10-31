@@ -1,0 +1,1 @@
+function(e,t,r,n){var a;if(e+1)a=e;else{if(!(t&&t.width>0))return 0;a=t.width}return y?n:Math.min(a,r)}

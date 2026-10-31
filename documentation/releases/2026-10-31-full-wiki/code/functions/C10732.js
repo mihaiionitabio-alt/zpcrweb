@@ -1,0 +1,1 @@
+async()=>{if(document.getElementById('missy-sound-dock').hidden)await press('#missy-sound-menu-toggle','Expand Sounds.');await press('#missy-red-alert','Start the manual demonstration alert.');driftCue();}

@@ -1,0 +1,1 @@
+(e,i)=>{const off=e.time<lo||e.time>hi;return {x:toH(e.time),y:ev.length-i,text:`  ${e.what}${off?` (${sopFmtTime(e.time)})`:""}`,colour:off?"#9ca3af":"#374151",anchor:toH(e.time)>((hi-ref)/3600000+(lo-ref)/3600000)/2?"end":"start"};}

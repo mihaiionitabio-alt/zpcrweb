@@ -1,0 +1,1 @@
+l=>shown.filter(r=>r.enabled&&r.st.level===l).length

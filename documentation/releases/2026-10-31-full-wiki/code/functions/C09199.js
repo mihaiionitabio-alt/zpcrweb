@@ -1,0 +1,1 @@
+at=>{MG.at=at;MG.chart=true;MG.zoom=1;MG.panX=0;MG.panY=0;mgRender();}

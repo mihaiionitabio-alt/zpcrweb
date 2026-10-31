@@ -1,0 +1,1 @@
+function(e){var t=i.random.irwinHall(e);return function(){return t()/e}}

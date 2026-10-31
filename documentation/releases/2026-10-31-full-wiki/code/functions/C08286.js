@@ -1,0 +1,1 @@
+id=>cmdPrint(`${id}: ${JSON.stringify(SEL_STATE.options[id]||{})}`)

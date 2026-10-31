@@ -1,0 +1,1 @@
+function(t){var r=t[0].trace,i=n.select(this);i.style({opacity:r.opacity}),i.selectAll("path.surface").each((function(t){n.select(this).call(a,t,r,e)}))}

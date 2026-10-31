@@ -1,0 +1,1 @@
+function n(e){e&&null!==e.timer&&(clearTimeout(e.timer),e.timer=null)}

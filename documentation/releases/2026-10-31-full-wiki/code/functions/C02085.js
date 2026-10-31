@@ -1,0 +1,1 @@
+function Oe(e){return e._id+".automargin"}

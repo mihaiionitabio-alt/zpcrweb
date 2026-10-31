@@ -1,0 +1,1 @@
+next=>function(...args){const result=next(...args);if(MG.open&&panel&&!window.MISSY_SETUP?.isOpen)panel.open=false;placeControls();controls();keys();return result;}

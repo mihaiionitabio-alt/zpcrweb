@@ -1,0 +1,1 @@
+function O(e){var t=encodeURI(decodeURI(e)),r=document.createElement("a"),n=document.createElement("a");r.href=e,n.href=t;var a=r.protocol,i=n.protocol;return-1!==g.indexOf(a)&&-1!==g.indexOf(i)?t:""}

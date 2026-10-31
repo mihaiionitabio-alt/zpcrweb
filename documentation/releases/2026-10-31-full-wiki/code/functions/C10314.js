@@ -1,0 +1,1 @@
+function placeControls(){if(window.MISSY_SETUP?.isOpen)return;const box=document.getElementById('missy-console-voice-controls'),host=MG.open?document.getElementById('mg-statusbar'):document.querySelector('#statusbar .sb-right');if(box&&host&&box.parentElement!==host)host.append(box);}

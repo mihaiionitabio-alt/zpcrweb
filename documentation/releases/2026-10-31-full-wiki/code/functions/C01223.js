@@ -1,0 +1,1 @@
+function(){var e=c.bBox(this);l.bBoxIntersect(d,e,f)&&(M=Math.max(M,u*(e[_.side]-d[o])+f))}

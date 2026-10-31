@@ -1,0 +1,1 @@
+function zt(e,t,r){return(r[0]-t[0])*(e[1]-t[1])<(r[1]-t[1])*(e[0]-t[0])}

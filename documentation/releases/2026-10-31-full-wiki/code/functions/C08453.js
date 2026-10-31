@@ -1,0 +1,1 @@
+e=>r.reduce((s,v,j)=>s+v*e.vector[j],0)

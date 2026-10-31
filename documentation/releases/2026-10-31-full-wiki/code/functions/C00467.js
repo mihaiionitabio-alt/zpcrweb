@@ -1,0 +1,1 @@
+function(e){var r=e.type,n=e.symmetric;if("data"===r){var a=e.array||[];if(n)return function(e,t){var r=+a[t];return[r,r]};var i=e.arrayminus||[];return function(e,t){var r=+a[t],n=+i[t];return isNaN(r)&&isNaN(n)?[NaN,NaN]:[n||0,r||0]}}var o=t(r,e.value),l=t(r,e.valueminus);return n||void 0===e.valueminus?function(e){var t=o(e);return[t,t]}:function(e){return[l(e),o(e)]}}

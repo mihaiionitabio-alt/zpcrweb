@@ -1,0 +1,1 @@
+function(e){return arguments.length?(d={x:+e[0],y:+e[1],k:d.k},L(),w):[d.x,d.y]}

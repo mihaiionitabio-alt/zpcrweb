@@ -1,0 +1,1 @@
+function(){return Promise.resolve(Object.keys(this._cache))}

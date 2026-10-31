@@ -1,0 +1,1 @@
+function(e){var t=!!e.hbar,r=!!e.vbar;t&&e.hbar.transition().attr("opacity","0").each("end",(function(){t=!1,r||e.disable()})),r&&e.vbar.transition().attr("opacity","0").each("end",(function(){r=!1,t||e.disable()}))}

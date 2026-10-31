@@ -1,0 +1,1 @@
+(col,l)=>{s+=`<rect x="${lx}" y="${ly}" width="12" height="12" rx="2" fill="${col}" stroke="#cbd5e1"/><text x="${lx+18}" y="${ly+10}" fill="#374151" font-size="11">${svgEsc(l)}</text>`;ly+=18;}

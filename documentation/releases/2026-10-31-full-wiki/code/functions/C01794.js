@@ -1,0 +1,1 @@
+function(){if(0!==n._frameQueue.length){for(;n._frameQueue.length;){var t=n._frameQueue.pop();t.onInterrupt&&t.onInterrupt()}e.emit("plotly_animationinterrupted",[])}}

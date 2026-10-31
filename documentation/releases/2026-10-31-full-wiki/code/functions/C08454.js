@@ -1,0 +1,1 @@
+(s,v,j)=>s+v*e.vector[j]

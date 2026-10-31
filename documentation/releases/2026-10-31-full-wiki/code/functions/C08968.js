@@ -1,0 +1,1 @@
+r=>r.zpcr&&gates.get(r)?.eligible

@@ -1,0 +1,1 @@
+()=>focus('#mg-chart svg','Cooling is stable in this scenario. A stable thermal series does not explain the rising optical background.')

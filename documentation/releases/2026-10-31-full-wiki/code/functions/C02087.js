@@ -1,0 +1,1 @@
+function Pe(e){return e._id+".rangeslider"}

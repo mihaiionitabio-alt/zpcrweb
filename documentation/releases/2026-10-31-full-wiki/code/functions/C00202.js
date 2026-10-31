@@ -1,0 +1,1 @@
+function(e,t){var r=n(t);e.style({fill:o.tinyRGB(r),"fill-opacity":r.getAlpha()})}

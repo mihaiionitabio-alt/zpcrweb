@@ -1,0 +1,1 @@
+function cmdExec(...args){return MISSY_HOOKS.invoke("cmdExec",this,args,cmdExecBase);}

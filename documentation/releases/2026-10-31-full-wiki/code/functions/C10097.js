@@ -1,0 +1,1 @@
+()=>{sopChanged();markDirty('results','graphs','review','panel');renderSopResults();}

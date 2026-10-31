@@ -1,0 +1,1 @@
+t=>{closeModes();showTab(t);}

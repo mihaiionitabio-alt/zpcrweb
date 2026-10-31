@@ -1,0 +1,1 @@
+function(e){e.attr({y:0,cursor:v.slideBoxCursor,"shape-rendering":"crispEdges"})}

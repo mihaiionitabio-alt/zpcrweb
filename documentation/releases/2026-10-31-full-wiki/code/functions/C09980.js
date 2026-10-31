@@ -1,0 +1,1 @@
+w=>{const t=String(w.target||w.analysis||'');if(refName&&(t.toLowerCase()===refName.toLowerCase()||refSpec&&sopMatcher(refSpec.match)(t)))return reference;return specs.find(x=>x.name===t||x.spec&&sopMatcher(x.spec.match)(t))?.name||'';}

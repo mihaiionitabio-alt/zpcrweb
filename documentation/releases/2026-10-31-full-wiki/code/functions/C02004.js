@@ -1,0 +1,1 @@
+function(e,t){var r=t.autorangeoptions;return r&&void 0!==r.minallowed&&T(t,r.minallowed,r.maxallowed)?r.minallowed:r&&void 0!==r.clipmin&&T(t,r.clipmin,r.clipmax)?Math.max(e,t.d2l(r.clipmin)):e}

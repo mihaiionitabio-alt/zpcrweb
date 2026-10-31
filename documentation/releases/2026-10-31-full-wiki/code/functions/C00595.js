@@ -1,0 +1,1 @@
+function(e){var t=a.isD3Selection(e)?e:n.select(e);t.selectAll("g.hovertext").remove(),t.selectAll(".spikeline").remove()}

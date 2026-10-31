@@ -1,0 +1,1 @@
+o=>{x+=String(o).padStart(10,"0")+" 00000 n \n";}

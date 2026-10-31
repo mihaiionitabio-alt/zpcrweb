@@ -1,0 +1,1 @@
+function unifiedRemoveOldControls(){document.getElementById('zpcr-console-endpoint')?.remove();document.getElementById('zc-single-picker')?.remove();document.getElementById('mg').classList.remove('zc-single-mode');}

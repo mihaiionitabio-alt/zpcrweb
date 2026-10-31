@@ -1,0 +1,1 @@
+function zpcrPaint(...args){return MISSY_HOOKS.invoke("zpcrPaint",this,args,zpcrPaintBase);}

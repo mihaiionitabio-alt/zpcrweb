@@ -1,0 +1,1 @@
+()=>new Set(RUNS[0].wells.filter(w=>w.instrType==='std').map(w=>w.pos)).size

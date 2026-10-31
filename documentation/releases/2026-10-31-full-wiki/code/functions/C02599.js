@@ -1,0 +1,1 @@
+function c(e,r,n){var a=r._id.charAt(0);if("histogram2dcontour"===e){var i=r._counterAxes[0],o=p.getFromId(t,i),l="x"===a||"x"===i&&"category"===o.type,s="y"===a||"y"===i&&"category"===o.type;return function(e,t){return 0===e||0===t||l&&e===n[t].length-1||s&&t===n.length-1?-1:("y"===a?t:e)-1}}return function(e,t){return"y"===a?t:e}}

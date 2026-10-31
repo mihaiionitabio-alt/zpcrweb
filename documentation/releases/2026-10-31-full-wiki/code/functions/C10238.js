@@ -1,0 +1,1 @@
+()=>{if(MG.open&&MG.chart){const it=mgItem();if(it?.graphId&&Number.isInteger(it.runIndex))return {run:RUNS[it.runIndex],ri:it.runIndex};return null;}if(APP_STATE.activeTab==='graphs'&&GRAPH_STATE.last?.c?.run)return {run:GRAPH_STATE.last.c.run,ri:GRAPH_STATE.last.c.ri};return RUNS.length===1?{run:RUNS[0],ri:0}:null;}

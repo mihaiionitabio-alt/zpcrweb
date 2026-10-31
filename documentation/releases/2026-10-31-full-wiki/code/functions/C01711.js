@@ -1,0 +1,1 @@
+function(e,t){if(n(t))return[t];if(!Array.isArray(t)||!t.length)return e.data.map((function(e,t){return t}));if(Array.isArray(t)){for(var r=[],a=0;a<t.length;a++)o.isIndex(t[a],e.data.length)?r.push(t[a]):o.warn("trace index (",t[a],") is not a number or is out of bounds");return r}return t}

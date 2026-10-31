@@ -1,0 +1,1 @@
+function(e,t){return!(void 0!==t&&e>=t)&&o(e)&&e>=0&&e%1==0}

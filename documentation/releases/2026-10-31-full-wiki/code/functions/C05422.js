@@ -1,0 +1,1 @@
+f=>`${f.getAttribute("Excitation")}-${f.getAttribute("Emission")}`

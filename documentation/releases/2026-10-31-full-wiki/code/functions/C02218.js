@@ -1,0 +1,1 @@
+function _(e){if("string"==typeof e)return b[e.substr(0,3).toLowerCase()]}

@@ -1,0 +1,1 @@
+v=>svg+=`<text x="${X(v)}" y="${T+H+30}" text-anchor="middle" font-size="19">${panel.bars?'Ch '+v:v}</text>`

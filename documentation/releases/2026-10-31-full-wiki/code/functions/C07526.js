@@ -1,0 +1,1 @@
+w=>w.curve&&Number.isFinite(Number(w.channel))

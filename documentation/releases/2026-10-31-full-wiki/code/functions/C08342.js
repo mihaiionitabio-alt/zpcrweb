@@ -1,0 +1,1 @@
+()=>{sopLab().analyst=an.value.trim();sopProfileEdited(true);}

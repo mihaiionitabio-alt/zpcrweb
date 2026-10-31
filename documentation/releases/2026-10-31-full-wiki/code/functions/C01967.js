@@ -1,0 +1,1 @@
+function d(e){return s(e)?"In data trace "+e[1]+", ":"In "+e+", "}

@@ -1,0 +1,1 @@
+function(){return 1==this._a?"rgb("+s(100*z(this._r,255))+"%, "+s(100*z(this._g,255))+"%, "+s(100*z(this._b,255))+"%)":"rgba("+s(100*z(this._r,255))+"%, "+s(100*z(this._g,255))+"%, "+s(100*z(this._b,255))+"%, "+this._roundA+")"}

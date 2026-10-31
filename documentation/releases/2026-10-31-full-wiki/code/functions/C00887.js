@@ -1,0 +1,1 @@
+function(e){return e.substr(0,e.indexOf("y"))===i.name2id(r)}

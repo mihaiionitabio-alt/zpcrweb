@@ -1,0 +1,1 @@
+function(e,t,r){Array.isArray(e)&&e.length&&e.every((function(e){return a(e).isValid()}))?t.set(e):t.set(r)}

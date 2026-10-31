@@ -1,0 +1,1 @@
+(x,i)=>add('R'+(i+1),0,i,x.reads.slice(1).map((r,j)=>r.epochMs!==null&&x.reads[j].epochMs!==null&&r.epochMs>=x.reads[j].epochMs?(r.epochMs-x.reads[j].epochMs)/1000:NaN))

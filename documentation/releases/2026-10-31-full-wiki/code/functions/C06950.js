@@ -1,0 +1,1 @@
+e=>{CC_STATE.remember=e.target.checked;if(e.target.checked)ccRemember();else try{localStorage.removeItem(CC_HIST_KEY);}catch(x){}}

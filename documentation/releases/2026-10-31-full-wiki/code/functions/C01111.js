@@ -1,0 +1,1 @@
+function(e){"use strict";e.exports={clearOutlineControllers:function(e){var t=e._fullLayout._zoomlayer;t&&t.selectAll(".outline-controllers").remove()},clearOutline:function(e){var t=e._fullLayout._zoomlayer;t&&t.selectAll(".select-outline").remove(),e._fullLayout._outlining=!1}}}

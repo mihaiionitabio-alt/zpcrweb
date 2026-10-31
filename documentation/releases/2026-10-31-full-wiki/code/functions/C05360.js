@@ -1,0 +1,1 @@
+c=>channels[ch][c]?channels[ch][c][pos]:NaN

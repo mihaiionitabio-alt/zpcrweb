@@ -1,0 +1,1 @@
+function(e){if(!s(e))return String(e);for(var t="",r=0;r<e.length;r++){var n=e[r];"number"==typeof n?t=t.substr(0,t.length-1)+"["+n+"]":t+=n,r<e.length-1&&(t+=".")}return t}

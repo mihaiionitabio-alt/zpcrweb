@@ -1,0 +1,1 @@
+function registeredXML(bytes){const s=new TextDecoder().decode(bytes);if(/<!DOCTYPE|<!ENTITY/i.test(s))throw Error('XML DOCTYPE/ENTITY declarations are unsupported');return s;}

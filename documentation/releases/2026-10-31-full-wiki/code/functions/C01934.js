@@ -1,0 +1,1 @@
+function v(e,t,r){return r?Array.isArray(e)?r+"["+t+"]":r+"."+t:t}

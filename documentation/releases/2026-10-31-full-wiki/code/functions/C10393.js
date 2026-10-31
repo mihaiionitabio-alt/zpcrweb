@@ -1,0 +1,1 @@
+f=>({provenance_view:i+1,filename:r.file||'',provenance_item:localized?t(...labels[f.code]):labels[f.code][0],provenance_state:localized?t(...states[f.status]):states[f.status][0],provenance_value:valueText(f,localized),provenance_method:explanation(f.method,localized),provenance_code:f.code,method_code:f.method,status_code:f.status})

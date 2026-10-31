@@ -1,0 +1,1 @@
+()=>RUNS.some(r=>(r.rqResults||[]).length)

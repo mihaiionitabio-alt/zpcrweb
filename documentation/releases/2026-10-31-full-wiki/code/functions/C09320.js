@@ -1,0 +1,1 @@
+(r,i)=>'R'+(i+1)+': '+r.file+'; '+(r.pcrd.completionSupported?'Normal completion supported by log and acquisition counts':'REVIEW: '+r.pcrd.issues.join('; '))

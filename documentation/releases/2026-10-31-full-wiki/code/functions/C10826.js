@@ -1,0 +1,1 @@
+async()=>{demo.page('load');await demo.stage();return{en:document.getElementById('loadmsg').textContent,zh:'已选择内嵌人工模拟文件。此步骤为演示脚本操作。'};}

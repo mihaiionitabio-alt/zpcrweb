@@ -1,0 +1,1 @@
+(_,i)=>x.reduce((s,xv,k)=>s+Math.pow(xv,i)*y[k],0)

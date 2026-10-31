@@ -1,0 +1,1 @@
+function(e,t,r){var a=n(e);return 1!==a.getAlpha()&&(a=n(o.combine(e,c))),(a.isDark()?t?a.lighten(t):c:r?a.darken(r):s).toString()}

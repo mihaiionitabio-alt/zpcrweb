@@ -1,0 +1,1 @@
+b=>b.classList.toggle("on",b.dataset.tab===name)

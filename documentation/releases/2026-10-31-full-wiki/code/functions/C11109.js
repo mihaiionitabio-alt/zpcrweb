@@ -1,0 +1,1 @@
+function(A,e){return"inside"!==e?1:0}

@@ -1,0 +1,1 @@
+(){if(!paused)overlay.querySelector('[data-vd=pause]').click();}

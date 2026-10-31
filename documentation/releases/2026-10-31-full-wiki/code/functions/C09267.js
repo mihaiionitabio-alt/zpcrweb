@@ -1,0 +1,1 @@
+s=>[s.dye,s.target,s.role].filter(Boolean).join(' / ')

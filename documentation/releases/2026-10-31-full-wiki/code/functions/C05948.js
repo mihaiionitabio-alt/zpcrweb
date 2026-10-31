@@ -1,0 +1,1 @@
+x=>`<li><b>${esc(x.gene||x.target||"")}</b> — ${esc(x.taxon||"")}; primers ${esc(x.primers||"not stated")}; probe ${esc(x.probe||"not stated")}; ${esc(x.purpose||"taxon reference")}</li>`

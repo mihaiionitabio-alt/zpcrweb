@@ -1,0 +1,1 @@
+r=>r.spec&&r.spec.kind==="ic"&&!r.ctrl&&Number.isFinite(r.cqMean)&&Number.isFinite(ev.icMedian)

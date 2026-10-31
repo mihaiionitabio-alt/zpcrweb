@@ -1,0 +1,1 @@
+t=>(Math.max(lo,Math.min(hi,t))-ref)/3600000

@@ -1,0 +1,1 @@
+function(e){"use strict";e.exports={mod:function(e,t){var r=e%t;return r<0?r+t:r},modHalf:function(e,t){return Math.abs(e)>t/2?e-Math.round(e/t)*t:e}}}

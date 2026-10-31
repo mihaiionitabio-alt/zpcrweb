@@ -1,0 +1,1 @@
+r=>r.errorNumber!==0

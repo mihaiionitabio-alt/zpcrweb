@@ -1,0 +1,1 @@
+function ccStatic(...args){return MISSY_HOOKS.invoke("ccStatic",this,args,ccStaticBase);}

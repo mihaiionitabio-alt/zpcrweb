@@ -1,0 +1,1 @@
+c=>s.startsWith(c.title+' · ')

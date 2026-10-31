@@ -1,0 +1,1 @@
+(i){clearCue();lesson=i;if(i>2&&!read)await loadDemo();if(i>4&&SOP.name!=='ARTIFICIAL DEMO — NOT VALIDATED')profile();await steps[i][2]();await wait(80);return{title:steps[i][0],text:narrate(steps[i][1])};}

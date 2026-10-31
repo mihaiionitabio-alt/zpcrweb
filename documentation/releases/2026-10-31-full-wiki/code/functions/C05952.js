@@ -1,0 +1,1 @@
+function renderSopEditor(){return MISSY_HOOKS.invoke('renderSopEditor',this,[],renderSopEditorBase);}

@@ -1,0 +1,1 @@
+()=>{CC_STATE.instrument=ccInstrumentKey(RUNS.at(-1));demo.chart('heat_rate');return ask('Computer which chart is this').answer;}

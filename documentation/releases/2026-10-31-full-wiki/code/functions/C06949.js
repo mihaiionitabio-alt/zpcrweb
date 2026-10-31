@@ -1,0 +1,1 @@
+(d,t)=>{msg.innerHTML=`<div class="notice">${esc(ui("Preparing the charts"))}: ${d} / ${t}</div>`;}

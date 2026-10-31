@@ -1,0 +1,1 @@
+function i(e){return a[e]||e}

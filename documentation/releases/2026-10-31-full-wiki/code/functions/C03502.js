@@ -1,0 +1,1 @@
+function sr(e,t){var r=t,n=t.R,a=r.U;a?a.L===r?a.L=n:a.R=n:e._=n,n.U=a,r.U=n,r.R=n.L,r.R&&(r.R.U=r),n.L=r}

@@ -1,0 +1,1 @@
+function O(e,t){var r=Math.PI/180*t,n=Math.abs(Math.sin(r)),a=Math.abs(Math.cos(r));return{x:e.width*a+e.height*n,y:e.width*n+e.height*a}}

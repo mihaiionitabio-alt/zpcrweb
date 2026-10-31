@@ -1,0 +1,1 @@
+x=>x.chartId===id.slice(3)

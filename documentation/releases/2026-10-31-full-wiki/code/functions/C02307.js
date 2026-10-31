@@ -1,0 +1,1 @@
+function(t){return e.l2r(i+(t-i)*r)}

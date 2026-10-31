@@ -1,0 +1,1 @@
+function(e){return e.charAt(0).toUpperCase()+e.substr(1)}

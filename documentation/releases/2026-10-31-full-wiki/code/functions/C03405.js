@@ -1,0 +1,1 @@
+function ot(e){return new it(e>>16,e>>8&255,255&e)}

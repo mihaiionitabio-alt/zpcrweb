@@ -1,0 +1,1 @@
+function(e){var t=e.x0,r=e.y0,n=e.x1,a=e.y1,i=n-t,l=a-r,s=((t-=i)+n)/2,c=((r-=l)+a)/2;return{x0:s-(i*=o),y0:c-(l*=o),x1:s+i,y1:c+l}}

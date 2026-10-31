@@ -1,0 +1,1 @@
+function(...args){const result=next(...args);placeControls();controls();return result;}

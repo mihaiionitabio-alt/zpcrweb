@@ -1,0 +1,1 @@
+function(e,r){return t.pointsSameX(e,r)&&t.pointsSameY(e,r)}

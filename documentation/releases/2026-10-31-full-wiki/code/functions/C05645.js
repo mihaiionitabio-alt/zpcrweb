@@ -1,0 +1,1 @@
+d=>`${d.name} (${d.reporter}/${d.quencher})`

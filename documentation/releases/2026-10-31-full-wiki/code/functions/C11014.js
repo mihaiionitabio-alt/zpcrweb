@@ -1,0 +1,1 @@
+function(){for(var A="";;){var e=this.consumeCodePoint();if(FA(e))A+=g(e);else{if(!hA(e,this.peekCodePoint(0)))return this.reconsumeCodePoint(e),A;A+=g(this.consumeEscapedCodePoint())}}}

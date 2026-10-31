@@ -1,0 +1,1 @@
+function(e){return"string"!=typeof e&&(e=JSON.stringify(e,!1,"  ")),n("log",{txt:e})}

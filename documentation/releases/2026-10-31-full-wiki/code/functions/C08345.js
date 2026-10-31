@@ -1,0 +1,1 @@
+e=>{if(AST.open&&e.key==="Escape")astClose();}

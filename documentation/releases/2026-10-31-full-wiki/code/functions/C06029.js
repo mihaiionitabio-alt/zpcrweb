@@ -1,0 +1,2 @@
+b=>{const ya=Y(b.y1),yb=Y(b.y0);if(b.x0!=null){s+=`<rect x="${X(b.x0)}" y="${T}" width="${Math.max(0,X(b.x1)-X(b.x0))}" height="${ph}" fill="${b.colour}" opacity="${b.opacity||0.12}"/>`;}
+    else s+=`<rect x="${L}" y="${Math.min(ya,yb)}" width="${pw}" height="${Math.abs(yb-ya)}" fill="${b.colour}" opacity="${b.opacity||0.12}"/>`;}

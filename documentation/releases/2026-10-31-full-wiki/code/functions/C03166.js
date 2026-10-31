@@ -1,0 +1,1 @@
+function(e){var t=[];for(var r in e)t.push({key:r,value:e[r]});return t}

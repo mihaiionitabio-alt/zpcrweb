@@ -1,0 +1,1 @@
+(i,n,ctx)=>{if(token!==generation||!listening||seen.has(i)||(typeof n==='number'&&!sameContext(ctx,context())))return;seen.add(i);armedUntil=0;if(!acknowledged.has(i)){acknowledged.add(i);const sound=window.MISSY_COMPUTER_SOUND;if(sound?.acknowledge)sound.acknowledge();else sound?.notify('voiceAcknowledge');}executeVoiceIntent(n);}

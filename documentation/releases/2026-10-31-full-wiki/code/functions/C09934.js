@@ -1,0 +1,1 @@
+s=>avg(s.event.map(r=>N(r.cq)))-avg(s.ref.map(r=>N(r.cq)))

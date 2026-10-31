@@ -1,0 +1,1 @@
+function(e,t){if(arguments.length<2){if("string"==typeof e)return this.node()[e];for(t in e)this.each(ce(t,e[t]));return this}return this.each(ce(e,t))}

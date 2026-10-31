@@ -1,0 +1,1 @@
+()=>focus('#mg-chart svg','The artificial heating series stays near its baseline. Keep protocol and instrument identity comparable.')

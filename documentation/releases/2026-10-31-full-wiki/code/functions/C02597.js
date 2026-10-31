@@ -1,0 +1,1 @@
+function _(t,a){if(r=l[t],!!(n=r._module).isContainer===a){var o=[];if(!0===r.visible&&0!==r._length){delete r._indexToPoints;var s=r.transforms||[];for(i=s.length-1;i>=0;i--)if(s[i].enabled){r._indexToPoints=s[i]._indexToPoints;break}n&&n.calc&&(o=n.calc(e,r))}Array.isArray(o)&&o[0]||(o=[{x:h,y:h}]),o[0].t||(o[0].t={}),o[0].trace=r,d[t]=o}}

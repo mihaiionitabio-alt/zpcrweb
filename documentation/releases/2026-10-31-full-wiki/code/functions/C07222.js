@@ -1,0 +1,1 @@
+()=>mgScope(b.dataset.tab)

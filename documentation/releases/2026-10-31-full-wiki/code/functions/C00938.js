@@ -1,0 +1,1 @@
+function(e){"use strict";e.exports={_isSubplotObj:!0,rangemode:{valType:"enumerated",values:["auto","fixed","match"],dflt:"match",editType:"calc"},range:{valType:"info_array",items:[{valType:"any",editType:"plot"},{valType:"any",editType:"plot"}],editType:"plot"},editType:"calc"}}

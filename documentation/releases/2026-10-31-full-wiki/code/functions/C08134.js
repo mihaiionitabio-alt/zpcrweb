@@ -1,0 +1,1 @@
+ri=>reportGraphAvailable(g,ri)

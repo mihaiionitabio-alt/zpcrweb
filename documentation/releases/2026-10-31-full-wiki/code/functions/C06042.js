@@ -1,0 +1,1 @@
+t=>{s+=`<text x="${t.px!=null?t.px:X(t.x)}" y="${t.py!=null?t.py:Y(t.y)}" fill="${t.colour||"#374151"}" font-size="${t.size||11}" text-anchor="${t.anchor||"start"}">${svgEsc(t.text)}</text>`;}

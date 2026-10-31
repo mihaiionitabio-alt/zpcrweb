@@ -1,0 +1,1 @@
+c=>controlBatchGraph(c,mode)

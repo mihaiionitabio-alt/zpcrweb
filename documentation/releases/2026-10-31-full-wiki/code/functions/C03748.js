@@ -1,0 +1,1 @@
+function a(a,o){for(var l,s,c=[],u=a.map(t,this),f=r.call(this,u,o),d=n.call(this,f,u,o),h=(o=-1,u.length),p=d.length-1,v=e?1:1/h;++o<p;)(l=c[o]=[]).dx=d[o+1]-(l.x=d[o]),l.y=0;if(p>0)for(o=-1;++o<h;)(s=u[o])>=f[0]&&s<=f[1]&&((l=c[i.bisect(d,s,1,p)-1]).y+=v,l.push(a[o]));return c}

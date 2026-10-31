@@ -1,0 +1,1 @@
+r=>({curve:r.curve,experiment:r.experiment,well:r.well,sample:r.sample,target:r.target,role:"Issue",call:r.storedCall,issueColour:r.issueColour})

@@ -1,0 +1,1 @@
+e=>{if(token!==generation)return;const message=microphoneError(e.error);stop();say(...message,true);const cue=e.error==='no-speech'?'voiceNoSpeech':['not-allowed','service-not-allowed'].includes(e.error)?'voicePermission':'voiceUnavailable';window.MISSY_COMPUTER_SOUND?.notify(cue);}

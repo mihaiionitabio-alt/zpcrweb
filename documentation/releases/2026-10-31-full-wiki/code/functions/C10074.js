@@ -1,0 +1,1 @@
+function(){const items=next();if(maraProfileActive())for(const x of items)if(x.id.startsWith('img:stdcurve'))x.note='';return items;}

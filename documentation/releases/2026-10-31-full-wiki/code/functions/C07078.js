@@ -1,0 +1,1 @@
+()=>{if(RUNS.length>1){MG.run=((MG.run|0)+1)%RUNS.length;mgRefresh();}}

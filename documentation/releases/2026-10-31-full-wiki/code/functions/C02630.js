@@ -1,0 +1,1 @@
+function(e){var r=e.name;if(t.subplotsRegistry[r])n.log("Plot type "+r+" already registered.");else for(var a in m(e),t.subplotsRegistry[r]=e,t.componentsRegistry)b(a,e.name)}

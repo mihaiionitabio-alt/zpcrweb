@@ -1,0 +1,1 @@
+c=>(c.textContent||"").trim()

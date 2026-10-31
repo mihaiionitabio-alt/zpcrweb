@@ -1,0 +1,1 @@
+function F(e){C=+e.srcElement.getAttribute("data-i"),O=+e.srcElement.getAttribute("data-j"),L[C][O].moveFn=H}

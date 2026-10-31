@@ -1,0 +1,1 @@
+function localiseTraining(){if(UI_LANG!=='zh')return;localizeDOM(document.body,true);for(const el of document.querySelectorAll('.hint')){if(/are\s+taxon/.test(el.textContent)){el.setAttribute('data-i18n-skip','');el.textContent=el.textContent.replace(/(\d+)\s+are\s+taxon[\s\S]*/,'$1 项为物种参照检查，仅供复核，不会单独改变转基因靶标判定。');}}}

@@ -1,0 +1,1 @@
+r=>({file:r.rdml_file,SN:r.instrument_sn,date:r.run_date,status:r.status})

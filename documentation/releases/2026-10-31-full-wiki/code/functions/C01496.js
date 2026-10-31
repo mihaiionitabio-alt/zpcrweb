@@ -1,0 +1,1 @@
+function(e,t,r){var n=Array.isArray(r)?function(e){r.push(e)}:function(e){r.text=e},a=f.extractOption(e,t,"htx","hovertext");if(f.isValidTextValue(a))return n(a);var i=f.extractOption(e,t,"tx","text");return f.isValidTextValue(i)?n(i):void 0}

@@ -1,0 +1,1 @@
+function(){for(var e=0,t=this.length;e<t;e++)for(var r=this[e],n=0,a=r.length;n<a;n++){var i=r[n];if(i)return i}return null}

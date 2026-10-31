@@ -1,0 +1,1 @@
+head=>head.replace(/\s(?:x|y|width|height)="[^"]*"/g,'')

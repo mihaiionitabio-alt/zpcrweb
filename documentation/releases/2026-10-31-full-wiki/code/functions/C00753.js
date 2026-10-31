@@ -1,0 +1,1 @@
+function b(e,t,r){for(var a=t.currentTarget.getAttribute("data-val"),i=e._fullLayout,o=i._subplots[r]||[],l={},s=0;s<o.length;s++){var c=o[s],u=i[c].zoom,f="in"===a?1.05*u:u/1.05;l[c+".zoom"]=f}n.call("_guiRelayout",e,l)}

@@ -1,0 +1,1 @@
+(x,i)=>pick.add(new Option((i+1)+'. '+txt(x.title),String(i)))

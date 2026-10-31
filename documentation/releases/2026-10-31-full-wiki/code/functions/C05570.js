@@ -1,0 +1,1 @@
+r=>Object.values(r.channels||{}).some(c=>c.sampleType==="NTC")

@@ -1,0 +1,1 @@
+(t,el)=>{const v=pv(el||an,t);return v===""?null:Number(v);}

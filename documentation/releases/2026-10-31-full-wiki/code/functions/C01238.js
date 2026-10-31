@@ -1,0 +1,1 @@
+function c(e,t){function r(r,a){return n.coerce(e,t,l,r,a)}r("visible","skip"===e.method||Array.isArray(e.args))&&(r("method"),r("args"),r("args2"),r("label"),r("execute"))}

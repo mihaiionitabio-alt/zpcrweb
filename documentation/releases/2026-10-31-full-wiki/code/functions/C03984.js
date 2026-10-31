@@ -1,0 +1,1 @@
+function l(e,t,r){return"A"+e+","+e+" 0 "+ +(r>Oe)+",1 "+t}

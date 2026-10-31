@@ -1,0 +1,1 @@
+e=>({event:e.what,time:sopFmtTime(e.time),hours_from_run_start:+((e.time-ref)/3600000).toFixed(3),kind:e.kind,read_from:e.source})

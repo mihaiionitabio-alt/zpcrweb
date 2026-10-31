@@ -1,0 +1,1 @@
+()=>download(UI_LANG==='zh'?'Missy_离线.html':'Missy_offline.html',MISSY_PUBLIC_SOURCE.replace(/const DEFAULT_LANG="(?:en|zh)";/,'const DEFAULT_LANG="'+(UI_LANG==='zh'?'zh':'en')+'";'),'text/html')

@@ -1,0 +1,1 @@
+(_,c)=>channels===2?NaN:n('LedCur'+String(c+1).padStart(2,'0'))

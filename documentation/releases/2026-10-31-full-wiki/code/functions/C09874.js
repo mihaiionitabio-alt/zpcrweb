@@ -1,0 +1,1 @@
+([level,rs])=>level&&rs.length>=3&&rs.every(r=>r.curve==='typical'&&N(r.cq)>0&&N(r.copies)>0)&&new Set(rs.map(r=>N(r.copies))).size===1

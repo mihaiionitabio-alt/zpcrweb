@@ -1,0 +1,1 @@
+function(){var t;this[e].count<2&&(t=this.parentNode)&&t.removeChild(this)}

@@ -1,0 +1,1 @@
+function(e){e.attr({"text-anchor":a,"data-notex":1})}

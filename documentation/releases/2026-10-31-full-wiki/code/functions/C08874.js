@@ -1,0 +1,1 @@
+r=>r.darkData?Array.from(r.darkData.slice(c*4,c*4+4)):null

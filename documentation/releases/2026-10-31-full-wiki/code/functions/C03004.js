@@ -1,0 +1,1 @@
+function x(e){return y?e.transition():e}

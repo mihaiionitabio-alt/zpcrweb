@@ -1,0 +1,1 @@
+function h(e,t){var r=e[t],n=t.charAt(0);r&&"paper"!==r&&(e[t]=u(r,n,!0))}

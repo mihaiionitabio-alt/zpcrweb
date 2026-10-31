@@ -1,0 +1,1 @@
+()=>{motionButton.setAttribute('aria-pressed',String(pointerMotion));motionButton.textContent=pointerMotion?'Pointer motion: On / 指针动画：开':'Pointer motion: Off / 指针动画：关';api?.setPointerMotion(pointerMotion);}

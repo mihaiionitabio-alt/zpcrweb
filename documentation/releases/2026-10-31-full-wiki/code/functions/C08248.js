@@ -1,0 +1,1 @@
+r=>{w=Math.max(w,pdfWidth(reportTableValue(c,r[c]),size,false));}

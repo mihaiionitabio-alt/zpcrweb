@@ -1,0 +1,1 @@
+function kt(){var e=At(),t=Lt()-e;t>24?(isFinite(t)&&(clearTimeout(wt),wt=setTimeout(kt,t)),_t=0):(_t=1,Tt(kt))}

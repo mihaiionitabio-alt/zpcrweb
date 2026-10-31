@@ -1,0 +1,1 @@
+x=>x.group===b.dataset.group&&reportItemVisible(x)

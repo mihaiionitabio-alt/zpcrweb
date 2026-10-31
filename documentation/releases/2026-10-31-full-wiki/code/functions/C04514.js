@@ -1,0 +1,1 @@
+function(e,t,r){var n=t[0],a=t[1],i=t[2],o=t[3],l=n+n,s=a+a,c=i+i,u=n*l,f=n*s,d=n*c,h=a*s,p=a*c,v=i*c,g=o*l,m=o*s,y=o*c;return e[0]=1-(h+v),e[1]=f+y,e[2]=d-m,e[3]=0,e[4]=f-y,e[5]=1-(u+v),e[6]=p+g,e[7]=0,e[8]=d+m,e[9]=p-g,e[10]=1-(u+h),e[11]=0,e[12]=r[0],e[13]=r[1],e[14]=r[2],e[15]=1,e}

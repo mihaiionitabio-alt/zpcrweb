@@ -1,0 +1,1 @@
+function(e){return"drawclosedpath"===e||"drawopenpath"===e||"drawline"===e||"drawrect"===e||"drawcircle"===e}

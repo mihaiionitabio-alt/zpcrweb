@@ -1,0 +1,1 @@
+function d(e){for(var t=f(e),r=t.min,n=t.max,a=t.reversescale?h(t.colorscale):t.colorscale,i=a.length,o=new Array(i),l=new Array(i),s=0;s<i;s++){var c=a[s];o[s]=r+c[0]*(n-r),l[s]=c[1]}return{domain:o,range:l}}

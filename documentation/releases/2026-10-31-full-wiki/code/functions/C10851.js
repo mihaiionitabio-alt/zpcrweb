@@ -1,0 +1,1 @@
+(s,i)=>({id:i,chapter:s.chapter,title:s.title,say:typeof s.say==='function'?s.say():s.say,tier:s.tier,type:s.type})

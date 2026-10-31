@@ -1,0 +1,1 @@
+()=>cmdExec('zpcr script')

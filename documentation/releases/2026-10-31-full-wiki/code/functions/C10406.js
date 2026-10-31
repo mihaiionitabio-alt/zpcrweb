@@ -1,0 +1,1 @@
+function(){return next().concat({title:'Source identity and provenance (CSV)',note:'',ready:()=>RUNS.length>0,run:()=>download('source_identity_provenance.csv',csvOf(rows(false)),'text/csv')});}

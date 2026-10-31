@@ -1,0 +1,1 @@
+w=>`${w.well} ${w.sample}: ${w.roleInstrument} / ${w.roleName}`

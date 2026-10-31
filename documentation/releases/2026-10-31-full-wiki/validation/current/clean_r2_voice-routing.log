@@ -1,0 +1,7 @@
+{
+  passed: true,
+  total: 122,
+  guarded: 47,
+  refusals: 10,
+  implementedRoutes: 65
+}

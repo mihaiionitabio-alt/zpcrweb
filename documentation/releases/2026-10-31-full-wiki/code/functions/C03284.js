@@ -1,0 +1,1 @@
+function(){return this.appendChild(e.apply(this,arguments))}

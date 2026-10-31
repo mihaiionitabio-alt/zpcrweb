@@ -1,0 +1,1 @@
+function be(e){return"SI"===e||"B"===e}

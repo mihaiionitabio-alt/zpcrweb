@@ -1,0 +1,1 @@
+(a,key)=>{const m=new Map();for(const x of a){const k=key(x);if(!m.has(k))m.set(k,[]);m.get(k).push(x);}return m;}

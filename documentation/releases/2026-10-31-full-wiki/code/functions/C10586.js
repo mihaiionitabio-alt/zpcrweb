@@ -1,0 +1,1 @@
+el=>{const text=el.id||el.dataset.cmd||el.getAttribute('aria-label')||el.textContent?.trim().slice(0,80)||'control';let h=2166136261;for(const ch of text)h=Math.imul(h^ch.charCodeAt(0),16777619);return 'control'+String((h>>>0)%211).padStart(3,'0');}

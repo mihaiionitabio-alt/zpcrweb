@@ -1,0 +1,1 @@
+()=>{apply.disabled=!select.value||typeof SOP_PRESETS[select.value]!=='function';}

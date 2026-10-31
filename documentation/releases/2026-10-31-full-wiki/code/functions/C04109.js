@@ -1,0 +1,1 @@
+function(e){o=a.x=r(e),l=a.y=i(e),n({type:"brush",mode:"resize"})}

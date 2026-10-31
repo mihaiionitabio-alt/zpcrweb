@@ -1,0 +1,1 @@
+function sopProcedureHTML(){return MISSY_HOOKS.invoke('sopProcedureHTML',this,[],sopProcedureHTMLBase);}

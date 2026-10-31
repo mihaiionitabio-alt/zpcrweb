@@ -1,0 +1,1 @@
+t=>`<option value="${t}"${t===res.type?" selected":""}>${esc(ui(TL[t]))}</option>`

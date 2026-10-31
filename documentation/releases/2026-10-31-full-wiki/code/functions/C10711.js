@@ -1,0 +1,1 @@
+()=>{const el=document.getElementById('ss-search');el.value='DEMO_SAMPLE';el.dispatchEvent(new Event('input',{bubbles:true}));}

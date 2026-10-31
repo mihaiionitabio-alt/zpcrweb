@@ -1,0 +1,1 @@
+function j(e,t){return!t||t.vLinePoint!==e._spikepoints.vLinePoint||t.hLinePoint!==e._spikepoints.hLinePoint}

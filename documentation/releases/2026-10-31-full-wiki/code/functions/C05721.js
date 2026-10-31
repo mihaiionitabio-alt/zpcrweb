@@ -1,0 +1,1 @@
+x=>new RegExp("^"+x.replace(/[.+^${}()[\]\\]/g,"\\$&").replace(/\*/g,".*").replace(/\?/g,".")+"$","i")

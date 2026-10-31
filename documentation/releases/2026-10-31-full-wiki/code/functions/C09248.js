@@ -1,0 +1,1 @@
+function pcrdXml(xml){if(/<!DOCTYPE|<!ENTITY/i.test(xml))throw Error('PCRD XML entities/DOCTYPE are unsupported');const d=new DOMParser().parseFromString(xml,'application/xml');if(d.querySelector('parsererror')||d.documentElement.tagName!=='experimentalData2')throw Error('Invalid PCRD experimentalData2 XML');return d;}

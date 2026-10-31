@@ -1,0 +1,1 @@
+function v(e){var t={r:e[0],g:e[1],b:e[2],a:e[3]};return a(t).toRgbString()}

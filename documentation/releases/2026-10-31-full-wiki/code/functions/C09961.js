@@ -1,0 +1,1 @@
+r=>`<b>${esc(r.rule)}</b><span style="overflow-wrap:anywhere" data-i18n-skip>${esc(r.value)}</span>`

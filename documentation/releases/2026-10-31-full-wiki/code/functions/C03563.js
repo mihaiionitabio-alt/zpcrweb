@@ -1,0 +1,1 @@
+function(t){return Math.pow(t,e)}

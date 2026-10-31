@@ -1,0 +1,1 @@
+function ZA(A){return 17===A.type}

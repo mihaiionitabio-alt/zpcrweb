@@ -1,0 +1,1 @@
+(nm,j)=>!Number.isFinite(v[j])

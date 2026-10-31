@@ -1,0 +1,1 @@
+(r,i,path)=>{for(const [field,key]of [['time','ms'],['temperature','temp'],['channel','channel'],['exposure','intgr'],['valid','valid'],['reference','ref']])add(field,r?.[key],path+'.'+key,{record:i+1},'acquisition');}

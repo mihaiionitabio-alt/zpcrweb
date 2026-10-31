@@ -1,0 +1,1 @@
+function(){e=s.i,t=s.j,o=s.x,l=s.y,n({type:"brushstart"})}

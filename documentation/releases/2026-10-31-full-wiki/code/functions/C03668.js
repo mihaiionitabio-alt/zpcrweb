@@ -1,0 +1,1 @@
+function n(a){var i,o=[a],l=[];for(a.depth=0;null!=(i=o.pop());)if(l.push(i),(c=t.call(n,i,i.depth))&&(s=c.length)){for(var s,c,u;--s>=0;)o.push(u=c[s]),u.parent=i,u.depth=i.depth+1;r&&(i.value=0),i.children=c}else r&&(i.value=+r.call(n,i,i.depth)||0),delete i.children;return an(a,(function(t){var n,a;e&&(n=t.children)&&n.sort(e),r&&(a=t.parent)&&(a.value+=t.value)})),l}

@@ -1,0 +1,1 @@
+(n,k,lim)=>{if(i<n-1)return false;const w=z.slice(i-n+1,i+1).filter(Number.isFinite);return Math.sign(z[i])!==0&&w.filter(q=>Math.sign(q)===Math.sign(z[i])&&Math.abs(q)>lim).length>=k;}

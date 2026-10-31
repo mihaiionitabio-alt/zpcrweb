@@ -1,0 +1,1 @@
+row=>{out+=s.cols.map(c=>cell(row[c])).join(TAB).replace(/\t+$/,s.ragged?"":"$&")+NL;}

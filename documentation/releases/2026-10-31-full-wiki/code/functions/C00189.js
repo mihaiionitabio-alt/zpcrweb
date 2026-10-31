@@ -1,0 +1,1 @@
+function(e,t,r,n){for(var a=0;a<r.length;a++)c(e,t,r[a]+"calendar",n.calendar)}

@@ -1,0 +1,1 @@
+function(e){return P+P+P+e+", -"+P+"-"+P+P+e+", "+P+"-"+P+P+e+", -"+P+P+P+e}

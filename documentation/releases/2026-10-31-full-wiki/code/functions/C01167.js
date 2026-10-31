@@ -1,0 +1,1 @@
+function(e,i){return r((t(e.x1,i)+a(e)+t(e.x0,i)+n(e))/2,i)}

@@ -1,0 +1,1 @@
+x=>x.id.startsWith('cc:z_')&&x.ready()

@@ -1,0 +1,1 @@
+(w,k)=>dv2.setUint32(k*4,w>>>0,true)

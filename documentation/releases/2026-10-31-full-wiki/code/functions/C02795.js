@@ -1,0 +1,1 @@
+function(e,r){var n,a=e.cd,i=e.xaxis,o=e.yaxis,l=a[0].trace,s="funnel"===l.type,c="h"===l.orientation,u=[];if(!1===r)for(n=0;n<a.length;n++)a[n].selected=0;else for(n=0;n<a.length;n++){var f=a[n],d="ct"in f?f.ct:t(f,i,o,c,s);r.contains(d,!1,n,e)?(u.push({pointNumber:n,x:i.c2d(f.x),y:o.c2d(f.y)}),f.selected=1):f.selected=0}return u}

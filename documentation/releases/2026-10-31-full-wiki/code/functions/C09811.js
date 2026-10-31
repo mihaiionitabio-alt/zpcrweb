@@ -1,0 +1,1 @@
+e=>{if(e.key==='Escape')legal.open=false;}

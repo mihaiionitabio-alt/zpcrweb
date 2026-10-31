@@ -1,0 +1,1 @@
+function(e,t,r){"use strict";var n=r(5568),a=r(8766);e.exports=function(e){e.each((function(e){var t=e[0].trace,r=t.error_y||{},i=t.error_x||{},o=n.select(this);o.selectAll("path.yerror").style("stroke-width",r.thickness+"px").call(a.stroke,r.color),i.copy_ystyle&&(i=r),o.selectAll("path.xerror").style("stroke-width",i.thickness+"px").call(a.stroke,i.color)}))}}

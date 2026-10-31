@@ -1,0 +1,1 @@
+r=>cmdPrint(r[0],"echo")

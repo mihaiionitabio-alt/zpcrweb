@@ -1,0 +1,1 @@
+r=>r.split(",").map(Number)

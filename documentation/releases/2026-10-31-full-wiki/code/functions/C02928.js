@@ -1,0 +1,1 @@
+function(e,t,r){"use strict";var n=r(5477).hasColorscale,a=r(8379),i=r(4726);e.exports=function(e,t){i.hasLines(t)&&n(t,"line")&&a(e,t,{vals:t.line.color,containerStr:"line",cLetter:"c"}),i.hasMarkers(t)&&(n(t,"marker")&&a(e,t,{vals:t.marker.color,containerStr:"marker",cLetter:"c"}),n(t,"marker.line")&&a(e,t,{vals:t.marker.line.color,containerStr:"marker.line",cLetter:"c"}))}}

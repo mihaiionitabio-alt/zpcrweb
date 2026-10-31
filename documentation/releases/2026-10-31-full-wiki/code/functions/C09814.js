@@ -1,0 +1,1 @@
+function pdfUnicodeNeeded(s){return UI_LANG==='zh'||/[^\u0000-\u00ff\u2010-\u2027]/.test(String(s));}

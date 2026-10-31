@@ -1,0 +1,1 @@
+function g(e){return"number"==typeof e.clientX?e.clientX:e.touches&&e.touches.length>0?e.touches[0].clientX:0}

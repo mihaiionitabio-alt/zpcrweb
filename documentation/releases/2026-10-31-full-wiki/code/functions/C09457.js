@@ -1,0 +1,1 @@
+a=>[rdmlNum(a,'cyc'),rdmlNum(a,'fluor')]

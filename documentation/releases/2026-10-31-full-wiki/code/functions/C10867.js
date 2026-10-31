@@ -1,0 +1,1 @@
+()=>{button.textContent=T('▶ Voice-command demo · artificial data','▶ 语音指令演示 · 模拟数据');button.disabled=first.disabled;}

@@ -1,0 +1,1 @@
+run=>({run,reads:run.zpcr.reads.filter(r=>r.step===step)})

@@ -1,0 +1,1 @@
+function(e){e=Math.floor(e+.5);for(var t=Math.floor((e-(this.jdEpoch-1))/366);e>=this.toJD(t+1,1,1);)t++;for(var r=e-Math.floor(this.toJD(t,1,1)+.5)+1,n=1;r>this.daysInMonth(t,n);)r-=this.daysInMonth(t,n),n++;return this.newDate(t,n,r)}

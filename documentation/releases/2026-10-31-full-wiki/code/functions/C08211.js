@@ -1,0 +1,1 @@
+x=>re.test(x.id)||re.test(x.id.replace(/^[a-z]+:/,""))

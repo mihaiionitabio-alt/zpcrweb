@@ -1,0 +1,1 @@
+g=>({id:g.id,control:false,title:g.title})

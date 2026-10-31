@@ -1,0 +1,1 @@
+x=>sha256Hex(new TextEncoder().encode(x.data))+'  '+x.name

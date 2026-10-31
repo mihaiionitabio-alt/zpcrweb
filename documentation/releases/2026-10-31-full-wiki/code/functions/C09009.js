@@ -1,0 +1,1 @@
+(x,i)=>{const q=ZPCR.zpcrQcMetrics(x.run.zpcr,step).metrics.referenceVsFactory;return Array.from({length:x.reads[0].channels},(_,c)=>({run:i,channel:c,points:(q?.byChannel?.[c]||[]).map((v,j)=>[j+1,v.deviationPct??NaN])}));}

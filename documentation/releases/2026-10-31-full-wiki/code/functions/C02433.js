@@ -1,0 +1,1 @@
+function(){var n=[];if(e._emptyCategories(),e._initialCategories)for(var a=0;a<e._initialCategories.length;a++)P(e._initialCategories[a]);n=n.concat(e._traceIndices);var i=e._matchGroup;for(var o in i)if(r!==o){var l=t[w.id2name(o)];l._categories=e._categories,l._categoriesMap=e._categoriesMap,n=n.concat(l._traceIndices)}return n}

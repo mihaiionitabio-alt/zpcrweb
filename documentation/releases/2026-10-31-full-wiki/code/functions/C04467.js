@@ -1,0 +1,1 @@
+function i(){"function"==typeof e.removeListener&&e.removeListener("error",a),r([].slice.call(arguments))}

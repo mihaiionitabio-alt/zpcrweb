@@ -1,0 +1,1 @@
+function T(e,t,r){var n=(r.xref+r.yref).replace(/paper/g,"").replace(/[xyz][1-9]* *domain/g,"");d.setClipUrl(e,n?"clip"+t._fullLayout._uid+n:null,t)}

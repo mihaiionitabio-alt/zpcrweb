@@ -1,0 +1,1 @@
+function(){var e;if(n.logging>1){var t=["LOG:"];for(e=0;e<arguments.length;e++)t.push(arguments[e]);console.trace.apply(console,t)}if(n.notifyOnLogging>1){var r=[];for(e=0;e<arguments.length;e++)r.push(arguments[e]);a(r.join("<br>"),"long")}}

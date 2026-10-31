@@ -1,0 +1,1 @@
+function(r,n){function a(r){e.removeListener(t,i),n(r)}function i(){"function"==typeof e.removeListener&&e.removeListener("error",a),r([].slice.call(arguments))}v(e,t,i,{once:!0}),"error"!==t&&function(e,t,r){"function"==typeof e.on&&v(e,"error",t,{once:!0})}(e,a)}

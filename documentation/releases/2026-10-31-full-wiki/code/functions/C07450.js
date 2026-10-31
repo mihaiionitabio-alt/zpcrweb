@@ -1,0 +1,1 @@
+()=>download("qpcr_diagnostics.json",appStatusReport(),"application/json")

@@ -1,0 +1,1 @@
+function(e,t){return t=t||{},(e=e||{}).newshape,a(t),{valType:"string",dflt:"",editType:e.editType||"arraydraw"}}

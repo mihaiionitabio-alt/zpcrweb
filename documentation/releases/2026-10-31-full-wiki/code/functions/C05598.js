@@ -1,0 +1,1 @@
+x=>x.sample&&x.undetermined&&x.ctRecalc!=null

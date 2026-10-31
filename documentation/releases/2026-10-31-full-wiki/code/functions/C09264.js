@@ -1,0 +1,1 @@
+r=>[r.step,r.cycle,r.originalData,r.originalDark]

@@ -1,0 +1,1 @@
+r=>Number.isFinite(metric==='Tm'?r.tm.value:r.cq.value)

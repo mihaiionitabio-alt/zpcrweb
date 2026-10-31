@@ -1,0 +1,1 @@
+function J(e,t){var r=e[0]/z,n=e[1]/I,a=Math.max(0,-r,r-1,-n,n-1);return a&&void 0!==A&&W(r,n,A,L)&&(a=0),a&&t&&W(r,n,t[0]/z,t[1]/I)&&(a=0),(1+d.toleranceGrowth*a)*F}

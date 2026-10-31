@@ -1,0 +1,1 @@
+function ae(e,t){return Math.abs(e/t-1)<.001}

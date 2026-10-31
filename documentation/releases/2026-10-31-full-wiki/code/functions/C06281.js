@@ -1,0 +1,2 @@
+o=>{const data=ts.map((t,i)=>{const n=ev.rows.filter(r=>r.target===t&&r.outcome===o).length;const p=[i,base[i]+n,base[i],`${t}: ${n} ${sopLabel(o)}`,sopColour(o)];base[i]+=n;if(n)rows.push({target:t,outcome:o,count:n});return p;}).filter(p=>p[1]>p[2]);
+      series.push({type:"bar",colour:sopColour(o),barWidth:Math.min(60,600/ts.length),data});}

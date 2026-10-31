@@ -1,0 +1,1 @@
+function o(e,t){return["Sets the "+e+" formatting rule"+(t?"for `"+t+"` ":""),"using d3 formatting mini-languages","which are very similar to those in Python. For numbers, see: "+a+"."].join(" ")}

@@ -1,0 +1,1 @@
+function i(e){return Math.round(255*function(e){return e>360?e-=360:e<0&&(e+=360),e<60?n+(a-n)*e/60:e<180?a:e<240?n+(a-n)*(240-e)/60:n}(e))}

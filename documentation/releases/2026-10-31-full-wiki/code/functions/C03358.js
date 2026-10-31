@@ -1,0 +1,1 @@
+function p(){var r=i.touches(t);return e=d.k,r.forEach((function(e){e.identifier in n&&(n[e.identifier]=T(e))})),r}

@@ -1,0 +1,1 @@
+()=>{questionDialog.showModal();questionDialog.querySelector('input').focus();}

@@ -1,0 +1,1 @@
+function De(e){return Oe(e)+".mirror"}

@@ -1,0 +1,1 @@
+function(e,t){return n("chain_add_tail",{index:e,pt:t})}

@@ -1,0 +1,2 @@
+r=>{const o=Object.assign({},r);delete o.loaded;delete o.hours;
+    if(pseudoOn())o.operator=o.operator==="(not recorded)"?o.operator:"operator-"+sha256Hex(new TextEncoder().encode(o.operator)).slice(0,8);return o;}

@@ -1,0 +1,1 @@
+function ya(e){return e.endAngle}

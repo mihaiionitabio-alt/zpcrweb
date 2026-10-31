@@ -1,0 +1,1 @@
+function j(e){var t=[],r=new M;function n(){for(var r,n=t,a=-1,i=n.length;++a<i;)(r=n[a].on)&&r.apply(this,arguments);return e}return n.on=function(n,a){var i,o=r.get(n);return arguments.length<2?o&&o.on:(o&&(o.on=null,t=t.slice(0,i=t.indexOf(o)).concat(t.slice(i+1)),r.remove(n)),a&&t.push(r.set(n,{on:a})),e)},n}

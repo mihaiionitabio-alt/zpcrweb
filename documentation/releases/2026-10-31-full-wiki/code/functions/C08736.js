@@ -1,0 +1,1 @@
+(v,c)=>add('LEDCURRENT'+(c+1),v,'DAC setting; not calibrated mA')

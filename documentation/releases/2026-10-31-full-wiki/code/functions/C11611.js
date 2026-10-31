@@ -1,0 +1,1 @@
+(n){const el=document.querySelector('[data-game-point="'+(n-1)+'"]');if(!el)return false;el.dispatchEvent(new MouseEvent('click',{bubbles:true}));return true;}

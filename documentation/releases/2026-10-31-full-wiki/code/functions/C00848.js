@@ -1,0 +1,1 @@
+function(e,t){var r=e._fullLayout,a=new c({graphInfo:e,container:r._modebardiv.node(),buttons:t});return r._privateplot&&n.select(a.element).append("span").classed("badge-private float--left",!0).text("PRIVATE"),a}

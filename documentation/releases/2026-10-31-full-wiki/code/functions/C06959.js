@@ -1,0 +1,1 @@
+(s,i)=>({seconds:s,block_C:L.temp[i]})

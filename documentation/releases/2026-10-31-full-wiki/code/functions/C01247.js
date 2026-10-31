@@ -1,0 +1,1 @@
+function(e){e.attr("text-anchor","end").call(o.font,a.font).text(f.arrowSymbol[a.direction])}

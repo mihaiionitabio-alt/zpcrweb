@@ -1,0 +1,1 @@
+function qn(e,t){var r,n=0,a=e.length-1,i=e[n],o=e[a];return o<i&&(r=n,n=a,a=r,r=i,i=o,o=r),e[n]=t.floor(i),e[a]=t.ceil(o),e}

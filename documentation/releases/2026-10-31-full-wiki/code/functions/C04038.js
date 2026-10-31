@@ -1,0 +1,1 @@
+function(e){this.setAttributeNS(n.space,n.local,t(e))}

@@ -1,0 +1,1 @@
+()=>download(r.file+'.stored.csv',pcrdCSV(pcrdRawRows(r)),'text/csv')

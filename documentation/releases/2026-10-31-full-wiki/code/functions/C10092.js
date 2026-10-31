@@ -1,0 +1,1 @@
+()=>{document.getElementById('sop-json').value=sopJSON();}

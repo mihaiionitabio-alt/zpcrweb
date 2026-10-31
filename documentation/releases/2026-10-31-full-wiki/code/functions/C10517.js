@@ -1,0 +1,1 @@
+async function(raw){if(String(raw).trim().toLowerCase()==='scope'){cmdTable(rows(true).map(r=>[r.filename||r.scope_item,[r.scope_item,r.scope_value,r.scope_state,r.scope_basis].filter(Boolean).join(' · ')]),true);return;}return next(raw);}

@@ -1,0 +1,1 @@
+s=>s.zipNames?.some(n=>/^RunInfo\.xml$/i.test(n))&&s.zipNames.some(n=>/\.plateread$/i.test(n))

@@ -1,0 +1,1 @@
+()=>{if(APP_STATE.lastError&&lastError!==APP_STATE.lastError){lastError=APP_STATE.lastError;sound.notify('error');}if(reading&&!['reading','staging'].includes(APP_STATE.phase)){reading=false;if(APP_STATE.phase==='ready'&&RUNS.length)sound.notify('loaded');}}

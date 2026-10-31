@@ -1,0 +1,1 @@
+function(e,t){return e.apply(null,[this].concat([].slice.call(t)))}

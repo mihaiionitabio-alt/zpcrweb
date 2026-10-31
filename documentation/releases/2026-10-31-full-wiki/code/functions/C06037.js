@@ -1,0 +1,1 @@
+p=>`${X(p[0]).toFixed(1)},${Y(p[1]).toFixed(1)}`

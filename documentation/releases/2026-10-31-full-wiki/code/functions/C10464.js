@@ -1,0 +1,1 @@
+(a,path,fn,why)=>{if(!Array.isArray(a))return;add('count',a.length,path,'', 'count');for(const i of new Set(a.length?[0,a.length-1]:[]))fn(a[i],i,path+'['+i+']',why);}

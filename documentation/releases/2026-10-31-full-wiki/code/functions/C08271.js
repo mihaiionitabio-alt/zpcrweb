@@ -1,0 +1,1 @@
+(a,r)=>Math.max(a,String(r[0]).length)

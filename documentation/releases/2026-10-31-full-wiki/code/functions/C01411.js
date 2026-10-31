@@ -1,0 +1,1 @@
+function s(e){return e.listener?(i.removeListener(t,e.listener),e.fired?void 0:(e.fired=!0,e.listener.apply(i,[r]))):e.apply(i,[r])}

@@ -1,0 +1,1 @@
+c=>c.control&&c.id===CC_STATE.open

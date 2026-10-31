@@ -1,0 +1,1 @@
+function Le(e){var t=e.title.font.size,r=(e.title.text.match(c.BR_TAG_ALL)||[]).length;return e.title.hasOwnProperty("standoff")?t*(V+r*U):r?t*(r+1)*U:t}

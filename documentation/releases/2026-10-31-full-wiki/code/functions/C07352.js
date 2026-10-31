@@ -1,0 +1,1 @@
+([name,value])=>({"@type":"PropertyValue",name,value})

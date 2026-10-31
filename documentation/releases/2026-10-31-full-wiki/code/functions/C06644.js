@@ -1,0 +1,1 @@
+q=>Math.abs(q)>1&&Math.sign(q)===Math.sign(z[i])

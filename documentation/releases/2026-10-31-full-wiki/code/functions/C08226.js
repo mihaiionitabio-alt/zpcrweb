@@ -1,0 +1,1 @@
+function sopAnalystName(){return String(sopLab().analyst||"").trim();}

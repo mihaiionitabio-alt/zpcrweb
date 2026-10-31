@@ -1,0 +1,1 @@
+()=>{setSelectItems($("#curve-target"),analysisChoices(runAt("#curve-run",0)),"");renderReviewCurves();}

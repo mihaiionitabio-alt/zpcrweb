@@ -1,0 +1,1 @@
+function(e){return e._has&&(e._has("gl3d")||e._has("gl2d")||e._has("mapbox")||e._has("map"))?500:0}

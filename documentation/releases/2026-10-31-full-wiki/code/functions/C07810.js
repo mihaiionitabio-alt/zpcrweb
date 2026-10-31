@@ -1,0 +1,1 @@
+p=>view.x0+(p-L)/(W-L-R)*(view.x1-view.x0)

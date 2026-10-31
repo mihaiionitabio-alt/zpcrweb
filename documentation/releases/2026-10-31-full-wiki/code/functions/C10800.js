@@ -1,0 +1,1 @@
+(step,i)=>{if(Math.floor(i/10)===ch)group.append(new Option((i+1)+' · '+step.title,String(i)));}

@@ -1,0 +1,1 @@
+()=>download(safeName(CC_STATE.instrument||"instrument")+"_history.csv",ccHistoryCSV(),"text/csv")

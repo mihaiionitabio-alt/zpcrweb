@@ -1,0 +1,1 @@
+function(){var e;if(n.logging>0){var t=["WARN:"];for(e=0;e<arguments.length;e++)t.push(arguments[e]);console.trace.apply(console,t)}if(n.notifyOnLogging>0){var r=[];for(e=0;e<arguments.length;e++)r.push(arguments[e]);a(r.join("<br>"),"stick")}}

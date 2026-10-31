@@ -1,0 +1,30 @@
+[
+  {
+    "file": "generate_regression_fixtures.py",
+    "bytes": 2507
+  },
+  {
+    "file": "README.txt",
+    "bytes": 725
+  },
+  {
+    "file": "RESULTS.json",
+    "bytes": 1706
+  },
+  {
+    "file": "SYNTHETIC_ambiguous_mapping.ixo",
+    "bytes": 557074
+  },
+  {
+    "file": "SYNTHETIC_baseline.ixo",
+    "bytes": 555118
+  },
+  {
+    "file": "SYNTHETIC_extra_catalogue.ixo",
+    "bytes": 557209
+  },
+  {
+    "file": "test_regressions.js",
+    "bytes": 3482
+  }
+]

@@ -1,0 +1,1 @@
+x=>ids.has(x.id)&&reportItemVisible(x)

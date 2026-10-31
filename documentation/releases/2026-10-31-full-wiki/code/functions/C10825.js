@@ -1,0 +1,1 @@
+()=>{const form=document.querySelector('#missy-setup form');form.elements.laboratory.value='Demo Molecular Laboratory (fictional)';form.elements.investigator.value='Dr Lin (fictional)';form.dispatchEvent(new Event('input',{bubbles:true}));document.getElementById('setup-enter').click();return ask('Computer who is the operator').answer;}

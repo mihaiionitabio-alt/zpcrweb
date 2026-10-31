@@ -1,0 +1,1 @@
+id=>Object.values(CC_BY_ID).length+GRAPHS.findIndex(g=>g.id===id)+1

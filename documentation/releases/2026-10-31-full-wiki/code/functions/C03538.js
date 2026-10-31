@@ -1,0 +1,1 @@
+function(r){return e*(1-r)+t*r}

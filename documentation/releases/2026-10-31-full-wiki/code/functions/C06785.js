@@ -1,0 +1,1 @@
+(p,i)=>p.flags.length?`<circle cx="${X(i).toFixed(1)}" cy="${Y(p.y).toFixed(1)}" r="2.4" fill="${ccSignal(p)==="limit"?CC_COL.bad:CC_COL.rule}"/>`:""

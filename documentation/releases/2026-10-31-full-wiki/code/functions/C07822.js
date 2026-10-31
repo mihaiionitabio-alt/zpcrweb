@@ -1,0 +1,1 @@
+()=>{if(!drag)tip.style.display="none";}

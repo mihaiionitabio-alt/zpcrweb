@@ -1,0 +1,1 @@
+function(e){var t,r,n,a,i,o=this.id,l=this.namespace,s=[];e=$(e);for(var c=-1,u=this.length;++c<u;)for(var f=this[c],d=-1,h=f.length;++d<h;)if(n=f[d]){i=n[l][o],r=e.call(n,n.__data__,d,c),s.push(t=[]);for(var p=-1,v=r.length;++p<v;)(a=r[p])&&oi(a,p,l,o,i),t.push(a)}return Qa(s,l,o)}

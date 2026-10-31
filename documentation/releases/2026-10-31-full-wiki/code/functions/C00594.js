@@ -1,0 +1,1 @@
+function(r){return a.coerceHoverinfo({hoverinfo:r},{_module:e._module},t)}

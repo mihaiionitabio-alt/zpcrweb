@@ -1,0 +1,1 @@
+p=>[p.x,p.y2,tip(p,"lo"),cusumColour(p,"lo")]

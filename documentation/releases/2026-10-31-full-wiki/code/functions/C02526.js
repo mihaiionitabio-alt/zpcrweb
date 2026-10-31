@@ -1,0 +1,1 @@
+function(e,t){var r,n=[];t.meta&&(r=t._meta={meta:t.meta,layout:{meta:t.meta}});for(var a=0;a<e.length;a++){var i=e[a];i.meta?n[i.index]=i._meta={meta:i.meta}:t.meta&&(i._meta={meta:t.meta}),t.meta&&(i._meta.layout={meta:t.meta})}n.length&&(r||(r=t._meta={}),r.data=n)}

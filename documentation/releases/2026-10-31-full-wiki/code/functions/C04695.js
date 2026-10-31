@@ -1,0 +1,1 @@
+function l(e,t){var r=function(e,t){var r=n.node({isStart:!0,pt:e.start,seg:e,primary:t,other:null,status:null});return o(r,e.end),r}(e,t);return function(e,t,r){var a=n.node({isStart:!1,pt:t.end,seg:t,primary:r,other:e,status:null});e.other=a,o(a,e.pt)}(r,e,t),r}

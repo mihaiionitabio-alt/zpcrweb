@@ -1,0 +1,1 @@
+e=>({experiment:runName(e.run),run_status:e.status,sample:'',summary:ui('Profile selection required'),sample_outcome:'Not evaluated',action:ui('Select a profile matching the experiment'),needs_action:'',requires_profile_selection:'yes',reference_outcomes:'',report:e.applicability.reason+'; '+e.applicability.expected,...sopMeta()})

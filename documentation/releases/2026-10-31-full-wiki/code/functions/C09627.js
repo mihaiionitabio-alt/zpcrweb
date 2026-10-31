@@ -1,0 +1,1 @@
+()=>download('PCRD_CFX_comparison.csv',pcrdCSV(piComparisons().map(({_group,...r})=>r)),'text/csv')

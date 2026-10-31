@@ -1,0 +1,1 @@
+function(e){var t=e.match(F);return t?{key:t[1],op:t[2],number:Number(t[3])}:{key:e,op:null,number:null}}

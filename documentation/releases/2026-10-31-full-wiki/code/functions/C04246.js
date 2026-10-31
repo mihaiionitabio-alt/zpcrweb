@@ -1,0 +1,1 @@
+function re(e){return e.getDay()}

@@ -1,0 +1,1 @@
+function(e,t){e.emit("plotly_selecting",t)}

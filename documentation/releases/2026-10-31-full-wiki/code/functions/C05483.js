@@ -1,0 +1,1 @@
+s=>{const v=((r.raw.data[s]||[])[c]||[])[w.i];o[s]=v==null?null:v;}

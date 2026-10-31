@@ -1,0 +1,1 @@
+function(e){var t=e[0].trace;return o.traceIs(t,"pie-like")?-1!==F.indexOf(e[0].label)?.5:1:"legendonly"===t.visible?.5:1}

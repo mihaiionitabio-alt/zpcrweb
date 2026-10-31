@@ -1,0 +1,1 @@
+()=>{const r=document.getElementById('sop-run');r.value='0';r.dispatchEvent(new Event('change',{bubbles:true}));}

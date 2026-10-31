@@ -1,0 +1,1 @@
+r=>ccValue(def,r,variant)

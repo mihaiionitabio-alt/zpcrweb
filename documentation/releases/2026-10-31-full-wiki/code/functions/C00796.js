@@ -1,0 +1,1 @@
+function(e){for(var t={"node.groups":[],"node.x":[],"node.y":[]},r=0;r<e._fullData.length;r++){var a=e._fullData[r]._viewInitial;t["node.groups"].push(a.node.groups.slice()),t["node.x"].push(a.node.x.slice()),t["node.y"].push(a.node.y.slice())}n.call("restyle",e,t)}

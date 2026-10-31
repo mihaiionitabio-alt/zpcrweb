@@ -1,0 +1,1 @@
+()=>{demo.profile();profiled=true;demo.page('sop');return ask('Computer which profile is active').answer;}

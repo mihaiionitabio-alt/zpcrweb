@@ -1,0 +1,1 @@
+function(e,t){return e=(e+"").toLowerCase(),arguments.length<2?s[e]:(null==t?delete s[e]:s[e]=t+"",a)}

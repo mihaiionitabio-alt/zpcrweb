@@ -1,0 +1,1 @@
+i=>Number.isInteger(i)&&RUNS[i]

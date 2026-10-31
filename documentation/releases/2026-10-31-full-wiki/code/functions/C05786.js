@@ -1,0 +1,1 @@
+w=>({x:Math.log10(Number(w.givenConc||w.StandardConc)),y:sopCq(w),well:w.well,sample:w.sample,conc:Number(w.givenConc||w.StandardConc)})

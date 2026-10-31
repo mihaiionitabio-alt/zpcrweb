@@ -1,0 +1,1 @@
+function(e,t,r,n){n||(n={});var a=n.minor;if(a&&!e.minor)return"";var i=void 0!==n.len?n.len:a?e.minor.ticklen:e.ticklen,o=e._id.charAt(0),l=(e.linewidth||1)/2;return"x"===o?"M0,"+(t+l*r)+"v"+i*r:"M"+(t+l*r)+",0h"+i*r}

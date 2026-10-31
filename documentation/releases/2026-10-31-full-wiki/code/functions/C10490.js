@@ -1,0 +1,1 @@
+r=>[r.filename,[r.context_field,r.context_value,r.context_state,r.context_scope,r.context_basis].filter(Boolean).join(' · ')]

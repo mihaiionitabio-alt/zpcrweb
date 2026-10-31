@@ -1,0 +1,1 @@
+(temp,i)=>({temp,fluor:x.rn[i]})

@@ -1,0 +1,1 @@
+function(){const chosen=ccInstruments().find(x=>x.key===CC_STATE.instrument);return cfxRuns().length&&(RUNS.every(r=>r.cfxRDML)||chosen?.platform==='CFX RDML')?CFX_ITEMS.map((x,i)=>mgIt({kind:'graph',sev:'none',code:'CFX '+(i+1),title:x.title,graphId:x.id.slice(4),state:x.note,rows:[],actions:[{key:'3',label:'Open graph',cmd:'chart'}]})):next();}

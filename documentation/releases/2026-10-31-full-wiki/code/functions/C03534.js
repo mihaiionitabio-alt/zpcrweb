@@ -1,0 +1,1 @@
+function(e){return"#"+ct(Math.round(r+o*e))+ct(Math.round(n+l*e))+ct(Math.round(a+s*e))}

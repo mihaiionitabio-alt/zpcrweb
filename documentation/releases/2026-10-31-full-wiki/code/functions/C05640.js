@@ -1,0 +1,1 @@
+x=>Lm+x/xmax*(W-Lm-R)

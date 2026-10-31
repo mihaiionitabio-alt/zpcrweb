@@ -1,0 +1,1 @@
+function pcrdCell(read,c,row,col,k=0){return read.wellData[(c*read.rows*read.cols+row*read.cols+col)*4+k];}

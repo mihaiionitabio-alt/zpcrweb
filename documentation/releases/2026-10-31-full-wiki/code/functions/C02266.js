@@ -1,0 +1,1 @@
+function B(e,t,r){return e.append("path").attr("class","zoombox-corners").style({fill:f.background,stroke:f.defaultLine,"stroke-width":1,opacity:0}).attr("transform",c(t,r)).attr("d","M0,0Z")}

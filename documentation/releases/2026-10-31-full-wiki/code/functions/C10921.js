@@ -1,0 +1,1 @@
+i=>step({id:'well-'+i,prompt:'Commit a call for '+rows[i].well+'; select its distinguishing field. / 判断该孔并选择区分状态的字段。',weights:{call:40,rule:40,evidence:20},calls:['Positive','Negative','Inconclusive','Repeat','Invalid'],evaluate:()=>outcome(rows[i])})

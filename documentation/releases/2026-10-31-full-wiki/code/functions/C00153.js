@@ -1,0 +1,1 @@
+function(e,t){return e^!!o.segmentsIntersect(s,f,s+1e6,f+1e6,t[0],t[1],t[2],t[3])}

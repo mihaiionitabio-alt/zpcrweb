@@ -1,0 +1,1 @@
+function(){for(var A=[],e=this.consumeToken();e!==NA;)A.push(e),e=this.consumeToken();return A}

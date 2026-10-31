@@ -1,0 +1,1 @@
+function astRender(...args){return MISSY_HOOKS.invoke("astRender",this,args,astRenderBase);}

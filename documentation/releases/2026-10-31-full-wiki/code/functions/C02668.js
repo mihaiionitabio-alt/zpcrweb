@@ -1,0 +1,1 @@
+function(e){for(var t=e.length,r=new ArrayBuffer(t),n=new Uint8Array(r),a=0;a<t;a++)n[a]=e.charCodeAt(a);return r}

@@ -1,0 +1,1 @@
+e=>e.criteria.map(c=>c.criterion.replace(/ — .*/,""))

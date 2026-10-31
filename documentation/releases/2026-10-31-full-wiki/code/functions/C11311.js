@@ -1,0 +1,1 @@
+function(A){Gn._link=A.document.createElement("a"),Gn._origin=Gn.getOrigin(A.location.href)}

@@ -1,0 +1,1 @@
+function mgRender(...args){return MISSY_HOOKS.invoke("mgRender",this,args,mgRenderBase);}

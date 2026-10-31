@@ -1,0 +1,1 @@
+n=>window.parent.MISSY_LEARNING.loading?.(n,window)

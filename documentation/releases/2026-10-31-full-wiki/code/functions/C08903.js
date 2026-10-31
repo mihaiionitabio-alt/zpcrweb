@@ -1,0 +1,1 @@
+(id,v,n)=>{if(Number.isFinite(n))(out[id]||(out[id]={}))[v]=n;}

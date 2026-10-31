@@ -1,0 +1,1 @@
+function(e,t,r){"use strict";var n=r(5568),a=r(2891),i=r(4102).resizeText;e.exports=function(e){var t=e._fullLayout._pielayer.selectAll(".trace");i(e,t,"pie"),t.each((function(t){var r=t[0].trace,i=n.select(this);i.style({opacity:r.opacity}),i.selectAll("path.surface").each((function(t){n.select(this).call(a,t,r,e)}))}))}}

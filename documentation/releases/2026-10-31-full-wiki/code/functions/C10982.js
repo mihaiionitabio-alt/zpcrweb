@@ -1,0 +1,1 @@
+function(){return g.apply(void 0,this.codePoints.slice(this.start,this.end))}

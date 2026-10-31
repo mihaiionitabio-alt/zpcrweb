@@ -1,0 +1,1 @@
+next => function(){zpcrNav.remove();zpcrPanel.remove();zcSyncGraphs();markDirty('export','integrity','graphs');}

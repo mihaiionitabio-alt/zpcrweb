@@ -1,0 +1,1 @@
+function Je(e,t,r){return this instanceof Je?(this.l=+e,this.a=+t,void(this.b=+r)):arguments.length<2?e instanceof Je?new Je(e.l,e.a,e.b):e instanceof Ge?We(e.h,e.c,e.l):dt((e=it(e)).r,e.g,e.b):new Je(e,t,r)}

@@ -1,0 +1,1 @@
+(setting,value,source)=>notes.push({setting,value,source})

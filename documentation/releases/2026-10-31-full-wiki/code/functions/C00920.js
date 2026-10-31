@@ -1,0 +1,1 @@
+function(e){for(var t=F[0],r=0;r<z.length;r++){var n=z[r];if(e>=n.pmax)t=F[r+1];else if(e<n.pmin)break}return(e-t)/N}

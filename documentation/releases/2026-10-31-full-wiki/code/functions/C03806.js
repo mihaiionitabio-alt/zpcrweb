@@ -1,0 +1,1 @@
+function(){return Math.exp(e())}

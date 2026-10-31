@@ -1,0 +1,1 @@
+function(e){var t=this._validate(e,this.minMonth,this.minDay,c.local.invalidYear||c.regionalOptions[""].invalidYear);return(t.year()<0?"-":"")+o(Math.abs(t.year()),4)}

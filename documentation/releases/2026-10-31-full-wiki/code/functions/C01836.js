@@ -1,0 +1,1 @@
+function(e){if(e=o.getGraphDiv(e),!o.isPlotDiv(e))throw new Error("This element is not a Plotly plot: "+e);return T.cleanData(e.data),T.cleanLayout(e.layout),e.calcdata=void 0,t._doPlot(e).then((function(){return e.emit("plotly_redraw"),e}))}

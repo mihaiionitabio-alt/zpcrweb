@@ -1,0 +1,1 @@
+function(e,t){for(var r,n,a=0,i=0,l=0,s=0,c=_(t)&&g.getComponentMethod("calendars","getCal")(t),u=0;u<e.length;u++)if(n=e[u],o(n)){if(!(n%f))if(c)try{1===(r=c.fromJD(n/f+v)).day()?1===r.month()?a++:i++:l++}catch(e){}else 1===(r=new Date(n)).getUTCDate()?0===r.getUTCMonth()?a++:i++:l++}else s++;l+=i+=a;var d=e.length-s;return{exactYears:a/d,exactMonths:i/d,exactDays:l/d}}

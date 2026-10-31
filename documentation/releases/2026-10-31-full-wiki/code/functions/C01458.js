@@ -1,0 +1,1 @@
+function(e,t,r){var n;function a(){return f.syncOrAsync(e,t,r)}for(;e.length;)if((n=(0,e.splice(0,1)[0])(t))&&n.then)return n.then(a);return r&&r(t)}

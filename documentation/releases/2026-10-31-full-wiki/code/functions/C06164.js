@@ -1,0 +1,1 @@
+function gRunWells(run,target){return ssWells(run).filter(w=>!target||(w.target||w.analysis)===target);}

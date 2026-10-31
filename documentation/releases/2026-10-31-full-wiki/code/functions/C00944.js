@@ -1,0 +1,1 @@
+function(e,t){i(e,t,{name:"selections",handleItemDefaults:s});for(var r=t.selections,n=0;n<r.length;n++){var a=r[n];a&&void 0===a.path&&(void 0!==a.x0&&void 0!==a.x1&&void 0!==a.y0&&void 0!==a.y1||(t.selections[n]=null))}}

@@ -1,0 +1,1 @@
+function(e,t){for(var r=new Array(t),n=0;n<t;n++){var a=(e[0]||[])[n],i=(e[1]||[])[n];r[n]=z([a,i])}return r}

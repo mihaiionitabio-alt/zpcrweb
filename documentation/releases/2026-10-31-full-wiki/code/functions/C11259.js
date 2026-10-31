@@ -1,0 +1,1 @@
+function(A){var e=this;A.forEach(function(A){return e.counters[A].pop()})}

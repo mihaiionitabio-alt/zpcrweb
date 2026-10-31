@@ -1,0 +1,1 @@
+function(e){return arguments.length?(l="function"==typeof e?o=e:(o=Ma.get(e)||ka).key,s=o.reverse||o,c=o.closed?"M":"L",f):l}

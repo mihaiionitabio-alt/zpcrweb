@@ -1,0 +1,1 @@
+function i(e,t,r,n,a,i,o){a[n]=!0;var l={i:null,gap:!0,s:0};if(l[o]=r,e.splice(t,0,l),t&&r===e[t-1][o]){var s=e[t-1];l.s=s.s,l.i=s.i,l.gap=s.gap}else i&&(l.s=function(e,t,r,n){var a=e[t-1],i=e[t+1];return i?a?a.s+(i.s-a.s)*(r-a[n])/(i[n]-a[n]):i.s:a.s}(e,t,r,o));t||(e[0].t=e[1].t,e[0].trace=e[1].trace,delete e[1].t,delete e[1].trace)}

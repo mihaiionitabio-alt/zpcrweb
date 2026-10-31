@@ -1,0 +1,1 @@
+r=>({category:r.category,severity:r.severity,experiment:r.experiment,well:r.well||"",finding:r.finding,evidence:r.evidence})

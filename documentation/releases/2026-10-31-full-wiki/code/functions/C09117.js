@@ -1,0 +1,1 @@
+s=>s.points.some(v=>Number.isFinite(v[1]))

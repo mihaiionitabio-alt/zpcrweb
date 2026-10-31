@@ -1,0 +1,1 @@
+function(){var e=i.variance.apply(this,arguments);return e?Math.sqrt(e):e}

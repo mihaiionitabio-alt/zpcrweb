@@ -1,0 +1,1 @@
+function mlWarn(t){return `<div class="notice warn">${esc(ui(t))}</div>`;}

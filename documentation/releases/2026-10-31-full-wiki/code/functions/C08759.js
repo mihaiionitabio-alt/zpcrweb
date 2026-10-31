@@ -1,0 +1,1 @@
+([x,y],i)=>Number.isFinite(vals[i])?`<circle cx="${x}" cy="${y}" r="2" fill="#2166cc"><title>${esc(reads[i].name)} · step ${reads[i].step} · cycle ${reads[i].cycle} · ${vals[i]} ${unit}</title></circle>`:''

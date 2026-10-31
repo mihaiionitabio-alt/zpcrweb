@@ -1,0 +1,1 @@
+function(){return j.apply(R,arguments)}

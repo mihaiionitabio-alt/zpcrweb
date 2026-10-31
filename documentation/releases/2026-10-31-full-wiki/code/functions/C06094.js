@@ -1,0 +1,1 @@
+w=>Number(w.pos)===Number(pos)

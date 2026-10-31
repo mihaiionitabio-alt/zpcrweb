@@ -1,0 +1,1 @@
+r=>r.wells.some(w=>w.curve)

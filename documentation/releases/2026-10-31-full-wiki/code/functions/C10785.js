@@ -1,0 +1,1 @@
+()=>{pointerMotion=!pointerMotion;updateMotion();}

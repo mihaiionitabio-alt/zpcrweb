@@ -1,0 +1,34 @@
+[
+  {
+    "file": "COMMAND_MODE_REFERENCE.md",
+    "bytes": 29774
+  },
+  {
+    "file": "command_output.txt",
+    "bytes": 3721
+  },
+  {
+    "file": "example_commands.txt",
+    "bytes": 58
+  },
+  {
+    "file": "README.txt",
+    "bytes": 387
+  },
+  {
+    "file": "synthetic_elapsed_minus_log_seconds.csv",
+    "bytes": 4958
+  },
+  {
+    "file": "synthetic_results.csv",
+    "bytes": 2760612
+  },
+  {
+    "file": "synthetic_sample_selection.csv",
+    "bytes": 190541
+  },
+  {
+    "file": "synthetic_temperature_log_minutes.csv",
+    "bytes": 5156
+  }
+]

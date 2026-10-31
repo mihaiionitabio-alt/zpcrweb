@@ -1,0 +1,1 @@
+x=>({id:x.id,title:txt(x.title),question:txt(x.question),guide:txt(x.guide)})

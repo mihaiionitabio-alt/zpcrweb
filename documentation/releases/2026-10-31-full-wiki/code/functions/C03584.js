@@ -1,0 +1,1 @@
+function Er(e){return 1-Math.sqrt(1-e*e)}

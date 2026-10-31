@@ -1,0 +1,1 @@
+function(t){s.notifier(c(e,"Snapshot succeeded")+" - "+t,"long")}

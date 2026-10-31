@@ -1,0 +1,1 @@
+()=>{if(document.getElementById('statusbar').classList.contains('open'))document.getElementById('sb-toggle').click();mgClose();cmdClose();astClose();document.querySelectorAll('dialog[open]').forEach(d=>d.close());document.getElementById('missy-public-license').open=false;}

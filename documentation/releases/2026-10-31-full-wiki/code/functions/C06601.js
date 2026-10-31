@@ -1,0 +1,1 @@
+x=>/Positive|Negative/.test(x.w.call)&&/Positive|Negative/.test(x.o)

@@ -1,0 +1,1 @@
+()=>{const rows=sopCurrentRows();if(rows.length)download(baseName()+"_SOP_"+$("#sop-view").value+".csv",csvOf(rows),"text/csv");}

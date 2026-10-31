@@ -1,0 +1,1 @@
+function(e){return{bdata:e.bdata,dtype:e.dtype,shape:e.shape}}

@@ -1,0 +1,1 @@
+function(e,t){return void 0!==e.minor||e.skipLabel?null:t}

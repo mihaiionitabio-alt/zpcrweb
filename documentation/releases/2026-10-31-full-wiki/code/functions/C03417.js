@@ -1,0 +1,1 @@
+function(e){return new it((e=Math.pow(.7,arguments.length?e:1))*this.r,e*this.g,e*this.b)}

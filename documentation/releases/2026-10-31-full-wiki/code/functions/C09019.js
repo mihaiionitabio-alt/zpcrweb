@@ -1,0 +1,1 @@
+(x,c)=>endpoint(x,c,true)

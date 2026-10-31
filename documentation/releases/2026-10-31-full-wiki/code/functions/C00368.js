@@ -1,0 +1,1 @@
+function(e){var a=n.select(this),i=r.selectedTextColorFn(e),o=e.tp||t.textposition,l=z(e,t);c.fill(a,i);var u=s.traceIs(t,"bar-like");P(a,o,l,e.mrc2||e.mrc,u)}

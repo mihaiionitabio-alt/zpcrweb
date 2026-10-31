@@ -1,0 +1,1 @@
+function(e){return isFinite(e=Math.floor(e))&&e>0?(0,n.A)((function(t){t.setFullYear(Math.floor(t.getFullYear()/e)*e),t.setMonth(0,1),t.setHours(0,0,0,0)}),(function(t,r){t.setFullYear(t.getFullYear()+r*e)})):null}

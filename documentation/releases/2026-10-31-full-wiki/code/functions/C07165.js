@@ -1,0 +1,1 @@
+()=>ccBaselineNeed(ccCfg("heat_rate"))

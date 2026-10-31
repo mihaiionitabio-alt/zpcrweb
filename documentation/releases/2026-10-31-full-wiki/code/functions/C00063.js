@@ -1,0 +1,1 @@
+function acknowledge(){if(!enabled||!cueEnabled('voiceAcknowledge')||!alive||alerting||document.hidden)return false;speak('voiceAcknowledge');return true;}

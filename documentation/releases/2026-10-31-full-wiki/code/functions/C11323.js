@@ -1,0 +1,1 @@
+function(A){return void 0!==this._cache[A]}

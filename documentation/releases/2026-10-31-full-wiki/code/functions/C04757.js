@@ -1,0 +1,1 @@
+function S(e,t,r){t=t||6,r=r||30;var n=d(e).toHsl(),a=360/r,i=[d(e)];for(n.h=(n.h-(a*t>>1)+720)%360;--t;)n.h=(n.h+a)%360,i.push(d(n));return i}

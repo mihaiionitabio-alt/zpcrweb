@@ -1,0 +1,2 @@
+r=>(names==="all"||r.nameReview.kind===names)&&(!q||[r.sample,r.experiment,r.date,r.roles.join(" "),r.targets.join(" ")].join(" ").toLocaleLowerCase().includes(q))
+    &&(view==="all"||(view==="excluded")===SAMPLE_SELECTION.draft.has(r.key))

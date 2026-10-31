@@ -1,0 +1,1 @@
+function(e,t){for(var r=e._context.locale,a=0;a<2;a++){for(var i=e._context.locales,o=0;o<2;o++){var l=(i[r]||{}).dictionary;if(l){var s=l[t];if(s)return s}i=n.localeRegistry}var c=r.split("-")[0];if(c===r)break;r=c}return t}

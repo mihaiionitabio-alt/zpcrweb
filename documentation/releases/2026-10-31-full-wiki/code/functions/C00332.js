@@ -1,0 +1,1 @@
+function(e){if(o(e))e=+e;else if("string"==typeof e){var t=0;e.indexOf("-open")>0&&(t=100,e=e.replace("-open","")),e.indexOf("-dot")>0&&(t+=200,e=e.replace("-dot","")),(e=x.symbolNames.indexOf(e))>=0&&(e+=t)}return e%100>=M||e>=400?0:Math.floor(Math.max(e,0))}

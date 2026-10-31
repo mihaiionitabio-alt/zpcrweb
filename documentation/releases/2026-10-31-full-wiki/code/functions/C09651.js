@@ -1,0 +1,1 @@
+r=>Number.isFinite(item.pcrdMetric.includes('Tm')?r.tm.value:r.cq.value)

@@ -1,0 +1,1 @@
+c=>c.map(v=>Number(v).toPrecision(7)).join(",")

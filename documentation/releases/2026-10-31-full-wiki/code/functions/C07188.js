@@ -1,0 +1,1 @@
+l=>l.some(e=>e.severity==="error")?0:1

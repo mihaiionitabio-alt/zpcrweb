@@ -1,0 +1,1 @@
+(c,s)=>{const step=data.cases.find(x=>x.id===c)?.steps.find(x=>x.id===s);if(!step)throw Error('Unknown training step');return step;}

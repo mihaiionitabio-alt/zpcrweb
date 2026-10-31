@@ -1,0 +1,1 @@
+function(e){var t=Promise.resolve();if(!e)return t;for(;e.length;)t=t.then(e.shift());return t}

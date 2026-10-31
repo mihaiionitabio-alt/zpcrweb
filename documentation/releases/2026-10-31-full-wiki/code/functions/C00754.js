@@ -1,0 +1,1 @@
+function _(e,t){for(var r=e._fullLayout,a=r._subplots[t]||[],i={},o=0;o<a.length;o++)for(var l=a[o],s=r[l]._subplot.viewInitial,c=Object.keys(s),u=0;u<c.length;u++){var f=c[u];i[l+"."+f]=s[f]}n.call("_guiRelayout",e,i)}

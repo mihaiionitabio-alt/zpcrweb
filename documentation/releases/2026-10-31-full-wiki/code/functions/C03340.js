@@ -1,0 +1,1 @@
+function(e){return((e=Math.exp(e))-1/e)/2}

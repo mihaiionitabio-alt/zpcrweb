@@ -1,0 +1,1 @@
+function(e,t,r){for(var n=0;n<e.length;n++){var a=e[n];if("splom"===a.type&&a._length>0&&(a["_"+r+"axes"]||{})[t])return a;if((a[r+"axis"]||r)===t){if(o(a,r))return a;if((a[r]||[]).length||a[r+"0"])return a}}}

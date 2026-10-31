@@ -1,0 +1,1 @@
+function(t){if(!l(t))return v;var r=e._rangebreaks.length;if(!r)return R(t,e._m,e._b);var n=B;e.range[0]>e.range[1]&&(n=!n);for(var a=n?-1:1,i=a*t,o=0,s=0;s<r;s++){var c=a*e._rangebreaks[s].min,u=a*e._rangebreaks[s].max;if(i<c)break;if(!(i>u)){o=i<(c+u)/2?s:s+1;break}o=s+1}var f=e._B[o]||0;return isFinite(f)?R(t,e._m2,f):0}

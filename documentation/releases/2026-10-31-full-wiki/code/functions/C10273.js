@@ -1,0 +1,1 @@
+function shipRecord(action,detail,drill=drillMode){shipEvents.push({at:new Date().toISOString(),action,drill,detail});if(shipEvents.length>200)shipEvents.shift();}

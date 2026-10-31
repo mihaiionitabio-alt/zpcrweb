@@ -1,0 +1,1 @@
+r=>{r.hours=hours;hours+=(r.m.run_minutes||0)/60;}

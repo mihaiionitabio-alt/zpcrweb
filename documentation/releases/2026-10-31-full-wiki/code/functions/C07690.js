@@ -1,0 +1,1 @@
+(r,i)=>`<label><input type="checkbox" data-issue-run="${i}"${indexes.includes(i)?" checked":""}>${esc(runName(r))}</label>`

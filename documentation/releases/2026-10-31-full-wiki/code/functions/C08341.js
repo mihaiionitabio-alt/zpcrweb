@@ -1,0 +1,1 @@
+()=>{sopLab().name=lab.value.trim();sopProfileEdited(true);}

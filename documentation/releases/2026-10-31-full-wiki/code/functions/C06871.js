@@ -1,0 +1,1 @@
+a=>`<option value="${a}"${cfg.action===a?" selected":""}>${esc(ui(a==="review"?"Flag for review in the forensic log":a==="reject"?"Error in the forensic log":"No alarm (chart only)"))}</option>`

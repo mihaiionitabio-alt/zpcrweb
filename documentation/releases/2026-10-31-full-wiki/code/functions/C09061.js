@@ -1,0 +1,1 @@
+next => function(){const items=next();if(items.some(x=>x.id.startsWith('img:zc_'))&&!items.some(x=>x.id==='data:zpcr_sources'))items.push(selItem('data:zpcr_sources'));return items;}

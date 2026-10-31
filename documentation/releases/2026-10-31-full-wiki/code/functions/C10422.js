@@ -1,0 +1,1 @@
+(kind,source,at,a,k)=>{const value=a?.[at];out.entries.push({kind,source_array:source,source_index:at,component:run.zpcr?['mean','sd','min','max'][k]:'native_'+(k+1),value:numeric(value),state:typeof value!=='number'?'unavailable':Number.isFinite(value)?'finite':'native_nonfinite'});}

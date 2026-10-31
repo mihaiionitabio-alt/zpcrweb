@@ -1,0 +1,1 @@
+function ge(e){return G(e,me),e}

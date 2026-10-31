@@ -1,0 +1,1 @@
+function(e,t){var r,n;for(r=0;r<e.length;r++){if(null!==(n=e[r])&&"object"==typeof n)return!1;void 0!==n&&(t[r]=n)}return!0}

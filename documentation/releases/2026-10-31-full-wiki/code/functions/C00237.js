@@ -1,0 +1,1 @@
+function(r,o){e.attr("transform",n+u(r,o)),a=s.align((l?t._uFrac:t._vFrac)+r/c.w,l?t._thickFrac:t._lenFrac,0,1,t.xanchor),i=s.align((l?t._vFrac:1-t._uFrac)-o/c.h,l?t._lenFrac:t._thickFrac,0,1,t.yanchor);var f=s.getCursor(a,i,t.xanchor,t.yanchor);d(e,f)}

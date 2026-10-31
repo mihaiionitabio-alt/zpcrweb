@@ -1,0 +1,1 @@
+v=>v==null?'unavailable':typeof v==='number'?Number.isFinite(v)?'number':'nonfinite':v===''?'empty':typeof v==='boolean'?'boolean':'text'

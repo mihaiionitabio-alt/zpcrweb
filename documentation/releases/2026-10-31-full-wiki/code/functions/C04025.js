@@ -1,0 +1,1 @@
+function(e){var t=f.delay;if(o.t=t+i,t<=e)return d(e-t);o.c=d}

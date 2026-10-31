@@ -1,0 +1,1 @@
+function g(e,t){for(var r=t.traces,n=x(e),a=0;a<r.length;a++){for(var i=r[a],o=i[0].trace,s="scatter"===o.type,c="v"===o.orientation,u=[],f=!1,d=0;d<i.length;d++){var h=i[d],p=s?0:h.b,v=s?c?h.y:h.x:p+h.s;h[n]=v,u.push(v),h.hasB&&u.push(p),h.hasB&&h.b||(f=!0)}o._extremes[e._id]=l.findExtremes(e,u,{tozero:f,padded:!0})}}

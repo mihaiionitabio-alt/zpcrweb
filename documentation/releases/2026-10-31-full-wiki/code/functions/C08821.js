@@ -1,0 +1,1 @@
+function(){const chosen=next();if(chosen.some(x=>x.id.startsWith('cc:z_'))&&!chosen.some(x=>x.id==='data:zpcr_sources'))chosen.push(selItem('data:zpcr_sources'));return chosen;}

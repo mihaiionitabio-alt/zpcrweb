@@ -1,0 +1,1 @@
+function(i,l){var s=i.edges,c=i.site;(t[l]=s.length?s.map((function(e){var t=e.start();return[t.x,t.y]})):c.x>=r&&c.x<=a&&c.y>=n&&c.y<=o?[[r,o],[a,o],[a,n],[r,n]]:[]).point=e[l]}

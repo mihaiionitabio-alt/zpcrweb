@@ -1,0 +1,1 @@
+function N(e,t){var r=0,n=e.offset;return t&&(n*=-L,r=e.offset*A),{x:r,y:n}}

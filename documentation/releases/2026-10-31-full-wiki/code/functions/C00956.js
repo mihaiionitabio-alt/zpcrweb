@@ -1,0 +1,1 @@
+function(e){"use strict";e.exports=function(e,t,r){r("newselection.mode"),r("newselection.line.width")&&(r("newselection.line.color"),r("newselection.line.dash")),r("activeselection.fillcolor"),r("activeselection.opacity")}}

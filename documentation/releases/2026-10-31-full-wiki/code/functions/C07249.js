@@ -1,0 +1,1 @@
+e=>`<tr><td class="k">${esc(e.time.slice(11,19))}</td><td class="sb-fault">${esc(e.area)}: ${esc(e.message)}</td></tr>`

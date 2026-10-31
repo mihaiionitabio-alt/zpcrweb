@@ -1,0 +1,1 @@
+(run,ri)=>{const t=runTimes(run);return {run,ri,time:Number.isFinite(t.start)?t.start:t.created,basis:Number.isFinite(t.start)?'recorded run start':'recorded experiment creation'};}

@@ -1,0 +1,1 @@
+function o(e){var t=e._fullLayout;n.filterVisible(t.annotations).forEach((function(t){var r=a.getFromId(e,t.xref),n=a.getFromId(e,t.yref),i=a.getRefType(t.xref),o=a.getRefType(t.yref);t._extremes={},"range"===i&&l(t,r),"range"===o&&l(t,n)}))}

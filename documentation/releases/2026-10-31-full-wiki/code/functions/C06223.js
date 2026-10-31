@@ -1,0 +1,1 @@
+t=>gCutLines(t,"y").map(l=>l.y)

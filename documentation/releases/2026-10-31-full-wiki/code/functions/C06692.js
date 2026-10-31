@@ -1,0 +1,1 @@
+function ccPlatform(...args){return MISSY_HOOKS.invoke("ccPlatform",this,args,ccPlatformBase);}

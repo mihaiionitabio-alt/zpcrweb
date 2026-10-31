@@ -1,0 +1,1 @@
+function(e){if(l(e._fullLayout.dragmode)){v(e);var t=e._fullLayout._activeSelectionIndex,r=(e.layout||{}).selections||[];if(t<r.length){for(var n=[],a=0;a<r.length;a++)a!==t&&n.push(r[a]);delete e._fullLayout._activeSelectionIndex;var i=e._fullLayout.selections[t];e._fullLayout._deselect={xref:i.xref,yref:i.yref},s.call("_guiRelayout",e,{selections:n})}}}

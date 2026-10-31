@@ -1,0 +1,1 @@
+e=>(lvl==="all"||(lvl==="error"?e.severity==="error":e.severity!=="info"))&&(!fr||e.experiment===fr)

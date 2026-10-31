@@ -1,0 +1,1 @@
+function(){var r="math-output-"+a.randstr({},64),i=(s=n.select("body").append("div").attr({id:r}).style({visibility:"hidden",position:"absolute","font-size":t.fontSize+"px"}).text(e.replace(c,"\\lt ").replace(u,"\\gt "))).node();return 2===d?MathJax.Hub.Typeset(i):MathJax.typeset([i])}

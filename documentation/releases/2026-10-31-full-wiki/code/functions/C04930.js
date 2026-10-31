@@ -1,0 +1,1 @@
+function(e,t,r){var a=this._validate(e,t,r,n.local.invalidMonth);(e=a.year())<0&&e++;for(var i=a.day(),l=1;l<a.month();l++)i+=this.daysPerMonth[l-1];return i+o.toJD(e+1468,3,13)}

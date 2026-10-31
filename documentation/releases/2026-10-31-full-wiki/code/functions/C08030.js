@@ -1,0 +1,1 @@
+r=>derivedSettingsFor(r).map(n=>Object.assign({experiment:runName(r)},n))

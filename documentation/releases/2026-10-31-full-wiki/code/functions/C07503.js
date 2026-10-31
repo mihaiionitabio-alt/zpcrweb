@@ -1,0 +1,1 @@
+(x,y)=>(x.target||x.analysis).localeCompare(y.target||y.analysis)

@@ -1,0 +1,1 @@
+(x,i)=>x-v[Math.max(0,v.length-tailK)-1+i]

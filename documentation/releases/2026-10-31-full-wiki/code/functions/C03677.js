@@ -1,0 +1,1 @@
+function r(e,t,n,a){var i=e.children;if(e.x=t,e.y=e.depth*a,e.dx=n,e.dy=a,i&&(o=i.length)){var o,l,s,c=-1;for(n=e.value?n/e.value:0;++c<o;)r(l=i[c],t,s=l.value*n,a),t+=s}}

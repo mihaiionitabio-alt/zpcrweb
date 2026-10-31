@@ -1,0 +1,1 @@
+function Me(e,t){for(var r=[],n={},a=0;a<t.length;a++){var i=t[a];n[i.text2]?n[i.text2].push(i.x):n[i.text2]=[i.x]}for(var o in n)r.push(ye(e,l.interp(n[o],.5),o));return r}

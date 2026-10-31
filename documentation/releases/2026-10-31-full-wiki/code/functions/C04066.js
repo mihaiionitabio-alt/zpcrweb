@@ -1,0 +1,1 @@
+function(e,t){var r=this.id,n=this.namespace;if(arguments.length<2){var a=ei,o=$a;try{$a=r,ve(this,(function(t,a,i){ei=t[n][r],e.call(t,t.__data__,a,i)}))}finally{ei=a,$a=o}}else ve(this,(function(a){var o=a[n][r];(o.event||(o.event=i.dispatch("start","end","interrupt"))).on(e,t)}));return this}

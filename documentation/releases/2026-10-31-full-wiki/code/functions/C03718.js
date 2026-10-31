@@ -1,0 +1,1 @@
+function wn(e,t){for(var r=-1,n=+e[0],a=(e[1]-n)/t,i=[];++r<=t;)i[r]=a*r+n;return i}

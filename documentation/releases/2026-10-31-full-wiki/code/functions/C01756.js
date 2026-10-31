@@ -1,0 +1,1 @@
+function s(t,r){e[r]=e[t],delete e[t]}

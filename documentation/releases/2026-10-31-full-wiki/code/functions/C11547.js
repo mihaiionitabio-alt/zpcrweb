@@ -1,0 +1,1 @@
+()=>resultView(()=>repeats()[0])

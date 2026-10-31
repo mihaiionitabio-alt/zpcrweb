@@ -1,0 +1,1 @@
+function(e,t){return n("new_seg",{seg:e,primary:t})}

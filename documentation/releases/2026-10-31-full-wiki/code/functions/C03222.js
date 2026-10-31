@@ -1,0 +1,1 @@
+function(e,t){for(var r in t)e[r]=t[r]}

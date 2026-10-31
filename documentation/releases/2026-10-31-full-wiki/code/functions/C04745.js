@@ -1,0 +1,1 @@
+function g(e,t,r,n){return[R(F(n)),R(s(e).toString(16)),R(s(t).toString(16)),R(s(r).toString(16))].join("")}

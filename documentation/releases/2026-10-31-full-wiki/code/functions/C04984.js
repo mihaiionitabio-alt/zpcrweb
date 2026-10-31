@@ -1,0 +1,1 @@
+function i(e,t,r,n){if(this._calendar=e,this._year=t,this._month=r,this._day=n,0===this._calendar._validateLevel&&!this._calendar.isValid(this._year,this._month,this._day))throw(c.local.invalidDate||c.regionalOptions[""].invalidDate).replace(/\{0\}/,this._calendar.local.name)}

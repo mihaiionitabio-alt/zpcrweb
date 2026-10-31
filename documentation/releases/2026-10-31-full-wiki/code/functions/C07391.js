@@ -1,0 +1,1 @@
+e=>{const bytes=bytesFrom(e.data);return {name:e.name,bytes:bytes.length,sha256:sha256Hex(bytes)};}

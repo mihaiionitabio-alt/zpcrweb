@@ -1,0 +1,1 @@
+function R(e,t,r){return function(){var n=r.apply(t,arguments);return n===t?e:n}}

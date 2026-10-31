@@ -1,0 +1,7 @@
+page.evaluate: TypeError: SOP_PRESETS.sc is not a function
+    at eval (eval at evaluate (:311:30), <anonymous>:1:25)
+    at UtilityScript.evaluate (<anonymous>:313:16)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+    at D:\IXO\missy_modular\tests\mara_definitions.cjs:12:19 {
+  log: []
+}

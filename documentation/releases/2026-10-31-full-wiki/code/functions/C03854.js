@@ -1,0 +1,1 @@
+function(t){return t<0?-Math.pow(-t,e):Math.pow(t,e)}

@@ -1,0 +1,1 @@
+()=>{const rows=edsSignalRows();if(rows.length)download(baseName()+"_multicomponent_raw.csv",toCSV(Object.keys(rows[0]).map(k=>({key:k,label:k})),rows),"text/csv");}

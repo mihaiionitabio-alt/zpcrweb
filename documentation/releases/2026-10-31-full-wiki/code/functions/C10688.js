@@ -1,0 +1,1 @@
+(_,k)=>({channel:k%2,ms:Math.floor(k/2)*30000+k%2*220,intgr:180,temp:60+.03*Math.sin(k),ref:7000+12*Math.sin(i)+(i>25?(i-25)*150:0),valid:true})

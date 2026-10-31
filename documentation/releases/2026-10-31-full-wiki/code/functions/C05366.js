@@ -1,0 +1,1 @@
+s=>document.querySelector(s)

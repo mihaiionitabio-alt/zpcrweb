@@ -1,0 +1,1 @@
+function m(e){return null===e?NaN:+e}

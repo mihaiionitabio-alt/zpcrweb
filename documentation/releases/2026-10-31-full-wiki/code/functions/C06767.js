@@ -1,0 +1,1 @@
+p=>p.flags.some(f=>/99.8/.test(f))

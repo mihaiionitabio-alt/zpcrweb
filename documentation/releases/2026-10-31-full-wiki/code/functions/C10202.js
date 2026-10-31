@@ -1,0 +1,1 @@
+p=>{const raw=p.raw??p.y;return Number.isFinite(p.ucl)&&p.y>p.ucl||Number.isFinite(p.lcl)&&p.y<p.lcl||Number.isFinite(p.u998)&&p.y>p.u998||Number.isFinite(res.spec?.lo)&&raw<res.spec.lo||Number.isFinite(res.spec?.hi)&&raw>res.spec.hi;}

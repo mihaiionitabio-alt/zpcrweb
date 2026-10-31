@@ -1,0 +1,1 @@
+rs=>rs.length===2&&rs.some(r=>r.assay===a)&&rs.some(r=>r.assay===ctx.reference)

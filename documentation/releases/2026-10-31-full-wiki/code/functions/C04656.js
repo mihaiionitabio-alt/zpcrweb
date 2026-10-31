@@ -1,0 +1,1 @@
+function(e,t){return n("chain_rem_head",{index:e,pt:t})}

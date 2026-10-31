@@ -1,0 +1,1 @@
+function(e){if((e._promises||[]).length)return Promise.all(e._promises).then((function(){e._promises=[]}))}

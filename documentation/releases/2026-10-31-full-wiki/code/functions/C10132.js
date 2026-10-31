@@ -1,0 +1,1 @@
+(en,zh)=>lang==='zh'?(p.analyticalRole==='identification'?zh.replace(/鉴定/g,'定性检测'):zh):en

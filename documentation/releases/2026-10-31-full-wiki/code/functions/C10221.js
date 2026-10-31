@@ -1,0 +1,1 @@
+r=>r.cells[i].textContent.trim()

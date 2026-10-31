@@ -1,0 +1,1 @@
+r=>({run:r.run,format:r.format,selected:r.selected_results,stored_Cq:r.stored_Cq,no_Cq:r.without_Cq,excluded:r.excluded_results,indep_Cq:r.independent_Cq,raw_reads:r.raw_reads})

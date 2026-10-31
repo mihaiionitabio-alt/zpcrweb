@@ -1,0 +1,1 @@
+()=>cfxRuns().length>0

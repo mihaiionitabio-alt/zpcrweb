@@ -1,0 +1,1 @@
+r=>ZPCR.zpcrWellMean(r,c,Math.floor(p/12),p%12)

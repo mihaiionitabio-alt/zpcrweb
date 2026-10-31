@@ -1,0 +1,1 @@
+function w(e,t){var r=l.ensureSingle(e,"g",f.labelsClass),a=t._dims,i=r.selectAll("g."+f.labelGroupClass).data(a.labelSteps);i.enter().append("g").classed(f.labelGroupClass,!0),i.exit().remove(),i.each((function(e){var r=n.select(this);r.call(_,e,t),o.setTranslate(r,S(t,e.fraction),f.tickOffset+t.ticklen+t.font.size*h+f.labelOffset+a.currentValueTotalHeight)}))}

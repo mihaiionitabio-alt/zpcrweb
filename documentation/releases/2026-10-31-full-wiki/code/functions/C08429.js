@@ -1,0 +1,1 @@
+v=>Number.isFinite(v)?Math.abs(v-med)/mad:NaN

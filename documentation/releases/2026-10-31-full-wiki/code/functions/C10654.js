@@ -1,0 +1,1 @@
+()=>{const active=[...modes].reverse().find(e=>e.classList.contains('on')),host=active?footers.get(active):home;if(host&&group.parentElement!==host)host.append(group);}

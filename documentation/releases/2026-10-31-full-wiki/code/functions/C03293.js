@@ -1,0 +1,1 @@
+function(e){var t,r,n,a=[];"function"!=typeof e&&(e=he(e));for(var i=0,o=this.length;i<o;i++){a.push(t=[]),t.parentNode=(r=this[i]).parentNode;for(var l=0,s=r.length;l<s;l++)(n=r[l])&&e.call(n,n.__data__,l,i)&&t.push(n)}return Z(a)}

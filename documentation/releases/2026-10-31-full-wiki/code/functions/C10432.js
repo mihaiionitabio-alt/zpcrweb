@@ -1,0 +1,1 @@
+function state(code,localized){const p=(en,zh)=>localized?t(en,zh):en;return ({finite:p('Decoded finite number','解码后的有限数值'),native_nonfinite:p('Native non-finite token; not replaced','原始非有限标记；未替换'),unavailable:p('Unavailable; not zero','未提供；不等于零')})[code];}

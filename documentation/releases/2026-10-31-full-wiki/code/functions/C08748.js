@@ -1,0 +1,1 @@
+([v,t])=>el.add(new Option(t,String(v)))

@@ -1,0 +1,1 @@
+(){return PDF_PAGE.w-2*PDF_PAGE.margin;}

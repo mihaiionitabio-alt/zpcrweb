@@ -1,0 +1,1 @@
+function l(t,r,n){if(a(r)&&a(t))u(t,r);else if(Array.isArray(r)&&Array.isArray(t)){var o=s.arrayTemplater({_template:e},n);for(i=0;i<r.length;i++){var l=r[i],c=o.newItem(l)._template;c&&u(c,l)}var f=o.defaultItems();for(i=0;i<f.length;i++)r.push(f[i]._template);for(i=0;i<r.length;i++)delete r[i].templateitemname}}

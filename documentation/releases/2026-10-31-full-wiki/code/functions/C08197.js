@@ -1,0 +1,1 @@
+()=>ccInstruments().length>0

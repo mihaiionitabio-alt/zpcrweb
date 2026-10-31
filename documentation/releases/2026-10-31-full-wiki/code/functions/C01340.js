@@ -1,0 +1,1 @@
+function(e){var t=e._fullLayout;t._glcanvas&&t._glcanvas.size()&&t._glcanvas.each((function(e){e.regl&&e.regl.clear({color:!0,depth:!0})}))}

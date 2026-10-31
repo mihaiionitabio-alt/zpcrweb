@@ -1,0 +1,1 @@
+function evaluate(i,answer){const x=lessons[i],truth=x.answer();const weights=x.mode==='number'?{value:100}:['evidence','point','open','report'].includes(x.mode)?{evidence:100}:{call:100};const flags={noLimits:x.id==='baseline',notApplicable:x.id==='scope',integrityOpen:false};return api.grade({weights,evaluate:()=>({...truth,...flags})},answer,0);}

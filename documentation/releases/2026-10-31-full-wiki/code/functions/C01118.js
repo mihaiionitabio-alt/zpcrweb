@@ -1,0 +1,1 @@
+function(e){return"log"===e.type?e.d2r:function(e){return e}}

@@ -1,0 +1,1 @@
+function z(){for(var e in this._)return!1;return!0}

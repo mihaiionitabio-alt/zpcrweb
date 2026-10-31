@@ -1,0 +1,1 @@
+function(e,t){var r=v.getValue(e.textposition,t);return v.coerceEnumerated(x,r)}

@@ -1,0 +1,1 @@
+function(e,t){var r=f[0][1],n=r[e[0]]-r[t[0]];if(n)return n;var a=f[1][1];return a[e[1]]-a[t[1]]}

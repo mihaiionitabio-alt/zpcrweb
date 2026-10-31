@@ -1,0 +1,1 @@
+(label,path,type='text',options)=>sopField(label,path,type,options)

@@ -1,0 +1,1 @@
+()=>graph('standard curve','light')

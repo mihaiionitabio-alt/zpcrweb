@@ -1,0 +1,1 @@
+function M(e){d.k=Math.max(p[0],Math.min(p[1],e))}

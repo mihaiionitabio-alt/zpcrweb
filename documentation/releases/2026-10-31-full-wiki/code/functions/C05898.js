@@ -1,0 +1,1 @@
+r=>r.meta&&r.meta.sourceSHA256

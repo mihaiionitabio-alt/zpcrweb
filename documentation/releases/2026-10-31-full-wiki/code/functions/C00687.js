@@ -1,0 +1,1 @@
+function D(e){return a.isBottomAnchor(e)?"bottom":a.isMiddleAnchor(e)?"middle":"top"}

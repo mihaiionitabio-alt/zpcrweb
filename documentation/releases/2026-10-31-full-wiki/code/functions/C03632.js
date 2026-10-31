@@ -1,0 +1,1 @@
+function(r){return arguments.length?(a=r,e=t=null,s):a}

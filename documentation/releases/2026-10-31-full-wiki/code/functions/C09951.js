@@ -1,0 +1,1 @@
+x=>x.standard===n

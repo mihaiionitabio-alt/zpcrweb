@@ -1,0 +1,1 @@
+o=>e.rows.filter(r=>r.outcome===o).length

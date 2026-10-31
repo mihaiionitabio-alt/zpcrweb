@@ -1,0 +1,1 @@
+(c,j)=>{const x=left+j*cw+cw/2;s+=`<text transform="translate(${x+3} ${top-6}) rotate(-50)" fill="#374151">${svgEsc(c)}</text>`;}

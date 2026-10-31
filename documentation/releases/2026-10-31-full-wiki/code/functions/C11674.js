@@ -1,0 +1,1 @@
+error=>{if(overlay===ownedOverlay)screenshots[id]={error:error.message};}

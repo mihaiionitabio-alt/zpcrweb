@@ -1,0 +1,1 @@
+s=>s.up&&s.to===top

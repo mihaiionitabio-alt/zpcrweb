@@ -1,0 +1,1 @@
+()=>{if((!window.__MISSY_DEMO_FRAME||window.__MISSY_VOICE_DEMO_FRAME)&&!entry.disabled&&!document.documentElement.classList.contains('missy-configuring'))open();}

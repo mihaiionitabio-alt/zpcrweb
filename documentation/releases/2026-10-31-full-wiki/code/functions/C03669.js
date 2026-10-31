@@ -1,0 +1,1 @@
+function(t){var n,a;e&&(n=t.children)&&n.sort(e),r&&(a=t.parent)&&(a.value+=t.value)}

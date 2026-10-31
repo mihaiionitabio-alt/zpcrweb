@@ -1,0 +1,1 @@
+()=>overlay.dataset.collapsed=overlay.dataset.collapsed==='true'?'false':'true'

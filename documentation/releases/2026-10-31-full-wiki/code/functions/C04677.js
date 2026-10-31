@@ -1,0 +1,1 @@
+function(t,r,n,a){var i=r[0]-t[0],o=r[1]-t[1],l=a[0]-n[0],s=a[1]-n[1],c=i*s-o*l;if(Math.abs(c)<e)return!1;var u=t[0]-n[0],f=t[1]-n[1],d=(l*f-s*u)/c,h=(i*f-o*u)/c,p={alongA:0,alongB:0,pt:[t[0]+d*i,t[1]+d*o]};return p.alongA=d<=-e?-2:d<e?-1:d-1<=-e?0:d-1<e?1:2,p.alongB=h<=-e?-2:h<e?-1:h-1<=-e?0:h-1<e?1:2,p}

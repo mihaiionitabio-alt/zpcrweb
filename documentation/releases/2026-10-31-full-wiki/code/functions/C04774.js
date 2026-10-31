@@ -1,0 +1,1 @@
+function(e){return function(e,t,r,n,a){var i=[R(s(e).toString(16)),R(s(t).toString(16)),R(s(r).toString(16)),R(F(n))];return a&&i[0].charAt(0)==i[0].charAt(1)&&i[1].charAt(0)==i[1].charAt(1)&&i[2].charAt(0)==i[2].charAt(1)&&i[3].charAt(0)==i[3].charAt(1)?i[0].charAt(0)+i[1].charAt(0)+i[2].charAt(0)+i[3].charAt(0):i.join("")}(this._r,this._g,this._b,this._a,e)}

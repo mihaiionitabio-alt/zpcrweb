@@ -1,0 +1,1 @@
+e=>{e.preventDefault();const result=ask(questionDialog.querySelector('input').value);if(result===null)questionOutput.textContent=t('Start with Computer or Missy.','请以 Computer 或 Missy 开头。');}

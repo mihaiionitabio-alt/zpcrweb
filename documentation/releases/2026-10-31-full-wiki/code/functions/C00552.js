@@ -1,0 +1,1 @@
+function(e){e.style({"stroke-width":"1px"})}

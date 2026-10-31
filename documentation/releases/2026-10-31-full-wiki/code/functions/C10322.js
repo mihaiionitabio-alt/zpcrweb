@@ -1,0 +1,1 @@
+()=>setScreenChartTheme(document.documentElement.dataset.chartTheme==='dark'?'light':'dark')

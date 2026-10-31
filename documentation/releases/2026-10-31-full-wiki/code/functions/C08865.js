@@ -1,0 +1,1 @@
+r=>r.zpcr&&r.meta.sourceSHA256===row.key

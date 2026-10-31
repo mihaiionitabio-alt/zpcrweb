@@ -1,0 +1,1 @@
+function(e){return e.selectAll("tspan.line").size()||1}

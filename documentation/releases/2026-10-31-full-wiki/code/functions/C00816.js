@@ -1,0 +1,1 @@
+function(e,t){var r=e.modebar||{},l=i.newContainer(t,"modebar");function s(e,t){return n.coerce(r,l,o,e,t)}s("orientation"),s("bgcolor",a.addOpacity(t.paper_bgcolor,.5));var c=a.contrast(a.rgb(t.modebar.bgcolor));s("color",a.addOpacity(c,.3)),s("activecolor",a.addOpacity(c,.7)),s("uirevision",t.uirevision),s("add"),s("remove")}

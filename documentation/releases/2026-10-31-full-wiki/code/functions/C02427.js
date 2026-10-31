@@ -1,0 +1,1 @@
+function(t,r){return Array.isArray(t)&&2===t.length&&(r&&null===t[0]||l(e.r2l(t[0])))&&(r&&null===t[1]||l(e.r2l(t[1])))}

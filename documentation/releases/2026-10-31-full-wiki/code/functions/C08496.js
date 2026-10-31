@@ -1,0 +1,1 @@
+r=>1/(1+Math.exp(-(r.reduce((a,v,j)=>a+v*full.w[j],0)+full.b)))

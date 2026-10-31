@@ -1,0 +1,1 @@
+function s(e,t){var r,n=JSON.stringify(e),i=t[n];if(!i){for(i=e.slice(),r=0;r<e.length;r++)i.push(a(e[r]).lighten(20).toHexString());for(r=0;r<e.length;r++)i.push(a(e[r]).darken(20).toHexString());t[n]=i}return i}

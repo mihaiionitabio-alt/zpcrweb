@@ -1,0 +1,1 @@
+(n,text){if(failed||ready)return;const next=Math.max(current,Math.min(5,n)),end=performance.now()-bootStart;for(let i=current;i<next;i++){const previous=i?completed[i-1].end:0;completed[i]={end,duration:end-previous};}current=next;label=text;paint();}

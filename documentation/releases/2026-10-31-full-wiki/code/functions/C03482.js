@@ -1,0 +1,1 @@
+function(e){for(var t,r,n,a,i,o,l=Et(e),s=-1,c=this.length-Et(this),u=this[c-1];++s<c;){for(t=e.slice(),e.length=0,a=this[s],i=t[(n=t.length-l)-1],r=-1;++r<n;)zt(o=t[r],u,a)?(zt(i,u,a)||e.push(It(i,o,u,a)),e.push(o)):zt(i,u,a)&&e.push(It(i,o,u,a)),i=o;l&&e.push(e[0]),u=a}return e}

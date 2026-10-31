@@ -1,0 +1,1 @@
+r=>({calibration_view:r.view,filename:r.filename,calibration_scope:r.scope,calibration_record:r.record,calibration_field:r.field,calibration_value:r.value,calibration_state:r.state,source_path:r.source_path})

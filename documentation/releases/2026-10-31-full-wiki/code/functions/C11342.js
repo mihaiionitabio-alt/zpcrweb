@@ -1,0 +1,1 @@
+function(){return new zn(this.end,this.endControl,this.startControl,this.start)}

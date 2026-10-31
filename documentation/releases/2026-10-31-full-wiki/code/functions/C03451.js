@@ -1,0 +1,1 @@
+function(t){for(var r={},n=e.length,a=0;a<n;++a)r[e[a]]=t[a];return r}

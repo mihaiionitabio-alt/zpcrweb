@@ -1,0 +1,1 @@
+function Et(e){var t=e[0],r=e[e.length-1];return!(t[0]-r[0]||t[1]-r[1])}

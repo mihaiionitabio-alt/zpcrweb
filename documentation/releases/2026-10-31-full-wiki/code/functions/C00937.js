@@ -1,0 +1,1 @@
+function(e,t,r){"use strict";var n=r(4809),a=r(3608),i=r(6249),o=r(400);e.exports={moduleType:"component",name:"rangeslider",schema:{subplots:{xaxis:{rangeslider:n.extendFlat({},a,{yaxis:i})}}},layoutAttributes:r(3608),handleDefaults:r(1295),calcAutorange:r(6223),draw:r(8887),isVisible:o.isVisible,makeData:o.makeData,autoMarginOpts:o.autoMarginOpts}}

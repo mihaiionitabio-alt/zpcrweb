@@ -1,0 +1,1 @@
+k=>['temp:'+k,k+' (stored type inferred)']

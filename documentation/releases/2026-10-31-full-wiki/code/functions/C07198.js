@@ -1,0 +1,2 @@
+(r,i)=>mgIt({kind:"integrity",sev:"alarm",pict:MG_PICT.file,kindWord:"file integrity",code:"I"+(i+1),title:r.file,value:r.type,unit:"mismatch",limits:`expected ${r.expected}`,
+    state:r.detail,evidence:`observed ${r.actual}`,rows:[["File",r.file],["Check",r.type],["Expected",r.expected],["Observed",r.actual]],actions:[{key:"3",label:"Open File integrity on the page",cmd:"open page integrity"}]})

@@ -1,0 +1,1 @@
+w=>c.signal==="drn"?(w.eds&&w.eds.drn&&w.eds.drn.length):(w.curve&&w.curve.length)

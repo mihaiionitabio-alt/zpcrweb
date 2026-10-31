@@ -1,0 +1,1 @@
+r=>r.file+'\nSource SHA-256: '+r.source_sha256+'\nAcquisition SHA-256: '+r.acquisition_sha256+'\nProtocol SHA-256: '+r.protocol_sha256

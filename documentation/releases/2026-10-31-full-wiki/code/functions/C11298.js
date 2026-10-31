@@ -1,0 +1,1 @@
+function(A){return Promise.all([].slice.call(A.images,0).map(Hn))}

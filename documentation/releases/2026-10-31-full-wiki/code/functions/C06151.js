@@ -1,0 +1,1 @@
+()=>{clearTimeout(timer);timer=setTimeout(()=>{SAMPLE_SELECTION.page=0;ssRender();},120);}

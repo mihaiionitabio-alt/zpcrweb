@@ -1,0 +1,1 @@
+(n,r)=>n+acquiredCurveCount(r)

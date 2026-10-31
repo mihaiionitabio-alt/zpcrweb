@@ -1,0 +1,1 @@
+function(e,t){return{combined:o(!1,f,u).calculate(e.segments,e.inverted,t.segments,t.inverted),inverted1:e.inverted,inverted2:t.inverted}}

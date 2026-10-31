@@ -1,0 +1,1 @@
+function(e,t){e=e||{},a(t=t||{});var r={valType:"string",dflt:"",editType:e.editType||"none"};return!1!==e.arrayOk&&(r.arrayOk=!0),r}

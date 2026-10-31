@@ -1,0 +1,1 @@
+e=>e.classList.remove('game-evidence-selected')

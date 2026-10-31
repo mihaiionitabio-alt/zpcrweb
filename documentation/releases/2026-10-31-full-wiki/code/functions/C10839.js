@@ -1,0 +1,1 @@
+()=> 'Computer show chart '+graphNumber(GRAPHS.find(g=>/amplification|curves/i.test(g.id+' '+g.title)).id)

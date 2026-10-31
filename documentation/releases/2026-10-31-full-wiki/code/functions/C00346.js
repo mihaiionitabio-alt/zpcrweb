@@ -1,0 +1,1 @@
+function(){return(r.size||6)/2}

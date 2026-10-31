@@ -1,0 +1,1 @@
+async()=>{await press('#ss-search','Type DEMO_SAMPLE to narrow the list.',()=>{const el=document.getElementById('ss-search');el.value='DEMO_SAMPLE';el.dispatchEvent(new Event('input',{bubbles:true}));});focus('#ss-body','Only matching artificial samples are shown. Inclusion remains explicit.')}

@@ -1,0 +1,1 @@
+function(e){var t=this._delay1(e-1),r=this._delay1(e);return this._delay1(e+1)-r==356?2:r-t==382?1:0}

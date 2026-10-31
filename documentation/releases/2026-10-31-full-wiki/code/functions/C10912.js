@@ -1,0 +1,1 @@
+()=>({call:chart.points.length<profile.baselineMinimum?'Cannot be determined':'In control',rule:'chart.baseline',noLimits:chart.points.length<profile.baselineMinimum,evidence:{kind:'chart',instrument:chart.instrument,chart:chart.id}})

@@ -1,0 +1,1 @@
+function mn(e){for(var t=-1,r=e[0].length,n=[];++t<r;)n[t]=0;return n}

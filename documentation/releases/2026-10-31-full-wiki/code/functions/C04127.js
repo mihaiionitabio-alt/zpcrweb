@@ -1,0 +1,1 @@
+function(e){var t,r,n,i,o,l=.75*e.length,s=e.length,c=0;"="===e[e.length-1]&&(l--,"="===e[e.length-2]&&l--);var u=new ArrayBuffer(l),f=new Uint8Array(u);for(t=0;t<s;t+=4)r=a[e.charCodeAt(t)],n=a[e.charCodeAt(t+1)],i=a[e.charCodeAt(t+2)],o=a[e.charCodeAt(t+3)],f[c++]=r<<2|n>>4,f[c++]=(15&n)<<4|i>>2,f[c++]=(3&i)<<6|63&o;return u}

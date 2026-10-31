@@ -1,0 +1,1 @@
+function(e){var t={};d(e,t,p.bind(null,e));var r=n.coerce(e,{},l,"type"),a=i.data[r];a||(a=i.data[r]=[]),a.push(t)}

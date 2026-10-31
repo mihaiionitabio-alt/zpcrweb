@@ -1,0 +1,1 @@
+(){return !!window.MISSY_CALM_VOICE?.speakingReply||(currentSpeech==='voiceAnswer'&&!!window.speechSynthesis?.speaking);}
