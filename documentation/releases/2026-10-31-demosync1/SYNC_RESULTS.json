@@ -1,0 +1,14 @@
+{
+  "changedResponses": 1,
+  "bankPhrases": 220,
+  "steps": 69,
+  "seconds": 1262.691331292517,
+  "version": "2026.10.31.demosync1",
+  "guidedStaleSoundCountRemoved": true,
+  "rendered": {
+    "Build identification. Current publication: 2026.10.31.demosync1. One offline HTML file. Publication identity is recorded separately in the release documentation.": {
+      "duration": 17.80358276643991,
+      "sha256": "c0a3146d2f02fd79603b991363b612edaa9122266db3337dd221547d93073310"
+    }
+  }
+}
