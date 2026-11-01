@@ -1,0 +1,71 @@
+{
+  "passed": true,
+  "parts": [
+    {
+      "part": 1,
+      "seconds": 71.34139,
+      "decode_passed": true,
+      "peak": 0.792633056640625
+    },
+    {
+      "part": 2,
+      "seconds": 96.373878,
+      "decode_passed": true,
+      "peak": 0.795196533203125
+    },
+    {
+      "part": 3,
+      "seconds": 120.389229,
+      "decode_passed": true,
+      "peak": 0.794219970703125
+    },
+    {
+      "part": 4,
+      "seconds": 80.167234,
+      "decode_passed": true,
+      "peak": 0.792236328125
+    },
+    {
+      "part": 5,
+      "seconds": 84.584392,
+      "decode_passed": true,
+      "peak": 0.811187744140625
+    },
+    {
+      "part": 6,
+      "seconds": 91.138021,
+      "decode_passed": true,
+      "peak": 0.7977294921875
+    },
+    {
+      "part": 7,
+      "seconds": 83.722006,
+      "decode_passed": true,
+      "peak": 0.80224609375
+    },
+    {
+      "part": 8,
+      "seconds": 78.782585,
+      "decode_passed": true,
+      "peak": 0.797821044921875
+    },
+    {
+      "part": 9,
+      "seconds": 59.04322,
+      "decode_passed": true,
+      "peak": 0.791229248046875
+    },
+    {
+      "part": 10,
+      "seconds": 72.079569,
+      "decode_passed": true,
+      "peak": 0.785736083984375
+    }
+  ],
+  "voice_profile": "MISSY_CALM_V1",
+  "speech_clips": 54,
+  "new_missy_word_checked_clips": 21,
+  "unchanged_operator_clips": 33,
+  "scientific_sources_unchanged": 28,
+  "source_html_sha256": "6a56b4f372603849be3f8309c5aeeca4dd4ba4a81ce7de5d737b4b1a1c87a651"
+}

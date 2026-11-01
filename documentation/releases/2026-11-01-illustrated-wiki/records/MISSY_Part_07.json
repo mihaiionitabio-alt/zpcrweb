@@ -1,0 +1,222 @@
+{
+  "part": 7,
+  "title": "Compare the right histories",
+  "command": "Computer are these runs comparable",
+  "intent": "data:cohort",
+  "actual_answer": "2 distinct recorded platform/instrument labels; 1 decoded protocol signatures; 0 run views lack an instrument identifier and 0 lack a decoded protocol. The loaded records include different cohorts. Select one instrument, protocol and acquisition context before comparing control charts.",
+  "response_excerpt": false,
+  "segments": [
+    {
+      "clip": "29baf1befa5e56",
+      "role": "operator",
+      "text": "These are artificial data, not laboratory results.",
+      "frame": "title",
+      "pause": 2
+    },
+    {
+      "clip": "876915ecd9c985",
+      "role": "operator",
+      "text": "These histories may not belong together.",
+      "frame": "title",
+      "pause": 2
+    },
+    {
+      "clip": "f7d5c158fda89a",
+      "role": "operator",
+      "text": "I open Missy and enter the workspace.",
+      "frame": "setup",
+      "pause": 2
+    },
+    {
+      "clip": "25c5d698b8c8a5",
+      "role": "operator",
+      "text": "I load the artificial data and the profile.",
+      "frame": "load",
+      "pause": 2
+    },
+    {
+      "clip": "07f6221ac3e847",
+      "role": "operator",
+      "text": "The files are ready for review.",
+      "frame": "sop",
+      "pause": 2
+    },
+    {
+      "clip": "a77fbbb74c6472",
+      "role": "operator",
+      "text": "Computer are these runs comparable",
+      "frame": "evidence",
+      "pause": 1.2
+    },
+    {
+      "clip": "bf218ba51cf070",
+      "role": "missy",
+      "text": "2 distinct recorded platform/instrument labels; 1 decoded protocol signatures; 0 run views lack an instrument identifier and 0 lack a decoded protocol.",
+      "frame": "evidence",
+      "pause": 2.5,
+      "zh": "记录中有两个不同的平台或仪器标签，一个已解码的方案签名。缺少仪器标识的运行 0 个；缺少已解码方案的运行 0 个。"
+    },
+    {
+      "clip": "04bd9243affd7c",
+      "role": "missy",
+      "text": "The loaded records include different cohorts.",
+      "frame": "evidence",
+      "pause": 2.5,
+      "zh": "已加载记录包含不同的数据组。"
+    },
+    {
+      "clip": "6b39c975b8f5ea",
+      "role": "missy",
+      "text": "Select one instrument, protocol and acquisition context before comparing control charts.",
+      "frame": "evidence",
+      "pause": 2.5,
+      "zh": "比较控制图前，请选择相同的仪器、方案及采集条件。"
+    },
+    {
+      "clip": "7e340753cb67a5",
+      "role": "operator",
+      "text": "I compare one matching group at a time.",
+      "frame": "evidence",
+      "pause": 5
+    }
+  ],
+  "intro_repeated": true,
+  "artificial": true,
+  "voice_commands_emulated": true,
+  "hook_before_setup": true,
+  "render_revision": 3,
+  "duration_seconds": 83.722006,
+  "timeline": [
+    {
+      "clip": "29baf1befa5e56",
+      "role": "operator",
+      "text": "These are artificial data, not laboratory results.",
+      "frame": "title",
+      "pause": 2,
+      "start_s": 5.0,
+      "speech_seconds": 5.071666666666666,
+      "pause_s": 3,
+      "audio_sha256": "5709a34f9285f28f01ac091de003345f7e21bcc4a14550c03a23d0f93d894dbb",
+      "encoded_scene_seconds": 8.083333
+    },
+    {
+      "clip": "876915ecd9c985",
+      "role": "operator",
+      "text": "These histories may not belong together.",
+      "frame": "title",
+      "pause": 2,
+      "start_s": 13.083333,
+      "speech_seconds": 3.7085833333333333,
+      "pause_s": 3,
+      "audio_sha256": "a9d1f80e0a3749f2d018d15dc4b84399011e961f06804c9fc4040e85c3b64cce",
+      "encoded_scene_seconds": 6.75
+    },
+    {
+      "clip": "f7d5c158fda89a",
+      "role": "operator",
+      "text": "I open Missy and enter the workspace.",
+      "frame": "setup",
+      "pause": 2,
+      "start_s": 19.833333,
+      "speech_seconds": 4.794479166666667,
+      "pause_s": 3,
+      "audio_sha256": "7d8a361c00666de9a10ea0e18c441424caa2b2744c1fe15355cb6aa8a66b3122",
+      "encoded_scene_seconds": 7.833333
+    },
+    {
+      "clip": "25c5d698b8c8a5",
+      "role": "operator",
+      "text": "I load the artificial data and the profile.",
+      "frame": "load",
+      "pause": 2,
+      "start_s": 27.666666,
+      "speech_seconds": 3.5693125,
+      "pause_s": 3,
+      "audio_sha256": "3761fc1196a6059425ee638c7ea2a84892f27e5c3386de3af15b3357bb20b1fd",
+      "encoded_scene_seconds": 6.583333
+    },
+    {
+      "clip": "07f6221ac3e847",
+      "role": "operator",
+      "text": "The files are ready for review.",
+      "frame": "sop",
+      "pause": 2,
+      "start_s": 34.249999,
+      "speech_seconds": 2.6601666666666666,
+      "pause_s": 2,
+      "audio_sha256": "4dba5970313fc217419af0a2a0b6fc5692917a43e0f7e1189cfdeba8b00115d7",
+      "encoded_scene_seconds": 4.666667
+    },
+    {
+      "clip": "a77fbbb74c6472",
+      "role": "operator",
+      "text": "Computer are these runs comparable",
+      "frame": "evidence",
+      "pause": 1.2,
+      "start_s": 38.916666000000006,
+      "speech_seconds": 4.460354166666667,
+      "pause_s": 1.2,
+      "audio_sha256": "be1ef83affdbb2c93b8e5ac9e6f8a6cc434f4d724a3f13384ad452696a3349ce",
+      "encoded_scene_seconds": 5.666667
+    },
+    {
+      "clip": "bf218ba51cf070",
+      "role": "missy",
+      "text": "2 distinct recorded platform/instrument labels; 1 decoded protocol signatures; 0 run views lack an instrument identifier and 0 lack a decoded protocol.",
+      "frame": "evidence",
+      "pause": 2.5,
+      "zh": "记录中有两个不同的平台或仪器标签，一个已解码的方案签名。缺少仪器标识的运行 0 个；缺少已解码方案的运行 0 个。",
+      "start_s": 44.58333300000001,
+      "speech_seconds": 12.6940589569161,
+      "pause_s": 2.5,
+      "audio_sha256": "f430f1ef658d728f817ee882e33268f42995734d9b36c2433a26abd5d96534a1",
+      "encoded_scene_seconds": 15.193991
+    },
+    {
+      "clip": "04bd9243affd7c",
+      "role": "missy",
+      "text": "The loaded records include different cohorts.",
+      "frame": "evidence",
+      "pause": 2.5,
+      "zh": "已加载记录包含不同的数据组。",
+      "start_s": 59.77732400000001,
+      "speech_seconds": 3.465578231292517,
+      "pause_s": 2.5,
+      "audio_sha256": "f8d4c12c599130e203ff554e6ff612c25c765231363f56c658afe2d86ac4efe3",
+      "encoded_scene_seconds": 6.0
+    },
+    {
+      "clip": "6b39c975b8f5ea",
+      "role": "missy",
+      "text": "Select one instrument, protocol and acquisition context before comparing control charts.",
+      "frame": "evidence",
+      "pause": 2.5,
+      "zh": "比较控制图前，请选择相同的仪器、方案及采集条件。",
+      "start_s": 65.77732400000001,
+      "speech_seconds": 6.755102040816326,
+      "pause_s": 2.5,
+      "audio_sha256": "e3c17ce795a777a55dc997b9368ae64eedd1f3c9a39edf0fa708836e49202bf5",
+      "encoded_scene_seconds": 9.255011
+    },
+    {
+      "clip": "7e340753cb67a5",
+      "role": "operator",
+      "text": "I compare one matching group at a time.",
+      "frame": "evidence",
+      "pause": 5,
+      "start_s": 75.032335,
+      "speech_seconds": 3.6257291666666664,
+      "pause_s": 5,
+      "audio_sha256": "935d545418e55e4563397aed79c700acf0e414ed41789f6015549e19dc015883",
+      "encoded_scene_seconds": 8.666667
+    }
+  ],
+  "video_sha256": "f963d9ed6fba4c425620f4847d44f8c3a8550dbb8a5db65d6b7258566cfedd1a",
+  "source_html_sha256": "6a56b4f372603849be3f8309c5aeeca4dd4ba4a81ce7de5d737b4b1a1c87a651",
+  "format": "Actual live-page screenshot sequence with synchronized checked speech and evidence holds; commands text-fed, no microphone test.",
+  "voice_profile": "MISSY_CALM_V1",
+  "decode_passed": true,
+  "peak": 0.80224609375,
+  "subtitle_timing": "Based on encoded scene durations; phrase-level captions",
+  "narration_terms": "Cq spoken as threshold cycle; amplified in spoken as signal detected in"
+}

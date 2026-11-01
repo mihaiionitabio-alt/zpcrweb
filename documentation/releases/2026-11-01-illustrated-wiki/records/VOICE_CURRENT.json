@@ -1,0 +1,1106 @@
+[
+  {
+    "answer": {
+      "en": "ARTIFICIAL DATA — NOT A LABORATORY RESULT. The operator is Dr Lin in a fictional laboratory. Commands are supplied as text; no microphone is being tested.",
+      "zh": "人工模拟数据，不是实验室结果。操作人员为虚构实验室的林博士。命令以文本模拟输入，不测试麦克风。"
+    },
+    "audioBytes": 99482,
+    "chapter": 1,
+    "id": 0,
+    "intent": null,
+    "reportBytes": 0,
+    "runCount": 0,
+    "say": "Chapter 1. Setup and intake.",
+    "tier": "standard",
+    "title": "Chapter 1 / 第 1 章",
+    "type": "action"
+  },
+  {
+    "answer": {
+      "en": "MISSY / SESSION SETUP",
+      "zh": "会话设置已打开。"
+    },
+    "audioBytes": 29578,
+    "chapter": 1,
+    "id": 1,
+    "intent": null,
+    "reportBytes": 0,
+    "runCount": 0,
+    "say": "I click the MISSY logo to enter.",
+    "tier": "standard",
+    "title": "Open MISSY / 打开 MISSY",
+    "type": "action"
+  },
+  {
+    "answer": {
+      "en": "Operator record. Investigator field: Dr Lin (fictional). This field does not authenticate a person.",
+      "zh": "操作人员记录。分析人员字段：Dr Lin (fictional)。此字段不验证身份。"
+    },
+    "audioBytes": 78087,
+    "chapter": 1,
+    "id": 2,
+    "intent": null,
+    "reportBytes": 0,
+    "runCount": 0,
+    "say": "I enter a fictional laboratory and investigator.",
+    "tier": "standard",
+    "title": "Enter a fictional identity / 输入虚构身份",
+    "type": "action"
+  },
+  {
+    "answer": {
+      "en": "Operator record. Investigator field: Dr Lin (fictional). This field does not authenticate a person.",
+      "zh": "操作人员记录。分析人员字段：Dr Lin (fictional)。此字段不验证身份。"
+    },
+    "audioBytes": 70956,
+    "chapter": 1,
+    "id": 3,
+    "intent": "q:operator",
+    "reportBytes": 0,
+    "runCount": 0,
+    "say": "Computer who am I",
+    "tier": "trivial",
+    "title": "Who is speaking? / 操作人员",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Device clock. 26/10/2026, 10:00:00. Device local time.",
+      "zh": "设备时钟。2026/10/26 10:00:00。设备本地时间。"
+    },
+    "audioBytes": 68684,
+    "chapter": 1,
+    "id": 4,
+    "intent": "f:clock",
+    "reportBytes": 0,
+    "runCount": 0,
+    "say": "Computer what time is it",
+    "tier": "trivial",
+    "title": "Demonstration clock / 演示时钟",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Build identification. Current publication: 2026.10.31.demolabels1. One offline HTML file. Publication identity is recorded separately in the release documentation.",
+      "zh": "版本标识。当前发布：2026.10.31.demolabels1。单个离线 HTML 文件。发布标识另载于发布文档。"
+    },
+    "audioBytes": 119073,
+    "chapter": 1,
+    "id": 5,
+    "intent": "q:build",
+    "reportBytes": 0,
+    "runCount": 0,
+    "say": "Computer what build is this",
+    "tier": "standard",
+    "title": "Current publication / 当前发布",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "The interface language is English. Recognition uses the English offline pack. Speech output requires an installed local voice for the selected language.",
+      "zh": "界面语言为英文。识别使用英语离线语言包；语音输出需要安装相应语言的本地语音。"
+    },
+    "audioBytes": 87752,
+    "chapter": 1,
+    "id": 6,
+    "intent": "q:lang",
+    "reportBytes": 0,
+    "runCount": 0,
+    "say": "Computer what language are you speaking",
+    "tier": "standard",
+    "title": "Language and recognition / 语言与识别",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Supported inputs. IXO, EDS, EDT, RDML, ZPCR and PCRD experiment files, plus ZIP archives. Available data depends on the source file.",
+      "zh": "支持的输入。支持 IXO、EDS、EDT、RDML、ZPCR、PCRD 实验文件和 ZIP 压缩包。可用数据取决于源文件。"
+    },
+    "audioBytes": 106456,
+    "chapter": 1,
+    "id": 7,
+    "intent": "q:formats",
+    "reportBytes": 0,
+    "runCount": 0,
+    "say": "Computer what formats do you read",
+    "tier": "standard",
+    "title": "Supported formats / 支持的格式",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "1 file(s) staged: ARTIFICIAL_MISSY_DEMO.rdml 4.0 MB",
+      "zh": "已选择内嵌人工模拟文件。此步骤为演示脚本操作。"
+    },
+    "audioBytes": 83312,
+    "chapter": 1,
+    "id": 8,
+    "intent": null,
+    "reportBytes": 0,
+    "runCount": 0,
+    "say": "I select the embedded artificial file. File selection is a scripted demo action.",
+    "tier": "standard",
+    "title": "Choose embedded data / 选择内嵌数据",
+    "type": "action"
+  },
+  {
+    "answer": {
+      "en": "Files selected. Ready to read.",
+      "zh": "已选择文件，可开始读取。"
+    },
+    "audioBytes": 34959,
+    "chapter": 1,
+    "id": 9,
+    "intent": "q:status",
+    "reportBytes": 0,
+    "runCount": 0,
+    "say": "Computer what are you doing",
+    "tier": "trivial",
+    "title": "Ready to read / 可开始读取",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Read 32 run(s): 768 stored result(s), 768 amplification curve(s).",
+      "zh": "实际读取流程已完成，模拟运行和记录已加载。"
+    },
+    "audioBytes": 85950,
+    "chapter": 1,
+    "id": 10,
+    "intent": null,
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "I press Read files. This is a scripted demo action.",
+    "tier": "standard",
+    "title": "Read artificial runs / 读取模拟运行",
+    "type": "action"
+  },
+  {
+    "answer": {
+      "en": "32 runs loaded. 768 stored result rows. This count does not include separate melting or relative-quantity tables.",
+      "zh": "已加载 32 次运行，包含 768 行存储结果。此数量不包含单独的熔解或相对定量表。"
+    },
+    "audioBytes": 80960,
+    "chapter": 1,
+    "id": 11,
+    "intent": "q:counts",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer how many runs",
+    "tier": "trivial",
+    "title": "Count runs and records / 统计运行及记录",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "1 distinct recorded source filenames; 32 decoded runs. File names may be unavailable or shared by several runs.",
+      "zh": "1 个已记录且不同的源文件名；32 次已解码运行。文件名可能缺失，或由多次运行共用。"
+    },
+    "audioBytes": 73359,
+    "chapter": 1,
+    "id": 12,
+    "intent": "f:files",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer how many files",
+    "tier": "standard",
+    "title": "Source files and run views / 源文件与运行视图",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Run 3. SIM 3. 24 stored result rows; 2 recorded targets.",
+      "zh": "第 3 次运行。SIM 3。存储结果 24 行；记录靶标 2 个。"
+    },
+    "audioBytes": 62361,
+    "chapter": 1,
+    "id": 13,
+    "intent": "o:identify run:three",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer identify run three",
+    "tier": "standard",
+    "title": "Identify one run / 识别一次运行",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Newest available timestamp; 0 run views have no usable timestamp. Ties are listed; this is not the time files were read. Run 32; SIM 32; 2026-02-01T09:00:00.000Z; recorded run start. End of list.",
+      "zh": "可用时间戳中最新的一项；0 个运行视图缺少可用时间戳。列出并列项，这不是文件读取时间。 Run 32; SIM 32; 2026-02-01T09:00:00.000Z; recorded run start。列表结束。"
+    },
+    "audioBytes": 172599,
+    "chapter": 1,
+    "id": 14,
+    "intent": "data:newest",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer which run is newest",
+    "tier": "standard",
+    "title": "Find the latest recorded run / 查找最新运行",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "2 distinct recorded platform/instrument labels; 0 run views have no recorded instrument identifier. Labels are not independently verified device identities. LC · DEMO-VIRTUAL-001. 1 more. Say Computer more.",
+      "zh": "不同的已记录平台／仪器标签 2 个；0 个运行视图没有仪器标识。标签不代表经过独立验证的设备身份。 LC · DEMO-VIRTUAL-001。还有 1 项，请说 Computer more。"
+    },
+    "audioBytes": 137411,
+    "chapter": 1,
+    "id": 15,
+    "intent": "data:instruments",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer how many instruments",
+    "tier": "standard",
+    "title": "Recorded instruments / 已记录的仪器",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Comparison scope. 2 distinct recorded platform/instrument labels; 1 decoded protocol signatures; 0 run views lack an instrument identifier and 0 lack a decoded protocol. The loaded records include different cohorts. Select one instrument, protocol and acquisition context before comparing control charts.",
+      "zh": "比较范围。不同的已记录平台／仪器标签 2 个；已解码方案签名 1 个；缺少仪器标识 0 个，缺少已解码方案 0 个。已加载记录包含不同数据组。比较控制图前请选择单一仪器、方案及采集条件。"
+    },
+    "audioBytes": 166642,
+    "chapter": 1,
+    "id": 16,
+    "intent": "data:cohort",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer are these runs comparable",
+    "tier": "standard",
+    "title": "Compare compatible histories / 比较相容历史",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Damage report. Recorded evidence: 0 recorded integrity mismatch findings; 0 software faults; 0 locked PCRD views. Counts are findings and views, not files. No new scan was run. Unchecked records are not declared intact. This is not a hardware diagnosis.",
+      "zh": "问题报告。记录证据报告：完整性不符记录 0 项；保留软件故障 0 项；实验数据不可用的锁定 PCRD 运行视图 0 个。数量代表记录或视图，不是不同文件数。未进行新的校验或全图扫描，未检查记录不声明完好，本报告不是硬件损坏诊断。"
+    },
+    "audioBytes": 167295,
+    "chapter": 1,
+    "id": 17,
+    "intent": "ship:damage",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer damage report",
+    "tier": "standard",
+    "title": "Recorded evidence, not damage diagnosis / 记录证据而非损坏诊断",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "ARTIFICIAL DATA — NOT A LABORATORY RESULT. We will examine planted repeat findings, a failed control, optical drift and an incomplete baseline.",
+      "zh": "人工模拟数据，不是实验室结果。我们将检查人为设置的复测判定、对照失败、光学漂移和不足的基线。"
+    },
+    "audioBytes": 90208,
+    "chapter": 2,
+    "id": 18,
+    "intent": null,
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Chapter 2. Follow the evidence.",
+    "tier": "standard",
+    "title": "Chapter 2 / 第 2 章",
+    "type": "action"
+  },
+  {
+    "answer": {
+      "en": "Method identification. Active profile: ARTIFICIAL DEMO — NOT VALIDATED. Version: demo-1.",
+      "zh": "方法标识。当前配置：ARTIFICIAL DEMO — NOT VALIDATED。版本：demo-1。"
+    },
+    "audioBytes": 91462,
+    "chapter": 2,
+    "id": 19,
+    "intent": null,
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "I create a fictional review-only method. Profile editing is a scripted demo action.",
+    "tier": "standard",
+    "title": "Create a review-only profile / 创建仅审核配置",
+    "type": "action"
+  },
+  {
+    "answer": {
+      "en": "Method identification. Active profile: ARTIFICIAL DEMO — NOT VALIDATED. Version: demo-1.",
+      "zh": "方法标识。当前配置：ARTIFICIAL DEMO — NOT VALIDATED。版本：demo-1。"
+    },
+    "audioBytes": 75919,
+    "chapter": 2,
+    "id": 20,
+    "intent": "q:profile",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer which profile is active",
+    "tier": "trivial",
+    "title": "Active method / 当前方法",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Reference assignments. Profile-declared reference rules: 1. This is an assignment, not proof of detection. REF_GENE; match: REF_GENE. End of list.",
+      "zh": "参照设置。配置声明的参照规则 1 项。这是角色指定，不代表已检出。 REF_GENE; match: REF_GENE。列表结束。"
+    },
+    "audioBytes": 115024,
+    "chapter": 2,
+    "id": 21,
+    "intent": "data:references",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer which target is the reference",
+    "tier": "standard",
+    "title": "Reference assignment / 参照角色",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "2 distinct recorded target labels across all loaded stored result rows. This does not count uncollected channels. DNA_TARGET. 1 more. Say Computer more.",
+      "zh": "所有已加载存储结果行中有 2 个不同靶标标签。这不统计未采集通道。 DNA_TARGET。还有 1 项，请说 Computer more。"
+    },
+    "audioBytes": 102590,
+    "chapter": 2,
+    "id": 22,
+    "intent": "data:targets",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer what targets are loaded",
+    "tier": "trivial",
+    "title": "Loaded targets / 已加载靶标",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Read the results. 64 current sample-level profile summaries. Samples are grouped within each run and current selection. This is not a count of raw reactions. 59; Positive. 2 more. Say Computer more.",
+      "zh": "读取结果。当前样品级配置汇总 64 项。样品按每次运行和当前选择分组，这不是原始反应数。 59; Positive。还有 2 项，请说 Computer more。"
+    },
+    "audioBytes": 135504,
+    "chapter": 2,
+    "id": 23,
+    "intent": "data:results",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer read the results",
+    "tier": "standard",
+    "title": "Read real profile summaries / 阅读实际配置汇总",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "3 current sample-target groups have the exact Repeat outcome under ARTIFICIAL DEMO — NOT VALIDATED. Other review or invalid outcomes are not counted as Repeat. SIM 5; DEMO_SAMPLE_0; DNA_TARGET; rule target: DNA_TARGET; replicate SD 2.18 > 0.5. 2 more. Say Computer more.",
+      "zh": "当前样品－靶标分组中有 3 项在 ARTIFICIAL DEMO — NOT VALIDATED 下明确判定为 Repeat。其他审核或无效判定不计入 Repeat。 SIM 5; DEMO_SAMPLE_0; DNA_TARGET; rule target: DNA_TARGET; replicate SD 2.18 > 0.5。还有 2 项，请说 Computer more。"
+    },
+    "audioBytes": 186678,
+    "chapter": 2,
+    "id": 24,
+    "intent": "data:repeat",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer which samples should I repeat",
+    "tier": "complex",
+    "title": "Planted repeat findings / 人为设置的复测判定",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "SIM 13; DEMO_SAMPLE_0; DNA_TARGET; rule target: DNA_TARGET; replicate SD 2.26 > 0.5. 1 more. Say Computer more.",
+      "zh": "SIM 13; DEMO_SAMPLE_0; DNA_TARGET; rule target: DNA_TARGET; replicate SD 2.26 > 0.5。还有 1 项，请说 Computer more。"
+    },
+    "audioBytes": 110662,
+    "chapter": 2,
+    "id": 25,
+    "intent": "f:more",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer more",
+    "tier": "standard",
+    "title": "Read the next repeat finding / 阅读下一条复测判定",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "SIM 19; DEMO_SAMPLE_0; DNA_TARGET; rule target: DNA_TARGET; replicate SD 2.25 > 0.5. End of list.",
+      "zh": "SIM 19; DEMO_SAMPLE_0; DNA_TARGET; rule target: DNA_TARGET; replicate SD 2.25 > 0.5。列表结束。"
+    },
+    "audioBytes": 99533,
+    "chapter": 2,
+    "id": 26,
+    "intent": "f:more",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer more",
+    "tier": "standard",
+    "title": "Finish the repeat list / 读完复测列表",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "128 evaluated control groups; 1 groups have the exact Control fail outcome. 0 control-presence criteria need review. This is not a run pass. SIM 9; DEMO NTC; DNA_TARGET; Control fail; rule control: DEMO NTC; amplified in 1/1 (min Cq 34.00 ≤ 36). End of list.",
+      "zh": "已评估对照分组 128 项；明确判定为 Control fail 的 1 项。已有对照存在性准则中，失败或待审核 0 项。缺失对照和不可用评估属于独立准则，不代表通过。请在结果页面审核运行准则。 SIM 9; DEMO NTC; DNA_TARGET; Control fail; rule control: DEMO NTC; amplified in 1/1 (min Cq 34.00 ≤ 36)。列表结束。"
+    },
+    "audioBytes": 217398,
+    "chapter": 2,
+    "id": 27,
+    "intent": "data:controlfail",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer did any control fail",
+    "tier": "complex",
+    "title": "A deliberately failed control / 人为设置的对照失败",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "384 included stored result rows have the exact Standard role, across 32 run views. This counts rows, not distinct concentrations or calibration curves.",
+      "zh": "在 32 个运行视图中，有 384 个当前纳入的存储结果行明确标记为 Standard。此数量代表行数，不是不同浓度或校准曲线数。"
+    },
+    "audioBytes": 97706,
+    "chapter": 2,
+    "id": 28,
+    "intent": "data:standards",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer how many standards",
+    "tier": "standard",
+    "title": "Assigned standards, not calibration approval / 指定标准品不等于校准批准",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Manufacturer specification reference / 制造商规格参考",
+      "zh": "制造商规格仅作参考，模拟测量另行标记。"
+    },
+    "audioBytes": 56746,
+    "chapter": 2,
+    "id": 29,
+    "intent": null,
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "I open the hardware reference. Manufacturer specifications and artificial measurements are different.",
+    "tier": "standard",
+    "title": "Hardware reference / 硬件参考",
+    "type": "action"
+  },
+  {
+    "answer": {
+      "en": "Display chart 1. Chart 1. B-H1 Peak heating rate (2-s window).",
+      "zh": "显示第 1 张图。第 1 张图。B-H1 Peak heating rate (2-s window)。"
+    },
+    "audioBytes": 61029,
+    "chapter": 2,
+    "id": 30,
+    "intent": "chart:1",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer show chart 1",
+    "tier": "standard",
+    "title": "Chart by its number / 按编号打开图表",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "110 registered chart definitions. This is an inventory, not a diagnostic test.",
+      "zh": "注册图表定义 110 个。这是清单，不是诊断测试。"
+    },
+    "audioBytes": 66698,
+    "chapter": 2,
+    "id": 31,
+    "intent": "o:run diagnostic on module:charts",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer run diagnostic on module charts",
+    "tier": "standard",
+    "title": "Chart inventory / 图表清单",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Chart 1 of 110. Peak heating rate (2-s window).",
+      "zh": "第 1 / 110 张图。Peak heating rate (2-s window)。"
+    },
+    "audioBytes": 50162,
+    "chapter": 2,
+    "id": 32,
+    "intent": "data:chart",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer which chart is this",
+    "tier": "trivial",
+    "title": "Identify the current chart / 识别当前图表",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Display chart 26. Chart 26. A-H3 Background fluorescence per channel.",
+      "zh": "显示第 26 张图。第 26 张图。A-H3 Background fluorescence per channel。"
+    },
+    "audioBytes": 69676,
+    "chapter": 2,
+    "id": 33,
+    "intent": "chart:26",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer show chart 26",
+    "tier": "standard",
+    "title": "Open the optical history / 打开光学历史",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Chart review. A-H3 Background fluorescence per channel. 30 assessed points; 4 beyond available limits; 4 points with recorded flags. 0 missing or non-finite points; 0 before baseline. 30 points have available limits. Recorded flags: beyond 3σ.",
+      "zh": "图表审核。A-H3 Background fluorescence per channel。评估点 30 个；超出可用限值 4 个；有记录标记 4 个。缺失或非有限值 0 个；基线之前 0 个。有可用限值的点 30 个。记录标记：beyond 3σ。"
+    },
+    "audioBytes": 164030,
+    "chapter": 2,
+    "id": 34,
+    "intent": "q:analyse",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer how many outliers",
+    "tier": "standard",
+    "title": "Measure the planted drift / 查看人为漂移",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Console chart zoom 100 percent; horizontal pan 0; vertical pan 0.",
+      "zh": "控制台图表缩放 100%；水平平移 0；垂直平移 0。"
+    },
+    "audioBytes": 55831,
+    "chapter": 2,
+    "id": 35,
+    "intent": "o:zoom",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer what is the magnification",
+    "tier": "trivial",
+    "title": "Read the current magnification / 查看缩放比例",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Zoom in. Console command applied. Zoom 125 percent.",
+      "zh": "放大。已执行控制台命令。缩放 125%。"
+    },
+    "audioBytes": 56746,
+    "chapter": 2,
+    "id": 36,
+    "intent": "nav:zoom in",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer zoom in",
+    "tier": "trivial",
+    "title": "Zoom without changing values / 缩放不改变数值",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Console chart zoom 125 percent; horizontal pan 0; vertical pan 0.",
+      "zh": "控制台图表缩放 125%；水平平移 0；垂直平移 0。"
+    },
+    "audioBytes": 61317,
+    "chapter": 2,
+    "id": 37,
+    "intent": "o:zoom",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer what is the magnification",
+    "tier": "trivial",
+    "title": "Confirm the zoom / 确认缩放",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Reset view. Console command applied. Zoom 100 percent.",
+      "zh": "重置视图。已执行控制台命令。缩放 100%。"
+    },
+    "audioBytes": 53611,
+    "chapter": 2,
+    "id": 38,
+    "intent": "nav:zoom reset",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer reset the view",
+    "tier": "trivial",
+    "title": "Reset the view / 重置视图",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Light chart background. Chart background changed.",
+      "zh": "浅色图表背景。图表背景已更改。"
+    },
+    "audioBytes": 43527,
+    "chapter": 2,
+    "id": 39,
+    "intent": "theme:light",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer white background",
+    "tier": "trivial",
+    "title": "White chart background / 白色图表背景",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Dark chart background. Chart background changed.",
+      "zh": "深色图表背景。图表背景已更改。"
+    },
+    "audioBytes": 43841,
+    "chapter": 2,
+    "id": 40,
+    "intent": "theme:dark",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer dark background",
+    "tier": "trivial",
+    "title": "Dark chart background / 深色图表背景",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Drill label enabled. Subsequent manual alert changes are tagged drill in the separate, in-memory interface log. Scientific records and exports are unchanged.",
+      "zh": "已开启演练标记。之后的手动警报更改将在独立内存界面日志中标记为演练。科学记录及导出保持不变。"
+    },
+    "audioBytes": 90443,
+    "chapter": 2,
+    "id": 41,
+    "intent": "ship:drill:1",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer this is a drill",
+    "tier": "standard",
+    "title": "Label this as a drill / 标记演练",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Manual red alert requested. Sound depends on browser audio availability. Say Computer cancel red alert to stop it. This does not indicate a detected data or instrument fault.",
+      "zh": "已请求手动红色警报。声音取决于浏览器音频是否可用。可说 Computer cancel red alert 停止。这不代表检测到数据或仪器故障。"
+    },
+    "audioBytes": 99403,
+    "chapter": 2,
+    "id": 42,
+    "intent": "ship:red",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer red alert",
+    "tier": "standard",
+    "title": "Manual alarm for the scenario / 情景手动警报",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Manual red alert stopped; drill label cleared. This is not a green or passing scientific verdict.",
+      "zh": "已停止手动红色警报并清除演练标记。这不是绿色状态或科学通过判定。"
+    },
+    "audioBytes": 61761,
+    "chapter": 2,
+    "id": 43,
+    "intent": "ship:standdown",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer cancel red alert",
+    "tier": "standard",
+    "title": "Stop the manual alarm / 停止手动警报",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Chart 1 of 110. Peak heating rate (2-s window).",
+      "zh": "第 1 / 110 张图。Peak heating rate (2-s window)。"
+    },
+    "audioBytes": 64242,
+    "chapter": 2,
+    "id": 44,
+    "intent": null,
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "I select the second artificial instrument. It has only two run views.",
+    "tier": "standard",
+    "title": "Switch to the short history / 切换至短历史",
+    "type": "action"
+  },
+  {
+    "answer": {
+      "en": "Chart review. B-H1 Peak heating rate (2-s window). 2 assessed points; 0 beyond available limits; 0 points with recorded flags. 0 missing or non-finite points; 0 before baseline. 2 points have available limits. Control baseline is not ready. No recorded flags. This is not proof that all data are nominal.",
+      "zh": "图表审核。B-H1 Peak heating rate (2-s window)。评估点 2 个；超出可用限值 0 个；有记录标记 0 个。缺失或非有限值 0 个；基线之前 0 个。有可用限值的点 2 个。控制基线尚未就绪。没有记录标记，但不代表所有数据均正常。"
+    },
+    "audioBytes": 199609,
+    "chapter": 2,
+    "id": 45,
+    "intent": "q:analyse",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer why has this chart no limits",
+    "tier": "complex",
+    "title": "Missing baseline is not a pass / 基线不足不代表通过",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Display chart 85. Chart 85. Amplification curves coloured by SOP outcome.",
+      "zh": "显示第 85 张图。第 85 张图。Amplification curves coloured by SOP outcome。"
+    },
+    "audioBytes": 65653,
+    "chapter": 2,
+    "id": 46,
+    "intent": "chart:85",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer show chart 85",
+    "tier": "standard",
+    "title": "Open amplification data / 打开扩增数据",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Run summary. Run 1; SIM 1. 24 stored result rows; 24 included rows. Existing profile status: Accepted. This is not release approval.",
+      "zh": "运行摘要。第 1 次运行；SIM 1。存储结果行 24，当前纳入行 24。已有配置状态：Accepted。这不是放行批准。"
+    },
+    "audioBytes": 111446,
+    "chapter": 2,
+    "id": 47,
+    "intent": "data:summary",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer summarise the run",
+    "tier": "standard",
+    "title": "Summarise this single run / 汇总单次运行",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Source records. Run 1; source filename ARTIFICIAL_MISSY_DEMO.rdml; instrument label LC · DEMO-VIRTUAL-001; software version DEMO GENERATOR 1. Fields are recorded metadata, not independent verification.",
+      "zh": "来源记录。第 1 次运行；源文件名 ARTIFICIAL_MISSY_DEMO.rdml；仪器标签 LC · DEMO-VIRTUAL-001；软件版本 DEMO GENERATOR 1。以上为记录元数据，不是独立验证。"
+    },
+    "audioBytes": 138640,
+    "chapter": 2,
+    "id": 48,
+    "intent": "data:origin",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer where did this run come from",
+    "tier": "standard",
+    "title": "Trace the source / 追溯来源",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Display chart 86. Chart 86. Plate heat map.",
+      "zh": "显示第 86 张图。第 86 张图。Plate heat map。"
+    },
+    "audioBytes": 55674,
+    "chapter": 2,
+    "id": 49,
+    "intent": "chart:86",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer show chart 86",
+    "tier": "standard",
+    "title": "Inspect the plate mapping / 查看孔板映射",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Review stations. Opened Quality and forensic review. The previous view is saved; say Computer as you were to return. This does not establish that every issue has been found.",
+      "zh": "审核就位。已打开质量与取证审核，已保存先前页面，可说 Computer as you were 返回。这不代表已经发现所有问题。"
+    },
+    "audioBytes": 99299,
+    "chapter": 2,
+    "id": 50,
+    "intent": "ship:stations",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer stations",
+    "tier": "standard",
+    "title": "Open review / 打开审核",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Restored the saved review-navigation view. Data, profile and downloads were not reverted.",
+      "zh": "已恢复保存的审核导航页面。未回退数据、配置或下载。"
+    },
+    "audioBytes": 56013,
+    "chapter": 2,
+    "id": 51,
+    "intent": "ship:restore",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer as you were",
+    "tier": "standard",
+    "title": "Return to the saved view / 返回保存页面",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "ARTIFICIAL DATA — NOT A LABORATORY RESULT. We will review provenance, prepare a real report from artificial data, and show the limits of this tool.",
+      "zh": "人工模拟数据，不是实验室结果。我们将审核来源，使用模拟数据生成真实报告，并说明工具的边界。"
+    },
+    "audioBytes": 87883,
+    "chapter": 3,
+    "id": 52,
+    "intent": null,
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Chapter 3. Prepare the report.",
+    "tier": "standard",
+    "title": "Chapter 3 / 第 3 章",
+    "type": "action"
+  },
+  {
+    "answer": {
+      "en": "Control 7. Workspace. Open formats.",
+      "zh": "控件 7。工作区。开放格式。"
+    },
+    "audioBytes": 47419,
+    "chapter": 3,
+    "id": 53,
+    "intent": 7,
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer seven",
+    "tier": "trivial",
+    "title": "Open formats with a numbered command / 使用数字打开开放格式",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Current station. Workspace. Open formats.",
+      "zh": "当前位置。工作区。开放格式。"
+    },
+    "audioBytes": 47498,
+    "chapter": 3,
+    "id": 54,
+    "intent": "q:where",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer where am I",
+    "tier": "trivial",
+    "title": "Identify the view / 识别页面",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Export contents. Export scope depends on the specific export. Graph CSV uses the current graph data; interpreted result exports use the active profile and current selection; complete raw-value exports have their own scope. I have not started a download. Review Open formats and the export dictionary for the selected export.",
+      "zh": "导出内容。导出范围取决于具体导出项目。图表 CSV 使用当前图表数据；判读结果导出使用当前配置和选择；完整原始值导出有独立范围。未开始下载，请在开放格式及导出字典审核具体导出项目。"
+    },
+    "audioBytes": 170822,
+    "chapter": 3,
+    "id": 55,
+    "intent": "data:exportscope",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer what will the export contain",
+    "tier": "standard",
+    "title": "Export scope / 导出范围",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Integrity review. Identifier disclosure status: export pseudonymisation is on. That setting applies only to exports that implement it. Spoken sample names remain original, as you requested. No security or intrusion scan was performed; no export was started.",
+      "zh": "完整性审核。标识信息状态：导出假名化已开启。此设置仅作用于支持该功能的导出。按您的要求，语音样品名仍使用原名。未进行安全或入侵扫描，也未开始导出。"
+    },
+    "audioBytes": 148069,
+    "chapter": 3,
+    "id": 56,
+    "intent": "ship:security",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer security alert",
+    "tier": "standard",
+    "title": "Name disclosure settings / 名称设置",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Control 8. Workspace. File integrity.",
+      "zh": "控件 8。工作区。文件完整性。"
+    },
+    "audioBytes": 45773,
+    "chapter": 3,
+    "id": 57,
+    "intent": 8,
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer eight",
+    "tier": "trivial",
+    "title": "Open integrity / 打开完整性页面",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Status report. 32 runs; 768 stored result rows. Active profile ARTIFICIAL DEMO — NOT VALIDATED, version demo-1. 0 recorded software faults; these are not sample failures. No chart is open. Say Computer full report for the remaining observations. Unavailable checks are not evidence of a pass.",
+      "zh": "状态报告。32 次运行；768 行存储结果。当前配置 ARTIFICIAL DEMO — NOT VALIDATED，版本 demo-1。记录软件故障 0 个，这不是样品失败数量。当前未打开图表。请说 Computer full report 获取其余观察项。不可用的检查不代表通过。"
+    },
+    "audioBytes": 189578,
+    "chapter": 3,
+    "id": 58,
+    "intent": "f:report",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer status report",
+    "tier": "complex",
+    "title": "Read the status, with coverage limits / 阅读状态及覆盖范围",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Available functions. Choose or drop experiment files, read them, and review sample selection.",
+      "zh": "可用功能。选择或拖入实验文件，读取文件并审核样品选择。"
+    },
+    "audioBytes": 78165,
+    "chapter": 3,
+    "id": 59,
+    "intent": null,
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "I open the animal shortcuts. These are mouse actions in this demonstration.",
+    "tier": "standard",
+    "title": "Animal shortcuts / 动物快捷方式",
+    "type": "action"
+  },
+  {
+    "answer": {
+      "en": "Current station. Command mode. Load files.",
+      "zh": "当前位置。命令模式。加载文件。"
+    },
+    "audioBytes": 46688,
+    "chapter": 3,
+    "id": 60,
+    "intent": null,
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "I open Command mode.",
+    "tier": "standard",
+    "title": "Command mode / 命令模式",
+    "type": "action"
+  },
+  {
+    "answer": {
+      "en": "This is a research-use tool, not a laboratory validation certificate. You can review the method configuration and documentation for your own validation process.",
+      "zh": "本工具供研究使用，不是实验室验证证书。您可审核方法配置及文档，用于自己的验证流程。"
+    },
+    "audioBytes": 86342,
+    "chapter": 3,
+    "id": 61,
+    "intent": "refuse:validation",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer are these results validated",
+    "tier": "standard",
+    "title": "Research-use boundary / 研究用途边界",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "I do not infer contamination or inhibition from a curve. You can inspect recorded control results and the active method rules in Results and SOP.",
+      "zh": "我不从曲线推断污染或抑制。您可以在结果及 SOP 页面查看已记录的对照结果和当前方法规则。"
+    },
+    "audioBytes": 78374,
+    "chapter": 3,
+    "id": 62,
+    "intent": "refuse:cause",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer is this sample contaminated",
+    "tier": "standard",
+    "title": "No cause inferred from a curve / 不从曲线推断原因",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Unable to comply. Voice does not override method rules. Review the active profile in the SOP view.",
+      "zh": "无法执行。语音不能绕过方法规则，请在 SOP 页面审核当前配置。"
+    },
+    "audioBytes": 68083,
+    "chapter": 3,
+    "id": 63,
+    "intent": "o:override",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer override the profile",
+    "tier": "standard",
+    "title": "Rules cannot be overridden by voice / 语音不能绕过规则",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Unable to comply. Release is a laboratory decision under your SOP. You can review the profile findings in Results; this page does not authorise release.",
+      "zh": "无法执行。放行属于实验室 SOP 下的决定。您可在结果页面审核配置判定；本页面不授权放行。"
+    },
+    "audioBytes": 90861,
+    "chapter": 3,
+    "id": 64,
+    "intent": "refuse:release",
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "Computer approve this run for release",
+    "tier": "standard",
+    "title": "Release is a laboratory decision / 放行由实验室决定",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Current station. Assisted mode. Load files.",
+      "zh": "当前位置。辅助模式。加载文件。"
+    },
+    "audioBytes": 68396,
+    "chapter": 3,
+    "id": 65,
+    "intent": null,
+    "reportBytes": 0,
+    "runCount": 32,
+    "say": "I select the drift and heating figures in Assisted mode. Report creation is a scripted demo action.",
+    "tier": "standard",
+    "title": "Assisted report selection / 辅助模式选择报告",
+    "type": "action"
+  },
+  {
+    "answer": {
+      "en": "Artificial-data report is ready in memory. Use Preview report to inspect the actual PDF.",
+      "zh": "模拟数据报告已在内存中生成，可点击预览查看实际 PDF。"
+    },
+    "audioBytes": 71949,
+    "chapter": 3,
+    "id": 66,
+    "intent": null,
+    "reportBytes": 6595717,
+    "runCount": 32,
+    "say": "I build the report locally. This does not approve laboratory results.",
+    "tier": "standard",
+    "title": "Build a real artificial-data report / 用模拟数据生成真实报告",
+    "type": "action"
+  },
+  {
+    "answer": {
+      "en": "Manual red alert stopped; drill label cleared. This is not a green or passing scientific verdict.",
+      "zh": "已停止手动红色警报并清除演练标记。这不是绿色状态或科学通过判定。"
+    },
+    "audioBytes": 60298,
+    "chapter": 3,
+    "id": 67,
+    "intent": "ship:standdown",
+    "reportBytes": 6595717,
+    "runCount": 32,
+    "say": "Computer stand down",
+    "tier": "standard",
+    "title": "Stand down / 结束演练",
+    "type": "command"
+  },
+  {
+    "answer": {
+      "en": "Voice, manual alert and background sounds stopped. File intake, rendering and instrument acquisition were not halted. Loaded run views remain.",
+      "zh": "已停止语音、手动警报及背景声音。未停止文件读取、渲染或仪器采集，已加载运行视图保留。"
+    },
+    "audioBytes": 85663,
+    "chapter": 3,
+    "id": 68,
+    "intent": "ship:stop",
+    "reportBytes": 6595717,
+    "runCount": 32,
+    "say": "Computer all stop",
+    "tier": "standard",
+    "title": "Stop the interface audio / 停止界面音频",
+    "type": "command"
+  }
+]

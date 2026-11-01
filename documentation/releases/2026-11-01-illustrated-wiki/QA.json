@@ -1,0 +1,14 @@
+{
+  "build": "2026.10.31.demolabels1",
+  "currentScreenshots": 63,
+  "historicalPartScreenshots": 10,
+  "guidedLessons": 30,
+  "voiceSteps": 69,
+  "voiceStepsWithAudioPayload": 69,
+  "tenPartTranscripts": 10,
+  "sourceModuleMappings": 119,
+  "illustratedSourceModules": 87,
+  "sourceforgeBlocked": true,
+  "applicationModified": false,
+  "calculationCodeModified": false
+}

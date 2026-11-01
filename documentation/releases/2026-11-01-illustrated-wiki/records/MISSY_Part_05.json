@@ -1,0 +1,201 @@
+{
+  "part": 5,
+  "title": "A history that drifts",
+  "command": "Computer how many outliers",
+  "intent": "q:analyse",
+  "actual_answer": "A-H3 Background fluorescence per channel. 30 assessed points; 4 beyond available limits; 4 points with recorded flags. 0 missing or non-finite points; 0 before baseline. 30 points have available limits. Recorded flags: beyond 3σ.",
+  "response_excerpt": false,
+  "segments": [
+    {
+      "clip": "29baf1befa5e56",
+      "role": "operator",
+      "text": "These are artificial data, not laboratory results.",
+      "frame": "title",
+      "pause": 2
+    },
+    {
+      "clip": "c2b42920422321",
+      "role": "operator",
+      "text": "A change appears across several runs.",
+      "frame": "title",
+      "pause": 2
+    },
+    {
+      "clip": "f7d5c158fda89a",
+      "role": "operator",
+      "text": "I open Missy and enter the workspace.",
+      "frame": "setup",
+      "pause": 2
+    },
+    {
+      "clip": "25c5d698b8c8a5",
+      "role": "operator",
+      "text": "I load the artificial data and the profile.",
+      "frame": "load",
+      "pause": 2
+    },
+    {
+      "clip": "07f6221ac3e847",
+      "role": "operator",
+      "text": "The files are ready for review.",
+      "frame": "sop",
+      "pause": 2
+    },
+    {
+      "clip": "58e595c0c80073",
+      "role": "operator",
+      "text": "Computer how many outliers",
+      "frame": "evidence",
+      "pause": 1.2
+    },
+    {
+      "clip": "a1e650c9b8cdd3",
+      "role": "missy",
+      "text": "A-H3 Background fluorescence per channel. 30 assessed points; 4 beyond available limits; 4 points with recorded flags. 0 missing or non-finite points; 0 before baseline. 30 points have available limits.",
+      "frame": "evidence",
+      "pause": 2.5,
+      "zh": "A-H3：各通道背景荧光。已评估 30 个点；4 个超出可用限值，4 个有标记。缺失或非有限值 0 个，基线之前 0 个。30 个点有可用限值。"
+    },
+    {
+      "clip": "92967c70504638",
+      "role": "missy",
+      "text": "Recorded flags: beyond 3σ.",
+      "frame": "evidence",
+      "pause": 2.5,
+      "zh": "记录标记：超出三倍标准差。"
+    },
+    {
+      "clip": "342a128e94e9d2",
+      "role": "operator",
+      "text": "I review the drift without guessing its cause.",
+      "frame": "evidence",
+      "pause": 5
+    }
+  ],
+  "intro_repeated": true,
+  "artificial": true,
+  "voice_commands_emulated": true,
+  "hook_before_setup": true,
+  "render_revision": 3,
+  "duration_seconds": 84.584392,
+  "timeline": [
+    {
+      "clip": "29baf1befa5e56",
+      "role": "operator",
+      "text": "These are artificial data, not laboratory results.",
+      "frame": "title",
+      "pause": 2,
+      "start_s": 5.0,
+      "speech_seconds": 5.071666666666666,
+      "pause_s": 3,
+      "audio_sha256": "5709a34f9285f28f01ac091de003345f7e21bcc4a14550c03a23d0f93d894dbb",
+      "encoded_scene_seconds": 8.083333
+    },
+    {
+      "clip": "c2b42920422321",
+      "role": "operator",
+      "text": "A change appears across several runs.",
+      "frame": "title",
+      "pause": 2,
+      "start_s": 13.083333,
+      "speech_seconds": 7.1889375,
+      "pause_s": 3,
+      "audio_sha256": "1f35cb8fb60007c1ba2125f2d698987f0e0755d65225d15ba675b13e14899c9d",
+      "encoded_scene_seconds": 10.189002
+    },
+    {
+      "clip": "f7d5c158fda89a",
+      "role": "operator",
+      "text": "I open Missy and enter the workspace.",
+      "frame": "setup",
+      "pause": 2,
+      "start_s": 23.272334999999998,
+      "speech_seconds": 4.794479166666667,
+      "pause_s": 3,
+      "audio_sha256": "7d8a361c00666de9a10ea0e18c441424caa2b2744c1fe15355cb6aa8a66b3122",
+      "encoded_scene_seconds": 7.833333
+    },
+    {
+      "clip": "25c5d698b8c8a5",
+      "role": "operator",
+      "text": "I load the artificial data and the profile.",
+      "frame": "load",
+      "pause": 2,
+      "start_s": 31.105667999999998,
+      "speech_seconds": 3.5693125,
+      "pause_s": 3,
+      "audio_sha256": "3761fc1196a6059425ee638c7ea2a84892f27e5c3386de3af15b3357bb20b1fd",
+      "encoded_scene_seconds": 6.583333
+    },
+    {
+      "clip": "07f6221ac3e847",
+      "role": "operator",
+      "text": "The files are ready for review.",
+      "frame": "sop",
+      "pause": 2,
+      "start_s": 37.689001,
+      "speech_seconds": 2.6601666666666666,
+      "pause_s": 2,
+      "audio_sha256": "4dba5970313fc217419af0a2a0b6fc5692917a43e0f7e1189cfdeba8b00115d7",
+      "encoded_scene_seconds": 4.666667
+    },
+    {
+      "clip": "58e595c0c80073",
+      "role": "operator",
+      "text": "Computer how many outliers",
+      "frame": "evidence",
+      "pause": 1.2,
+      "start_s": 42.355667999999994,
+      "speech_seconds": 4.371625,
+      "pause_s": 1.2,
+      "audio_sha256": "3e4eca3f3275f012fc1303234abd43ced27a6af11113e4dfa8f3311dcdd26980",
+      "encoded_scene_seconds": 5.583333
+    },
+    {
+      "clip": "a1e650c9b8cdd3",
+      "role": "missy",
+      "text": "A-H3 Background fluorescence per channel. 30 assessed points; 4 beyond available limits; 4 points with recorded flags. 0 missing or non-finite points; 0 before baseline. 30 points have available limits.",
+      "frame": "evidence",
+      "pause": 2.5,
+      "zh": "A-H3：各通道背景荧光。已评估 30 个点；4 个超出可用限值，4 个有标记。缺失或非有限值 0 个，基线之前 0 个。30 个点有可用限值。",
+      "start_s": 47.93900099999999,
+      "speech_seconds": 19.263356009070296,
+      "pause_s": 2.5,
+      "audio_sha256": "1cdb2872cdec377baae25ee6e07709b71bd4de2e18bf6487ff070ba1abf1831d",
+      "encoded_scene_seconds": 21.762993
+    },
+    {
+      "clip": "92967c70504638",
+      "role": "missy",
+      "text": "Recorded flags: beyond 3σ.",
+      "frame": "evidence",
+      "pause": 2.5,
+      "zh": "记录标记：超出三倍标准差。",
+      "start_s": 69.70199399999998,
+      "speech_seconds": 3.77578231292517,
+      "pause_s": 2.5,
+      "audio_sha256": "8aeb48985928c7f862a348e1a5e7631dad4bfc3cb806387f07dc7dc613b7f462",
+      "encoded_scene_seconds": 6.276009
+    },
+    {
+      "clip": "342a128e94e9d2",
+      "role": "operator",
+      "text": "I review the drift without guessing its cause.",
+      "frame": "evidence",
+      "pause": 5,
+      "start_s": 75.97800299999999,
+      "speech_seconds": 3.5431458333333334,
+      "pause_s": 5,
+      "audio_sha256": "b1697b485080573021a2c9a35c0c6f8c5b0775749b5c35e215324cc562c2d1ff",
+      "encoded_scene_seconds": 8.583333
+    }
+  ],
+  "video_sha256": "be00322d3a048001651915396d0c9445001d00c8521122c82e3732b1b86044e3",
+  "source_html_sha256": "6a56b4f372603849be3f8309c5aeeca4dd4ba4a81ce7de5d737b4b1a1c87a651",
+  "format": "Actual live-page screenshot sequence with synchronized checked speech and evidence holds; commands text-fed, no microphone test.",
+  "voice_profile": "MISSY_CALM_V1",
+  "decode_passed": true,
+  "peak": 0.811187744140625,
+  "subtitle_timing": "Based on encoded scene durations; phrase-level captions",
+  "narration_terms": "Cq spoken as threshold cycle; amplified in spoken as signal detected in"
+}

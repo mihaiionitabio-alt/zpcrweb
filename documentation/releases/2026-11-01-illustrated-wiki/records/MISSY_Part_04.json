@@ -1,0 +1,201 @@
+{
+  "part": 4,
+  "title": "The negative control has a signal",
+  "command": "Computer did any control fail",
+  "intent": "data:controlfail",
+  "actual_answer": "128 evaluated control groups; 1 groups have the exact Control fail outcome. 0 control-presence criteria need review. This is not a run pass. SIM 9; DEMO NTC; DNA_TARGET; Control fail; rule control: DEMO NTC; amplified in 1/1 (min Cq 34.00 ≤ 36). End of list.",
+  "response_excerpt": true,
+  "segments": [
+    {
+      "clip": "29baf1befa5e56",
+      "role": "operator",
+      "text": "These are artificial data, not laboratory results.",
+      "frame": "title",
+      "pause": 2
+    },
+    {
+      "clip": "05ea4b141d0a25",
+      "role": "operator",
+      "text": "I must check the controls before the samples.",
+      "frame": "title",
+      "pause": 2
+    },
+    {
+      "clip": "f7d5c158fda89a",
+      "role": "operator",
+      "text": "I open Missy and enter the workspace.",
+      "frame": "setup",
+      "pause": 2
+    },
+    {
+      "clip": "25c5d698b8c8a5",
+      "role": "operator",
+      "text": "I load the artificial data and the profile.",
+      "frame": "load",
+      "pause": 2
+    },
+    {
+      "clip": "07f6221ac3e847",
+      "role": "operator",
+      "text": "The files are ready for review.",
+      "frame": "sop",
+      "pause": 2
+    },
+    {
+      "clip": "9f8acd0015fe10",
+      "role": "operator",
+      "text": "Computer did any control fail",
+      "frame": "evidence",
+      "pause": 1.2
+    },
+    {
+      "clip": "9d8fdad207a706",
+      "role": "missy",
+      "text": "SIM 9; DEMO NTC; DNA_TARGET; Control fail; rule control: DEMO NTC; signal detected in 1/1 (min threshold cycle 34.00 ≤ 36).",
+      "frame": "evidence",
+      "pause": 2.5,
+      "zh": "SIM 9 的 DEMO NTC 阴性对照在 DNA_TARGET 上判定为对照失败。根据该对照规则，1 个反应中有 1 个扩增；最低 Cq 为 34.00，不大于 36。"
+    },
+    {
+      "clip": "cd1d459937df5d",
+      "role": "missy",
+      "text": "End of list.",
+      "frame": "evidence",
+      "pause": 2.5,
+      "zh": "列表结束。"
+    },
+    {
+      "clip": "afda2a7e29a18f",
+      "role": "operator",
+      "text": "I review the control before using the results.",
+      "frame": "evidence",
+      "pause": 5
+    }
+  ],
+  "intro_repeated": true,
+  "artificial": true,
+  "voice_commands_emulated": true,
+  "hook_before_setup": true,
+  "render_revision": 3,
+  "duration_seconds": 80.167234,
+  "timeline": [
+    {
+      "clip": "29baf1befa5e56",
+      "role": "operator",
+      "text": "These are artificial data, not laboratory results.",
+      "frame": "title",
+      "pause": 2,
+      "start_s": 5.0,
+      "speech_seconds": 5.071666666666666,
+      "pause_s": 3,
+      "audio_sha256": "5709a34f9285f28f01ac091de003345f7e21bcc4a14550c03a23d0f93d894dbb",
+      "encoded_scene_seconds": 8.083333
+    },
+    {
+      "clip": "05ea4b141d0a25",
+      "role": "operator",
+      "text": "I must check the controls before the samples.",
+      "frame": "title",
+      "pause": 2,
+      "start_s": 13.083333,
+      "speech_seconds": 3.7281041666666668,
+      "pause_s": 3,
+      "audio_sha256": "382f72899c1b896494576ae65b37159b686cad87036fa6487588caf0fdf77fc2",
+      "encoded_scene_seconds": 6.75
+    },
+    {
+      "clip": "f7d5c158fda89a",
+      "role": "operator",
+      "text": "I open Missy and enter the workspace.",
+      "frame": "setup",
+      "pause": 2,
+      "start_s": 19.833333,
+      "speech_seconds": 4.794479166666667,
+      "pause_s": 3,
+      "audio_sha256": "7d8a361c00666de9a10ea0e18c441424caa2b2744c1fe15355cb6aa8a66b3122",
+      "encoded_scene_seconds": 7.833333
+    },
+    {
+      "clip": "25c5d698b8c8a5",
+      "role": "operator",
+      "text": "I load the artificial data and the profile.",
+      "frame": "load",
+      "pause": 2,
+      "start_s": 27.666666,
+      "speech_seconds": 3.5693125,
+      "pause_s": 3,
+      "audio_sha256": "3761fc1196a6059425ee638c7ea2a84892f27e5c3386de3af15b3357bb20b1fd",
+      "encoded_scene_seconds": 6.583333
+    },
+    {
+      "clip": "07f6221ac3e847",
+      "role": "operator",
+      "text": "The files are ready for review.",
+      "frame": "sop",
+      "pause": 2,
+      "start_s": 34.249999,
+      "speech_seconds": 2.6601666666666666,
+      "pause_s": 2,
+      "audio_sha256": "4dba5970313fc217419af0a2a0b6fc5692917a43e0f7e1189cfdeba8b00115d7",
+      "encoded_scene_seconds": 4.666667
+    },
+    {
+      "clip": "9f8acd0015fe10",
+      "role": "operator",
+      "text": "Computer did any control fail",
+      "frame": "evidence",
+      "pause": 1.2,
+      "start_s": 38.916666000000006,
+      "speech_seconds": 6.88,
+      "pause_s": 1.2,
+      "audio_sha256": "8e28805be2d0188172f417fd65fb7f511254b537e57889e311521ad30263a30a",
+      "encoded_scene_seconds": 8.083333
+    },
+    {
+      "clip": "9d8fdad207a706",
+      "role": "missy",
+      "text": "SIM 9; DEMO NTC; DNA_TARGET; Control fail; rule control: DEMO NTC; signal detected in 1/1 (min threshold cycle 34.00 ≤ 36).",
+      "frame": "evidence",
+      "pause": 2.5,
+      "zh": "SIM 9 的 DEMO NTC 阴性对照在 DNA_TARGET 上判定为对照失败。根据该对照规则，1 个反应中有 1 个扩增；最低 Cq 为 34.00，不大于 36。",
+      "start_s": 46.999999,
+      "speech_seconds": 17.8534693877551,
+      "pause_s": 2.5,
+      "audio_sha256": "ae2c3e1a40eddc4e910383f97fb30b5345a10773b971c7eac62022c26a70bbd2",
+      "encoded_scene_seconds": 20.352993
+    },
+    {
+      "clip": "cd1d459937df5d",
+      "role": "missy",
+      "text": "End of list.",
+      "frame": "evidence",
+      "pause": 2.5,
+      "zh": "列表结束。",
+      "start_s": 67.352992,
+      "speech_seconds": 1.7560544217687075,
+      "pause_s": 2.5,
+      "audio_sha256": "fd09689be9662c63699a1ca7ddb82e8159b6519ef64e6e777982e40fa715bf6c",
+      "encoded_scene_seconds": 4.256009
+    },
+    {
+      "clip": "afda2a7e29a18f",
+      "role": "operator",
+      "text": "I review the control before using the results.",
+      "frame": "evidence",
+      "pause": 5,
+      "start_s": 71.609001,
+      "speech_seconds": 3.535645833333333,
+      "pause_s": 5,
+      "audio_sha256": "23724f4539d15a66b881eec749757956c8518a69ddadab0971dacb91712fcdf4",
+      "encoded_scene_seconds": 8.535011
+    }
+  ],
+  "video_sha256": "cfa5a8bc6dc8e55603e284dce04617328c7595f54d57b44fdbeab8a678274495",
+  "source_html_sha256": "6a56b4f372603849be3f8309c5aeeca4dd4ba4a81ce7de5d737b4b1a1c87a651",
+  "format": "Actual live-page screenshot sequence with synchronized checked speech and evidence holds; commands text-fed, no microphone test.",
+  "voice_profile": "MISSY_CALM_V1",
+  "decode_passed": true,
+  "peak": 0.792236328125,
+  "subtitle_timing": "Based on encoded scene durations; phrase-level captions",
+  "narration_terms": "Cq spoken as threshold cycle; amplified in spoken as signal detected in"
+}

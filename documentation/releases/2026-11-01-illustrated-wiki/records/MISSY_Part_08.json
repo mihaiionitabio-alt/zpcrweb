@@ -1,0 +1,222 @@
+{
+  "part": 8,
+  "title": "A missing protocol",
+  "command": "Computer what protocol was used",
+  "intent": "data:protocols",
+  "actual_answer": "Decoded protocol signatures for all loaded run views. Missing signatures are stated; no protocol name is inferred. Run 1; ARTIFICIAL_DEMO / DEMO_RUN_01; (protocol not decoded); Run 2; ARTIFICIAL_DEMO / DEMO_RUN_02; (protocol not decoded); Run 3; ARTIFICIAL_DEMO / DEMO_RUN_03; (protocol not decoded); Run 4; ARTIFICIAL_DEMO / DEMO_RUN_04; (protocol not decoded); Run 5; ARTIFICIAL_DEMO / DEMO_RUN_05; (protocol not decoded); Run 6; ARTIFICIAL_DEMO / DEMO_RUN_06; (protocol not decoded); Run 7; ARTIFICIAL_DEMO / DEMO_RUN_07; (protocol not decoded); Run 8; ARTIFICIAL_DEMO / DEMO_RUN_08; (protocol not decoded). 24 more. Say Computer more.",
+  "response_excerpt": true,
+  "segments": [
+    {
+      "clip": "29baf1befa5e56",
+      "role": "operator",
+      "text": "These are artificial data, not laboratory results.",
+      "frame": "title",
+      "pause": 2
+    },
+    {
+      "clip": "24f2d30a8d10b6",
+      "role": "operator",
+      "text": "The values alone do not describe the method.",
+      "frame": "title",
+      "pause": 2
+    },
+    {
+      "clip": "f7d5c158fda89a",
+      "role": "operator",
+      "text": "I open Missy and enter the workspace.",
+      "frame": "setup",
+      "pause": 2
+    },
+    {
+      "clip": "25c5d698b8c8a5",
+      "role": "operator",
+      "text": "I load the artificial data and the profile.",
+      "frame": "load",
+      "pause": 2
+    },
+    {
+      "clip": "07f6221ac3e847",
+      "role": "operator",
+      "text": "The files are ready for review.",
+      "frame": "sop",
+      "pause": 2
+    },
+    {
+      "clip": "36e241408b58de",
+      "role": "operator",
+      "text": "Computer what protocol was used",
+      "frame": "evidence",
+      "pause": 1.2
+    },
+    {
+      "clip": "43b7b6df43dcb4",
+      "role": "missy",
+      "text": "Decoded protocol signatures for all loaded run views.",
+      "frame": "evidence",
+      "pause": 2.5,
+      "zh": "以下为全部已加载运行的已解码方案签名。"
+    },
+    {
+      "clip": "2a973ac910fa7b",
+      "role": "missy",
+      "text": "Missing signatures are stated; no protocol name is inferred.",
+      "frame": "evidence",
+      "pause": 2.5,
+      "zh": "缺失签名会明确说明，不推断方案名称。"
+    },
+    {
+      "clip": "c015335270c8a1",
+      "role": "missy",
+      "text": "Run 1; ARTIFICIAL_DEMO / DEMO_RUN_01; (protocol not decoded).",
+      "frame": "evidence",
+      "pause": 2.5,
+      "zh": "运行 1：ARTIFICIAL_DEMO / DEMO_RUN_01；方案未解码。"
+    },
+    {
+      "clip": "e84dd5f46e8d77",
+      "role": "operator",
+      "text": "I record the missing method information.",
+      "frame": "evidence",
+      "pause": 5
+    }
+  ],
+  "intro_repeated": true,
+  "artificial": true,
+  "voice_commands_emulated": true,
+  "hook_before_setup": true,
+  "render_revision": 3,
+  "duration_seconds": 78.782585,
+  "timeline": [
+    {
+      "clip": "29baf1befa5e56",
+      "role": "operator",
+      "text": "These are artificial data, not laboratory results.",
+      "frame": "title",
+      "pause": 2,
+      "start_s": 5.0,
+      "speech_seconds": 5.071666666666666,
+      "pause_s": 3,
+      "audio_sha256": "5709a34f9285f28f01ac091de003345f7e21bcc4a14550c03a23d0f93d894dbb",
+      "encoded_scene_seconds": 8.083333
+    },
+    {
+      "clip": "24f2d30a8d10b6",
+      "role": "operator",
+      "text": "The values alone do not describe the method.",
+      "frame": "title",
+      "pause": 2,
+      "start_s": 13.083333,
+      "speech_seconds": 4.4859375,
+      "pause_s": 3,
+      "audio_sha256": "70b95173828c946ec5d7f6e20d2ee766441af230f66bacd9021c582411001c9f",
+      "encoded_scene_seconds": 7.5
+    },
+    {
+      "clip": "f7d5c158fda89a",
+      "role": "operator",
+      "text": "I open Missy and enter the workspace.",
+      "frame": "setup",
+      "pause": 2,
+      "start_s": 20.583333,
+      "speech_seconds": 4.794479166666667,
+      "pause_s": 3,
+      "audio_sha256": "7d8a361c00666de9a10ea0e18c441424caa2b2744c1fe15355cb6aa8a66b3122",
+      "encoded_scene_seconds": 7.833333
+    },
+    {
+      "clip": "25c5d698b8c8a5",
+      "role": "operator",
+      "text": "I load the artificial data and the profile.",
+      "frame": "load",
+      "pause": 2,
+      "start_s": 28.416666,
+      "speech_seconds": 3.5693125,
+      "pause_s": 3,
+      "audio_sha256": "3761fc1196a6059425ee638c7ea2a84892f27e5c3386de3af15b3357bb20b1fd",
+      "encoded_scene_seconds": 6.583333
+    },
+    {
+      "clip": "07f6221ac3e847",
+      "role": "operator",
+      "text": "The files are ready for review.",
+      "frame": "sop",
+      "pause": 2,
+      "start_s": 34.999999,
+      "speech_seconds": 2.6601666666666666,
+      "pause_s": 2,
+      "audio_sha256": "4dba5970313fc217419af0a2a0b6fc5692917a43e0f7e1189cfdeba8b00115d7",
+      "encoded_scene_seconds": 4.666667
+    },
+    {
+      "clip": "36e241408b58de",
+      "role": "operator",
+      "text": "Computer what protocol was used",
+      "frame": "evidence",
+      "pause": 1.2,
+      "start_s": 39.666666000000006,
+      "speech_seconds": 3.4851666666666667,
+      "pause_s": 1.2,
+      "audio_sha256": "c1dd17514471507a844c3af3cf7763d89d8035e76f7426e9d99d6bae204d64ac",
+      "encoded_scene_seconds": 4.685011
+    },
+    {
+      "clip": "43b7b6df43dcb4",
+      "role": "missy",
+      "text": "Decoded protocol signatures for all loaded run views.",
+      "frame": "evidence",
+      "pause": 2.5,
+      "zh": "以下为全部已加载运行的已解码方案签名。",
+      "start_s": 44.35167700000001,
+      "speech_seconds": 4.395600907029478,
+      "pause_s": 2.5,
+      "audio_sha256": "448048b3e3cf151ca95da7ceb5851f0c5fb9f86b672e9867d01d40fceb08d435",
+      "encoded_scene_seconds": 6.916667
+    },
+    {
+      "clip": "2a973ac910fa7b",
+      "role": "missy",
+      "text": "Missing signatures are stated; no protocol name is inferred.",
+      "frame": "evidence",
+      "pause": 2.5,
+      "zh": "缺失签名会明确说明，不推断方案名称。",
+      "start_s": 51.26834400000001,
+      "speech_seconds": 4.955510204081633,
+      "pause_s": 2.5,
+      "audio_sha256": "2b4e74d94d0dbed8bf6c5fd114e5ad9e71fa1455db64de975e49f9289e16dc01",
+      "encoded_scene_seconds": 7.455011
+    },
+    {
+      "clip": "c015335270c8a1",
+      "role": "missy",
+      "text": "Run 1; ARTIFICIAL_DEMO / DEMO_RUN_01; (protocol not decoded).",
+      "frame": "evidence",
+      "pause": 2.5,
+      "zh": "运行 1：ARTIFICIAL_DEMO / DEMO_RUN_01；方案未解码。",
+      "start_s": 58.72335500000001,
+      "speech_seconds": 8.52984126984127,
+      "pause_s": 2.5,
+      "audio_sha256": "f9d703b0441d4e8c8098052eaafa78f6a58fa60d9f4449d4c6b05c5ec1726100",
+      "encoded_scene_seconds": 11.03
+    },
+    {
+      "clip": "e84dd5f46e8d77",
+      "role": "operator",
+      "text": "I record the missing method information.",
+      "frame": "evidence",
+      "pause": 5,
+      "start_s": 69.75335500000001,
+      "speech_seconds": 4.0066041666666665,
+      "pause_s": 5,
+      "audio_sha256": "fc5208e4cbd91468047356bc72642962870c3862bdbd9d214da80edaee60eb74",
+      "encoded_scene_seconds": 9.006009
+    }
+  ],
+  "video_sha256": "211eb41c30992615fbb0f4cc390e00cb7654841d68c3491c16ae4600141d3013",
+  "source_html_sha256": "6a56b4f372603849be3f8309c5aeeca4dd4ba4a81ce7de5d737b4b1a1c87a651",
+  "format": "Actual live-page screenshot sequence with synchronized checked speech and evidence holds; commands text-fed, no microphone test.",
+  "voice_profile": "MISSY_CALM_V1",
+  "decode_passed": true,
+  "peak": 0.797821044921875,
+  "subtitle_timing": "Based on encoded scene durations; phrase-level captions",
+  "narration_terms": "Cq spoken as threshold cycle; amplified in spoken as signal detected in"
+}

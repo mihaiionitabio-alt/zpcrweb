@@ -1,0 +1,201 @@
+{
+  "part": 1,
+  "title": "A repeat that needs review",
+  "command": "Computer which samples should I repeat",
+  "intent": "data:repeat",
+  "actual_answer": "3 current sample-target groups have the exact Repeat outcome under ARTIFICIAL DEMO — NOT VALIDATED. Other review or invalid outcomes are not counted as Repeat. SIM 5; DEMO_SAMPLE_0; DNA_TARGET; rule target: DNA_TARGET; replicate SD 2.18 > 0.5. 2 more. Say Computer more.",
+  "response_excerpt": true,
+  "segments": [
+    {
+      "clip": "29baf1befa5e56",
+      "role": "operator",
+      "text": "These are artificial data, not laboratory results.",
+      "frame": "title",
+      "pause": 2
+    },
+    {
+      "clip": "63a40f936b6efd",
+      "role": "operator",
+      "text": "One sample needs a closer look.",
+      "frame": "title",
+      "pause": 2
+    },
+    {
+      "clip": "f7d5c158fda89a",
+      "role": "operator",
+      "text": "I open Missy and enter the workspace.",
+      "frame": "setup",
+      "pause": 2
+    },
+    {
+      "clip": "25c5d698b8c8a5",
+      "role": "operator",
+      "text": "I load the artificial data and the profile.",
+      "frame": "load",
+      "pause": 2
+    },
+    {
+      "clip": "07f6221ac3e847",
+      "role": "operator",
+      "text": "The files are ready for review.",
+      "frame": "sop",
+      "pause": 2
+    },
+    {
+      "clip": "83bc03273eae4b",
+      "role": "operator",
+      "text": "Computer which samples should I repeat",
+      "frame": "evidence",
+      "pause": 1.2
+    },
+    {
+      "clip": "ad4b0bb6000612",
+      "role": "missy",
+      "text": "SIM 5; DEMO_SAMPLE_0; DNA_TARGET; rule target: DNA_TARGET; replicate SD 2.18 > 0.5. 2 more.",
+      "frame": "evidence",
+      "pause": 2.5,
+      "zh": "SIM 5；DEMO_SAMPLE_0；DNA_TARGET。根据靶标规则，重复间标准差 2.18 大于限值 0.5。还有两项。"
+    },
+    {
+      "clip": "d05176a923c0ad",
+      "role": "missy",
+      "text": "Say Computer more.",
+      "frame": "evidence",
+      "pause": 2.5,
+      "zh": "请说 Computer more。"
+    },
+    {
+      "clip": "f776e128c9385f",
+      "role": "operator",
+      "text": "I keep this finding for review.",
+      "frame": "evidence",
+      "pause": 5
+    }
+  ],
+  "intro_repeated": true,
+  "artificial": true,
+  "voice_commands_emulated": true,
+  "hook_before_setup": true,
+  "render_revision": 3,
+  "duration_seconds": 71.34139,
+  "timeline": [
+    {
+      "clip": "29baf1befa5e56",
+      "role": "operator",
+      "text": "These are artificial data, not laboratory results.",
+      "frame": "title",
+      "pause": 2,
+      "start_s": 5.0,
+      "speech_seconds": 5.071666666666666,
+      "pause_s": 3,
+      "audio_sha256": "5709a34f9285f28f01ac091de003345f7e21bcc4a14550c03a23d0f93d894dbb",
+      "encoded_scene_seconds": 8.083333
+    },
+    {
+      "clip": "63a40f936b6efd",
+      "role": "operator",
+      "text": "One sample needs a closer look.",
+      "frame": "title",
+      "pause": 2,
+      "start_s": 13.083333,
+      "speech_seconds": 2.6838333333333333,
+      "pause_s": 3,
+      "audio_sha256": "30f95fdec782ade2ffa16525c13dc5d56175c221195004a5a2fa365c75c60ece",
+      "encoded_scene_seconds": 5.683991
+    },
+    {
+      "clip": "f7d5c158fda89a",
+      "role": "operator",
+      "text": "I open Missy and enter the workspace.",
+      "frame": "setup",
+      "pause": 2,
+      "start_s": 18.767324,
+      "speech_seconds": 4.794479166666667,
+      "pause_s": 3,
+      "audio_sha256": "7d8a361c00666de9a10ea0e18c441424caa2b2744c1fe15355cb6aa8a66b3122",
+      "encoded_scene_seconds": 7.833333
+    },
+    {
+      "clip": "25c5d698b8c8a5",
+      "role": "operator",
+      "text": "I load the artificial data and the profile.",
+      "frame": "load",
+      "pause": 2,
+      "start_s": 26.600656999999998,
+      "speech_seconds": 3.5693125,
+      "pause_s": 3,
+      "audio_sha256": "3761fc1196a6059425ee638c7ea2a84892f27e5c3386de3af15b3357bb20b1fd",
+      "encoded_scene_seconds": 6.583333
+    },
+    {
+      "clip": "07f6221ac3e847",
+      "role": "operator",
+      "text": "The files are ready for review.",
+      "frame": "sop",
+      "pause": 2,
+      "start_s": 33.183989999999994,
+      "speech_seconds": 2.6601666666666666,
+      "pause_s": 2,
+      "audio_sha256": "4dba5970313fc217419af0a2a0b6fc5692917a43e0f7e1189cfdeba8b00115d7",
+      "encoded_scene_seconds": 4.666667
+    },
+    {
+      "clip": "83bc03273eae4b",
+      "role": "operator",
+      "text": "Computer which samples should I repeat",
+      "frame": "evidence",
+      "pause": 1.2,
+      "start_s": 37.850657,
+      "speech_seconds": 3.1699375,
+      "pause_s": 1.2,
+      "audio_sha256": "356cea97ea7a06a9dbd98aca3430503fcc5003a12efd68e94c79a8e2895e615c",
+      "encoded_scene_seconds": 4.37
+    },
+    {
+      "clip": "ad4b0bb6000612",
+      "role": "missy",
+      "text": "SIM 5; DEMO_SAMPLE_0; DNA_TARGET; rule target: DNA_TARGET; replicate SD 2.18 > 0.5. 2 more.",
+      "frame": "evidence",
+      "pause": 2.5,
+      "zh": "SIM 5；DEMO_SAMPLE_0；DNA_TARGET。根据靶标规则，重复间标准差 2.18 大于限值 0.5。还有两项。",
+      "start_s": 42.220656999999996,
+      "speech_seconds": 14.224353741496598,
+      "pause_s": 2.5,
+      "audio_sha256": "f4efd88c99cc9124e1845c6c118b9d202fa853eb7d88075642099b0701054afd",
+      "encoded_scene_seconds": 16.75
+    },
+    {
+      "clip": "d05176a923c0ad",
+      "role": "missy",
+      "text": "Say Computer more.",
+      "frame": "evidence",
+      "pause": 2.5,
+      "zh": "请说 Computer more。",
+      "start_s": 58.970656999999996,
+      "speech_seconds": 2.1809523809523808,
+      "pause_s": 2.5,
+      "audio_sha256": "764efe904a7e1ebd49aa6dee271016d96994d9c4502bc17baed551d3277c1b3d",
+      "encoded_scene_seconds": 4.680998
+    },
+    {
+      "clip": "f776e128c9385f",
+      "role": "operator",
+      "text": "I keep this finding for review.",
+      "frame": "evidence",
+      "pause": 5,
+      "start_s": 63.651655,
+      "speech_seconds": 2.646916666666667,
+      "pause_s": 5,
+      "audio_sha256": "d8f390b5077362bb4fc84d6e40ab9921d374e41201f507b8385a2a805e3ef3da",
+      "encoded_scene_seconds": 7.666667
+    }
+  ],
+  "video_sha256": "8aa7b13777056a29b45e8acd593c53e9d37753304ca7218bf974a8b00bb64ad8",
+  "source_html_sha256": "6a56b4f372603849be3f8309c5aeeca4dd4ba4a81ce7de5d737b4b1a1c87a651",
+  "format": "Actual live-page screenshot sequence with synchronized checked speech and evidence holds; commands text-fed, no microphone test.",
+  "voice_profile": "MISSY_CALM_V1",
+  "decode_passed": true,
+  "peak": 0.792633056640625,
+  "subtitle_timing": "Based on encoded scene durations; phrase-level captions",
+  "narration_terms": "Cq spoken as threshold cycle; amplified in spoken as signal detected in"
+}

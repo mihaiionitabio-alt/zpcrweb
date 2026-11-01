@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "text": "Dr Lin has 32 runs to review. Six have a signal shift. Help identify the affected evidence and prepare a traceable review report — without editing original values.",
+    "title": "Meet Dr Lin / 认识林博士"
+  },
+  {
+    "id": 2,
+    "text": "Start with one embedded, explicitly artificial RDML file. No laboratory files or internet are needed.",
+    "title": "Stage the embedded file / 加载模拟文件"
+  },
+  {
+    "id": 3,
+    "text": "Watch the real intake read 32 artificial runs and 768 target records. Cq values, amplification curves and melting arrays stay linked.",
+    "title": "Read the evidence / 读取证据"
+  },
+  {
+    "id": 4,
+    "text": "Dr Lin filters sample names before interpretation. Filtering is a view/selection step; it does not rewrite measurements.",
+    "title": "Narrow the sample scope / 缩小样品范围"
+  },
+  {
+    "id": 5,
+    "text": "A named SOP makes rules and report identity traceable. This fictional profile is not a validated method.",
+    "title": "Create a review-only SOP / 创建审核用 SOP"
+  },
+  {
+    "id": 6,
+    "text": "Make thresholds and controls explicit. Absolute, relative and melting configuration fields are also available; a template alone is not a validated calculation method.",
+    "title": "Specify targets and controls / 设置靶标与质控"
+  },
+  {
+    "id": 7,
+    "text": "Inspect one run first. Cq, replicate counts, outcome and reason remain visible together. All values here are artificial.",
+    "title": "Read the sample outcome / 阅读样品结果"
+  },
+  {
+    "id": 8,
+    "text": "Use the experiment selector and text search together. Dr Lin isolates DEMO_SAMPLE_0 instead of reading hundreds of rows.",
+    "title": "Find one run and sample / 查找一次运行及样品"
+  },
+  {
+    "id": 9,
+    "text": "The Control panel separates hardware, software, method and operator signals. Thirty-two compatible artificial runs support a baseline.",
+    "title": "See the history at a glance / 查看历史概况"
+  },
+  {
+    "id": 10,
+    "text": "QuantStudio 5 specifications are manufacturer reference values for the stated block variant. Simulator measurements are labelled separately.",
+    "title": "Know the hardware reference / 了解硬件参考"
+  },
+  {
+    "id": 11,
+    "text": "Chapter 2: investigate the shift. The dark chart makes the stable artificial heating history easy to see.",
+    "title": "Check heating stability / 检查升温稳定性"
+  },
+  {
+    "id": 12,
+    "text": "Cooling can change independently of heating. This light-background example shows the same chart controls and readable limits.",
+    "title": "Check cooling independently / 单独检查降温"
+  },
+  {
+    "id": 13,
+    "text": "The last six runs show a deliberately increasing background. Look at the highlighted red points, not the entire page.",
+    "title": "Locate the six drifting runs / 定位六次漂移运行"
+  },
+  {
+    "id": 14,
+    "text": "The tour presses the real Red alert for this artificial scenario. This scripted click does not add an automatic production alarm rule.",
+    "title": "Call attention to the drift / 提醒注意漂移"
+  },
+  {
+    "id": 15,
+    "text": "Stop remains available even with Sounds collapsed. Then the transcript “two” selects Next chart; no microphone is used.",
+    "title": "Stop, then try voice Next / 停止警报并模拟下一项"
+  },
+  {
+    "id": 16,
+    "text": "The transcript “four” opens View. Numbered choices change with the active menu, matching the displayed keys.",
+    "title": "Open the voice menu / 打开模拟语音菜单"
+  },
+  {
+    "id": 17,
+    "text": "Emulated “one”, then “two” chooses Zoom and Zoom in. The data values do not change.",
+    "title": "Zoom using two choices / 分两步缩放"
+  },
+  {
+    "id": 18,
+    "text": "Compare the artificial sigmoid rises and the flat NTC. Stored Cq and traces stay linked to their sample and channel.",
+    "title": "Inspect amplification / 检查扩增曲线"
+  },
+  {
+    "id": 19,
+    "text": "A high R² is not enough. This light-background standard curve spans only two log units, below the illustrative profile requirement.",
+    "title": "Read a calibration limitation / 阅读校准限制"
+  },
+  {
+    "id": 20,
+    "text": "Two artificial products have supplied Tm values near 78 and 82 °C. The dark preview shows the retained fluorescence arrays.",
+    "title": "Compare melting evidence / 比较熔解证据"
+  },
+  {
+    "id": 21,
+    "text": "Chapter 3: prepare traceable evidence. Check positions, roles and channels before selecting report figures.",
+    "title": "Verify the plate layout / 核对孔板布局"
+  },
+  {
+    "id": 22,
+    "text": "Dr Lin compares compatible samples and replicates rather than mixing targets or protocols.",
+    "title": "Compare samples / 比较样品"
+  },
+  {
+    "id": 23,
+    "text": "Review counts and grouped variability. A single grand Cq mean across different targets is not an assay conclusion.",
+    "title": "Check grouped statistics / 检查分组统计"
+  },
+  {
+    "id": 24,
+    "text": "Instrument records and file integrity explain where values came from. A checksum identifies bytes; it does not certify an experiment.",
+    "title": "Trace the source evidence / 追溯来源证据"
+  },
+  {
+    "id": 25,
+    "text": "Exports preserve evidence and scope. The demo does not silently download files or send data to a server.",
+    "title": "Choose an open output / 选择开放输出"
+  },
+  {
+    "id": 26,
+    "text": "The 12 animals can open pages or specific charts. Dr Lin can bind a shortcut to the drift chart without changing real saved assignments.",
+    "title": "Make shortcuts useful / 配置实用快捷方式"
+  },
+  {
+    "id": 27,
+    "text": "Commands groups modes, status report, Details and GPL/source. The tour shows diagnostics without downloading a file.",
+    "title": "Keep commands and details together / 集中命令与详情"
+  },
+  {
+    "id": 28,
+    "text": "The actual typed workflow supports explicit report selections. The tour does not run a script or trigger a download.",
+    "title": "Use Command mode / 使用命令模式"
+  },
+  {
+    "id": 29,
+    "text": "The dark Console keeps charts large. Mouse, keyboard and optional local voice reach the same navigation and appearance controls.",
+    "title": "Work in Console / 使用控制台"
+  },
+  {
+    "id": 30,
+    "text": "Dr Lin has isolated the drift and prepares two relevant figures for review. The actual PDF is built locally from artificial data. This does not approve results or repair hardware.",
+    "title": "Prepare the evidence, not a release / 准备证据而非签发结论"
+  }
+]

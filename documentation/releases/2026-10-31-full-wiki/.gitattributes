@@ -3,3 +3,5 @@ code/functions/** -text
 code/modules/** -text
 validation/** -text
 *.zip binary
+
+licenses/** -text

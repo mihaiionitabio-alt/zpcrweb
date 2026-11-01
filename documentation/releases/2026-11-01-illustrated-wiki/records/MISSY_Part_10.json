@@ -1,0 +1,201 @@
+{
+  "part": 10,
+  "title": "Findings are not validation",
+  "command": "Computer are these results validated",
+  "intent": "refuse:validation",
+  "actual_answer": "This is a research-use tool, not a laboratory validation certificate. You can review the method configuration and documentation for your own validation process.",
+  "response_excerpt": false,
+  "segments": [
+    {
+      "clip": "29baf1befa5e56",
+      "role": "operator",
+      "text": "These are artificial data, not laboratory results.",
+      "frame": "title",
+      "pause": 2
+    },
+    {
+      "clip": "7b672c19adfbcf",
+      "role": "operator",
+      "text": "A report does not make results validated.",
+      "frame": "title",
+      "pause": 2
+    },
+    {
+      "clip": "f7d5c158fda89a",
+      "role": "operator",
+      "text": "I open Missy and enter the workspace.",
+      "frame": "setup",
+      "pause": 2
+    },
+    {
+      "clip": "25c5d698b8c8a5",
+      "role": "operator",
+      "text": "I load the artificial data and the profile.",
+      "frame": "load",
+      "pause": 2
+    },
+    {
+      "clip": "07f6221ac3e847",
+      "role": "operator",
+      "text": "The files are ready for review.",
+      "frame": "sop",
+      "pause": 2
+    },
+    {
+      "clip": "a85266cd17f00d",
+      "role": "operator",
+      "text": "Computer are these results validated",
+      "frame": "evidence",
+      "pause": 1.2
+    },
+    {
+      "clip": "f24af5abf364aa",
+      "role": "missy",
+      "text": "This is a research-use tool, not a laboratory validation certificate.",
+      "frame": "evidence",
+      "pause": 2.5,
+      "zh": "这是研究用工具，不是实验室验证证书。"
+    },
+    {
+      "clip": "4140039beb2886",
+      "role": "missy",
+      "text": "You can review the method configuration and documentation for your own validation process.",
+      "frame": "evidence",
+      "pause": 2.5,
+      "zh": "您可审核方法配置和文档，用于自己的验证流程。"
+    },
+    {
+      "clip": "39ba2564cd0292",
+      "role": "operator",
+      "text": "The laboratory remains responsible for release decisions.",
+      "frame": "evidence",
+      "pause": 5
+    }
+  ],
+  "intro_repeated": true,
+  "artificial": true,
+  "voice_commands_emulated": true,
+  "hook_before_setup": true,
+  "render_revision": 3,
+  "duration_seconds": 72.079569,
+  "timeline": [
+    {
+      "clip": "29baf1befa5e56",
+      "role": "operator",
+      "text": "These are artificial data, not laboratory results.",
+      "frame": "title",
+      "pause": 2,
+      "start_s": 5.0,
+      "speech_seconds": 5.071666666666666,
+      "pause_s": 3,
+      "audio_sha256": "5709a34f9285f28f01ac091de003345f7e21bcc4a14550c03a23d0f93d894dbb",
+      "encoded_scene_seconds": 8.083333
+    },
+    {
+      "clip": "7b672c19adfbcf",
+      "role": "operator",
+      "text": "A report does not make results validated.",
+      "frame": "title",
+      "pause": 2,
+      "start_s": 13.083333,
+      "speech_seconds": 4.68125,
+      "pause_s": 3,
+      "audio_sha256": "69dec60d4bd4f223d4959dcc45f81ac312f16279b36ce40768324a051bbdeddb",
+      "encoded_scene_seconds": 7.680998
+    },
+    {
+      "clip": "f7d5c158fda89a",
+      "role": "operator",
+      "text": "I open Missy and enter the workspace.",
+      "frame": "setup",
+      "pause": 2,
+      "start_s": 20.764331,
+      "speech_seconds": 4.794479166666667,
+      "pause_s": 3,
+      "audio_sha256": "7d8a361c00666de9a10ea0e18c441424caa2b2744c1fe15355cb6aa8a66b3122",
+      "encoded_scene_seconds": 7.833333
+    },
+    {
+      "clip": "25c5d698b8c8a5",
+      "role": "operator",
+      "text": "I load the artificial data and the profile.",
+      "frame": "load",
+      "pause": 2,
+      "start_s": 28.597663999999998,
+      "speech_seconds": 3.5693125,
+      "pause_s": 3,
+      "audio_sha256": "3761fc1196a6059425ee638c7ea2a84892f27e5c3386de3af15b3357bb20b1fd",
+      "encoded_scene_seconds": 6.583333
+    },
+    {
+      "clip": "07f6221ac3e847",
+      "role": "operator",
+      "text": "The files are ready for review.",
+      "frame": "sop",
+      "pause": 2,
+      "start_s": 35.180997,
+      "speech_seconds": 2.6601666666666666,
+      "pause_s": 2,
+      "audio_sha256": "4dba5970313fc217419af0a2a0b6fc5692917a43e0f7e1189cfdeba8b00115d7",
+      "encoded_scene_seconds": 4.666667
+    },
+    {
+      "clip": "a85266cd17f00d",
+      "role": "operator",
+      "text": "Computer are these results validated",
+      "frame": "evidence",
+      "pause": 1.2,
+      "start_s": 39.847663999999995,
+      "speech_seconds": 3.70075,
+      "pause_s": 1.2,
+      "audio_sha256": "69d61f5ab86039c97e5bfe1bea4307f2c3455b56c0eaee0f946a64e1ab5e26b2",
+      "encoded_scene_seconds": 4.916667
+    },
+    {
+      "clip": "f24af5abf364aa",
+      "role": "missy",
+      "text": "This is a research-use tool, not a laboratory validation certificate.",
+      "frame": "evidence",
+      "pause": 2.5,
+      "zh": "这是研究用工具，不是实验室验证证书。",
+      "start_s": 44.764331,
+      "speech_seconds": 5.585124716553288,
+      "pause_s": 2.5,
+      "audio_sha256": "935e84933b22fd875fd21d471eef3675102ec46f94e89d7a53cda8928b7062ef",
+      "encoded_scene_seconds": 8.085011
+    },
+    {
+      "clip": "4140039beb2886",
+      "role": "missy",
+      "text": "You can review the method configuration and documentation for your own validation process.",
+      "frame": "evidence",
+      "pause": 2.5,
+      "zh": "您可审核方法配置和文档，用于自己的验证流程。",
+      "start_s": 52.849342,
+      "speech_seconds": 6.25015873015873,
+      "pause_s": 2.5,
+      "audio_sha256": "6d7525ee3cc7fe2845d166c27a7406a9dfd3388ffb428e7ddd25811f6a3bbab5",
+      "encoded_scene_seconds": 8.75
+    },
+    {
+      "clip": "39ba2564cd0292",
+      "role": "operator",
+      "text": "The laboratory remains responsible for release decisions.",
+      "frame": "evidence",
+      "pause": 5,
+      "start_s": 61.599342,
+      "speech_seconds": 5.457125,
+      "pause_s": 5,
+      "audio_sha256": "421711354f0b40e09bef7d19df4909eb3e31dc3a86d40ea54d336afa89ab83cb",
+      "encoded_scene_seconds": 10.457007
+    }
+  ],
+  "video_sha256": "432538ed67ac5a06675098ce103fa86610386c7bc199abe760ded6610648be71",
+  "source_html_sha256": "6a56b4f372603849be3f8309c5aeeca4dd4ba4a81ce7de5d737b4b1a1c87a651",
+  "format": "Actual live-page screenshot sequence with synchronized checked speech and evidence holds; commands text-fed, no microphone test.",
+  "voice_profile": "MISSY_CALM_V1",
+  "decode_passed": true,
+  "peak": 0.785736083984375,
+  "subtitle_timing": "Based on encoded scene durations; phrase-level captions",
+  "narration_terms": "Cq spoken as threshold cycle; amplified in spoken as signal detected in"
+}

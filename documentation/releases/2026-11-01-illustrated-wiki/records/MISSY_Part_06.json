@@ -1,0 +1,243 @@
+{
+  "part": 6,
+  "title": "No ready baseline",
+  "command": "Computer why has this chart no limits",
+  "intent": "q:analyse",
+  "actual_answer": "B-H1 Peak heating rate (2-s window). 2 assessed points; 0 beyond available limits; 0 points with recorded flags. 0 missing or non-finite points; 0 before baseline. 2 points have available limits. Control baseline is not ready. No recorded flags. This is not proof that all data are nominal.",
+  "response_excerpt": false,
+  "segments": [
+    {
+      "clip": "29baf1befa5e56",
+      "role": "operator",
+      "text": "These are artificial data, not laboratory results.",
+      "frame": "title",
+      "pause": 2
+    },
+    {
+      "clip": "a48595f27fb8bb",
+      "role": "operator",
+      "text": "I need more data.",
+      "frame": "title",
+      "pause": 2
+    },
+    {
+      "clip": "f7d5c158fda89a",
+      "role": "operator",
+      "text": "I open Missy and enter the workspace.",
+      "frame": "setup",
+      "pause": 2
+    },
+    {
+      "clip": "25c5d698b8c8a5",
+      "role": "operator",
+      "text": "I load the artificial data and the profile.",
+      "frame": "load",
+      "pause": 2
+    },
+    {
+      "clip": "07f6221ac3e847",
+      "role": "operator",
+      "text": "The files are ready for review.",
+      "frame": "sop",
+      "pause": 2
+    },
+    {
+      "clip": "e3972c753f91ce",
+      "role": "operator",
+      "text": "Computer why has this chart no limits",
+      "frame": "evidence",
+      "pause": 1.2
+    },
+    {
+      "clip": "7676d6688851bc",
+      "role": "missy",
+      "text": "B-H1 Peak heating rate (2-s window). 2 assessed points; 0 beyond available limits; 0 points with recorded flags. 0 missing or non-finite points; 0 before baseline. 2 points have available limits.",
+      "frame": "evidence",
+      "pause": 2.5,
+      "zh": "B-H1：峰值升温速率，两秒窗口。已评估 2 个点；超出限值 0 个，有标记 0 个。缺失或非有限值 0 个，基线之前 0 个。2 个点有可用限值。"
+    },
+    {
+      "clip": "b4635fe485fd2a",
+      "role": "missy",
+      "text": "Control baseline is not ready.",
+      "frame": "evidence",
+      "pause": 2.5,
+      "zh": "控制基线尚未准备就绪。"
+    },
+    {
+      "clip": "d90b77b7eaad43",
+      "role": "missy",
+      "text": "No recorded flags.",
+      "frame": "evidence",
+      "pause": 2.5,
+      "zh": "没有记录标记。"
+    },
+    {
+      "clip": "992d20f6ee4bbc",
+      "role": "missy",
+      "text": "This is not proof that all data are nominal.",
+      "frame": "evidence",
+      "pause": 2.5,
+      "zh": "这不证明所有数据都正常。"
+    },
+    {
+      "clip": "0304bd0db92bb4",
+      "role": "operator",
+      "text": "I need more evidence before calling this normal.",
+      "frame": "evidence",
+      "pause": 5
+    }
+  ],
+  "intro_repeated": true,
+  "artificial": true,
+  "voice_commands_emulated": true,
+  "hook_before_setup": true,
+  "render_revision": 3,
+  "duration_seconds": 91.138021,
+  "timeline": [
+    {
+      "clip": "29baf1befa5e56",
+      "role": "operator",
+      "text": "These are artificial data, not laboratory results.",
+      "frame": "title",
+      "pause": 2,
+      "start_s": 5.0,
+      "speech_seconds": 5.071666666666666,
+      "pause_s": 3,
+      "audio_sha256": "5709a34f9285f28f01ac091de003345f7e21bcc4a14550c03a23d0f93d894dbb",
+      "encoded_scene_seconds": 8.083333
+    },
+    {
+      "clip": "a48595f27fb8bb",
+      "role": "operator",
+      "text": "I need more data.",
+      "frame": "title",
+      "pause": 2,
+      "start_s": 13.083333,
+      "speech_seconds": 1.7591041666666667,
+      "pause_s": 3,
+      "audio_sha256": "68abb37c68d4440df0dd4384a05913bcdc02e75b477c09b8cf9efcc039ba7bb4",
+      "encoded_scene_seconds": 4.759002
+    },
+    {
+      "clip": "f7d5c158fda89a",
+      "role": "operator",
+      "text": "I open Missy and enter the workspace.",
+      "frame": "setup",
+      "pause": 2,
+      "start_s": 17.842335,
+      "speech_seconds": 4.794479166666667,
+      "pause_s": 3,
+      "audio_sha256": "7d8a361c00666de9a10ea0e18c441424caa2b2744c1fe15355cb6aa8a66b3122",
+      "encoded_scene_seconds": 7.833333
+    },
+    {
+      "clip": "25c5d698b8c8a5",
+      "role": "operator",
+      "text": "I load the artificial data and the profile.",
+      "frame": "load",
+      "pause": 2,
+      "start_s": 25.675667999999998,
+      "speech_seconds": 3.5693125,
+      "pause_s": 3,
+      "audio_sha256": "3761fc1196a6059425ee638c7ea2a84892f27e5c3386de3af15b3357bb20b1fd",
+      "encoded_scene_seconds": 6.583333
+    },
+    {
+      "clip": "07f6221ac3e847",
+      "role": "operator",
+      "text": "The files are ready for review.",
+      "frame": "sop",
+      "pause": 2,
+      "start_s": 32.259001,
+      "speech_seconds": 2.6601666666666666,
+      "pause_s": 2,
+      "audio_sha256": "4dba5970313fc217419af0a2a0b6fc5692917a43e0f7e1189cfdeba8b00115d7",
+      "encoded_scene_seconds": 4.666667
+    },
+    {
+      "clip": "e3972c753f91ce",
+      "role": "operator",
+      "text": "Computer why has this chart no limits",
+      "frame": "evidence",
+      "pause": 1.2,
+      "start_s": 36.925668,
+      "speech_seconds": 5.7834375,
+      "pause_s": 1.2,
+      "audio_sha256": "1084f1ecb16a852181432153c5bd2c2efa3f9d289d9a6601d834ed882568dfa4",
+      "encoded_scene_seconds": 7.0
+    },
+    {
+      "clip": "7676d6688851bc",
+      "role": "missy",
+      "text": "B-H1 Peak heating rate (2-s window). 2 assessed points; 0 beyond available limits; 0 points with recorded flags. 0 missing or non-finite points; 0 before baseline. 2 points have available limits.",
+      "frame": "evidence",
+      "pause": 2.5,
+      "zh": "B-H1：峰值升温速率，两秒窗口。已评估 2 个点；超出限值 0 个，有标记 0 个。缺失或非有限值 0 个，基线之前 0 个。2 个点有可用限值。",
+      "start_s": 43.925668,
+      "speech_seconds": 19.498548752834466,
+      "pause_s": 2.5,
+      "audio_sha256": "e1a2b95d4085a8d995cc25208d09912cc63564e5e9b77110fa18dc40da113ae9",
+      "encoded_scene_seconds": 22.0
+    },
+    {
+      "clip": "b4635fe485fd2a",
+      "role": "missy",
+      "text": "Control baseline is not ready.",
+      "frame": "evidence",
+      "pause": 2.5,
+      "zh": "控制基线尚未准备就绪。",
+      "start_s": 65.925668,
+      "speech_seconds": 2.9057596371882086,
+      "pause_s": 2.5,
+      "audio_sha256": "e8e89897db88f644bb462a84de79a0961641494dbf390e1ad05530bff66cf82c",
+      "encoded_scene_seconds": 5.416667
+    },
+    {
+      "clip": "d90b77b7eaad43",
+      "role": "missy",
+      "text": "No recorded flags.",
+      "frame": "evidence",
+      "pause": 2.5,
+      "zh": "没有记录标记。",
+      "start_s": 71.342335,
+      "speech_seconds": 2.3560090702947845,
+      "pause_s": 2.5,
+      "audio_sha256": "85ad585c6c05df696eb2a809bbb8444d36f0610e6b3611893bd8bd418e6de8e6",
+      "encoded_scene_seconds": 4.856009
+    },
+    {
+      "clip": "992d20f6ee4bbc",
+      "role": "missy",
+      "text": "This is not proof that all data are nominal.",
+      "frame": "evidence",
+      "pause": 2.5,
+      "zh": "这不证明所有数据都正常。",
+      "start_s": 76.198344,
+      "speech_seconds": 3.8280725623582765,
+      "pause_s": 2.5,
+      "audio_sha256": "e33d1838d2fa95d26b5d2b5d60cd6504dc5b3a15e6e849fa5ab0d5c9f3df4a7f",
+      "encoded_scene_seconds": 6.333333
+    },
+    {
+      "clip": "0304bd0db92bb4",
+      "role": "operator",
+      "text": "I need more evidence before calling this normal.",
+      "frame": "evidence",
+      "pause": 5,
+      "start_s": 82.531677,
+      "speech_seconds": 3.5689375,
+      "pause_s": 5,
+      "audio_sha256": "63423a67f80d504e74d0146b4514a54e0d61b12dbc3c7495256f918268f3709b",
+      "encoded_scene_seconds": 8.583333
+    }
+  ],
+  "video_sha256": "28e7ef06078cbf4626c50c0895cfa1dea7f13caaeba9533470f4b95d577e4e48",
+  "source_html_sha256": "6a56b4f372603849be3f8309c5aeeca4dd4ba4a81ce7de5d737b4b1a1c87a651",
+  "format": "Actual live-page screenshot sequence with synchronized checked speech and evidence holds; commands text-fed, no microphone test.",
+  "voice_profile": "MISSY_CALM_V1",
+  "decode_passed": true,
+  "peak": 0.7977294921875,
+  "subtitle_timing": "Based on encoded scene durations; phrase-level captions",
+  "narration_terms": "Cq spoken as threshold cycle; amplified in spoken as signal detected in"
+}
