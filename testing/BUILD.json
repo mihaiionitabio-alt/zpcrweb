@@ -1,0 +1,13 @@
+{
+  "version": "2026.11.05.testing1",
+  "status": "under-testing",
+  "published_date": "2026-11-05",
+  "artifact": "Missy_offline.html",
+  "sha256": "d1416c6f9cfcdfe4959f3feb98272cb00b40d75b1f71581133c6649e60e2fa12",
+  "source_sha256": "454d0c882e6a529198fde010802285dc0477f696bfc383c50be9a6562161ebb3",
+  "documented_baseline": "2026.10.31.demolabels1",
+  "baseline_index_sha256": "285b5833328b306966035d2b2e20687c145230b5706547d12bcc5699179b4c0d",
+  "recommended_url": "https://mihaiionitabio-alt.github.io/zpcrweb/?v=2026.10.31.demolabels1",
+  "wiki_url": "https://sourceforge.net/p/zpcrweb/wiki/Home/",
+  "packaging": "one self-contained offline HTML file; publication copy changes build identification only"
+}

@@ -1,0 +1,2 @@
+# Preserve the generated single-file artifact and its published SHA-256.
+testing/Missy_offline.html -text -whitespace
