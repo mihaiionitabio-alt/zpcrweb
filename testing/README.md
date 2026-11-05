@@ -1,10 +1,14 @@
 # MISSY unified testing build
 
-[Open the unified HTML](https://mihaiionitabio-alt.github.io/zpcrweb/testing/Missy-unified.html?v=2026.11.05.unified-alpha7).
+[Open the unified HTML](https://mihaiionitabio-alt.github.io/zpcrweb/testing/Missy-unified.html?v=2026.11.05.unified-alpha8).
 
 One unencrypted offline HTML contains two runtimes and selects one by browser capability. Full font coverage and local recorded audio remain embedded. Missing speech recognition alone does not force compatibility mode.
 
-## New in alpha7
+## New in alpha8
+
+Console focus uses the native SVG palette without a second inversion. Nested SVG chart backgrounds, labels and grid lines follow the display theme. The saved chart background preference is respected on startup. Chromium checks covered focus in both themes and 25 chart outputs from an IXO fixture.
+
+## Changes carried forward from alpha7
 
 The full-screen import display shows elapsed time, files processed, and an estimate that updates after each file. The compatibility reader decodes ASCII IXO text faster and reuses the decompressed acquisition stream for control charts. The 13-file compatibility test produced 613 results with acquisition parity for all 13 files.
 
