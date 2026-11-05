@@ -15,17 +15,18 @@ The wiki identifies application baseline `2026.10.31.demolabels1`. Its instructi
 
 ## Development snapshot — under testing
 
-- **Testing build:** `2026.11.05.testing1` — published 5 November 2026.
-- [Open the testing build](https://mihaiionitabio-alt.github.io/zpcrweb/testing/Missy_offline.html?v=2026.11.05.testing1).
-- [Download the single testing HTML](https://raw.githubusercontent.com/mihaiionitabio-alt/zpcrweb/missy-public-offline-2026-10-20/testing/Missy_offline.html).
-- [Build identity and SHA-256](testing/BUILD.json).
+- **Latest testing build:** `2026.11.05.unified-alpha3`.
+- [Open the unified testing HTML](https://mihaiionitabio-alt.github.io/zpcrweb/testing/Missy-unified.html?v=2026.11.05.unified-alpha3).
+- [Download the single unified HTML](https://raw.githubusercontent.com/mihaiionitabio-alt/zpcrweb/missy-public-offline-2026-10-20/testing/Missy-unified.html).
+- [Build identity, runtime hashes and open issues](testing/BUILD.json).
+- [Fixes and compatibility limitations](testing/README.md).
 
-This snapshot includes work on graph codes and voice numbers, Console/Command/Assisted mode navigation, graph shortcuts, dark plots and image exports, SOP-aware chart availability, and activity-linked LCARS loading displays. These changes are **not yet the documented baseline** and may change during testing.
+The unified build contains modern and compatibility runtimes, sharing embedded assets. It includes the three defect fixes in the main-page maintenance release. Native IE11 remains unverified. The former `testing/Missy_offline.html` is retained as a historical testing1 snapshot.
 
 The application remains one self-contained HTML file. Save that file to use the application offline. Experiment files are processed locally. Optional microphone speech recognition still depends on compatible browser support and an installed offline language pack.
 
 ## Version separation
 
-The root `index.html` is retained as the recommended documented application. The testing build is published separately at `testing/Missy_offline.html`, so opening the recommended link does not silently switch to the experimental interface. The `?v=` parameter is a cache/version label, not an immutable release selector.
+The root `index.html` is retained as the recommended documented application. The testing build is published separately at `testing/Missy-unified.html`, so opening the recommended link does not silently switch to the experimental interface. The `?v=` parameter is a cache/version label, not an immutable release selector.
 
 Existing baseline documentation remains in [documentation/](documentation/README.md). The SourceForge wiki has not been rewritten for this testing snapshot.

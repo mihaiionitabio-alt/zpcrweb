@@ -1,0 +1,231 @@
+{
+  "build": {
+    "version": "2026.11.05.unified-alpha3",
+    "status": "under-testing; native IE11 not verified",
+    "artifact": "Missy-unified.html",
+    "sha256": "b75588f0b2fa04fc7b022d0b8b74ac2ad1f82e62746d8376e0b4602e651b3e10",
+    "bytes": 35201931,
+    "runtimes": {
+      "modern": {
+        "bytes": 28391758,
+        "characters": 28244909,
+        "sha256": "5932d201750b3fdb4533f365e8add20a324225ea70d97a9e2709069eabee4e1f"
+      },
+      "legacy": {
+        "bytes": 29916015,
+        "characters": 29779632,
+        "sha256": "75b15bb9b3b99e7fa6d7f080d46feb5b8e58801b37d5505dc7fc68bf855a116b"
+      }
+    },
+    "main_page": "https://mihaiionitabio-alt.github.io/zpcrweb/?v=2026.11.05.reviewfix1",
+    "testing_url": "https://mihaiionitabio-alt.github.io/zpcrweb/testing/Missy-unified.html?v=2026.11.05.unified-alpha3",
+    "known_open_items": [
+      "Native IE11 parse, memory, audio, fonts, layout and downloads",
+      "Encrypted PCRD numerical decoding",
+      "Scope label/export metadata for selection-scoped control charts"
+    ],
+    "historical_snapshot": "Missy_offline.html (2026.11.05.testing1; not the latest unified build)"
+  },
+  "softwareSuite": {
+    "build": "2026.11.05.unified-legacy2",
+    "sha256": "75b15bb9b3b99e7fa6d7f080d46feb5b8e58801b37d5505dc7fc68bf855a116b",
+    "scope": "complete local suite",
+    "evidence": "Software and fixture checks; native IE execution separate",
+    "results": [
+      {
+        "test": "static",
+        "status": "pass",
+        "exitCode": 0,
+        "elapsedMs": 1263
+      },
+      {
+        "test": "offline-svg",
+        "status": "pass",
+        "exitCode": 0,
+        "elapsedMs": 697
+      },
+      {
+        "test": "offline-copy",
+        "status": "pass",
+        "exitCode": 0,
+        "elapsedMs": 11437
+      },
+      {
+        "test": "offline-features",
+        "status": "pass",
+        "exitCode": 0,
+        "elapsedMs": 7472
+      },
+      {
+        "test": "smoke",
+        "status": "pass",
+        "exitCode": 0,
+        "elapsedMs": 7410
+      },
+      {
+        "test": "legacy-boot",
+        "status": "pass",
+        "exitCode": 0,
+        "elapsedMs": 10331
+      },
+      {
+        "test": "audio-ui",
+        "status": "pass",
+        "exitCode": 0,
+        "elapsedMs": 9146
+      },
+      {
+        "test": "review-helpers",
+        "status": "pass",
+        "exitCode": 0,
+        "elapsedMs": 1438
+      },
+      {
+        "test": "all-sounds",
+        "status": "pass",
+        "exitCode": 0,
+        "elapsedMs": 951
+      },
+      {
+        "test": "sound-settings",
+        "status": "pass",
+        "exitCode": 0,
+        "elapsedMs": 12197
+      },
+      {
+        "test": "plate-layout",
+        "status": "pass",
+        "exitCode": 0,
+        "elapsedMs": 13564
+      },
+      {
+        "test": "startup-diagnostics",
+        "status": "pass",
+        "exitCode": 0,
+        "elapsedMs": 9721
+      },
+      {
+        "test": "frame-write",
+        "status": "pass",
+        "exitCode": 0,
+        "elapsedMs": 867
+      },
+      {
+        "test": "frame-payloads",
+        "status": "pass",
+        "exitCode": 0,
+        "elapsedMs": 11684
+      },
+      {
+        "test": "generated-code-guard",
+        "status": "pass",
+        "exitCode": 0,
+        "elapsedMs": 1389
+      },
+      {
+        "test": "decompression-fixtures",
+        "status": "pass",
+        "exitCode": 0,
+        "elapsedMs": 2259
+      },
+      {
+        "test": "fixture-parity",
+        "status": "pass",
+        "exitCode": 0,
+        "elapsedMs": 80906
+      },
+      {
+        "test": "format-parity",
+        "status": "pass",
+        "exitCode": 0,
+        "elapsedMs": 22051
+      },
+      {
+        "test": "full-intake",
+        "status": "pass",
+        "exitCode": 0,
+        "elapsedMs": 70100
+      }
+    ]
+  },
+  "browserSuite": {
+    "unifiedSHA256": "b75588f0b2fa04fc7b022d0b8b74ac2ad1f82e62746d8376e0b4602e651b3e10",
+    "scope": "Isolated Chromium 150 and transport checks; no native IE11",
+    "results": [
+      {
+        "test": "unified-transport",
+        "pass": true,
+        "elapsedMs": 11083
+      },
+      {
+        "test": "chromium-unified",
+        "pass": true,
+        "elapsedMs": 4352
+      },
+      {
+        "test": "chromium-cross-runtime",
+        "pass": true,
+        "elapsedMs": 26874
+      },
+      {
+        "test": "chromium-workflow",
+        "pass": true,
+        "elapsedMs": 5802
+      }
+    ]
+  },
+  "defectTests": {
+    "modern": {
+      "pass": true,
+      "cases": 9,
+      "pageErrors": []
+    },
+    "legacy": {
+      "pass": true,
+      "cases": 9,
+      "pageErrors": []
+    }
+  },
+  "nativeIE11Executed": false,
+  "fullIntake": {
+    "kind": "JSDOM full intake/read workflow with missing native APIs, not IE11",
+    "runs": 13,
+    "storedRows": 613,
+    "phase": "ready",
+    "faults": [],
+    "errors": [],
+    "elapsedMs": 62649
+  },
+  "perFormat": [
+    {
+      "format": "EDS",
+      "runs": 1,
+      "storedRows": 72,
+      "checks": 8
+    },
+    {
+      "format": "EDT",
+      "runs": 1,
+      "storedRows": 0,
+      "checks": 8
+    },
+    {
+      "format": "RDML",
+      "runs": 1,
+      "storedRows": 48,
+      "checks": 8
+    },
+    {
+      "format": "ZPCR",
+      "runs": 1,
+      "storedRows": 0,
+      "checks": 10
+    },
+    {
+      "format": "PCRD password cancelled",
+      "runs": 1,
+      "storedRows": 0,
+      "checks": 8
+    }
+  ]
+}
