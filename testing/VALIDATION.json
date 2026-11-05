@@ -5,37 +5,62 @@
     "sentinelCR": "~MISSY_CR_9f712e~",
     "runtimes": {
       "modern": {
-        "bytes": 28426828,
-        "characters": 28279933,
-        "sha256": "102c9a8d19f3f0390ce0047fcd5c3552b3125647827be4e2cbada5b8db169169"
+        "bytes": 28428086,
+        "characters": 28280901,
+        "sha256": "f46217b6f2e0d237d8e413b135c9bab8ee7501abf762ce7f214ca47587ce363d"
       },
       "legacy": {
-        "bytes": 29965148,
-        "characters": 29828723,
-        "sha256": "6ba139a80b90358d5e6d64abe44e4891d61f6e5b61f72633df21adbbb142f96f"
+        "bytes": 29968673,
+        "characters": 29831958,
+        "sha256": "7abdbd47873ab47454cb973bffa36aae5d438fb56fd56a0bed7eca05bdd865db"
       }
     },
     "assetCount": 253,
     "fullFontCoverage": true,
     "sourceTree": "src/ (canonical)",
-    "unifiedBytes": 35333062,
-    "unifiedSHA256": "bce73965b3f4b9d09de4a5369fed8318c71c0d1679f99afff65a5c7e73a18b9a",
-    "naiveRuntimeBytes": 58391976,
-    "savedBytes": 23058914,
-    "savingPercent": 39.489867580436055,
+    "unifiedBytes": 35380613,
+    "unifiedSHA256": "0f38831e83b8bb6030c61727e2b273caac8e010909f5567e3d9089a9914e9d62",
+    "naiveRuntimeBytes": 58396759,
+    "savedBytes": 23016146,
+    "savingPercent": 39.413396212622004,
     "byteIdenticalRoundTrips": true,
     "outerBootstrapES5": true,
     "base64WrapperUsed": false,
     "sharedAssetCharacters": 23046200
   },
-  "chromiumPreparedChart": {
-    "button": "Open prepared chart",
-    "openedCode": "P-1000000",
-    "entriesObserved": 4,
-    "displayedRows": 11,
-    "browserErrors": 0,
-    "fixture": "one IXO file"
+  "transport": {
+    "checks": [
+      {
+        "runtime": "modern",
+        "bytes": 28428086,
+        "sha256": "f46217b6f2e0d237d8e413b135c9bab8ee7501abf762ce7f214ca47587ce363d",
+        "exact": true,
+        "preEscapedScriptSequences": 16
+      },
+      {
+        "runtime": "legacy",
+        "bytes": 29968673,
+        "sha256": "7abdbd47873ab47454cb973bffa36aae5d438fb56fd56a0bed7eca05bdd865db",
+        "exact": true,
+        "preEscapedScriptSequences": 15
+      }
+    ],
+    "outerActiveScriptBlocks": 1,
+    "outerES5": true,
+    "base64RuntimeWrapper": false,
+    "exactTransport": true,
+    "SOPmoduleIndependentFromGraphSelection": true,
+    "unifiedSHA256": "0f38831e83b8bb6030c61727e2b273caac8e010909f5567e3d9089a9914e9d62"
+  },
+  "compatibilitySimulation": {
+    "build": "2026.11.05.unified-legacy1",
+    "bootErrors": [],
+    "analysisExactParity": true,
+    "analysisUI": true,
+    "graphDirectory": true,
+    "importOverlay": true,
+    "scope": "JSDOM software evidence; native IE11 layout/audio/performance not verified"
   },
   "nativeIE11Tested": false,
-  "previousEvidence": "48aab3a1e30eb1bb783f60bc7fdee6ef99c60998"
+  "previousEvidence": "67f1b1d5bcd2c4cc8b6efe99a335e0717e9d42b0"
 }

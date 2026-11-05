@@ -16,7 +16,7 @@ The wiki identifies application baseline `2026.10.31.demolabels1`. Its instructi
 ## Development snapshot — under testing
 
 - **Latest testing build:** `2026.11.05.unified-alpha9`.
-- [Open the unified testing HTML](https://mihaiionitabio-alt.github.io/zpcrweb/testing/Missy-unified.html?v=2026.11.05.unified-alpha9-directory1).
+- [Open the unified testing HTML](https://mihaiionitabio-alt.github.io/zpcrweb/testing/Missy-unified.html?v=2026.11.05.unified-alpha9-compat1).
 - [Download the single unified HTML](https://raw.githubusercontent.com/mihaiionitabio-alt/zpcrweb/missy-public-offline-2026-10-20/testing/Missy-unified.html).
 - [Build identity, runtime hashes and open issues](testing/VALIDATION.json).
 - [Fixes and compatibility limitations](testing/README.md).

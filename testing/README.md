@@ -1,6 +1,6 @@
 # MISSY unified testing build
 
-[Open the unified HTML](https://mihaiionitabio-alt.github.io/zpcrweb/testing/Missy-unified.html?v=2026.11.05.unified-alpha9-directory1).
+[Open the unified HTML](https://mihaiionitabio-alt.github.io/zpcrweb/testing/Missy-unified.html?v=2026.11.05.unified-alpha9-compat1).
 
 One unencrypted offline HTML contains two runtimes and selects one by browser capability. Full font coverage and local recorded audio remain embedded. Missing speech recognition alone does not force compatibility mode.
 
@@ -30,3 +30,7 @@ Native IE11 has NOT been tested. Compatibility mode in Chromium does not establi
 VALIDATION.json records the build identity, exact release hashes, test results and open issues. The root application remains the separate modern maintenance release.
 
 Prepared experiment charts have session codes and voice numbers. The chart button distinguishes a cache hit from an on-demand draw. Ordinary browsing no longer delays background jobs.
+
+## Compatibility update
+
+Includes the fixed modern 2 GiB background budget, 100 ms queue interval, curve-group sorting, Control Panel navigation and layout fixes, worker-free analysis, history recovery notices, and Chinese labels for selected compatibility controls. Native IE11 workflows remain unverified.
