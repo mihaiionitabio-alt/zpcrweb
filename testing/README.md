@@ -1,6 +1,6 @@
 # MISSY unified testing build
 
-[Open the unified HTML](https://mihaiionitabio-alt.github.io/zpcrweb/testing/Missy-unified.html?v=2026.11.05.unified-alpha9-cache1).
+[Open the unified HTML](https://mihaiionitabio-alt.github.io/zpcrweb/testing/Missy-unified.html?v=2026.11.05.unified-alpha9-directory1).
 
 One unencrypted offline HTML contains two runtimes and selects one by browser capability. Full font coverage and local recorded audio remain embedded. Missing speech recognition alone does not force compatibility mode.
 
@@ -28,3 +28,5 @@ It also retains alpha2's lossless runtime transport, chunked integrity check wit
 Native IE11 has NOT been tested. Compatibility mode in Chromium does not establish IE11 support. Encrypted PCRD numerical decoding is not covered. Selection-scoped control-chart labels/export metadata remain a follow-up; SOP verdicts still use the complete batch. This is an experimental release, not validated laboratory software.
 
 VALIDATION.json records the build identity, exact release hashes, test results and open issues. The root application remains the separate modern maintenance release.
+
+Prepared experiment charts have session codes and voice numbers. The chart button distinguishes a cache hit from an on-demand draw. Ordinary browsing no longer delays background jobs.
