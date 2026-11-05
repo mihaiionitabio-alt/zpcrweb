@@ -6,7 +6,12 @@ One unencrypted offline HTML contains two runtimes and selects one by browser ca
 
 ## New in alpha9
 
-Run-specific charts prepare one at a time for each selected run after import. The modern runtime defaults to an estimated 512 MiB chart-cache budget, with a 1 GiB option. The compatibility runtime keeps 16 MiB. Numerical analysis remains on demand.
+- Background preparation checks for work every 100 ms and prepares one chart at a time. Ordinary browsing does not pause it. Imports and foreground chart processing take priority.
+- The modern runtime has a fixed 2 GiB estimated background chart-cache budget. Manually drawn charts can increase retained usage beyond that budget. The compatibility runtime keeps its 16 MiB cap.
+- Prepared experiment charts have session-specific codes and voice numbers. The viewer shows **Open prepared chart** for a cache hit and **Draw selected chart** when it needs to render.
+- Curve groups sort by stored curve count. Experiment chart cards show their names and availability, with full charts displayed separately.
+- The Control Panel shortcut opens the curve-group workbench. Numerical analysis runs on demand and can use a worker-free path when worker startup fails.
+- The compatibility runtime includes layout and dialog keyboard improvements, JSON history recovery notices, and Chinese translations for selected controls. The compatibility experiment viewer offers SVG and CSV downloads.
 
 ## Changes carried forward from alpha8
 
@@ -28,9 +33,3 @@ It also retains alpha2's lossless runtime transport, chunked integrity check wit
 Native IE11 has NOT been tested. Compatibility mode in Chromium does not establish IE11 support. Encrypted PCRD numerical decoding is not covered. Selection-scoped control-chart labels/export metadata remain a follow-up; SOP verdicts still use the complete batch. This is an experimental release, not validated laboratory software.
 
 VALIDATION.json records the build identity, exact release hashes, test results and open issues. The root application remains the separate modern maintenance release.
-
-Prepared experiment charts have session codes and voice numbers. The chart button distinguishes a cache hit from an on-demand draw. Ordinary browsing no longer delays background jobs.
-
-## Compatibility update
-
-Includes the fixed modern 2 GiB background budget, 100 ms queue interval, curve-group sorting, Control Panel navigation and layout fixes, worker-free analysis, history recovery notices, and Chinese labels for selected compatibility controls. Native IE11 workflows remain unverified.
