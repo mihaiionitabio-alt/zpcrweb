@@ -1,6 +1,6 @@
 <!doctype html>
 <meta charset="utf-8">
-<meta name="missy-publication-version" content="2026.10.31.demolabels1">
+<meta name="missy-publication-version" content="2026.11.05.reviewfix1">
 <link rel="icon" href="data:,">
 <title>Missy, RUO - A single-file offline HTML page for .ixo, .eds/.edt, .rdml, .zpcr and .pcrd experiment runs</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -5439,6 +5439,14 @@ function sopStdCurvesBase(run){
 
 /* ---- the interpretation itself ---- */
 function sopEvaluateRun(run,ri){return MISSY_HOOKS.invoke('sopEvaluateRun',this,[run,ri],sopEvaluateRunBase);}
+function sopDecisionOutcome(value,fallback,current){
+  if(value==="flag")return current||fallback;
+  return SOP_OUTCOMES.includes(value)?value:fallback;
+}
+function sopOutcomeRank(value){
+  const order=["Invalid run","Invalid","Control fail","Repeat","Inconclusive","Positive","Negative","Control pass","Standard","Not interpreted"];
+  const i=order.indexOf(value);return i<0?order.length:i;
+}
 function sopEvaluateRunBase(run,ri){
   if(SOP.evaluationMode==="unconfigured")return {run,ri,rows:[],criteria:[{criterion:ui("No SOP selected"),action:"unresolved",status:"n/a",evidence:ui("Select a SOP profile before interpreting experiment results.")}],status:"Profile not applicable — "+ui("No SOP selected"),rejected:[],reviewed:[],icMedian:NaN,times:runTimes(run)};
   const processing=sopProcessingApplicability(run);
@@ -5470,6 +5478,10 @@ function sopEvaluateRunBase(run,ri){
     return g;
   });
   const icMedian=icCqs.length?icCqs.slice().sort((a,b)=>a-b)[Math.floor(icCqs.length/2)]:NaN;
+  const icMedians=new Map();
+  pre.filter(g=>g.spec.kind==="ic"&&!g.ctrl&&g.role!=="Standard"&&Number.isFinite(g.cqMean)).forEach(g=>{if(!icMedians.has(g.target))icMedians.set(g.target,[]);icMedians.get(g.target).push(g.cqMean);});
+  icMedians.forEach((v,k)=>{v.sort((a,b)=>a-b);icMedians.set(k,v[Math.floor(v.length/2)]);});
+  pre.forEach(g=>{g.icMedian=icMedians.get(g.target)??NaN;});
   const referencePolicy=String((SOP.run||{}).referencePolicy||"all-declared");
   const out=(g,outcome,reason,rule)=>{g.outcome=outcome;g.reason=reason||"";g.rule=rule||"";rows.push(g);};
   pre.forEach(g=>{
@@ -5503,31 +5515,31 @@ function sopEvaluateRunBase(run,ri){
           outcome="Not interpreted";
           reasons.push(`alternate taxon reference ${alternate.map(r=>r.target).join(", ")} detected; ${g.target} is not required for this sample`);
         }else{
-          outcome=SOP.ic.missingOutcome||"Invalid";reasons.push(`${g.spec.kind==="ic"?"internal control":"reference"} not detected`);
+          outcome=sopDecisionOutcome(SOP.ic.missingOutcome,"Invalid");reasons.push(`${g.spec.kind==="ic"?"internal control":"reference"} not detected`);
         }
       }
       else{
         const refs=(sampleRef.get(g.sample)||[]).filter(r=>r!==g);
         const validReference=refs.some(r=>r.spec.kind==="reference"&&r.det>0);
         const failed=referencePolicy==="any-valid"&&validReference?[]:refs.filter(r=>r.det===0);
-        const shifted=refs.filter(r=>r.spec.kind==="ic"&&Number.isFinite(icMedian)&&Number.isFinite(r.cqMean)&&r.cqMean-icMedian>sopNum(SOP.ic.maxShift));
-        if(failed.length){outcome=SOP.ic.missingOutcome||"Invalid";reasons.push(`${failed.map(r=>r.target).join(", ")} not detected — a negative cannot be reported`);}
-        else if(shifted.length){outcome=SOP.ic.shiftOutcome||"Inconclusive";reasons.push(`IC shifted +${num(shifted[0].cqMean-icMedian,2)} cycles from the run median (limit ${SOP.ic.maxShift}) — possible inhibition`);}
+        const shifted=refs.filter(r=>r.spec.kind==="ic"&&Number.isFinite(r.icMedian)&&Number.isFinite(r.cqMean)&&r.cqMean-r.icMedian>sopNum(SOP.ic.maxShift));
+        if(failed.length){outcome=sopDecisionOutcome(SOP.ic.missingOutcome,"Invalid");reasons.push(`${failed.map(r=>r.target).join(", ")} not detected — a negative cannot be reported`);}
+        else if(shifted.length){outcome=sopDecisionOutcome(SOP.ic.shiftOutcome,"Inconclusive");reasons.push(`IC shifted +${num(shifted[0].cqMean-shifted[0].icMedian,2)} cycles from the run median (limit ${SOP.ic.maxShift}) — possible inhibition`);}
       }
     }else if(g.det<need){
-      outcome=rep.partialOutcome||"Inconclusive";reasons.push(`detected in ${g.det}/${g.n} replicates, SOP requires ${need}`);
+      outcome=sopDecisionOutcome(rep.partialOutcome,"Inconclusive");reasons.push(`detected in ${g.det}/${g.n} replicates, SOP requires ${need}`);
     }else{
       outcome="Positive";
-      if(Number.isFinite(late)&&g.cqMean>late){outcome=g.spec.lateOutcome||"Inconclusive";reasons.push(`mean Cq ${num(g.cqMean,2)} above the late-signal limit ${late}`);}
+      if(Number.isFinite(late)&&g.cqMean>late){outcome=sopDecisionOutcome(g.spec.lateOutcome,"Inconclusive",outcome);reasons.push(`mean Cq ${num(g.cqMean,2)} above the late-signal limit ${late}`);}
       const qmin=sopNum(g.spec.quantMin);
-      if(Number.isFinite(qmin)&&Number.isFinite(g.conc)&&g.conc<qmin){outcome=g.spec.lateOutcome||"Inconclusive";reasons.push(`quantity ${g.conc.toPrecision(3)} below ${qmin} (stochastic zone)`);}
+      if(Number.isFinite(qmin)&&Number.isFinite(g.conc)&&g.conc<qmin){outcome=sopDecisionOutcome(g.spec.lateOutcome,"Inconclusive",outcome);reasons.push(`quantity ${g.conc.toPrecision(3)} below ${qmin} (stochastic zone)`);}
       if(g.det<g.n&&outcome==="Positive")reasons.push(`detected in ${g.det}/${g.n}`);
-      if(g.spec.kind==="ic"&&Number.isFinite(icMedian)&&g.cqMean-icMedian>sopNum(SOP.ic.maxShift))
-        reasons.push(`IC +${num(g.cqMean-icMedian,2)} cycles from the run median`);
+      if(g.spec.kind==="ic"&&Number.isFinite(g.icMedian)&&g.cqMean-g.icMedian>sopNum(SOP.ic.maxShift))
+        reasons.push(`IC +${num(g.cqMean-g.icMedian,2)} cycles from the run median`);
     }
     if(g.det>=2&&Number.isFinite(g.cqSd)&&g.cqSd>sopNum(rep.maxSd)){
       reasons.push(`replicate SD ${num(g.cqSd,2)} > ${rep.maxSd}`);
-      if(rep.sdOutcome&&rep.sdOutcome!=="flag"&&(outcome==="Positive"||outcome==="Negative"))outcome=rep.sdOutcome;
+      if(rep.sdOutcome&&rep.sdOutcome!=="flag"&&(outcome==="Positive"||outcome==="Negative"))outcome=sopDecisionOutcome(rep.sdOutcome,"Repeat",outcome);
     }
     if(g.n<roleNeed&&(outcome==="Positive"||outcome==="Negative"))outcome="Repeat";
     out(g,outcome,reasons.join("; "),g.spec.kind+": "+(g.spec.match||"*"));
@@ -5623,7 +5635,7 @@ function sopSampleRowsBase(filterRun,forExport){
          targets); keep reference failures in needs_action for review. */
       const assay=rs.filter(r=>!r.spec||r.spec.kind!=="reference");
       const decisionRows=assay.length?assay:rs;
-      const worst=decisionRows.map(r=>r.outcome).sort((a,b)=>order.indexOf(a)-order.indexOf(b))[0];
+      const worst=decisionRows.map(r=>r.outcome).sort((a,b)=>sopOutcomeRank(a)-sopOutcomeRank(b))[0];
       const actionRows=rs.filter(r=>/Invalid|Repeat|Inconclusive|Control fail/.test(r.outcome));
       const referenceOutcomes=uniq(rs.filter(r=>r.spec&&r.spec.kind==="reference").map(r=>r.outcome));
       return {experiment:runName(e.run),run_status:e.status,sample:P(s),
@@ -6032,7 +6044,12 @@ function niceTicks(lo,hi,n){
   return out;
 }
 function fmtTick(v){const a=Math.abs(v);return a>=1e5||(a>0&&a<1e-3)?v.toExponential(1):String(+v.toPrecision(6));}
-let SVG_CLIP_N=0;
+let SVG_CLIP_N=0; // retained for compatibility; no longer determines export bytes
+function svgClipKey(o){
+  const text=JSON.stringify(o);let a=2166136261,b=5381;
+  for(let i=0;i<text.length;i++){a=Math.imul(a^text.charCodeAt(i),16777619);b=((b<<5)+b)^text.charCodeAt(i);}
+  return (a>>>0).toString(16)+(b>>>0).toString(16);
+}
 function svgPlot(o){
   if(PLOT_CAPTURE)PLOT_CAPTURE.push(o);   /* interactive view only; see ixMount */
   const W=o.width||880,H=o.height||440,L=o.left||70,Rm=o.right||(o.legend&&o.legend.length?170:20),T=o.top||30,B=o.bottom||50;
@@ -6057,7 +6074,7 @@ function svgPlot(o){
   s+=`<rect x="${L}" y="${T}" width="${pw}" height="${ph}" fill="none" stroke="#9ca3af"/>`;
   if(o.xlab)s+=`<text x="${L+pw/2}" y="${H-8}" text-anchor="middle" fill="#374151">${svgEsc(o.xlab)}</text>`;
   if(o.ylab)s+=`<text transform="translate(16 ${T+ph/2}) rotate(-90)" text-anchor="middle" fill="#374151">${svgEsc(o.ylab)}</text>`;
-  const cid="pc"+(++SVG_CLIP_N);
+  const cid="pc"+svgClipKey(o);
   s+=`<defs><clipPath id="${cid}"><rect x="${L}" y="${T}" width="${pw}" height="${ph}"/></clipPath></defs><g clip-path="url(#${cid})">`;
   (o.series||[]).forEach(se=>{
     const pts=se.data.filter(p=>Number.isFinite(p[0])&&Number.isFinite(p[1])&&(!ylog||p[1]>0));
@@ -6502,7 +6519,7 @@ const GRAPHS=[
     return {svg:svgPlot({title:runName(c.run)+(miss.length?` — ${miss.length} not detected`:""),x:[-0.7,samples.length-0.3],y:extent(rs.map(r=>r.cqMean).concat(hl.map(h=>h.y)),0.1),
       xticks:samples.length<=40?samples.map((s,i)=>({v:i,label:s.slice(0,14),rotate:-40,anchor:"end"})):[],bottom:samples.length<=40?110:50,
       xlab:samples.length<=40?"":"Samples",ylab:"Mean Cq",series,hlines:hl,legend:legendFromMap(cm)}),
-      rows:rs.map(r=>({sample:r.sample,target:r.target,cq_mean:r.cqMean,detected:r.det,n:r.n,run_median:ev.icMedian,outcome:r.outcome}))};
+      rows:rs.map(r=>({sample:r.sample,target:r.target,cq_mean:r.cqMean,detected:r.det,n:r.n,run_median:r.icMedian,outcome:r.outcome}))};
   }},
  {id:"endpoint",group:"Fluorescence",title:"Fluorescence level against Cq",scope:"run",opts:["target","level"],
   note:"End-point fluorescence (or amplitude above background) against the stored Cq. Late, low-plateau curves separate from true amplification; undetected wells are drawn at the right edge.",
@@ -17315,7 +17332,7 @@ MISSY_HOOKS.use('sopSampleRows','mara.calculated.samples',20,next=>function(filt
  if(!maraProfileActive())return next(filterRun,forExport);
  const rs=sopInterpretationRows(filterRun,forExport).filter(r=>r.kind==='target'),groups=byKey(rs,r=>r.experiment+'||'+r.sample);
  const order=['Invalid run','Invalid','Repeat','Inconclusive','Positive','Negative','Not interpreted'];
- const samples=[...groups.values()].map(a=>{const r=a[0],worst=a.slice().sort((x,y)=>order.indexOf(x.outcome)-order.indexOf(y.outcome))[0];return {experiment:r.experiment,run_status:r.run_status,sample:r.sample,summary:a.map(x=>x.target+': '+x.label).join('; '),sample_outcome:worst.outcome,action:a.filter(x=>/Invalid|Repeat|Inconclusive/.test(x.outcome)).map(x=>x.reason).join('; '),needs_action:a.some(x=>/Invalid|Repeat|Inconclusive/.test(x.outcome))?'yes':'',reference_outcomes:'',report:a.map(x=>x.target+': '+x.report).join('; '),...sopMeta()};});
+ const samples=[...groups.values()].map(a=>{const r=a[0],worst=a.slice().sort((x,y)=>sopOutcomeRank(x.outcome)-sopOutcomeRank(y.outcome))[0];return {experiment:r.experiment,run_status:r.run_status,sample:r.sample,summary:a.map(x=>x.target+': '+x.label).join('; '),sample_outcome:worst.outcome,action:a.filter(x=>/Invalid|Repeat|Inconclusive/.test(x.outcome)).map(x=>x.reason).join('; '),needs_action:a.some(x=>/Invalid|Repeat|Inconclusive/.test(x.outcome))?'yes':'',reference_outcomes:'',report:a.map(x=>x.target+': '+x.report).join('; '),...sopMeta()};});
  const unmatched=sopEvaluateAll().filter(e=>(filterRun==null||filterRun===''||String(e.ri)===String(filterRun))&&e.applicability?.applicable===false).map(e=>({experiment:runName(e.run),run_status:e.status,sample:'',summary:ui('Profile selection required'),sample_outcome:'Not evaluated',action:ui('Select a profile matching the experiment'),needs_action:'',requires_profile_selection:'yes',reference_outcomes:'',report:e.applicability.reason+'; '+e.applicability.expected,...sopMeta()}));return [...samples,...unmatched];
 });
 Object.assign(ZH_TERMS,{'Automatic calculations are provisional until laboratory approval':'自动计算结果在实验室批准前仅供审核','Crop reference accepted':'作物内标准基因合格','Source checksum required':'需要源文件校验和'});

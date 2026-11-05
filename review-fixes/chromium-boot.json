@@ -1,0 +1,10 @@
+{
+  "state": {
+    "ready": true,
+    "version": "2026.11.05.reviewfix1",
+    "boot": false
+  },
+  "errors": [],
+  "repeatSVG": true,
+  "evidence": "Isolated Chromium 150, file://; not native IE11"
+}

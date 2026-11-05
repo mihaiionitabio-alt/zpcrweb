@@ -1,0 +1,120 @@
+{
+  "evidence": "Published build before this fix versus reviewfix1; named fixtures, software checks only",
+  "fixtureSHA256": "a9611b8d3e5781c3620690c5add697fdc7beae5e836c04a7fdcff078070b2c22",
+  "profileSHA256": "2bc06ca3e14385289529f76b741d25f3d2de97eb4907aee41a403573c60e7a97",
+  "runs": 13,
+  "rows": 613,
+  "cases": [
+    {
+      "name": "allWellRows",
+      "sha256": "f7e5720463dc0e1a296fab71592bde9c26d2075a047279333a3509edd48ee052",
+      "exactCanonicalParity": true
+    },
+    {
+      "name": "tmRows",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "exactCanonicalParity": true
+    },
+    {
+      "name": "sopRunRows",
+      "sha256": "8865a26a60ef0b3915fb818cfcaa8f009e83963befd14218cae6f5968f29dab7",
+      "exactCanonicalParity": true
+    },
+    {
+      "name": "sopSampleRows",
+      "sha256": "ef182e39ab285f4ddfd52667bac31a11fc48801a2067b4ac1178fda14f7e7ea0",
+      "exactCanonicalParity": true
+    },
+    {
+      "name": "sopInterpretationRows",
+      "sha256": "602038d05e8890f30d323cfcb655e44583c17e3add730fe624af7682751c518d",
+      "exactCanonicalParity": true
+    },
+    {
+      "name": "stored result CSV",
+      "sha256": "5cd8931d2540a4968756b7e7e9afd71039d85f1f66820630a43c8e578dd6e83c",
+      "bytes": 151271,
+      "exactByteParity": true
+    },
+    {
+      "name": "RDML XML run 1",
+      "sha256": "660565944bae3a972d4288bf036c1b6ceb51f07d30a149d73b4084c3030fcc21",
+      "bytes": 103109,
+      "exactByteParity": true
+    },
+    {
+      "name": "RDML XML run 2",
+      "sha256": "6e13923549b87fef618dc534f3669f478c20ad3450863ec563db543fd9b247c9",
+      "bytes": 138095,
+      "exactByteParity": true
+    },
+    {
+      "name": "RDML XML run 3",
+      "sha256": "9ad9c3bbababee01709cac5e752f4e0061fef89e582eee296ad3bddd82336c79",
+      "bytes": 197231,
+      "exactByteParity": true
+    },
+    {
+      "name": "RDML XML run 4",
+      "sha256": "cbbf74b801d4bc1b189e56375efe2a9abf665bcffb046109ab5e8e45a5714a04",
+      "bytes": 114440,
+      "exactByteParity": true
+    },
+    {
+      "name": "RDML XML run 5",
+      "sha256": "2f942c8a0090b4a689e58da4c04d0ca7333d5f9793411087781083e3adb9e612",
+      "bytes": 127057,
+      "exactByteParity": true
+    },
+    {
+      "name": "RDML XML run 6",
+      "sha256": "88d4fd8a07b880aa43d6ecb69a184fd6edfdabf38e38e11ea322fe37ae7b6bde",
+      "bytes": 103429,
+      "exactByteParity": true
+    },
+    {
+      "name": "RDML XML run 7",
+      "sha256": "d82e253998fe5308e9b60d23e20c230bb19e53160c37d6d4d90761f5cec40a27",
+      "bytes": 72233,
+      "exactByteParity": true
+    },
+    {
+      "name": "RDML XML run 8",
+      "sha256": "d5e2d5f75edda0fac691528b3901d26f265f6f487bda75f1bedaa6d146267d71",
+      "bytes": 87230,
+      "exactByteParity": true
+    },
+    {
+      "name": "RDML XML run 9",
+      "sha256": "06c9166460a1da2888cea27def7b5df4517f2846cf6e64c7906a3ce7aff3d6e6",
+      "bytes": 148480,
+      "exactByteParity": true
+    },
+    {
+      "name": "RDML XML run 10",
+      "sha256": "230d6194e3c8aed5878c5d352bf846ed60b321f1a43928531f878610301ce7fc",
+      "bytes": 198084,
+      "exactByteParity": true
+    },
+    {
+      "name": "RDML XML run 11",
+      "sha256": "a100f71ecef876f9b7d4a04255a6c007e0317dbb942608b820c7744851922f84",
+      "bytes": 134684,
+      "exactByteParity": true
+    },
+    {
+      "name": "RDML XML run 12",
+      "sha256": "0a45f99b983a5c5652f8ff9346b8503335ac28a5b7fb81caacfeb8414d69e182",
+      "bytes": 95677,
+      "exactByteParity": true
+    },
+    {
+      "name": "RDML XML run 13",
+      "sha256": "ff83a0f544b111f1c394afa92fcb4b2cae2bcbc00a3914d522e5b885d53bdd07",
+      "bytes": 103387,
+      "exactByteParity": true
+    }
+  ],
+  "modernErrors": [],
+  "portErrors": []
+}

@@ -1,0 +1,227 @@
+{
+  "evidence": "Published build before this fix versus reviewfix1; named fixtures, software checks only",
+  "reports": [
+    {
+      "format": "EDS",
+      "sourceSHA256": "f5fe62ea3ab4d396e926f55b23eae5926e90f63a4aa042e24da9e2b50ab93e11",
+      "runs": 1,
+      "storedRows": 72,
+      "checks": [
+        {
+          "name": "allWellRows",
+          "sha256": "b59d48b13d7e414638e9134a7dace9b470ea8692633866c5e78b22207f35b3f0"
+        },
+        {
+          "name": "tmRows",
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "name": "sopRunRows",
+          "sha256": "d65afe62d12cd8472279364a1de41484f931d15617086db22d0efb4e8991cc46"
+        },
+        {
+          "name": "sopSampleRows",
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "name": "allCurves run 1",
+          "sha256": "0963596dbc8d1d42ff9cf17538f5e398b7632131deeedf2bd280d3db87a5be92"
+        },
+        {
+          "name": "protocol run 1",
+          "sha256": "b1bd2dd0b26aa112007e2d6fa97f3086bdef8bae611eeb11782cf692e1213d39"
+        },
+        {
+          "name": "meta run 1",
+          "sha256": "24086ea2efa67953fd52f7698abc550fcacf432aba77fd15ee15382fbf918131"
+        },
+        {
+          "name": "stored result CSV",
+          "bytes": 21106,
+          "sha256": "8bd90a91732a1d657ececa3128fd077e394c966cbf8e3314d8c289f9d6b9656a"
+        }
+      ],
+      "note": "Named fixture only"
+    },
+    {
+      "format": "EDT",
+      "sourceSHA256": "6df757534d7ea25b62836182ea5c0c54756da6c55b3be1543324cc960da6b920",
+      "runs": 1,
+      "storedRows": 0,
+      "checks": [
+        {
+          "name": "allWellRows",
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "name": "tmRows",
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "name": "sopRunRows",
+          "sha256": "bbc0b52e17294b69c8154b65f263a3c5da0af06f4b4166e3f95b04484627b08b"
+        },
+        {
+          "name": "sopSampleRows",
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "name": "allCurves run 1",
+          "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+        },
+        {
+          "name": "protocol run 1",
+          "sha256": "8a58a805cfc8855ceac618ce36216bcbb98680577d0950c37158988e21780610"
+        },
+        {
+          "name": "meta run 1",
+          "sha256": "6d4106698feed5a523096f892b3e09973766f966a2dae7cb4f1116da60faef2f"
+        },
+        {
+          "name": "stored result CSV",
+          "bytes": 8,
+          "sha256": "31583b6b2733a9bdd8fe55c296cc42faddbbbfcc1b7da8b96b036025a4448365"
+        }
+      ],
+      "note": "Vendor template, not a measured run"
+    },
+    {
+      "format": "RDML",
+      "sourceSHA256": "9353b353106b5fdd4362a6197542cdcc956c8de64aa2e86417632db437aad5c3",
+      "runs": 1,
+      "storedRows": 48,
+      "checks": [
+        {
+          "name": "allWellRows",
+          "sha256": "3e327b01a16ae9e47f5f418b0366a045a4869d99ed51841e66a486076e78a586"
+        },
+        {
+          "name": "tmRows",
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "name": "sopRunRows",
+          "sha256": "63864409902299fef2642cc415f6f46a7bf0921eec300607ae18c3e31e053dd8"
+        },
+        {
+          "name": "sopSampleRows",
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "name": "allCurves run 1",
+          "sha256": "8590e3705d6a139d1a5265787c5570b7ec593d4468651b7a0634c1bc3e17a764"
+        },
+        {
+          "name": "protocol run 1",
+          "sha256": "7ddadd2f57f6f3da632cc9c730afeedf55ac506fc9be79452d0ddcbf0c1a4f2d"
+        },
+        {
+          "name": "meta run 1",
+          "sha256": "30ecb8fc4757c585c85fcf95e8744321c92cd73136fcbf591297a7707caddaa4"
+        },
+        {
+          "name": "stored result CSV",
+          "bytes": 10076,
+          "sha256": "a88fe3d457548ebb901e265dbf3db9a51c2eb28ae89c7a0d48d287082815a518"
+        }
+      ],
+      "note": "Named fixture only"
+    },
+    {
+      "format": "ZPCR",
+      "sourceSHA256": "71338d4890de9b7f9f610f0512bbfb423fced976cfe4a8e27244f2240d1b8e37",
+      "runs": 1,
+      "storedRows": 0,
+      "checks": [
+        {
+          "name": "allWellRows",
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "name": "tmRows",
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "name": "sopRunRows",
+          "sha256": "c45e5ffa3f16ba3fd36e56fef67598a9eddee29f512a60268ff8edbdd31e057b"
+        },
+        {
+          "name": "sopSampleRows",
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "name": "allCurves run 1",
+          "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+        },
+        {
+          "name": "protocol run 1",
+          "sha256": "dd4db0b3b67a9173b93eedb5cdb8cd26dc534124efcb4993552dd09bbfe650de"
+        },
+        {
+          "name": "meta run 1",
+          "sha256": "3287d099ab00a1d74cafdf390ad6c5eee1eb637eb69ae73bcb6ad0fe30e87667"
+        },
+        {
+          "name": "ZPCR raw CSV",
+          "bytes": 6080623,
+          "sha256": "66399c4e6fa29e554380d725c0762d5b88c536b317b42cbe83888811cd5fc807"
+        },
+        {
+          "name": "ZPCR logs CSV",
+          "bytes": 329463,
+          "sha256": "a31e1b609ea8659cecbe84c8d147f8afccb4d08a5b52c837c6acee892fc4e6f1"
+        },
+        {
+          "name": "stored result CSV",
+          "bytes": 8,
+          "sha256": "31583b6b2733a9bdd8fe55c296cc42faddbbbfcc1b7da8b96b036025a4448365"
+        }
+      ],
+      "note": "Named fixture only"
+    },
+    {
+      "format": "PCRD password cancelled",
+      "sourceSHA256": "ddc065e6a01980dc63ff9893da9f22654e7c12229ec937078ac573739011bbce",
+      "runs": 1,
+      "storedRows": 0,
+      "checks": [
+        {
+          "name": "allWellRows",
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "name": "tmRows",
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "name": "sopRunRows",
+          "sha256": "aaae1e4dbfc311a4a432115dfe1befa4a5dbe549919e7a8abb05a2fa4282ebeb"
+        },
+        {
+          "name": "sopSampleRows",
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "name": "allCurves run 1",
+          "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+        },
+        {
+          "name": "protocol run 1",
+          "sha256": "2854df18a81ec6181ddc7e3299897fa1eb35a6825d6158c940200afa26ca1481"
+        },
+        {
+          "name": "meta run 1",
+          "sha256": "1375ce761ad121af4d89d9ff159ebd0788f85f99fc59b6c8b88e34e159b5ce25"
+        },
+        {
+          "name": "stored result CSV",
+          "bytes": 8,
+          "sha256": "31583b6b2733a9bdd8fe55c296cc42faddbbbfcc1b7da8b96b036025a4448365"
+        }
+      ],
+      "note": "No password supplied: locked-source path only; encrypted numerical payload untested"
+    }
+  ],
+  "modernErrors": [],
+  "portErrors": []
+}

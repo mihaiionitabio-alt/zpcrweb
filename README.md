@@ -5,7 +5,9 @@
 
 ## Recommended documented version
 
-**[Run MISSY 2026.10.31.demolabels1](https://mihaiionitabio-alt.github.io/zpcrweb/?v=2026.10.31.demolabels1)**
+**[Run MISSY 2026.11.05.reviewfix1](https://mihaiionitabio-alt.github.io/zpcrweb/?v=2026.11.05.reviewfix1)**
+
+This maintenance release corrects internal-control target baselines, flag-only outcome handling and repeatable SVG exports. [Changes and test scope](review-fixes/README.md).
 
 **[Read the SourceForge wiki](https://sourceforge.net/p/zpcrweb/wiki/Home/)**
 

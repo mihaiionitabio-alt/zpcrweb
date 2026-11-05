@@ -1,0 +1,11 @@
+{
+  "name": "missy-review-fix-tests",
+  "private": true,
+  "scripts": {
+    "test": "node regression.cjs"
+  },
+  "devDependencies": {
+    "jsdom": "26.1.0",
+    "fflate": "0.8.2"
+  }
+}
