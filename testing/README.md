@@ -1,10 +1,14 @@
 # MISSY unified testing build
 
-[Open the unified HTML](https://mihaiionitabio-alt.github.io/zpcrweb/testing/Missy-unified.html?v=2026.11.05.unified-alpha8).
+[Open the unified HTML](https://mihaiionitabio-alt.github.io/zpcrweb/testing/Missy-unified.html?v=2026.11.05.unified-alpha9-cache1).
 
 One unencrypted offline HTML contains two runtimes and selects one by browser capability. Full font coverage and local recorded audio remain embedded. Missing speech recognition alone does not force compatibility mode.
 
-## New in alpha8
+## New in alpha9
+
+Run-specific charts prepare one at a time for each selected run after import. The modern runtime defaults to an estimated 512 MiB chart-cache budget, with a 1 GiB option. The compatibility runtime keeps 16 MiB. Numerical analysis remains on demand.
+
+## Changes carried forward from alpha8
 
 Console focus uses the native SVG palette without a second inversion. Nested SVG chart backgrounds, labels and grid lines follow the display theme. The saved chart background preference is respected on startup. Chromium checks covered focus in both themes and 25 chart outputs from an IXO fixture.
 

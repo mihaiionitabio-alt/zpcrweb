@@ -1,193 +1,93 @@
 {
   "build": {
-    "version": "2026.11.05.unified-alpha8",
+    "version": "2026.11.05.unified-alpha9",
     "sentinel": "~MISSY_LT_9f712e~",
     "sentinelCR": "~MISSY_CR_9f712e~",
     "runtimes": {
       "modern": {
-        "bytes": 28403949,
-        "characters": 28257070,
-        "sha256": "414595cc47a9ec4f496c59bcba4085b18980a76754ee4f1dc3313e8b815e3c3c"
+        "bytes": 28422039,
+        "characters": 28275150,
+        "sha256": "b9ecfef2c8c20972b931d851c7587d7410ac16242f4fc8b2ac0dd9f4a41a3324"
       },
       "legacy": {
-        "bytes": 29938796,
-        "characters": 29802387,
-        "sha256": "92185fa8a255b126d50fdc1c591755b5c5c28af2bcf3e6e4a700a12e2bc14783"
+        "bytes": 29960366,
+        "characters": 29823947,
+        "sha256": "fb0ea406b7de55dfa459009889648401d23c5d7db5c43838b0016617e501d6aa"
       }
     },
     "assetCount": 253,
     "fullFontCoverage": true,
     "sourceTree": "src/ (canonical)",
-    "unifiedBytes": 35254103,
-    "unifiedSHA256": "9917b673cbd57360e87ee0c9b1e677f97a14672cdcaa1cee59c3270ea7c50ac8",
-    "naiveRuntimeBytes": 58342745,
-    "savedBytes": 23088642,
-    "savingPercent": 39.57414413737303,
+    "unifiedBytes": 35321923,
+    "unifiedSHA256": "fe60a9c82fef48b511f38c767fe0f5a73c22158828b6ca9f7589a1f63c7afa93",
+    "naiveRuntimeBytes": 58382405,
+    "savedBytes": 23060482,
+    "savingPercent": 39.4990271469632,
     "byteIdenticalRoundTrips": true,
     "outerBootstrapES5": true,
     "base64WrapperUsed": false,
-    "sharedAssetCharacters": 23046200,
-    "artifact": "Missy-unified.html",
-    "status": "under testing"
+    "sharedAssetCharacters": 23046200
   },
-  "chartThemeChromium": {
-    "rows": [
+  "transport": {
+    "checks": [
       {
-        "id": "timeline",
-        "fill": "rgb(13, 10, 18)",
-        "svgBytes": 6825
+        "runtime": "modern",
+        "bytes": 28422039,
+        "sha256": "b9ecfef2c8c20972b931d851c7587d7410ac16242f4fc8b2ac0dd9f4a41a3324",
+        "exact": true,
+        "preEscapedScriptSequences": 16
       },
       {
-        "id": "curves",
-        "fill": "rgb(13, 10, 18)",
-        "svgBytes": 31010
-      },
-      {
-        "id": "plate",
-        "fill": "rgb(13, 10, 18)",
-        "svgBytes": 27040
-      },
-      {
-        "id": "unanalysed",
-        "fill": "rgb(13, 10, 18)",
-        "svgBytes": 276
-      },
-      {
-        "id": "cqstrip",
-        "fill": "rgb(13, 10, 18)",
-        "svgBytes": 6622
-      },
-      {
-        "id": "repsd",
-        "fill": "rgb(13, 10, 18)",
-        "svgBytes": 279
-      },
-      {
-        "id": "stdcurve",
-        "fill": "rgb(13, 10, 18)",
-        "svgBytes": 284
-      },
-      {
-        "id": "ic",
-        "fill": "rgb(13, 10, 18)",
-        "svgBytes": 303
-      },
-      {
-        "id": "endpoint",
-        "fill": "rgb(13, 10, 18)",
-        "svgBytes": 11227
-      },
-      {
-        "id": "levels",
-        "fill": "rgb(13, 10, 18)",
-        "svgBytes": 17026
-      },
-      {
-        "id": "outcomes",
-        "fill": "rgb(13, 10, 18)",
-        "svgBytes": 238
-      },
-      {
-        "id": "temperature",
-        "fill": "rgb(13, 10, 18)",
-        "svgBytes": 360
-      },
-      {
-        "id": "recalc",
-        "fill": "rgb(13, 10, 18)",
-        "svgBytes": 269
-      },
-      {
-        "id": "lc_thermal",
-        "fill": "rgb(13, 10, 18)",
-        "svgBytes": 44031
-      },
-      {
-        "id": "x_timeline",
-        "fill": "rgb(13, 10, 18)",
-        "svgBytes": 2648
-      },
-      {
-        "id": "x_delay",
-        "fill": "rgb(13, 10, 18)",
-        "svgBytes": 1943
-      },
-      {
-        "id": "x_accept",
-        "fill": "rgb(13, 10, 18)",
-        "svgBytes": 635
-      },
-      {
-        "id": "x_outcomes",
-        "fill": "rgb(13, 10, 18)",
-        "svgBytes": 1736
-      },
-      {
-        "id": "x_control",
-        "fill": "rgb(13, 10, 18)",
-        "svgBytes": 267
-      },
-      {
-        "id": "x_signal",
-        "fill": "rgb(13, 10, 18)",
-        "svgBytes": 2314
-      },
-      {
-        "id": "x_duration",
-        "fill": "rgb(13, 10, 18)",
-        "svgBytes": 2015
-      },
-      {
-        "id": "x_findings",
-        "fill": "rgb(13, 10, 18)",
-        "svgBytes": 2241
-      },
-      {
-        "id": "x_control_batches",
-        "fill": "rgb(13, 10, 18)",
-        "svgBytes": 317
-      },
-      {
-        "id": "x_control_age",
-        "fill": "rgb(13, 10, 18)",
-        "svgBytes": 317
-      },
-      {
-        "id": "x_control_thermal",
-        "fill": "rgb(13, 10, 18)",
-        "svgBytes": 317
+        "runtime": "legacy",
+        "bytes": 29960366,
+        "sha256": "fb0ea406b7de55dfa459009889648401d23c5d7db5c43838b0016617e501d6aa",
+        "exact": true,
+        "preEscapedScriptSequences": 15
       }
     ],
-    "dark": "rgb(13, 10, 18)",
-    "filter": "none",
-    "light": "rgb(255, 255, 255)"
+    "outerActiveScriptBlocks": 1,
+    "outerES5": true,
+    "base64RuntimeWrapper": false,
+    "exactTransport": true,
+    "SOPmoduleIndependentFromGraphSelection": true,
+    "unifiedSHA256": "fe60a9c82fef48b511f38c767fe0f5a73c22158828b6ca9f7589a1f63c7afa93"
   },
-  "nativeIE11Executed": false,
-  "historicalAlpha7Evidence": {
+  "chromiumIxo": {
+    "storedResults": 613,
+    "queueJobsCompleted": 223,
+    "importMs": 6192,
+    "cachedCharts": 102,
+    "runs": 13,
+    "browserErrors": 0,
+    "files": 13,
+    "estimatedCacheMiB": 29
+  },
+  "nativeIE11Tested": false,
+  "alpha8HistoricalEvidence": {
     "build": {
-      "version": "2026.11.05.unified-alpha7",
+      "version": "2026.11.05.unified-alpha8",
       "sentinel": "~MISSY_LT_9f712e~",
       "sentinelCR": "~MISSY_CR_9f712e~",
       "runtimes": {
         "modern": {
-          "bytes": 28400335,
-          "characters": 28253456,
-          "sha256": "dad5d2af6a68daeff7161895262b3197d632af28212bd0e713ce5977d1c4e220"
+          "bytes": 28403949,
+          "characters": 28257070,
+          "sha256": "414595cc47a9ec4f496c59bcba4085b18980a76754ee4f1dc3313e8b815e3c3c"
         },
         "legacy": {
-          "bytes": 29927847,
-          "characters": 29791438,
-          "sha256": "8d21566d444cea7dfbfec03807b8ee12a26ce77038599e9224fb16af20209ddb"
+          "bytes": 29938796,
+          "characters": 29802387,
+          "sha256": "92185fa8a255b126d50fdc1c591755b5c5c28af2bcf3e6e4a700a12e2bc14783"
         }
       },
       "assetCount": 253,
       "fullFontCoverage": true,
       "sourceTree": "src/ (canonical)",
-      "unifiedBytes": 35236180,
-      "unifiedSHA256": "352b110cf6be1de073ddeca52e5b48dbd7237d602564fabed2f6c2f98fe1aa9a",
-      "naiveRuntimeBytes": 58328182,
-      "savedBytes": 23092002,
-      "savingPercent": 39.58978526023664,
+      "unifiedBytes": 35254103,
+      "unifiedSHA256": "9917b673cbd57360e87ee0c9b1e677f97a14672cdcaa1cee59c3270ea7c50ac8",
+      "naiveRuntimeBytes": 58342745,
+      "savedBytes": 23088642,
+      "savingPercent": 39.57414413737303,
       "byteIdenticalRoundTrips": true,
       "outerBootstrapES5": true,
       "base64WrapperUsed": false,
@@ -195,211 +95,171 @@
       "artifact": "Missy-unified.html",
       "status": "under testing"
     },
-    "fullIntake": {
-      "kind": "JSDOM full intake/read workflow with missing native APIs, not IE11",
-      "runs": 13,
-      "storedRows": 613,
-      "phase": "ready",
-      "faults": [],
-      "errors": [],
-      "elapsedMs": 25241,
-      "acquisitionParity": 13
+    "chartThemeChromium": {
+      "rows": [
+        {
+          "id": "timeline",
+          "fill": "rgb(13, 10, 18)",
+          "svgBytes": 6825
+        },
+        {
+          "id": "curves",
+          "fill": "rgb(13, 10, 18)",
+          "svgBytes": 31010
+        },
+        {
+          "id": "plate",
+          "fill": "rgb(13, 10, 18)",
+          "svgBytes": 27040
+        },
+        {
+          "id": "unanalysed",
+          "fill": "rgb(13, 10, 18)",
+          "svgBytes": 276
+        },
+        {
+          "id": "cqstrip",
+          "fill": "rgb(13, 10, 18)",
+          "svgBytes": 6622
+        },
+        {
+          "id": "repsd",
+          "fill": "rgb(13, 10, 18)",
+          "svgBytes": 279
+        },
+        {
+          "id": "stdcurve",
+          "fill": "rgb(13, 10, 18)",
+          "svgBytes": 284
+        },
+        {
+          "id": "ic",
+          "fill": "rgb(13, 10, 18)",
+          "svgBytes": 303
+        },
+        {
+          "id": "endpoint",
+          "fill": "rgb(13, 10, 18)",
+          "svgBytes": 11227
+        },
+        {
+          "id": "levels",
+          "fill": "rgb(13, 10, 18)",
+          "svgBytes": 17026
+        },
+        {
+          "id": "outcomes",
+          "fill": "rgb(13, 10, 18)",
+          "svgBytes": 238
+        },
+        {
+          "id": "temperature",
+          "fill": "rgb(13, 10, 18)",
+          "svgBytes": 360
+        },
+        {
+          "id": "recalc",
+          "fill": "rgb(13, 10, 18)",
+          "svgBytes": 269
+        },
+        {
+          "id": "lc_thermal",
+          "fill": "rgb(13, 10, 18)",
+          "svgBytes": 44031
+        },
+        {
+          "id": "x_timeline",
+          "fill": "rgb(13, 10, 18)",
+          "svgBytes": 2648
+        },
+        {
+          "id": "x_delay",
+          "fill": "rgb(13, 10, 18)",
+          "svgBytes": 1943
+        },
+        {
+          "id": "x_accept",
+          "fill": "rgb(13, 10, 18)",
+          "svgBytes": 635
+        },
+        {
+          "id": "x_outcomes",
+          "fill": "rgb(13, 10, 18)",
+          "svgBytes": 1736
+        },
+        {
+          "id": "x_control",
+          "fill": "rgb(13, 10, 18)",
+          "svgBytes": 267
+        },
+        {
+          "id": "x_signal",
+          "fill": "rgb(13, 10, 18)",
+          "svgBytes": 2314
+        },
+        {
+          "id": "x_duration",
+          "fill": "rgb(13, 10, 18)",
+          "svgBytes": 2015
+        },
+        {
+          "id": "x_findings",
+          "fill": "rgb(13, 10, 18)",
+          "svgBytes": 2241
+        },
+        {
+          "id": "x_control_batches",
+          "fill": "rgb(13, 10, 18)",
+          "svgBytes": 317
+        },
+        {
+          "id": "x_control_age",
+          "fill": "rgb(13, 10, 18)",
+          "svgBytes": 317
+        },
+        {
+          "id": "x_control_thermal",
+          "fill": "rgb(13, 10, 18)",
+          "svgBytes": 317
+        }
+      ],
+      "dark": "rgb(13, 10, 18)",
+      "filter": "none",
+      "light": "rgb(255, 255, 255)"
     },
-    "etaChecks": [
-      "First-file estimate",
-      "Recalculation after subsequent files",
-      "Finalizing state"
-    ],
     "nativeIE11Executed": false,
-    "historicalAlpha3Evidence": {
+    "historicalAlpha7Evidence": {
       "build": {
-        "version": "2026.11.05.unified-alpha3",
-        "status": "under-testing; native IE11 not verified",
-        "artifact": "Missy-unified.html",
-        "sha256": "b75588f0b2fa04fc7b022d0b8b74ac2ad1f82e62746d8376e0b4602e651b3e10",
-        "bytes": 35201931,
+        "version": "2026.11.05.unified-alpha7",
+        "sentinel": "~MISSY_LT_9f712e~",
+        "sentinelCR": "~MISSY_CR_9f712e~",
         "runtimes": {
           "modern": {
-            "bytes": 28391758,
-            "characters": 28244909,
-            "sha256": "5932d201750b3fdb4533f365e8add20a324225ea70d97a9e2709069eabee4e1f"
+            "bytes": 28400335,
+            "characters": 28253456,
+            "sha256": "dad5d2af6a68daeff7161895262b3197d632af28212bd0e713ce5977d1c4e220"
           },
           "legacy": {
-            "bytes": 29916015,
-            "characters": 29779632,
-            "sha256": "75b15bb9b3b99e7fa6d7f080d46feb5b8e58801b37d5505dc7fc68bf855a116b"
+            "bytes": 29927847,
+            "characters": 29791438,
+            "sha256": "8d21566d444cea7dfbfec03807b8ee12a26ce77038599e9224fb16af20209ddb"
           }
         },
-        "main_page": "https://mihaiionitabio-alt.github.io/zpcrweb/?v=2026.11.05.reviewfix1",
-        "testing_url": "https://mihaiionitabio-alt.github.io/zpcrweb/testing/Missy-unified.html?v=2026.11.05.unified-alpha3",
-        "known_open_items": [
-          "Native IE11 parse, memory, audio, fonts, layout and downloads",
-          "Encrypted PCRD numerical decoding",
-          "Scope label/export metadata for selection-scoped control charts"
-        ],
-        "historical_snapshot": "Missy_offline.html (2026.11.05.testing1; not the latest unified build)"
+        "assetCount": 253,
+        "fullFontCoverage": true,
+        "sourceTree": "src/ (canonical)",
+        "unifiedBytes": 35236180,
+        "unifiedSHA256": "352b110cf6be1de073ddeca52e5b48dbd7237d602564fabed2f6c2f98fe1aa9a",
+        "naiveRuntimeBytes": 58328182,
+        "savedBytes": 23092002,
+        "savingPercent": 39.58978526023664,
+        "byteIdenticalRoundTrips": true,
+        "outerBootstrapES5": true,
+        "base64WrapperUsed": false,
+        "sharedAssetCharacters": 23046200,
+        "artifact": "Missy-unified.html",
+        "status": "under testing"
       },
-      "softwareSuite": {
-        "build": "2026.11.05.unified-legacy2",
-        "sha256": "75b15bb9b3b99e7fa6d7f080d46feb5b8e58801b37d5505dc7fc68bf855a116b",
-        "scope": "complete local suite",
-        "evidence": "Software and fixture checks; native IE execution separate",
-        "results": [
-          {
-            "test": "static",
-            "status": "pass",
-            "exitCode": 0,
-            "elapsedMs": 1263
-          },
-          {
-            "test": "offline-svg",
-            "status": "pass",
-            "exitCode": 0,
-            "elapsedMs": 697
-          },
-          {
-            "test": "offline-copy",
-            "status": "pass",
-            "exitCode": 0,
-            "elapsedMs": 11437
-          },
-          {
-            "test": "offline-features",
-            "status": "pass",
-            "exitCode": 0,
-            "elapsedMs": 7472
-          },
-          {
-            "test": "smoke",
-            "status": "pass",
-            "exitCode": 0,
-            "elapsedMs": 7410
-          },
-          {
-            "test": "legacy-boot",
-            "status": "pass",
-            "exitCode": 0,
-            "elapsedMs": 10331
-          },
-          {
-            "test": "audio-ui",
-            "status": "pass",
-            "exitCode": 0,
-            "elapsedMs": 9146
-          },
-          {
-            "test": "review-helpers",
-            "status": "pass",
-            "exitCode": 0,
-            "elapsedMs": 1438
-          },
-          {
-            "test": "all-sounds",
-            "status": "pass",
-            "exitCode": 0,
-            "elapsedMs": 951
-          },
-          {
-            "test": "sound-settings",
-            "status": "pass",
-            "exitCode": 0,
-            "elapsedMs": 12197
-          },
-          {
-            "test": "plate-layout",
-            "status": "pass",
-            "exitCode": 0,
-            "elapsedMs": 13564
-          },
-          {
-            "test": "startup-diagnostics",
-            "status": "pass",
-            "exitCode": 0,
-            "elapsedMs": 9721
-          },
-          {
-            "test": "frame-write",
-            "status": "pass",
-            "exitCode": 0,
-            "elapsedMs": 867
-          },
-          {
-            "test": "frame-payloads",
-            "status": "pass",
-            "exitCode": 0,
-            "elapsedMs": 11684
-          },
-          {
-            "test": "generated-code-guard",
-            "status": "pass",
-            "exitCode": 0,
-            "elapsedMs": 1389
-          },
-          {
-            "test": "decompression-fixtures",
-            "status": "pass",
-            "exitCode": 0,
-            "elapsedMs": 2259
-          },
-          {
-            "test": "fixture-parity",
-            "status": "pass",
-            "exitCode": 0,
-            "elapsedMs": 80906
-          },
-          {
-            "test": "format-parity",
-            "status": "pass",
-            "exitCode": 0,
-            "elapsedMs": 22051
-          },
-          {
-            "test": "full-intake",
-            "status": "pass",
-            "exitCode": 0,
-            "elapsedMs": 70100
-          }
-        ]
-      },
-      "browserSuite": {
-        "unifiedSHA256": "b75588f0b2fa04fc7b022d0b8b74ac2ad1f82e62746d8376e0b4602e651b3e10",
-        "scope": "Isolated Chromium 150 and transport checks; no native IE11",
-        "results": [
-          {
-            "test": "unified-transport",
-            "pass": true,
-            "elapsedMs": 11083
-          },
-          {
-            "test": "chromium-unified",
-            "pass": true,
-            "elapsedMs": 4352
-          },
-          {
-            "test": "chromium-cross-runtime",
-            "pass": true,
-            "elapsedMs": 26874
-          },
-          {
-            "test": "chromium-workflow",
-            "pass": true,
-            "elapsedMs": 5802
-          }
-        ]
-      },
-      "defectTests": {
-        "modern": {
-          "pass": true,
-          "cases": 9,
-          "pageErrors": []
-        },
-        "legacy": {
-          "pass": true,
-          "cases": 9,
-          "pageErrors": []
-        }
-      },
-      "nativeIE11Executed": false,
       "fullIntake": {
         "kind": "JSDOM full intake/read workflow with missing native APIs, not IE11",
         "runs": 13,
@@ -407,40 +267,246 @@
         "phase": "ready",
         "faults": [],
         "errors": [],
-        "elapsedMs": 62649
+        "elapsedMs": 25241,
+        "acquisitionParity": 13
       },
-      "perFormat": [
-        {
-          "format": "EDS",
-          "runs": 1,
-          "storedRows": 72,
-          "checks": 8
+      "etaChecks": [
+        "First-file estimate",
+        "Recalculation after subsequent files",
+        "Finalizing state"
+      ],
+      "nativeIE11Executed": false,
+      "historicalAlpha3Evidence": {
+        "build": {
+          "version": "2026.11.05.unified-alpha3",
+          "status": "under-testing; native IE11 not verified",
+          "artifact": "Missy-unified.html",
+          "sha256": "b75588f0b2fa04fc7b022d0b8b74ac2ad1f82e62746d8376e0b4602e651b3e10",
+          "bytes": 35201931,
+          "runtimes": {
+            "modern": {
+              "bytes": 28391758,
+              "characters": 28244909,
+              "sha256": "5932d201750b3fdb4533f365e8add20a324225ea70d97a9e2709069eabee4e1f"
+            },
+            "legacy": {
+              "bytes": 29916015,
+              "characters": 29779632,
+              "sha256": "75b15bb9b3b99e7fa6d7f080d46feb5b8e58801b37d5505dc7fc68bf855a116b"
+            }
+          },
+          "main_page": "https://mihaiionitabio-alt.github.io/zpcrweb/?v=2026.11.05.reviewfix1",
+          "testing_url": "https://mihaiionitabio-alt.github.io/zpcrweb/testing/Missy-unified.html?v=2026.11.05.unified-alpha3",
+          "known_open_items": [
+            "Native IE11 parse, memory, audio, fonts, layout and downloads",
+            "Encrypted PCRD numerical decoding",
+            "Scope label/export metadata for selection-scoped control charts"
+          ],
+          "historical_snapshot": "Missy_offline.html (2026.11.05.testing1; not the latest unified build)"
         },
-        {
-          "format": "EDT",
-          "runs": 1,
-          "storedRows": 0,
-          "checks": 8
+        "softwareSuite": {
+          "build": "2026.11.05.unified-legacy2",
+          "sha256": "75b15bb9b3b99e7fa6d7f080d46feb5b8e58801b37d5505dc7fc68bf855a116b",
+          "scope": "complete local suite",
+          "evidence": "Software and fixture checks; native IE execution separate",
+          "results": [
+            {
+              "test": "static",
+              "status": "pass",
+              "exitCode": 0,
+              "elapsedMs": 1263
+            },
+            {
+              "test": "offline-svg",
+              "status": "pass",
+              "exitCode": 0,
+              "elapsedMs": 697
+            },
+            {
+              "test": "offline-copy",
+              "status": "pass",
+              "exitCode": 0,
+              "elapsedMs": 11437
+            },
+            {
+              "test": "offline-features",
+              "status": "pass",
+              "exitCode": 0,
+              "elapsedMs": 7472
+            },
+            {
+              "test": "smoke",
+              "status": "pass",
+              "exitCode": 0,
+              "elapsedMs": 7410
+            },
+            {
+              "test": "legacy-boot",
+              "status": "pass",
+              "exitCode": 0,
+              "elapsedMs": 10331
+            },
+            {
+              "test": "audio-ui",
+              "status": "pass",
+              "exitCode": 0,
+              "elapsedMs": 9146
+            },
+            {
+              "test": "review-helpers",
+              "status": "pass",
+              "exitCode": 0,
+              "elapsedMs": 1438
+            },
+            {
+              "test": "all-sounds",
+              "status": "pass",
+              "exitCode": 0,
+              "elapsedMs": 951
+            },
+            {
+              "test": "sound-settings",
+              "status": "pass",
+              "exitCode": 0,
+              "elapsedMs": 12197
+            },
+            {
+              "test": "plate-layout",
+              "status": "pass",
+              "exitCode": 0,
+              "elapsedMs": 13564
+            },
+            {
+              "test": "startup-diagnostics",
+              "status": "pass",
+              "exitCode": 0,
+              "elapsedMs": 9721
+            },
+            {
+              "test": "frame-write",
+              "status": "pass",
+              "exitCode": 0,
+              "elapsedMs": 867
+            },
+            {
+              "test": "frame-payloads",
+              "status": "pass",
+              "exitCode": 0,
+              "elapsedMs": 11684
+            },
+            {
+              "test": "generated-code-guard",
+              "status": "pass",
+              "exitCode": 0,
+              "elapsedMs": 1389
+            },
+            {
+              "test": "decompression-fixtures",
+              "status": "pass",
+              "exitCode": 0,
+              "elapsedMs": 2259
+            },
+            {
+              "test": "fixture-parity",
+              "status": "pass",
+              "exitCode": 0,
+              "elapsedMs": 80906
+            },
+            {
+              "test": "format-parity",
+              "status": "pass",
+              "exitCode": 0,
+              "elapsedMs": 22051
+            },
+            {
+              "test": "full-intake",
+              "status": "pass",
+              "exitCode": 0,
+              "elapsedMs": 70100
+            }
+          ]
         },
-        {
-          "format": "RDML",
-          "runs": 1,
-          "storedRows": 48,
-          "checks": 8
+        "browserSuite": {
+          "unifiedSHA256": "b75588f0b2fa04fc7b022d0b8b74ac2ad1f82e62746d8376e0b4602e651b3e10",
+          "scope": "Isolated Chromium 150 and transport checks; no native IE11",
+          "results": [
+            {
+              "test": "unified-transport",
+              "pass": true,
+              "elapsedMs": 11083
+            },
+            {
+              "test": "chromium-unified",
+              "pass": true,
+              "elapsedMs": 4352
+            },
+            {
+              "test": "chromium-cross-runtime",
+              "pass": true,
+              "elapsedMs": 26874
+            },
+            {
+              "test": "chromium-workflow",
+              "pass": true,
+              "elapsedMs": 5802
+            }
+          ]
         },
-        {
-          "format": "ZPCR",
-          "runs": 1,
-          "storedRows": 0,
-          "checks": 10
+        "defectTests": {
+          "modern": {
+            "pass": true,
+            "cases": 9,
+            "pageErrors": []
+          },
+          "legacy": {
+            "pass": true,
+            "cases": 9,
+            "pageErrors": []
+          }
         },
-        {
-          "format": "PCRD password cancelled",
-          "runs": 1,
-          "storedRows": 0,
-          "checks": 8
-        }
-      ]
+        "nativeIE11Executed": false,
+        "fullIntake": {
+          "kind": "JSDOM full intake/read workflow with missing native APIs, not IE11",
+          "runs": 13,
+          "storedRows": 613,
+          "phase": "ready",
+          "faults": [],
+          "errors": [],
+          "elapsedMs": 62649
+        },
+        "perFormat": [
+          {
+            "format": "EDS",
+            "runs": 1,
+            "storedRows": 72,
+            "checks": 8
+          },
+          {
+            "format": "EDT",
+            "runs": 1,
+            "storedRows": 0,
+            "checks": 8
+          },
+          {
+            "format": "RDML",
+            "runs": 1,
+            "storedRows": 48,
+            "checks": 8
+          },
+          {
+            "format": "ZPCR",
+            "runs": 1,
+            "storedRows": 0,
+            "checks": 10
+          },
+          {
+            "format": "PCRD password cancelled",
+            "runs": 1,
+            "storedRows": 0,
+            "checks": 8
+          }
+        ]
+      }
     }
   }
 }
