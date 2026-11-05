@@ -1,10 +1,14 @@
 # MISSY unified testing build
 
-[Open the unified HTML](https://mihaiionitabio-alt.github.io/zpcrweb/testing/Missy-unified.html?v=2026.11.05.unified-alpha3).
+[Open the unified HTML](https://mihaiionitabio-alt.github.io/zpcrweb/testing/Missy-unified.html?v=2026.11.05.unified-alpha7).
 
 One unencrypted offline HTML contains two runtimes and selects one by browser capability. Full font coverage and local recorded audio remain embedded. Missing speech recognition alone does not force compatibility mode.
 
-## Fixed in alpha3
+## New in alpha7
+
+The full-screen import display shows elapsed time, files processed, and an estimate that updates after each file. The compatibility reader decodes ASCII IXO text faster and reuses the decompressed acquisition stream for control charts. The 13-file compatibility test produced 613 results with acquisition parity for all 13 files.
+
+## Fixes carried forward from alpha3
 - Internal-control shift checks use a median per target.
 - Flag-only actions cannot become result verdicts; missing required controls cannot authorize a negative through flag-only settings.
 - Outcome severity ranks unknown values last and includes control failure.
