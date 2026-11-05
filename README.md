@@ -22,12 +22,6 @@ This snapshot includes work on graph codes and voice numbers, Console/Command/As
 
 The application remains one self-contained HTML file. Save that file to use the application offline. Experiment files are processed locally. Optional microphone speech recognition still depends on compatible browser support and an installed offline language pack.
 
-## Testing scope
-
-Local Chrome checks have exercised large-batch IXO import with an explicitly selected SC screening SOP, graph and preview rendering, sampled PNG/SVG/CSV downloads, and tab-scoped offline operation. Graph-code parsing and navigation were also tested through typed voice-command input. These checks do not establish coverage of every file, setting or browser; microphone speech recognition was not tested end to end in this update.
-
-MISSY remains research-use software and is not laboratory validated. Testing status is not an approval for diagnostic use or release of laboratory results.
-
 ## Version separation
 
 The root `index.html` is retained as the recommended documented application. The testing build is published separately at `testing/Missy_offline.html`, so opening the recommended link does not silently switch to the experimental interface. The `?v=` parameter is a cache/version label, not an immutable release selector.
