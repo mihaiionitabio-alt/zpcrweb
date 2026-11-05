@@ -18,10 +18,10 @@ The wiki identifies application baseline `2026.10.31.demolabels1`. Its instructi
 - **Latest testing build:** `2026.11.05.unified-alpha3`.
 - [Open the unified testing HTML](https://mihaiionitabio-alt.github.io/zpcrweb/testing/Missy-unified.html?v=2026.11.05.unified-alpha3).
 - [Download the single unified HTML](https://raw.githubusercontent.com/mihaiionitabio-alt/zpcrweb/missy-public-offline-2026-10-20/testing/Missy-unified.html).
-- [Build identity, runtime hashes and open issues](testing/BUILD.json).
+- [Build identity, runtime hashes and open issues](testing/VALIDATION.json).
 - [Fixes and compatibility limitations](testing/README.md).
 
-The unified build contains modern and compatibility runtimes, sharing embedded assets. It includes the three defect fixes in the main-page maintenance release. Native IE11 remains unverified. The former `testing/Missy_offline.html` is retained as a historical testing1 snapshot.
+The unified build contains modern and compatibility runtimes, sharing embedded assets. It includes the three defect fixes in the main-page maintenance release. Native IE11 remains unverified.
 
 The application remains one self-contained HTML file. Save that file to use the application offline. Experiment files are processed locally. Optional microphone speech recognition still depends on compatible browser support and an installed offline language pack.
 

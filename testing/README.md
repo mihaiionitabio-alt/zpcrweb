@@ -15,4 +15,4 @@ It also retains alpha2's lossless runtime transport, chunked integrity check wit
 ## Not all issues are closed
 Native IE11 has NOT been tested. Compatibility mode in Chromium does not establish IE11 support. Encrypted PCRD numerical decoding is not covered. Selection-scoped control-chart labels/export metadata remain a follow-up; SOP verdicts still use the complete batch. This is an experimental release, not validated laboratory software.
 
-BUILD.json records exact release hashes. Missy_offline.html is retained only as the older testing1 snapshot. The root application remains the separate modern maintenance release.
+VALIDATION.json records the build identity, exact release hashes, test results and open issues. The root application remains the separate modern maintenance release.
